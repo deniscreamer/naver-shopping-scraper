@@ -20,6 +20,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 FX = os.path.join(HERE, "fixtures")
 PROFILE = profile_for("fairwardgolf")
 M, W, J = "mens-complete-sets", "womens-complete-sets", "junior-clubs-sets"
+KNITS, WIND, PANTS = "womens-knit-cardigans", "womens-windbreakers", "golf-pants"
+TOPS_W, TOPS_M = "womens-fall-long-sleeve-tops", "mens-fall-long-sleeve-tops"
 
 # The 50 fixture sets (2026-11-08): the sections they go to, the same as the leaves the transform decided before
 # the split moved to placement (prepared/2), and how many variants each section lists where a set is split.
@@ -73,11 +75,28 @@ EXPECTED = {
     "13510579139": (J,), "13848307900": (J,),
     # the seller-vendor review (2026-11-19): 골드벙커, a store, as the maker of an Inparo set
     "13826709716": (J,),
+    # apparel, the size_unmapped reviews (2026-11-24 / 2026-11-25, the owner: regression fixtures of the size rules;
+    # scripts/SIZES.md "How to use"): one or two products per rule, and products that must stay held
+    "5964063532": (KNITS,), "4260789645": (TOPS_W,), "13483086996": (WIND,), "7191019224": (PANTS,),
+    "9918112671": (PANTS,), "12487907002": (WIND,), "13004790971": (KNITS,), "10940191023": (KNITS,),
+    "7864006253": (PANTS,), "10968014964": (TOPS_W,), "13762280030": (TOPS_M,), "5815131892": (PANTS,),
+    "7266270685": (TOPS_M, TOPS_W), "5691897960": ("rainwear-midlayers",), "7965635614": ("womens-skirts-culottes",),
+    "9317474764": (TOPS_W,), "11493370731": (PANTS,), "9998916822": (TOPS_M,), "5489884876": (PANTS,),
+    "12370291326": (PANTS,),
+    # the two reviews and the owner's yes answers (2026-11-25): two cm spellings / two models on one waist, a half
+    # waist range, "약80", 4XL, the cooling drop, a mixed product per gender, the owner's adidas Asian letters
+    "11017948766": (PANTS,), "10076109143": (PANTS,), "5282622633": ("womens-skirts-culottes",),
+    "5460564989": ("rainwear-midlayers",), "11859489664": ("rainwear-midlayers",), "9435597606": (TOPS_W,),
+    "6485458095": (TOPS_M, TOPS_W), "13740514016": (TOPS_M,), "5176506757": (TOPS_M,),
+    "754260851": (), "4509557063": (), "10332996284": (),
 }
+APPAREL = {KNITS, TOPS_W, TOPS_M, WIND, PANTS, "rainwear-midlayers", "womens-skirts-culottes"}
 UNRESOLVED = {"12497168529": "gender conflict"}           # ready, placement holds it: the reason
 SPLIT = {"13369469193": ("unisex", {M: 3, W: 3}),        # 성별 남녀공용: each section every variant
          "7583123963": ("mixed", {M: 6, W: 3}),          # variants of both genders: each section its own
-         "9868413561": ("mixed", {M: 1, W: 1})}
+         "9868413561": ("mixed", {M: 1, W: 1}),
+         "7266270685": ("mixed", {TOPS_M: 6, TOPS_W: 6}),    # sized per gender (2026-11-25)
+         "6485458095": ("mixed", {TOPS_M: 8, TOPS_W: 6})}
 
 
 def prepared(name):
@@ -95,7 +114,8 @@ def test_fixture_sets_go_to_their_sections(name):
         assert got["status"] == "unresolved" and got["leaves"] == [] and got["reason"] == UNRESOLVED[name]
         return
     if not EXPECTED[name]:                                 # held by the transform: nothing to place
-        assert got["status"] == "held" and got["leaves"] == [] and got["reason"] == prepared(name)["held"][0]["code"]
+        assert got["status"] == "held" and got["leaves"] == [] \
+            and got["reason"] == ",".join(dict.fromkeys(h["code"] for h in prepared(name)["held"]))
         return
     assert got["status"] == "placed" and tuple(sorted(x["leaf"] for x in got["leaves"])) == EXPECTED[name]
     if name in SPLIT:
@@ -103,7 +123,8 @@ def test_fixture_sets_go_to_their_sections(name):
         assert got["value"] == value and {x["leaf"]: len(x["fit_skus"]) for x in got["leaves"]} == counts
     assert got["tags"] == list(dict.fromkeys(t for x in got["leaves"] for t in x["tags"]))   # one product, all tags
     for leaf in got["leaves"]:
-        assert leaf["tags"] == [f"fairwardgolf:leaf:{leaf['leaf']}", "fairwardgolf:parent:clubs", "fairwardgolf:showcase"]
+        parent = "apparel" if leaf["leaf"] in APPAREL else "clubs"
+        assert leaf["tags"] == [f"fairwardgolf:leaf:{leaf['leaf']}", f"fairwardgolf:parent:{parent}", "fairwardgolf:showcase"]
 
 
 def test_every_fixture_is_listed():

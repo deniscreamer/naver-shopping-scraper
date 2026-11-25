@@ -28,7 +28,8 @@ naver-harvester published, and its 60 published products):
   * text fields (a name on a tag) -> personalization; add-ons on sale and in stock: free ones, paid ones too
     with the category's paid_addons (price in KRW and USD); a (필수) group is required.
   * held (not published, kept with codes): collect_incomplete, price_unknown, no_variants,
-    options_unaligned, axes_over_3, specs_folded, no_images, images_over_50, single_only, not_wedge_set, heads_only;
+    options_unaligned, axes_over_3, specs_folded, no_images, images_over_50, single_only, not_wedge_set, heads_only,
+    variants_by_owner (2026-11-25);
     run_transform adds agency_no_brand (all of them: scripts/TRANSFORM.md "Held codes"). More combinations than the shop's
     cap: the first ones are offered, every option value kept (note variants_capped).
   * notes (never block): shipping_paid, overseas_shipping (a shop with the price rule puts a PAID / UNIT_QUANTITY_PAID
@@ -44,6 +45,8 @@ naver-harvester published, and its 60 published products):
     hand_from_description (Amazon's "Hand Orientation: Left": spec row 사용방향 왼손용),
     specs_by_owner / specs_by_owner_unused (run-level, run_transform.apply_specs_by_owner: the owner's row of one
     product from <shop>/specs_by_owner.json, 2026-11-18),
+    variants_left_out_by_owner / variants_by_owner_unused (prepare's owner_variants: the owner's variants left out of
+    one product from <shop>/variants_by_owner.json, 2026-11-25),
     photos_incomplete, reviews_none_chosen, reviews_cleaned (review_clean.py: kept, by grade, trimmed), measures_from_images / description_images_missing / _stale / _failed / _partial (the category's
     description_images switch: the package fields the description states or its parts compose, in place of the
     category default; description_measures.py).
@@ -52,6 +55,7 @@ naver-harvester published, and its 60 published products):
     from transform_shops import rules_for
     prepared = prepare(line, rules_for("fairwardgolf"), run="50002788-20261105T193000Z", line_no=1)
 """
+import copy
 import functools
 import hashlib
 import json
@@ -1057,7 +1061,9 @@ def _choice_in_text(title: str, description: str) -> str | None:
            "chooses one"
 
 
-def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: CategoryRules) -> dict[str, Any]:
+def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: CategoryRules,
+                         leave_out_model: str | None = None,
+                         owner_drop: Mapping[str, list[str]] | None = None) -> dict[str, Any]:
     """-> {options, facts, variants, held, skipped_paid, duplicate_values, capped} in Korean. The variant choice is the category's
     (cat.paid_variants), made again from the page's options: the collected line's own choice may differ."""
     specs = line["specs"]
@@ -1114,6 +1120,19 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
             "code": "options_unaligned", "detail": f"{len(names)} option groups, rows of "
             f"{sorted({len(r['options']) for r in rows})} values"}], "skipped_paid": 0, "duplicate_values": [],
             "capped": None}
+    left_out = mixed = model_left_out = None
+    by_owner = None
+    if owner_drop and rows:                        # the owner's word on one product (variants_by_owner.json, 2026-11-25)
+        rows, by_owner = _owner_dropped(names, rows, owner_drop)     # every row named: none left out, held below
+    if leave_out_model and rows:                   # a women's model's rows in a men's product (prepare, 2026-11-25)
+        code = re.sub(r"\s+", "", leave_out_model).upper()
+        model_rows = [r for r in rows if any(code in re.sub(r"\s+", "", str(x)).upper() for x in r["options"])]
+        if model_rows and len(model_rows) * 2 < len(rows):
+            rows = [r for r in rows if r not in model_rows]
+            model_left_out = f"{leave_out_model} ({len(model_rows)} variants)"
+    if cat.variant_drop and rows:                  # a garment the section does not sell, sold as a design (2026-11-25)
+        rows, left_out, mixed = _drop_off_section(names, rows, cat.variant_drop,
+                                                  str(((specs.get("category") or {}).get("id"))))
     package = {p.get("variant_id"): p.get("fields") and current_defaults(
         current_bands(on_scale(p["fields"]), line.get("specs") or {}, p.get("variant_id"), _measures_table()),
         line.get("specs") or {}, p.get("variant_id"), _measures_table()) for p in line.get("package") or []}
@@ -1187,10 +1206,105 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
     held = []
     if len(axes) > MAX_AXES:
         held.append({"code": "axes_over_3", "detail": f"{len(axes)} option axes"})
+    if by_owner and by_owner.get("all"):
+        held.append({"code": "variants_by_owner", "detail": f"every variant named: {by_owner['all']}"[:200]})
     return {"options": [{"name_ko": _axis_name(names[i]), "values_ko": values[i]} for i in axes], "facts": facts,
             "variants": variants, "held": held, "skipped_paid": skipped, "duplicate_values": duplicate,
             "capped": capped, "axes_repeated": repeated, "slot_rows": slots, "gift_axes": gifts, "no_choice": no_choice,
-            "slot_axes": [k for k, i in enumerate(axes) if i in slot_axes]}
+            "slot_axes": [k for k, i in enumerate(axes) if i in slot_axes], "left_out": left_out,
+            "mixed_garments": mixed, "model_left_out": model_left_out, "by_owner": by_owner}
+
+
+def _owner_dropped(names: list[str], rows: list[dict[str, Any]], drop: Mapping[str, list[str]]) \
+        -> tuple[list[dict[str, Any]], dict[str, str] | None]:
+    """The rows the owner leaves out of one product (run_transform.variants_by_owner: {option name or index: [values]},
+    the owner 2026-11-25: 8191027841's basic joggers, 7455950253's 사선포켓 and 밀리터리 styles, 6033600342's fleece
+    fabrics, each a style whose sizes the seller writes inconsistently), before the variant cap and the sizes. A value
+    matches as written on Naver or without its numbering ("3-2. 밀리터리(일반)" = "밀리터리(일반)"), never a part of
+    another ("사선포켓" is not "사선포켓Ver2"). -> (rows kept, {left_out: "N variants: option: values", unused:
+    "option: values" the product does not show} or None); every row matching: the rows unchanged and {all: ...}."""
+    def bare(text: str) -> str:
+        return _NUMBERING_RE.sub("", _tidy(text)).strip()
+    picks: list[tuple[int, set[str]]] = []
+    unused: list[str] = []
+    for opt, values in drop.items():
+        i = next((k for k, n in enumerate(names) if _tidy(n) == _tidy(str(opt))), None)
+        if i is None and str(opt).isdigit() and int(opt) < len(names):
+            i = int(opt)
+        if i is None:
+            unused.append(f"{opt}: {', '.join(values)}")
+            continue
+        wanted = {_tidy(str(v)) for v in values}
+        shown = {_tidy(r["options"][i]) for r in rows}
+        missing = [v for v in values if not any(_tidy(str(v)) in (x, bare(x)) for x in shown)]
+        if missing:
+            unused.append(f"{_tidy(names[i])}: {', '.join(missing)}")
+        picks.append((i, wanted))
+    gone = [r for r in rows if any(_tidy(r["options"][i]) in wanted or bare(r["options"][i]) in wanted
+                                   for i, wanted in picks)]
+    out: dict[str, str] = {}
+    if unused:
+        out["unused"] = "; ".join(unused)
+    if not gone:
+        return rows, out or None
+    said = "; ".join(f"{_tidy(names[i])}: {', '.join(dict.fromkeys(_tidy(r['options'][i]) for r in gone if _tidy(r['options'][i]) in wanted or bare(r['options'][i]) in wanted))}"
+                     for i, wanted in picks)
+    if len(gone) == len(rows):
+        return rows, {**out, "all": said}
+    return [r for r in rows if r not in gone], {**out, "left_out": f"{len(gone)} variants: {said}"}
+
+
+# a design option's garment kind and maker, for the kept rows after _drop_off_section (2026-11-25): the first word
+# that matches, the zip before the hood ("후드 집업"); the makers seen selling several garments in one listing
+_GARMENT_KIND_RES = (("zip", re.compile(r"집업|zip", re.I)), ("hoodie", re.compile(r"후드|hood", re.I)),
+                     ("sweatshirt", re.compile(r"맨투맨|스웻|sweat", re.I)),
+                     ("trousers", re.compile(r"바지|팬츠|슬랙스|pants", re.I)),
+                     ("outerwear", re.compile(r"자켓|재킷|점퍼|패딩|다운|jacket", re.I)),
+                     ("knit", re.compile(r"니트|스웨터|knit", re.I)),
+                     ("top", re.compile(r"폴로|카라|티셔츠|골프티|티(?![가-힣])|셔츠|polo|tee|shirt", re.I)))
+_MAKER_RE = re.compile(r"볼빅|volvik|아디다스|adidas|나이키|nike|타이틀리스트|titleist|테일러메이드|taylormade|"
+                       r"캘러웨이|callaway|푸마|puma|와이드앵글|wideangle", re.I)
+
+
+def _garment_kind(value: str) -> str | None:
+    return next((k for k, rx in _GARMENT_KIND_RES if rx.search(value)), None)
+
+
+def _drop_off_section(names: list[str], rows: list[dict[str, Any]], codes: tuple[str, ...], category_id: str) \
+        -> tuple[list[dict[str, Any]], str | None, str | None]:
+    """The rows whose option value (never the size option's: one named a size, or most of its values sizes) carries
+    a word of the codes' rules (listing_title_rules.json) left out: a top sold with trousers or a jacket as a design,
+    a pants listing selling a polo or shorts (2026-11-25, the size_unmapped review: 13762280030, 5534297375). ->
+    (rows kept, "N variants: values" or None, a note when the kept rows still name two garment kinds or two makers
+    under that option, else None: one garment's size chart must not show for another). Every row matching: nothing
+    left out (the product holds off_section_variant in prepare, as before)."""
+    rules = [{k: r[k] for k in r if k != "requires"} for r in listing_filter.title_rules(category_id)
+             if r.get("code") in codes]
+    if not rules:
+        return rows, None, None
+    sized = set()
+    for i, name in enumerate(names):
+        values = list(dict.fromkeys(_tidy(r["options"][i]) for r in rows))
+        if apparel_sizes.is_size_name(name) or sum(1 for v in values if apparel_sizes.parse_label(v)) * 2 > len(values):
+            sized.add(i)
+    hit = {i for i in range(len(names)) if i not in sized}
+    off = [r for r in rows if any(listing_filter.title_rule(r["options"][i], rules) for i in hit)]
+    if not off or len(off) == len(rows):
+        return rows, None, None
+    kept = [r for r in rows if r not in off]
+    gone = list(dict.fromkeys(_tidy(r["options"][i]) for r in off for i in hit
+                              if listing_filter.title_rule(r["options"][i], rules)))
+    mixed = None
+    for i in sorted(hit):
+        if not any(listing_filter.title_rule(r["options"][i], rules) for r in off):
+            continue
+        values = list(dict.fromkeys(_tidy(r["options"][i]) for r in kept))
+        kinds = {_garment_kind(v) for v in values}
+        makers = {(m.group(0).casefold() if (m := _MAKER_RE.search(v)) else None) for v in values}
+        makers = {{"volvik": "볼빅", "adidas": "아디다스", "nike": "나이키"}.get(m, m) if m else None for m in makers}
+        if len(values) > 1 and (len(kinds) > 1 or len(makers) > 1):
+            mixed = f"{_tidy(names[i])}: {', '.join(values[:6])}"
+    return kept, f"{len(off)} variants: {', '.join(gone[:8])}", mixed
 
 
 def _variant(rules: ShopRules, key: str, product_id: str, tuple_ko: list[str], krw: int | None,
@@ -1575,12 +1689,12 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
         f"{n} {c}/{len(ov['variants'])}" for n, c in sorted(taken.items()))}]
 
 
-def _split_joined(ov: dict[str, Any]) -> None:
+def _split_joined(ov: dict[str, Any], asian: bool = False) -> None:
     """An option joining a colour and a size in every value ("Ivory/085", "화이트_95", "모찌/S") split in two in place:
     the option keeps the rest (the colour), a new option 사이즈 at the end holds the size; each variant's pick split
     the same way (2026-11-22, the men's tops pilot: 20 apparel products were held size_unmapped for it, "splitting the
     value is not built"). Not when another option holds sizes already (two size axes)."""
-    got = apparel_sizes.split_joined(ov["options"])
+    got = apparel_sizes.split_joined(ov["options"], asian)    # asian: the owner's adidas letters (2026-11-25)
     if got is None:
         return
     i, parts = got
@@ -1588,6 +1702,17 @@ def _split_joined(ov: dict[str, Any]) -> None:
         return
     option = ov["options"][i]
     by_value = dict(zip([str(v) for v in option["values_ko"]], parts))
+    if apparel_sizes.is_size_name(option.get("name_ko")) and len({r for r, _ in parts}) == 1 \
+            and parts[0][0] in _SLEEVE_WORDS:
+        # one sleeve word before every size of an option named a size, "사이즈: 긴팔55 / 긴팔66" (10968014964,
+        # 2026-11-24): the sizes alone, no option of the word (a colour "베이지 S" still gets its own option)
+        ov["options"][i] = {**option, "values_ko": list(dict.fromkeys(sz for _, sz in parts))}
+        for v in ov["variants"]:
+            picked = list(v.get("options_ko") or [])
+            if len(picked) > i and picked[i] in by_value:
+                picked[i] = by_value[picked[i]][1]
+                v["options_ko"] = picked
+        return
     # the rest keeps the option's name, or 컬러 when the seller named the joined option a size ("사이즈: 화이트/S",
     # 6334381845, 2026-11-22: the colours went out as "Size 2")
     name = "컬러" if apparel_sizes.is_size_name(option.get("name_ko")) else option.get("name_ko")
@@ -1606,6 +1731,7 @@ def _split_joined(ov: dict[str, Any]) -> None:
         _fold_length(ov, i)
 
 
+_SLEEVE_WORDS = ("긴팔", "반팔", "민소매")
 MAX_OPTIONS = 3   # Shopify's limit of options per product (productSet refused 4: 10107163054, 2026-11-24)
 
 
@@ -1656,6 +1782,32 @@ def womens_model_sold(variants: list[dict[str, Any]], ocr: list[list[str]]) -> s
     return None
 
 
+_TITLE_SIZE_RE = re.compile(r"^(?P<base>.+)\s(?P<colour>[^,]+),\s*(?P<size>[^,\s]+)$")
+
+
+def title_size(ov: dict[str, Any], title: str, listing_name: str | None, model_name: str | None) \
+        -> tuple[str, str] | None:
+    """(colour, size) a one-variant product's title adds to its listing's name, "... 가디건 블랙, 105" beside the
+    listing's "... 가디건": a Naver group product's member, its size in the title alone (베러투데이 13004790971,
+    2026-11-24: held "no size option, the chart lists 95, 100, 105, 110"); None unless there is no option and no
+    size fact, the listing's name is the title's base exactly, the size has a chest or a women's number (a letter
+    alone is not taken: Nike 13660201494's chart is not paired) and the colour is no size. A model name ending in
+    another size (12994831966: 95, the title 110) leaves it unread."""
+    if ov.get("options") or len(ov.get("variants") or []) != 1 or not listing_name \
+            or any(apparel_sizes.is_size_name(f.get("label_ko")) for f in ov.get("facts") or []):
+        return None
+    m = _TITLE_SIZE_RE.match(str(title or "").strip())
+    if not m or m.group("base").strip() != str(listing_name).strip():
+        return None
+    label = apparel_sizes.parse_label(m.group("size"))
+    if not label or label.free or not (label.chest or label.women) or apparel_sizes.parse_label(m.group("colour")):
+        return None
+    last = str(model_name or "").split()[-1:] or [""]
+    if apparel_sizes.parse_label(last[0]) and last[0] != m.group("size"):
+        return None
+    return m.group("colour").strip(), m.group("size")
+
+
 def size_profile(cat: CategoryRules, gender: str | None) -> str:
     """The size profile of a product by the gender it states: men's tops (2026-11-21), unisex or mixed trousers sized
     as men's (Golf Pants, 2026-11-23), else the category's."""
@@ -1674,15 +1826,31 @@ def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[st
     5891366586) is resolved too: product.sizes.fact {ko, us} (2026-11-19 review: it reached the store in Korean)."""
     texts = (text or "").splitlines() + [r for rows in ocr for r in rows]
     with apparel_sizes.waist_labels(apparel_sizes.waist_read(apparel_sizes.grids()["profiles"][profile])):
-        _split_joined(ov)
+        lettered = apparel_sizes.number_letter_split(ov["options"])
+        _split_joined(ov, apparel_sizes.asian_letter_row(profile, brand, title))
     facts = [f for f in ov.get("facts") or [] if apparel_sizes.is_size_name(f.get("label_ko"))]
-    out = apparel_sizes.resolve(ov["options"], texts, brand, title, profile, has_fact=bool(facts))
+    joined = [f for f in ov.get("facts") or [] if f not in facts and apparel_sizes.joined_value(f.get("value_ko"))]
+    # one variant whose one value joins a colour and a numbered size ("선택하기: Dark Navy/090", halfclub, 2026-11-24)
+    # states its size: the chart's several sizes are then no unknown size (below)
+    split = apparel_sizes.single_joined(joined[0].get("value_ko"), apparel_sizes.order_pairs(texts)) \
+        if len(joined) == 1 and len(ov["variants"]) == 1 and not facts else None
+    out = apparel_sizes.resolve(ov["options"], texts, brand, title, profile, has_fact=bool(facts or split),
+                                combos=[list(v.get("options_ko") or []) for v in ov["variants"]])
     if out["held"]:
         return out
+    if lettered:
+        # "오프화이트 85 XS": the number sizes it, the seller's letter must agree (10940191023, 2026-11-24)
+        said = {num: letter for _, num, letter in lettered[1]}
+        for v in out["values"]:
+            if v["ko"] in said and v.get("letter") != said[v["ko"]]:
+                out["held"] = f"{v['ko']!r}: the seller's letter {said[v['ko']]} disagrees with {v.get('letter')}"
+                return out
     with apparel_sizes.waist_labels(apparel_sizes.waist_read(apparel_sizes.grids()["profiles"][profile])):
         second = apparel_sizes.split_joined(ov["options"])
         sized = second is not None and all((lab := apparel_sizes.parse_label(sz)) and not lab.free
-                                           for _, sz in second[1])
+                                           for _, sz in second[1]) \
+            and not all(apparel_sizes.length_word(str(x))                       # "기장30" is a length (9918112671)
+                        for x in ov["options"][second[0]].get("values_ko") or [])
     if out["option"] is not None and second is not None and second[0] != out["option"] and sized:
         # a second option joining a colour and a size after the split: two garments a variant, a set of two ("1+1":
         # 선택1 "크림M", 선택2 "베이지M", 내추럴모드 10821435743, 2026-11-24, went out as one pair, sizes unmapped);
@@ -1690,14 +1858,28 @@ def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[st
         out["held"] = (f"{ov['options'][second[0]].get('name_ko')!r}: a second colour and size "
                        f"({ov['options'][second[0]]['values_ko'][0]!r} ...): a set of two (1+1)")
         return out
-    joined = [f for f in ov.get("facts") or [] if f not in facts and apparel_sizes.joined_value(f.get("value_ko"))]
     if out["option"] is None and not facts and joined:  # one value "선택하기: Black/090" (Hazzys 13684467368, 2026-11-20):
-        out["held"] = (f"{joined[0].get('label_ko')!r}: colour and size in one value "    # the Korean size would reach
-                       f"({joined[0].get('value_ko')!r})")                               # the store as "Select"
+        # one variant whose one value joins a colour and a numbered size, "선택하기: Dark Navy/090" (halfclub's one
+        # combination listings 12487907002, 13291281940, 13684467368, 2026-11-24): the size word is the fact's size;
+        # a letter alone ("CW4742 화이트 L", adidas 5152708008) or several variants still hold
+        one = apparel_sizes.resolve([{"name_ko": "사이즈", "values_ko": [split[1]]}], texts, brand, title, profile) \
+            if split else None
+        if one is None or one["held"] or not one["values"]:
+            out["held"] = (f"{joined[0].get('label_ko')!r}: colour and size in one value "    # the Korean size would
+                           f"({joined[0].get('value_ko')!r})")                     # reach the store as "Select"
+            return out
+        assert split is not None
+        out["fact"] = {"label_ko": joined[0]["label_ko"], "ko": split[1], "us": one["values"][0]["us"]}
+        out["chart"] = out["chart"] or one["chart"]
+        out["brand_row"] = out.get("brand_row") or one.get("brand_row")     # adidas' Asian letter row (2026-11-25)
         return out
     if out["option"] is None and facts:
-        one = apparel_sizes.resolve([{"name_ko": facts[0]["label_ko"], "values_ko": [facts[0]["value_ko"]]}], texts,
-                                    brand, title, profile)
+        value = str(facts[0]["value_ko"])
+        # one size fact of a colour and the free word in brackets, "컬러/사이즈: 블랙(free)" (11492588480, 2026-11-24):
+        # the free word is the size, the fact keeps the seller's value
+        free = re.match(r"^[가-힣]+\s*[(（]\s*(FREE|F|프리)\s*[)）]$", value, re.I)
+        one = apparel_sizes.resolve([{"name_ko": facts[0]["label_ko"], "values_ko": [free.group(1) if free else value]}],
+                                    texts, brand, title, profile)
         if one["held"] or not one["values"]:
             out["held"] = one["held"] or f"{facts[0]['value_ko']!r}: not read as a size"
             return out
@@ -1712,26 +1894,203 @@ def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[st
     ov["options"][i] = {**option, "values_ko": order}
     rows: dict[tuple[str, ...], dict[str, Any]] = {}
     for v in ov["variants"]:
-        picked = list(v.get("options_ko") or [])
+        own = list(v.get("options_ko") or [])
+        picked = list(own)
         if len(picked) > i:
             picked[i] = merged.get(picked[i], picked[i])
         combo = tuple(picked)
         kept = rows.get(combo)
+        # the variant's own Naver values stay with it (2026-11-25, the re-review: 7864006253, 9037071653, 5979440160
+        # ordered a merged spelling their colour never sells): the owner orders naver_options_ko, the store shows picked
+        native = {"naver_options_ko": own} if own != picked else {}
         if kept is None:
-            rows[combo] = {**v, "options_ko": picked}
+            rows[combo] = {**v, "options_ko": picked, **native}
             continue
         if kept.get("price_krw") != v.get("price_krw"):
             out["held"] = (f"{'/'.join(combo)} written twice at two prices ({kept.get('price_krw')}, "
                            f"{v.get('price_krw')} KRW)")
             return out
         if v.get("available") and not kept.get("available"):     # the buyable row is the one to order
-            rows[combo] = {**v, "options_ko": picked}
+            rows[combo] = {**v, "options_ko": picked, **native}
     ov["variants"] = list(rows.values())
     return out
 
 
+_BOTH_GENDERS_RE = (re.compile(r"여성|여자"), re.compile(r"남성|남자"))
+
+
+def _drop_both_genders(ov: dict[str, Any], rows: list[dict[str, Any]], title: str, query: str | None) -> str | None:
+    """A variant whose option value names both genders, "남성용 XXL (여성용 88)", left out of a product whose 성별 row and
+    title state one gender (Pinkpang women's rain coat 5691897960, 2026-11-25: the one value made the product unisex,
+    sized on the men's tops; to a US man "XL (US 16)" reads as a men's XL, the seller fits it to a chest of 100): the
+    stated gender's sizes sold. -> "N variants: values" or None (in place: its values gone from the options, an option
+    left with one value a fact). Never every variant, never a product the row or the title calls unisex or mixed."""
+    both = [v for v in ov["variants"] if any(all(rx.search(str(x)) for rx in _BOTH_GENDERS_RE)
+                                             for x in v.get("options_ko") or [])]
+    if not both or len(both) == len(ov["variants"]):
+        return None
+    evidence = (attributes.extract([], rows, title, query).get("gender") or {}).get("evidence") or []
+    row = {e["value"] for e in evidence if str(e.get("source", "")).startswith("row:")}
+    said = {e["value"] for e in evidence if e.get("source") == "title"}
+    if len(row) != 1 or row != said or not row <= {"womens", "mens"}:
+        return None
+    gone = [x for v in both for x in v.get("options_ko") or [] if all(rx.search(str(x)) for rx in _BOTH_GENDERS_RE)]
+    ov["variants"] = [v for v in ov["variants"] if v not in both]
+    for k in range(len(ov["options"]) - 1, -1, -1):
+        left = [x for x in ov["options"][k]["values_ko"] if any(len(v["options_ko"]) > k and v["options_ko"][k] == x
+                                                                 for v in ov["variants"])]
+        if len(left) > 1:
+            ov["options"][k] = {**ov["options"][k], "values_ko": left}
+            continue
+        ov["facts"] = list(ov.get("facts") or []) + [{"label_ko": _axis_name(_tidy(ov["options"][k]["name_ko"])),
+                                                       "value_ko": left[0]}] if left else ov.get("facts")
+        del ov["options"][k]
+        for v in ov["variants"]:
+            v["options_ko"] = [x for j, x in enumerate(v["options_ko"]) if j != k]
+    return f"{len(both)} variants: {', '.join(dict.fromkeys(gone))}"
+
+
+_VALUE_GENDER_RE = re.compile(r"^\s*(?:(?P<w>여성|여자|여)|(?P<m>남성|남자|남))(?:용)?\s*[_\-:]?\s*(?=[0-9SMLX(])", re.I)
+GENDER_PREFIX = {"womens": "Women's ", "mens": "Men's "}
+
+
+def _value_genders(ov: dict[str, Any], i: int, variant_gender: Mapping[str, str]) -> dict[str, str] | None:
+    """{size value: womens | mens} when every value of the size option belongs to one gender: by its own prefix
+    ("여성 55(M)", "남성(100)"), else by the gender of every variant that carries it; None when a value has none, two,
+    or another (unisex), or when the values are not of both genders."""
+    out: dict[str, str] = {}
+    for value in ov["options"][i]["values_ko"]:
+        m = _VALUE_GENDER_RE.match(str(value))
+        if m:
+            out[value] = "womens" if m.group("w") else "mens"
+            continue
+        said = {variant_gender.get(v["sku"]) for v in ov["variants"]
+                if len(v.get("options_ko") or []) > i and v["options_ko"][i] == value}
+        if len(said) != 1 or not said <= {"womens", "mens"}:
+            return None
+        out[value] = str(said.pop())
+    return out if set(out.values()) == {"womens", "mens"} else None
+
+
+def _gender_kinds(charts: list[Mapping[str, Any]]) -> dict[str, Any]:
+    """The two genders' chart marks per field ("flat" laid flat, "circ" round, None no word) as one: the same mark
+    kept, any disagreement "mixed", None included (2026-11-25, the correctness review: women's None with a round 92
+    cm beside men's "flat" 53 made both flat, the women's chest doubled to 72.5 in; chart_html reads "mixed" by the
+    number, as it reads None)."""
+    out: dict[str, Any] = {}
+    for kinds in charts:
+        for field_, kind in kinds.items():
+            out[field_] = kind if field_ not in out or out[field_] == kind else "mixed"
+    return out
+
+
+_GENDER_HEAD_RE = re.compile(r"^\s*[\[<(]?\s*(?:(?P<w>여성|여자)|(?P<m>남성|남자))\s*용?\s*(?:상세\s*)?(?:사이즈|size)?\s*"
+                             r"(?:\(\s*cm\s*\))?\s*[\]>)]?\s*$", re.I)
+
+
+def _gender_tables(text: str | None, ocr: list[list[str]]) -> dict[str, list[str]]:
+    """{womens | mens: the lines under that gender's heading}: a line that is only a gender and maybe 사이즈 ("여성",
+    "남성용", "여성용 상세 사이즈") starts the gender's table, up to the next such heading or the end of its block (the
+    description text, or one image's OCR rows); lines before a block's first heading are no gender's (2026-11-25,
+    8325761055: one image holds "남성용 / 95 / 100 / 105 / 110 ... 가슴둘레 / 125 ..." then "여성용 / 85 / 90 / 95 ...
+    가슴둘레 / 103 / 108 / 113")."""
+    out: dict[str, list[str]] = {}
+    for block in [(text or "").splitlines()] + [list(rows) for rows in ocr]:
+        gender = None
+        for line in block:
+            m = _GENDER_HEAD_RE.match(str(line))
+            if m:
+                gender = "womens" if m.group("w") else "mens"
+                out.setdefault(gender, [])
+                continue
+            if gender:
+                out[gender].append(str(line))
+    return out
+
+
+def _sizes_by_gender(ov: dict[str, Any], cat: CategoryRules, variant_gender: Mapping[str, str], text: str | None,
+                     ocr: list[list[str]], brand: str | None, title: str) -> dict[str, Any] | None:
+    """A mixed product's sizes per gender (2026-11-25, the size_unmapped review: Hallo 7266270685 sells 여성용 55 / 66 / 77
+    beside 남성용 100 / 105 / 110, all sized as women's tops, so 77 and 100 were both L (US 12-14)): when every value of
+    the size option belongs to one gender (_value_genders), the women's values are resolved on cat.sizes and the men's
+    on cat.sizes_mens; the US labels say whose ("Women's S (US 4-6)", "Men's M"), each value keeps its gender and
+    profile (apparel_sizes.chart_html reads them). None when the rule does not apply (no size option, one size only,
+    one profile for both). A hold (detail in "held") when it applies but cannot size: a value of both genders or
+    unisex, a joined option, one gender's values held, a category with no men's profile (2026-11-25, the Fable review: such a product is never sized on
+    one gender's profile; prepare holds it where a mixed product would take the women's profile).
+    The chart rows (2026-11-25, the correctness review: 8325761055's Women's M took the men's 95 row, chest 125 cm):
+    each gender's only from its own table (_gender_tables), the values read again on that table alone and agreeing;
+    tables that cannot be told apart: no chart ("chart_left_out")."""
+    if not cat.sizes or cat.sizes == cat.sizes_mens:
+        return None
+    i = apparel_sizes.size_option(ov["options"])
+    if i is None or all((lab := apparel_sizes.parse_label(str(v))) and lab.free for v in ov["options"][i]["values_ko"]):
+        return None                                 # one size: no gender's grid in it
+    held: dict[str, Any] = {"version": apparel_sizes.VERSION, "profile": str(cat.sizes), "option": i, "values": [],
+                            "merged": {}, "brand_row": None, "chart": None}
+    if not cat.sizes_mens:                          # windbreakers, cardigans: the women's profile only
+        return {**held, "held": "a mixed product in a category with no men's size profile: the men's sizes unread"}
+    if apparel_sizes.split_joined(ov["options"]) is not None:
+        return {**held, "held": "a mixed product: its sizes joined with another option, whose they are unread"}
+    genders = _value_genders(ov, i, variant_gender)
+    if genders is None:
+        return {**held, "held": "a mixed product whose size values are not each one gender's (a size of both or "
+                                "unisex): men's or women's sizes cannot be told"}
+    tables = _gender_tables(text, ocr)
+    parts: dict[str, Any] = {}
+    kept: list[dict[str, Any]] = []
+    order: list[str] = []
+    left_out = []
+    for gender, profile in (("womens", str(cat.sizes)), ("mens", str(cat.sizes_mens))):
+        values = [v for v in ov["options"][i]["values_ko"] if genders[v] == gender]
+        sub = {**ov, "options": [{**o, "values_ko": values} if k == i else dict(o) for k, o in enumerate(ov["options"])],
+               "variants": [dict(v) for v in ov["variants"] if v["options_ko"][i] in values]}
+        own = copy.deepcopy(sub)
+        got = _sizes(sub, profile, text, ocr, brand, title)
+        if got["held"] or got.get("option") != i:
+            return {**got, "held": f"{GENDER_PREFIX[gender].strip()} sizes: {got['held'] or 'no size option'}"}
+        if any(v["us"] == "One Size" for v in got["values"]):
+            return {**got, "held": f"{GENDER_PREFIX[gender].strip()} sizes: One Size beside sized values"}
+        if got.get("chart_left_out"):
+            left_out.append(f"{GENDER_PREFIX[gender].strip()}: {got.pop('chart_left_out')}")
+        elif (got.get("chart") or {}).get("rows"):  # the rows again from this gender's own table, or none
+            mine = _sizes(own, profile, None, [tables[gender]], brand, title) if gender in tables else None
+            same = mine is not None and not mine["held"] and not mine.get("chart_left_out") \
+                and [(v["ko"], v["us"]) for v in mine["values"]] == [(v["ko"], v["us"]) for v in got["values"]]
+            got = {**got, "chart": mine.get("chart") if mine is not None and same else None}
+            if not same:
+                left_out.append(f"{GENDER_PREFIX[gender].strip()} chart rows not told apart from the other "
+                                f"gender's table")
+        parts[gender] = got
+        kept += sub["variants"]
+        order += sub["options"][i]["values_ko"]
+    women, men = parts["womens"], parts["mens"]
+    values = [{**v, "us": GENDER_PREFIX[g] + v["us"], "gender": g, "profile": parts[g]["profile"]}
+              for g in ("womens", "mens") for v in parts[g]["values"]]
+    rows = [{**r, "us": GENDER_PREFIX[g] + r["us"]} for g in ("womens", "mens")
+            for r in ((parts[g].get("chart") or {}).get("rows") or [])]
+    kinds = _gender_kinds([(parts[g].get("chart") or {}).get("kinds") or {} for g in ("womens", "mens")
+                           if (parts[g].get("chart") or {}).get("rows")])
+    ov["options"][i] = {**ov["options"][i], "values_ko": order}
+    position = {v["sku"]: n for n, v in enumerate(ov["variants"])}
+    ov["variants"] = sorted(kept, key=lambda v: position.get(v["sku"], 0))
+    out = {**women, "values": values, "merged": {**women["merged"], **men["merged"]},
+           "profiles": {"womens": women["profile"], "mens": men["profile"]},
+           "chart": {"kinds": kinds, "rows": rows} if rows else None,
+           "brand_row": women.get("brand_row") or men.get("brand_row")}
+    if left_out:
+        out["chart_left_out"] = "; ".join(left_out)
+    if women.get("chart_conflicts") or men.get("chart_conflicts"):
+        out["chart_conflicts"] = list(women.get("chart_conflicts") or []) + list(men.get("chart_conflicts") or [])
+    return out
+
+
 def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
-            images_text: dict[str, Any] | None = None) -> Prepared:
+            images_text: dict[str, Any] | None = None,
+            owner_variants: Mapping[str, list[str]] | None = None) -> Prepared:
+    """One collected line -> a prepared product (ready or held). `owner_variants`: the owner's variants to leave out
+    of this product ({option name or index: [values]}, <shop>/variants_by_owner.json read by run_transform, 2026-11-25;
+    in the prepare cache's signature): notes variants_left_out_by_owner / variants_by_owner_unused."""
     key = collected["key"]
     line = decode_line(collected)                  # "u2013" written out by the seller: the character (2026-11-15)
     details, specs = line.get("details"), line.get("specs")
@@ -1746,10 +2105,31 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
                 "notes": notes, "source": source, "product": {}, "texts": []}
     category = specs.get("category") or {}
     cat = rules.category(category.get("id"), category.get("name"))
-    ov = options_and_variants(line, rules, key, cat)
+    ov = options_and_variants(line, rules, key, cat, owner_drop=owner_variants)
+    if (ov.get("by_owner") or {}).get("left_out"):
+        notes.append({"code": "variants_left_out_by_owner", "detail": ov["by_owner"]["left_out"][:300]})
+    if (ov.get("by_owner") or {}).get("unused"):
+        notes.append({"code": "variants_by_owner_unused", "detail": ov["by_owner"]["unused"][:300]})
+    if cat.sizes and cat.sizes_mens:
+        # a women's model a men's product sells (womens_model_sold): its rows left out before the variant cap, the
+        # men's sold (Master Bear 5489884876, 2026-11-25: its S / M / L were the women's model M2-0B053's only);
+        # never half the rows or more, never a product that is not men's
+        code = womens_model_sold(ov["variants"], image_rows(images_text if current(images_text, line) else None))
+        own = (attributes.extract([(v["sku"], list(v.get("options_ko") or [])) for v in ov["variants"]],
+                                  specs.get("specs") or [], details.get("name"),
+                                  (line.get("listing") or {}).get("query")).get("gender") or {}).get("value")
+        if code and own == "mens" and (trial := options_and_variants(line, rules, key, cat, leave_out_model=code,
+                                                                     owner_drop=owner_variants)) \
+                .get("model_left_out"):
+            ov = trial
+            notes.append({"code": "womens_model_left_out", "detail": trial["model_left_out"]})
     held += ov["held"]
-    if cat.variant_screen:                          # a variant the section does not sell (2026-11-21, the tops pilot)
-        screen = [r for r in listing_filter.title_rules(str(category.get("id"))) if r.get("code") in cat.variant_screen]
+    if ov.get("left_out"):                          # a garment the section does not sell, left out (2026-11-25)
+        notes.append({"code": "off_section_variants_left_out", "detail": ov["left_out"]})
+    if cat.variant_screen or cat.variant_drop:      # a variant the section does not sell (2026-11-21, the tops pilot);
+        # a drop code holds only when every variant had the word (nothing was left out, 2026-11-25)
+        codes = cat.variant_screen + cat.variant_drop
+        screen = [r for r in listing_filter.title_rules(str(category.get("id"))) if r.get("code") in codes]
         off = next((v for v in (str(x) for var in ov["variants"] for x in var.get("options_ko") or [])
                     if listing_filter.title_rule(v, [{k: r[k] for k in r if k != "requires"} for r in screen])), None)
         if off:
@@ -1762,6 +2142,9 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
         if cat.sizes and sized:                     # apparel (2026-11-21, the long-sleeve tops pilot: PUMPING
             # 7512705748 went out as one variant, its sizes SIMPLE choices); a colour chosen so stays a note
             held.append({"code": "size_unmapped", "detail": f"sizes chosen at the order, not variants: {', '.join(sized)}"})
+    if cat.sizes and (two := _drop_both_genders(ov, specs.get("specs") or [], details.get("name"),
+                                                (line.get("listing") or {}).get("query"))):
+        notes.append({"code": "both_genders_variant_left_out", "detail": two})
     # neutral attributes (the seller's gender, ...) with their evidence; the shop's sections are decided at the
     # last stage before Shopify from them (placement.py, the owner 2026-11-08), never here
     stated = attributes.extract([(v["sku"], list(v.get("options_ko") or [])) for v in ov["variants"]],
@@ -1946,13 +2329,33 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
         gender = (stated.get("gender") or {}).get("value")
         profile = size_profile(cat, gender)
         ocr = image_rows(images_text if current(images_text, line) else None)
-        sizes = _sizes(ov, profile, cleaned["text"], ocr, brand.get("value"), details["name"])
+        if titled := title_size(ov, details["name"], (line.get("listing") or {}).get("name"),
+                                ((specs.get("facts") or {}).get("model_name") or {}).get("value")):
+            ov["facts"] = list(ov.get("facts") or []) + [{"label_ko": "색상", "value_ko": titled[0]},
+                                                         {"label_ko": "사이즈", "value_ko": titled[1]}]
+        by_gender = _sizes_by_gender(ov, cat, (stated.get("gender") or {}).get("variants") or {}, cleaned["text"],
+                                     ocr, brand.get("value"), details["name"]) if gender == "mixed" else None
+        if by_gender and by_gender["held"] and cat.sizes_unisex:
+            by_gender = None                        # mixed trousers sized as men's (the owner, 2026-11-23), as before
+        # else a mixed product per gender held stays held: never sized on the women's profile alone (2026-11-25, the
+        # Fable review: Dennis 11287527628's men's 110 sold as a women's XXL, Malbon 12375182812 unisex on womens_tops)
+        sizes = by_gender or _sizes(ov, profile, cleaned["text"], ocr, brand.get("value"), details["name"])
+        if (left_out := sizes.pop("chart_left_out", None)) and not sizes["held"]:
+            notes.append({"code": "size_chart_left_out", "detail": str(left_out)[:200]})
         if cat.sizes_unisex and not gender and not sizes["held"] \
                 and any(v.get("us") != "One Size" for v in sizes["values"]):
             sizes["held"] = "no gender stated: men's or women's sizes cannot be told"    # Golf Pants (2026-11-23)
         womens = womens_model_sold(ov["variants"], ocr) if gender == "mens" and cat.sizes_mens else None
         if womens and not sizes["held"]:            # mixed gender (2026-11-24, 5489884876): sized as men's waists
             sizes["held"] = f"a women's model sold in a men's product: {womens} (여성 in the description images)"
+        letters = [v["ko"] for v in sizes.get("values") or [] if v.get("basis") == "fallback_letters"]
+        if ov.get("model_left_out") and letters and not sizes["held"]:  # its rows left out, a bare letter still sold
+            sizes["held"] = f"a women's model left out ({ov['model_left_out']}), a bare letter left: {', '.join(letters)}"
+        if ov.get("mixed_garments") and not sizes["held"] and sizes.get("chart"):
+            # two garments or two makers kept under one design option (2026-11-25, 13762280030: a Volvik and an adidas
+            # polo, one chart read for both): no chart rather than one garment's chart shown for the other
+            sizes["chart"] = None
+            notes.append({"code": "size_chart_left_out", "detail": f"two garments or makers kept: {ov['mixed_garments']}"[:200]})
         if sizes["held"]:
             held.append({"code": "size_unmapped", "detail": sizes["held"][:200]})
         elif sizes["merged"]:

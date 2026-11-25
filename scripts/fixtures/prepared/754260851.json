@@ -1,0 +1,6435 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:500225019:754260851",
+ "shop": "fairwardgolf",
+ "status": "held",
+ "held": [
+  {
+   "code": "size_unmapped",
+   "detail": "Men's sizes: '130(XXXL)': not read as a size"
+  }
+ ],
+ "notes": [
+  {
+   "code": "off_section_variants_left_out",
+   "detail": "42 variants: 남성 골프이너웨어 긴바지 검정 (여름), 남성 골프이너웨어 긴바지 흰색 (여름), 여성 골프이너웨어 긴바지 검정 (여름), 여성 골프이너웨어 긴바지 흰색 (여름), 남성 골프이너웨어 긴바지 검정 (겨울), 남성 골프이너웨어 긴바지 흰색 (겨울), 여성 골프이너웨어 긴바지 검정 (겨울), 여성 골프이너웨어 긴바지 흰색 (겨울)"
+  },
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 8); 3 trimmed"
+  },
+  {
+   "code": "title_names_one_variant",
+   "detail": "남성, 라운드"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "CONDITIONAL_FREE 2500 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/bodyshield/products/754260851",
+  "channel_no": "500225019",
+  "product_id": "754260851",
+  "category_id": "50002796"
+ },
+ "product": {
+  "title_ko": "남성 골프이너웨어 자외선차단 티셔츠 긴팔 라운드 빅사이즈",
+  "brand_ko": "바디쉴드",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mixed",
+    "variants": {
+     "FW-9d84a21fa86164121a17196b": "mens",
+     "FW-8602b681893e42971b113a24": "mens",
+     "FW-1a8c9935b791e1df9d4712f1": "mens",
+     "FW-011ad74a3cccbbe849aaea5b": "mens",
+     "FW-679b994eb880f60668bb967d": "mens",
+     "FW-ff5e21b94581ab1a0170c838": "mens",
+     "FW-12d45cb75ddbbeeebe15b6aa": "mens",
+     "FW-e05ac533ecd41ffb00580e9d": "mens",
+     "FW-5c4246092a39612e4079085e": "mens",
+     "FW-05291b2cb8b91a4b97433f84": "mens",
+     "FW-9b94aadd2c80432756d311b2": "mens",
+     "FW-e7a264f06e55cf58ceba6721": "mens",
+     "FW-1a46d36e24730bd0e3af2cd2": "mens",
+     "FW-a29332345c8932df5868ac80": "mens",
+     "FW-f8aed1047ce6332efaac24c4": "mens",
+     "FW-063e1198c8b64bea010659ce": "mens",
+     "FW-ae96fb6b61c51a12aa9b54b8": "mens",
+     "FW-d648219cb04aa1f5b34b3f28": "mens",
+     "FW-4b6c423afbe61bd6d3e6c667": "mens",
+     "FW-1e34d10fdb28fe32ad8b17f7": "mens",
+     "FW-4702c5d3328810fd2cbb1fbd": "mens",
+     "FW-adcbf9cccbdc7c37ea2818db": "mens",
+     "FW-c171619860bf288390f82639": "womens",
+     "FW-6a1c85e25dc9866c72d3b9d6": "womens",
+     "FW-7a220d4ce59818e60702bdde": "womens",
+     "FW-993a04413e480b55962c41d5": "womens",
+     "FW-5fa2cf7cfb0ca202d3a6b5b8": "womens",
+     "FW-455b51300e29029339136b61": "womens",
+     "FW-86d6c19d90dab5f49a87ea65": "womens",
+     "FW-02e78947db59b07942320001": "womens",
+     "FW-2c57b2daaeedc7b7e956873d": "mens",
+     "FW-22f84b953c5e10aca7688a55": "mens",
+     "FW-e8eb731022d1a4e498493200": "mens",
+     "FW-c6fab9a5a7c628359474d670": "mens",
+     "FW-3adfd9c502cd7d7119856f0c": "mens",
+     "FW-28edbf177498a1c1448f1818": "mens",
+     "FW-4056967a2247a35e7c02af21": "mens",
+     "FW-105293e16bb4767bd258f77e": "mens",
+     "FW-eb6e62ce14854bb79bf160f3": "mens",
+     "FW-4addda31faaa629e8ec9aa38": "mens",
+     "FW-be08362fbeb7d31a94803bf3": "mens",
+     "FW-719fe7c18125029dc3a259d3": "mens",
+     "FW-8764251c19e70b662c86fcfa": "mens",
+     "FW-58968bdbf1f81c1aaed5b670": "mens",
+     "FW-99bf03f18b10f5499c16efcd": "mens",
+     "FW-1277a74649a417058efbbbe2": "mens",
+     "FW-99614212dfca16bcbd5631e5": "mens",
+     "FW-4d9e25a314da3b08dc7bf898": "mens",
+     "FW-0b207fe648d89f0ec5ee4bb8": "mens",
+     "FW-a1d39d0a49e6e9838b07f981": "mens",
+     "FW-8c553b6fa7b5cee1ed308cb0": "mens",
+     "FW-432c9eecd45b756920d98f03": "mens",
+     "FW-cce9b5e634295dd1c15464bf": "mens",
+     "FW-11e068c8e10644530ffc336c": "mens",
+     "FW-12a2765f833fd93825cffdef": "mens",
+     "FW-6c6cc01d954ac2caeeb5e01d": "mens",
+     "FW-3ce04ad76701a22faa6c04b0": "womens",
+     "FW-94cfae8b4e3d5dadfb380e75": "womens",
+     "FW-5c19982dafe6e8fc6d337bed": "womens",
+     "FW-b1ff73c9718c082a1174d86c": "womens",
+     "FW-1f0ae9d2530023c0e3797904": "womens",
+     "FW-412e3d5fbac6bcadd6954949": "womens",
+     "FW-75ca8b2ad0a0f15fc850cc60": "womens",
+     "FW-5afbb19f486ea89061f6aa70": "womens",
+     "FW-80538ae2df3fa8aef90feba8": "womens",
+     "FW-976c25306513c6e1e79d8f97": "womens",
+     "FW-c20e9267fbbcdc7782bc03c4": "womens",
+     "FW-b2efc071650373c588c49c79": "womens",
+     "FW-8f9a7452a6356fb72ae36874": "womens",
+     "FW-aa252d7667ee4f75b0ff8c06": "womens",
+     "FW-2ddd917f6433ee4f995d4ecf": "womens",
+     "FW-fe46d300b8a4e6a23fef9eba": "womens",
+     "FW-5b3bcdfb434c64730d6a7aa0": "womens",
+     "FW-c6ca2ab35a8fcffc8d35591e": "womens",
+     "FW-e47dfe8aedbf073606179615": "womens",
+     "FW-9b00dcf2931b3383d6483e9d": "womens",
+     "FW-05e267b9e4c5b7c4b5ac4c0d": "womens",
+     "FW-7dc407a418b3e9a48fb477dd": "womens",
+     "FW-07f84fdc70b4730d7df580f0": "womens"
+    },
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "unisex",
+      "text": "남녀공용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "남성 골프이너웨어 자외선차단 티셔츠 긴팔 라운드 빅사이즈"
+     },
+     {
+      "source": "rule",
+      "value": "mens",
+      "text": "the title's gender over a unisex row"
+     },
+     {
+      "source": "variants",
+      "value": "mens,womens",
+      "text": "79 of 79 variants"
+     },
+     {
+      "source": "listing",
+      "value": "mens",
+      "text": "남성 골프 가을 긴팔 티셔츠"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "BSR001 언더레이어",
+    "values_ko": [
+     "남성 골프이너웨어 긴팔 라운드 검정 (여름)",
+     "남성 골프이너웨어 긴팔 라운드 흰색 (여름)",
+     "남성 골프이너웨어 긴팔 목넥 검정 (여름)",
+     "남성 골프이너웨어 긴팔 목넥 흰색 (여름)",
+     "여성 골프이너웨어 긴팔 라운드 검정 (여름)",
+     "여성 골프이너웨어 긴팔 라운드 흰색 (여름)",
+     "남성 골프이너웨어 긴팔 라운드 검정 (겨울)",
+     "남성 골프이너웨어 긴팔 목넥 검정 (겨울)",
+     "남성 골프이너웨어 긴팔 라운드 흰색 (겨울)",
+     "남성 골프이너웨어 긴팔 목넥 흰색 (겨울)",
+     "남성 골프이너웨어 긴팔 라운드 카키 (겨울)",
+     "남성 골프이너웨어 긴팔 목넥 카키 (겨울)",
+     "여성 골프이너웨어 긴팔 라운드 검정 (겨울)",
+     "여성 골프이너웨어 긴팔 목넥 검정 (겨울)",
+     "여성 골프이너웨어 긴팔 라운드 흰색 (겨울)",
+     "여성 골프이너웨어 긴팔 목넥 흰색 (겨울)",
+     "여성 골프이너웨어 긴팔 라운드 카키 (겨울)",
+     "여성 골프이너웨어 긴팔 목넥 카키 (겨울)"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "95(S)",
+     "100(M)",
+     "105(L)",
+     "110(XL)",
+     "120(XXL)",
+     "130(XXXL)",
+     "44(S)",
+     "55(M)",
+     "66(L)",
+     "77(XL)"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 검정 (여름)\",\"95(S)\"]",
+    "naver_variant_id": "19006429263",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 검정 (여름)",
+     "95(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-9d84a21fa86164121a17196b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 검정 (여름)\",\"100(M)\"]",
+    "naver_variant_id": "19006429264",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 검정 (여름)",
+     "100(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-8602b681893e42971b113a24",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 검정 (여름)\",\"105(L)\"]",
+    "naver_variant_id": "19006429265",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 검정 (여름)",
+     "105(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-1a8c9935b791e1df9d4712f1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 검정 (여름)\",\"110(XL)\"]",
+    "naver_variant_id": "19006429266",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 검정 (여름)",
+     "110(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-011ad74a3cccbbe849aaea5b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 검정 (여름)\",\"120(XXL)\"]",
+    "naver_variant_id": "19479055779",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 검정 (여름)",
+     "120(XXL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-679b994eb880f60668bb967d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 검정 (여름)\",\"130(XXXL)\"]",
+    "naver_variant_id": "19479055780",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 검정 (여름)",
+     "130(XXXL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-ff5e21b94581ab1a0170c838",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 흰색 (여름)\",\"95(S)\"]",
+    "naver_variant_id": "19006429267",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 흰색 (여름)",
+     "95(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-12d45cb75ddbbeeebe15b6aa",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 흰색 (여름)\",\"100(M)\"]",
+    "naver_variant_id": "19006429268",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 흰색 (여름)",
+     "100(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-e05ac533ecd41ffb00580e9d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 흰색 (여름)\",\"105(L)\"]",
+    "naver_variant_id": "19006429269",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 흰색 (여름)",
+     "105(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-5c4246092a39612e4079085e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 흰색 (여름)\",\"110(XL)\"]",
+    "naver_variant_id": "19006429270",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 흰색 (여름)",
+     "110(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-05291b2cb8b91a4b97433f84",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 흰색 (여름)\",\"120(XXL)\"]",
+    "naver_variant_id": "19479055781",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 흰색 (여름)",
+     "120(XXL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-9b94aadd2c80432756d311b2",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 흰색 (여름)\",\"130(XXXL)\"]",
+    "naver_variant_id": "19479055782",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 흰색 (여름)",
+     "130(XXXL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-e7a264f06e55cf58ceba6721",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 검정 (여름)\",\"95(S)\"]",
+    "naver_variant_id": "23536795243",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 검정 (여름)",
+     "95(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-1a46d36e24730bd0e3af2cd2",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 검정 (여름)\",\"100(M)\"]",
+    "naver_variant_id": "23536795244",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 검정 (여름)",
+     "100(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-a29332345c8932df5868ac80",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 검정 (여름)\",\"105(L)\"]",
+    "naver_variant_id": "23536795245",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 검정 (여름)",
+     "105(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-f8aed1047ce6332efaac24c4",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 검정 (여름)\",\"110(XL)\"]",
+    "naver_variant_id": "23536795246",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 검정 (여름)",
+     "110(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-063e1198c8b64bea010659ce",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 검정 (여름)\",\"120(XXL)\"]",
+    "naver_variant_id": "33624863655",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 검정 (여름)",
+     "120(XXL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-ae96fb6b61c51a12aa9b54b8",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 검정 (여름)\",\"130(XXXL)\"]",
+    "naver_variant_id": "33624863656",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 검정 (여름)",
+     "130(XXXL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-d648219cb04aa1f5b34b3f28",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 흰색 (여름)\",\"95(S)\"]",
+    "naver_variant_id": "23536795247",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 흰색 (여름)",
+     "95(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-4b6c423afbe61bd6d3e6c667",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 흰색 (여름)\",\"100(M)\"]",
+    "naver_variant_id": "23536795248",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 흰색 (여름)",
+     "100(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-1e34d10fdb28fe32ad8b17f7",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 흰색 (여름)\",\"105(L)\"]",
+    "naver_variant_id": "23536795249",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 흰색 (여름)",
+     "105(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-4702c5d3328810fd2cbb1fbd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 흰색 (여름)\",\"110(XL)\"]",
+    "naver_variant_id": "23536795250",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 흰색 (여름)",
+     "110(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-adcbf9cccbdc7c37ea2818db",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 검정 (여름)\",\"44(S)\"]",
+    "naver_variant_id": "19128769867",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 검정 (여름)",
+     "44(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-c171619860bf288390f82639",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 검정 (여름)\",\"55(M)\"]",
+    "naver_variant_id": "19128769868",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 검정 (여름)",
+     "55(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-6a1c85e25dc9866c72d3b9d6",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 검정 (여름)\",\"66(L)\"]",
+    "naver_variant_id": "19128769869",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 검정 (여름)",
+     "66(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-7a220d4ce59818e60702bdde",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 검정 (여름)\",\"77(XL)\"]",
+    "naver_variant_id": "19128769870",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 검정 (여름)",
+     "77(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-993a04413e480b55962c41d5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 흰색 (여름)\",\"44(S)\"]",
+    "naver_variant_id": "19128769871",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 흰색 (여름)",
+     "44(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-5fa2cf7cfb0ca202d3a6b5b8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 흰색 (여름)\",\"55(M)\"]",
+    "naver_variant_id": "19128769872",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 흰색 (여름)",
+     "55(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-455b51300e29029339136b61",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 흰색 (여름)\",\"66(L)\"]",
+    "naver_variant_id": "19128769873",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 흰색 (여름)",
+     "66(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-86d6c19d90dab5f49a87ea65",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 흰색 (여름)\",\"77(XL)\"]",
+    "naver_variant_id": "19128769874",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 흰색 (여름)",
+     "77(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-02e78947db59b07942320001",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 검정 (겨울)\",\"95(S)\"]",
+    "naver_variant_id": "18780506448",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 검정 (겨울)",
+     "95(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-2c57b2daaeedc7b7e956873d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 검정 (겨울)\",\"100(M)\"]",
+    "naver_variant_id": "18780506449",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 검정 (겨울)",
+     "100(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-22f84b953c5e10aca7688a55",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 검정 (겨울)\",\"105(L)\"]",
+    "naver_variant_id": "18780506450",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 검정 (겨울)",
+     "105(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-e8eb731022d1a4e498493200",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 검정 (겨울)\",\"110(XL)\"]",
+    "naver_variant_id": "18780506451",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 검정 (겨울)",
+     "110(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-c6fab9a5a7c628359474d670",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 검정 (겨울)\",\"120(XXL)\"]",
+    "naver_variant_id": "26712837260",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 검정 (겨울)",
+     "120(XXL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-3adfd9c502cd7d7119856f0c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 검정 (겨울)\",\"130(XXXL)\"]",
+    "naver_variant_id": "26712837261",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 검정 (겨울)",
+     "130(XXXL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-28edbf177498a1c1448f1818",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 검정 (겨울)\",\"95(S)\"]",
+    "naver_variant_id": "18780506452",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 검정 (겨울)",
+     "95(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-4056967a2247a35e7c02af21",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 검정 (겨울)\",\"100(M)\"]",
+    "naver_variant_id": "18780506453",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 검정 (겨울)",
+     "100(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-105293e16bb4767bd258f77e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 검정 (겨울)\",\"105(L)\"]",
+    "naver_variant_id": "18780506454",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 검정 (겨울)",
+     "105(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-eb6e62ce14854bb79bf160f3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 검정 (겨울)\",\"110(XL)\"]",
+    "naver_variant_id": "18780506455",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 검정 (겨울)",
+     "110(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-4addda31faaa629e8ec9aa38",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 검정 (겨울)\",\"120(XXL)\"]",
+    "naver_variant_id": "26712837262",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 검정 (겨울)",
+     "120(XXL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-be08362fbeb7d31a94803bf3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 검정 (겨울)\",\"130(XXXL)\"]",
+    "naver_variant_id": "26712837263",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 검정 (겨울)",
+     "130(XXXL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-719fe7c18125029dc3a259d3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 흰색 (겨울)\",\"95(S)\"]",
+    "naver_variant_id": "18780506456",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 흰색 (겨울)",
+     "95(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-8764251c19e70b662c86fcfa",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 흰색 (겨울)\",\"100(M)\"]",
+    "naver_variant_id": "18780506457",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 흰색 (겨울)",
+     "100(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-58968bdbf1f81c1aaed5b670",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 흰색 (겨울)\",\"105(L)\"]",
+    "naver_variant_id": "18780506458",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 흰색 (겨울)",
+     "105(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-99bf03f18b10f5499c16efcd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 흰색 (겨울)\",\"110(XL)\"]",
+    "naver_variant_id": "18780506459",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 흰색 (겨울)",
+     "110(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-1277a74649a417058efbbbe2",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 흰색 (겨울)\",\"120(XXL)\"]",
+    "naver_variant_id": "27273670270",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 흰색 (겨울)",
+     "120(XXL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-99614212dfca16bcbd5631e5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 흰색 (겨울)\",\"130(XXXL)\"]",
+    "naver_variant_id": "27273670272",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 흰색 (겨울)",
+     "130(XXXL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-4d9e25a314da3b08dc7bf898",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 흰색 (겨울)\",\"95(S)\"]",
+    "naver_variant_id": "18780506460",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 흰색 (겨울)",
+     "95(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-0b207fe648d89f0ec5ee4bb8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 흰색 (겨울)\",\"100(M)\"]",
+    "naver_variant_id": "18780506461",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 흰색 (겨울)",
+     "100(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-a1d39d0a49e6e9838b07f981",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 흰색 (겨울)\",\"105(L)\"]",
+    "naver_variant_id": "18780506462",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 흰색 (겨울)",
+     "105(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-8c553b6fa7b5cee1ed308cb0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 흰색 (겨울)\",\"110(XL)\"]",
+    "naver_variant_id": "18780506463",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 흰색 (겨울)",
+     "110(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-432c9eecd45b756920d98f03",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 흰색 (겨울)\",\"120(XXL)\"]",
+    "naver_variant_id": "27273670274",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 흰색 (겨울)",
+     "120(XXL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-cce9b5e634295dd1c15464bf",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 흰색 (겨울)\",\"130(XXXL)\"]",
+    "naver_variant_id": "27273670275",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 흰색 (겨울)",
+     "130(XXXL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-11e068c8e10644530ffc336c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 라운드 카키 (겨울)\",\"95(S)\"]",
+    "naver_variant_id": "18780506464",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 라운드 카키 (겨울)",
+     "95(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-12a2765f833fd93825cffdef",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"남성 골프이너웨어 긴팔 목넥 카키 (겨울)\",\"95(S)\"]",
+    "naver_variant_id": "18780506468",
+    "options_ko": [
+     "남성 골프이너웨어 긴팔 목넥 카키 (겨울)",
+     "95(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-6c6cc01d954ac2caeeb5e01d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 검정 (겨울)\",\"44(S)\"]",
+    "naver_variant_id": "19128769822",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 검정 (겨울)",
+     "44(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-3ce04ad76701a22faa6c04b0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 검정 (겨울)\",\"55(M)\"]",
+    "naver_variant_id": "19128769824",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 검정 (겨울)",
+     "55(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-94cfae8b4e3d5dadfb380e75",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 검정 (겨울)\",\"66(L)\"]",
+    "naver_variant_id": "19128769826",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 검정 (겨울)",
+     "66(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-5c19982dafe6e8fc6d337bed",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 검정 (겨울)\",\"77(XL)\"]",
+    "naver_variant_id": "19128769828",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 검정 (겨울)",
+     "77(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-b1ff73c9718c082a1174d86c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 목넥 검정 (겨울)\",\"44(S)\"]",
+    "naver_variant_id": "19128769830",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 목넥 검정 (겨울)",
+     "44(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-1f0ae9d2530023c0e3797904",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 목넥 검정 (겨울)\",\"55(M)\"]",
+    "naver_variant_id": "19128769832",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 목넥 검정 (겨울)",
+     "55(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-412e3d5fbac6bcadd6954949",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 목넥 검정 (겨울)\",\"66(L)\"]",
+    "naver_variant_id": "19128769834",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 목넥 검정 (겨울)",
+     "66(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-75ca8b2ad0a0f15fc850cc60",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 목넥 검정 (겨울)\",\"77(XL)\"]",
+    "naver_variant_id": "19128769836",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 목넥 검정 (겨울)",
+     "77(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-5afbb19f486ea89061f6aa70",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 흰색 (겨울)\",\"44(S)\"]",
+    "naver_variant_id": "19128769838",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 흰색 (겨울)",
+     "44(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-80538ae2df3fa8aef90feba8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 흰색 (겨울)\",\"55(M)\"]",
+    "naver_variant_id": "19128769839",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 흰색 (겨울)",
+     "55(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-976c25306513c6e1e79d8f97",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 흰색 (겨울)\",\"66(L)\"]",
+    "naver_variant_id": "19128769841",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 흰색 (겨울)",
+     "66(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-c20e9267fbbcdc7782bc03c4",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 흰색 (겨울)\",\"77(XL)\"]",
+    "naver_variant_id": "19128769842",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 흰색 (겨울)",
+     "77(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-b2efc071650373c588c49c79",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 목넥 흰색 (겨울)\",\"44(S)\"]",
+    "naver_variant_id": "19128769843",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 목넥 흰색 (겨울)",
+     "44(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-8f9a7452a6356fb72ae36874",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 목넥 흰색 (겨울)\",\"55(M)\"]",
+    "naver_variant_id": "19128769844",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 목넥 흰색 (겨울)",
+     "55(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-aa252d7667ee4f75b0ff8c06",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 목넥 흰색 (겨울)\",\"66(L)\"]",
+    "naver_variant_id": "19128769845",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 목넥 흰색 (겨울)",
+     "66(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-2ddd917f6433ee4f995d4ecf",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 목넥 흰색 (겨울)\",\"77(XL)\"]",
+    "naver_variant_id": "19128769846",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 목넥 흰색 (겨울)",
+     "77(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-fe46d300b8a4e6a23fef9eba",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 카키 (겨울)\",\"44(S)\"]",
+    "naver_variant_id": "19128769847",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 카키 (겨울)",
+     "44(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-5b3bcdfb434c64730d6a7aa0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 카키 (겨울)\",\"55(M)\"]",
+    "naver_variant_id": "19128769848",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 카키 (겨울)",
+     "55(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-c6ca2ab35a8fcffc8d35591e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 라운드 카키 (겨울)\",\"77(XL)\"]",
+    "naver_variant_id": "19128769850",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 라운드 카키 (겨울)",
+     "77(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-e47dfe8aedbf073606179615",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 목넥 카키 (겨울)\",\"44(S)\"]",
+    "naver_variant_id": "19128769851",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 목넥 카키 (겨울)",
+     "44(S)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-9b00dcf2931b3383d6483e9d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 목넥 카키 (겨울)\",\"55(M)\"]",
+    "naver_variant_id": "19128769852",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 목넥 카키 (겨울)",
+     "55(M)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-05e267b9e4c5b7c4b5ac4c0d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 목넥 카키 (겨울)\",\"66(L)\"]",
+    "naver_variant_id": "19128769853",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 목넥 카키 (겨울)",
+     "66(L)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-7dc407a418b3e9a48fb477dd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"여성 골프이너웨어 긴팔 목넥 카키 (겨울)\",\"77(XL)\"]",
+    "naver_variant_id": "19128769854",
+    "options_ko": [
+     "여성 골프이너웨어 긴팔 목넥 카키 (겨울)",
+     "77(XL)"
+    ],
+    "price_krw": 15700,
+    "price_usd": "15.70",
+    "sku": "FW-07f84fdc70b4730d7df580f0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 15700,
+   "original_krw": 16000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "바디쉴드"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "바디쉴드"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "BSR001"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "국산"
+   },
+   {
+    "label_ko": "네크라인",
+    "value_ko": "라운드넥, 터틀넥, 반목"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "자외선차단, 흡습, 신축성, 기모안감, 방풍"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 폴리우레탄, 스판덱스, 기타, 스판, 기모"
+   },
+   {
+    "label_ko": "소매기장",
+    "value_ko": "긴팔"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2023년형"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "티셔츠"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남녀공용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.72,
+   "count": 635
+  },
+  "reviews": [
+   {
+    "id": "4467226164",
+    "score": 5,
+    "text_ko": "브랜드로 주문하려다가\n평이좋아서 주문했습니당\n입어보고 나가보니 너무 좋습니다\n작년엔 팔토시로 바이크타고햇는데\n이너웨어로 더 시원하고 가벼순느낌으로\n바이크타게됬습니다",
+    "created_at": "2024-04-23T09:03:39Z",
+    "writer": "jdu1***",
+    "photos": [
+     "collected/50002788-fixtures/images/754260851/fairwardgolf-review-image-15c535ef653491bb.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/754260851/fairwardgolf-review-avatar-9fc4ff4b5f5066bf.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 94,
+    "text_original_ko": "잘받았습니다\n브랜드로 주문하려다가\n평이좋아서 주문했습니당\n입어보고 나가보니 너무 좋습니다\n작년엔 팔토시로 바이크타고햇는데\n이너웨어로  더 시원하고 가벼순느낌으로\n바이크타게됬습니다ㅎ",
+    "text_cut": [
+     "shipping"
+    ]
+   },
+   {
+    "id": "4362015535",
+    "score": 4,
+    "text_ko": "살짝타이트하게나왔네요. 보통라지사이즈입는데작아서XL로교환했어요. 여름에입기는좀더울것같아요. 생각보다두께가좀있네요.",
+    "created_at": "2023-11-02T11:55:16Z",
+    "writer": "smj7*****",
+    "photos": [
+     "collected/50002788-fixtures/images/754260851/fairwardgolf-review-image-9f2f9ca711e05920.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/754260851/fairwardgolf-review-avatar-ec749bf996e2d0c8.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 89,
+    "text_original_ko": "살짝타이트하게나왔네요.보통라지사이즈입는데작아서XL로교환했어요.여름에입기는좀더울것같아요.생각보다두께가좀있네요."
+   },
+   {
+    "id": "4731551470",
+    "score": 5,
+    "text_ko": "골프 이너중에서 젤 좋은듯합니다\n사이즈도 넉넉하고 제질도 좋와요\n검정은 단독으로 물빨래하셔야되요\n검정물이 겁나게 나와요",
+    "created_at": "2025-05-27T08:13:29Z",
+    "writer": "te****",
+    "photos": [
+     "collected/50002788-fixtures/images/754260851/fairwardgolf-review-image-4255cd9f45013ae5.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 88
+   },
+   {
+    "id": "4246709756",
+    "score": 4,
+    "text_ko": "역시 국내생산제품이 좋습니다. 중국산 구입했다가 한번입고 버렸습니다. 이제품은 이너웨어답게 쫀쫀하고 착용감 좋습니다. 재구매의사 있습니다.",
+    "created_at": "2023-05-06T11:16:05Z",
+    "writer": "sj****",
+    "photos": [
+     "collected/50002788-fixtures/images/754260851/fairwardgolf-review-image-f30515b3e8badfa7.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 90,
+    "text_original_ko": "역시 국내생산제품이 좋습니다. 싼가격에 중국산 구입했다가 한번입고 버렸습니다.이제품은 이너웨어답게 쫀쫀하고 착용감 좋습니다. 재구매의사 있습니다.",
+    "text_cut": [
+     "price"
+    ]
+   },
+   {
+    "id": "4221682274",
+    "score": 4,
+    "text_ko": "옷감도 좋고 착용감도편안합니다.\n레깅스처럼 딱 달라붙는 그런스탈은 아닙니다. 뭐물론 몸이 근육질 빵빵하다면 그렇게 될수도 있겠지만. 골프반팔옷 안에 입을려고 구매해서 안에 입고 팔부분살짝걷어올리며 보기에 좋습니다.",
+    "created_at": "2023-03-31T00:40:45Z",
+    "writer": "co****",
+    "photos": [
+     "collected/50002788-fixtures/images/754260851/fairwardgolf-review-image-d9f26341ff88b0c9.webp",
+     "collected/50002788-fixtures/images/754260851/fairwardgolf-review-image-1b70060c6a6589e1.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 2,
+    "text_grade": "full",
+    "text_quality": 58,
+    "text_original_ko": "가성비 좋습니다. 옷감도 좋고 착용감도편안합니다.\n레깅스처럼 딱 달라붙는 그런스탈은 아닙니다. 뭐물론 몸이 근육질 빵빵하다면 그렇게 될수도 있겠지만..^^.. 골프반팔옷 안에 입을려고 구매해서 안에 입고 팔부분살짝걷어올리며 보기에 좋습니다.",
+    "text_cut": [
+     "price"
+    ]
+   },
+   {
+    "id": "469374024",
+    "score": 3,
+    "text_ko": "1회 실전착화 후 구매후기 여름 배낚시를 가기위해 구매했고, 실착하고\n다녀왔습니다. 새벽부터 땡볕 3시까지 낚시\n1 시원함 시원합니다. 쿨토시느낌정도\n2 착용감 얇아서 가볍고 느낌도 부드럽습니다.\n3 자외선차단 잘 안된다는 느낌 혹시해서 자외선차단제도 바르고 입었는데 까맣게 탔네요\n운동할때 입는 옷 같습니다. 다녀와서 안되겠다 싶어서 뜨리엠 쿨토시 다시샀습니다.\n뭐 뭍은 사진은 착용 증명용\n배에서 조심하지 못해서 녹 뭍은거에요\n저건 옷탓이 아니죠",
+    "created_at": "2018-08-03T15:07:28Z",
+    "writer": "desi******",
+    "photos": [
+     "collected/50002788-fixtures/images/754260851/fairwardgolf-review-image-3459a9a396f0a96f.webp",
+     "collected/50002788-fixtures/images/754260851/fairwardgolf-review-image-bba5dcfa37238830.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "1회 실전착화 후 구매후기  여름 배낚시를 가기위해 구매했고, 실착하고\n다녀왔습니다. 새벽부터 땡볕 3시까지 낚시\n1  시원함  시원합니다.쿨토시느낌정도\n2  착용감  얇아서 가볍고 느낌도 부드럽습니다.\n3  자외선차단  잘 안된다는 느낌  혹시해서 자외선차단제도 바르고 입었는데 까맣게 탔네요\n운동할때 입는 옷 같습니다. 다녀와서 안되겠다 싶어서 뜨리엠 쿨토시 다시샀습니다ㅠ\n\n뭐 뭍은 사진은 착용 증명용 ㅎㅎ \n배에서 조심하지 못해서 녹 뭍은거에요\n저건 옷탓이 아니죠ㅎㅎ"
+   },
+   {
+    "id": "5022561586",
+    "score": 3,
+    "text_ko": "몸통은 잘 맞는데 팔이 헐거워요.\n인너웨어가 팔도 어느정도 타이트 해야하는데\n일반 긴팔티 처럼 팔이 허걸워서 흐느적흐느적.\n제가 팔이 얇은것은 아닙니다.",
+    "created_at": "2026-07-16T02:42:39Z",
+    "writer": "mjcl***",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/754260851/fairwardgolf-review-avatar-40f35c48c4a48a17.webp",
+    "tier": "text",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 75,
+    "text_original_ko": "몸통은 잘 맞는데 팔이 헐거워요.\n인너웨어가 팔도 어느정도 타이트 해야하는데 \n일반 긴팔티 처럼 팔이 허걸워서 흐느적흐느적..\n제가 팔이 얇은것은 아닙니다."
+   },
+   {
+    "id": "5022560112",
+    "score": 3,
+    "text_ko": "몸은 잘 맞는데 팔이 헐거워요.\n이너웨어가 팔도 어느정도 타이트 해야하는데\n일반 긴팔옷처럼 팔이 흐느적 해요.\n제가 팔이 얇은것도 아닌데.",
+    "created_at": "2026-07-16T02:40:26Z",
+    "writer": "mjcl***",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/754260851/fairwardgolf-review-avatar-40f35c48c4a48a17.webp",
+    "tier": "text",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 74,
+    "text_original_ko": "몸은 잘 맞는데 팔이 헐거워요.\n이너웨어가 팔도 어느정도 타이트 해야하는데 \n일반 긴팔옷처럼 팔이 흐느적 해요.\n제가 팔이 얇은것도 아닌데.."
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/754260851/fairwardgolf-754260851-001-446793e43863b71e.webp",
+    "sha256": "446793e43863b71e8c66c20494849af6c75cdff4d6a448b8f540d7e503b83c45",
+    "width": 640,
+    "height": 640
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/754260851/fairwardgolf-754260851-002-d29b1fb4a6377f16.webp",
+    "sha256": "d29b1fb4a6377f161c42ca69961c64aee6798d33d0e29637faf590123bdbbf45",
+    "width": 640,
+    "height": 640
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/754260851/fairwardgolf-754260851-003-dfaf57c691739377.webp",
+    "sha256": "dfaf57c69173937726724e28e7761d65608e6b89bc7ffe6ad68848324299a39c",
+    "width": 640,
+    "height": 640
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/754260851/fairwardgolf-754260851-004-554b48fa27db551e.webp",
+    "sha256": "554b48fa27db551e935b9d4ebf7625c11d7678a4599339421a4a96aa03317d41",
+    "width": 640,
+    "height": 640
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/754260851/fairwardgolf-754260851-005-08d75de688f5eb20.webp",
+    "sha256": "08d75de688f5eb20d1793dde917c57a0fcdc4bfd79c7619977212a4ed8fc17df",
+    "width": 640,
+    "height": 640
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/754260851/fairwardgolf-754260851-006-23f22d4aa1eb2150.webp",
+    "sha256": "23f22d4aa1eb21500af7367e478ae5463f91f298d72523cf2190e7b6a3161f3c",
+    "width": 640,
+    "height": 640
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/754260851/fairwardgolf-754260851-007-c1ddcec4e0d4b990.webp",
+    "sha256": "c1ddcec4e0d4b990aa1e721453d6cbfa6b7619933f7a94efca6b498bd953533b",
+    "width": 640,
+    "height": 640
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/754260851/fairwardgolf-754260851-008-446793e43863b71e.webp",
+    "sha256": "446793e43863b71e8c66c20494849af6c75cdff4d6a448b8f540d7e503b83c45",
+    "width": 640,
+    "height": 640
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/754260851/fairwardgolf-754260851-009-9f48aa7bebdee61e.webp",
+    "sha256": "9f48aa7bebdee61e9960e8f2fb63593df102b9bfb2e82085b93b18f3e7da1df4",
+    "width": 640,
+    "height": 640
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/754260851/fairwardgolf-754260851-010-c1007168c9d52e42.webp",
+    "sha256": "c1007168c9d52e42220f1504f910f5d97b4c7f29701e12887fde02765a250d39",
+    "width": 640,
+    "height": 640
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 2500,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": 8000,
+   "policy_text": "60,000원 이상 구매 시 무료 / 제주 추가 5,000원, 제주 외 도서지역 추가 8,000원",
+   "lead_time": {
+    "seller_average_days": 1.6710526,
+    "product_average_days": 1.0,
+    "today_cutoff": null,
+    "today_off": true,
+    "arrival_days": null,
+    "arrival_date_text": "11.25.(수)",
+    "arrival_probability": 96,
+    "ship_date_text": "11.23.(월)"
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "자외선 99.9% 완벽차단\nUPF 50+ 등급\n땀 흡수 및 빠른 건조\n바람에 느끼는 시원함\n팔 및 다리의 상처보호\n자외선 차단제 대비 경제적인 비용\n쓸수록 경제적인 가성비 갑\n100% 국산 기능성 스포츠 이너웨어\n바디쉴드 언더레이어 입니다\n\n주문전 상세페이지 마지막에 있는\n세탁 안내 / 주의사항 / 배송안내를\n꼭! 읽어보시고 주문 부탁드립니다!\n\n중국산?? 아닙니다!!\n100% 국산 브랜드 바디쉴드\n\n바디쉴드는 UPF50+\n99.9% 자외선을 차단합니다.\n\n자외선 차단이라고 다 같은 것이\n아닙니다!!\n자외선 차단제만으로\n전~~부 가능할까요??\n꼭!!! 종류와 등급을\n확인해보세요!!\n\n※ 자외선 차단제에서 사용하는 등급\nSPF = UV-B를 차단하는 효과\n(UV-B? 홍반이 생기고 피부가 탐)\n(UV-A에는 효과가 미비)\nPA = UV-A를 차단하는 효과\n(UV-A? 피부 암, 피부 노화를 일으킴)\n(UV-B에는 효과가 미비)\n★자외선 차단제의 문제는 둘 다 차단이 안되고 하나씩만 가능하는 점★\nUPF = UV-A / UV-B 모두 차단!!!\n\n바디쉴드는 UPF50+ 최고 등급으로\n99.9%의 자외선을 모두 차단합니다!!\n\n바디쉴드를 입은 곳과\n아닌 곳의 차이입니다!\n\n팔토시로 해결???\n팔토시는 흘러내려 오기도 하고\n너무 꽉 끼면 살이 꽉 눌려서 자국나고\n아프기도 하죠.\n더군다나 몸에서 나는 땀(특히 겨드랑이)은\n팔토시로는 해결이 안됩니다!!\n\n바디쉴드는 아동용(까다로운)을\n기준으로 상품을 만듭니다.\n\n반팔만 입고 일 하다보면\n긁히기도 하고 박스에 눌리기도 하고\n팔에 상처가 많이 납니다.\n바디쉴드 기능성 이너웨어로\n자외선차단, 땀 흡수, 패션, 상처방지\n모~~~두 한방에 해결하세요!!\n\n흡한 속건!!\n빠르게 흡수하고 빠르게 마릅니다!!\n\n바디쉴드 기능성이너웨어 땀흡수\n\n저가 중국산.. 아직도 입으시게요??\n비싸고 안 좋은 건 있어도\n싸고 좋은 건 없습니다.\n오직 가성비만이 있을 뿐.\n\n탄력 있는 쫀쫀함으로 착용감 UP!!\n사방 스판으로 착~~ 감싸줍니다.\n\n바디쉴드 스포츠 이너웨어 사방스판\n\n언제 어디에서나 남녀노소\n누가 입어도 잘 어울리는\n심플한 포인트 디자인!!\n\n반바지 안에 쫄바지로도\n완벽한 코디!!\n\n반팔 안에 긴팔도 잘 어울려요!\n\n여성용도 예쁘게 입을 수 있답니다!\n\n운동할 때도 잘 어울리고\n\n평상시에도 반바지 안에 레깅스로\n입을 수 있습니다~\n\n커플로도 아주 잘 어울린답니다!!\n\n여성 남성 커플 모두 기능성\n긴팔 티로 자외선 차단하세요~\n\n오드람프 봉제로\n살쓸림을 최소화했습니다!!\n\n바디쉴드 기능성 이너웨어는\n햇빛이 있는 곳. 땀이 나는 환경.\n모든 곳에 적합합니다!!\n\n농구, 축구, 야구, 테니스, 낚시, 등산\n탁구, 자전거, 조깅, 런닝, 헬스, 캠핑\n풋살, 배드민턴 등등 모~~든 스포츠!!\n\n바디쉴드 기능성 이너웨어는\n햇빛이 있는 곳. 땀이 나는 환경.\n모든 곳에 적합합니다!!\n\n택배업무, 공사현장, 공장, 군인\n통신관련 업무 (예:KT A/S 등)\n환경미화, 농사, 물류센터 등등\n햇빛이 있거나 땀이 나는 모~~든 직업!!\n\n기능성 이너웨어라면 역시\n바디쉴드 언더레이어!!\n자외선 차단!! 땀 흡수!! 속건!!\n\n바디쉴드 기능성 이너웨어\n남자 긴팔 라운드 검정\n(여름 / 겨울 2종류)\n※겨울용은 좀 더 두껍고※\n살~~짝 기모가 있어요!\n\n바디쉴드 기능성 이너웨어 긴팔 라운드 검정 정면\n\n바디쉴드 기능성 이너웨어 긴팔 라운드 검정 뒷면\n\n바디쉴드 기능성 이너웨어 긴팔 라운드 로고\n\n바디쉴드 기능성 이너웨어 긴팔 라운드 팔 로고\n\n어느 옷에나 잘 어울리는\n스포츠 이너웨어!!\n\n햇빛이 강렬할 때~ 땀이 날 때~\n피부를 보호해야 할 때!\n땀이 주룩주룩 나서 옷이 젖거나\n자외선이 부담스러우신 분들!!\n\n바디쉴드 기능성 이너웨어\n남자 긴팔 라운드 흰색\n(여름 / 겨울 2종류)\n※겨울용은 좀 더 두껍고※\n살~~짝 기모가 있어요!\n\n바디쉴드 스포츠 이너웨어 긴팔 라운드 흰색 정면\n\n바디쉴드 스포츠 이너웨어 긴팔 라운드 흰색 뒷면\n\n바디쉴드 스포츠 이너웨어 긴팔 라운드 흰색 로고\n\n바디쉴드 스포츠 이너웨어 긴팔 라운드 흰색 팔 로고\n\n바디쉴드 기능성 이너웨어\n남자 긴팔 목넥 검정\n(여름 / 겨울 2종류)\n※겨울용은 좀 더 두껍고※\n살~~짝 기모가 있어요!\n\n바디쉴드 기능성 긴팔 티 겨울용 목넥 검정 정면\n\n바디쉴드 기능성 긴팔 티 겨울용 목넥 검정 뒷면\n\n바디쉴드 기능성 긴팔 티 겨울용 목넥 검정 로고\n\n바디쉴드 기능성 긴팔 티 겨울용 목넥 검정 팔 로고\n\n바디쉴드 기능성 이너웨어\n남자 긴팔 목넥 흰색\n(여름 / 겨울 2종류)\n※겨울용은 좀 더 두껍고※\n살~~짝 기모가 있어요!\n\n바디쉴드 기능성 긴팔 티셔츠 겨울용 목넥 흰색 정면\n\n바디쉴드 기능성 긴팔 티셔츠 겨울용 목넥 흰색 뒷면\n\n바디쉴드 기능성 긴팔 티셔츠 겨울용 목넥 흰색 로고\n\n바디쉴드 기능성 긴팔 티셔츠 겨울용 목넥 흰색 팔 로고\n\n바디쉴드 스포츠 이너웨어\n남자 긴 바지 레깅스 검정\n(여름 / 겨울 2종류)\n※겨울용은 좀 더 두껍고※\n살~~짝 기모가 있어요!\n\n기능성 스포츠 이너웨어 여름용 남자 긴 바지 레깅스 타이즈 검정\n\n기능성 스포츠 이너웨어 여름용 남자 긴 바지 레깅스 타이즈 밴드\n\n기능성 스포츠 이너웨어 여름용 남자 긴 바지 레깅스 타이즈 로고\n\n본래 스포츠 용도로 나온\n상품이라 운동에도 딱!!\n적합한 기능성 언더레이어!!\n\n바디쉴드 스포츠 이너웨어\n남자 긴 바지 레깅스 흰색\n(여름 / 겨울 2종류)\n※겨울용은 좀 더 두껍고※\n살~~짝 기모가 있어요!\n\n기능성 스포츠 이너웨어 여름용 남자 긴 바지 레깅스 타이즈 흰색\n\n기능성 스포츠 이너웨어 여름용 남자 긴 바지 레깅스 타이즈 흰색\n\n기능성 스포츠 이너웨어 여름용 남자 긴 바지 레깅스 타이즈 흰색\n\n바디쉴드 기능성 이너웨어\n남자 긴팔 라운드 카키\n카키색은 겨울용만 있습니다!\n※겨울용은 좀 더 두껍고※\n살~~짝 기모가 있어요!\n\n기능성 스포츠 이너웨어 긴팔 라운드 겨울용 회색 (베이스레이어)\n\n바디쉴드 기능성 이너웨어\n남자 긴팔 목넥 카키\n카키색은 겨울용만 있습니다!\n※겨울용은 좀 더 두껍고※\n살~~짝 기모가 있어요!\n\n기능성 스포츠 이너웨어 긴팔 목넥 겨울용 회색 (베이스레이어)\n\n스판 특성상 탄성이 좋아\n실측에 오차가 있을 수 있습니다!!\n\n기능성 스포츠 이너웨어 (베이스 언더레이어) 사이즈 표\n\n120 상의 = 목(가슴쪽)~기장끝 까지 71cm\n가슴둘레 51cm(단면) / 팔끝~목(가슴쪽) 74cm\n130 상의 = 목(가슴쪽)~기장끝 까지 73cm\n가슴둘레 54cm(단면) / 팔끝~목(가슴쪽) 76cm\n120 하의 = 허리(밴드) 41cm\n골반 47cm / 다리길이 97cm(밴드전까지)\n발목둘레(단면)13cm\n130 하의 = 허리(밴드) 42cm\n골반 48cm / 다리길이 101cm(밴드전까지)\n발목둘레(단면)14cm\n\n스포츠 이너웨어는\n포인트 디자인도 중요하죠~\n\n기능성 스포츠 이너웨어 (베이스 언더레이어) 코디 및 활용도\n\n여름뿐만 아니라 사계절 전~~부\n착용이 가능하답니다\n\n기능성 이너웨어는 특히\n야외활동 시에 적합하답니다\n축구 야구 농구 등산 낚시 캠핑 등등!\n모든 활동에 가성비 필수 템입니다.\n부드러운 기능성 스포츠 웨어\n바디쉴드 언더레이어\n기능성 긴팔에 이어서\n기능성 긴 바지 까지!!\n\n햇빛 알레르기 때문에 긴팔 긴 바지\n입으시는 분들!! 바디쉴드 언더레이어로\n피부를 보호하셔요!! 기능성 긴팔 티\n기능성 긴 바지는 바디쉴드 언더레이어로\n맵시 있게~\n\n베이스레이어로 여름을 상쾌하게~\n사계절 모두 바디쉴드 언더레이어로~\n\n사이즈 표는 참고만 해주세요!!\n키와 몸무게가 같더라도\n체형에 따라 달라질 수 있기 때문에\n정확히 말씀드리기 힘듭니다!!\n\n전체 사이즈 표\n\n구매 유의 사항 및 자주하시는 질문\n\n1. 생각보다 얇아요 반품해요.\n기능성 이너웨어는 면내복 처럼\n100% 보온만을 위한 상품이 아닙니다.\n자외선차단, 땀 흡수, 속건 등등\n특히 스판이기 때문에 입을 때 당겨지면\n당연히 얇아 질 수 밖에 없습니다.\n구매하시는 분이 생각하는 두꺼움의\n정도를 제가 알 수는 없기 때문에\n이로인한 반품비용은 고객님이\n부담해주셔야 합니다.\n2. 배송 언제되요??\n평일기준\n오후3시이전 주문건까지 당일 발송.\n이후 주문건은 다음날 발송.\n예) 금요일 3시 이후 주문 : 월요일 발송.\n월~금 3시 이전 주문 : 당일 발송\n토,일요일 주문 : 월요일 발송.\n공휴일 주문 : 평일 발송.\n3. 5일 지났는데 배송이 안되요.\n평균 택배 도착 기간은 발송일\n다음날 부터 1~3일 입니다.\n※명절, 휴가철, 파업 등 특수한 상황제외\n예) 금요일 3시 이후에 주문 했을시\n평균적으로 월요일 발송 화~수 도착.\n정말 많은 분들이\n\"토 일 월 화 수 5일 걸렸어요!!\" 라고\n말씀해 주시고 별점 1점 주십니다....\n주말은 배송이 안되므로 빼주세요ㅠㅠ\n\n겨울용 기모는 얇게 살~~짝 들어가\n있습니다!! 복실복실하게 많이\n들어가 있는 상품이 아닙니다!!\n기모가 많이 들어가게 되면\n옷이 두꺼워 져야 하고 그러면\n본래 기능성의류 목적인 \"움직임\"에\n제한이 생기게 됩니다.\n기모를 많이 내게 되면 탄력이\n줄어들어 수명이 짧아지고 원래의\n목적인 기능성이 떨어지게 됩니다.\n따라서 약간의 기모만 넣었습니다.\n상품의 상의와 하의의 기모차이가\n있다 라고 말씀해주시는 부분은\n원단 제작시 기계에 들어가는 총량이\n있어서 일정수량 마다 끊어서 만들\n수 밖에 없습니다. 이때\n100% 같다면 좋겠지만 차이가\n있을 수 있습니다.\n검은색의 경우 기모가 옷 색상과\n100%일치하기 때문에\n꼭 없는 것 처럼 보이기도 합니다.\n하지만 착시 현상의 일종으로\n얇게 들어가 있는점 참고 부탁드려요!!\n\n주의 사항 및 표준 세탁안내 입니다!!\n꼭 한번 읽어주시고 구매 부탁드려요!\n\n세탁안내!\n1. 다림질 및 드라이 크리닝 금지\n2. 바람이 잘 통하는 그늘에서 건조\n3. 표백제 및 강력효소제는 사용금지\n4. 섬유유연제 사용금지\n5. 세제가 직접 닿으면 탈색될 수 있음\n(세제를 완전히 풀어서 세탁요망)\n\n이염의 우려가 있으니\n단독 세탁해 주세요!!\n\n절대 주의사항!!\n꼭!! 읽어주세요!!\n\n1. 기능성 원단 특성상 물빠짐이 있음\n2. 반드시 단독 세탁 요망.\n3. 염색물은 인체에 무해함(검사완료)\n(상단에 아동용성적서 참고)\n4. 이염의 우려가 있으니 흰색 또는\n밝은 색의 의류와 함께 착용시 염색이\n묻어날 우려가 있습니다.\n이점 주의하여 주시기 바랍니다.\n(2~3회 세탁 후 사용하면 문제없음)\n5. 스트레치성 강화를 위해 스판사에\n적용된 염색의 특성상 물빠짐은\n막을 수 없습니다. 이염이 걱정되시는\n고객님께서는 흰색 구매를 권해드려요.\n6. 합성섬유의 일반적인 특성상 보풀이\n생길 수 있습니다. 기능성을 높인 의류는\n합성섬유를 사용하기 때문에 보풀은\n막을 수 없습니다. 단, 이는 기능성과는\n무관하며 합성섬유의 일반적인 현상임.\n위와 같은 사유로 반품 및 교환\n환불은 어려우니 꼭!! 잘 읽어\n보시고 구매하여 주시길\n부탁드립니다. 감사합니다.\n\n운영시간 : 09:00~18:00\n배송정보\n1. 공휴일(빨간날) 및 토,일요일은\n택배발송이 안됩니다.\n2. 수취불가로 반송되는 경우에는\n고객님께서 택배비를 부담하셔야 하니\n미리 확인하여 주시길 부탁드립니다.\n3. 군부대의 경우에는 부대 사정상\n배송이 어려울 수 있습니다.\n4. 배송준비중인 상품은 배송중이\n아니더라도 주문취소 및 변경이\n어려우니 반드시 게시판 또는\n판매자에게 연락부탁 드립니다!!\n5. 협의되지 않은 사항이나 판매자의\n답변이 없는 문의글에 대해서 발생하는\n배송비는 고객님이 부담하셔야 합니다\n\n바디쉴드 언더레이어",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20210601_64/1622531559505zHv1d_JPEG/%EC%8B%9C%EC%95%8802.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210601_15/1622517734258phcw3_JPEG/%EC%9E%90%EC%99%B8%EC%84%A0%EC%B0%A8%EB%8B%A8.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210601_23/1622518317379g1ai3_JPEG/%EC%9E%90%EC%99%B8%EC%84%A0%EC%84%B1%EC%A0%81%EC%84%9C.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210601_206/1622518761331xOtSE_JPEG/%ED%94%BC%EB%B6%80%ED%83%90.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210601_287/1622519178231sLOyY_JPEG/%EC%95%84%EB%8F%99%EC%9A%A9%EC%84%AC%EC%9C%A0%EC%A0%9C%ED%92%8801.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210601_174/1622519195688afAbi_JPEG/%EC%95%84%EB%8F%99%EC%9A%A9%EC%84%AC%EC%9C%A0%EC%A0%9C%ED%92%8802.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210601_204/1622520579267OpMnd_JPEG/%EB%82%A8%EC%9E%90%ED%9D%B0%EC%83%89%EC%83%81%EC%9D%98.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210617_263/162389594917395JKT_GIF/01%EB%95%80%ED%9D%A1%EC%88%98%EC%9A%A9%EB%9F%89%EB%82%AE%EC%B6%A4.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20210601_54/16225253241616OpBV_JPEG/%EB%82%A8%EC%9E%90%EA%B2%80%EC%A0%95%EC%83%81%EC%9D%98.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210617_162/16238959595977iOpa_GIF/02%EC%82%AC%EB%B0%A9%EC%8A%A4%ED%8C%90%EC%9A%A9%EB%9F%89%EB%82%AE%EC%B6%A4.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20210601_290/1622525777393oHy8u_JPEG/%EC%BB%A4%ED%94%8C%EC%83%B7.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_186/1622607484449D6sj0_JPEG/%EB%82%A8%EC%9E%90%EB%B0%94%EC%A7%8001.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_39/1622607503527GyABU_JPEG/%EB%B0%94%EC%A7%8002.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_248/1622607543827nOnbb_JPEG/%EB%B0%98%ED%8C%94%EC%95%88%EC%97%90%EA%B8%B4%ED%8C%9401.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_48/1622607556266CA5D7_JPEG/%EB%B0%98%ED%8C%94%EC%95%88%EC%97%90%EA%B8%B4%ED%8C%9402.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_76/1622607575986pUxhv_JPEG/%EB%82%A8%EC%9E%90%EA%B2%80%EC%A0%95%EC%83%81%EC%9D%9801.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_118/1622607584734iqAgd_JPEG/%EB%82%A8%EC%9E%90%EA%B2%80%EC%A0%95%EC%83%81%EC%9D%9802.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_33/1622607598099Bw1nF_JPEG/%EC%97%AC%EC%9E%90001.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_70/1622607619891eDShe_JPEG/%EC%97%AC%EC%9E%90002.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_205/1622607629209aMRHU_JPEG/%EC%97%AC%EC%9E%90003.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_85/1622607639884iHuI3_JPEG/%EC%97%AC%EC%9E%90004.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_75/1622607650197AXqgV_JPEG/%EC%97%AC%EC%9E%90006.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_293/1622607662147dKtC7_JPEG/%EC%97%AC%EC%9E%90005.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210601_100/1622535187695fGWBf_JPEG/%EC%BB%A4%ED%94%8C%EC%83%B701.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_2/1622607685758QliAz_JPEG/%EC%BB%A4%ED%94%8C002.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_251/162260769567797Ja2_JPEG/%EC%BB%A4%ED%94%8C%EC%83%B7001.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_133/1622607789870XfQTJ_JPEG/%EC%98%A4%EB%93%9C%EB%9E%8C%ED%94%84.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_100/1622611458696k3LnN_JPEG/01.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_298/1622611464606G73l7_JPEG/02.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_198/1622611468910Een1A_JPEG/03.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_210/1622611472945tQ2kn_JPEG/04.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_59/1622611482242CHHOn_JPEG/09.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_180/1622611488366VR5oz_JPEG/10.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_240/16226114920262a0LD_JPEG/11.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_105/16226114963008A3JU_JPEG/12.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_54/1622611500938tJksi_JPEG/05.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_242/1622611505723Tl04i_JPEG/06.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_204/1622611510348uJ04R_JPEG/07.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_146/1622611522985KHC3c_JPEG/08.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_176/1622611529935eVcC0_JPEG/13.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_231/1622611534483WKCi9_JPEG/14.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_237/1622611538630qKQ5l_JPEG/15.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_127/1622611542584l4HMu_JPEG/16.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_277/1622611549407JWQnI_JPEG/17.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_225/1622611553821Lh2F6_JPEG/18.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_211/1622611558110CGrRb_JPEG/19.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_228/1622611562941txWIe_JPEG/20.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_85/16226115671729mCG2_JPEG/21.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210602_202/1622611571103zBpvu_JPEG/22.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210603_268/1622704859920SxucI_JPEG/45.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210603_170/1622704872306GiBrU_JPEG/46.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210603_213/1622704902750OMXm8_JPEG/50.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210603_299/1622704910351Kq11W_JPEG/51.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210603_296/1622706975494pUEbP_JPEG/54.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "thanks",
+    "text": "감사합니다!!"
+   },
+   {
+    "rule": "contact",
+    "text": "바디쉴드 고객센터"
+   },
+   {
+    "rule": "phone",
+    "text": "031-542-5922"
+   },
+   {
+    "rule": "policy",
+    "text": "배송 및 고객센터 안내"
+   },
+   {
+    "rule": "contact",
+    "text": "고객센터"
+   },
+   {
+    "rule": "phone",
+    "text": "고객센터 전화번호 : 031-542-5922"
+   },
+   {
+    "rule": "policy",
+    "text": "교환 및 반품 안내\n※제품 하자 및 오배송으로 인한\n교환 및 반품은 무료 입니다.\n단, 세탁 부주의 및 주의사항 미숙지\n사이즈 오차로 인한 건은 고객님\n부담입니다.\n사이즈는 개인차가 크므로 판매자가\n어떻게 할 수 있는 사항이 아닙니다.\n구매시 신중히 선택하여 주세요!!\n-단순변심, 색상 및 사이즈 변경 등의\n택배비는 고객님 부담입니다.\n반품요령\n- 반품배송비는 환불금 차감으로 선택-\n1. 구매한 사이트에서 반품신청 누르기\n2. 미리 포장해 두었다가 기사님 방문시\n넘겨 드리기.\n3. 판매자에게 도착 후 반품완료.\n교환요령 1\n-교환배송비는 미리결제-\n1. 구매한 사이트에서 교환신청 누르기\n2. 미리 포장해 두었다가 기사님 방문시\n넘겨 드리기(교환원하는 내용 동봉)\n3. 판매자에게 도착 후 교환발송.\n교환요령 2\n※ 반품 후 재구매 ※\n-반품배송비 환불금 차감으로 선택-\n주의사항\n아래의 경우 반품 및 교환이 어렵습니다.\n1. 제품 수령 후 7일이 지난 경우\n2. 사용하신 적이 있거나 사용하신\n흔적이 있는 경우 (화장품, 각질이 묻음)\n3. 세탁하신 적이 있는 경우\n4. 고의로 불량을 만든 경우\n(택배열다가 칼로 긋거나 등등)\n색상 및 사이즈 오차는 모니터 환경 또는\n핸드폰 환경 및 공정과정의 허용범위\n내의 오차이기 때문에 하자가 아니므로\n이로 인한 교환 및 반품시 택배비는\n고객님께서 부담하셔야 합니다."
+   }
+  ],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 폴리우레탄, 스판덱스, 기타, 스판, 기모",
+    "source": "spec"
+   },
+   {
+    "label_ko": "제품소재",
+    "value_ko": "폴리에스터92% 스판8%",
+    "source": "notice"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_tops",
+   "option": 1,
+   "values": [],
+   "merged": {},
+   "brand_row": null,
+   "chart": null,
+   "held": "Men's sizes: '130(XXXL)': not read as a size"
+  }
+ },
+ "texts": [
+  {
+   "id": "title:a682e11f7c7977a1",
+   "kind": "title",
+   "ko": "남성 골프이너웨어 자외선차단 티셔츠 긴팔 라운드 빅사이즈"
+  },
+  {
+   "id": "brand:9d92ea2ac32c146b",
+   "kind": "brand",
+   "ko": "바디쉴드"
+  },
+  {
+   "id": "option_name:7655ea8c9f1399f1",
+   "kind": "option_name",
+   "ko": "BSR001 언더레이어"
+  },
+  {
+   "id": "option_value:bd2e9c44fbced7d7",
+   "kind": "option_value",
+   "ko": "남성 골프이너웨어 긴팔 라운드 검정 (여름)"
+  },
+  {
+   "id": "option_value:02ed08284cbc2a2e",
+   "kind": "option_value",
+   "ko": "남성 골프이너웨어 긴팔 라운드 흰색 (여름)"
+  },
+  {
+   "id": "option_value:1b1bcdc2a4cbff77",
+   "kind": "option_value",
+   "ko": "남성 골프이너웨어 긴팔 목넥 검정 (여름)"
+  },
+  {
+   "id": "option_value:456d5f8f82b76550",
+   "kind": "option_value",
+   "ko": "남성 골프이너웨어 긴팔 목넥 흰색 (여름)"
+  },
+  {
+   "id": "option_value:b3d9d9ddaad5b536",
+   "kind": "option_value",
+   "ko": "여성 골프이너웨어 긴팔 라운드 검정 (여름)"
+  },
+  {
+   "id": "option_value:06dbcfc9405dadcc",
+   "kind": "option_value",
+   "ko": "여성 골프이너웨어 긴팔 라운드 흰색 (여름)"
+  },
+  {
+   "id": "option_value:72f62c63caff8e7f",
+   "kind": "option_value",
+   "ko": "남성 골프이너웨어 긴팔 라운드 검정 (겨울)"
+  },
+  {
+   "id": "option_value:794242a33429a1a0",
+   "kind": "option_value",
+   "ko": "남성 골프이너웨어 긴팔 목넥 검정 (겨울)"
+  },
+  {
+   "id": "option_value:c071638b69fae958",
+   "kind": "option_value",
+   "ko": "남성 골프이너웨어 긴팔 라운드 흰색 (겨울)"
+  },
+  {
+   "id": "option_value:3f00af9dbffc7f54",
+   "kind": "option_value",
+   "ko": "남성 골프이너웨어 긴팔 목넥 흰색 (겨울)"
+  },
+  {
+   "id": "option_value:ee9351c3cf785bb8",
+   "kind": "option_value",
+   "ko": "남성 골프이너웨어 긴팔 라운드 카키 (겨울)"
+  },
+  {
+   "id": "option_value:521a8548eefced69",
+   "kind": "option_value",
+   "ko": "남성 골프이너웨어 긴팔 목넥 카키 (겨울)"
+  },
+  {
+   "id": "option_value:2972aec9dba489d4",
+   "kind": "option_value",
+   "ko": "여성 골프이너웨어 긴팔 라운드 검정 (겨울)"
+  },
+  {
+   "id": "option_value:84009452d77c67b7",
+   "kind": "option_value",
+   "ko": "여성 골프이너웨어 긴팔 목넥 검정 (겨울)"
+  },
+  {
+   "id": "option_value:17490204bef3fcf5",
+   "kind": "option_value",
+   "ko": "여성 골프이너웨어 긴팔 라운드 흰색 (겨울)"
+  },
+  {
+   "id": "option_value:67946dc8616b2d0c",
+   "kind": "option_value",
+   "ko": "여성 골프이너웨어 긴팔 목넥 흰색 (겨울)"
+  },
+  {
+   "id": "option_value:5883264a7ba98394",
+   "kind": "option_value",
+   "ko": "여성 골프이너웨어 긴팔 라운드 카키 (겨울)"
+  },
+  {
+   "id": "option_value:c615715c8d0be42e",
+   "kind": "option_value",
+   "ko": "여성 골프이너웨어 긴팔 목넥 카키 (겨울)"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:78f1cc7cd949845a",
+   "kind": "option_value",
+   "ko": "95(S)"
+  },
+  {
+   "id": "option_value:1e5ba1a42f51e8fb",
+   "kind": "option_value",
+   "ko": "100(M)"
+  },
+  {
+   "id": "option_value:d22de0061b8d952b",
+   "kind": "option_value",
+   "ko": "105(L)"
+  },
+  {
+   "id": "option_value:507d7876976a142e",
+   "kind": "option_value",
+   "ko": "110(XL)"
+  },
+  {
+   "id": "option_value:7f3ad78e5f9d1129",
+   "kind": "option_value",
+   "ko": "120(XXL)"
+  },
+  {
+   "id": "option_value:29ffc56f446360ff",
+   "kind": "option_value",
+   "ko": "130(XXXL)"
+  },
+  {
+   "id": "option_value:7d9a19e150c0b28c",
+   "kind": "option_value",
+   "ko": "44(S)"
+  },
+  {
+   "id": "option_value:c44089d7a2d30d54",
+   "kind": "option_value",
+   "ko": "55(M)"
+  },
+  {
+   "id": "option_value:5709501562f351d5",
+   "kind": "option_value",
+   "ko": "66(L)"
+  },
+  {
+   "id": "option_value:8b0d767e60ce3711",
+   "kind": "option_value",
+   "ko": "77(XL)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:9d92ea2ac32c146b",
+   "kind": "spec_value",
+   "ko": "바디쉴드"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:0ce65e7b4a8123d7",
+   "kind": "spec_value",
+   "ko": "BSR001"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2c9897140d6cbb96",
+   "kind": "spec_value",
+   "ko": "국산"
+  },
+  {
+   "id": "spec_label:521009f503e491a5",
+   "kind": "spec_label",
+   "ko": "네크라인"
+  },
+  {
+   "id": "spec_value:ed6aa49d95c9f738",
+   "kind": "spec_value",
+   "ko": "라운드넥, 터틀넥, 반목"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:bc52af2652aa8eff",
+   "kind": "spec_value",
+   "ko": "자외선차단, 흡습, 신축성, 기모안감, 방풍"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:7f62410c02029589",
+   "kind": "spec_value",
+   "ko": "폴리에스테르, 폴리우레탄, 스판덱스, 기타, 스판, 기모"
+  },
+  {
+   "id": "spec_label:c595482b55571d6a",
+   "kind": "spec_label",
+   "ko": "소매기장"
+  },
+  {
+   "id": "spec_value:2fa60fab30cad430",
+   "kind": "spec_value",
+   "ko": "긴팔"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:bed47e98ee4bbea0",
+   "kind": "spec_value",
+   "ko": "2023년형"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:f977ac4486c2b67c",
+   "kind": "spec_value",
+   "ko": "티셔츠"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:e012efbcc2aa417e",
+   "kind": "spec_value",
+   "ko": "남녀공용"
+  },
+  {
+   "id": "review:81e0bd088d420d8a",
+   "kind": "review",
+   "ko": "브랜드로 주문하려다가\n평이좋아서 주문했습니당\n입어보고 나가보니 너무 좋습니다\n작년엔 팔토시로 바이크타고햇는데\n이너웨어로 더 시원하고 가벼순느낌으로\n바이크타게됬습니다"
+  },
+  {
+   "id": "review:a45c0c11627e2f99",
+   "kind": "review",
+   "ko": "살짝타이트하게나왔네요. 보통라지사이즈입는데작아서XL로교환했어요. 여름에입기는좀더울것같아요. 생각보다두께가좀있네요."
+  },
+  {
+   "id": "review:dd4261a32197328a",
+   "kind": "review",
+   "ko": "골프 이너중에서 젤 좋은듯합니다\n사이즈도 넉넉하고 제질도 좋와요\n검정은 단독으로 물빨래하셔야되요\n검정물이 겁나게 나와요"
+  },
+  {
+   "id": "review:d90816abda901ac6",
+   "kind": "review",
+   "ko": "역시 국내생산제품이 좋습니다. 중국산 구입했다가 한번입고 버렸습니다. 이제품은 이너웨어답게 쫀쫀하고 착용감 좋습니다. 재구매의사 있습니다."
+  },
+  {
+   "id": "review:76fbac52ccae3778",
+   "kind": "review",
+   "ko": "옷감도 좋고 착용감도편안합니다.\n레깅스처럼 딱 달라붙는 그런스탈은 아닙니다. 뭐물론 몸이 근육질 빵빵하다면 그렇게 될수도 있겠지만. 골프반팔옷 안에 입을려고 구매해서 안에 입고 팔부분살짝걷어올리며 보기에 좋습니다."
+  },
+  {
+   "id": "review:b445703b8d7f6b43",
+   "kind": "review",
+   "ko": "1회 실전착화 후 구매후기 여름 배낚시를 가기위해 구매했고, 실착하고\n다녀왔습니다. 새벽부터 땡볕 3시까지 낚시\n1 시원함 시원합니다. 쿨토시느낌정도\n2 착용감 얇아서 가볍고 느낌도 부드럽습니다.\n3 자외선차단 잘 안된다는 느낌 혹시해서 자외선차단제도 바르고 입었는데 까맣게 탔네요\n운동할때 입는 옷 같습니다. 다녀와서 안되겠다 싶어서 뜨리엠 쿨토시 다시샀습니다.\n뭐 뭍은 사진은 착용 증명용\n배에서 조심하지 못해서 녹 뭍은거에요\n저건 옷탓이 아니죠"
+  },
+  {
+   "id": "review:b732a85c05e2fefb",
+   "kind": "review",
+   "ko": "몸통은 잘 맞는데 팔이 헐거워요.\n인너웨어가 팔도 어느정도 타이트 해야하는데\n일반 긴팔티 처럼 팔이 허걸워서 흐느적흐느적.\n제가 팔이 얇은것은 아닙니다."
+  },
+  {
+   "id": "review:d6b491bc9f3cfec8",
+   "kind": "review",
+   "ko": "몸은 잘 맞는데 팔이 헐거워요.\n이너웨어가 팔도 어느정도 타이트 해야하는데\n일반 긴팔옷처럼 팔이 흐느적 해요.\n제가 팔이 얇은것도 아닌데."
+  }
+ ]
+}

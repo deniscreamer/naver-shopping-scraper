@@ -1,0 +1,311 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:500007665:12487907002",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "2 of 2 kept (full 2); 0 trimmed"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/halfclub/products/12487907002",
+  "channel_no": "500007665",
+  "product_id": "12487907002",
+  "category_id": "50002798"
+ },
+ "product": {
+  "title_ko": "[헤지스골프]여성 네이비 긴소매 풀집 원피스형 점퍼 HWJU3D624N3",
+  "brand_ko": "헤지스골프",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "[헤지스골프]여성 네이비 긴소매 풀집 원피스형 점퍼 HWJU3D624N3"
+     },
+     {
+      "source": "listing",
+      "value": "womens",
+      "text": "여성 골프 바람막이 점퍼"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [],
+  "facts": [
+   {
+    "label_ko": "선택하기",
+    "value_ko": "Dark Navy/090"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"Dark Navy/090\"]",
+    "naver_variant_id": "52381518674",
+    "options_ko": [],
+    "price_krw": 117290,
+    "price_usd": "117.29",
+    "sku": "FW-1b617760c76cb465851e9756",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 150,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 117290,
+   "original_krw": 180460,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "LF"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "헤지스골프"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "점퍼"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.5,
+   "count": 2
+  },
+  "reviews": [
+   {
+    "id": "5023581398",
+    "score": 4,
+    "text_ko": "할인 많이된 가격으로 잘. 구매 했고요. 약간 얇은듯 하고. 잠잖게. 입기 좋을듯 얇아요.",
+    "created_at": "2026-07-17T10:59:13Z",
+    "writer": "js****",
+    "photos": [
+     "collected/50002788-fixtures/images/12487907002/fairwardgolf-review-image-6c16bfa192e58826.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 43,
+    "text_original_ko": "할인 많이된 가격으로 잘. 구매 했고요.약간 얇은듯 하고. 잠잖게. 입기 좋을듯 얇아요...."
+   },
+   {
+    "id": "4969015182",
+    "score": 5,
+    "text_ko": "편하게 잘 입을듯 사이즈 색상 다 화면과 같아요",
+    "created_at": "2026-05-05T10:25:06Z",
+    "writer": "js****",
+    "photos": [
+     "collected/50002788-fixtures/images/12487907002/fairwardgolf-review-image-d4dd0fc464c0406a.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 59
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/12487907002/fairwardgolf-12487907002-001-40b968ef76fad19d.webp",
+    "sha256": "40b968ef76fad19da9b4f16e41d3e9dee3f0ba4492155da9b3e89a54d76452f6",
+    "width": 600,
+    "height": 600
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 2500,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 2,500원",
+   "lead_time": {
+    "seller_average_days": 2.516279,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "성별 : / 계절 :\n두께감 | 얇아요 | 적당한 편 | 두꺼워요\n신축성 | 신축성이 없어요 | 약간 있어요 | 신축성이 좋아요\n촉감 | 까실한 느낌 | 적당한 느낌 | 부드러운 느낌\n안감 | 안감이 없어요 | 안감이 있어요 | 안감이 부분적으로 있어요\n비침 | 비침이 없어요 | 약간 있어요(화이트) | 비침이 있어요\n실측 사이즈\n점퍼\nA 총길이\nB 어깨너비\nC 가슴둘레\nD 소매길이\nE 소매화장\n085 | 090 | 095\n88.5 | 90 | 91.5\n- | - | -\n87 | 92 | 98\n- | - | -\n76 | 78 | 80\n실측사이즈는 디자인, 소재, 측정 위치 및 방법에 따라 오차가 있을 수 있습니다. 단위 cm\n* 판매자 정보\n판매자 | 하프클럽 | 연락처 | 0215881812\n주소 | 경기도 안성시 양성면 양성로 174-13 하프클럽 물류센터",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20261112_153/1794476008582gLXIY_JPEG/p-12431422104-s-4-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20261112_291/1794476008585Y7gEq_JPEG/p-12431422104-s-4-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20261112_292/1794476008588EARPx_JPEG/p-12431422104-s-4-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20261112_186/1794476008592CORAt_JPEG/p-12431422104-s-4-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20261112_24/1794476008591uS2ak_JPEG/p-12431422104-s-4-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20261112_128/1794476008585XCxeM_JPEG/p-12431422104-s-4-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20261112_167/1794476008585uQrKf_JPEG/p-12431422104-s-4-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20261112_4/1794476008590pjivs_JPEG/p-12431422104-s-4-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20261112_279/1794476008593wToNn_JPEG/p-12431422104-s-4-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20261112_57/17944760085821Q7P4_JPEG/p-12431422104-s-4-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20261112_41/1794476008669H3v4l_JPEG/p-12431422104-s-4-A-10.jpg"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "제품소재",
+    "value_ko": "겉감-나일론 86% 폴리우레탄 14% 안감-폴리에스터 100%",
+    "source": "notice"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_tops",
+   "option": null,
+   "values": [],
+   "merged": {},
+   "brand_row": null,
+   "chart": null,
+   "held": null,
+   "fact": {
+    "label_ko": "선택하기",
+    "ko": "090",
+    "us": "S (US 4-6)"
+   }
+  }
+ },
+ "texts": [
+  {
+   "id": "title:3d3f8bdc42e2eaa2",
+   "kind": "title",
+   "ko": "[헤지스골프]여성 네이비 긴소매 풀집 원피스형 점퍼 HWJU3D624N3"
+  },
+  {
+   "id": "brand:0b6c04746100bc16",
+   "kind": "brand",
+   "ko": "헤지스골프"
+  },
+  {
+   "id": "fact_label:3d804ac60d53483d",
+   "kind": "fact_label",
+   "ko": "선택하기"
+  },
+  {
+   "id": "fact_value:4f9ce212ff5aad17",
+   "kind": "fact_value",
+   "ko": "Dark Navy/090"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:53a36375dcfbda8e",
+   "kind": "spec_value",
+   "ko": "LF"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:0b6c04746100bc16",
+   "kind": "spec_value",
+   "ko": "헤지스골프"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:db573e5c4827585b",
+   "kind": "spec_value",
+   "ko": "점퍼"
+  },
+  {
+   "id": "review:bcdd3f85ff03c7bf",
+   "kind": "review",
+   "ko": "할인 많이된 가격으로 잘. 구매 했고요. 약간 얇은듯 하고. 잠잖게. 입기 좋을듯 얇아요."
+  },
+  {
+   "id": "review:c3e0b2f715e28fb0",
+   "kind": "review",
+   "ko": "편하게 잘 입을듯 사이즈 색상 다 화면과 같아요"
+  }
+ ]
+}

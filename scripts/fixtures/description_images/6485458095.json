@@ -1,0 +1,498 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 645077,
+   "height": 2000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250919_86/1758261942132zfzCE_PNG/002.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.912,
+       "text": "TEE A / AND / GOLF",
+       "y": 192
+      },
+      {
+       "conf": 0.915,
+       "text": "golf wear",
+       "y": 360
+      },
+      {
+       "conf": 0.987,
+       "text": "골프와 일상을 경계없이,매일 입고 싶은",
+       "y": 727
+      },
+      {
+       "conf": 0.998,
+       "text": "골프웨어 브랜드 티앤드입니다.",
+       "y": 793
+      },
+      {
+       "conf": 0.988,
+       "text": "골프,테니스,일상까지 편안하면서도",
+       "y": 926
+      },
+      {
+       "conf": 0.633,
+       "text": "HVIMXTIV / 세련된 티앤드 만의 스타일을 / GOLF WEAR",
+       "y": 908
+      },
+      {
+       "conf": 0.997,
+       "text": "합리적인 가격으로 만나보세요:)",
+       "y": 1060
+      },
+      {
+       "conf": 0.965,
+       "text": "오늘도 티앤드와 함께",
+       "y": 1193
+      },
+      {
+       "conf": 0.964,
+       "text": "편안한 라이프 스타일을",
+       "y": 1258
+      },
+      {
+       "conf": 0.952,
+       "text": "만들어 가시길 바라겠습니다.",
+       "y": 1328
+      },
+      {
+       "conf": 0.96,
+       "text": "Enjoy yowr golf with Tee and",
+       "y": 1603
+      }
+     ],
+     "y0": 0,
+     "y1": 2000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1051346,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_105/1648714687218MBqV1_JPEG/20211117_164501.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1394946,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_157/1648714687222GyUqH_JPEG/20211117_165647.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.665,
+       "text": "-",
+       "y": 554
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1064492,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_55/1648714832656zfPRI_JPEG/20211117_164503.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1051346,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_270/1648714832596JiTdE_JPEG/20211117_164501.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1058603,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_86/16487148326458I8jA_JPEG/20211117_164508.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.879,
+       "text": "'",
+       "y": 490
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 961620,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_235/1648714832645IjODf_JPEG/20211117_164511.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 925319,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_142/1648714832651Uo9LG_JPEG/20211117_164538.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1050357,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_294/1648714832663mlFu0_JPEG/20211117_164543.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 960728,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_150/1648714832899dOvJb_JPEG/20211117_164545.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.686,
+       "text": "-",
+       "y": 376
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1394946,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_92/1648714843909Nna6W_JPEG/20211117_165647.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.665,
+       "text": "-",
+       "y": 554
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1396240,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_162/16487148439378OIFb_JPEG/20211117_165729.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1393010,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_45/16487148439125YYJt_JPEG/20211117_165730.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1427700,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_167/16487148439752eIlw_JPEG/20211117_165738.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1385898,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_158/1648714843986YOj9u_JPEG/20211117_165740.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1356944,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_248/1648714843974yvcRV_JPEG/20211117_165743.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.923,
+       "text": "VN",
+       "y": 309
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1324597,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_19/1648714844238EGGdp_JPEG/20211117_182157.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.783,
+       "text": "||",
+       "y": 285
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1113600,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220331_66/1648714844302La5Q4_JPEG/20211117_182235.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 291655,
+   "height": 1788,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250919_159/1758261951804xp0j8_PNG/003.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.996,
+       "text": "배송비 안내",
+       "y": 448
+      },
+      {
+       "conf": 0.971,
+       "text": "변심 교환:6,000원 [빠른 교환을 위하여'자동 수거 요청'을 선택해주세요]",
+       "y": 497
+      },
+      {
+       "conf": 0.962,
+       "text": "변심 반품: 편도3,000원[왕복 배송비 6,000원]",
+       "y": 533
+      },
+      {
+       "conf": 0.989,
+       "text": "반품 상품 제외한 수령 상품이 5만원 이상인 경우 3,000원,5만원 미만이 되는 경우 6,000원이 청구됩니다.",
+       "y": 570
+      },
+      {
+       "conf": 0.979,
+       "text": "불량 오배송/교환/반품:무료[사진과 함께 네이버 톡톡으로 상담 신청 후 처리 가능합니다.]",
+       "y": 604
+      },
+      {
+       "conf": 0.949,
+       "text": "교환 반품 안내",
+       "y": 678
+      },
+      {
+       "conf": 0.982,
+       "text": "교환/반품은'수령 후 7일 이내에만'네이버페이 구매내역에서 신청된 건에 한해 처리 가능합니다.",
+       "y": 732
+      },
+      {
+       "conf": 0.977,
+       "text": "상품 하자,오배송의 경우 수령일로부터 3일 이내 접수해 주셔야 교환/반품 가능합니다.",
+       "y": 769
+      },
+      {
+       "conf": 0.98,
+       "text": "빠른 교환/반품 처리를 위해'자동 수거 요청'을 선택해 주세요.방문 수거 실패 시 톡톡 문의 부탁드립니다.",
+       "y": 803
+      },
+      {
+       "conf": 0.988,
+       "text": "교환/반품 배송비는‘지금결제함-추가결제'로 선택 해주시면 더욱 빠른 처리가 가능합니다.",
+       "y": 840
+      },
+      {
+       "conf": 0.966,
+       "text": "교환 반품 불가한 경우",
+       "y": 932
+      },
+      {
+       "conf": 0.978,
+       "text": "쇼핑몰 운영 정책에 따라'구매확정 이후'어떠한 사유라도 교환/반품 불가합니다.",
+       "y": 983
+      },
+      {
+       "conf": 0.958,
+       "text": "상품 착용 또는 세탁으로 인한 오염 및 변형 등 고객 부주의로 인한 상품 불량 및 훼손은 교환/반품 불가합니다.",
+       "y": 1021
+      },
+      {
+       "conf": 0.978,
+       "text": "상품을 수령하신 초기 상태(상품의 택,사은품,포장지 등)가 웨손되지 않은 상태에서만 교환/반품 가능합니다.",
+       "y": 1057
+      },
+      {
+       "conf": 0.979,
+       "text": "티앤드 골프의 대부분 상품은 '드라이크리닝'이 기본이며,상세페이지에'단독손세탁'명시 된 경우에",
+       "y": 1092
+      },
+      {
+       "conf": 0.976,
+       "text": "손세탁을 권유 드립니다.세탁 부주의로 인한 오염 및 변형은 A/S 및 교환/반품이 불가합니다.",
+       "y": 1127
+      },
+      {
+       "conf": 1.0,
+       "text": "특이사항",
+       "y": 1210
+      },
+      {
+       "conf": 0.97,
+       "text": "상품의 재고 부족 또는 출고 전 검수 과정에서 주문이 취소될 수 있는 점 양해 부탁드립니다.",
+       "y": 1267
+      },
+      {
+       "conf": 0.997,
+       "text": "예상 배송일은 실제 배송일과 차이가 있으므로 여유를 가지고 주문 부탁드립니다.",
+       "y": 1301
+      },
+      {
+       "conf": 0.99,
+       "text": "정확한 검수 및 출고를 위해 배송되는 모든 상품은 CCTV에 녹화됩니다.",
+       "y": 1338
+      }
+     ],
+     "y0": 0,
+     "y1": 1788
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  }
+ ],
+ "key": "fairwardgolf:naver:100954126:6485458095",
+ "links_sha256": "723d353774dcd4b716cfb6fedd44768351da0348e639dc656c3238b60cbb517c",
+ "product_id": "6485458095",
+ "seconds": 38.0,
+ "skipped": []
+}

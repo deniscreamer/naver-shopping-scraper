@@ -503,3 +503,34 @@ def test_own_row_is_the_shops_own_label_the_reseller_rule_drops():
     assert run_transform._own_row(line("카멜브리즈", "카멜브리즈 협력업체"))
     assert not run_transform._own_row(line("DGB", "카멜브리즈 협력업체"))
     assert not run_transform._own_row(line("카멜브리즈", "카멜브리즈"))
+
+
+# ---- the owner's variants left out (variants_by_owner.json, 2026-11-25) --------------------------------------------
+
+def test_the_owners_variants_are_left_out_through_the_cache(tmp_path):
+    """The owner's yes to the Fable size review (2026-11-25): a product's variants named in <shop>/variants_by_owner.json
+    are left out in prepare (before the options and the sizes); the entry is in the record's signature, so a cached
+    product is prepared afresh when its entry comes, changes or goes, and the others stay hits."""
+    ls = collected()[:12]
+    shops = _cached_shop(tmp_path, ls)
+    assert run_transform.variants_by_owner("fairwardgolf", shops) == {}
+    _cached_vs_full(shops)
+    key = next(x["key"] for x in ls if x["key"].endswith(":10954221464"))     # 아이언샤프트 선택: 그라파이트 R .. 스틸
+    path = os.path.join(shops, "fairwardgolf", "variants_by_owner.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump({"entries": {key: {"drop": {"아이언샤프트 선택": ["스틸", "없는값"]}, "why": "test", "at": "2026-11-25"},
+                               "k-none": {"why": "no drop"}, "k-gone": {"drop": {"0": ["x"]}}}}, f, ensure_ascii=False)
+    assert run_transform.variants_by_owner("fairwardgolf", shops) == {
+        key: {"아이언샤프트 선택": ["스틸", "없는값"]}, "k-gone": {"0": ["x"]}}
+    got, count = _cached_vs_full(shops)
+    assert count == {"hit": len(ls) - 1, "miss": 1}
+    p = next(p for p in got["prepared"] if p["key"] == key)
+    assert "스틸" not in p["product"]["options"][0]["values_ko"]
+    assert {"code": "variants_left_out_by_owner", "detail": "1 variants: 아이언샤프트 선택: 스틸"} in p["notes"]
+    assert {"code": "variants_by_owner_unused", "detail": "아이언샤프트 선택: 없는값"} in p["notes"]
+    assert "  variants_by_owner: 2 entries, 1 applied, 1 with a value unused, 1 keys not prepared" in got["report"]
+    os.remove(path)                                                     # the entry gone: that product afresh again
+    got, count = _cached_vs_full(shops)
+    assert count == {"hit": len(ls) - 1, "miss": 1}
+    assert not any(n["code"].startswith("variants_") and "owner" in n["code"] for p in got["prepared"] for n in p["notes"])
+    assert run_transform.verify("fairwardgolf", None, shops, {})[0] == 0

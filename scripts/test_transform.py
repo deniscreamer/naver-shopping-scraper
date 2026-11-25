@@ -962,7 +962,7 @@ def test_the_knit_rules_are_the_owners():
     assert knit.no_choice_out and knit.composition and knit.reviewed   # the owner 2026-11-20: live after wave 1
     assert not knit.sets_only and not knit.wedge_sets and not knit.agency_needs_brand
     assert not any(c.no_choice_out or c.composition for k, c in rules_for("fairwardgolf").categories.items()
-                   if k not in ("50002796", "50002797", "50002798", "50002799", "50002802", "50002801"))   # the clubs' stay
+                   if k not in ("50002796", "50002797", "50002798", "50002799", "50002802", "50002801", "50002816"))   # the clubs' stay
 
 
 def test_the_windbreaker_rules_are_the_knits_and_it_is_reviewed():
@@ -1079,12 +1079,13 @@ def test_the_composition_rows_are_kept_for_the_duty_and_the_description():
 def test_the_long_sleeve_top_rules_are_the_windbreakers_and_reviewed():
     """50002796 (2026-11-21, the owner's section): the windbreakers' apparel rules; DRAFT first."""
     wind, tops = (rules_for("fairwardgolf").category(c) for c in ("50002798", "50002796"))
-    assert dataclasses.replace(tops, variant_screen=(), sizes_mens=None) == wind and tops.reviewed
+    assert dataclasses.replace(tops, variant_screen=(), variant_drop=(), sizes_mens=None) == wind and tops.reviewed
     assert tops.sizes_mens == "mens_tops" and tops.draft_leaves == ()      # the men's section reviewed 2026-11-22
     import transform_shops
     assert not transform_shops.draft_leaf("fairwardgolf", "50002796", ["mens-fall-long-sleeve-tops"])
     assert not transform_shops.draft_leaf("fairwardgolf", "50002796", ["womens-fall-long-sleeve-tops"])
-    assert tops.variant_screen == ("short_sleeve", "cardigan", "vest", "cooling", "outerwear")   # no 반팔 variant (2026-11-21)
+    assert tops.variant_screen == ("short_sleeve", "cardigan", "vest")   # no 반팔 variant (2026-11-21)
+    assert tops.variant_drop == ("trousers", "outerwear", "cooling")     # left out, the tops sold (2026-11-25)
 
 
 def test_values_one_once_spaces_are_ignored_are_one_value():

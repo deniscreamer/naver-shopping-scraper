@@ -1,0 +1,758 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 81332,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_138/17282674573695j0nU_JPEG/001.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.996,
+       "text": "BASIC",
+       "y": 76
+      },
+      {
+       "conf": 0.971,
+       "text": "헬로버디 베이직 티셔츠 긴팔",
+       "y": 233
+      },
+      {
+       "conf": 0.999,
+       "text": "SHIRTS",
+       "y": 716
+      },
+      {
+       "conf": 0.997,
+       "text": "Bird",
+       "y": 782
+      },
+      {
+       "conf": 0.989,
+       "text": "폴리88%스판12%",
+       "y": 920
+      },
+      {
+       "conf": 1.0,
+       "text": "55-77",
+       "y": 960
+      },
+      {
+       "conf": 0.987,
+       "text": "화이트,블랙",
+       "y": 998
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 2765654,
+   "height": 1980,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251014_140/1760442961424HHqLh_JPEG/qweqeqweqweqweqw.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1980
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1210040,
+   "height": 1500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250924_252/1758641541676nFmP2_JPEG/KakaoTalk_20250916_223418149_09.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1500
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1525457,
+   "height": 1500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250924_173/1758641555359B25nr_JPEG/KakaoTalk_20250916_223418149_11.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1500
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1737383,
+   "height": 1500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250924_69/1758641573405xOq9p_JPEG/KakaoTalk_20250916_223418149_08.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1500
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 254946,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_186/1728267456799vrL9w_JPEG/003.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.992,
+       "text": "HELLO BIRDIE",
+       "y": 720
+      },
+      {
+       "conf": 0.989,
+       "text": "BASIC TSHIRTS",
+       "y": 783
+      },
+      {
+       "conf": 0.941,
+       "text": "가볍고 활동 하기 편한 기능성원단의",
+       "y": 930
+      },
+      {
+       "conf": 0.982,
+       "text": "베이직 티셔츠 입니다.",
+       "y": 974
+      },
+      {
+       "conf": 0.981,
+       "text": "로고 없이 깔끔한 디자인으로 어떤 하의에도 잘 어울립니다.",
+       "y": 1011
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 305245,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_172/1728267456805JV7EH_JPEG/004.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.935,
+       "text": "이미지무단도용시 법적대응합니다",
+       "y": 1009
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 238997,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_100/1728267456806oWmm0_JPEG/005.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.966,
+       "text": "BASIC T SHIRTS",
+       "y": 56
+      },
+      {
+       "conf": 0.949,
+       "text": "Hello Birdie",
+       "y": 115
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 49247,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_19/1728267456733s3jOX_JPEG/006.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 138202,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_168/1728267548692YNVHL_JPEG/013.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.981,
+       "text": "뛰어난 흡한속건 기능으로",
+       "y": 227
+      },
+      {
+       "conf": 0.998,
+       "text": "어떠한 활동도 완벽하게 만들어줍니다.",
+       "y": 282
+      },
+      {
+       "conf": 0.998,
+       "text": "↑↓↑↓ / 흡한속건",
+       "y": 443
+      },
+      {
+       "conf": 0.639,
+       "text": "LO OANI / 신체의 땀과 수분을 빠르게 흡수하고",
+       "y": 453
+      },
+      {
+       "conf": 0.975,
+       "text": "000 / 건조시켜 쾌적한 착용감을 선사합니다.",
+       "y": 518
+      },
+      {
+       "conf": 0.987,
+       "text": "뛰어난 신축성",
+       "y": 652
+      },
+      {
+       "conf": 0.985,
+       "text": "완벽한 비율의 사방 스트레치로 신축성이",
+       "y": 705
+      },
+      {
+       "conf": 0.991,
+       "text": "탁월하여 격한 활동에도 적합합니다.",
+       "y": 739
+      },
+      {
+       "conf": 0.949,
+       "text": "자외선 차단",
+       "y": 853
+      },
+      {
+       "conf": 0.953,
+       "text": "썬크림이 막지 못하는UV_A까지 막아주며,",
+       "y": 907
+      },
+      {
+       "conf": 0.934,
+       "text": "자외선으로 부터 피부의 노화를막아 줍니다.",
+       "y": 941
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 284867,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_201/1728267456796cCAUy_JPEG/002.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 181272,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_293/17282674571113DkdC_JPEG/007.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.995,
+       "text": "HELLO BIRDIE / BASIC",
+       "y": 69
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 345512,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_106/1728267457070gJm4G_JPEG/008.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.99,
+       "text": "HELLO BIRDIE / BASIC",
+       "y": 67
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1005192,
+   "height": 1920,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241015_109/1728963545218JCQzw_JPEG/8D1FE607-A838-4EA0-9EE0-0DFD92051E01.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1920
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1048373,
+   "height": 1920,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241015_160/1728963580500SMM7h_JPEG/1D7F93F7-77FD-4267-92BA-D0A242D7D39D.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.936,
+       "text": "53",
+       "y": 1402
+      }
+     ],
+     "y0": 0,
+     "y1": 1920
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 79348,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_4/17282674568652lWvJ_JPEG/009.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.994,
+       "text": "입기편한스냅버튼",
+       "y": 428
+      },
+      {
+       "conf": 0.997,
+       "text": "DETAIL",
+       "y": 523
+      },
+      {
+       "conf": 0.994,
+       "text": "흡한속건",
+       "y": 604
+      },
+      {
+       "conf": 0.998,
+       "text": "기능성원단",
+       "y": 947
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 105944,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_29/1728267456951ueG5j_JPEG/010.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.994,
+       "text": "M",
+       "y": 217
+      },
+      {
+       "conf": 0.998,
+       "text": "스냅버튼",
+       "y": 966
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 128522,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_47/1728267456996FeyeO_JPEG/011.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.924,
+       "text": "밑단",
+       "y": 968
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 78774,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_93/1728267457106uMGjg_JPEG/012.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "소매",
+       "y": 505
+      },
+      {
+       "conf": 0.988,
+       "text": "원단",
+       "y": 1046
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 83729,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_65/1728267457155rKVgI_JPEG/013.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.978,
+       "text": "SIZE INFO",
+       "y": 116
+      },
+      {
+       "conf": 0.993,
+       "text": "FREE SIZE",
+       "y": 210
+      },
+      {
+       "conf": 0.902,
+       "text": "7",
+       "y": 751
+      },
+      {
+       "conf": 0.99,
+       "text": "원단 / 세탁방법 / 두께감 / 신축성",
+       "y": 839
+      },
+      {
+       "conf": 0.994,
+       "text": "상세설명참조 / 드라이 / 중간 / 매우좋음",
+       "y": 881
+      },
+      {
+       "conf": 0.982,
+       "text": "헬로버디 베이직티셔츠(긴팔)",
+       "y": 949
+      },
+      {
+       "conf": 0.952,
+       "text": "이미지무단 도용시법적대응합니다",
+       "y": 1031
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 63187,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_217/1728267457189eVDPR_JPEG/014.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.993,
+       "text": "HELLO,",
+       "y": 187
+      },
+      {
+       "conf": 0.999,
+       "text": "BIRDIE",
+       "y": 320
+      },
+      {
+       "conf": 0.895,
+       "text": "베이직 티셔츠 긴팔",
+       "y": 469
+      },
+      {
+       "conf": 0.989,
+       "text": "기능성티 / 총기장 / 가슴둘레 / 어깨 / 소매길이",
+       "y": 564
+      },
+      {
+       "conf": 0.945,
+       "text": "55(S) / 58 / 84 / 34 / 58",
+       "y": 640
+      },
+      {
+       "conf": 0.99,
+       "text": "66(M) / 59 / 90 / 35 / 59",
+       "y": 708
+      },
+      {
+       "conf": 0.989,
+       "text": "77(L) / 60 / 95 / 36 / 60",
+       "y": 774
+      },
+      {
+       "conf": 0.93,
+       "text": "재는 사람에 따라 오차 1-3cm있을 수 있습니다.",
+       "y": 892
+      },
+      {
+       "conf": 0.911,
+       "text": "이미지 무단 도용시 법적대응합니다",
+       "y": 1032
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 195007,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_215/17282674572089N40n_JPEG/015.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.994,
+       "text": "MODEL INFO",
+       "y": 66
+      },
+      {
+       "conf": 0.999,
+       "text": "Height:168cm",
+       "y": 715
+      },
+      {
+       "conf": 0.994,
+       "text": "Weight :48kg",
+       "y": 766
+      },
+      {
+       "conf": 0.982,
+       "text": "Top:55(s)",
+       "y": 822
+      },
+      {
+       "conf": 0.96,
+       "text": "Bottom: 26 (s)",
+       "y": 879
+      },
+      {
+       "conf": 0.942,
+       "text": "Fitting Color :블랙",
+       "y": 933
+      },
+      {
+       "conf": 0.914,
+       "text": "Size : Free",
+       "y": 990
+      },
+      {
+       "conf": 0.956,
+       "text": "이미지무단 도용시법적대응합니다",
+       "y": 1041
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 100210,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241007_31/1728267457392EgGLV_JPEG/016.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "NOTICE",
+       "y": 116
+      },
+      {
+       "conf": 0.997,
+       "text": "DELIVERY",
+       "y": 210
+      },
+      {
+       "conf": 0.981,
+       "text": "· 제품은 통합 물류로,로젠 택배사를 통해 발송됩니다.",
+       "y": 453
+      },
+      {
+       "conf": 0.972,
+       "text": "·도서 및 산간지역은 추가비용 발송됩니다.",
+       "y": 485
+      },
+      {
+       "conf": 0.945,
+       "text": "EXCHANGE & REFUND",
+       "y": 620
+      },
+      {
+       "conf": 0.991,
+       "text": "·구매 후 7일 이내에 신청한 상품만 교환 및 반품이 가능합니다.",
+       "y": 812
+      },
+      {
+       "conf": 0.978,
+       "text": "·교환 및 반품 상품은 받으신 패키지와택배 박스에 그대로 넣어 반송해주세요.",
+       "y": 843
+      },
+      {
+       "conf": 0.969,
+       "text": "·패키지 및 사은품 누락 시 교환, 반품이 어렵습니다.",
+       "y": 877
+      },
+      {
+       "conf": 0.985,
+       "text": "·고객님의 부주의로 발생된 파손 및 사용제품은 교환 및 환불이 불가합니다.",
+       "y": 911
+      },
+      {
+       "conf": 0.998,
+       "text": "·상품 특성 상 단순 변심에 의한 교환/환불이 불가합니다.",
+       "y": 945
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:500016096:10968014964",
+ "links_sha256": "4d0b8d7d781d69952dcf2ed12c74118863e96c0df5d5dc6482d1a7dfde4dc7f9",
+ "product_id": "10968014964",
+ "seconds": 28.1,
+ "skipped": [
+  {
+   "link": "https://shop-phinf.pstatic.net/20250123_118/17376062133322wBX5_JPEG/%EA%B3%B5%EC%A7%80_2.jpg?type=w848",
+   "rule": "boilerplate_name"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20250123_209/1737606215729xmpS0_PNG/%EA%B3%B5%EC%A7%80_3.png?type=w848",
+   "rule": "boilerplate_name"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20250123_95/1737606218615GdWGr_PNG/%EA%B3%B5%EC%A7%80_1.png?type=w848",
+   "rule": "boilerplate_name"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20250123_112/1737606220328PfulE_JPEG/%EA%B3%B5%EC%A7%80_4.jpg?type=w848",
+   "rule": "boilerplate_name"
+  }
+ ]
+}

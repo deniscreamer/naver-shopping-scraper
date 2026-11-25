@@ -1,0 +1,1025 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:500000592:7191019224",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "6 of 6 kept (full 6); 1 trimmed"
+  },
+  {
+   "code": "specs_name_one_variant",
+   "detail": "모델명 HG3292: 3292"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "선택"
+  },
+  {
+   "code": "paid_addons_left_out",
+   "detail": "19 paid add-ons"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/majorgolf/products/7191019224",
+  "channel_no": "500000592",
+  "product_id": "7191019224",
+  "category_id": "50002801"
+ },
+ "product": {
+  "title_ko": "아디다스 FW 겨울 남성 BR 기모 골프바지 허리밴딩 방한 남자 신축성 슬랙스 팬츠",
+  "brand_ko": "아디다스",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "아디다스 FW 겨울 남성 BR 기모 골프바지 허리밴딩 방한 남자 신축성 슬랙스 팬츠"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "가을 스트레치 골프 바지"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "선택",
+    "values_ko": [
+     "HG3292 블랙",
+     "HG3296 그레이"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "A76 (31인치)",
+     "A82 (32인치)",
+     "A92 (37인치)",
+     "A96 (39인치)"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"HG3292 블랙 A82 (32인치)\"]",
+    "naver_variant_id": "60847687106",
+    "options_ko": [
+     "HG3292 블랙",
+     "A82 (32인치)"
+    ],
+    "price_krw": 110000,
+    "price_usd": "110.00",
+    "sku": "FW-12042b69c3dbfec19080e0df",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"HG3296 그레이 A76 (31인치)\"]",
+    "naver_variant_id": "42559264976",
+    "options_ko": [
+     "HG3296 그레이",
+     "A76 (31인치)"
+    ],
+    "price_krw": 110000,
+    "price_usd": "110.00",
+    "sku": "FW-a82658e80fe68a60be5cc5ac",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"HG3296 그레이 A82 (32인치)\"]",
+    "naver_variant_id": "42559264977",
+    "options_ko": [
+     "HG3296 그레이",
+     "A82 (32인치)"
+    ],
+    "price_krw": 110000,
+    "price_usd": "110.00",
+    "sku": "FW-c9525d1daf65589b181d7afd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"HG3296 그레이 A92 (37인치)\"]",
+    "naver_variant_id": "42559264979",
+    "options_ko": [
+     "HG3296 그레이",
+     "A92 (37인치)"
+    ],
+    "price_krw": 110000,
+    "price_usd": "110.00",
+    "sku": "FW-f78c9a79ec9bb8e2ae27a809",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"HG3296 그레이 A96 (39인치)\"]",
+    "naver_variant_id": "42559264980",
+    "options_ko": [
+     "HG3296 그레이",
+     "A96 (39인치)"
+    ],
+    "price_krw": 110000,
+    "price_usd": "110.00",
+    "sku": "FW-aa7323f8b2c3781d45214428",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 110000,
+   "original_krw": 148000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "아디다스"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "아디다스"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "HG3292"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "신축성, 기모안감"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 스판, 기모"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "봄, 가을, 겨울"
+   },
+   {
+    "label_ko": "충전재",
+    "value_ko": "없음"
+   },
+   {
+    "label_ko": "하의기장",
+    "value_ko": "긴바지"
+   },
+   {
+    "label_ko": "하의핏",
+    "value_ko": "일자핏, 슬림핏"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2022년형"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.72,
+   "count": 75
+  },
+  "reviews": [
+   {
+    "id": "4422598194",
+    "score": 5,
+    "text_ko": "매장에서 아디다스 겨울바지 구매해서 잘 입고 있는데 인터넷 쇼핑하다 의 바지 발견 겨울바지라도 부하지 않고 슬림해보여요.",
+    "created_at": "2024-02-07T23:25:13Z",
+    "writer": "rive*****",
+    "photos": [
+     "collected/50002788-fixtures/images/7191019224/fairwardgolf-review-image-facdc355754df1cb.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/7191019224/fairwardgolf-review-avatar-8803cea9d21a0749.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 47,
+    "text_original_ko": "매장에서 아디다스 겨울바지 구매해서 잘 입고 있는데 인터넷 쇼핑하다 저렴한가격의 바지 발견 겨울바지라도 부하지 않고 슬림해보여요 .",
+    "text_cut": [
+     "price"
+    ]
+   },
+   {
+    "id": "4128761928",
+    "score": 5,
+    "text_ko": "아디다스골프 바지를 보통 32사이즈를\n많이 입는데 이 바지는 32를 입으면\n허버지가 작아서 입기가 불펀합니다.\n한 사이즈를 업 하니 기존 32 바지랑\n허벅지통이 같네요. 허리는 좀 큽니다.\n바지는 약기모이고 색상도 좋네요.",
+    "created_at": "2022-11-18T20:28:28Z",
+    "writer": "ytdo*****",
+    "photos": [
+     "collected/50002788-fixtures/images/7191019224/fairwardgolf-review-image-f27a909b2a8e6dc6.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/7191019224/fairwardgolf-review-avatar-103083d2f533ef1d.webp",
+    "tier": "primary",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 96,
+    "text_original_ko": "아디다스골프 바지를 보통 32사이즈를\n많이 입는데 이 바지는 32를 입으면 \n허버지가 작아서 입기가 불펀합니다.\n한 사이즈를 업 하니 기존 32 바지랑\n허벅지통이 같네요. 허리는 좀 큽니다.\n바지는 약기모이고 색상도 좋네요."
+   },
+   {
+    "id": "4840266402",
+    "score": 5,
+    "text_ko": "골프를 배워 나가면서 겨울 같은 쌀쌀한 날씨에도 바지가 필요할 것 같아 추가로 구매하였습니다. 제가 덩치가 좀 있는 편이라 허리는 잘 맞고 길이는 저에게 좀 기네요. 수선해서 입으려고 합니다",
+    "created_at": "2025-11-12T09:14:06Z",
+    "writer": "kwan******",
+    "photos": [
+     "collected/50002788-fixtures/images/7191019224/fairwardgolf-review-image-ce58503151ef4362.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 94
+   },
+   {
+    "id": "4368120423",
+    "score": 3,
+    "text_ko": "32가 좀 타이트해서 구매 했는데 역시나 좀 크네요. 허리하고 허벅지. 기장이 특히나 큽니다. 허리는 줄이지 못하고 그냥 입고 있네요",
+    "created_at": "2023-11-12T12:00:14Z",
+    "writer": "kysa***",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/7191019224/fairwardgolf-review-avatar-a4b746fe5d5434bc.webp",
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 72
+   },
+   {
+    "id": "4366589115",
+    "score": 5,
+    "text_ko": "평소 34사이즈 바지 입는데 이건 바지통때문에라도 36사이즈 입어야겠네요\n그래도 다리에 짝 붙는느낌\n허리 살짝 큰느낌인데 불편하진않아요",
+    "created_at": "2023-11-09T22:32:12Z",
+    "writer": "bara****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/7191019224/fairwardgolf-review-avatar-e3716607bb25f698.webp",
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 74,
+    "text_original_ko": "평소 34사이즈 바지 입는데 이건 바지통때문에라도  36사이즈 입어야겠네요\n그래도 다리에 짝 붙는느낌\n허리 살짝 큰느낌인데 불편하진않아요"
+   },
+   {
+    "id": "4366588546",
+    "score": 5,
+    "text_ko": "평소 34사이즈 바지 입는데 이건 바지통때문에라도 36사이즈 입어야겠네요\n그래도 다리에 짝 붙는느낌\n허리 살짝 큰느낌인데 불편하진않아요",
+    "created_at": "2023-11-09T22:29:14Z",
+    "writer": "bara****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/7191019224/fairwardgolf-review-avatar-e3716607bb25f698.webp",
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 74,
+    "text_original_ko": "평소 34사이즈 바지 입는데 이건 바지통때문에라도  36사이즈 입어야겠네요\n그래도 다리에 짝 붙는느낌\n허리 살짝 큰느낌인데 불편하진않아요"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/7191019224/fairwardgolf-7191019224-001-88fcbec99d380912.webp",
+    "sha256": "88fcbec99d38091228c3408e420554959810d5170ea77c95734fb1bd3144e699",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/7191019224/fairwardgolf-7191019224-002-1f651f43804acb6c.webp",
+    "sha256": "1f651f43804acb6ce197c6c9216e08dd94d3c2438dfe91e5e1fb27ddbc9d87e7",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/7191019224/fairwardgolf-7191019224-003-ffed7cb2d7b318f2.webp",
+    "sha256": "ffed7cb2d7b318f2ef99523e9538b9d5745300b79736fddf315d971b5e927bd0",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/7191019224/fairwardgolf-7191019224-004-a504d157f01b2987.webp",
+    "sha256": "a504d157f01b2987d819b663d75b690c0784d92e29ad894593251ff600d1be18",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/7191019224/fairwardgolf-7191019224-005-fa44b82f19063805.webp",
+    "sha256": "fa44b82f19063805912e38f9c9743bee649fc236462f128618ae0cb71b62d396",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/7191019224/fairwardgolf-7191019224-006-597c3839feefd716.webp",
+    "sha256": "597c3839feefd7165aabf12861147a8d0cd1a3b6789629db4d739696c3bf6579",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/7191019224/fairwardgolf-7191019224-007-e05bd607c641eb23.webp",
+    "sha256": "e05bd607c641eb2304e44f00c84874786dae079917e2a9935e5dcb199afc4770",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/7191019224/fairwardgolf-7191019224-008-84d77d8287b5f192.webp",
+    "sha256": "84d77d8287b5f1926ad09e9c825951c0fc3a8c1a943efdbfd7b1ddc3199f5891",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/7191019224/fairwardgolf-7191019224-009-de4553c7413abe04.webp",
+    "sha256": "de4553c7413abe04555c63a876f5e9a743dd7cc38da0449527187c8a02dcd46e",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.2593011,
+    "product_average_days": 1.8333334,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 83,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_br_pants_22/__01.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_br_pants_22/__02.jpg",
+   "https://media.giphy.com/media/XMJuHJImIW2xZ7UYcY/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_br_pants_22/__04.jpg",
+   "https://media.giphy.com/media/E2TMtK35EuZ1ommaFl/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_br_pants_22/__06.jpg",
+   "https://media.giphy.com/media/N9qISNHJCNvmpJyYwy/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_br_pants_22/__08.jpg",
+   "https://media.giphy.com/media/MXSGM3KFu7S8dJ3LGK/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_br_pants_22/__10.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_br_pants_22/__11.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_br_pants_22/__12.jpg",
+   "https://majorworld.godohosting.com/product/adidas/adidas_info.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_fw_br_pants_22.jpg",
+   "https://majorworld.hgodo.com/product/event/add_product_860_24.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "banner_image",
+    "text": "https://majorgolf.cafe24.com/shose/sangse_main/image/event/event_main.jpg"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://majorworld.godohosting.com/main/maincopyright.jpg"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://majorgolf.cafe24.com/CSinfo_Majorgolf.jpg"
+   }
+  ],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 스판, 기모",
+    "source": "spec"
+   },
+   {
+    "label_ko": "제품소재",
+    "value_ko": "재생폴리에스터100%",
+    "source": "notice"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_bottoms",
+   "option": 1,
+   "values": [
+    {
+     "ko": "A76 (31인치)",
+     "us": "W31",
+     "letter": "M",
+     "chest_cm": 76.2,
+     "basis": "waist",
+     "chart_label": "(31)"
+    },
+    {
+     "ko": "A82 (32인치)",
+     "us": "W32",
+     "letter": "L",
+     "chest_cm": 81.3,
+     "basis": "waist",
+     "chart_label": "(32)"
+    },
+    {
+     "ko": "A92 (37인치)",
+     "us": "W37",
+     "letter": "XXL",
+     "chest_cm": 91.4,
+     "basis": "waist",
+     "chart_label": "(37)"
+    },
+    {
+     "ko": "A96 (39인치)",
+     "us": "W39",
+     "letter": "XXXL",
+     "chest_cm": 96.5,
+     "basis": "waist",
+     "chart_label": "(39)"
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "waist": "flat",
+     "thigh": "flat",
+     "hem": "flat",
+     "length": null
+    },
+    "rows": [
+     {
+      "us": "W31",
+      "cm": {
+       "waist": 38.0,
+       "thigh": 26.0,
+       "hem": 16.5,
+       "length": 107.0
+      }
+     },
+     {
+      "us": "W32",
+      "cm": {
+       "waist": 41.0,
+       "thigh": 26.5,
+       "hem": 17.5,
+       "length": 108.0
+      }
+     },
+     {
+      "us": "W37",
+      "cm": {
+       "waist": 46.0,
+       "thigh": 28.5,
+       "hem": 19.0,
+       "length": 109.5
+      }
+     },
+     {
+      "us": "W39",
+      "cm": {
+       "waist": 48.0,
+       "thigh": 29.5,
+       "hem": 20.0,
+       "length": 110.0
+      }
+     }
+    ]
+   },
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:4099d86b8c5d937c",
+   "kind": "title",
+   "ko": "아디다스 FW 겨울 남성 BR 기모 골프바지 허리밴딩 방한 남자 신축성 슬랙스 팬츠"
+  },
+  {
+   "id": "brand:8201e93c449b38b1",
+   "kind": "brand",
+   "ko": "아디다스"
+  },
+  {
+   "id": "option_name:8d1a750c9351d1b8",
+   "kind": "option_name",
+   "ko": "선택"
+  },
+  {
+   "id": "option_value:91d67bdfe14c9927",
+   "kind": "option_value",
+   "ko": "HG3292 블랙"
+  },
+  {
+   "id": "option_value:1c5402d0a905a843",
+   "kind": "option_value",
+   "ko": "HG3296 그레이"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:32a199f826eb60c0",
+   "kind": "option_value",
+   "ko": "A76 (31인치)"
+  },
+  {
+   "id": "option_value:3184617b440b8519",
+   "kind": "option_value",
+   "ko": "A82 (32인치)"
+  },
+  {
+   "id": "option_value:3996c523a8b86e4f",
+   "kind": "option_value",
+   "ko": "A92 (37인치)"
+  },
+  {
+   "id": "option_value:7f3c448423292d56",
+   "kind": "option_value",
+   "ko": "A96 (39인치)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:8201e93c449b38b1",
+   "kind": "spec_value",
+   "ko": "아디다스"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:00c1aed6bcc3b4d0",
+   "kind": "spec_value",
+   "ko": "HG3292"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:ca8bbcd06b8c0ace",
+   "kind": "spec_value",
+   "ko": "신축성, 기모안감"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:d7bef750aa751f52",
+   "kind": "spec_value",
+   "ko": "폴리에스테르, 스판, 기모"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:b9a7f0a8ab860d75",
+   "kind": "spec_value",
+   "ko": "봄, 가을, 겨울"
+  },
+  {
+   "id": "spec_label:ea32a6046e98fd76",
+   "kind": "spec_label",
+   "ko": "충전재"
+  },
+  {
+   "id": "spec_value:72ea3d64ace5bc94",
+   "kind": "spec_value",
+   "ko": "없음"
+  },
+  {
+   "id": "spec_label:777511e7e585c6f2",
+   "kind": "spec_label",
+   "ko": "하의기장"
+  },
+  {
+   "id": "spec_value:e51b009720d94497",
+   "kind": "spec_value",
+   "ko": "긴바지"
+  },
+  {
+   "id": "spec_label:35e8af68e7a1b980",
+   "kind": "spec_label",
+   "ko": "하의핏"
+  },
+  {
+   "id": "spec_value:890e97f56ee4dbe7",
+   "kind": "spec_value",
+   "ko": "일자핏, 슬림핏"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:1bb71fabcfb2e7d7",
+   "kind": "spec_value",
+   "ko": "2022년형"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "review:7f24d5040669665e",
+   "kind": "review",
+   "ko": "매장에서 아디다스 겨울바지 구매해서 잘 입고 있는데 인터넷 쇼핑하다 의 바지 발견 겨울바지라도 부하지 않고 슬림해보여요."
+  },
+  {
+   "id": "review:5cf70ff32e5688ff",
+   "kind": "review",
+   "ko": "아디다스골프 바지를 보통 32사이즈를\n많이 입는데 이 바지는 32를 입으면\n허버지가 작아서 입기가 불펀합니다.\n한 사이즈를 업 하니 기존 32 바지랑\n허벅지통이 같네요. 허리는 좀 큽니다.\n바지는 약기모이고 색상도 좋네요."
+  },
+  {
+   "id": "review:349b5503a73b0777",
+   "kind": "review",
+   "ko": "골프를 배워 나가면서 겨울 같은 쌀쌀한 날씨에도 바지가 필요할 것 같아 추가로 구매하였습니다. 제가 덩치가 좀 있는 편이라 허리는 잘 맞고 길이는 저에게 좀 기네요. 수선해서 입으려고 합니다"
+  },
+  {
+   "id": "review:e26706e623d949ae",
+   "kind": "review",
+   "ko": "32가 좀 타이트해서 구매 했는데 역시나 좀 크네요. 허리하고 허벅지. 기장이 특히나 큽니다. 허리는 줄이지 못하고 그냥 입고 있네요"
+  },
+  {
+   "id": "review:360be61229d3899c",
+   "kind": "review",
+   "ko": "평소 34사이즈 바지 입는데 이건 바지통때문에라도 36사이즈 입어야겠네요\n그래도 다리에 짝 붙는느낌\n허리 살짝 큰느낌인데 불편하진않아요"
+  }
+ ]
+}

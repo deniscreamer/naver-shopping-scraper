@@ -1,0 +1,1091 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:500016096:10968014964",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 8); 2 trimmed"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "CONDITIONAL_FREE 3000 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/swingfire/products/10968014964",
+  "channel_no": "500016096",
+  "product_id": "10968014964",
+  "category_id": "50002796"
+ },
+ "product": {
+  "title_ko": "여성 골프긴팔티셔츠 카라티 베이직 무지 골프웨어 헬로버디",
+  "brand_ko": "헬로버디",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "womens",
+      "text": "여성용"
+     },
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "여성 골프긴팔티셔츠 카라티 베이직 무지 골프웨어 헬로버디"
+     },
+     {
+      "source": "listing",
+      "value": "womens",
+      "text": "여성 골프 가을 긴팔 티셔츠"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "컬러",
+    "values_ko": [
+     "베이직카라티 블랙",
+     "베이직카라티 화이트"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "55",
+     "66",
+     "77"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"베이직카라티 블랙\",\"긴팔55\"]",
+    "naver_variant_id": "44604918447",
+    "options_ko": [
+     "베이직카라티 블랙",
+     "55"
+    ],
+    "price_krw": 37800,
+    "price_usd": "37.80",
+    "sku": "FW-99c7143b2eaadadfbbc933fb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 48000,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated weight",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"베이직카라티 블랙\",\"긴팔66\"]",
+    "naver_variant_id": "44604918448",
+    "options_ko": [
+     "베이직카라티 블랙",
+     "66"
+    ],
+    "price_krw": 37800,
+    "price_usd": "37.80",
+    "sku": "FW-afde74793c290710a59743fb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 48000,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated weight",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"베이직카라티 블랙\",\"긴팔77\"]",
+    "naver_variant_id": "44604918449",
+    "options_ko": [
+     "베이직카라티 블랙",
+     "77"
+    ],
+    "price_krw": 37800,
+    "price_usd": "37.80",
+    "sku": "FW-1ac5d2d1f835fd1f8fa74b2a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 48000,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated weight",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"베이직카라티 화이트\",\"긴팔55\"]",
+    "naver_variant_id": "44604918450",
+    "options_ko": [
+     "베이직카라티 화이트",
+     "55"
+    ],
+    "price_krw": 37800,
+    "price_usd": "37.80",
+    "sku": "FW-b32842cb724a2023bb5e9e92",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 48000,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated weight",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"베이직카라티 화이트\",\"긴팔66\"]",
+    "naver_variant_id": "44604918451",
+    "options_ko": [
+     "베이직카라티 화이트",
+     "66"
+    ],
+    "price_krw": 37800,
+    "price_usd": "37.80",
+    "sku": "FW-e861d39956deed7dee8f41b2",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 48000,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated weight",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"베이직카라티 화이트\",\"긴팔77\"]",
+    "naver_variant_id": "44604918452",
+    "options_ko": [
+     "베이직카라티 화이트",
+     "77"
+    ],
+    "price_krw": 37800,
+    "price_usd": "37.80",
+    "sku": "FW-a6417d40e498c8d484c3169b",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 48000,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated weight",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 37800,
+   "original_krw": 42000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "헬로버디"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "헬로버디"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "네크라인",
+    "value_ko": "칼라넥"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "자외선차단, 흡습, Dri-Fit, 신축성"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 나일론, 스판덱스"
+   },
+   {
+    "label_ko": "소매기장",
+    "value_ko": "긴팔"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2025년형"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "티셔츠"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "여성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.92,
+   "count": 13
+  },
+  "reviews": [
+   {
+    "id": "4983231733",
+    "score": 5,
+    "text_ko": "별 기대안하고 구입했는데 너무 이쁘네요 사이즈도 잘맞고 원단도 좋아요봄,여름,가을 다 입을수 있겠어요",
+    "created_at": "2026-05-24T01:15:01Z",
+    "writer": "kimt*****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 50,
+    "text_original_ko": "별 기대안하고 구입했는데 너무 이쁘네요 사이즈도 잘맞고 원단도 좋아요ㅎㅎ봄,여름,가을  다 입을수 있겠어요^^"
+   },
+   {
+    "id": "4856511685",
+    "score": 5,
+    "text_ko": "착용감 좋아요. 적당한 두께에 지금은 안에 이너로 입기에 딱입니다",
+    "created_at": "2025-12-06T04:12:51Z",
+    "writer": "kk****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 66,
+    "text_original_ko": "착용감 좋아요~ 적당한 두께에 지금은 안에 이너로 입기에 딱입니다"
+   },
+   {
+    "id": "4819660121",
+    "score": 5,
+    "text_ko": "블랙도 사고 화이트도 샀습니다. 똑딱이 단추라 아주 좋아요. 핏 좋습니다. 부드럽습니다 괜찮아요.",
+    "created_at": "2025-10-13T01:08:17Z",
+    "writer": "leme******",
+    "photos": [
+     "collected/50002788-fixtures/images/10968014964/fairwardgolf-review-image-bc6123741c5a36ed.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/10968014964/fairwardgolf-review-avatar-e070c5a4e70b7532.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 84,
+    "text_original_ko": "블랙도 사고 화이트도 샀습니다. 똑딱이 단추라 아주 좋아요. 핏 좋습니다. 부드럽습니다 가격대비 괜찮아요.",
+    "text_cut": [
+     "price"
+    ]
+   },
+   {
+    "id": "4819659111",
+    "score": 5,
+    "text_ko": "편안하고 핏 좋습니다. 부드럽습니다 똑딱이 단추라 너무 좋아요.",
+    "created_at": "2025-10-13T01:07:15Z",
+    "writer": "leme******",
+    "photos": [
+     "collected/50002788-fixtures/images/10968014964/fairwardgolf-review-image-bc6123741c5a36ed.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/10968014964/fairwardgolf-review-avatar-e070c5a4e70b7532.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 61
+   },
+   {
+    "id": "4694952505",
+    "score": 5,
+    "text_ko": "소매길이가 긴것 빼곤 편하고 좋아요",
+    "created_at": "2025-04-03T01:06:51Z",
+    "writer": "sodu*****",
+    "photos": [
+     "collected/50002788-fixtures/images/10968014964/fairwardgolf-review-image-d77f466a486887e8.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/10968014964/fairwardgolf-review-avatar-08195817fa8973e8.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 58
+   },
+   {
+    "id": "4626753835",
+    "score": 5,
+    "text_ko": "블랙이 너무 편하고 옷감도 좋아서 흰색으로 또 샀어요",
+    "created_at": "2024-12-21T11:36:00Z",
+    "writer": "been***",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/10968014964/fairwardgolf-review-avatar-593b5517e072f3c2.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 45
+   },
+   {
+    "id": "4579517694",
+    "score": 5,
+    "text_ko": "신축성있는 원단에 깔끔한 뒷마무리도 좋고 좋은 편한옷이예요! 블랙과 화이트 다 좋네요.",
+    "created_at": "2024-10-17T11:07:26Z",
+    "writer": "abco*****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 69,
+    "text_original_ko": "신축성있는 원단에 깔끔한 뒷마무리도 좋고 가성비 좋은 편한옷이예요! 블랙과 화이트 다 좋네요.",
+    "text_cut": [
+     "price"
+    ]
+   },
+   {
+    "id": "4577243876",
+    "score": 5,
+    "text_ko": "기본티가 필요해서 사본 거였는데 원단이 만져보자마자 너무 좋아서 리뷰 꼭 남겨야겠다고 결심했어요. 사길 잘했네요!\n제가 피부가 예민한 편인데도 카라 부분이나 뭐 하나 거슬리는 것 없이 편하게 입었어요.\n무엇보다 광택이 하나도 없어서 싼티 같은 것도 전혀 안 나고 고급져서 다음엔 다른 색으로 또 구매할 것 같아요.\n마감도 좋고. 로고 없는 것도 만족. 깔끔함.\n고민하다가 블랙으로 샀는데 여기저기 같이 입기 넘 좋네요. 핏이 예쁘게 떨어져서 휘뚜루마뚜루 어디든 다 어울리는 듯.\n기본템이니까 가볍게 사본 거였는데. 웬걸 입자마자 착붙인 느낌을 받았네요.\n생각보다 핏이 너무 예쁘고 맘에 들어서 진짜 자주 입을 것 같아요! 왠지 덜 부해보이고. 날씬해보여서 예쁨\n기본카라티는 이제 이걸로 정착할게요",
+    "created_at": "2024-10-14T12:57:12Z",
+    "writer": "gj****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 85,
+    "text_original_ko": "기본티가 필요해서 사본 거였는데 원단이 만져보자마자 너무 좋아서 리뷰 꼭 남겨야겠다고 결심했어요.. 사길 잘했네요!\n제가 피부가 예민한 편인데도 카라 부분이나 뭐 하나 거슬리는 것 없이 편하게 입었어요~..ㅎㅎ \n무엇보다 광택이 하나도 없어서 싼티 같은 것도 전혀 안 나고 고급져서 다음엔 다른 색으로 또 구매할 것 같아요.\n마감도 좋고..로고 없는 것도 만족.. 깔끔함.\n고민하다가 블랙으로 샀는데 여기저기 같이 입기 넘 좋네요.. 핏이 예쁘게 떨어져서 휘뚜루마뚜루 어디든 다 어울리는 듯.ㅎㅎ\n기본템이니까 가볍게 사본 거였는데.. 웬걸 입자마자 착붙인 느낌을 받았네요 ㅋㅋ\n생각보다 핏이 너무 예쁘고 맘에 들어서 진짜 자주 입을 것 같아요! 왠지 덜 부해보이고.. 날씬해보여서 예쁨\n기본카라티는 이제 이걸로 정착할게요~"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/10968014964/fairwardgolf-10968014964-001-aa5ed988eb204e90.webp",
+    "sha256": "aa5ed988eb204e9047bd414b28327f90a3071110e5c5d580a322707db1c4096e",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/10968014964/fairwardgolf-10968014964-002-10c6a595c7e8b1f0.webp",
+    "sha256": "10c6a595c7e8b1f0b815cc53ac47ac176b4ebc109258548b6708ac2a98abb007",
+    "width": 1500,
+    "height": 1500
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/10968014964/fairwardgolf-10968014964-003-a216477a96039f47.webp",
+    "sha256": "a216477a96039f47dcb66049bcdc0b529698b89d45c40680372335d6320f7257",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/10968014964/fairwardgolf-10968014964-004-0b7251dbf97457f7.webp",
+    "sha256": "0b7251dbf97457f76bb0424c532cd1b757b102d2f5320c1ae15b16c295c65bde",
+    "width": 1024,
+    "height": 1024
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/10968014964/fairwardgolf-10968014964-005-ba6fa9a67a7a68b5.webp",
+    "sha256": "ba6fa9a67a7a68b57cbabf64486c8a4e0ebd3d5a5857eb950180035e2429424f",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/10968014964/fairwardgolf-10968014964-006-88ac5434183ce60f.webp",
+    "sha256": "88ac5434183ce60ff24d93ec1de977649c4cb47f422ae2f207101584a80b737f",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/10968014964/fairwardgolf-10968014964-007-2c9a138eb546dc26.webp",
+    "sha256": "2c9a138eb546dc26d783f7e4e6bcf0b0ff65499561b79ef72da440e4ca207758",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "70,000원 이상 구매 시 무료 / 제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.5575757,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.25.(수)",
+    "arrival_probability": 97,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20241007_138/17282674573695j0nU_JPEG/001.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251014_140/1760442961424HHqLh_JPEG/qweqeqweqweqweqw.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250924_252/1758641541676nFmP2_JPEG/KakaoTalk_20250916_223418149_09.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250924_173/1758641555359B25nr_JPEG/KakaoTalk_20250916_223418149_11.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250924_69/1758641573405xOq9p_JPEG/KakaoTalk_20250916_223418149_08.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_186/1728267456799vrL9w_JPEG/003.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_172/1728267456805JV7EH_JPEG/004.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_100/1728267456806oWmm0_JPEG/005.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_19/1728267456733s3jOX_JPEG/006.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_168/1728267548692YNVHL_JPEG/013.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_201/1728267456796cCAUy_JPEG/002.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_293/17282674571113DkdC_JPEG/007.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_106/1728267457070gJm4G_JPEG/008.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241015_109/1728963545218JCQzw_JPEG/8D1FE607-A838-4EA0-9EE0-0DFD92051E01.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241015_160/1728963580500SMM7h_JPEG/1D7F93F7-77FD-4267-92BA-D0A242D7D39D.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_4/17282674568652lWvJ_JPEG/009.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_29/1728267456951ueG5j_JPEG/010.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_47/1728267456996FeyeO_JPEG/011.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_93/1728267457106uMGjg_JPEG/012.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_65/1728267457155rKVgI_JPEG/013.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_217/1728267457189eVDPR_JPEG/014.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_215/17282674572089N40n_JPEG/015.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241007_31/1728267457392EgGLV_JPEG/016.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20250123_118/17376062133322wBX5_JPEG/%EA%B3%B5%EC%A7%80_2.jpg?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20250123_209/1737606215729xmpS0_PNG/%EA%B3%B5%EC%A7%80_3.png?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20250123_95/1737606218615GdWGr_PNG/%EA%B3%B5%EC%A7%80_1.png?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20250123_112/1737606220328PfulE_JPEG/%EA%B3%B5%EC%A7%80_4.jpg?type=w848"
+   }
+  ],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 나일론, 스판덱스",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_tops",
+   "option": 1,
+   "values": [
+    {
+     "ko": "55",
+     "us": "S (US 4-6)",
+     "letter": "S",
+     "chest_cm": 90,
+     "basis": "label",
+     "chart_label": "55(S)"
+    },
+    {
+     "ko": "66",
+     "us": "M (US 8-10)",
+     "letter": "M",
+     "chest_cm": 95,
+     "basis": "label",
+     "chart_label": "66(M)"
+    },
+    {
+     "ko": "77",
+     "us": "L (US 12-14)",
+     "letter": "L",
+     "chest_cm": 100,
+     "basis": "label",
+     "chart_label": "77(L)"
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "length": null,
+     "chest": "circ",
+     "shoulder": null,
+     "sleeve": null
+    },
+    "rows": [
+     {
+      "us": "S (US 4-6)",
+      "cm": {
+       "length": 58.0,
+       "chest": 84.0,
+       "shoulder": 34.0,
+       "sleeve": 58.0
+      }
+     },
+     {
+      "us": "M (US 8-10)",
+      "cm": {
+       "length": 59.0,
+       "chest": 90.0,
+       "shoulder": 35.0,
+       "sleeve": 59.0
+      }
+     },
+     {
+      "us": "L (US 12-14)",
+      "cm": {
+       "length": 60.0,
+       "chest": 95.0,
+       "shoulder": 36.0,
+       "sleeve": 60.0
+      }
+     }
+    ]
+   },
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:756c10fc6fc8e05b",
+   "kind": "title",
+   "ko": "여성 골프긴팔티셔츠 카라티 베이직 무지 골프웨어 헬로버디"
+  },
+  {
+   "id": "brand:526ad2969663deea",
+   "kind": "brand",
+   "ko": "헬로버디"
+  },
+  {
+   "id": "option_name:5a2fdefe4a62f26a",
+   "kind": "option_name",
+   "ko": "컬러"
+  },
+  {
+   "id": "option_value:5131e2ce62f3263b",
+   "kind": "option_value",
+   "ko": "베이직카라티 블랙"
+  },
+  {
+   "id": "option_value:00d4f7811de5fa38",
+   "kind": "option_value",
+   "ko": "베이직카라티 화이트"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:02d20bbd7e394ad5",
+   "kind": "option_value",
+   "ko": "55"
+  },
+  {
+   "id": "option_value:3ada92f28b4ceda3",
+   "kind": "option_value",
+   "ko": "66"
+  },
+  {
+   "id": "option_value:a88a7902cb4ef697",
+   "kind": "option_value",
+   "ko": "77"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:526ad2969663deea",
+   "kind": "spec_value",
+   "ko": "헬로버디"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:521009f503e491a5",
+   "kind": "spec_label",
+   "ko": "네크라인"
+  },
+  {
+   "id": "spec_value:fee81e32c77a25d6",
+   "kind": "spec_value",
+   "ko": "칼라넥"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:6e3ad4a7e8f8ee13",
+   "kind": "spec_value",
+   "ko": "자외선차단, 흡습, Dri-Fit, 신축성"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:7286d72c457907c5",
+   "kind": "spec_value",
+   "ko": "폴리에스테르, 나일론, 스판덱스"
+  },
+  {
+   "id": "spec_label:c595482b55571d6a",
+   "kind": "spec_label",
+   "ko": "소매기장"
+  },
+  {
+   "id": "spec_value:2fa60fab30cad430",
+   "kind": "spec_value",
+   "ko": "긴팔"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:6aea4c4b3fb65e70",
+   "kind": "spec_value",
+   "ko": "2025년형"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:f977ac4486c2b67c",
+   "kind": "spec_value",
+   "ko": "티셔츠"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:ff90d7cd3c519c1f",
+   "kind": "spec_value",
+   "ko": "여성용"
+  },
+  {
+   "id": "review:4ff63aa8cc61fefd",
+   "kind": "review",
+   "ko": "별 기대안하고 구입했는데 너무 이쁘네요 사이즈도 잘맞고 원단도 좋아요봄,여름,가을 다 입을수 있겠어요"
+  },
+  {
+   "id": "review:2a926bcbe1af7173",
+   "kind": "review",
+   "ko": "착용감 좋아요. 적당한 두께에 지금은 안에 이너로 입기에 딱입니다"
+  },
+  {
+   "id": "review:73fa593fe8ed3d71",
+   "kind": "review",
+   "ko": "블랙도 사고 화이트도 샀습니다. 똑딱이 단추라 아주 좋아요. 핏 좋습니다. 부드럽습니다 괜찮아요."
+  },
+  {
+   "id": "review:f13db48065e25a64",
+   "kind": "review",
+   "ko": "편안하고 핏 좋습니다. 부드럽습니다 똑딱이 단추라 너무 좋아요."
+  },
+  {
+   "id": "review:cc6e45f9098ed10a",
+   "kind": "review",
+   "ko": "소매길이가 긴것 빼곤 편하고 좋아요"
+  },
+  {
+   "id": "review:ace5836cff724186",
+   "kind": "review",
+   "ko": "블랙이 너무 편하고 옷감도 좋아서 흰색으로 또 샀어요"
+  },
+  {
+   "id": "review:72514fc74b7ea550",
+   "kind": "review",
+   "ko": "신축성있는 원단에 깔끔한 뒷마무리도 좋고 좋은 편한옷이예요! 블랙과 화이트 다 좋네요."
+  },
+  {
+   "id": "review:b43993e72af7a238",
+   "kind": "review",
+   "ko": "기본티가 필요해서 사본 거였는데 원단이 만져보자마자 너무 좋아서 리뷰 꼭 남겨야겠다고 결심했어요. 사길 잘했네요!\n제가 피부가 예민한 편인데도 카라 부분이나 뭐 하나 거슬리는 것 없이 편하게 입었어요.\n무엇보다 광택이 하나도 없어서 싼티 같은 것도 전혀 안 나고 고급져서 다음엔 다른 색으로 또 구매할 것 같아요.\n마감도 좋고. 로고 없는 것도 만족. 깔끔함.\n고민하다가 블랙으로 샀는데 여기저기 같이 입기 넘 좋네요. 핏이 예쁘게 떨어져서 휘뚜루마뚜루 어디든 다 어울리는 듯.\n기본템이니까 가볍게 사본 거였는데. 웬걸 입자마자 착붙인 느낌을 받았네요.\n생각보다 핏이 너무 예쁘고 맘에 들어서 진짜 자주 입을 것 같아요! 왠지 덜 부해보이고. 날씬해보여서 예쁨\n기본카라티는 이제 이걸로 정착할게요"
+  }
+ ]
+}

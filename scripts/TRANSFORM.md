@@ -63,6 +63,7 @@ writes `status: held`, no codes of its own), not placed, not published. Where to
 | `specs_folded` | transform | the 상품정보 list stayed folded at collection (`specs.is_complete` false) | collect again |
 | `off_section_variant` | transform | a variant's option value says what the section does not sell (`CategoryRules.variant_screen`: the codes of listing_title_rules.json; 50002796 long-sleeve tops: a 반팔, cardigan, vest, cooling or outerwear (a 피스테, 2026-11-21, Malbon 12375182812) variant, 2026-11-21, 5418772209, 5751294772; 50002801 Golf Pants: shorts, a belt or a top (긴소매, 반팔, 맨투맨, 상의, 티셔츠 ...: Volvik's fleece long-sleeve tops 10933958968, 2026-11-24) or tactical work pants (텍티컬, tactical: Under Armour 8162342503, 2026-11-24) as a variant) | leave it held, or the owner sells the product without those variants |
 | `size_unmapped` | transform | apparel (`CategoryRules.sizes`): a size value with no US size, or two Korean sizes on one US size; no size option while the chart lists several sizes, or a colour and a size in one option (2026-11-20); the sizes chosen at the order (SIMPLE options of several values), not variants (2026-11-21) (apparel_sizes.py, [SIZES.md](SIZES.md)) | a brand row in the profile (`size_profiles/<profile>.json`), or the label read; never a guessed size |
+| `variants_by_owner` | transform | the owner's `<shop>/variants_by_owner.json` names every variant of the product (2026-11-25): nothing left out | read the entry against the page: a value as Naver writes it, or without its numbering |
 | `axes_over_3` | transform | more than 3 option axes: Shopify has 3 options per product (`MAX_AXES`) | leave it held |
 | `no_images` | transform | no gallery photo saved | collect again; still none: leave it |
 | `images_over_50` | transform | more than 50 gallery photos (`MAX_IMAGES`) | leave it held; tell the owner |
@@ -191,6 +192,16 @@ published, SKUs and prices equal on 201 of 201 variants):
   The report adds "specs_by_owner: N entries, N applied, N unused, N keys not prepared". The rows are the
   description's input only (`describe.py` packet; [PUBLISH.md](PUBLISH.md) "Not sent"): after `run_transform.py`,
   `translate.py <shop> --offline` (the new value from the spec_value dictionary), then `describe.py --only <key>`.
+- **The owner's variants left out** (in prepare, before the options, the variant cap and the sizes; in the prepare
+  cache's signature; 2026-11-25, the owner's yes answers to the Fable size review: 8191027841's basic joggers,
+  7455950253's 사선포켓 and 밀리터리 styles, 6033600342's 기모 / 밍크기모, styles whose sizes the seller writes
+  inconsistently): `<shop>/variants_by_owner.json` (`{entries: {key: {drop: {<option name or index>: [values]}, why,
+  at}}}`, `run_transform.variants_by_owner`, passed to `transform.prepare`). A value matches as Naver writes it or
+  without its numbering ("3-2. 밀리터리(일반)" = "밀리터리(일반)"), never a part of another ("사선포켓" keeps
+  "사선포켓Ver2"). Notes `variants_left_out_by_owner` ("N variants: option: values") and `variants_by_owner_unused`
+  (an option or value the product does not show); every variant named: none left out, held `variants_by_owner`. The
+  report adds "variants_by_owner: N entries, N applied, N with a value unused, N keys not prepared". An owner file,
+  like `brand_by_owner.json`: written only on his word, in the state backup.
 - **Specs shown**: all 상품정보 rows but 상품번호, 제조일자, 이벤트, 사은품, 인증정보 (purchase-agency / KC legal text)
   and pointers ("상세페이지 참조"); "(구매대행)" / "해외구매대행" and a bracketed importer ("일본(IRUGI SHOJI)") are
   taken out of 원산지 (brackets inside brackets too: "중국산((주)위스트OEM)" -> "중국산"). Option names and values are

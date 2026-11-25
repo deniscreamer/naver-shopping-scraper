@@ -1,0 +1,712 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:100199147:9317474764",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (full 1); 0 trimmed"
+  },
+  {
+   "code": "description_images_partial",
+   "detail": "9 of 37 images not read (refused 9)"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "CONDITIONAL_FREE 3000 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/loloalloy/products/9317474764",
+  "channel_no": "100199147",
+  "product_id": "9317474764",
+  "category_id": "50002796"
+ },
+ "product": {
+  "title_ko": "로로얼로이 여성 골프티셔츠 봄 가을 블랙핑크 카라 지퍼 스판 기능성 긴팔 골프웨어",
+  "brand_ko": "로로얼로이",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "womens",
+      "text": "여성용"
+     },
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "로로얼로이 여성 골프티셔츠 봄 가을 블랙핑크 카라 지퍼 스판 기능성 긴팔 골프웨어"
+     },
+     {
+      "source": "listing",
+      "value": "womens",
+      "text": "여성 골프 가을 긴팔 티셔츠"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "S",
+     "M",
+     "L"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"S\"]",
+    "naver_variant_id": "35300183635",
+    "options_ko": [
+     "S"
+    ],
+    "price_krw": 28900,
+    "price_usd": "28.90",
+    "sku": "FW-39914b998a4b73ea964e4fbf",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"M\"]",
+    "naver_variant_id": "35300183636",
+    "options_ko": [
+     "M"
+    ],
+    "price_krw": 28900,
+    "price_usd": "28.90",
+    "sku": "FW-1a81ee03401b806316288c96",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"L\"]",
+    "naver_variant_id": "35300183637",
+    "options_ko": [
+     "L"
+    ],
+    "price_krw": 28900,
+    "price_usd": "28.90",
+    "sku": "FW-47f321daf8376b2665dbfbbb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 28900,
+   "original_krw": 40000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "로로얼로이"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "로로얼로이"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "네크라인",
+    "value_ko": "칼라넥"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "신축성, 자외선차단, 흡습"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 폴리우레탄"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "봄, 가을"
+   },
+   {
+    "label_ko": "소매기장",
+    "value_ko": "긴팔"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2025년형"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "티셔츠"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "여성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.61,
+   "count": 23
+  },
+  "reviews": [
+   {
+    "id": "4688615330",
+    "score": 5,
+    "text_ko": "소재가 여름까지 입어도 될만큼 시원한 느낌입니다 제가 평소66입는데 허리가 통이라 L로 교환했더니 적당히 꽉 끼지않고 핏도 이뻐요 스판도 좋아요\n단지 팔부분 조금 큰듯 하지만 만족해요",
+    "created_at": "2025-03-25T02:18:12Z",
+    "writer": "pho5***",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 78
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/9317474764/fairwardgolf-9317474764-001-0b649ecfbc878bc0.webp",
+    "sha256": "0b649ecfbc878bc0685a3a2c2c0be57e845563e1c2603bf96b4c42549ca02736",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/9317474764/fairwardgolf-9317474764-002-f9e3324e745726b4.webp",
+    "sha256": "f9e3324e745726b462be4ee260e9fa3edad27c245260447315a1f2d66ee2b9c5",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/9317474764/fairwardgolf-9317474764-003-8b5af2cb6c615ae0.webp",
+    "sha256": "8b5af2cb6c615ae0e82864a26cf7bc1e3cd277f762bcceb28aedcfc77e9be5be",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/9317474764/fairwardgolf-9317474764-004-3d84016002af641e.webp",
+    "sha256": "3d84016002af641e6031f769df591c11e67eafaf8e61467b69b3e46afcd2e43c",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/9317474764/fairwardgolf-9317474764-005-83e50f31273fcfee.webp",
+    "sha256": "83e50f31273fcfee276e678da18777bbb3faa440809287b3a257f8e9fc1b0a2d",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/9317474764/fairwardgolf-9317474764-006-d4aecb09055fc275.webp",
+    "sha256": "d4aecb09055fc275b09cd3324a72149fe5a0d05d8f8be861c92eacbb79a4bb3d",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/9317474764/fairwardgolf-9317474764-007-d8f5195e405a09a2.webp",
+    "sha256": "d8f5195e405a09a2f8bf1086963c00d3a697ab46969bed749b91d98a3f74d948",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/9317474764/fairwardgolf-9317474764-008-68ece4bed5cf95c6.webp",
+    "sha256": "68ece4bed5cf95c63aa76207b65346c72df136ae03f7966c1e6147f1fad150b4",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/9317474764/fairwardgolf-9317474764-009-93b1d8c3481251e6.webp",
+    "sha256": "93b1d8c3481251e68f786ac77722a5d5e9c9efd7fc0f5b588eba29a43d6967c5",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/9317474764/fairwardgolf-9317474764-010-7558931dd958f4f5.webp",
+    "sha256": "7558931dd958f4f55e6188bdb980ddab719a779cd41726c4e61c45c7262d3e40",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": 10000,
+   "policy_text": "50,000원 이상 구매 시 무료 / 제주 추가 5,000원, 제주 외 도서지역 추가 10,000원",
+   "lead_time": {
+    "seller_average_days": 1.4022988,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": true,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": "11.23.(월)"
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "여성골프티셔츠 블랙핑크 카라지퍼 스판 기능성 골프웨어\n\n컬러:블랙\n사이즈:S(모델착용사이즈),M,L\n모델사이즈: 키 162CM, 몸무게 47KG\nLOLOALLOY STUDIO 자체제작상품입니다.\n봄가을 라운딩에 이보다 더 찰떡 코디가 있을까요??\n여성스러운 핑크 카라배색에 모던한 블랙컬러조합이 너무나 고급스러운 블랙핑크 골프티셔츠를 소개합니다.\n스판 좋은 기능성 고급원단에 연핑크 컬러 카라로 포인트가 매력적인 티셔츠에요.\n카라부분 사선지퍼를 달아서 입고벗으실때 카라에 화장품 묻을 걱정 없이 정말 편하게 입으실수 있구요.\n어깨라인까지 포인트를 줘서 드넓은 어깨도 여리여리 어깨로 만들어준답니다. ^^\n기본 블랙컬러라 어떤 하의에든 다 잘어울려서 코디하기 정말 편하실거에요.\n모델은 블랙컬러 여리여리스커트에 코디해봤는데요.\n한벌처럼 너무나 잘어울리죠^^ ~~\n거기에 벨트힙색까지 코디해주신다면 , 가을 골프룩 완성!!!!\nLOLOALLOY STUDIO 자체제작상품으로\nONLY LOLOALLOY에서만 만나보실수 있는 상품입니다. ^^\n\n-함께 코디한 상품-",
+  "description_images": [
+   "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/ec9ea283e276d9d485b451b9cfb914b3.jpg",
+   "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/12a6280b30757509c105a649b0ffd125.jpg",
+   "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/4d291fb6548930abab8a59567c736d84.jpg",
+   "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/9bf6e09cd49981caf8d5ece275c4975c.jpg",
+   "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/648301f9158c7df3209985ea418212a7.jpg",
+   "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/3f5f1626177ae1a30afd6176b1793cbd.jpg",
+   "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/426e16546a88ff63c2fbb88bdaacb81c.jpg",
+   "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/c966a2e976391fc6e264a81b4ff65176.jpg",
+   "https://shop-phinf.pstatic.net/20231004_231/1696403889476Je98H_JPEG/KakaoTalk_20231003_102838461_21.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_36/16964039704173x2vp_JPEG/KakaoTalk_20231003_102838461_17.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_20/1696403970420iKmtk_JPEG/KakaoTalk_20231003_102838461_18.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_108/16964039704318t1Yq_JPEG/KakaoTalk_20231003_102838461_21.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_257/1696403970465Pin2s_JPEG/KakaoTalk_20231003_102838461_22.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_190/1696403970428o9xgE_JPEG/KakaoTalk_20231003_102838461_23.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_76/1696403970430gUdWQ_JPEG/KakaoTalk_20231003_102838461_26.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_112/1696403970628QNH6b_JPEG/KakaoTalk_20231003_102910638_04.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_253/1696403970645mUCtN_JPEG/KakaoTalk_20231003_102910638_07.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_52/169640397064695OpU_JPEG/KakaoTalk_20231003_102910638_10.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_145/1696403970677swlvO_JPEG/KakaoTalk_20231003_102910638_14.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_114/16964039707113W7V0_JPEG/KakaoTalk_20231003_102910638_16.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_222/1696404173408ujyg8_JPEG/KakaoTalk_20231003_102934455_09.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_121/1696404173415Px0Ew_JPEG/KakaoTalk_20231003_102934455_13.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_274/1696404173419K9iCY_JPEG/KakaoTalk_20231003_102934455_16.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_33/1696404173416aIf1q_JPEG/KakaoTalk_20231003_102934455_17.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_195/1696404173412RDB8c_JPEG/KakaoTalk_20231003_102934455_20.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231004_157/1696404173412Uj0Tx_JPEG/KakaoTalk_20231003_102934455_22.jpg?type=w848",
+   "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/1ece2c11bc4d33c504b4bf4813310c54.jpg",
+   "https://shop-phinf.pstatic.net/20231005_30/1696495065820GfTeM_JPEG/KakaoTalk_20231005_173415801_01.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231005_11/16964950726455cQF9_JPEG/KakaoTalk_20231005_173415801_02.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231005_223/1696495085404bziOC_JPEG/KakaoTalk_20231005_173415801_03.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231005_198/1696495093079u5cYr_JPEG/KakaoTalk_20231005_173415801.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251013_146/1760332479180JyuF4_JPEG/%EC%99%84%EB%A3%8C_%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC_1.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251013_190/1760332481363rY3gQ_JPEG/%EC%99%84%EB%A3%8C_%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC_2.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251013_196/1760332483964iuct5_JPEG/%EC%99%84%EB%A3%8C_%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC_3.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251013_108/1760332486529ywqdA_JPEG/%EC%99%84%EB%A3%8C_%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC_4.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251013_182/1760332489097ljGee_JPEG/%EC%99%84%EB%A3%8C_%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC_5.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251013_127/1760332491441y3v4S_JPEG/%EC%99%84%EB%A3%8C_%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC_6.jpg?type=w848"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 폴리우레탄",
+    "source": "spec"
+   },
+   {
+    "label_ko": "제품소재",
+    "value_ko": "폴리에스터91%,폴리우레탄9%",
+    "source": "notice"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_tops",
+   "option": 0,
+   "values": [
+    {
+     "ko": "S",
+     "us": "S (US 4-6)",
+     "letter": "S",
+     "chest_cm": 90,
+     "basis": "text_line",
+     "chart_label": "M(55)"
+    },
+    {
+     "ko": "M",
+     "us": "M (US 8-10)",
+     "letter": "M",
+     "chest_cm": 95,
+     "basis": "text_line",
+     "chart_label": "L(66)"
+    },
+    {
+     "ko": "L",
+     "us": "L (US 12-14)",
+     "letter": "L",
+     "chest_cm": 100,
+     "basis": "text_line",
+     "chart_label": "XL(77)"
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "shoulder": "flat",
+     "chest": "flat",
+     "sleeve": null,
+     "length": null
+    },
+    "rows": [
+     {
+      "us": "S (US 4-6)",
+      "cm": {
+       "shoulder": 32.0,
+       "chest": 40.0,
+       "sleeve": 58.0,
+       "length": 56.5
+      }
+     },
+     {
+      "us": "M (US 8-10)",
+      "cm": {
+       "shoulder": 33.0,
+       "chest": 42.0,
+       "sleeve": 59.0,
+       "length": 58.0
+      }
+     },
+     {
+      "us": "L (US 12-14)",
+      "cm": {
+       "shoulder": 35.0,
+       "chest": 44.0,
+       "sleeve": 60.0,
+       "length": 60.0
+      }
+     }
+    ]
+   },
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:176e0c55779f7690",
+   "kind": "title",
+   "ko": "로로얼로이 여성 골프티셔츠 봄 가을 블랙핑크 카라 지퍼 스판 기능성 긴팔 골프웨어"
+  },
+  {
+   "id": "brand:1e03a1e16c9cad40",
+   "kind": "brand",
+   "ko": "로로얼로이"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:8de0b3c47f112c59",
+   "kind": "option_value",
+   "ko": "S"
+  },
+  {
+   "id": "option_value:08f271887ce94707",
+   "kind": "option_value",
+   "ko": "M"
+  },
+  {
+   "id": "option_value:72dfcfb0c470ac25",
+   "kind": "option_value",
+   "ko": "L"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:1e03a1e16c9cad40",
+   "kind": "spec_value",
+   "ko": "로로얼로이"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:521009f503e491a5",
+   "kind": "spec_label",
+   "ko": "네크라인"
+  },
+  {
+   "id": "spec_value:fee81e32c77a25d6",
+   "kind": "spec_value",
+   "ko": "칼라넥"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:ca5c8575bcd5ceca",
+   "kind": "spec_value",
+   "ko": "신축성, 자외선차단, 흡습"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:0136c94aa10dbfb4",
+   "kind": "spec_value",
+   "ko": "폴리에스테르, 폴리우레탄"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:df5d175f4b7d3fb9",
+   "kind": "spec_value",
+   "ko": "봄, 가을"
+  },
+  {
+   "id": "spec_label:c595482b55571d6a",
+   "kind": "spec_label",
+   "ko": "소매기장"
+  },
+  {
+   "id": "spec_value:2fa60fab30cad430",
+   "kind": "spec_value",
+   "ko": "긴팔"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:6aea4c4b3fb65e70",
+   "kind": "spec_value",
+   "ko": "2025년형"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:f977ac4486c2b67c",
+   "kind": "spec_value",
+   "ko": "티셔츠"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:ff90d7cd3c519c1f",
+   "kind": "spec_value",
+   "ko": "여성용"
+  },
+  {
+   "id": "review:e016323623ab7b2d",
+   "kind": "review",
+   "ko": "소재가 여름까지 입어도 될만큼 시원한 느낌입니다 제가 평소66입는데 허리가 통이라 L로 교환했더니 적당히 꽉 끼지않고 핏도 이뻐요 스판도 좋아요\n단지 팔부분 조금 큰듯 하지만 만족해요"
+  }
+ ]
+}

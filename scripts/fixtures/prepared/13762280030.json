@@ -1,0 +1,2819 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:100267387:13762280030",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "off_section_variants_left_out",
+   "detail": "24 variants: 3.아디다스 [봄/가을]골프 긴바지, 4.볼빅 남성 [기모본딩] 밴딩스판 골프 바지"
+  },
+  {
+   "code": "reviews_none_chosen",
+   "detail": "21 reviews, none chosen"
+  },
+  {
+   "code": "title_names_one_variant",
+   "detail": "볼빅, 골프, 카라티, 티셔츠"
+  },
+  {
+   "code": "specs_name_one_variant",
+   "detail": "종류 티셔츠: 티셔츠"
+  },
+  {
+   "code": "measures_from_images",
+   "detail": "package_height_mm 23/23, package_length_mm 23/23, package_width_mm 23/23"
+  },
+  {
+   "code": "paid_addons_left_out",
+   "detail": "3 paid add-ons"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "UNIT_QUANTITY_PAID 3900 KRW"
+  },
+  {
+   "code": "size_chart_left_out",
+   "detail": "two garments or makers kept: 디자인 선택: 1.볼빅 남성 골프 긴팔 카라티 티셔츠, 2.아디다스 골프티_긴팔"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/enjoy_panda/products/13762280030",
+  "channel_no": "100267387",
+  "product_id": "13762280030",
+  "category_id": "50002796"
+ },
+ "product": {
+  "title_ko": "볼빅 남성 골프 긴팔 카라티 티셔츠 골프웨어 간절기 남자 골프복 스트레치 폴로 상의",
+  "brand_ko": "VOLVIK",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {
+     "FW-e48cb3c7a8078f5e96b2c917": "mens",
+     "FW-85345f1fff3da06493e3cf2c": "mens",
+     "FW-c976dfc60a7d9726c39ee9e3": "mens",
+     "FW-f935070e1aa343ec54f7d50e": "mens",
+     "FW-97c5c6aa156d886d5244d5a3": "mens",
+     "FW-797cc8b8161043c734e37713": "mens",
+     "FW-7c86a727d804ad112ca140ab": "mens",
+     "FW-acebd5d2ed98f1453231232d": "mens",
+     "FW-7c287f17ef81d4ffccedfeea": "mens",
+     "FW-b816ad5687f5274d9edbee1d": "mens",
+     "FW-e1cc5670128ca36a6deee160": "mens",
+     "FW-2ccad478488cceb02f9aedc5": "mens",
+     "FW-b67bfdc0944e2e07bf180720": "mens",
+     "FW-fb76880ee2008ad1684e5c93": "mens",
+     "FW-6f0ecca0dff813098fc3401e": "mens",
+     "FW-50bed74dbebbaa53c778eff3": "mens",
+     "FW-55bc8132f8fbec0ddead464a": "mens",
+     "FW-062575305b173e407b4259f3": "mens",
+     "FW-8b97b45644c301be380cb786": "mens",
+     "FW-3156ba8f9260dfe9264cfa6e": "mens",
+     "FW-00423d4cc9f8df6a2b81205f": "mens",
+     "FW-6550dd6cae8d720d0d8a9993": "mens",
+     "FW-b5a2123b0d40363ff59feb27": "mens"
+    },
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "볼빅 남성 골프 긴팔 카라티 티셔츠 골프웨어 간절기 남자 골프복 스트레치 폴로 상의"
+     },
+     {
+      "source": "variants",
+      "value": "mens",
+      "text": "11 of 23 variants"
+     },
+     {
+      "source": "listing",
+      "value": "mens",
+      "text": "남성 골프 긴팔 카라티"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "디자인 선택",
+    "values_ko": [
+     "볼빅 남성 골프 긴팔 카라티 티셔츠",
+     "아디다스 골프티_긴팔"
+    ]
+   },
+   {
+    "name_ko": "사이즈 선택",
+    "values_ko": [
+     "M(95)",
+     "L(100)",
+     "XL(105)",
+     "2XL(110)"
+    ]
+   },
+   {
+    "name_ko": "컬러 선택",
+    "values_ko": [
+     "네이비",
+     "다크 그레이",
+     "블랙",
+     "화이트"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"1.볼빅 남성 골프 긴팔 카라티 티셔츠\",\"M(95)\",\"네이비\"]",
+    "naver_variant_id": "60062950603",
+    "options_ko": [
+     "볼빅 남성 골프 긴팔 카라티 티셔츠",
+     "M(95)",
+     "네이비"
+    ],
+    "price_krw": 44980,
+    "price_usd": "44.98",
+    "sku": "FW-e48cb3c7a8078f5e96b2c917",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"1.볼빅 남성 골프 긴팔 카라티 티셔츠\",\"M(95)\",\"다크 그레이\"]",
+    "naver_variant_id": "60062950604",
+    "options_ko": [
+     "볼빅 남성 골프 긴팔 카라티 티셔츠",
+     "M(95)",
+     "다크 그레이"
+    ],
+    "price_krw": 44980,
+    "price_usd": "44.98",
+    "sku": "FW-85345f1fff3da06493e3cf2c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"1.볼빅 남성 골프 긴팔 카라티 티셔츠\",\"L(100)\",\"블랙\"]",
+    "naver_variant_id": "60062950605",
+    "options_ko": [
+     "볼빅 남성 골프 긴팔 카라티 티셔츠",
+     "L(100)",
+     "블랙"
+    ],
+    "price_krw": 44980,
+    "price_usd": "44.98",
+    "sku": "FW-c976dfc60a7d9726c39ee9e3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"1.볼빅 남성 골프 긴팔 카라티 티셔츠\",\"L(100)\",\"네이비\"]",
+    "naver_variant_id": "60062950606",
+    "options_ko": [
+     "볼빅 남성 골프 긴팔 카라티 티셔츠",
+     "L(100)",
+     "네이비"
+    ],
+    "price_krw": 44980,
+    "price_usd": "44.98",
+    "sku": "FW-f935070e1aa343ec54f7d50e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"1.볼빅 남성 골프 긴팔 카라티 티셔츠\",\"L(100)\",\"다크 그레이\"]",
+    "naver_variant_id": "60062950607",
+    "options_ko": [
+     "볼빅 남성 골프 긴팔 카라티 티셔츠",
+     "L(100)",
+     "다크 그레이"
+    ],
+    "price_krw": 44980,
+    "price_usd": "44.98",
+    "sku": "FW-97c5c6aa156d886d5244d5a3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"1.볼빅 남성 골프 긴팔 카라티 티셔츠\",\"XL(105)\",\"블랙\"]",
+    "naver_variant_id": "60062950608",
+    "options_ko": [
+     "볼빅 남성 골프 긴팔 카라티 티셔츠",
+     "XL(105)",
+     "블랙"
+    ],
+    "price_krw": 44980,
+    "price_usd": "44.98",
+    "sku": "FW-797cc8b8161043c734e37713",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"1.볼빅 남성 골프 긴팔 카라티 티셔츠\",\"XL(105)\",\"네이비\"]",
+    "naver_variant_id": "60062950609",
+    "options_ko": [
+     "볼빅 남성 골프 긴팔 카라티 티셔츠",
+     "XL(105)",
+     "네이비"
+    ],
+    "price_krw": 44980,
+    "price_usd": "44.98",
+    "sku": "FW-7c86a727d804ad112ca140ab",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"1.볼빅 남성 골프 긴팔 카라티 티셔츠\",\"XL(105)\",\"다크 그레이\"]",
+    "naver_variant_id": "60062950610",
+    "options_ko": [
+     "볼빅 남성 골프 긴팔 카라티 티셔츠",
+     "XL(105)",
+     "다크 그레이"
+    ],
+    "price_krw": 44980,
+    "price_usd": "44.98",
+    "sku": "FW-acebd5d2ed98f1453231232d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"1.볼빅 남성 골프 긴팔 카라티 티셔츠\",\"2XL(110)\",\"블랙\"]",
+    "naver_variant_id": "60062950611",
+    "options_ko": [
+     "볼빅 남성 골프 긴팔 카라티 티셔츠",
+     "2XL(110)",
+     "블랙"
+    ],
+    "price_krw": 44980,
+    "price_usd": "44.98",
+    "sku": "FW-7c287f17ef81d4ffccedfeea",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"1.볼빅 남성 골프 긴팔 카라티 티셔츠\",\"2XL(110)\",\"네이비\"]",
+    "naver_variant_id": "60062950612",
+    "options_ko": [
+     "볼빅 남성 골프 긴팔 카라티 티셔츠",
+     "2XL(110)",
+     "네이비"
+    ],
+    "price_krw": 44980,
+    "price_usd": "44.98",
+    "sku": "FW-b816ad5687f5274d9edbee1d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"1.볼빅 남성 골프 긴팔 카라티 티셔츠\",\"2XL(110)\",\"다크 그레이\"]",
+    "naver_variant_id": "60062950613",
+    "options_ko": [
+     "볼빅 남성 골프 긴팔 카라티 티셔츠",
+     "2XL(110)",
+     "다크 그레이"
+    ],
+    "price_krw": 44980,
+    "price_usd": "44.98",
+    "sku": "FW-e1cc5670128ca36a6deee160",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"2.아디다스 골프티_긴팔\",\"M(95)\",\"블랙\"]",
+    "naver_variant_id": "60062507378",
+    "options_ko": [
+     "아디다스 골프티_긴팔",
+     "M(95)",
+     "블랙"
+    ],
+    "price_krw": 69970,
+    "price_usd": "69.97",
+    "sku": "FW-2ccad478488cceb02f9aedc5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"2.아디다스 골프티_긴팔\",\"M(95)\",\"화이트\"]",
+    "naver_variant_id": "60062507379",
+    "options_ko": [
+     "아디다스 골프티_긴팔",
+     "M(95)",
+     "화이트"
+    ],
+    "price_krw": 69970,
+    "price_usd": "69.97",
+    "sku": "FW-b67bfdc0944e2e07bf180720",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"2.아디다스 골프티_긴팔\",\"M(95)\",\"네이비\"]",
+    "naver_variant_id": "60062507380",
+    "options_ko": [
+     "아디다스 골프티_긴팔",
+     "M(95)",
+     "네이비"
+    ],
+    "price_krw": 69970,
+    "price_usd": "69.97",
+    "sku": "FW-fb76880ee2008ad1684e5c93",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"2.아디다스 골프티_긴팔\",\"L(100)\",\"블랙\"]",
+    "naver_variant_id": "60062507381",
+    "options_ko": [
+     "아디다스 골프티_긴팔",
+     "L(100)",
+     "블랙"
+    ],
+    "price_krw": 69970,
+    "price_usd": "69.97",
+    "sku": "FW-6f0ecca0dff813098fc3401e",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"2.아디다스 골프티_긴팔\",\"L(100)\",\"화이트\"]",
+    "naver_variant_id": "60062507382",
+    "options_ko": [
+     "아디다스 골프티_긴팔",
+     "L(100)",
+     "화이트"
+    ],
+    "price_krw": 69970,
+    "price_usd": "69.97",
+    "sku": "FW-50bed74dbebbaa53c778eff3",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"2.아디다스 골프티_긴팔\",\"L(100)\",\"네이비\"]",
+    "naver_variant_id": "60062507383",
+    "options_ko": [
+     "아디다스 골프티_긴팔",
+     "L(100)",
+     "네이비"
+    ],
+    "price_krw": 69970,
+    "price_usd": "69.97",
+    "sku": "FW-55bc8132f8fbec0ddead464a",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"2.아디다스 골프티_긴팔\",\"XL(105)\",\"블랙\"]",
+    "naver_variant_id": "60062507384",
+    "options_ko": [
+     "아디다스 골프티_긴팔",
+     "XL(105)",
+     "블랙"
+    ],
+    "price_krw": 69970,
+    "price_usd": "69.97",
+    "sku": "FW-062575305b173e407b4259f3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"2.아디다스 골프티_긴팔\",\"XL(105)\",\"화이트\"]",
+    "naver_variant_id": "60062507385",
+    "options_ko": [
+     "아디다스 골프티_긴팔",
+     "XL(105)",
+     "화이트"
+    ],
+    "price_krw": 69970,
+    "price_usd": "69.97",
+    "sku": "FW-8b97b45644c301be380cb786",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"2.아디다스 골프티_긴팔\",\"XL(105)\",\"네이비\"]",
+    "naver_variant_id": "60062507386",
+    "options_ko": [
+     "아디다스 골프티_긴팔",
+     "XL(105)",
+     "네이비"
+    ],
+    "price_krw": 69970,
+    "price_usd": "69.97",
+    "sku": "FW-3156ba8f9260dfe9264cfa6e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"2.아디다스 골프티_긴팔\",\"2XL(110)\",\"블랙\"]",
+    "naver_variant_id": "60062507387",
+    "options_ko": [
+     "아디다스 골프티_긴팔",
+     "2XL(110)",
+     "블랙"
+    ],
+    "price_krw": 69970,
+    "price_usd": "69.97",
+    "sku": "FW-00423d4cc9f8df6a2b81205f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"2.아디다스 골프티_긴팔\",\"2XL(110)\",\"화이트\"]",
+    "naver_variant_id": "60062507388",
+    "options_ko": [
+     "아디다스 골프티_긴팔",
+     "2XL(110)",
+     "화이트"
+    ],
+    "price_krw": 69970,
+    "price_usd": "69.97",
+    "sku": "FW-6550dd6cae8d720d0d8a9993",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   },
+   {
+    "source_id": "observed:[\"2.아디다스 골프티_긴팔\",\"2XL(110)\",\"네이비\"]",
+    "naver_variant_id": "60062507389",
+    "options_ko": [
+     "아디다스 골프티_긴팔",
+     "2XL(110)",
+     "네이비"
+    ],
+    "price_krw": 69970,
+    "price_usd": "69.97",
+    "sku": "FW-b5a2123b0d40363ff59feb27",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21",
+      "compared": {
+       "value": 1400,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated packed weight",
+       "from": "description_text",
+       "rejected": "far_above_today"
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 220,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 40,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": false
+   }
+  ],
+  "pricing": {
+   "base_krw": 44980,
+   "original_krw": 74990,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "Sonha Phuto / 다가즈컴퍼니"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "VOLVIK"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "베트남산"
+   },
+   {
+    "label_ko": "네크라인",
+    "value_ko": "칼라넥"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "자외선차단, 흡습, 신축성"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 스판, 폴리우레탄"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "가을, 겨울, 봄"
+   },
+   {
+    "label_ko": "소매기장",
+    "value_ko": "긴팔"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2026년형"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "티셔츠"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.76,
+   "count": 21
+  },
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13762280030/fairwardgolf-13762280030-001-d8e98cc0eaf0f7ef.webp",
+    "sha256": "d8e98cc0eaf0f7ef2a759ea37055cd83c39a2f76fb6325cf37546d3a2a8103cc",
+    "width": 1254,
+    "height": 1254
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13762280030/fairwardgolf-13762280030-002-3cc8a574712e41d8.webp",
+    "sha256": "3cc8a574712e41d898bbce76c068c95afebf5f87781e12b595215eb34a30f7f2",
+    "width": 1254,
+    "height": 1254
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13762280030/fairwardgolf-13762280030-003-5cd7cbaea324588f.webp",
+    "sha256": "5cd7cbaea324588fa20370149462bacb338df619d47b509f2ef8038ebb259a03",
+    "width": 1254,
+    "height": 1254
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13762280030/fairwardgolf-13762280030-004-689a6023c81549fd.webp",
+    "sha256": "689a6023c81549fded84b419e0f9a9c45e1438d93cce47974f89cd58a9c10647",
+    "width": 1254,
+    "height": 1254
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13762280030/fairwardgolf-13762280030-005-b0b4a668eb398395.webp",
+    "sha256": "b0b4a668eb3983956ee681d7fbb933b320ea3adf4058b31a59aec31a6ed7e3ff",
+    "width": 1254,
+    "height": 1254
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/13762280030/fairwardgolf-13762280030-006-df5fe1530ef73835.webp",
+    "sha256": "df5fe1530ef7383566108183aa3120e5b7ebd677d85d27ffc57cd8ade0c20b02",
+    "width": 1254,
+    "height": 1254
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/13762280030/fairwardgolf-13762280030-007-d6e5dd024c2e628a.webp",
+    "sha256": "d6e5dd024c2e628ab279db5141d83792372927a96f254e79ab000152766258ef",
+    "width": 1254,
+    "height": 1254
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/13762280030/fairwardgolf-13762280030-008-5e18e2850e776468.webp",
+    "sha256": "5e18e2850e7764683ed4c87cfb7518693988f69a5c80e65fe27c4d4cb31c3e90",
+    "width": 1254,
+    "height": 1254
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/13762280030/fairwardgolf-13762280030-009-ac45f7b6f8cf9095.webp",
+    "sha256": "ac45f7b6f8cf90953605e8972ad15085f55bf3f3a680834654795e1cff714e0a",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/13762280030/fairwardgolf-13762280030-010-48b046c72dad72d1.webp",
+    "sha256": "48b046c72dad72d151509ece9d522f597866cf9375006a7c5254f904a724bf83",
+    "width": 1254,
+    "height": 1254
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "UNIT_QUANTITY_PAID",
+   "base_fee": 3900,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "3개마다 부과 / 제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.8993288,
+    "product_average_days": 1.25,
+    "today_cutoff": null,
+    "today_off": true,
+    "arrival_days": null,
+    "arrival_date_text": "11.25.(수)",
+    "arrival_probability": 98,
+    "ship_date_text": "11.23.(월)"
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "볼빅 남성 긴소매 폴로 셔츠\n\n제품 특징\n신축성이 좋은 스트레치 원단을 사용하여 필드 및 일상에서 착용시 편안함\n필드 및 일상에서도 코디가 가능한 아이템\n레귤러 핏의 편안한 착용감의 폴로 티셔츠\n제품 사양\n브랜드: 볼빅 (Volvik)\n색상: 블랙, 다크네이비, 다크헤더그레이\n사이즈: M, L, XL, XXL\n소재: 폴리에스터 83%, 폴리우레탄 17%\n\n볼빅 남성 골프 긴팔 카라티 티셔츠\n골프웨어 간절기 남자 골프복 스트레치 폴로 상의\n\n볼빅 남성 골프 긴팔 카라티 티셔츠\n골프웨어 간절기 남자 골프복 스트레치 폴로 상의\n\n품명 | 볼빅 남성 긴소매 폴로 셔츠\n색상 | 블랙, 다크네이비, 다크헤더그레이\n크기 | M - 총장 68cm, 가슴둘레 100cm, 밑단둘레 99cm, 어깨너비 43cm, 소매기장 60cm; L - 총장 70cm, 가슴둘레 105cm, 밑단둘레 104cm, 어깨너비 45cm, 소매기장 61cm; XL - 총장 72cm, 가슴둘레 110cm, 밑단둘레 109cm, 어깨너비 47cm, 소매기장 62cm; XXL - 총장 74cm, 가슴둘레 115cm, 밑단둘레 114cm, 어깨너비 49cm, 소매기장 63cm; 제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n주요소재 (제품 소재) | 폴리에스터 83%, 폴리우레탄 17%\n제조자/수입자 | Sonha Phuto / 다가즈컴퍼니\n제조국 또는 원산지 | 베트남\n세탁방법 및 취급시 주의사항 | 본 제품은 기계세탁이 가능합니다.; 기계 세탁시 제품을 뒤집으신 후 세탁망에 넣어 세탁하시는것을 권장합니다.; 표백성분이 있는 세제 및 효소 세제는절대 사용하지 마십시오.; 땀을 많이 흘렸을 경우에는 즉시 세탁하십시오.; 흰옷과 유색옷은 이염 될 수 있으므로 구분하여 세탁 하십시오.; 물에 10분이상 담구어 두거나 세탁 후그대로 놓아두면 이염될 염려가 있으; 니 즉시 탈수 건조하십시오.; 세탁 후 잘펴서 모양을 가지런히 하여그늘에서 건조하십시오.; 열풍건조는 외관변형 및 수축의 원인이 될 수 있으니 유의하여 주십시오.; 다림질은 적정온도에서 천을 덧댄 후모양을 가다듬으면서 잡아당기지 말고; 가겹게 하십시오.; 잔류세제로 얼룩이나 오염이 발생할수 있으니 여러 차례 헹군 후 건조하; 십시오.; 스판 소재인 경우 더운 물에서(30`C이상)늘어질 수 있으므로 주의하십시오.; 제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니; 유의 하십시오.; 본 제품을 의류 착용 이외의 용도로사용하지 마십시오.\n제조연월 | 2026년 5월\n품질보증기준 | 관련 법령 및 공정거래위원회의 소비자분쟁해결 기준에 따름\nA/S 책임자와 전화번호 또는 소비자상담 관련 전화번호 | ㈜위비스 1833-2846\n\nADIDAS GOLF\n\n1.아디다스 골프티_긴팔-카라넥 3선\n\n볼빅 기모 골프 바지 남성\n겨울 골프웨어\n봄 가을 남자 슬림핏 스판\n긴바지 기능성\n\n제품 특징\n레귤러 핏으로 편안한 착용감을 주는 골프 팬츠\n안감에 융본딩을 사용 하여 부드럽고 따듯한 착용감\n동계 시즌 라운딩시 보온성 유지 및 편안한 활동 가능\n라운딩 및 일상 에서도 다양하게 착용 및 코디 가능한 아이템\n허리부분에 밴드 처리하여 편안한 착용감\n제품 사양\n브랜드: 볼빅 (Volvik)\n색상: 블랙, 다크네이비, 다크차콜\n사이즈: M, L, XL, XXL\n소재: 겉감 - 폴리에스터 89%, 폴리우레탄 11%, 안감 - 폴리에스터 94%, 폴리우레탄 6%\n제품 치수\nM - 허리둘레 86cm, 앞밑위 27cm, 힙둘레 104cm, 총장 103cm\nL - 허리둘레 90cm, 앞밑위 27.8cm, 힙둘레 108cm, 총장 103cm\nXL - 허리둘레 94cm, 앞밑위 28.6cm, 힙둘레 112cm, 총장 105cm\nXXL - 허리둘레 98cm, 앞밑위 29.4cm, 힙둘레 116cm, 총장 105cm\n제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n세탁방법 및 취급시 주의사항\n본 제품은 드라이클리닝을 절대 하지 마십시오. (기름 드라이클링시 기능이 떨어짐)\n물의 온도 30℃를 표준으로 중성세제를 사용하여 세탁 해주십시오.\n표백성분이 있는 세제 및 효소 세제는 절대 사용하지 마십시오.\n짙은 색상과 밝은 색상은 분리(단독) 세탁하십시오.\n땀에 젖었을 경우 즉시 세탁하시고, 세제에 10분이상 담가두지마십시오.\n소재 색상이 다른것이 혼합된 제품은 이염될수 있으니 빠른시간 내에 세탁, 건조 하십시오.\n충전재 특성상 바늘구멍으로 경미하게 털이 나오는 것은 불량이 아니므로 안 쪽으로 넣어주시거나 털어내고 착용하십시오.\n잔류세제로 털이 뭉치거나, 건조 후 얼룩의 원인이 될 수 있으므로 충분히 헹군 후 완전 탈수하여 건조하십시오.\n완전히 마른 후 손으로 충전재 부위를 가볍게 두드려 털을 고르게 펴 주십시오.\n옷모양을 가지런히 하여 그늘에서 건조 하여 주십시오.\n담뱃불 또는 불꽃에 인화하므로 주의 하여 주십시오.\n본 제품을 의류 착용 이외의 용도로 사용하지 마십시오.\n\n볼빅 기모 밴딩 골프 바지 남성 골프웨어\n봄 가을 남자 슬림핏 스판 긴바지 방한 골프복\n\n볼빅 기모 밴딩 골프 바지 남성 골프웨어\n봄 가을 남자 슬림핏 스판 긴바지 방한 골프복\n\n볼빅 기모 밴딩 골프 바지 남성 골프웨어\n봄 가을 남자 슬림핏 스판 긴바지 방한 골프복\n\n볼빅 기모 밴딩 골프 바지 남성 골프웨어\n봄 가을 남자 슬림핏 스판 긴바지 방한 골프복\n\n볼빅 남성 골프바지\n남성 겨울 골프바지\n볼빅 기모 골프바지\n남자 기모 골프팬츠\n남성 융본딩 골프바지\n볼빅 겨울 골프팬츠\n남성 스판 골프바지\n남성 허리밴딩 골프바지\n남자 겨울 골프팬츠\n남성 겨울 라운딩 바지\n겨울라운딩\n동계라운딩\n기모안감\n융본딩\n허리밴딩\n레귤러핏\n스판소재\n겨울필드룩\n남성골프코디\n남성겨울코디\n\n품명 | 볼빅 남성 기모 골프 바지\n색상 | 블랙, 다크네이비, 다크차콜\n크기 | M - 허리둘레 86cm, 앞밑위 27cm, 힙둘레 104cm, 총장 103cm; L - 허리둘레 90cm, 앞밑위 27.8cm, 힙둘레 108cm, 총장 103cm; XL - 허리둘레 94cm, 앞밑위 28.6cm, 힙둘레 112cm, 총장 105cm; XXL - 허리둘레 98cm, 앞밑위 29.4cm, 힙둘레 116cm, 총장 105cm; 제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n주요소재 (제품 소재) | 겉감 - 폴리에스터 89%, 폴리우레탄 11%, 안감 - 폴리에스터 94%, 폴리우레탄 6%\n제조자/수입자 | XUAN TRUONG GARMENT FACTORY / ㈜K&S 인터내셔날\n제조국 또는 원산지 | 베트남\n세탁방법 및 취급시 주의사항 | 본 제품은 드라이클리닝을 절대 하지 마십시오. (기름 드라이클링시 기능이 떨어짐); 물의 온도 30℃를 표준으로 중성세제를 사용하여 세탁 해주십시오.; 표백성분이 있는 세제 및 효소 세제는 절대 사용하지 마십시오.; 짙은 색상과 밝은 색상은 분리(단독) 세탁하십시오.; 땀에 젖었을 경우 즉시 세탁하시고, 세제에 10분이상 담가두지마십시오.; 소재 색상이 다른것이 혼합된 제품은 이염될수 있으니 빠른시간 내에 세탁, 건조 하십시오.; 충전재 특성상 바늘구멍으로 경미하게 털이 나오는 것은 불량이 아니므로 안 쪽으로 넣어주시거나 털어내고 착용하십시오.; 잔류세제로 털이 뭉치거나, 건조 후 얼룩의 원인이 될 수 있으므로 충분히 헹군 후 완전 탈수하여 건조하십시오.; 완전히 마른 후 손으로 충전재 부위를 가볍게 두드려 털을 고르게 펴 주십시오.; 옷모양을 가지런히 하여 그늘에서 건조 하여 주십시오.; 담뱃불 또는 불꽃에 인화하므로 주의 하여 주십시오.; 본 제품을 의류 착용 이외의 용도로 사용하지 마십시오.\n제조연월 | 2026년 8월\n품질보증기준 | 관련 법령 및 공정거래위원회의 소비자분쟁해결 기준에 따름\nA/S 책임자와 전화번호 또는 소비자상담 관련 전화번호 | (주)위비스 1833-2846\n\n1.아디다스 골프티_긴팔-가슴 3선 로고\n\n아디다스 골프 남성\n\n폴로 긴팔 긴소매 카라 골프티 칼라넥\n\n아디다스 골프 남성 폴로 긴팔\n\n제품 특징\n\n세련된 색감, 아디다스 로고\n\n신축성 및 착용감이 우수한\n피케 폴로 티셔츠\n아디다스 골프 티셔츠\n\n왼팔 3선 로고 포인트\n\n도톰하고 신축성 좋은\n기능성 원단으로\n골프 스윙에 편안함을 줍니다.\n\n아디다스 골프\n남성 피케 티셔츠 폴로 티셔츠\n골프 티셔츠\n3가지 색상 중 선택하세요!\n\n1. 아디다스 남성 골프 폴로 티셔츠_화이트\n\n2. 아디다스 남성 골프 폴로 티셔츠__블랙\n\n3. 아디다스 남성 골프 폴로 티셔츠__네이비\n\nD E T A I L\n\n제품 특징\n통기성과 신축성이 우수한 에어로레디 원단 사용\n오른쪽 소매 위 톤온톤 컬러로 들어간\n오버사이즈 마운틴 로고 디자인 디테일\nUPF 50+\n제품 사양\n브랜드: 아디다스 골프(Adidas Golf)\n색상: 화이트, 블랙, 네이비\n소재: 재생 폴리에스터 92%, 엘라스테인 8%\n사이즈: M(95), L(100), XL(105), XXL(110)\n제품 치수\nM(95) - 가슴둘레 105.0cm, 밑단 103.0cm, 소매 22.0cm, 총장 69.0cm\nL(100) - 가슴둘레 110.0cm, 밑단 108.0cm, 소매 22.0cm, 총장 70.0cm\nXL(105) - 가슴둘레 116.0cm, 밑단 114.0cm, 소매 23.0cm, 총장 72.0cm\nXXL(110) - 가슴둘레 123.0cm, 밑단 121.0cm, 소매 25.0cm, 총장 73.0cm\n제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n세탁방법 및 취급시 주의사항\n본 제품은 섬유유연제를 사용하지 마세요.\n본 제품은 세탁 시 유사한 색상끼리 세탁하세요.\n본 제품은 세탁 후 즉시 꺼내주세요.\n본 제품의 나염이나 자수(문양) 부분은 다림질을 하지 마세요.\n본 제품은 세탁망에 넣어서 세탁하세요.\n심한 마찰은 보풀이 발생할 수 있습니다.\n본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고,\n부착된 장신구 등은 강한 충격에 의하여 파손될 수 있으니 유의하십시오.\n제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.\n강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.\n건조시에는 강한 햇볕을 피하고 통풍이 잘되는 그늘에서 건조하십시오.\n나염 부위는 절대로 다림질이나 열건조를 하지 마십시오.\n나염 부위가 장시간 다른 물건 등에 밀착되어 있는 경우,\n나염에 손상이 가거나 다른 물건에 묻어날 수 있습니다.\n나염된 제품의 로고 등은 착용일로부터 1년 후에는 로고가 일부 또는 전부가 탈락할 수 있습니다.\n금속 부자재는 물세탁 시 녹이 발생할 수 있습니다.\n금속 부자재는 구입자의 체질에 따라 피부 알러지를 발생케 할 수 있습니다.\n의류에 부착한 악세서리는 반드시 제거하신 후 세탁하시기 바랍니다.\n폴리에스터 등 특정 원단이 사용된 제품의 경우,\n외부의 자극에 의하여 올트임이나 올나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.\n주머니가 깊지 않은 제품의 경우, 주머니 속의 물건 등이 보행,\n운동 등에 의하여 주머니 밖으로 빠질 수 있으니 유의하시기 바랍니다.\n\n아디다스 골프 티셔츠_반팔티\n\n1.아디다스 골프티 [ 팔 3S ]\n2.아디다스 골프티 [ PK-무지 ]\n2가지 디자인중 선택하세요!\n\n1.아디다스 골프티 [ 팔 3선 무늬 ]\n\n제품 특징\n아디다스 골프의 베이직 삼선(3 stripes) 폴로\n왼쪽 가슴 실버 BOS 로고\n에어로레디 소재 사용으로 흡습속건\n제품 사양\n브랜드: 아디다스 골프 (Adidas Golf)\n색상: 블랙, 화이트, 레전드 잉크(네이비)\n사이즈: M(95), L(100), XL(105), 2XL(110)\n소재: 재생 폴리에스터 100%\n제품 치수\nM - 가슴둘레 105.0cm, 밑단 103.0cm, 소매 22.0cm, 총장 69.0cm\nL - 가슴둘레 110.0cm, 밑단 108.0cm, 소매 22.0cm, 총장 70.0cm\nXL - 가슴둘레 116.0cm, 밑단 114.0cm, 소매 23.0cm, 총장 72.0cm\n2XL - 가슴둘레 123.0cm, 밑단 121.0cm, 소매 25.0cm, 총장 73.0cm\n* 사이즈의 경우 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n세탁방법 및 취급시 주의사항\n본 제품은 섬유 유연제를 사용하지 마십시오.\n본 제품은 세탁 시 유사한 색상끼리 세탁하십시오.\n본 제품은 세탁 후 즉시 꺼내주십시오.\n본 제품의 날염이나 자수(문양) 부분은 다림질을 하지 마십시오.\n본 제품은 세탁망에 넣어서 세탁하십시오.\n심한 마찰은 보풀이 발생할 수 있습니다.\n본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고, 부착된 장신구 등은 강한 충격에 의하여 파손될 수 있으니 유의하십시오.\n제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.\n강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.\n건조 시에는 강한 햇볕을 피하고 통풍이 잘 되는 그늘에서 건조하십시오.\n날염 부위는 절대로 다림질이나 열건조를 하지 마십시오.\n날염 부위가 장시간 다른 물건 등에 밀착되어 있는 경우, 날염에 손상이 가거나 다른 물건에 묻어날 수 있습니다.\n날염된 제품의 로고 등은 착용 일로부터 1년 후에는 로고가 일부 또는 전부가 탈락할 수 있습니다.\n금속 부자재는 물세탁 시 녹이 발생할 수 있습니다.\n금속 부자재는 구입자의 체질에 따라 피부 알레르기를 발생케 할 수 있습니다.\n의류에 부착한 액세서리는 반드시 제거하신 후 세탁하시기 바랍니다.\n폴리에스터 등 특정 원단이 사용된 제품의 경우, 외부의 자극에 의하여 올트임이나 올나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.\n\n아디다스 골프 티셔츠 반팔 (3S) _화이트\n\n아디다스 골프 티셔츠 반팔_블랙\n\n아디다스 골프 티셔츠 반팔_네이비\n\n2.아디다스 골프티 [ PK-무지 ]\n\n제품 특징\n아디다스 골프의 베이직한 무지 디자인\n왼쪽 가슴 실버 BOS 로고\n피케 폴로 (PK 폴로) 스타일\n단추 포인트\n\n제품 사양\n브랜드: 아디다스 골프 (Adidas Golf)\n색상: 블랙, 화이트, 레전드 잉크(네이비)\n사이즈: M(95), L(100), XL(105), 2XL(110)\n소재: 재생 폴리에스터 100%\n제품 치수\nM - 가슴둘레 107.5cm, 허리둘레 105.5cm, 소매기장 61.8cm, 소매너비 41.8cm, 총장 69.5cm\nL - 가슴둘레 110cm, 허리둘레 108cm, 소매기장 61.8cm, 소매너비 42.2cm, 총장 70cm\nXL - 가슴둘레 116cm, 허리둘레 114cm, 소매기장 61.8cm, 소매너비 43.4cm, 총장 71.7cm\n2XL - 가슴둘레 123cm, 허리둘레 121cm, 소매기장 61.8cm, 소매너비 44.8cm, 총장 73.4cm\n* 사이즈의 경우 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n세탁방법 및 취급시 주의사항\n본 제품은 섬유 유연제를 사용하지 마십시오.\n본 제품은 세탁 시 유사한 색상끼리 세탁하십시오.\n본 제품은 세탁 후 즉시 꺼내주십시오.\n본 제품의 날염이나 자수(문양) 부분은 다림질을 하지 마십시오.\n본 제품은 세탁망에 넣어서 세탁하십시오.\n심한 마찰은 보풀이 발생할 수 있습니다.\n본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고, 부착된 장신구 등은 강한 충격에 의하여 파손될 수 있으니 유의하십시오.\n제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.\n강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.\n건조 시에는 강한 햇볕을 피하고 통풍이 잘 되는 그늘에서 건조하십시오.\n날염 부위는 절대로 다림질이나 열건조를 하지 마십시오.\n날염 부위가 장시간 다른 물건 등에 밀착되어 있는 경우, 날염에 손상이 가거나 다른 물건에 묻어날 수 있습니다.\n날염된 제품의 로고 등은 착용 일로부터 1년 후에는 로고가 일부 또는 전부가 탈락할 수 있습니다.\n금속 부자재는 물세탁 시 녹이 발생할 수 있습니다.\n금속 부자재는 구입자의 체질에 따라 피부 알레르기를 발생케 할 수 있습니다.\n의류에 부착한 액세서리는 반드시 제거하신 후 세탁하시기 바랍니다.\n폴리에스터 등 특정 원단이 사용된 제품의 경우, 외부의 자극에 의하여 올트임이나 올나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.\n\n합배송이 가능한 추가 구매 상품\n\n※ 합배송이 가능한 추가 구매 옵션에서 구매시\n주문하신 티셔츠 상품과 함께 발송됩니다!\n\n아디다스 골프바지\n\n제품 특징\n\n세련된 색감\n\n뒷면 허리 부분에 3선 포인트\n\n신축성, 통기성이 뛰어난 골프 팬츠\n\n아디다스 고로가 새겨진 허리 밴딩\n\n늦가을 초겨울에도 입을 수 있는\n도톰한 원단\n\n기본 스타일의 슬림라인 골프 팬츠\n\n3가지 색상 중 선택하세요!\n\n아디다스 골프바지_그레이\n\n아디다스 골프바지_네이비\n\n아디다스 골프바지_블랙\n\n※ 뒷 삼선은 화이트가 아니라 연그레이에 가깝습니다.\n제품 특징\n뒷면 허리 부분에 3선 포인트가 있으며\n신축성, 통기성이 뛰어난 기본 스타일의 골프 팬츠\n제품 사양\n소재 : 100% 재생 폴리에스터\n색상 : 블랙, 네이비, 그레이\n사이즈 : L(82), XL(85), 2XL(88), 3XL(92)\n제품 치수\nL(82) - 허리둘레 84cm, 총기장 (바깥 측면 기준) 109cm\nXL(85) - 허리둘레 87cm, 총기장 (바깥 측면 기준) 110cm\n2XL(88) - 허리둘레 90cm, 총기장 (바깥 측면 기준) 110cm\n3XL(92) - 허리둘레 94cm, 총기장 (바깥 측면 기준) 110cm\n* 사이즈의 경우 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n세탁 방법 및 취급 시 주의사항\n본 제품은 섬유 유연제를 사용하지 마세요.\n본 제품은 세탁 시 유사한 색상끼리 세탁하세요.\n본 제품은 세탁 후 즉시 꺼내 주세요.\n본 제품의 날염이나 자수(문양) 부분은 다림질을 하지 마세요.\n본 제품은 세탁망에 넣어서 세탁하세요.\n심한 마찰은 보풀이 발생할 수 있습니다.\n본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고\n부착된 장신구 등은 강한 충격에 의하여 파손될 수 있으니 유의하십시오.\n제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.\n강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.\n건조 시에는 강한 햇볕을 피하고 통풍이 잘 되는 그늘에서 건조하십시오.\n날염 부위는 절대로 다림질이나 열건조를 하지 마십시오.\n날염부위가 장시간 다른 물건 등에 밀착되어 있는 경우, 날염에 손상이 가거나 다른 물건에 묻어날 수 있습니다.\n날염된 제품의 로고 등은 착용 일로부터 1년 후에는 로고가 일부 또는 전부가 탈락할 수 있습니다.\n금속 부자재는 물세탁 시 녹이 발생할 수 있습니다.\n금속 부자재는 구입자의 체질에 따라 피부 알레르기를 발생케 할 수 있습니다.\n의류에 부착한 액세서리는 반드시 제거하신 후 세탁하시기 바랍니다.\n폴리에스터 등 특정 원단이 사용된 제품의 경우, 외부의 자극에 의하여 올트임이나 올 나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.\n주머니가 깊지 않은 제품의 경우, 주머니 속의 물건 등이 보행, 운동 등에 의하여 주머니 밖으로 빠질 수 있으니 유의하시기 바랍니다.\n\n아디다스 [본딩 기모] 골프바지\n\n아디다스 본딩기모 골프바지-네이비\n\n아디다스 본딩기모 골프바지-그레이\n\n아디다스 본딩기모 골프바지-블랙\n\n제품 특징\n왼쪽 포켓의 3선 디자인 포인트\n신축성과 착용감이 우수한 팬츠\n본딩 기모로 보온성이 좋음\n제품 사양\n소재: 100% 재생 폴리에스터\n색상: 블랙, 네이비, 그레이\n사이즈: A82, A85, A88, A92\n제품 치수\n82 - 허리둘레 84cm, 총기장 (바깥 측면 기준) 109cm\n85 - 허리둘레 87cm, 총기장 (바깥 측면 기준) 110cm\n88 - 허리둘레 90cm, 총기장 (바깥 측면 기준) 110cm\n92 - 허리둘레 94cm, 총기장 (바깥 측면 기준) 110cm\n* 사이즈의 경우 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n세탁 방법 및 취급 시 주의사항\n본 제품은 섬유 유연제를 사용하지 마세요.\n본 제품은 세탁 시 유사한 색상끼리 세탁하세요.\n본 제품은 세탁 후 즉시 꺼내 주세요.\n본 제품의 날염이나 자수(문양) 부분은 다림질을 하지 마세요.\n본 제품은 세탁망에 넣어서 세탁하세요.\n심한 마찰은 보풀이 발생할 수 있습니다.\n본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고 부착된 장신구 등은 강한 충격에 의하여 파손될 수 있으니 유의하십시오.\n제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.\n강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.\n건조 시에는 강한 햇볕을 피하고 통풍이 잘 되는 그늘에서 건조하십시오.\n날염 부위는 절대로 다림질이나 열건조를 하지 마십시오.\n날염 부위가 장시간 다른 물건 등에 밀착되어 있는 경우, 날염에 손상이 가거나 다른 물건에 묻어날 수 있습니다.\n날염된 제품의 로고 등은 착용 일로부터 1년 후에는 로고가 일부 또는 전부가 탈락할 수 있습니다.\n금속 부자재는 물세탁 시 녹이 발생할 수 있습니다.\n금속 부자재는 구입자의 체질에 따라 피부 알레르기를 발생케 할 수 있습니다.\n의류에 부착한 액세서리는 반드시 제거하신 후 세탁하시기 바랍니다.\n폴리에스터 등 특정 원단이 사용된 제품의 경우, 외부의 자극에 의하여 올트임이나 올나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.\n주머니가 깊지 않은 제품의 경우, 주머니 속의 물건 등이 보행, 운동 등에 의하여 주머니 밖으로 빠질 수 있으니 유의하시기 바랍니다.\n\n주요소재 (제품 소재) | 100% 재생 폴리에스터\n제조자/수입자 | Grand Twins Intl / 아디다스코리아(유)\n제조국 | 캄보디아\n세탁방법 및 취급시 주의사항 | 본 제품은 섬유 유연제를 사용하지 마세요.; 본 제품은 세탁 시 유사한 색상끼리 세탁하세요.; 본 제품은 세탁 후 즉시 꺼내 주세요.; 본 제품의 날염이나 자수(문양) 부분은 다림질을 하지 마세요.; 본 제품은 세탁망에 넣어서 세탁하세요.; 심한 마찰은 보풀이 발생할 수 있습니다.; 본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고 부착된 장신구 등은 강한 충격에 의하여 파손될 수 있으니 유의하십시오.; 제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.; 강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.; 건조 시에는 강한 햇볕을 피하고 통풍이 잘 되는 그늘에서 건조하십시오.; 날염 부위는 절대로 다림질이나 열건조를 하지 마십시오.; 날염 부위가 장시간 다른 물건 등에 밀착되어 있는 경우, 날염에 손상이 가거나 다른 물건에 묻어날 수 있습니다.; 날염된 제품의 로고 등은 착용 일로부터 1년 후에는 로고가 일부 또는 전부가 탈락할 수 있습니다.; 금속 부자재는 물세탁 시 녹이 발생할 수 있습니다.; 금속 부자재는 구입자의 체질에 따라 피부 알레르기를 발생케 할 수 있습니다.; 의류에 부착한 액세서리는 반드시 제거하신 후 세탁하시기 바랍니다.; 폴리에스터 등 특정 원단이 사용된 제품의 경우, 외부의 자극에 의하여 올트임이나 올나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.; 주머니가 깊지 않은 제품의 경우, 주머니 속의 물건 등이 보행, 운동 등에 의하여 주머니 밖으로 빠질 수 있으니 유의하시기 바랍니다.\n제조연월 | 2020년 11월\n품질보증기준 | 관련 법령 및 공정거래위원회의 소비자분쟁해결기준에 따름\n\n합배송이 가능한 추가 구매 상품\n\n커클랜드 시그니춰 3피스 골프공 24개입\n\n가성비 최고 코스트코 자사 브랜드 커클랜드 시그니춰 골프공 24개입\n\n제품 특징\n\n제품사양\n\n지름: 4cm\n재질: 폴리우레탄 외\n색상: 화이트\n구성: 3피스 골프공 2더즌\n\n제품특징\n\n커클랜드 시그니처 3피스 골프공\n강한 내구성의 우레탄 커버가 부드러운 타구감을 제공하고, 정확한 컨트롤로 그린 공략 가능\n저 압축 고탄성 소프트 코어로 빠른 볼 스피드와 비거리 실현\n338개 딤플 패턴을 적용해 공기 저항을 최소화하여 비거리 향상\n\nD E T A I L\n\n품명: 커클랜드 시그니춰 3PC 골프공 24개입\n종류: 3피스 골프공\nKC 인증필 유무: 해당사항 없음\n구성품: 골프공 24개\n주요소재: 폴리우레탄 외\n크기: 패키지: W21 x L15 x H10cm, 1.4kg\n주요사양: 상품상세정보 참조\n제조자/수입자: (주)코스트코 코리아\n제조국: 중국\n취급시 주의사항\n1. 사용 후 물기 없는 부드러운 면 수건으로 오염을 제거해주십시오.\n2. 보관 시 습기 있는 곳을 피하고, 서늘하고 건조한 곳에 보관하십시오.\n제조연월: 2019년 1월\n품질보증기준: 관련 법령 및 공정거래위원회의 소비자분쟁해결 기준에 따름\n\n잠깐! 지금 보고 계신 상품이 마음에 드셨다면 찜♥ 눌러주세요!!!\n\n구매시 꼭 확인하세요!!!!!\n\n가장 최신 제조된 상품과 유통기한이 넉넉한 상품만을 배송해 드립니다.\n\n배송은 결제일 다음날부터 3일이내에 발송됩니다. (단, 토요일, 일요일, 공휴일은 배송일에서 제외)\n구매대행의 특성상 공급사의 재고 사정에 따라 품절이 발생할 수 있습니다.\n재고의 한정으로 품절 취소 요청을 드릴 수 있으니, 고객님의 양해 부탁드립니다.\n★★★★★구매 대행의 특성 상 <상품 준비중>의 상태에서는 주문 취소가 어렵습니다.★★★★★\n주문 취소 희망 시 꼭 판매자에게 유선 연락을 부탁드립니다.\n연락 없이 취소 요청시 출고가 되어 고객에게 물품이 발송 될 수 있습니다.\n이 경우, 반품 택배비는 고객님의 부담이 되니, 반드시 유선 연락 후 취소 진행 바랍니다.\n\n주간 인기상품 함께 보기",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20261002_235/1790905434228hh0Rv_JPEG/1790905432531.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261002_130/1790905434229CmPi7_JPEG/1790905432617.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261002_237/1790905434215FuAIn_JPEG/1790905432703.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261002_113/1790905434219wAxJo_JPEG/1790905432771.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261002_86/1790905434216yo5lS_JPEG/1790905432840.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261002_15/1790905434639hIkuU_JPEG/1790905432905.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261002_238/1790905434649apsNE_JPEG/1790905432976.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261002_9/1790905434656sdN71_JPEG/1790905433051.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261002_204/1790905434655QkT8G_JPEG/1790905433115.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261002_280/1790905434228aVeN1_JPEG/1790905433183.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_196/17894630813064YLY7_JPEG/1789463077983.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_288/17894630829205h1nB_JPEG/1789463077612.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_292/1789463081589Fj3WS_JPEG/1789463077693.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_282/1789463081471oWRhB_JPEG/1789463077771.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_219/1789463081469FDNAO_JPEG/1789463077847.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_191/1789463081310faI5U_JPEG/1789463077918.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_188/1789463081467Azpa2_JPEG/1789463078047.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_31/1789463082451WfuRo_JPEG/1789463078125.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_166/1789463082922QQWsO_JPEG/1789463078266.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_138/1789463107784PyhUf_JPEG/tmp2275398723132483893.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_155/1789463082450juO5A_JPEG/1789463078199.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_66/17894574194391tAUh_JPEG/1789457413092.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_195/1789457418276lMftb_JPEG/1789457413199.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_29/1789457419444FKa6E_JPEG/1789457413305.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_169/1789457419609MQITv_JPEG/1789457413416.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_153/1789457419902YDk5E_JPEG/1789457413525.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_139/1789457419675Gp2uG_JPEG/1789457413630.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_111/1789457420117rWyEE_JPEG/1789457413738.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_200/1789457419904qyURa_JPEG/1789457413847.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_201/1789457420095iRbeV_JPEG/1789457413947.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_154/178945742028748kyq_JPEG/1789457414045.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261029_2/179326729538543AGl_JPEG/1793267290112.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261029_246/1793267292725EodI8_JPEG/1793267290189.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261029_70/1793267293611GVDu6_JPEG/1793267290261.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261029_40/17932672938828NrXi_JPEG/1793267290334.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261029_82/1793267293884dS8WV_JPEG/1793267290415.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261029_61/1793267293608HFhoN_JPEG/1793267290486.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261029_91/1793267293880eGnSl_JPEG/1793267290553.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261029_227/1793267294442YEnNQ_JPEG/1793267290624.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261029_97/1793267295236u3q6M_JPEG/1793267290695.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261029_54/1793267295368QUsLM_JPEG/1793267290767.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230907_184/1694055570078faxuC_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EA%B8%B4%ED%8C%94_%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%82%A8%EC%84%B1_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%ED%8B%B0_main_%EA%B0%81%EC%9D%B8.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230907_154/1694055578297Nh9z2_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EA%B8%B4%ED%8C%94_%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%82%A8%EC%84%B1_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%ED%8B%B0_2023_new_%EA%B0%81%EC%9D%B8.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210420_227/1618891518476VRgOM_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%98%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_(3).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210420_22/16188915184846yI3g_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%98%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_(4).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210420_60/1618891518520Vh5OW_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%98%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_(5).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230907_73/1694055843845SIbR2_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EA%B8%B4%ED%8C%94_%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%82%A8%EC%84%B1_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%ED%8B%B0_2023_new_%EA%B0%81%EC%9D%B8.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230907_112/1694055902179QFipj_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EA%B8%B4%ED%8C%94_%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%82%A8%EC%84%B1_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%ED%8B%B0_2023_new_%EA%B0%81%EC%9D%B8.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_284/1628846093259AiAAa_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A910.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230907_1/1694055959874Turhh_JPEG/SE-c0caac76-c2a9-4129-8177-566b680ae8de.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_258/16288466006079IDaa_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(2).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_80/1628846600620NrCJV_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(4).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_23/1628846600632qImXY_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(5).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230907_239/1694055980545Tp6xK_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EA%B8%B4%ED%8C%94_%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%82%A8%EC%84%B1_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%ED%8B%B0_(5).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230907_32/1694055985988x5tsc_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EA%B8%B4%ED%8C%94_%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%82%A8%EC%84%B1_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%ED%8B%B0_(4).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_182/1628846653006VCp1F_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(3).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230907_147/1694055997324d7BuA_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EA%B8%B4%ED%8C%94_%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%82%A8%EC%84%B1_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%ED%8B%B0_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230907_289/1694056002204GGqPM_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EA%B8%B4%ED%8C%94_%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%82%A8%EC%84%B1_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%ED%8B%B0_(2).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230907_147/1694056008421rsYCm_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EA%B8%B4%ED%8C%94_%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%82%A8%EC%84%B1_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%ED%8B%B0_(6).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230907_223/1694056015666OizpB_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EA%B8%B4%ED%8C%94_%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%82%A8%EC%84%B1_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%ED%8B%B0_(3).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_153/16288466716234T62s_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(6).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210420_53/1618891608326RtOOu_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%98%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_(4).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230313_298/1678688670061m3nkU_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%B0%98%ED%8C%94_%EB%B0%98%EC%86%8C%EB%A7%A4_ENJOY_PANDA_FINAL.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220520_294/1653031494728huCrj_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%ED%8B%B0_NEW_%EB%AC%B4%EC%A7%80_%ED%94%BC%EC%BC%80%EC%9D%B4_PK%EB%AC%B4%EC%A7%80_%ED%8F%B4%EB%A1%9C_%EA%B3%A8%ED%94%84%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%B0%98%ED%8C%94_new_final.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230313_178/1678688675851R3VRP_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%B0%98%ED%8C%94_%EB%B0%98%EC%86%8C%EB%A7%A4_ENJOY_PANDA_FINAL.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230313_13/1678688709206u5oT9_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_3.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230313_224/1678688716063EKJzW_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_3S_%EB%B0%98%ED%8C%94_%EB%B0%98%EC%86%8C%EB%A7%A4_ENJOY_PANDA_2.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230313_112/16786887332404vK5h_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230313_40/1678688738676OqFo3_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_3S_%EB%B0%98%ED%8C%94_%EB%B0%98%EC%86%8C%EB%A7%A4_ENJOY_PANDA_3.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230313_233/1678688749651L7cMU_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_2.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230313_90/1678688758989uykwA_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_3S_%EB%B0%98%ED%8C%94_%EB%B0%98%EC%86%8C%EB%A7%A4_ENJOY_PANDA.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220520_128/1653031672161cm0AF_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%ED%8B%B0_NEW_%EB%AC%B4%EC%A7%80_%ED%94%BC%EC%BC%80%EC%9D%B4_PK%EB%AC%B4%EC%A7%80_%ED%8F%B4%EB%A1%9C_%EA%B3%A8%ED%94%84%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%B0%98%ED%8C%94_new_final.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220520_141/1653031732252MrScq_JPEG/14521.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220520_8/1653031741070Kqb3E_JPEG/14522.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220520_190/1653031755126BYqmv_JPEG/14519.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220520_148/1653031930063tdtdO_JPEG/14518.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220520_245/1653031930088qeE5d_JPEG/14517.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_100/1629885928132stGB1_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%B9%98_%EB%B0%94%EC%A7%80_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_main_final_%EC%B5%9C%EC%A2%85_%EB%B3%B5%EC%82%AC.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_183/1629884884300T67kf_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%B9%98_%EB%B0%94%EC%A7%80_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_main_final_%EC%B5%9C%EC%A2%85_%EB%B3%B5%EC%82%AC.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_215/1629884962555Pw0zf_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(9).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_205/1629884962730iszFU_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B8%B4%EB%B0%94%EC%A7%80_%EB%B0%98%EB%B0%94%EC%A7%80_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EB%B0%98%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EB%9D%BC%EC%9A%B4%EB%94%A9_(6).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_37/1629885008772DJ2X0_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(8).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_182/1629885008791PLRWm_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B8%B4%EB%B0%94%EC%A7%80_%EB%B0%98%EB%B0%94%EC%A7%80_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EB%B0%98%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EB%9D%BC%EC%9A%B4%EB%94%A9_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_297/1629885008808cJElM_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B8%B4%EB%B0%94%EC%A7%80_%EB%B0%98%EB%B0%94%EC%A7%80_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EB%B0%98%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EB%9D%BC%EC%9A%B4%EB%94%A9_(3).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_132/1629885008807hBpPT_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B8%B4%EB%B0%94%EC%A7%80_%EB%B0%98%EB%B0%94%EC%A7%80_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EB%B0%98%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EB%9D%BC%EC%9A%B4%EB%94%A9_(4).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_84/1629885190876CkqXu_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B8%B4%EB%B0%94%EC%A7%80_%EB%B0%98%EB%B0%94%EC%A7%80_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EB%B0%98%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EB%9D%BC%EC%9A%B4%EB%94%A9_(2).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_97/1629885066721Eb5Yb_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(7).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_33/1629885091820iyQSV_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(5).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_151/1629885091824u3PAl_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(6).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_56/16298850918023wIvQ_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_35/16298850918140S4wI_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(2).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_300/1629885091815hPv9h_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(3).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_82/1629885091825bfjjt_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(4).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211108_266/1636353454586BSvyj_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-3%EC%83%89_%EB%A9%94%EC%9D%B8.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211108_184/1636353551388oRz83_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EB%84%A4%EC%9D%B4%EB%B9%84_%EC%95%9E%EB%A9%B4.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211108_69/1636353560409Wrsiu_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EB%84%A4%EC%9D%B4%EB%B9%84_%EB%92%B7%EB%A9%B4.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211108_245/1636353586880bg0ci_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EA%B7%B8%EB%A0%88%EC%9D%B4_%EC%95%9E%EB%A9%B4.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211108_221/1636353596163qT72z_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%92%B7%EB%A9%B4.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211108_291/1636353615289tQgxH_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EB%B8%94%EB%9E%99_%EC%95%9E.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211108_260/16363536237724E7yt_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EB%B8%94%EB%9E%99_%EB%92%B7%EB%A9%B4.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20190612_220/101327672_1560347745375vU2yV_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D4.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20190612_69/101327672_1560347776604zWz8A_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D42.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20190612_282/101327672_1560347789779XMMaO_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D46.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20190612_64/101327672_1560347796497hQTID_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D43.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20190612_191/101327672_1560347825707mJppt_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D44.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20190612_190/101327672_1560347825707QeCXl_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D45.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20190612_9/101327672_1560347825708VKOHy_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D47.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20191219_30/15767645031168C74Y_JPEG/%B9%E8%BC%DB_%B1%B3%C8%AF_%B9%DD%C7%B0_%BE%C8%B3%BB_%BA%B9%BB%E7.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "promo",
+    "text": "정품으로 안심하고 구매하세요~!"
+   },
+   {
+    "rule": "phone",
+    "text": "A/S 책임자와 전화번호 | 아디다스코리아 고객센터 1588-8241"
+   },
+   {
+    "rule": "contact",
+    "text": "A/S 책임자와 전화번호: 코스트코 고객센터 1899-9900"
+   },
+   {
+    "rule": "policy",
+    "text": "[배송안내]\n본 상품은 코스트코 온라인몰 또는 납품업체에서 직접배송될 수 있습니다.\n주문시 고객님의 배송정보가 해당업체로 전달되어 배송이 진행될 수 있습니다.\n제공받는 자: 코스트코 온라인몰, 납품업체\n제공목적: 주문상품의 배송 및 고객응대\n제공항목: 이름, 주소, 연락처, 주문정보\n보유 및 이용기간: 배송 완료 후 3개월"
+   }
+  ],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 스판, 폴리우레탄",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_tops",
+   "option": 1,
+   "values": [
+    {
+     "ko": "M(95)",
+     "us": "S",
+     "letter": "S",
+     "chest_cm": 95,
+     "basis": "label",
+     "chart_label": "M(95)"
+    },
+    {
+     "ko": "L(100)",
+     "us": "M",
+     "letter": "M",
+     "chest_cm": 100,
+     "basis": "label",
+     "chart_label": "L(100)"
+    },
+    {
+     "ko": "XL(105)",
+     "us": "L",
+     "letter": "L",
+     "chest_cm": 105,
+     "basis": "label",
+     "chart_label": "XL(105)"
+    },
+    {
+     "ko": "2XL(110)",
+     "us": "XL",
+     "letter": "XL",
+     "chest_cm": 110,
+     "basis": "label",
+     "chart_label": "XXL(110)"
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": null,
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:837863f2995c84dc",
+   "kind": "title",
+   "ko": "볼빅 남성 골프 긴팔 카라티 티셔츠 골프웨어 간절기 남자 골프복 스트레치 폴로 상의"
+  },
+  {
+   "id": "brand:53fdcf7107927656",
+   "kind": "brand",
+   "ko": "VOLVIK"
+  },
+  {
+   "id": "option_name:bda675be647af0bf",
+   "kind": "option_name",
+   "ko": "디자인 선택"
+  },
+  {
+   "id": "option_value:d22bdc49a56b73e5",
+   "kind": "option_value",
+   "ko": "볼빅 남성 골프 긴팔 카라티 티셔츠"
+  },
+  {
+   "id": "option_value:8b3853027a506492",
+   "kind": "option_value",
+   "ko": "아디다스 골프티_긴팔"
+  },
+  {
+   "id": "option_name:dec10a63e8beb488",
+   "kind": "option_name",
+   "ko": "사이즈 선택"
+  },
+  {
+   "id": "option_value:0b2b211e0c5e9b50",
+   "kind": "option_value",
+   "ko": "M(95)"
+  },
+  {
+   "id": "option_value:94bd9da59ea0fbc6",
+   "kind": "option_value",
+   "ko": "L(100)"
+  },
+  {
+   "id": "option_value:e56ecb1d6ce5cc34",
+   "kind": "option_value",
+   "ko": "XL(105)"
+  },
+  {
+   "id": "option_value:32b7e0c09a2bc39b",
+   "kind": "option_value",
+   "ko": "2XL(110)"
+  },
+  {
+   "id": "option_name:6c36e427904fab57",
+   "kind": "option_name",
+   "ko": "컬러 선택"
+  },
+  {
+   "id": "option_value:efa51b9f23b93146",
+   "kind": "option_value",
+   "ko": "네이비"
+  },
+  {
+   "id": "option_value:d7bd1407b22580a4",
+   "kind": "option_value",
+   "ko": "다크 그레이"
+  },
+  {
+   "id": "option_value:91f171f68356ec23",
+   "kind": "option_value",
+   "ko": "블랙"
+  },
+  {
+   "id": "option_value:4b6304d7eb9d5185",
+   "kind": "option_value",
+   "ko": "화이트"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:df2778bd0839e564",
+   "kind": "spec_value",
+   "ko": "Sonha Phuto / 다가즈컴퍼니"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:53fdcf7107927656",
+   "kind": "spec_value",
+   "ko": "VOLVIK"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:7cd6ad9c85830004",
+   "kind": "spec_value",
+   "ko": "베트남산"
+  },
+  {
+   "id": "spec_label:521009f503e491a5",
+   "kind": "spec_label",
+   "ko": "네크라인"
+  },
+  {
+   "id": "spec_value:fee81e32c77a25d6",
+   "kind": "spec_value",
+   "ko": "칼라넥"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:ea29ef42bae61829",
+   "kind": "spec_value",
+   "ko": "자외선차단, 흡습, 신축성"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:92afed07e5fda24d",
+   "kind": "spec_value",
+   "ko": "폴리에스테르, 스판, 폴리우레탄"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:9e61457baea5b6b5",
+   "kind": "spec_value",
+   "ko": "가을, 겨울, 봄"
+  },
+  {
+   "id": "spec_label:c595482b55571d6a",
+   "kind": "spec_label",
+   "ko": "소매기장"
+  },
+  {
+   "id": "spec_value:2fa60fab30cad430",
+   "kind": "spec_value",
+   "ko": "긴팔"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:f36c488b8e796503",
+   "kind": "spec_value",
+   "ko": "2026년형"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:f977ac4486c2b67c",
+   "kind": "spec_value",
+   "ko": "티셔츠"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  }
+ ]
+}

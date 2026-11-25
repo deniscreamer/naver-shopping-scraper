@@ -1,0 +1,1167 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 211557,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241120_90/1732028759090RqPzp_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94_-001_(2).jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.991,
+       "text": "Natural Mode",
+       "y": 251
+      },
+      {
+       "conf": 0.999,
+       "text": "\"매일 / 입고 / 싶은 / 골프웨어,",
+       "y": 335
+      },
+      {
+       "conf": 1.0,
+       "text": "합리적인 / 가격으로",
+       "y": 471
+      },
+      {
+       "conf": 0.999,
+       "text": "데일리룩 / 완성!\"",
+       "y": 591
+      },
+      {
+       "conf": 0.987,
+       "text": "내추럴 모드",
+       "y": 918
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 53281,
+   "height": 686,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMjY5/MDAxNjcyNzQyNjU0MDA5.5RLXBZZstWKl4_td82cD-VvMYgAeuc_QGoZXWtdb1b0g.FkSChem6xX45EJjc5lrc0LKWqZmWZYK7cZFSjtlo1e4g.JPEG.natural8787/20221228_164714.jpg?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 686
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 90815,
+   "height": 970,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMTU3/MDAxNjcyNzQyNjY1Nzk0.bSmr9jXaPKxwTwwRmiNrzOBa3v3lC720kYJU36h77cgg.lrELbPA6P5GQYmgcxfJvZ2PzhJHtQQSe2ocUEm2xK6cg.JPEG.natural8787/20221228_163032.jpg?type=w966",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.653,
+       "text": "①",
+       "y": 132
+      }
+     ],
+     "y0": 0,
+     "y1": 970
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 1028782,
+   "height": 1179,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251109_133/1762665372416A8cVn_PNG/KakaoTalk_20251109_135949785_03.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1179
+    }
+   ],
+   "status": "read",
+   "width": 1179
+  },
+  {
+   "bytes": 210458,
+   "height": 1064,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241120_119/1732028772342aF4TP_JPEG/%EC%95%BD%EC%86%8D.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.992,
+       "text": "\"약속합니다\"",
+       "y": 692
+      },
+      {
+       "conf": 0.978,
+       "text": "100%환불 교환 가능",
+       "y": 758
+      },
+      {
+       "conf": 0.999,
+       "text": "신상품 업데이트 할인 기간",
+       "y": 824
+      },
+      {
+       "conf": 0.996,
+       "text": "단,3일만 추가할인!!",
+       "y": 887
+      }
+     ],
+     "y0": 0,
+     "y1": 1064
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 89141,
+   "height": 1288,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMjQ3/MDAxNjcyNzQyNzM2Mjgx.QRRfD7TsUUQSB65-gRIA1hVrqwGGtZ-C85GoIVRurEgg.pVGlBBKrRDchRN_jUrTPeKSjjXDn5dqI9m8nU3TxLzkg.JPEG.natural8787/20221228_163402.jpg?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1288
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 935466,
+   "height": 1179,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251109_201/1762665384195ShPDz_PNG/KakaoTalk_20251109_135949785.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1179
+    }
+   ],
+   "status": "read",
+   "width": 1179
+  },
+  {
+   "bytes": 828480,
+   "height": 1236,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMjYg/MDAxNjcyNzQyNjcxNTE5.lCpWCjMNQ6gWuuRlgutT7O0nQPkYV1m85hzYgEekWm0g.np_WuM8cDCaV3BA7PrDLlk7SOB3j1RhyINd6WZgRRCYg.PNG.natural8787/IMG_6945.PNG?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1236
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 64201,
+   "height": 922,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMTgy/MDAxNjcyNzQyNjkzMDA4.uVwhFl97flxXqB-taYXViR6EbDvv_KsGuSjv3bvpKIMg.nFgAgk8_tePK6J03Lqv71k8dIp9G3t08shllKs9XUG4g.JPEG.natural8787/20221228_164636.jpg?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 922
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 60124,
+   "height": 860,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMjkg/MDAxNjcyNzQyNjkzMDAx.r9Iy88Pg02ui9kYC540dzYpebuoE9FJ4L-M-Qu52z44g.U0rzI8QtJggXVj1JxjmS1I5Zpi0re_xBAdjC7L3hHIwg.JPEG.natural8787/20221228_164639.jpg?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 79029,
+   "height": 991,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMTA4/MDAxNjcyNzQyNjkyOTc3.Iu3pdZtX15Ztk0dPkNwJ7QEFWPgnxWDKmN4uO4C2wNsg.6kYpxnpIw8wo_XrG9h836SKTCsR8dzMxX6X7onwecSYg.JPEG.natural8787/IMG_6755.JPEG?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 991
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 65153,
+   "height": 825,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMTk5/MDAxNjcyNzQyNjkyOTc3.mDOTFDiW9Tlr2AhWTynk4XDdtYS1FtgfxeWvn7_mTBEg.nqLpV7dimHDlrk3o2fZHOBgnnF7IpVZzYXCF5MKQk68g.JPEG.natural8787/IMG_6757.JPEG?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 825
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 92531,
+   "height": 879,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMjk3/MDAxNjcyNzQyNjkyOTgz.0jAeALGwhzuGG7h8RbpCAnDpq6_D1d152aU1PkzCvdIg.oC_9UTsrn70J7RV4-MbpeFSZT8cPZFIr6NLZlaEy25Ig.JPEG.natural8787/IMG_6758.JPEG?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 879
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 103799,
+   "height": 901,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMTk5/MDAxNjcyNzQyNjkzMDA2.hFZrPp4WnO2GqpCTXAi6wNCF4-J-0WiZQMgj0zTKXNMg.rDuduxWoZdmA7TTFCJzc82ZpWwxhN7pJM19Dqv4x4aIg.JPEG.natural8787/IMG_6762.JPEG?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 901
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 82004,
+   "height": 880,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMjYw/MDAxNjcyNzQyNjkzMzUw.knd7zJwa_iWtoujxeyMg0zATDtjekeLusDZWqk0qfSIg.bL2So2MePeb67rH3Dhdfz8P84rdxs9yZ082aNuZI2FMg.JPEG.natural8787/IMG_6764.JPEG?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 880
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 1110760,
+   "height": 1241,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfNDAg/MDAxNjcyNzQyNjkzNDc5.qvCZZVxXM3bYCrZVw2cADdQWtBP0iW9iKwb3QvUSJdog.7vLyrOB-MCwocRAjsT14LalnMtP9YfMiXAQpi1R2WU0g.PNG.natural8787/IMG_6942.PNG?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1241
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 796686,
+   "height": 1261,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMTY4/MDAxNjcyNzQyNjkzNDkx.4X8yQpzZxZApU84Vu1QUxJrNATNFmoSI4X5TUWgP8kwg.sYclzuSyiyRGPmFaCxXqakBBApFdWsCV9yvzeEBkMjkg.PNG.natural8787/IMG_6943.PNG?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1261
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 90992,
+   "height": 1093,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMTQ5/MDAxNjcyNzQyNzAyNTkz.6oCxMT6FssNrnGC6L8o-Cz5V9J4pdg_HYGtp-zLkfTYg.Ug9kbeu7w5YgrIghwGM3WTMETJmhnkxvZPQ4XeLAGe8g.JPEG.natural8787/20221228_163803.jpg?type=w966",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.958,
+       "text": "'L",
+       "y": 832
+      },
+      {
+       "conf": 0.521,
+       "text": "5 / 3",
+       "y": 861
+      }
+     ],
+     "y0": 0,
+     "y1": 1093
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 68525,
+   "height": 963,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMTE1/MDAxNjcyNzQyNzAyNTc3.b-vATSgE9PpOswyqoqeZhd_VhUGT7Dt1BXsLv-mEsosg.UZkDZWJXf2DYdzb-_UdE3-B4qRgzBGqtS3gG7ZUN5hIg.JPEG.natural8787/20221228_163806.jpg?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 963
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 56201,
+   "height": 679,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMjUw/MDAxNjcyNzQyNzAyNTYy.JuV_pER08vZA6tuMufCLw2lulaWolM1wKVVwkS8lNRQg.d9dDoJ9T0EfNJTUjcr--y6qjLgOCHF59sCfVkg-LbzEg.JPEG.natural8787/20221228_163808.jpg?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 679
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 120373,
+   "height": 1123,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMTc0/MDAxNjcyNzQyNzA5NTU3.mnrKsOcOedjwZLhE5fa3ANlexuyXuH_8zqK2aXulwIYg.if2dCV0wTub6kJaSXYcL_DhKkzSIUIy2cZ_8MlY0vKQg.JPEG.natural8787/IMG_6735.JPEG?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1123
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 126394,
+   "height": 1316,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMTY4/MDAxNjcyNzQyNzA5NTkw.QD8fP_Vi6m-Z1Du2_W2OUQr5MqzWpc-4fNoePUTgW-Mg.g3C5fE6o-6HuodkFYZsEATXrfzaPrcdPM2T3Sdd7TVQg.JPEG.natural8787/IMG_6738.JPEG?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1316
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 137297,
+   "height": 1258,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMTIz/MDAxNjcyNzQyNzA5NTgx.lvYkCs8dVQMNnX_IpdnWde04hukGTEStFIm__pqchKog.X4a5AowOJLAm8hVCf2UYLX_VL2hgnyQD9croeAiO9tYg.JPEG.natural8787/IMG_6741.JPEG?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1258
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 152416,
+   "height": 1325,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMjYz/MDAxNjcyNzQyNzA5NTk4.Uf5dKh_nOhykJRim4fJLWdcadriW1-ehyBsb5tPFtLIg.3rE0qAaOpkFiHliBd6xIw_WmVLrPcCFdA5_CV9R-9log.JPEG.natural8787/IMG_6743.JPEG?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1325
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 74994,
+   "height": 875,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMjQx/MDAxNjcyNzQyNzA5NTg0.tPoIEU0eEc183eHua_XwZej4S062LDsBz0v31E1_HrEg.uTUSc79TP7qAtGRBMAX1jo14XFp6I1xTkknXsdx7QCog.JPEG.natural8787/IMG_6749.JPEG?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 875
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 75734,
+   "height": 824,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMjY1/MDAxNjcyNzQyNzA5NTkx.R9r0yRudhGOKmATzlJ8FoTXskUmb1bl6TJAQlHs-U64g.0f_Ha79q4QNZT0fdRa56OfmmiNlfPqP9mT_zZih6uiog.JPEG.natural8787/IMG_6752.JPEG?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 824
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 84904,
+   "height": 1288,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMSAg/MDAxNjcyNzQyNzIxODcz.SKbSBnzIWZkkqGKmWy7tBmvxUWH9YW6zU8d7sJye-Iog.rLcYAT7QQwxFuS3W6vNqdPp9MWUd-R9aap2llF9m5icg.JPEG.natural8787/20221228_163204.jpg?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1288
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 55483,
+   "height": 993,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfNzAg/MDAxNjcyNzQyNzIxODg5.aBN3sv74lzj3fP9ee4fSLPpf8RFOe73wKNvHIAme9fkg.kurAAlriGO6DABPYytAcs1xYENjsyGsmhpx6VJocvN0g.JPEG.natural8787/20221228_163208.jpg?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 993
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 149367,
+   "height": 1288,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMTcy/MDAxNjcyNzQyNzIxODgw.MFWyouVqX-DFKCyo7tSF9_JXe3VSuaaqOzV_-T7hQC8g.hUNvf2s1x3nUvU7xSCh2NoTWLFYF48Y-ePJQP-vaWhMg.JPEG.natural8787/20221228_163221.jpg?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1288
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 80650,
+   "height": 983,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfMjc5/MDAxNjcyNzQyNzIxODc2._4iV-7yRzwxtLQZmufqlTxtiLGCgptf6q1tujkUhKiQg.Nh_494NiCDE-SFTbQw8fSRaBt1TpmWi5hVYuSJarYeQg.JPEG.natural8787/20221228_163305.jpg?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 983
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 1249968,
+   "height": 1179,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251109_265/1762665408587OWrwW_PNG/KakaoTalk_20251109_135949785_02.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1179
+    }
+   ],
+   "status": "read",
+   "width": 1179
+  },
+  {
+   "bytes": 998966,
+   "height": 1143,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251109_36/17626654129125GEWe_PNG/KakaoTalk_20251109_135949785_01.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1143
+    }
+   ],
+   "status": "read",
+   "width": 1143
+  },
+  {
+   "bytes": 98984,
+   "height": 1288,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfODMg/MDAxNjcyNzQyNzIxODg4.swp3zfIheJgVhY4gH_1LvoYptvhW36yv-Fhnt1j7VFog.dKzTWx9ch3PLfDdSa2OMUkzBrZhOmh6zDof-cxsWjBog.JPEG.natural8787/20221228_163313.jpg?type=w966",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1288
+    }
+   ],
+   "status": "read",
+   "width": 966
+  },
+  {
+   "bytes": 387727,
+   "height": 3684,
+   "host": "naver",
+   "link": "https://postfiles.pstatic.net/MjAyMzAxMDNfOTcg/MDAxNjcyNzQzMzA1NTQw.PwHk1Q4a9mpx9QBcmG-hetjTHE7-54Wbrgx-s0mgSsAg.YLqJ296-Nq7XT1Jkwd-MZpGuWvYlKMmPylHKSSkhBhcg.JPEG.natural8787/%EC%A0%9C%EB%AA%A9_%EC%97%86%EC%9D%8C-1.jpg?type=w966",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.841,
+       "text": "rocle / LEON",
+       "y": 30
+      },
+      {
+       "conf": 0.998,
+       "text": "ving",
+       "y": 83
+      },
+      {
+       "conf": 0.963,
+       "text": "oups, Salads",
+       "y": 133
+      },
+      {
+       "conf": 0.892,
+       "text": "Snacks",
+       "y": 143
+      },
+      {
+       "conf": 0.999,
+       "text": "ON",
+       "y": 1166
+      },
+      {
+       "conf": 0.976,
+       "text": "Salads",
+       "y": 1291
+      },
+      {
+       "conf": 0.842,
+       "text": "lacks",
+       "y": 1305
+      }
+     ],
+     "y0": 0,
+     "y1": 1922
+    },
+    {
+     "rows": [],
+     "y0": 1922,
+     "y1": 3684
+    }
+   ],
+   "status": "read",
+   "width": 884
+  },
+  {
+   "bytes": 91299,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_12/1762381553867JYYLN_JPEG/001.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.992,
+       "text": "NATURAL MODE",
+       "y": 82
+      },
+      {
+       "conf": 0.993,
+       "text": "PADDED PANTS",
+       "y": 173
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 78521,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_30/1762381553873cwNOH_JPEG/002.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 117651,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_103/1762381553892H5Cp8_JPEG/003.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.995,
+       "text": "보온성은 좋은데..",
+       "y": 53
+      },
+      {
+       "conf": 0.928,
+       "text": "너무 타이트해서 불편해요",
+       "y": 138
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 39213,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_52/1762381553862eDXrX_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94_-019.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.976,
+       "text": "NATURAL MODE",
+       "y": 164
+      },
+      {
+       "conf": 0.944,
+       "text": "허리",
+       "y": 235
+      },
+      {
+       "conf": 0.851,
+       "text": "밑위",
+       "y": 316
+      },
+      {
+       "conf": 0.91,
+       "text": "엉덩이",
+       "y": 339
+      },
+      {
+       "conf": 0.677,
+       "text": "총장 / 허벅지",
+       "y": 377
+      },
+      {
+       "conf": 0.878,
+       "text": "—밑단",
+       "y": 529
+      },
+      {
+       "conf": 0.937,
+       "text": "컬러 -아이보리,블랙",
+       "y": 607
+      },
+      {
+       "conf": 0.937,
+       "text": "소재-면 폴리에스테르아크릴",
+       "y": 645
+      },
+      {
+       "conf": 0.944,
+       "text": "사이즈-free, XL",
+       "y": 681
+      },
+      {
+       "conf": 0.525,
+       "text": "사이즈 / 허리 / 힙 / 밑위 / 밑단 / 총장",
+       "y": 789
+      },
+      {
+       "conf": 0.945,
+       "text": "FREE (55~66) / 34 / 49 / 31 / 26 / 94",
+       "y": 821
+      },
+      {
+       "conf": 0.919,
+       "text": "XL(77~) / 37 / 51 / 32 / 27.5 / 94",
+       "y": 854
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 2422163,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_31/1762381577092xSAJY_JPEG/IMG_0001.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1812736,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_57/1762381577106LJBbs_JPEG/IMG_0003.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2595159,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_62/1762381577088MQrsP_JPEG/IMG_0004.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2007640,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_202/17623815846902Qbxw_JPEG/IMG_9926.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.595,
+       "text": "→",
+       "y": 502
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1548877,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_10/1762381584669GJASR_JPEG/IMG_9928.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.992,
+       "text": "MALBON",
+       "y": 35
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2139553,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_202/1762381584737i5MKo_JPEG/IMG_9931.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.592,
+       "text": "8",
+       "y": 554
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1742564,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_69/17623815847191MXaj_JPEG/IMG_9936.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1568261,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_88/1762381584734y52zs_JPEG/IMG_9940.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.623,
+       "text": "NOaTVN",
+       "y": 18
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2194596,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_228/1762381584724XTDAN_JPEG/IMG_9978.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2171729,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_261/1762381585403NOcri_JPEG/IMG_9991.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1583887,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_214/1762381585532EyDC1_JPEG/IMG_9994.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2785120,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_205/1762381585575P4Cyo_JPEG/IMG_9999.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2480015,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_242/1762381593796SvHoK_JPEG/IMG_0085.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2054015,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_45/1762381593820Nf11z_JPEG/IMG_0091.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 3211792,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_230/1762381593837FXMoG_JPEG/IMG_0117.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1461750,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_127/17623815937652lbvt_JPEG/IMG_0134.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2708500,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_299/1762381593856DAGFg_JPEG/IMG_0136.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 3081661,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_283/1762381593852jG0sf_JPEG/IMG_0140.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1633842,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_240/1762381594525AGLLf_JPEG/IMG_0142.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1480149,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_79/1762381594605xaWFB_JPEG/IMG_0145.JPG",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 4095686,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_86/1762381612999Jbq0L_JPEG/IMG_9586_%EB%B3%B5%EC%82%AC.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 3071381,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251106_270/1762381647474gWobD_JPEG/IMG_9591.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.595,
+       "text": "SPART",
+       "y": 183
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  }
+ ],
+ "key": "fairwardgolf:naver:101728681:7864006253",
+ "links_sha256": "92b3a5b6eee29b22c16a80d14177a7bb5e8c876e4605534a86583d40926c1d6f",
+ "product_id": "7864006253",
+ "seconds": 95.7,
+ "skipped": [
+  {
+   "link": "https://shop-phinf.pstatic.net/20251106_154/1762381554418RMjjA_GIF/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__-_2025-11-05T085450.778.gif",
+   "rule": "gif_animated"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20251106_186/1762381554726KCxwW_GIF/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__-_2025-11-05T085524.713.gif",
+   "rule": "gif_animated"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20251106_10/1762381554206JnTq7_GIF/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__-_2025-11-05T085559.653.gif",
+   "rule": "gif_animated"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20251106_143/1762381554206TuprA_GIF/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__-_2025-11-05T085625.829.gif",
+   "rule": "gif_animated"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20251106_166/1762381554730os2AS_GIF/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__-_2025-11-05T085652.543.gif",
+   "rule": "gif_animated"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20251106_110/1762381555066AOdC6_GIF/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__-_2025-11-05T085720.699.gif",
+   "rule": "gif_animated"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20251106_190/1762381554798VDgv7_GIF/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__-_2025-11-05T085746.961_(1).gif",
+   "rule": "gif_animated"
+  }
+ ]
+}

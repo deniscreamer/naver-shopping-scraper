@@ -1,0 +1,713 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 245587,
+   "height": 409,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_233/1733234656443K0CRq_JPEG/8e6905f18371413dbd63151ad9ddc26d.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 409
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 618554,
+   "height": 1601,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_234/1733219680047gccTY_JPEG/20241203_133211.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1601
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 180544,
+   "height": 1170,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_299/1733219736599lcINX_JPEG/AS+M+J+GLF+STMT+PANT_(10).jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1170
+    }
+   ],
+   "status": "read",
+   "width": 936
+  },
+  {
+   "bytes": 125934,
+   "height": 1170,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_21/1733219736476xmzUk_JPEG/AS+M+J+GLF+STMT+PANT_(11).jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1170
+    }
+   ],
+   "status": "read",
+   "width": 936
+  },
+  {
+   "bytes": 256763,
+   "height": 1170,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_70/1733219736651bNm4y_JPEG/AS+M+J+GLF+STMT+PANT_(12).jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1170
+    }
+   ],
+   "status": "read",
+   "width": 936
+  },
+  {
+   "bytes": 58392,
+   "height": 1170,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_85/17332197363940s27k_JPEG/AS+M+J+GLF+STMT+PANT_(9).jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1170
+    }
+   ],
+   "status": "read",
+   "width": 936
+  },
+  {
+   "bytes": 58988,
+   "height": 1170,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_298/1733219736366QONoL_JPEG/AS+M+J+GLF+STMT+PANT_(8).jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1170
+    }
+   ],
+   "status": "read",
+   "width": 936
+  },
+  {
+   "bytes": 43815,
+   "height": 1170,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_224/1733219736390VACxD_JPEG/AS+M+J+GLF+STMT+PANT_(13).jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1170
+    }
+   ],
+   "status": "read",
+   "width": 936
+  },
+  {
+   "bytes": 52604,
+   "height": 1170,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_220/1733219913262xodKV_JPEG/AS+M+J+GLF+STMT+PANT_(3).jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1170
+    }
+   ],
+   "status": "read",
+   "width": 936
+  },
+  {
+   "bytes": 42032,
+   "height": 1170,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_37/1733219913259CWBED_JPEG/AS+M+J+GLF+STMT+PANT_(2).jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1170
+    }
+   ],
+   "status": "read",
+   "width": 936
+  },
+  {
+   "bytes": 74236,
+   "height": 1170,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_274/1733219913405VORhd_JPEG/AS+M+J+GLF+STMT+PANT_(4).jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1170
+    }
+   ],
+   "status": "read",
+   "width": 936
+  },
+  {
+   "bytes": 506089,
+   "height": 1170,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_3/1733219915192KYNE3_JPEG/AS+M+J+GLF+STMT+PANT_(5).jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1170
+    }
+   ],
+   "status": "read",
+   "width": 936
+  },
+  {
+   "bytes": 50034,
+   "height": 1170,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_226/1733219913407q07zX_JPEG/AS+M+J+GLF+STMT+PANT_(1).jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1170
+    }
+   ],
+   "status": "read",
+   "width": 936
+  },
+  {
+   "bytes": 50129,
+   "height": 1170,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_63/1733219913691cvXde_JPEG/AS+M+J+GLF+STMT+PANT.jpeg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.982,
+       "text": "7",
+       "y": 985
+      }
+     ],
+     "y0": 0,
+     "y1": 1170
+    }
+   ],
+   "status": "read",
+   "width": 936
+  },
+  {
+   "bytes": 49292,
+   "height": 1170,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241203_183/1733219913416NjHbE_JPEG/AS+M+J+GLF+STMT+PANT_(6).jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1170
+    }
+   ],
+   "status": "read",
+   "width": 936
+  },
+  {
+   "bytes": 42975,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250805_155/17543264571758ij0F_JPEG/108620738807940916_1434085259.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 82298,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250805_297/1754326457185KTacA_JPEG/108620737682977931_1414038920.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 71823,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250805_201/1754326457181uxXTV_JPEG/108620737939369344_1572927186.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 50449,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250805_50/175432645718075ovT_JPEG/108620738125361808_1760057901.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 126825,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250805_141/1754326457195gDV9f_JPEG/108620738365471071_98774598.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 46598,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250805_56/1754326457181wJbFQ_JPEG/108620738666528346_1250195968.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 49240,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250805_233/1754326457548wXKTw_JPEG/108620718543518530_1702001710.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 196036,
+   "height": 951,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230528_289/16852209009351dQ1r_JPEG/Screenshot_20230525-160412_Gallery.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.975,
+       "text": "※남성의류사이즈 가이드",
+       "y": 29
+      },
+      {
+       "conf": 0.61,
+       "text": "남성상의 / XS / s / M / L / XL / XXL",
+       "y": 90
+      },
+      {
+       "conf": 0.821,
+       "text": "호칭 / 85 / 90 / 95 / 100 / 105 / 110",
+       "y": 126
+      },
+      {
+       "conf": 0.974,
+       "text": "키 / 155~165 / 160~170 / 165~175 / 170~180 / 175~185 / 185~190",
+       "y": 167
+      },
+      {
+       "conf": 0.704,
+       "text": "남성하의 / xs / s / M / L / xL / XXL",
+       "y": 219
+      },
+      {
+       "conf": 0.926,
+       "text": "호칭 / 70 / 75 / 80 / 85 / 90 / 95",
+       "y": 254
+      },
+      {
+       "conf": 0.877,
+       "text": "허리(nch) / 26~27 / 28~29 / 30~31 / 32~33 / 34~35 / 36~37",
+       "y": 290
+      },
+      {
+       "conf": 0.517,
+       "text": "조던상의 / XS / s / M / L / XL / XXL",
+       "y": 345
+      },
+      {
+       "conf": 0.897,
+       "text": "호칭 / 90 / 95 / 100 / 105 / 110 / 115",
+       "y": 383
+      },
+      {
+       "conf": 0.981,
+       "text": "키 / 160~170 / 165~175 / 170~180 / 175~185 / 185~190 / 190~195",
+       "y": 422
+      },
+      {
+       "conf": 0.956,
+       "text": "※여성의류 사이즈 가이드",
+       "y": 480
+      },
+      {
+       "conf": 0.712,
+       "text": "여성상의 / XS / s / M / L / XL / XXL",
+       "y": 538
+      },
+      {
+       "conf": 0.873,
+       "text": "호칭 / 75 / 80 / 85 / 90 / 95 / 100",
+       "y": 573
+      },
+      {
+       "conf": 0.969,
+       "text": "키 / 145~155 / 150~160 / 155~165 / 160~170 / 165~175 / 170~180",
+       "y": 608
+      },
+      {
+       "conf": 0.605,
+       "text": "여성하의 / XS / s / M / L / XL / XXL",
+       "y": 666
+      },
+      {
+       "conf": 0.838,
+       "text": "호칭 / 60 / 65 / 70 / 75 / 80 / 85",
+       "y": 701
+      },
+      {
+       "conf": 0.919,
+       "text": "허리(nch) / 24~25 / 25~26 / 27~28 / 29~30 / 31~32 / 32~33",
+       "y": 740
+      },
+      {
+       "conf": 0.732,
+       "text": "조던하의 / XS / s / M / L / XL / XXL",
+       "y": 793
+      },
+      {
+       "conf": 0.69,
+       "text": "호칭 / 75 / 80 / 85 / 90 / 95 / 100",
+       "y": 829
+      },
+      {
+       "conf": 0.941,
+       "text": "허리(nch) / 28~29 / 30~31 / 32~33 / 34~35 / 36~37 / 37~38",
+       "y": 867
+      },
+      {
+       "conf": 0.877,
+       "text": "▶조던의류는일반제품보다 약 반치수 아 한치수 정도 여유있게 나오니 참고해 주십시요",
+       "y": 910
+      }
+     ],
+     "y0": 0,
+     "y1": 951
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 229101,
+   "height": 1564,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230528_155/1685220786521pPqev_GIF/%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80.gif",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.913,
+       "text": "구매 가이드 / 2t1649",
+       "y": 27
+      },
+      {
+       "conf": 0.927,
+       "text": "구매전주의사항",
+       "y": 97
+      },
+      {
+       "conf": 0.921,
+       "text": "•시크릿1649의 전 제품은 국내매장에서 A/S가 가능합니다",
+       "y": 138
+      },
+      {
+       "conf": 0.92,
+       "text": "국내 오프라인매장에서 판매되는 상품과100% 동일한 정품만을 판매하고 있으니 신뢰하고구매하셔도 됩니다",
+       "y": 163
+      },
+      {
+       "conf": 0.913,
+       "text": "시크릿1649는 정품이 인증된 오프라인매장에서만 바잉하고 있으며 유통경로가 복잡하고 믿을수 없는병행수입은 하지 않습니다",
+       "y": 187
+      },
+      {
+       "conf": 0.988,
+       "text": "제품관련주의사항",
+       "y": 233
+      },
+      {
+       "conf": 0.896,
+       "text": "*브렌드 제품의 특성상 제조및 유통과정에서 발생하는미세한 오염본드자국,스크래치실밥 등의 경우 교환및 반품의 사유에",
+       "y": 278
+      },
+      {
+       "conf": 0.945,
+       "text": "해당하지 않습니다",
+       "y": 304
+      },
+      {
+       "conf": 0.896,
+       "text": "*상품의 걸러는 화면의 설정에 따라 약간의 차이가 있을 수 있습니다",
+       "y": 328
+      },
+      {
+       "conf": 0.911,
+       "text": "사이즈및 컬러 선택 오류로 인한 구매는판매자귀책사유에 해당하지 않습니다",
+       "y": 352
+      },
+      {
+       "conf": 0.951,
+       "text": "가품일 걱정은안하서도되지만작은디테일에도민감하신 분들은매장에서실제제품을직접보시고구매하시는것을",
+       "y": 378
+      },
+      {
+       "conf": 0.999,
+       "text": "추천드립니다",
+       "y": 405
+      },
+      {
+       "conf": 0.93,
+       "text": "제품을수령하신 후 반드시 상태를확인 후에TAG제거및 박스를처리하시기바랍니다",
+       "y": 428
+      },
+      {
+       "conf": 0.89,
+       "text": "사이즈는 측정방법에 따라1~3cm 정도 오차가 있을 수 있습니다.",
+       "y": 452
+      },
+      {
+       "conf": 0.927,
+       "text": "택배사: CJ대한통운",
+       "y": 544
+      },
+      {
+       "conf": 0.937,
+       "text": "•출고일자: 결제당일~4일이내출고",
+       "y": 568
+      },
+      {
+       "conf": 0.941,
+       "text": "상품출고 이후에는 수취거부가 불가합니다",
+       "y": 593
+      },
+      {
+       "conf": 0.872,
+       "text": "결제완료 후영업일 기준(평일) 3~5일 정도 소요 됩니다.",
+       "y": 618
+      },
+      {
+       "conf": 0.912,
+       "text": "제주도,도서산간및 일부 지역에 따라 추가 비용이 발생됩니다",
+       "y": 642
+      },
+      {
+       "conf": 0.905,
+       "text": "재고현황에 따라 변동 사항이있을 경우 개별적으로 안내드립니다",
+       "y": 667
+      },
+      {
+       "conf": 0.952,
+       "text": "주문확인후재고변동으로 인하여 자동환불처리될 수있음에미리양해부탁드립니다",
+       "y": 694
+      },
+      {
+       "conf": 0.919,
+       "text": "고환/반품/취소",
+       "y": 741
+      },
+      {
+       "conf": 0.883,
+       "text": "수령 후 7일이내에 접수하셔야 처리됩니다",
+       "y": 781
+      },
+      {
+       "conf": 0.952,
+       "text": "(교환은1회만 가능)",
+       "y": 806
+      },
+      {
+       "conf": 0.917,
+       "text": "단순변심, 사이즈착오로 인한 교환/반품의왕복배송비는6,000원입니다.(고객부담)",
+       "y": 831
+      },
+      {
+       "conf": 0.871,
+       "text": "교환 반품 접수 전 반드시1:1문의를남겨 주시기 바랍니다",
+       "y": 855
+      },
+      {
+       "conf": 0.891,
+       "text": "(임의 접수 시 교환/반품이 거부 될수 있습니다)",
+       "y": 882
+      },
+      {
+       "conf": 0.914,
+       "text": "교완/반품불가사유",
+       "y": 926
+      },
+      {
+       "conf": 0.98,
+       "text": "상품수령후7일을초과할경우",
+       "y": 969
+      },
+      {
+       "conf": 0.939,
+       "text": "·구매확정후",
+       "y": 993
+      },
+      {
+       "conf": 0.889,
+       "text": "착용,착화의 흔적이 있는 경우",
+       "y": 1016
+      },
+      {
+       "conf": 0.888,
+       "text": "제품에 부착된 정품택 제거 및 분실된 경우",
+       "y": 1043
+      },
+      {
+       "conf": 0.924,
+       "text": "오배송된 제품을사용한 경우",
+       "y": 1067
+      },
+      {
+       "conf": 0.929,
+       "text": "최초수령시구성된내용물,브랜드박스,비닐포장이 훼손된경우츠신발고유박스의경우1족1박스로상품의일부입니다",
+       "y": 1090
+      },
+      {
+       "conf": 0.903,
+       "text": "기타 제품에구매자 부주의에 따른오염된 흔적이 발견될경우",
+       "y": 1119
+      },
+      {
+       "conf": 0.911,
+       "text": "교환/반품절차",
+       "y": 1162
+      },
+      {
+       "conf": 0.942,
+       "text": "→네이버쇼핑→쇼핑MY 주문확인/배송조회 교환요청 또는 반품요청 수거정보입력(자동수거신청)",
+       "y": 1204
+      },
+      {
+       "conf": 0.926,
+       "text": "교환/반품시 제품박스가 훼손되지 않도록 이중포장 해주시기 바랍니다",
+       "y": 1222
+      },
+      {
+       "conf": 0.988,
+       "text": "※올바른예",
+       "y": 1366
+      },
+      {
+       "conf": 0.925,
+       "text": "Q & A",
+       "y": 1415
+      },
+      {
+       "conf": 0.937,
+       "text": "결재 했는데 왜 품절인가요?",
+       "y": 1451
+      },
+      {
+       "conf": 0.97,
+       "text": "시크릿1649는여러사이트에판매재고를함께공유한 상태로판매됩니다",
+       "y": 1471
+      },
+      {
+       "conf": 0.924,
+       "text": "사이트수량은 상시로 변동되기때문에결재 후재고 품절상태일 수있어안내 드릴 수있습니다",
+       "y": 1490
+      },
+      {
+       "conf": 0.918,
+       "text": "구매 후품절일 경우1~3일내로 문자안내 드립니다.",
+       "y": 1511
+      }
+     ],
+     "y0": 0,
+     "y1": 1564
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:101843308:9918112671",
+ "links_sha256": "e3e62846daa5eba2c179936db638f984c5d7b0d65d29fba2c26f8a0d10d20cff",
+ "product_id": "9918112671",
+ "seconds": 30.7,
+ "skipped": []
+}

@@ -1,0 +1,4898 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 68480,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210825_1/1629884838289Fv4nv_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%B9%98_%EB%B0%94%EC%A7%80_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_main_final_%EC%B5%9C%EC%A2%85_%EB%B3%B5%EC%82%AC.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.911,
+       "text": "adidas",
+       "y": 80
+      },
+      {
+       "conf": 0.673,
+       "text": "ⅢI|",
+       "y": 205
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 326420,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_282/1714440879705Qpawc_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_main.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 336362,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230313_144/1678688405789VAri8_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%B0%98%ED%8C%94_%EB%B0%98%EC%86%8C%EB%A7%A4_ENJOY_PANDA_FINAL.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.907,
+       "text": "adidas",
+       "y": 162
+      },
+      {
+       "conf": 0.999,
+       "text": "PA",
+       "y": 527
+      },
+      {
+       "conf": 0.57,
+       "text": "11",
+       "y": 701
+      }
+     ],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 320438,
+   "height": 700,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210420_272/1618891518514GAgzK_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%98%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_(7).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "UPF",
+       "y": 85
+      },
+      {
+       "conf": 1.0,
+       "text": "50",
+       "y": 131
+      },
+      {
+       "conf": 0.864,
+       "text": "adlidas",
+       "y": 521
+      },
+      {
+       "conf": 0.975,
+       "text": "AEROREADY",
+       "y": 624
+      }
+     ],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 268922,
+   "height": 700,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210420_22/16188915184846yI3g_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%98%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_(4).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.913,
+       "text": "1. / 제품을 / 을 취급하실 때에는 제품에 부착된",
+       "y": 162
+      },
+      {
+       "conf": 0.953,
+       "text": "2. / 본취취본구기 / 제품에 이상이나불만사항이발생되면",
+       "y": 156
+      },
+      {
+       "conf": 0.866,
+       "text": "입점 / 또는 고객상담실로 훈의하여 추시",
+       "y": 235
+      },
+      {
+       "conf": 0.923,
+       "text": "바랍니다.",
+       "y": 256
+      },
+      {
+       "conf": 0.935,
+       "text": "3. / 비 / 품질봉증기간이",
+       "y": 277
+      },
+      {
+       "conf": 0.87,
+       "text": "소경습단 / 과 / 품 / 몸은 피해보상 책임흘지지않",
+       "y": 295
+      },
+      {
+       "conf": 0.662,
+       "text": "니",
+       "y": 314
+      },
+      {
+       "conf": 0.925,
+       "text": "수선이 가능한경우는실비로수선해드립니다.)",
+       "y": 329
+      },
+      {
+       "conf": 0.878,
+       "text": "공 / 정건래우 / 위원회가,고시한 소비자",
+       "y": 357
+      },
+      {
+       "conf": 0.89,
+       "text": "본분 / 기준에 / 의거,청당한 소비자 피해에",
+       "y": 354
+      },
+      {
+       "conf": 0.893,
+       "text": "교환 / 환불해 드립니다.",
+       "y": 395
+      },
+      {
+       "conf": 0.574,
+       "text": "TKo / 구입후1년",
+       "y": 416
+      },
+      {
+       "conf": 0.672,
+       "text": "'간소자소 / 구입적",
+       "y": 433
+      },
+      {
+       "conf": 0.923,
+       "text": "입 / 아디다스코리아 (유)",
+       "y": 452
+      },
+      {
+       "conf": 0.892,
+       "text": "서울특별시서초구 서총대로 74",
+       "y": 471
+      },
+      {
+       "conf": 0.969,
+       "text": "길4,삼성생명 서초타워 24층",
+       "y": 490
+      },
+      {
+       "conf": 0.971,
+       "text": "·대표전화:02-2186-0300",
+       "y": 511
+      },
+      {
+       "conf": 0.963,
+       "text": "·아디다스 고객만족센터:1588-8241",
+       "y": 527
+      },
+      {
+       "conf": 0.982,
+       "text": "!경고",
+       "y": 553
+      },
+      {
+       "conf": 0.905,
+       "text": "·라벌에 표시된사용상 주의사항을 반드시 숙지하여 주십시오.",
+       "y": 579
+      },
+      {
+       "conf": 0.792,
+       "text": "접근 시 길이 옮겨 을가능성이 있으니 주의하여 주십시오.",
+       "y": 592
+      },
+      {
+       "conf": 0.821,
+       "text": "·작은 부품이 말락되면 상길 수 있으니 주의하여 주십시오.",
+       "y": 608
+      },
+      {
+       "conf": 0.854,
+       "text": "·체질에 따라 피부알러지가 발성할 수 있으니 주의하여 주십시오",
+       "y": 622
+      },
+      {
+       "conf": 0.737,
+       "text": "·경고!입어 넣으면 프말레이게가소제가 용을월수 있으니입에 넣지 마시오",
+       "y": 636
+      }
+     ],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 326420,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_279/1714440897185Ofcb1_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_main.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 42648,
+   "height": 463,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_138/17144409288942gkSH_JPEG/SE-b631073d-13e4-4713-bdd7-d3cf03875d8f.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 463
+    }
+   ],
+   "status": "read",
+   "width": 636
+  },
+  {
+   "bytes": 94630,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210825_205/1629884962730iszFU_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B8%B4%EB%B0%94%EC%A7%80_%EB%B0%98%EB%B0%94%EC%A7%80_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EB%B0%98%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EB%9D%BC%EC%9A%B4%EB%94%A9_(6).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 44920,
+   "height": 366,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210825_37/1629885008772DJ2X0_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(8).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 366
+    }
+   ],
+   "status": "read",
+   "width": 666
+  },
+  {
+   "bytes": 77340,
+   "height": 598,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210825_182/1629885008791PLRWm_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B8%B4%EB%B0%94%EC%A7%80_%EB%B0%98%EB%B0%94%EC%A7%80_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EB%B0%98%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EB%9D%BC%EC%9A%B4%EB%94%A9_(1).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.983,
+       "text": "ADIDAS / ADIDAS",
+       "y": 219
+      },
+      {
+       "conf": 0.562,
+       "text": "LZI9IG",
+       "y": 312
+      },
+      {
+       "conf": 0.891,
+       "text": "adidas",
+       "y": 329
+      },
+      {
+       "conf": 0.991,
+       "text": "A88",
+       "y": 344
+      },
+      {
+       "conf": 0.909,
+       "text": "MADE IN CAMBCOLA",
+       "y": 362
+      },
+      {
+       "conf": 0.902,
+       "text": "RN88387",
+       "y": 377
+      },
+      {
+       "conf": 0.824,
+       "text": "CAF40312",
+       "y": 387
+      },
+      {
+       "conf": 0.832,
+       "text": "WAIN MATERAL",
+       "y": 407
+      }
+     ],
+     "y0": 0,
+     "y1": 598
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 142386,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210825_297/1629885008808cJElM_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B8%B4%EB%B0%94%EC%A7%80_%EB%B0%98%EB%B0%94%EC%A7%80_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EB%B0%98%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EB%9D%BC%EC%9A%B4%EB%94%A9_(3).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.834,
+       "text": "ADDAS",
+       "y": 162
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 91545,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210825_132/1629885008807hBpPT_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B8%B4%EB%B0%94%EC%A7%80_%EB%B0%98%EB%B0%94%EC%A7%80_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EB%B0%98%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EB%9D%BC%EC%9A%B4%EB%94%A9_(4).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.956,
+       "text": "ADIDAS",
+       "y": 236
+      },
+      {
+       "conf": 0.961,
+       "text": "adidas",
+       "y": 349
+      },
+      {
+       "conf": 0.97,
+       "text": "A88",
+       "y": 369
+      },
+      {
+       "conf": 0.572,
+       "text": "MAC IN CAKBSIA",
+       "y": 380
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 26720,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_105/1714440961135Eq6vE_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_(1).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.621,
+       "text": "|",
+       "y": 401
+      }
+     ],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 27371,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_66/1714440968645wmBuE_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_(6).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.621,
+       "text": "|",
+       "y": 401
+      }
+     ],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 32707,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_177/1714440961140t3cEz_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_(5).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 33581,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_13/1714440984978wR7Rs_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_(7).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 32707,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_76/1714440990067UDB8J_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_(5).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 311542,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230216_203/1676520504625jWbrN_JPEG/25152.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.612,
+       "text": "[lbl",
+       "y": 381
+      },
+      {
+       "conf": 0.762,
+       "text": "6Z77081 / ADIDAS.COM",
+       "y": 443
+      },
+      {
+       "conf": 0.687,
+       "text": "ASIA / 0",
+       "y": 527
+      },
+      {
+       "conf": 0.905,
+       "text": "Costcoitem# / 896999",
+       "y": 502
+      },
+      {
+       "conf": 0.691,
+       "text": "전기 / AU/NZ / 2전",
+       "y": 583
+      },
+      {
+       "conf": 0.751,
+       "text": "관리 / 시",
+       "y": 598
+      },
+      {
+       "conf": 0.613,
+       "text": "u5",
+       "y": 612
+      },
+      {
+       "conf": 0.919,
+       "text": "AU/",
+       "y": 642
+      },
+      {
+       "conf": 0.861,
+       "text": "GB / adlidas",
+       "y": 644
+      },
+      {
+       "conf": 0.501,
+       "text": "HRM",
+       "y": 669
+      },
+      {
+       "conf": 0.807,
+       "text": "BS% POLYESTER / (RECYCLEDyPOCKETS.",
+       "y": 690
+      },
+      {
+       "conf": 0.88,
+       "text": "(RECYCLED)",
+       "y": 708
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 256290,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230216_90/1676520600341N9yRT_JPEG/25158.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 305176,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230216_154/1676520600355Ooqy9_JPEG/25159.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.741,
+       "text": "poaeo",
+       "y": 0
+      },
+      {
+       "conf": 0.648,
+       "text": "#u",
+       "y": 12
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 330123,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230216_96/1676520600353LG7LL_JPEG/25160.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.887,
+       "text": "896999",
+       "y": 326
+      },
+      {
+       "conf": 0.982,
+       "text": "5",
+       "y": 377
+      },
+      {
+       "conf": 0.563,
+       "text": "ee",
+       "y": 383
+      },
+      {
+       "conf": 0.564,
+       "text": "1RA",
+       "y": 394
+      },
+      {
+       "conf": 0.961,
+       "text": "adidas",
+       "y": 416
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 23844,
+   "height": 750,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210825_56/16298850918023wIvQ_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(1).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 750
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 27371,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_118/17144410154078A2II_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_(6).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.621,
+       "text": "|",
+       "y": 401
+      }
+     ],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 430590,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230216_232/1676520538161m6amI_JPEG/25171.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 406219,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230216_265/1676520538202JOnQk_JPEG/25172.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.668,
+       "text": "PR)",
+       "y": 308
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 20029,
+   "height": 750,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210825_300/1629885091815hPv9h_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(3).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.991,
+       "text": "|",
+       "y": 400
+      }
+     ],
+     "y0": 0,
+     "y1": 750
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 26720,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_47/1714441036098GyJGC_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_(1).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.621,
+       "text": "|",
+       "y": 401
+      }
+     ],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 37532,
+   "height": 409,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_22/1714441056877j6uHG_JPEG/SE-acb8c746-652b-4f77-a13b-dd12d32cf0bb.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 409
+    }
+   ],
+   "status": "read",
+   "width": 571
+  },
+  {
+   "bytes": 381014,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230216_73/167652056040870zE3_JPEG/25167.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.802,
+       "text": "n",
+       "y": 215
+      },
+      {
+       "conf": 0.903,
+       "text": "odidas",
+       "y": 356
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 103703,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_126/1748526224696IeFjh_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_19..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.818,
+       "text": "REGULARFIT",
+       "y": 143
+      },
+      {
+       "conf": 0.945,
+       "text": "REGULARFT",
+       "y": 165
+      },
+      {
+       "conf": 0.827,
+       "text": "REGULARFT",
+       "y": 178
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 293606,
+   "height": 960,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_169/1748526910594eE6vG_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_%EB%A9%94%EC%9D%B8.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.996,
+       "text": "adidas",
+       "y": 165
+      }
+     ],
+     "y0": 0,
+     "y1": 960
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 261754,
+   "height": 960,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_284/17485279797919vwmg_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_%EB%A9%94%EC%9D%B8_1..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.983,
+       "text": "adidas",
+       "y": 158
+      }
+     ],
+     "y0": 0,
+     "y1": 960
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 137773,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_72/1748526192313m6DNb_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_13..jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 155364,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_39/1748526192310Bq1xP_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_14..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.945,
+       "text": "85(33)",
+       "y": 367
+      },
+      {
+       "conf": 0.949,
+       "text": "85 (33)",
+       "y": 403
+      },
+      {
+       "conf": 0.949,
+       "text": "85 (33)",
+       "y": 441
+      },
+      {
+       "conf": 0.981,
+       "text": "85(33)",
+       "y": 481
+      },
+      {
+       "conf": 0.835,
+       "text": "85 (33)",
+       "y": 516
+      },
+      {
+       "conf": 0.639,
+       "text": "05133)",
+       "y": 555
+      },
+      {
+       "conf": 0.944,
+       "text": "85 (33)",
+       "y": 593
+      },
+      {
+       "conf": 0.964,
+       "text": "85 (33)",
+       "y": 631
+      },
+      {
+       "conf": 0.888,
+       "text": "85 (33)",
+       "y": 671
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 227704,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_7/17485261923117SoOp_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_15..jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 229473,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_173/1748526192376U6oVV_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_16..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.989,
+       "text": "REGULAR FIT",
+       "y": 284
+      },
+      {
+       "conf": 0.946,
+       "text": "COUPE STANDARD",
+       "y": 333
+      },
+      {
+       "conf": 0.957,
+       "text": "GOLF",
+       "y": 412
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 273173,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_260/1748526527013Ri5OJ_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_6..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.603,
+       "text": "unb",
+       "y": 520
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 319847,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_121/1748526527015IVzK4_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_9..jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 109401,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_200/1748526192374sWlW2_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_17..jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 105932,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_190/1748526192374auPoF_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_18..jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 127332,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_52/1748526091022IScUT_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_1..jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 157306,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_221/1748526091022RLcPW_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_2..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.926,
+       "text": "REGULAR FIT",
+       "y": 141
+      },
+      {
+       "conf": 0.832,
+       "text": "85 (33)",
+       "y": 429
+      },
+      {
+       "conf": 0.93,
+       "text": "85 (33)",
+       "y": 470
+      },
+      {
+       "conf": 0.793,
+       "text": "85",
+       "y": 557
+      },
+      {
+       "conf": 0.637,
+       "text": "851331",
+       "y": 590
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 210103,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_103/1748526091023yLeY0_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_4..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.585,
+       "text": "0∠1929",
+       "y": 322
+      },
+      {
+       "conf": 0.933,
+       "text": "98",
+       "y": 354
+      },
+      {
+       "conf": 0.685,
+       "text": "E5I",
+       "y": 377
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 114257,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_139/1748526141527RQJOe_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_10..jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 119221,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_159/1748526141531saUA5_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_11..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.758,
+       "text": "95(33)",
+       "y": 570
+      },
+      {
+       "conf": 0.57,
+       "text": "/331",
+       "y": 612
+      },
+      {
+       "conf": 0.98,
+       "text": "85 (33)",
+       "y": 650
+      },
+      {
+       "conf": 0.756,
+       "text": "85/231",
+       "y": 681
+      },
+      {
+       "conf": 0.646,
+       "text": "85/00)",
+       "y": 720
+      },
+      {
+       "conf": 0.591,
+       "text": "(33)",
+       "y": 761
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 129838,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250529_250/1748526141530PKbGc_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_12..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.93,
+       "text": "85 (33)",
+       "y": 580
+      },
+      {
+       "conf": 0.619,
+       "text": "0=133)",
+       "y": 616
+      },
+      {
+       "conf": 0.989,
+       "text": "85 (33)",
+       "y": 657
+      },
+      {
+       "conf": 0.708,
+       "text": "05/33)",
+       "y": 697
+      },
+      {
+       "conf": 0.673,
+       "text": "85/021",
+       "y": 734
+      },
+      {
+       "conf": 0.794,
+       "text": "5(33)",
+       "y": 774
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2368219,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_170/1721303918820NNC7M_JPEG/20240718_205637_864.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.602,
+       "text": "unla",
+       "y": 129
+      },
+      {
+       "conf": 0.503,
+       "text": "IE BRAIO ID",
+       "y": 283
+      },
+      {
+       "conf": 0.612,
+       "text": "IE BRAO MO / THE TAREE STRIPES / TIE THREE STRIPES",
+       "y": 296
+      },
+      {
+       "conf": 0.679,
+       "text": "TE THE STRIPES",
+       "y": 375
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 3161943,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_95/1721303918993hN7Wr_JPEG/20240718_205702_125.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.943,
+       "text": "ULARFIT",
+       "y": 182
+      },
+      {
+       "conf": 0.759,
+       "text": "THE BRAND MM / TAE BRAND MITA",
+       "y": 441
+      },
+      {
+       "conf": 0.805,
+       "text": "THE THREE STRIPES / THE THREE STRIPES / IE BRAND MIT",
+       "y": 454
+      },
+      {
+       "conf": 0.803,
+       "text": "TIE TBREE STAIPES / THE THREE STRIPES",
+       "y": 494
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 3064107,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_15/1721303918940H09KT_JPEG/20240718_205729_902.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 3978622,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_268/1721303919078trgjt_JPEG/20240718_205837_309.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 4295510,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_261/1721305141198HC6KO_JPEG/20240718_211859_689.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.811,
+       "text": "IHE BRAD KI / THE THREE STRIPES",
+       "y": 618
+      },
+      {
+       "conf": 0.67,
+       "text": "TIE TIREE STRIPES / IAE BRAND MITA",
+       "y": 699
+      },
+      {
+       "conf": 0.92,
+       "text": "THE THREE STRIPES / THE TAREESTRIPES",
+       "y": 729
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1259857,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_235/1721304089909Rsu0m_JPEG/tmp3413690752855830923.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1265747,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_71/1721304108709ttKqW_JPEG/tmp7309342907160451136.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.51,
+       "text": "1",
+       "y": 117
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 155603,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240712_239/1720773913364uGvSa_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%A7%88%EC%9A%B4%ED%8B%B4_%EB%A1%9C%EA%B3%A0__%ED%8A%B8%EC%9B%94_%EA%B8%B4%EB%B0%94%EC%A7%80_2..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.925,
+       "text": "JAMBES FUSELEES",
+       "y": 89
+      },
+      {
+       "conf": 0.929,
+       "text": "STYLE LONG",
+       "y": 101
+      },
+      {
+       "conf": 0.608,
+       "text": "1L606/KIOd",
+       "y": 541
+      },
+      {
+       "conf": 0.718,
+       "text": "NV3",
+       "y": 617
+      },
+      {
+       "conf": 0.705,
+       "text": "em#",
+       "y": 676
+      },
+      {
+       "conf": 1.0,
+       "text": "44",
+       "y": 704
+      },
+      {
+       "conf": 0.951,
+       "text": "THE THREE STRIPES",
+       "y": 899
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2498475,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_167/17213042083434Pc7w_JPEG/20240718_210327_183.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2584441,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_151/1721304237144tNIpM_JPEG/20240718_210356_237.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.994,
+       "text": "1",
+       "y": 133
+      },
+      {
+       "conf": 0.649,
+       "text": "IAE BRAD AIM",
+       "y": 285
+      },
+      {
+       "conf": 0.96,
+       "text": "THE THREE STRIPES",
+       "y": 312
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 418100,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240712_107/1720773913421Setdj_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%A7%88%EC%9A%B4%ED%8B%B4_%EB%A1%9C%EA%B3%A0__%ED%8A%B8%EC%9B%94_%EA%B8%B4%EB%B0%94%EC%A7%80_3..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.789,
+       "text": "THE BRANB MTH",
+       "y": 737
+      },
+      {
+       "conf": 0.962,
+       "text": "THE THREE STRIPES",
+       "y": 855
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2538357,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_40/1721304292989hocuY_JPEG/20240718_210451_968.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.626,
+       "text": "A",
+       "y": 111
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1446336,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_85/1721304312094GD4Df_JPEG/tmp4729721458337670879.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.885,
+       "text": "THE TAREE STRIPES",
+       "y": 305
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 384361,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240712_136/1720773913651TjD7h_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%A7%88%EC%9A%B4%ED%8B%B4_%EB%A1%9C%EA%B3%A0__%ED%8A%B8%EC%9B%94_%EA%B8%B4%EB%B0%94%EC%A7%80_4..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.737,
+       "text": "STMLE LONO / AUAUSELEES",
+       "y": 85
+      },
+      {
+       "conf": 0.77,
+       "text": "IAE BRAND NIN",
+       "y": 802
+      },
+      {
+       "conf": 0.968,
+       "text": "THE THREE STRIPES",
+       "y": 914
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1263230,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_266/17213043387062qche_JPEG/tmp9005326401088432089.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1145992,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_202/1721304354828Xsaw6_JPEG/tmp5118141400946405064.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.534,
+       "text": "TTSTES",
+       "y": 326
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2686096,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_231/17213044169639VQlO_JPEG/20240718_210656_022.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 419262,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240712_204/1720773913543C4wYY_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%A7%88%EC%9A%B4%ED%8B%B4_%EB%A1%9C%EA%B3%A0__%ED%8A%B8%EC%9B%94_%EA%B8%B4%EB%B0%94%EC%A7%80_5..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.812,
+       "text": "REOULAR PIT",
+       "y": 108
+      },
+      {
+       "conf": 0.563,
+       "text": "e",
+       "y": 122
+      },
+      {
+       "conf": 0.977,
+       "text": "COUPE STANDARD",
+       "y": 154
+      },
+      {
+       "conf": 0.891,
+       "text": "VESTIBILITA REGOLARE",
+       "y": 201
+      },
+      {
+       "conf": 0.736,
+       "text": "THE BRANB MWD",
+       "y": 856
+      },
+      {
+       "conf": 0.974,
+       "text": "THE THREE STRIPES",
+       "y": 969
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 436063,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240712_221/1720773913443kOvM9_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%A7%88%EC%9A%B4%ED%8B%B4_%EB%A1%9C%EA%B3%A0__%ED%8A%B8%EC%9B%94_%EA%B8%B4%EB%B0%94%EC%A7%80_6..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.994,
+       "text": "ASIA",
+       "y": 430
+      },
+      {
+       "conf": 0.903,
+       "text": "A/88",
+       "y": 451
+      },
+      {
+       "conf": 0.549,
+       "text": "79994 / 88",
+       "y": 470
+      },
+      {
+       "conf": 0.772,
+       "text": "전기 / 품 안전",
+       "y": 529
+      },
+      {
+       "conf": 0.741,
+       "text": "180/86A / 필표시",
+       "y": 543
+      },
+      {
+       "conf": 0.704,
+       "text": "AU/NZ / BKADO",
+       "y": 574
+      },
+      {
+       "conf": 0.568,
+       "text": "88 / TwerE",
+       "y": 608
+      },
+      {
+       "conf": 0.813,
+       "text": "허리 / KR / 2H",
+       "y": 619
+      },
+      {
+       "conf": 0.931,
+       "text": "US",
+       "y": 639
+      },
+      {
+       "conf": 0.899,
+       "text": "AU/ / 88",
+       "y": 651
+      },
+      {
+       "conf": 0.727,
+       "text": "GB:I / 18",
+       "y": 670
+      },
+      {
+       "conf": 0.999,
+       "text": "adidas",
+       "y": 710
+      },
+      {
+       "conf": 0.997,
+       "text": "R",
+       "y": 752
+      },
+      {
+       "conf": 0.703,
+       "text": "MADE IN / DV",
+       "y": 767
+      },
+      {
+       "conf": 0.975,
+       "text": "VIETNAM / YESTER",
+       "y": 781
+      },
+      {
+       "conf": 0.9,
+       "text": "F: / MATIERE PKINUIRR",
+       "y": 819
+      },
+      {
+       "conf": 0.943,
+       "text": "100% POLYESTER (82% RECYCLE)/",
+       "y": 832
+      },
+      {
+       "conf": 0.925,
+       "text": "POCHES: 100K POLYESTER",
+       "y": 848
+      },
+      {
+       "conf": 0.938,
+       "text": "(100% RECYCLE)/PAUME:",
+       "y": 863
+      },
+      {
+       "conf": 0.949,
+       "text": "100% POLYESTER",
+       "y": 880
+      },
+      {
+       "conf": 0.949,
+       "text": "(100% RECYCL)",
+       "y": 894
+      },
+      {
+       "conf": 0.969,
+       "text": "CN:100%/",
+       "y": 914
+      },
+      {
+       "conf": 0.992,
+       "text": "100%/",
+       "y": 939
+      },
+      {
+       "conf": 0.997,
+       "text": "100%",
+       "y": 962
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 159219,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240712_201/17207739136817fczO_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%A7%88%EC%9A%B4%ED%8B%B4_%EB%A1%9C%EA%B3%A0__%ED%8A%B8%EC%9B%94_%EA%B8%B4%EB%B0%94%EC%A7%80_7..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.891,
+       "text": "PAKAIAN adida",
+       "y": 120
+      },
+      {
+       "conf": 0.975,
+       "text": "UKURAN: A/BB",
+       "y": 169
+      },
+      {
+       "conf": 0.912,
+       "text": "전기용품 및 생활용품 안전",
+       "y": 205
+      },
+      {
+       "conf": 0.925,
+       "text": "판리법에 의한 품질표시",
+       "y": 244
+      },
+      {
+       "conf": 0.983,
+       "text": "TWILLPT BK",
+       "y": 280
+      },
+      {
+       "conf": 0.961,
+       "text": "허리둘레90cm",
+       "y": 341
+      },
+      {
+       "conf": 0.857,
+       "text": "AU/",
+       "y": 388
+      },
+      {
+       "conf": 0.958,
+       "text": "GB: / MAIN MATERIAL:",
+       "y": 415
+      },
+      {
+       "conf": 0.671,
+       "text": "100% POLYESTER / 78",
+       "y": 423
+      },
+      {
+       "conf": 0.984,
+       "text": "(82% RECYCLED)/",
+       "y": 471
+      },
+      {
+       "conf": 0.992,
+       "text": "POCKETS:",
+       "y": 499
+      },
+      {
+       "conf": 0.985,
+       "text": "100% POLYESTER",
+       "y": 524
+      },
+      {
+       "conf": 0.975,
+       "text": "(100% RECYCLED)/",
+       "y": 553
+      },
+      {
+       "conf": 0.985,
+       "text": "PALM: 100% POLYESTER",
+       "y": 578
+      },
+      {
+       "conf": 0.992,
+       "text": "(100% RECYCLED)",
+       "y": 608
+      },
+      {
+       "conf": 0.922,
+       "text": "F: / MATIERE PRINCIPALE:",
+       "y": 639
+      },
+      {
+       "conf": 0.961,
+       "text": "100% POLYESTER (82% RECYCLE)",
+       "y": 656
+      },
+      {
+       "conf": 0.958,
+       "text": "POCHES: 100% POLYESTER",
+       "y": 680
+      },
+      {
+       "conf": 0.958,
+       "text": "(100% RECYCLE)PAUME:",
+       "y": 704
+      },
+      {
+       "conf": 0.99,
+       "text": "100% POLYESTER",
+       "y": 729
+      },
+      {
+       "conf": 0.975,
+       "text": "(100% RECYCLE)",
+       "y": 746
+      },
+      {
+       "conf": 0.963,
+       "text": "CN:100%/",
+       "y": 776
+      },
+      {
+       "conf": 0.915,
+       "text": "100%/",
+       "y": 814
+      },
+      {
+       "conf": 0.999,
+       "text": "100%",
+       "y": 851
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 291714,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240712_228/1720773913420n5yeL_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%A7%88%EC%9A%B4%ED%8B%B4_%EB%A1%9C%EA%B3%A0__%ED%8A%B8%EC%9B%94_%EA%B8%B4%EB%B0%94%EC%A7%80_8..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.898,
+       "text": "본 제품은 섬유유연제를 사용하지 마세",
+       "y": 159
+      },
+      {
+       "conf": 0.83,
+       "text": "제의나엽이나자수(문양)부분은 다",
+       "y": 247
+      },
+      {
+       "conf": 0.818,
+       "text": "립질을 하지 마세요 / 본제품을세시유사한 색상끼리세탁",
+       "y": 270
+      },
+      {
+       "conf": 0.996,
+       "text": "하세요",
+       "y": 308
+      },
+      {
+       "conf": 0.855,
+       "text": "*심한마하은 보플이 발생할수 있습니다",
+       "y": 317
+      },
+      {
+       "conf": 0.768,
+       "text": "*제에 부하 원부자재어아이가살 / 기지한도주의하시고부학원장신구가",
+       "y": 331
+      },
+      {
+       "conf": 0.75,
+       "text": "강한 격에 의하여파손수 있으니유",
+       "y": 364
+      },
+      {
+       "conf": 0.973,
+       "text": "의하십시오",
+       "y": 386
+      },
+      {
+       "conf": 0.767,
+       "text": "*제에 따라 민감한 피부를 가지산 분은",
+       "y": 396
+      },
+      {
+       "conf": 0.789,
+       "text": "알레로기 반용이 일어날 수 있으니 유의",
+       "y": 411
+      },
+      {
+       "conf": 0.833,
+       "text": "하십시오",
+       "y": 431
+      },
+      {
+       "conf": 0.851,
+       "text": "*강한 마할에 의한 화상의 위협이 있으니유",
+       "y": 442
+      },
+      {
+       "conf": 0.845,
+       "text": "의하십시오",
+       "y": 460
+      },
+      {
+       "conf": 0.793,
+       "text": "*건조시에는 강한했법을 피하고 통풍이 작되",
+       "y": 471
+      },
+      {
+       "conf": 0.688,
+       "text": "E그에서건조하신시오",
+       "y": 487
+      },
+      {
+       "conf": 0.628,
+       "text": "*나영 위는 적대를 다립집이나 열건조를하",
+       "y": 500
+      },
+      {
+       "conf": 0.699,
+       "text": "지아십시오",
+       "y": 516
+      },
+      {
+       "conf": 0.713,
+       "text": "*나업영가 장시감 다루 확건 등에 밀하되어",
+       "y": 526
+      },
+      {
+       "conf": 0.624,
+       "text": "에가는가",
+       "y": 573
+      },
+      {
+       "conf": 0.798,
+       "text": "사는 세학시녹이 발생할수 / 있습니다.",
+       "y": 579
+      },
+      {
+       "conf": 0.595,
+       "text": "77/994 / 부자재는구입자의 체질에 따라 피부 / 알러지를발생게 수 있니다",
+       "y": 604
+      },
+      {
+       "conf": 0.775,
+       "text": "*의에 부학한 악세서리는 반트시제거하신 / 세락하시기바합니다",
+       "y": 630
+      },
+      {
+       "conf": 0.762,
+       "text": "*리에스터등특정원단이사용원제의 / 경우,의부의 자국에 의하여 입이나 을",
+       "y": 658
+      },
+      {
+       "conf": 0.661,
+       "text": "*추머니가지않은 재의경우주머 / 하시기바니다 / 나감현상이 접게 발생할 수있으므유의",
+       "y": 684
+      },
+      {
+       "conf": 0.902,
+       "text": "기바합니다.",
+       "y": 742
+      },
+      {
+       "conf": 0.929,
+       "text": "MADE IN VIETNAM / FABRIQUE AU",
+       "y": 766
+      },
+      {
+       "conf": 0.993,
+       "text": "VIETNAM",
+       "y": 819
+      },
+      {
+       "conf": 0.98,
+       "text": "DIBUATDI",
+       "y": 854
+      },
+      {
+       "conf": 0.844,
+       "text": "VIETO",
+       "y": 894
+      },
+      {
+       "conf": 0.905,
+       "text": "RN#B8387",
+       "y": 950
+      },
+      {
+       "conf": 0.785,
+       "text": ":Bowker (Viel",
+       "y": 970
+      },
+      {
+       "conf": 0.899,
+       "text": "Factory Co..",
+       "y": 1002
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 382780,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240712_157/1720773913386JIHG6_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%A7%88%EC%9A%B4%ED%8B%B4_%EB%A1%9C%EA%B3%A0__%ED%8A%B8%EC%9B%94_%EA%B8%B4%EB%B0%94%EC%A7%80_9..jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.836,
+       "text": "통을 산청시,심지,상표",
+       "y": 161
+      },
+      {
+       "conf": 0.823,
+       "text": "보강재,자수,창식제의",
+       "y": 182
+      },
+      {
+       "conf": 0.939,
+       "text": "!경 / 고",
+       "y": 304
+      },
+      {
+       "conf": 0.617,
+       "text": "에시사용상추의사을 발드시 지어주십시오 / 이능이 ",
+       "y": 367
+      },
+      {
+       "conf": 0.894,
+       "text": "주의하여주십시오",
+       "y": 420
+      },
+      {
+       "conf": 0.803,
+       "text": "은 부이 활력되면 삼집 수 있으니 / 주의용여주십시오",
+       "y": 443
+      },
+      {
+       "conf": 0.767,
+       "text": "체잡어 따라 피부알러지가 발생할 수",
+       "y": 495
+      },
+      {
+       "conf": 0.904,
+       "text": "있으니주의하여주십시오",
+       "y": 519
+      },
+      {
+       "conf": 0.91,
+       "text": "경괴 입이 넣으면 프탈레이트계 가소",
+       "y": 543
+      },
+      {
+       "conf": 0.811,
+       "text": "제가 용을될수 있으니입어 널지 마시오",
+       "y": 570
+      },
+      {
+       "conf": 0.944,
+       "text": "수입자:아디다스코리아(유)",
+       "y": 612
+      },
+      {
+       "conf": 0.979,
+       "text": "대표전화:02-2186-0300",
+       "y": 645
+      },
+      {
+       "conf": 0.911,
+       "text": "아디다스 고객만쪽센터:1588-8241",
+       "y": 674
+      },
+      {
+       "conf": 0.89,
+       "text": "서울록별시서초구 서초대로 74길 4",
+       "y": 702
+      },
+      {
+       "conf": 0.835,
+       "text": "삼성생명 서초타워 24층",
+       "y": 730
+      },
+      {
+       "conf": 0.791,
+       "text": "249679-033-033",
+       "y": 838
+      },
+      {
+       "conf": 0.732,
+       "text": "Jend Suoimman kav.",
+       "y": 903
+      },
+      {
+       "conf": 0.533,
+       "text": "776924 / SOOICO",
+       "y": 971
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 2593190,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_30/1721304626685u4ds8_JPEG/tmp8815439263956857645.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.618,
+       "text": "0",
+       "y": 265
+      },
+      {
+       "conf": 0.824,
+       "text": "ADIDACOM",
+       "y": 302
+      },
+      {
+       "conf": 0.706,
+       "text": "4699 / 10/BLA",
+       "y": 367
+      },
+      {
+       "conf": 0.578,
+       "text": "AA/NZ",
+       "y": 379
+      },
+      {
+       "conf": 0.502,
+       "text": "45",
+       "y": 394
+      },
+      {
+       "conf": 0.941,
+       "text": "adidas",
+       "y": 420
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1211851,
+   "height": 2095,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_90/1721304797262U60D9_JPEG/20240718_211155_977.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.985,
+       "text": "ASIA",
+       "y": 769
+      },
+      {
+       "conf": 0.757,
+       "text": "A/as",
+       "y": 792
+      },
+      {
+       "conf": 0.917,
+       "text": "85",
+       "y": 853
+      },
+      {
+       "conf": 0.99,
+       "text": "P / 180/84A",
+       "y": 877
+      },
+      {
+       "conf": 0.993,
+       "text": "AU/NZ / J",
+       "y": 934
+      },
+      {
+       "conf": 0.996,
+       "text": "85 / 전",
+       "y": 969
+      },
+      {
+       "conf": 0.997,
+       "text": "전기용 / US",
+       "y": 994
+      },
+      {
+       "conf": 0.507,
+       "text": "KR / 1",
+       "y": 1031
+      },
+      {
+       "conf": 0.737,
+       "text": "관리법 / 85",
+       "y": 1046
+      },
+      {
+       "conf": 0.997,
+       "text": "명",
+       "y": 1108
+      },
+      {
+       "conf": 0.604,
+       "text": "품호 / 칭",
+       "y": 1113
+      },
+      {
+       "conf": 0.99,
+       "text": "허리둘레 / adidas",
+       "y": 1174
+      },
+      {
+       "conf": 0.87,
+       "text": "AUI",
+       "y": 1279
+      },
+      {
+       "conf": 0.945,
+       "text": "GB:MAINA / MADE IN",
+       "y": 1304
+      },
+      {
+       "conf": 0.996,
+       "text": "100% / VIETNAM",
+       "y": 1339
+      },
+      {
+       "conf": 0.883,
+       "text": "(82% RECrCLED)",
+       "y": 1398
+      },
+      {
+       "conf": 0.992,
+       "text": "POCKETS:",
+       "y": 1439
+      },
+      {
+       "conf": 0.966,
+       "text": "100% POLYESTER",
+       "y": 1475
+      },
+      {
+       "conf": 0.926,
+       "text": "(100% RECYCLED)/",
+       "y": 1515
+      },
+      {
+       "conf": 0.942,
+       "text": "PALM:100% POLYESTER",
+       "y": 1557
+      },
+      {
+       "conf": 0.867,
+       "text": "(1O0%RECMCLED)",
+       "y": 1600
+      },
+      {
+       "conf": 0.963,
+       "text": "F / MATIEREPRINCIPALE",
+       "y": 1641
+      },
+      {
+       "conf": 0.891,
+       "text": "100%POLYESUER(82%RECYCLE)",
+       "y": 1662
+      },
+      {
+       "conf": 0.852,
+       "text": "POCHESSHOORPOLYESIER",
+       "y": 1707
+      },
+      {
+       "conf": 0.842,
+       "text": "GIOORRECNCLEYPAUME",
+       "y": 1750
+      },
+      {
+       "conf": 0.843,
+       "text": "TOO°POLYESUER",
+       "y": 1790
+      },
+      {
+       "conf": 0.773,
+       "text": "(IOO% RECYCLE)",
+       "y": 1824
+      },
+      {
+       "conf": 0.963,
+       "text": "CN::100%/",
+       "y": 1856
+      },
+      {
+       "conf": 0.989,
+       "text": "100%/",
+       "y": 1923
+      },
+      {
+       "conf": 0.999,
+       "text": "100%",
+       "y": 1990
+      }
+     ],
+     "y0": 0,
+     "y1": 2095
+    }
+   ],
+   "status": "read",
+   "width": 1047
+  },
+  {
+   "bytes": 1773021,
+   "height": 2226,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_133/1721304797314eYz6T_JPEG/20240718_211235_324.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.898,
+       "text": "100% / 100%",
+       "y": 1
+      },
+      {
+       "conf": 0.988,
+       "text": "100%",
+       "y": 54
+      },
+      {
+       "conf": 0.505,
+       "text": "eo / AEI",
+       "y": 103
+      },
+      {
+       "conf": 0.572,
+       "text": "신바구분 / (82%DAUR",
+       "y": 119
+      },
+      {
+       "conf": 0.766,
+       "text": "INDY / 100%",
+       "y": 195
+      },
+      {
+       "conf": 0.874,
+       "text": "A / 100%",
+       "y": 262
+      },
+      {
+       "conf": 0.777,
+       "text": "ULANG)V / 100%",
+       "y": 258
+      },
+      {
+       "conf": 0.828,
+       "text": "1003 / ULANG) / 78%",
+       "y": 304
+      },
+      {
+       "conf": 0.983,
+       "text": "13%",
+       "y": 341
+      },
+      {
+       "conf": 0.761,
+       "text": "X / F / 9%",
+       "y": 375
+      },
+      {
+       "conf": 0.506,
+       "text": "3",
+       "y": 387
+      },
+      {
+       "conf": 0.745,
+       "text": "+T",
+       "y": 426
+      },
+      {
+       "conf": 0.801,
+       "text": "GB:COLD MACHINE WASH! / AUI",
+       "y": 591
+      },
+      {
+       "conf": 0.95,
+       "text": "DO NOT BLEACH/ TUMBLE / DRY LOW HEAT/LINE DRY",
+       "y": 614
+      },
+      {
+       "conf": 0.926,
+       "text": "IN SHADE/ COOL IRON/DO",
+       "y": 700
+      },
+      {
+       "conf": 0.94,
+       "text": "NOT DRY CLEAN (X)",
+       "y": 750
+      },
+      {
+       "conf": 0.962,
+       "text": "DONOT USE FABRIC",
+       "y": 787
+      },
+      {
+       "conf": 0.914,
+       "text": "SOFTENERWASHINSIDE / OUTUSE MILD DEFERGENT",
+       "y": 823
+      },
+      {
+       "conf": 0.88,
+       "text": "FASTENERS CLOSED/DO / ONLYASHWITH",
+       "y": 910
+      },
+      {
+       "conf": 0.923,
+       "text": "FENE PAS UTILISER",
+       "y": 1019
+      },
+      {
+       "conf": 0.962,
+       "text": "DASSOUPLISSEURALAVAGE",
+       "y": 1048
+      },
+      {
+       "conf": 0.963,
+       "text": "ALENVERS/UTILISERUN",
+       "y": 1084
+      },
+      {
+       "conf": 0.98,
+       "text": "DETERGENT DOUXLAVER AVEC",
+       "y": 1115
+      },
+      {
+       "conf": 0.971,
+       "text": "LES ATTACHES FERMEES/NE PAS",
+       "y": 1151
+      },
+      {
+       "conf": 0.944,
+       "text": "REPASSER SUR LE MOTIF/LAVER",
+       "y": 1187
+      },
+      {
+       "conf": 0.957,
+       "text": "AVEC LES MEMES COULEURS",
+       "y": 1224
+      },
+      {
+       "conf": 0.859,
+       "text": "CN:/",
+       "y": 1265
+      },
+      {
+       "conf": 0.953,
+       "text": "/",
+       "y": 1313
+      },
+      {
+       "conf": 0.768,
+       "text": "//",
+       "y": 1363
+      },
+      {
+       "conf": 0.964,
+       "text": "/",
+       "y": 1411
+      },
+      {
+       "conf": 0.896,
+       "text": "/",
+       "y": 1466
+      },
+      {
+       "conf": 0.953,
+       "text": "IND:JANGAN MENGGUNAKAN BAHAN",
+       "y": 1515
+      },
+      {
+       "conf": 0.983,
+       "text": "PELEMBUT KAIN/CUCIDENGAN",
+       "y": 1556
+      },
+      {
+       "conf": 0.984,
+       "text": "CARA DIBALIKGUNAKAN",
+       "y": 1597
+      },
+      {
+       "conf": 0.98,
+       "text": "DETERJENLEMBUT/CUCI",
+       "y": 1635
+      },
+      {
+       "conf": 0.964,
+       "text": "DENGAN CARA DIKANCINGKAN/",
+       "y": 1671
+      },
+      {
+       "conf": 0.96,
+       "text": "JANGAN SETRIKA BAGIAN MOTIF/",
+       "y": 1707
+      },
+      {
+       "conf": 0.949,
+       "text": "CUCILAH BERSAMA-SAMA",
+       "y": 1750
+      },
+      {
+       "conf": 0.955,
+       "text": "DENGAN WARNA YANG SAMA",
+       "y": 1787
+      },
+      {
+       "conf": 0.847,
+       "text": "J!",
+       "y": 1832
+      }
+     ],
+     "y0": 0,
+     "y1": 1880
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.914,
+       "text": "JANGAN SETRIKA BAGIAN MOINFI",
+       "y": 0
+      },
+      {
+       "conf": 0.948,
+       "text": "CUCILAH BERSAMA-SAMA",
+       "y": 31
+      },
+      {
+       "conf": 0.975,
+       "text": "DENGAN WARNA YANG SAMA",
+       "y": 68
+      },
+      {
+       "conf": 0.653,
+       "text": "J:A",
+       "y": 112
+      },
+      {
+       "conf": 0.698,
+       "text": "+-+-1",
+       "y": 210
+      },
+      {
+       "conf": 0.5,
+       "text": "LUU",
+       "y": 255
+      },
+      {
+       "conf": 0.666,
+       "text": "JUFOP",
+       "y": 288
+      },
+      {
+       "conf": 0.921,
+       "text": "L",
+       "y": 420
+      }
+     ],
+     "y0": 1720,
+     "y1": 2226
+    }
+   ],
+   "status": "read",
+   "width": 1113
+  },
+  {
+   "bytes": 2029678,
+   "height": 2430,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_154/1721304797411VaRKv_JPEG/20240718_211255_705.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.818,
+       "text": "00~1200",
+       "y": 211
+      },
+      {
+       "conf": 0.987,
+       "text": "사용하지마세",
+       "y": 219
+      },
+      {
+       "conf": 0.586,
+       "text": "제품은섬유유연체를 / 세간 / 세따하세요 / 하세용 / 하세요",
+       "y": 279
+      },
+      {
+       "conf": 0.952,
+       "text": "다",
+       "y": 314
+      },
+      {
+       "conf": 0.582,
+       "text": "모집없서 / 세제르만 / (양)무신은",
+       "y": 308
+      },
+      {
+       "conf": 0.95,
+       "text": "제 / 성",
+       "y": 342
+      },
+      {
+       "conf": 0.552,
+       "text": "본요본본본분 / 나엽이나 / 차'",
+       "y": 357
+      },
+      {
+       "conf": 0.868,
+       "text": "제 / 할지막세유사한 색상끼리 세탁 / 마세요",
+       "y": 393
+      },
+      {
+       "conf": 0.984,
+       "text": "제",
+       "y": 412
+      },
+      {
+       "conf": 0.624,
+       "text": "*심한마참은 보플이 발생할수 있습니다. / 제롭",
+       "y": 438
+      },
+      {
+       "conf": 0.792,
+       "text": "*본제품에부착된원부자재를어린아이가삼 / 하세요",
+       "y": 465
+      },
+      {
+       "conf": 0.853,
+       "text": "키지않도주의하시고 부착된 장신구등 / 은 강한 충격에 의하여 파슨될 수있으니유",
+       "y": 474
+      },
+      {
+       "conf": 0.918,
+       "text": "*제품에 따라 민감한 피부를 가지신 분은 / 의하십시오",
+       "y": 602
+      },
+      {
+       "conf": 0.938,
+       "text": "알레르기 반응이 힘어날 수 있으니유의",
+       "y": 613
+      },
+      {
+       "conf": 0.911,
+       "text": "*강한 마참에 의한 화상의 위협이 있으니유 / 하십시오",
+       "y": 709
+      },
+      {
+       "conf": 0.902,
+       "text": "*건조시에는 강한했법을 피하고 등풍이 잘되 / 의하십시오",
+       "y": 773
+      },
+      {
+       "conf": 0.952,
+       "text": "*나염부위는 절대로 다림질이나 열건조를하 / 는 그늘에서 건조하십시오",
+       "y": 816
+      },
+      {
+       "conf": 0.912,
+       "text": "*나염부위가 장시간 다는 물건 등에 밀착되어 / 지마십시오",
+       "y": 912
+      },
+      {
+       "conf": 0.916,
+       "text": "있트 경우 나업에 손상이 가거나 다른 불건",
+       "y": 919
+      },
+      {
+       "conf": 0.583,
+       "text": "·나·원체을의 로고님은 학응의로부터 / 엔늙어날 수 있습니다. / 고가 리부도전부가 달라",
+       "y": 981
+      },
+      {
+       "conf": 0.893,
+       "text": "*금속부자재는 물세 시녹이 발생할 수",
+       "y": 1064
+      },
+      {
+       "conf": 0.998,
+       "text": "있습니다",
+       "y": 1108
+      },
+      {
+       "conf": 0.875,
+       "text": "금속 부자재는 구인자의 체집에 따라 피부",
+       "y": 1122
+      },
+      {
+       "conf": 0.885,
+       "text": "안러지바생케 한 수 있습니다.",
+       "y": 1162
+      },
+      {
+       "conf": 0.836,
+       "text": "77699 / 의류에부착한와세서리는 반드시제거하신",
+       "y": 1186
+      },
+      {
+       "conf": 0.915,
+       "text": "세닥하시가바랍니다",
+       "y": 1230
+      },
+      {
+       "conf": 0.849,
+       "text": "*플리에스터등 정 원단이 사용된 제품의",
+       "y": 1255
+      },
+      {
+       "conf": 0.862,
+       "text": "경우,의부의 자극에 의하여 을트입이을",
+       "y": 1289
+      },
+      {
+       "conf": 0.95,
+       "text": "나감 현상이 쉽게 발생할 수 있으므로 유의",
+       "y": 1319
+      },
+      {
+       "conf": 0.942,
+       "text": "하시기바랍니다",
+       "y": 1366
+      },
+      {
+       "conf": 0.866,
+       "text": "*주머니가 깊지 않은 제품의 경우,주머 / 니속의 물건등이보행,운등 등에 의하",
+       "y": 1382
+      },
+      {
+       "conf": 0.895,
+       "text": "여주머니 밖으로 따집 수 있으니유의하시",
+       "y": 1445
+      },
+      {
+       "conf": 0.965,
+       "text": "기바랍니다.",
+       "y": 1503
+      },
+      {
+       "conf": 0.988,
+       "text": "MADE IN VIETNAM",
+       "y": 1535
+      },
+      {
+       "conf": 0.972,
+       "text": "FABRIQUE AU",
+       "y": 1584
+      },
+      {
+       "conf": 0.994,
+       "text": "VIETNAM",
+       "y": 1639
+      },
+      {
+       "conf": 0.994,
+       "text": "DIBUAT DINEG",
+       "y": 1771
+      }
+     ],
+     "y0": 0,
+     "y1": 1880
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.98,
+       "text": "DIBUAT DINEG",
+       "y": 51
+      },
+      {
+       "conf": 0.989,
+       "text": "VIETNAN",
+       "y": 112
+      },
+      {
+       "conf": 0.576,
+       "text": "IanT / 1+4",
+       "y": 170
+      },
+      {
+       "conf": 0.947,
+       "text": "RN# 88387 CA",
+       "y": 257
+      },
+      {
+       "conf": 0.828,
+       "text": "제조자:Bowker (Vietnan / Factory Co, Lid",
+       "y": 318
+      }
+     ],
+     "y0": 1720,
+     "y1": 2430
+    }
+   ],
+   "status": "read",
+   "width": 1215
+  },
+  {
+   "bytes": 3044587,
+   "height": 1913,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_152/1721304797432CKDk2_JPEG/20240718_211316_129.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.824,
+       "text": "흔용을 산정시,실지,상 / 보강재,자수,장식제의",
+       "y": 505
+      },
+      {
+       "conf": 0.951,
+       "text": "경 / 고",
+       "y": 627
+      },
+      {
+       "conf": 0.793,
+       "text": "·작은 부이 되면 삼길수있으니 / 주의하여주십시오",
+       "y": 748
+      },
+      {
+       "conf": 0.793,
+       "text": "·체집에 따라 피부알러지가 발생할수 / 주의하여주심시오",
+       "y": 792
+      },
+      {
+       "conf": 0.841,
+       "text": "경고 입에 넘으면 프탈레이트게 가소 / 있으니주의하여 주립시오",
+       "y": 832
+      },
+      {
+       "conf": 0.897,
+       "text": "제가 용출될 수 있으니 있에 넘지 마시오",
+       "y": 863
+      },
+      {
+       "conf": 0.953,
+       "text": "수입자:아디다스코리아(유)",
+       "y": 907
+      },
+      {
+       "conf": 0.977,
+       "text": "대표전화:02-2186-0300 / 아디다스 고객만족센터:1588-8241",
+       "y": 941
+      },
+      {
+       "conf": 0.907,
+       "text": "서울특별시 서초구 서초대로 74길 4",
+       "y": 986
+      },
+      {
+       "conf": 0.941,
+       "text": "삼성생명 서초타워 24층",
+       "y": 1021
+      },
+      {
+       "conf": 0.997,
+       "text": "0570-033-033",
+       "y": 1126
+      },
+      {
+       "conf": 0.708,
+       "text": "DrIMeOR OLEH: PT adidas Indonesia / Mid Plaza 2 Lt. 5J. Jend Sudiman Kav",
+       "y": 1162
+      },
+      {
+       "conf": 0.721,
+       "text": "1oakare to220 Indonesia",
+       "y": 1227
+      },
+      {
+       "conf": 0.669,
+       "text": "77/699 / 09790 / 20001 / SOCIOO",
+       "y": 1304
+      }
+     ],
+     "y0": 0,
+     "y1": 1913
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 164723,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230313_221/1678688520285EUYAa_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_3S_%EB%B0%98%ED%8C%94_%EB%B0%98%EC%86%8C%EB%A7%A4_ENJOY_PANDA_2.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.811,
+       "text": "2 / 2",
+       "y": 153
+      },
+      {
+       "conf": 0.902,
+       "text": "adldas",
+       "y": 167
+      }
+     ],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 230699,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230313_193/16786885202987VwRn_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_3S_%EB%B0%98%ED%8C%94_%EB%B0%98%EC%86%8C%EB%A7%A4_ENJOY_PANDA_3.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.974,
+       "text": "E / A",
+       "y": 862
+      }
+     ],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 269619,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230313_155/1678688520318FzMcN_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_3S_%EB%B0%98%ED%8C%94_%EB%B0%98%EC%86%8C%EB%A7%A4_ENJOY_PANDA.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.878,
+       "text": "E",
+       "y": 814
+      }
+     ],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 290337,
+   "height": 700,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210420_227/1618891518476VRgOM_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%98%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_(3).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.721,
+       "text": "Hidas",
+       "y": 0
+      },
+      {
+       "conf": 0.997,
+       "text": "피해보상규정(의복류)",
+       "y": 116
+      },
+      {
+       "conf": 0.95,
+       "text": "(공정거래위원회 고시 제 2009-1호)",
+       "y": 144
+      },
+      {
+       "conf": 0.902,
+       "text": "본 제품은 공정거래위원회가 고시한 소비자 / 문쟁 해결기준에 의거,정당한 소비자 피해에",
+       "y": 162
+      },
+      {
+       "conf": 0.916,
+       "text": "대해 다음과 같이 보상해 드립니다.",
+       "y": 210
+      },
+      {
+       "conf": 0.994,
+       "text": "소비자피해유형 / 보상기준",
+       "y": 243
+      },
+      {
+       "conf": 0.966,
+       "text": "봉제불량",
+       "y": 282
+      },
+      {
+       "conf": 0.951,
+       "text": "원단불량(제직불량,세탁후 / 구입일로부터 1년 이내분은",
+       "y": 298
+      },
+      {
+       "conf": 0.85,
+       "text": "변색,탈색,수축등) / 무상수리교한환불의",
+       "y": 316
+      },
+      {
+       "conf": 0.809,
+       "text": "치수 (싸이즈)의 부정확 / 순위로보상",
+       "y": 336
+      },
+      {
+       "conf": 0.917,
+       "text": "부당표시(미표시 및 부실표시) / 단봉제불량은구입기간에",
+       "y": 370
+      },
+      {
+       "conf": 0.906,
+       "text": "및 소재구성 부적합으로 인한 / 관계없이무상수리",
+       "y": 388
+      },
+      {
+       "conf": 0.806,
+       "text": "세탁사고 / RGE",
+       "y": 414
+      },
+      {
+       "conf": 0.933,
+       "text": "제품구입후7일이내로서 제품",
+       "y": 432
+      },
+      {
+       "conf": 0.873,
+       "text": "치수(싸이즈)가 맞지 않거나 / 에손상이 없는 경우동일가격",
+       "y": 447
+      },
+      {
+       "conf": 0.924,
+       "text": "디자인색상의불만 / 동일제품으로 교환원칙",
+       "y": 464
+      },
+      {
+       "conf": 0.918,
+       "text": "제품의 교환 및 보상은구입매장을 통해서만 가능하며",
+       "y": 498
+      },
+      {
+       "conf": 0.933,
+       "text": "이때 제품판매시제공된영수증또는판매확인증을",
+       "y": 519
+      },
+      {
+       "conf": 0.867,
+       "text": "반드시 지참하셔야 합니다. 또한 제품에 부착된 품질",
+       "y": 540
+      },
+      {
+       "conf": 0.904,
+       "text": "보증서, 폴리백의 손상이 없어야 합니다 / GE",
+       "y": 560
+      },
+      {
+       "conf": 0.9,
+       "text": "상하 한착인 경우한쪽에만 이상이 있어도 한 착으로",
+       "y": 580
+      },
+      {
+       "conf": 0.997,
+       "text": "처리합니다",
+       "y": 601
+      }
+     ],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 378054,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210420_60/1618891518520Vh5OW_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%98%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_(5).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.927,
+       "text": "PF",
+       "y": 142
+      },
+      {
+       "conf": 0.555,
+       "text": "GM3716 / B",
+       "y": 221
+      },
+      {
+       "conf": 0.966,
+       "text": "BLACK / SS POLO",
+       "y": 248
+      },
+      {
+       "conf": 0.993,
+       "text": "062064 / PO: 126657672",
+       "y": 448
+      },
+      {
+       "conf": 0.998,
+       "text": "801401 / adidas",
+       "y": 470
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 469035,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240419_262/17135096342853IsCz_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_main.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.977,
+       "text": "®",
+       "y": 168
+      },
+      {
+       "conf": 0.936,
+       "text": "adidas",
+       "y": 155
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 36293,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240419_177/1713509390611GAIFA_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_(1).jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 33955,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240419_82/1713509390613fEca9_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_(2).jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 36928,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240419_297/1713509390611QuD7F_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_(3).jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 32409,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240419_137/1713509390605wABEC_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_(4).jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 58849,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240419_118/1713509390613zG08f_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_(5).jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 57534,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240419_79/1713509390635QwsAA_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%B0%98%EB%B0%94%EC%A7%80_(6).jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 29185,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240421_47/1713708192724T0OQD_JPEG/28838_0.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 29305,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240421_106/1713708192722dHs1x_JPEG/28839_0.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 39429,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240421_45/1713708192722DIIPR_JPEG/28840_0.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.515,
+       "text": "-",
+       "y": 762
+      }
+     ],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 39691,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240421_195/1713708192723HoQMt_JPEG/28841_0.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.965,
+       "text": "-",
+       "y": 630
+      }
+     ],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1200
+  },
+  {
+   "bytes": 537508,
+   "height": 636,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230125_63/1674629731493fm8TJ_PNG/image.png",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.964,
+       "text": "KIRKLAND / ITM./ART. 1465053",
+       "y": 21
+      },
+      {
+       "conf": 0.994,
+       "text": "THREE-PIECE",
+       "y": 95
+      },
+      {
+       "conf": 0.99,
+       "text": "URETHANE / COVER",
+       "y": 139
+      },
+      {
+       "conf": 0.989,
+       "text": "GOLF BALL V2.0",
+       "y": 176
+      },
+      {
+       "conf": 0.967,
+       "text": "KIRKLAND / PERFORMANCE +",
+       "y": 234
+      },
+      {
+       "conf": 0.919,
+       "text": "Core-Soft and highy elastic / core to maximize distance",
+       "y": 296
+      },
+      {
+       "conf": 0.634,
+       "text": "Mant-ctsce  / optimizdspinforironand wedge shots",
+       "y": 334
+      },
+      {
+       "conf": 0.91,
+       "text": "Cover- Durable uetane cover / for spin and greenside control",
+       "y": 375
+      },
+      {
+       "conf": 0.989,
+       "text": "MADE IN CHINA",
+       "y": 448
+      },
+      {
+       "conf": 0.969,
+       "text": "FABRIOUE EN CHINE / HECHO EN CHINA",
+       "y": 466
+      },
+      {
+       "conf": 0.954,
+       "text": "HIGH SPIN FOR SHORT GAME / FEEL AND PERFORMANCE",
+       "y": 479
+      },
+      {
+       "conf": 0.949,
+       "text": "2- 12 COUNT BOXES",
+       "y": 508
+      },
+      {
+       "conf": 0.99,
+       "text": "TOTAL 24 BALLS",
+       "y": 543
+      }
+     ],
+     "y0": 0,
+     "y1": 636
+    }
+   ],
+   "status": "read",
+   "width": 849
+  },
+  {
+   "bytes": 426345,
+   "height": 566,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230125_36/1674629750466jSD7l_PNG/image.png",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.996,
+       "text": "KIRKLAND",
+       "y": 63
+      },
+      {
+       "conf": 0.949,
+       "text": "THREE-PIECE URETHANE COVER GOLF BALL V2.0",
+       "y": 69
+      },
+      {
+       "conf": 0.981,
+       "text": "THREE-PIECE / PERFORMANCE+",
+       "y": 88
+      },
+      {
+       "conf": 0.965,
+       "text": "URETHANE COVER",
+       "y": 108
+      },
+      {
+       "conf": 0.975,
+       "text": "GOLF BALL V2.0",
+       "y": 126
+      },
+      {
+       "conf": 0.914,
+       "text": "KIRKLAND / PERFORMANCE+ / KIRKLAND",
+       "y": 147
+      },
+      {
+       "conf": 0.567,
+       "text": "ll",
+       "y": 154
+      },
+      {
+       "conf": 0.903,
+       "text": "Mantle",
+       "y": 210
+      },
+      {
+       "conf": 0.996,
+       "text": "KIRKLAND / KIRKLAND",
+       "y": 442
+      }
+     ],
+     "y0": 0,
+     "y1": 566
+    }
+   ],
+   "status": "read",
+   "width": 861
+  },
+  {
+   "bytes": 38501,
+   "height": 780,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20190612_282/101327672_1560347789779XMMaO_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D46.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "KIRKLAND",
+       "y": 335
+      },
+      {
+       "conf": 0.842,
+       "text": "Fignatire",
+       "y": 372
+      },
+      {
+       "conf": 1.0,
+       "text": "1",
+       "y": 426
+      }
+     ],
+     "y0": 0,
+     "y1": 780
+    }
+   ],
+   "status": "read",
+   "width": 780
+  },
+  {
+   "bytes": 78456,
+   "height": 780,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20190612_64/101327672_1560347796497hQTID_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D43.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "KIRKLAND",
+       "y": 363
+      },
+      {
+       "conf": 0.855,
+       "text": "Srgnaticre",
+       "y": 400
+      }
+     ],
+     "y0": 0,
+     "y1": 780
+    }
+   ],
+   "status": "read",
+   "width": 780
+  },
+  {
+   "bytes": 76889,
+   "height": 542,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20190612_191/101327672_1560347825707mJppt_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D44.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.972,
+       "text": "KIRKLAND",
+       "y": 373
+      }
+     ],
+     "y0": 0,
+     "y1": 542
+    }
+   ],
+   "status": "read",
+   "width": 678
+  },
+  {
+   "bytes": 64816,
+   "height": 538,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20190612_190/101327672_1560347825707QeCXl_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D45.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.995,
+       "text": "KIRKLAND",
+       "y": 268
+      }
+     ],
+     "y0": 0,
+     "y1": 538
+    }
+   ],
+   "status": "read",
+   "width": 678
+  },
+  {
+   "bytes": 50490,
+   "height": 640,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20190612_9/101327672_1560347825708VKOHy_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D47.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.996,
+       "text": "KIRKLAND",
+       "y": 267
+      },
+      {
+       "conf": 0.806,
+       "text": "ONV",
+       "y": 489
+      }
+     ],
+     "y0": 0,
+     "y1": 640
+    }
+   ],
+   "status": "read",
+   "width": 640
+  },
+  {
+   "bytes": 337432,
+   "height": 590,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230125_215/1674629805796kuSY3_PNG/image.png",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.65,
+       "text": "M시ON",
+       "y": 167
+      },
+      {
+       "conf": 0.66,
+       "text": "FLON / Volvik",
+       "y": 256
+      },
+      {
+       "conf": 0.926,
+       "text": "FLYON",
+       "y": 335
+      }
+     ],
+     "y0": 0,
+     "y1": 590
+    }
+   ],
+   "status": "read",
+   "width": 819
+  },
+  {
+   "bytes": 237227,
+   "height": 526,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230125_180/1674629855260rwMc2_PNG/image.png",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.997,
+       "text": "Volvik",
+       "y": 123
+      },
+      {
+       "conf": 0.877,
+       "text": "FLYON",
+       "y": 166
+      },
+      {
+       "conf": 0.983,
+       "text": "Volvik",
+       "y": 248
+      },
+      {
+       "conf": 0.885,
+       "text": "Volvik / Volvik / Volvik / lolvik / volvik",
+       "y": 312
+      },
+      {
+       "conf": 0.999,
+       "text": "1 / 2",
+       "y": 337
+      },
+      {
+       "conf": 0.509,
+       "text": "AXO",
+       "y": 367
+      }
+     ],
+     "y0": 0,
+     "y1": 526
+    }
+   ],
+   "status": "read",
+   "width": 801
+  },
+  {
+   "bytes": 399961,
+   "height": 573,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230125_89/1674629893802lLpfA_PNG/image.png",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "NEW",
+       "y": 97
+      },
+      {
+       "conf": 0.596,
+       "text": "Volvik / Volvik",
+       "y": 119
+      },
+      {
+       "conf": 0.976,
+       "text": "Volvik / Volvik",
+       "y": 171
+      },
+      {
+       "conf": 0.94,
+       "text": "o/vik / Volvik / Volvik / Volvik",
+       "y": 265
+      },
+      {
+       "conf": 0.984,
+       "text": "Volvik",
+       "y": 275
+      },
+      {
+       "conf": 0.672,
+       "text": "FLZ",
+       "y": 330
+      },
+      {
+       "conf": 0.934,
+       "text": "2-PIECE PREMIUM BALL / Volvik / Vo/vik / Volvik / Volvik",
+       "y": 407
+      }
+     ],
+     "y0": 0,
+     "y1": 573
+    }
+   ],
+   "status": "read",
+   "width": 826
+  },
+  {
+   "bytes": 57085,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211108_71/1636351359211BHjwP_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-3%EC%83%89_%EB%A9%94%EC%9D%B8.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 182695,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211117_97/1637122231027kXdYO_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%B3%B8%EB%94%A9%EA%B8%B0%EB%AA%A8_%EB%B0%94%EC%A7%80_(1).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.686,
+       "text": "DIDAC",
+       "y": 246
+      },
+      {
+       "conf": 0.925,
+       "text": "92 (36)",
+       "y": 655
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 389607,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211117_290/1637122231069txME0_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%B3%B8%EB%94%A9%EA%B8%B0%EB%AA%A8_%EB%B0%94%EC%A7%80_(2).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.575,
+       "text": "6",
+       "y": 235
+      },
+      {
+       "conf": 0.974,
+       "text": "adidas",
+       "y": 411
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 200437,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211117_231/1637122231006TvWkg_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%B3%B8%EB%94%A9%EA%B8%B0%EB%AA%A8_%EB%B0%94%EC%A7%80_(3).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.676,
+       "text": "cardos",
+       "y": 236
+      },
+      {
+       "conf": 0.932,
+       "text": "GT332",
+       "y": 386
+      },
+      {
+       "conf": 0.922,
+       "text": "adidas",
+       "y": 611
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 226888,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211117_81/1637122231041GoWXV_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%B3%B8%EB%94%A9%EA%B8%B0%EB%AA%A8_%EB%B0%94%EC%A7%80_(4).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.985,
+       "text": "92(36)",
+       "y": 732
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 31825,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211108_135/1636351125759bc9Xc_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EB%84%A4%EC%9D%B4%EB%B9%84_%EC%95%9E%EB%A9%B4.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 32132,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211108_252/1636351174333i9izj_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EB%84%A4%EC%9D%B4%EB%B9%84_%EB%92%B7%EB%A9%B4.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 31347,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211108_33/1636351283027CNc3f_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EA%B7%B8%EB%A0%88%EC%9D%B4_%EC%95%9E%EB%A9%B4.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.859,
+       "text": "I",
+       "y": 219
+      },
+      {
+       "conf": 0.639,
+       "text": "|",
+       "y": 424
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 32707,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211108_212/1636351291644Llmia_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%92%B7%EB%A9%B4.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 31429,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211108_8/1636351324395Kg4RI_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EB%B8%94%EB%9E%99_%EC%95%9E.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 31773,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211108_189/1636351332467FYzbV_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EB%B8%94%EB%9E%99_%EB%92%B7%EB%A9%B4.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 50559,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_216/1628846083338J3Xdt_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_main.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.95,
+       "text": "adidas",
+       "y": 96
+      },
+      {
+       "conf": 0.699,
+       "text": "0",
+       "y": 134
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 80087,
+   "height": 558,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_284/1628846093259AiAAa_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A910.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.851,
+       "text": "adidas",
+       "y": 325
+      }
+     ],
+     "y0": 0,
+     "y1": 558
+    }
+   ],
+   "status": "read",
+   "width": 676
+  },
+  {
+   "bytes": 61621,
+   "height": 575,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_212/1628846125560xfTcT_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A911.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.941,
+       "text": "||",
+       "y": 283
+      }
+     ],
+     "y0": 0,
+     "y1": 575
+    }
+   ],
+   "status": "read",
+   "width": 678
+  },
+  {
+   "bytes": 142527,
+   "height": 508,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_167/1628846125577p6Cbg_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A98.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 508
+    }
+   ],
+   "status": "read",
+   "width": 679
+  },
+  {
+   "bytes": 108903,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_234/1628846645076fIxbe_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(1).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.854,
+       "text": "Ⅲ",
+       "y": 537
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 82275,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_258/16288466006079IDaa_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(2).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "ASIA",
+       "y": 345
+      },
+      {
+       "conf": 0.925,
+       "text": "A/XL / D",
+       "y": 365
+      },
+      {
+       "conf": 0.985,
+       "text": "185/104A / A/XL",
+       "y": 426
+      },
+      {
+       "conf": 0.992,
+       "text": "AU/NZ",
+       "y": 503
+      },
+      {
+       "conf": 0.981,
+       "text": "KR",
+       "y": 574
+      },
+      {
+       "conf": 0.894,
+       "text": "US",
+       "y": 595
+      },
+      {
+       "conf": 0.597,
+       "text": "MADEM / KS",
+       "y": 622
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 153424,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_80/1628846600620NrCJV_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(4).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.968,
+       "text": "adidas",
+       "y": 171
+      },
+      {
+       "conf": 0.996,
+       "text": "ASIA",
+       "y": 199
+      },
+      {
+       "conf": 0.884,
+       "text": "A/XL / D",
+       "y": 222
+      },
+      {
+       "conf": 0.988,
+       "text": "A/XL",
+       "y": 313
+      },
+      {
+       "conf": 0.994,
+       "text": "185/104A",
+       "y": 336
+      },
+      {
+       "conf": 0.981,
+       "text": "AU/NZ",
+       "y": 394
+      },
+      {
+       "conf": 0.722,
+       "text": "KR / Us",
+       "y": 444
+      },
+      {
+       "conf": 0.728,
+       "text": "×L",
+       "y": 462
+      },
+      {
+       "conf": 0.919,
+       "text": "VETNAM / MADEIN",
+       "y": 486
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 173346,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_23/1628846600632qImXY_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(5).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "ASIA",
+       "y": 314
+      },
+      {
+       "conf": 0.93,
+       "text": "D",
+       "y": 334
+      },
+      {
+       "conf": 0.982,
+       "text": "A/XL",
+       "y": 337
+      },
+      {
+       "conf": 0.981,
+       "text": "A/XL",
+       "y": 436
+      },
+      {
+       "conf": 0.899,
+       "text": "185/104A",
+       "y": 462
+      },
+      {
+       "conf": 0.945,
+       "text": "AU/NZ",
+       "y": 513
+      },
+      {
+       "conf": 0.929,
+       "text": "KR / US",
+       "y": 587
+      },
+      {
+       "conf": 0.927,
+       "text": "XL",
+       "y": 609
+      },
+      {
+       "conf": 0.818,
+       "text": "VIETNAM / NADEIN",
+       "y": 651
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 32240,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_141/1628846137148JD8S7_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A93.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 31883,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_29/1628846144296iTTEy_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A94.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 109799,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_182/1628846653006VCp1F_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(3).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.963,
+       "text": "ASIA / D",
+       "y": 171
+      },
+      {
+       "conf": 0.957,
+       "text": "85/04A",
+       "y": 220
+      },
+      {
+       "conf": 0.665,
+       "text": "AUNZ J",
+       "y": 245
+      },
+      {
+       "conf": 0.96,
+       "text": "S",
+       "y": 283
+      },
+      {
+       "conf": 0.756,
+       "text": "aaidas",
+       "y": 372
+      },
+      {
+       "conf": 0.93,
+       "text": "aaidas",
+       "y": 676
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 39840,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_146/1628846161669skMAS_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A95.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.829,
+       "text": "o",
+       "y": 238
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 38160,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_209/1628846167172u1xUS_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A96.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 44231,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_70/1628846177393j6sCG_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A9.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.829,
+       "text": "o",
+       "y": 238
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 42462,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_91/1628846182513qy3TC_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A92.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 95413,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210813_153/16288466716234T62s_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(6).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.961,
+       "text": "ASA",
+       "y": 212
+      },
+      {
+       "conf": 0.572,
+       "text": "AUNZJ / K영",
+       "y": 207
+      },
+      {
+       "conf": 0.979,
+       "text": "didas",
+       "y": 671
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 268922,
+   "height": 700,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210420_53/1618891608326RtOOu_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%98%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_(4).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.913,
+       "text": "1. / 제품을 / 을 취급하실 때에는 제품에 부착된",
+       "y": 162
+      },
+      {
+       "conf": 0.953,
+       "text": "2. / 본취취본구기 / 제품에 이상이나불만사항이발생되면",
+       "y": 156
+      },
+      {
+       "conf": 0.866,
+       "text": "입점 / 또는 고객상담실로 훈의하여 추시",
+       "y": 235
+      },
+      {
+       "conf": 0.923,
+       "text": "바랍니다.",
+       "y": 256
+      },
+      {
+       "conf": 0.935,
+       "text": "3. / 비 / 품질봉증기간이",
+       "y": 277
+      },
+      {
+       "conf": 0.87,
+       "text": "소경습단 / 과 / 품 / 몸은 피해보상 책임흘지지않",
+       "y": 295
+      },
+      {
+       "conf": 0.662,
+       "text": "니",
+       "y": 314
+      },
+      {
+       "conf": 0.925,
+       "text": "수선이 가능한경우는실비로수선해드립니다.)",
+       "y": 329
+      },
+      {
+       "conf": 0.878,
+       "text": "공 / 정건래우 / 위원회가,고시한 소비자",
+       "y": 357
+      },
+      {
+       "conf": 0.89,
+       "text": "본분 / 기준에 / 의거,청당한 소비자 피해에",
+       "y": 354
+      },
+      {
+       "conf": 0.893,
+       "text": "교환 / 환불해 드립니다.",
+       "y": 395
+      },
+      {
+       "conf": 0.574,
+       "text": "TKo / 구입후1년",
+       "y": 416
+      },
+      {
+       "conf": 0.672,
+       "text": "'간소자소 / 구입적",
+       "y": 433
+      },
+      {
+       "conf": 0.923,
+       "text": "입 / 아디다스코리아 (유)",
+       "y": 452
+      },
+      {
+       "conf": 0.892,
+       "text": "서울특별시서초구 서총대로 74",
+       "y": 471
+      },
+      {
+       "conf": 0.969,
+       "text": "길4,삼성생명 서초타워 24층",
+       "y": 490
+      },
+      {
+       "conf": 0.971,
+       "text": "·대표전화:02-2186-0300",
+       "y": 511
+      },
+      {
+       "conf": 0.963,
+       "text": "·아디다스 고객만족센터:1588-8241",
+       "y": 527
+      },
+      {
+       "conf": 0.982,
+       "text": "!경고",
+       "y": 553
+      },
+      {
+       "conf": 0.905,
+       "text": "·라벌에 표시된사용상 주의사항을 반드시 숙지하여 주십시오.",
+       "y": 579
+      },
+      {
+       "conf": 0.792,
+       "text": "접근 시 길이 옮겨 을가능성이 있으니 주의하여 주십시오.",
+       "y": 592
+      },
+      {
+       "conf": 0.821,
+       "text": "·작은 부품이 말락되면 상길 수 있으니 주의하여 주십시오.",
+       "y": 608
+      },
+      {
+       "conf": 0.854,
+       "text": "·체질에 따라 피부알러지가 발성할 수 있으니 주의하여 주십시오",
+       "y": 622
+      },
+      {
+       "conf": 0.737,
+       "text": "·경고!입어 넣으면 프말레이게가소제가 용을월수 있으니입에 넣지 마시오",
+       "y": 636
+      }
+     ],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 118061,
+   "height": 650,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20191219_30/15767645031168C74Y_JPEG/%B9%E8%BC%DB_%B1%B3%C8%AF_%B9%DD%C7%B0_%BE%C8%B3%BB_%BA%B9%BB%E7.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.904,
+       "text": "구매 전 확인 요망(CHECK BEFORE BUYING| )",
+       "y": 6
+      },
+      {
+       "conf": 0.982,
+       "text": "배송 안내",
+       "y": 88
+      },
+      {
+       "conf": 0.931,
+       "text": "1 / 저희 마켓의 계약 택배사는CJ대한통운입니다.",
+       "y": 178
+      },
+      {
+       "conf": 0.889,
+       "text": "2 / 단, 외주 물류센터 발송 건에 대해서는 타 택배사로 배송될 수 있습니다",
+       "y": 202
+      },
+      {
+       "conf": 0.915,
+       "text": "3 / 저희가 판매하는 모든 상품은 최저가 행사상품이오니 묶음배송 되더라도배송비 환불은 불가하오니 착오 없으시길 바랍니다.",
+       "y": 228
+      },
+      {
+       "conf": 0.919,
+       "text": "4 / 배송은 제품구매일로부터 3일이내발송됩니다.(제품품절 및 택배사사정상 다소 지연될 수 있습니다.)",
+       "y": 253
+      },
+      {
+       "conf": 0.971,
+       "text": "5 / 외주 물류센터에서 출고되는 상품에 대해서는 송장 조회 시 먼저\"직접 전달\"로 표기됩니다",
+       "y": 283
+      },
+      {
+       "conf": 0.925,
+       "text": "(위 주문건에 대해서는 3일 이내 정상송장번호로 조회가 가능합니다.)",
+       "y": 306
+      },
+      {
+       "conf": 0.952,
+       "text": "교환 반품 상담 안내",
+       "y": 397
+      },
+      {
+       "conf": 0.924,
+       "text": "1 / 주문 취소 희망시꼭 판매자에게 톡톡메세지 부탁드립니다",
+       "y": 477
+      },
+      {
+       "conf": 0.938,
+       "text": "2 / 톡톡메세지 혹은 연락 없이 취소 요청시 출고가 되어 고객에게 물품이 발송 될 수 있습니다.",
+       "y": 504
+      },
+      {
+       "conf": 0.977,
+       "text": "3 / 이 경우,반품 택배비는 고객님의 부담이 되니,반드시 판매자와 상담 후 취소 진행 바랍니다.",
+       "y": 529
+      },
+      {
+       "conf": 0.923,
+       "text": "제품의 포장상태훼손,택의 제거,착용(사용)으로 인해 상품의 가치가 현저히 떨어진 경우반품및 환불이 불가합니다.",
+       "y": 556
+      },
+      {
+       "conf": 0.936,
+       "text": "구매하신 사이트에서 교환/반품 신청 후CJ대한통운 택배사가 회수합니다.",
+       "y": 582
+      },
+      {
+       "conf": 0.936,
+       "text": "(타 택배사 이용 혹은 고객 직접 착불로발송할 경우 추가 배송비가 별도 부과됩니다.)",
+       "y": 607
+      }
+     ],
+     "y0": 0,
+     "y1": 650
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:100267387:11017948766",
+ "links_sha256": "dd3a413bbfa8dd0aa030fcb5853ed6b7aef6648c4b21f6c013a3836e0f910126",
+ "product_id": "11017948766",
+ "seconds": 75.6,
+ "skipped": []
+}

@@ -222,6 +222,31 @@ Code: `transform.options_and_variants`.
   waist or a letter glued to a Hangul colour or a ")" splits in a waist profile ("블랙34", "151(블랙)30": promore
   4954391160, 5536196761; `apparel_sizes._words`); two options each joining a colour and a size ("크림M" / "베이지M",
   1+1, 내추럴모드 10821435743) hold size_unmapped as a set of two (`transform._sizes`).
+- Apparel sizes, the size_unmapped review (2026-11-24; [SIZES.md](SIZES.md) "How to use"): halfclub's one-combination
+  listings write the one variant's colour and size in one fact ("선택하기: Dark Navy/090", 12487907002, 13291281940,
+  13684467368): a size with a number is the fact's size (`apparel_sizes.single_joined`), a letter alone still holds;
+  a Naver group product's member writes its size only in the title after the listing's name ("... 가디건 블랙, 105",
+  베러투데이 13004790971): taken when the listing's name is the title's base and the size has a number
+  (`transform.title_size`); the group's other sizes come as products of their own (a dedupe / lens question);
+  "블랙(free)" as the size fact (11492588480), "오프화이트 85 XS" (10940191023), adidas "AL(95)" (10861903381) and
+  "A82 (32인치)" (7191019224, 10159594995), "33-30" waist and length (9918112671), "긴팔55" (10968014964),
+  "블랙하운드55" (5895988627), "화이트-S" (7124536208) are read.
+- Apparel sizes, the size_unmapped review's second pass (2026-11-25; [SIZES.md](SIZES.md) "How to use"): sellers of
+  golf tops list trousers, a jacket or a summer cooling top as one more design ("디자인 선택: 아디다스 [봄/가을]골프
+  긴바지", 13762280030), pants sellers a polo, tees or shorts (5534297375): those rows are left out
+  (`CategoryRules.variant_drop`); a top listing selling two makers' polos under one option gets no size chart. One
+  seller writes one adidas waist "85(33)" and "85(35)" (5815131892); a mixed listing names each size's gender
+  ("여성 55(M)" / "남성 95(M)", 6485458095); majorgolf prints a "주문사이즈" table under adidas' letters or codes
+  (9998916822, 11493370731); 핑크골프 writes "라지(L)" and a tip "엑스라지(XL)사이즈 - 88이상" (7965635614); 로로얼로이
+  letters its chart one step up and its notice "S(55), M(66), L(77)" (9317474764). Each read by its rule, with tests.
+  The two reviews of that pass (2026-11-25): a seller puts two genders' tables in one image under "남성용" / "여성용"
+  headings (8325761055: each gender's rows from its own table); a misread OCR row ("XL(3]~33)", 5587004670) leaves one
+  letter on another style's row (held, the ladder read two ways); majorgolf's adidas tops write each model's chart with
+  other numbers under one Asian letter (the owner's letters win, 5176506757, 13740514016); 매일츄리닝 writes "36(4XL)"
+  beside another style's "36" (7455950253) and a second line of body sizes under its letters (6033600342); a style
+  whose sizes the seller writes inconsistently is left out on the owner's word (`<shop>/variants_by_owner.json`).
+  Fixtures (collected, OCR sidecar, golden): 11017948766, 10076109143, 5282622633, 5460564989, 11859489664,
+  9435597606, 6485458095, 13740514016.
 - Sellers' size charts (2026-11-20, the same review; [SIZE_CHARTS.md](SIZE_CHARTS.md)): a model block's "Bust : 83cm"
   (10940191023) and "마른66사이즈" (11573884405) are no chart; "53/53" is one cell (11377634969); "CM" is a corner
   (13021502381); an OCR value that breaks its column's run is dropped (13338110183) (`size_chart.py`).

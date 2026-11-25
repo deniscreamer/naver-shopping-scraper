@@ -1,0 +1,1226 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 350846,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_251/1783065180144K5aYD_JPEG/p-12314122725-s-3-A-0.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.912,
+       "text": "2EL4",
+       "y": 133
+      },
+      {
+       "conf": 0.992,
+       "text": "Daily&sports comfortable wear",
+       "y": 205
+      },
+      {
+       "conf": 0.977,
+       "text": "투엘라 켓워크 여성",
+       "y": 292
+      },
+      {
+       "conf": 0.966,
+       "text": "세미 부츠컷 스판 팬츠",
+       "y": 359
+      },
+      {
+       "conf": 0.952,
+       "text": "탄탄하고 내구성이 뛰어난 나일론 소재",
+       "y": 1437
+      },
+      {
+       "conf": 0.977,
+       "text": "세미 부츠컷으로 핏을 살린",
+       "y": 1502
+      },
+      {
+       "conf": 0.978,
+       "text": "골프 무드 스판팬츠",
+       "y": 1574
+      }
+     ],
+     "y0": 0,
+     "y1": 1799
+    },
+    {
+     "rows": [],
+     "y0": 1799,
+     "y1": 3679
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.983,
+       "text": "Color Choice",
+       "y": 1031
+      },
+      {
+       "conf": 0.999,
+       "text": "색상:베이지/화이트/블랙",
+       "y": 1234
+      },
+      {
+       "conf": 0.989,
+       "text": "사이즈:S(25~26)/M(26반~27)/L(28~29)",
+       "y": 1287
+      },
+      {
+       "conf": 0.995,
+       "text": "/XL(30~31)/2XL(32~33)",
+       "y": 1335
+      },
+      {
+       "conf": 0.97,
+       "text": "소재: 나일론86%,폴리우레탄14% 착용계절:4월~9월",
+       "y": 1387
+      },
+      {
+       "conf": 0.958,
+       "text": "* 베이지,화이트 색상은 약간의 비침이 있으므로",
+       "y": 1440
+      },
+      {
+       "conf": 0.944,
+       "text": "스킨색 속옷 착용을 권장드립니다.",
+       "y": 1472
+      }
+     ],
+     "y0": 3519,
+     "y1": 5067
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.925,
+       "text": "블랙BLACK / 베이지BEIGE / 화이트 WHITE",
+       "y": 609
+      },
+      {
+       "conf": 0.982,
+       "text": "SIZE TIP",
+       "y": 897
+      },
+      {
+       "conf": 0.959,
+       "text": "정사이즈로 제작되었습니다.",
+       "y": 953
+      },
+      {
+       "conf": 0.942,
+       "text": "(상세페이지 사이즈 표참고 부탁드립니다.)",
+       "y": 987
+      }
+     ],
+     "y0": 5067,
+     "y1": 6947
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.993,
+       "text": "내구성과 신축성이 뛰어나",
+       "y": 614
+      },
+      {
+       "conf": 0.989,
+       "text": "장시간 착용에도 편안한",
+       "y": 690
+      },
+      {
+       "conf": 0.954,
+       "text": "나일론 스판 원단",
+       "y": 767
+      },
+      {
+       "conf": 0.968,
+       "text": "나일론 특유의 가볍고 매끄러운 촉감에",
+       "y": 881
+      },
+      {
+       "conf": 0.966,
+       "text": "마찰에 강한 내구성까지 더해져",
+       "y": 931
+      },
+      {
+       "conf": 0.997,
+       "text": "하루 종일 쾌적한 착용감을 선사합니다.",
+       "y": 979
+      },
+      {
+       "conf": 0.992,
+       "text": "또한 PU(스판)이 함유되어 신축성이 우수하며",
+       "y": 1030
+      },
+      {
+       "conf": 0.963,
+       "text": "늘어남 없이 원래의 핏을 탄탄하게 유지해 줍니다.",
+       "y": 1079
+      }
+     ],
+     "y0": 6787,
+     "y1": 8254
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.971,
+       "text": "어떤 움직임에도 한계 없이 늘어나는 뛰어난 스트레치",
+       "y": 998
+      },
+      {
+       "conf": 0.954,
+       "text": "다이내믹한 스윙도 거침없이,",
+       "y": 1053
+      },
+      {
+       "conf": 0.977,
+       "text": "최상의 퍼포먼스를 이끌다",
+       "y": 1129
+      }
+     ],
+     "y0": 8254,
+     "y1": 9669
+    },
+    {
+     "rows": [],
+     "y0": 9669,
+     "y1": 11549
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.947,
+       "text": "Cat / Work",
+       "y": 350
+      },
+      {
+       "conf": 0.999,
+       "text": "comfortable stylish stretch pants",
+       "y": 528
+      },
+      {
+       "conf": 0.824,
+       "text": "PU(W판)함유로우수한 신측성",
+       "y": 1749
+      },
+      {
+       "conf": 0.877,
+       "text": "오래입어도무릎 나옴 걱정 없는",
+       "y": 1819
+      },
+      {
+       "conf": 0.947,
+       "text": "탄탄한 고탄력소재",
+       "y": 1892
+      }
+     ],
+     "y0": 11389,
+     "y1": 13507
+    },
+    {
+     "rows": [],
+     "y0": 13507,
+     "y1": 14919
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.684,
+       "text": "2P",
+       "y": 372
+      },
+      {
+       "conf": 0.9,
+       "text": "Cat Work",
+       "y": 695
+      },
+      {
+       "conf": 0.997,
+       "text": "comfortable stylish stretch pants",
+       "y": 891
+      }
+     ],
+     "y0": 14919,
+     "y1": 16799
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.957,
+       "text": "베이직한 디자인과 세련된 핏으로 부담 없이",
+       "y": 456
+      },
+      {
+       "conf": 0.926,
+       "text": "꾸민 듯안 꾸민듯 자연스럽게,",
+       "y": 518
+      },
+      {
+       "conf": 0.947,
+       "text": "내 일상에스며드는 룩",
+       "y": 593
+      }
+     ],
+     "y0": 16639,
+     "y1": 18762
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.994,
+       "text": "Check Point",
+       "y": 208
+      },
+      {
+       "conf": 0.841,
+       "text": "2ELA",
+       "y": 475
+      },
+      {
+       "conf": 0.999,
+       "text": "단정함살려주는",
+       "y": 740
+      },
+      {
+       "conf": 0.994,
+       "text": "벨트고리",
+       "y": 770
+      },
+      {
+       "conf": 0.989,
+       "text": "양사이드",
+       "y": 937
+      },
+      {
+       "conf": 0.997,
+       "text": "일반포켓",
+       "y": 971
+      },
+      {
+       "conf": 0.934,
+       "text": "PU(스판) 함유",
+       "y": 1296
+      },
+      {
+       "conf": 0.929,
+       "text": "우수한 신축성",
+       "y": 1332
+      },
+      {
+       "conf": 0.903,
+       "text": "무릎이 나오지 않는",
+       "y": 1557
+      },
+      {
+       "conf": 0.965,
+       "text": "탄탄한나일론소재",
+       "y": 1593
+      }
+     ],
+     "y0": 18762,
+     "y1": 20642
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.992,
+       "text": "투엘라",
+       "y": 318
+      },
+      {
+       "conf": 0.989,
+       "text": "시그니처로고",
+       "y": 353
+      },
+      {
+       "conf": 0.99,
+       "text": "복부압박없는",
+       "y": 550
+      },
+      {
+       "conf": 0.937,
+       "text": "히든뒷밴딩",
+       "y": 587
+      },
+      {
+       "conf": 0.972,
+       "text": "양사이드",
+       "y": 683
+      },
+      {
+       "conf": 0.925,
+       "text": "힙포켓",
+       "y": 715
+      },
+      {
+       "conf": 0.943,
+       "text": "종아리 부각없는",
+       "y": 1529
+      },
+      {
+       "conf": 0.99,
+       "text": "세미부츠컷",
+       "y": 1564
+      }
+     ],
+     "y0": 20482,
+     "y1": 22590
+    },
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "01",
+       "y": 97
+      },
+      {
+       "conf": 0.995,
+       "text": "갑작스러운 보슬비 걱정 없는",
+       "y": 216
+      },
+      {
+       "conf": 0.966,
+       "text": "생활발수 기능성 원단",
+       "y": 283
+      },
+      {
+       "conf": 0.973,
+       "text": "생활 발수 기능성 원단을 사용하여 액체 오염에 강해요.",
+       "y": 374
+      },
+      {
+       "conf": 1.0,
+       "text": "02",
+       "y": 1432
+      },
+      {
+       "conf": 0.977,
+       "text": "뱃살이 있어도 말리지 않는",
+       "y": 1555
+      },
+      {
+       "conf": 0.96,
+       "text": "탄탄한 히든 허리 뒷 밴딩",
+       "y": 1622
+      },
+      {
+       "conf": 0.989,
+       "text": "허리 뒤쪽 전체 밴딩을 적용하여 허리 부분이 유연하게",
+       "y": 1709
+      },
+      {
+       "conf": 0.965,
+       "text": "늘어나고 조여지지 않아 편하게 입을 수 있어요.",
+       "y": 1761
+      },
+      {
+       "conf": 0.999,
+       "text": "게다가 밴딩이 밖으로 드러나지 않는 히든 밴딩으로",
+       "y": 1812
+      },
+      {
+       "conf": 0.979,
+       "text": "깔끔한 핏을 자랑해요.",
+       "y": 1862
+      }
+     ],
+     "y0": 22590,
+     "y1": 24538
+    },
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "03",
+       "y": 975
+      },
+      {
+       "conf": 0.973,
+       "text": "활동 많은 날에도 걱정 없이,",
+       "y": 1090
+      },
+      {
+       "conf": 0.987,
+       "text": "PU(스판)함유 스트레치 원단",
+       "y": 1162
+      },
+      {
+       "conf": 0.979,
+       "text": "PU(스판)이 함유되어 신축성이 매우 뛰어나고",
+       "y": 1251
+      },
+      {
+       "conf": 0.979,
+       "text": "착용감이 우수해 움직임이 많은 날에도 편안해요.",
+       "y": 1304
+      }
+     ],
+     "y0": 24538,
+     "y1": 25957
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "04",
+       "y": 947
+      },
+      {
+       "conf": 0.962,
+       "text": "좌우 앞,뒤 총 4개의 깔끔한 포켓과",
+       "y": 1066
+      },
+      {
+       "conf": 0.983,
+       "text": "왼쪽 엉덩이 로고 나염 포인트",
+       "y": 1134
+      },
+      {
+       "conf": 0.969,
+       "text": "간단한 소지품을 보관할 수 있도록 좌우 앞,뒤로",
+       "y": 1223
+      },
+      {
+       "conf": 0.956,
+       "text": "총 4개의 깔끔한 포켓이 있어요.",
+       "y": 1276
+      },
+      {
+       "conf": 0.975,
+       "text": "왼쪽 엉덩이에는 로고 나염을 포인트를 줬어요.",
+       "y": 1326
+      }
+     ],
+     "y0": 25957,
+     "y1": 27398
+    },
+    {
+     "rows": [],
+     "y0": 27398,
+     "y1": 28970
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.679,
+       "text": "CZA",
+       "y": 195
+      },
+      {
+       "conf": 0.878,
+       "text": "7",
+       "y": 469
+      }
+     ],
+     "y0": 28970,
+     "y1": 31155
+    },
+    {
+     "rows": [],
+     "y0": 31155,
+     "y1": 32590
+    },
+    {
+     "rows": [],
+     "y0": 32590,
+     "y1": 34470
+    },
+    {
+     "rows": [],
+     "y0": 34310,
+     "y1": 36447
+    },
+    {
+     "rows": [],
+     "y0": 36447,
+     "y1": 38327
+    },
+    {
+     "rows": [],
+     "y0": 38167,
+     "y1": 40328
+    },
+    {
+     "rows": [],
+     "y0": 40328,
+     "y1": 41784
+    },
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "색상안내",
+       "y": 191
+      },
+      {
+       "conf": 0.974,
+       "text": "COLOR INFO",
+       "y": 273
+      },
+      {
+       "conf": 0.886,
+       "text": "제품 이미지가 실제색상과 가장 유사하며 모니터 해상도에 따라 약간의 차이가 있을수 있습니다.",
+       "y": 370
+      },
+      {
+       "conf": 0.968,
+       "text": "베이지BEIGE",
+       "y": 1292
+      }
+     ],
+     "y0": 41784,
+     "y1": 43664
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.993,
+       "text": "블랙BLACK / 화이트WHITE",
+       "y": 469
+      },
+      {
+       "conf": 0.908,
+       "text": "컬러디테일의 정확한 표현을 위해 모니터의밝기 및 명암 조절을권장합니다.",
+       "y": 646
+      },
+      {
+       "conf": 0.908,
+       "text": "모니터 해상도에 따라다소색상 차이가 있을수있습니다.",
+       "y": 673
+      },
+      {
+       "conf": 0.98,
+       "text": "사이즈 안내",
+       "y": 982
+      },
+      {
+       "conf": 0.969,
+       "text": "SIZE INFO",
+       "y": 1057
+      },
+      {
+       "conf": 0.89,
+       "text": "체형에 따라 핏이 달라질 수 있으므로 반드시 실측 사이즈를 확인해 주세요.",
+       "y": 1159
+      },
+      {
+       "conf": 0.997,
+       "text": "색상 / 베이지/화이트/블랙",
+       "y": 1286
+      },
+      {
+       "conf": 0.986,
+       "text": "사이즈 / S(25~26)/M(26반~27)/L(28~29)",
+       "y": 1338
+      },
+      {
+       "conf": 0.975,
+       "text": "/XL(30~31)/2XL(32~33)",
+       "y": 1396
+      },
+      {
+       "conf": 0.993,
+       "text": "소재 / 나일론86%,폴리우레탄14%",
+       "y": 1448
+      },
+      {
+       "conf": 0.997,
+       "text": "제조년월 / 2025년2월",
+       "y": 1504
+      },
+      {
+       "conf": 0.999,
+       "text": "제조국 / 베트남",
+       "y": 1557
+      },
+      {
+       "conf": 0.99,
+       "text": "판매/수입 / 투엘라",
+       "y": 1615
+      }
+     ],
+     "y0": 43504,
+     "y1": 45205
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "허리너비",
+       "y": 46
+      },
+      {
+       "conf": 0.925,
+       "text": "O",
+       "y": 131
+      },
+      {
+       "conf": 0.968,
+       "text": "밑위",
+       "y": 163
+      },
+      {
+       "conf": 1.0,
+       "text": "엉덩이",
+       "y": 203
+      },
+      {
+       "conf": 0.996,
+       "text": "허벅지",
+       "y": 249
+      },
+      {
+       "conf": 1.0,
+       "text": "총길이",
+       "y": 364
+      },
+      {
+       "conf": 0.918,
+       "text": "밑단",
+       "y": 652
+      },
+      {
+       "conf": 0.922,
+       "text": "사이즈 / 총길이 / 허리 / 엉덩이 / 허벅지 / 밑위 / 밑단",
+       "y": 747
+      },
+      {
+       "conf": 0.997,
+       "text": "S(25~26) / 91.5 / 36 / 44 / 27 / 21.5 / 19.5",
+       "y": 805
+      },
+      {
+       "conf": 0.967,
+       "text": "M(26반~27) / 93 / 38.5 / 46.5 / 28 / 22.5 / 20",
+       "y": 851
+      },
+      {
+       "conf": 0.987,
+       "text": "L(27~29) / 94.5 / 41 / 49 / 29 / 23.5 / 20.5",
+       "y": 900
+      },
+      {
+       "conf": 0.987,
+       "text": "XL(30~31) / 96 / 43.5 / 51.5 / 30 / 24.5 / 21",
+       "y": 946
+      },
+      {
+       "conf": 0.994,
+       "text": "2XL(32~33) / 97.5 / 46 / 54 / 32 / 25.5 / 21.5",
+       "y": 996
+      },
+      {
+       "conf": 0.921,
+       "text": "*사이즈는재는 위치와 사람에따라2~3cm정도 차이가 있을수 있습니다. / (단위:cm)",
+       "y": 1059
+      },
+      {
+       "conf": 0.932,
+       "text": "모든 실측사이즈는 단면 사이즈입니다",
+       "y": 1093
+      },
+      {
+       "conf": 0.956,
+       "text": "투엘라 배송/교환/반품/환불안내",
+       "y": 1360
+      },
+      {
+       "conf": 0.99,
+       "text": "상담시간:평일오전10:00~16:30",
+       "y": 1406
+      },
+      {
+       "conf": 0.995,
+       "text": "점심시간:12:00~13:00",
+       "y": 1431
+      }
+     ],
+     "y0": 45205,
+     "y1": 46759
+    },
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "배송안내",
+       "y": 61
+      },
+      {
+       "conf": 0.945,
+       "text": "1.평일오후1시 이전 결제 완료 시당일출고됩니다.(우체국택배이용)",
+       "y": 138
+      },
+      {
+       "conf": 0.97,
+       "text": "(택배 물량이 과도하게 몰리는 특정일& 주말 및 공휴일에는 당일 출고가 어렵습니다.)",
+       "y": 171
+      },
+      {
+       "conf": 0.894,
+       "text": "2.당일 출고 되었으나 택배사의 사정에 의해 배송이 간혹 지연 될 수있습니다.",
+       "y": 208
+      },
+      {
+       "conf": 0.954,
+       "text": "3.3만원이상 구매 시 무료배송/3만원 미만은2,500원의 배송비 부과됩니다.",
+       "y": 250
+      },
+      {
+       "conf": 0.948,
+       "text": "4.제주도/독도/울릉도등 도서산간지역추가금없습니다.",
+       "y": 288
+      },
+      {
+       "conf": 1.0,
+       "text": "교환/반품안내",
+       "y": 416
+      },
+      {
+       "conf": 0.93,
+       "text": "1.상품 수령 후7일이내에교환/반품 신청이 가능합니다.",
+       "y": 492
+      },
+      {
+       "conf": 0.922,
+       "text": "2.상품 하자 또는 오배송으로 인한 경우 동일 상품으로무료교환이 가능합니다.",
+       "y": 532
+      },
+      {
+       "conf": 0.973,
+       "text": "3.단순변심,주문자실수로인한교환/반품시배송비는고객부담입니다.",
+       "y": 571
+      },
+      {
+       "conf": 0.924,
+       "text": "√교환/반품이어려운경우",
+       "y": 670
+      },
+      {
+       "conf": 0.995,
+       "text": "1.상품수령후7일이지난경우",
+       "y": 770
+      },
+      {
+       "conf": 0.862,
+       "text": "2.착용흔적,세탁,수선,향수념새,얼륙 등으로 상품의 가치가 훼손된 경우",
+       "y": 810
+      },
+      {
+       "conf": 0.988,
+       "text": "교환/반품 주소지",
+       "y": 1029
+      },
+      {
+       "conf": 0.948,
+       "text": "대구광역시 달성군 다사읍 서재로14길6-30투엘라",
+       "y": 1082
+      }
+     ],
+     "y0": 46759,
+     "y1": 48086
+    }
+   ],
+   "status": "read",
+   "width": 945
+  },
+  {
+   "bytes": 566025,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_266/1783065180146xEVOE_JPEG/p-12314122725-s-3-A-1.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 540271,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_82/1783065180145OqncJ_JPEG/p-12314122725-s-3-A-2.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 471323,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_50/1783065180144zb7z7_JPEG/p-12314122725-s-3-A-3.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 248803,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_131/1783065180143cLx76_JPEG/p-12314122725-s-3-A-4.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 207826,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_262/1783065180142HsvWx_JPEG/p-12314122725-s-3-A-5.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 515680,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_180/1783065180146skbll_JPEG/p-12314122725-s-3-A-6.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 329511,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_189/1783065180142bEWAI_JPEG/p-12314122725-s-3-A-7.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 520707,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_188/1783065180146YWJx5_JPEG/p-12314122725-s-3-A-8.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 414031,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_33/1783065180146myChO_JPEG/p-12314122725-s-3-A-9.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 445970,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_103/178306518022820tvC_JPEG/p-12314122725-s-3-A-10.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 663802,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_94/1783065180233LJePk_JPEG/p-12314122725-s-3-A-11.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 661981,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_88/1783065180241CdsJz_JPEG/p-12314122725-s-3-A-12.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 485693,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_263/1783065180245dUyph_JPEG/p-12314122725-s-3-A-13.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 511701,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_165/1783065180246XGfIL_JPEG/p-12314122725-s-3-A-14.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 555611,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_235/17830651802473wJCP_JPEG/p-12314122725-s-3-A-15.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 340887,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_201/1783065180246b7zqO_JPEG/p-12314122725-s-3-A-16.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 255013,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_291/1783065180252sxoFx_JPEG/p-12314122725-s-3-A-17.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 228191,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_275/17830651802574Ts6x_JPEG/p-12314122725-s-3-A-18.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 161962,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_45/1783065180261X36Y8_JPEG/p-12314122725-s-3-A-19.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 508530,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_74/1783065180328j5dQv_JPEG/p-12314122725-s-3-A-20.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 383626,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_295/1783065180332Ov5p4_JPEG/p-12314122725-s-3-A-21.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 426013,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_201/1783065180336TGDEi_JPEG/p-12314122725-s-3-A-22.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 476334,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_41/1783065180339kyrji_JPEG/p-12314122725-s-3-A-23.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 421931,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_147/1783065180341v6URY_JPEG/p-12314122725-s-3-A-24.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 641905,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_66/1783065180348u7Huz_JPEG/p-12314122725-s-3-A-25.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 361695,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_175/1783065180351O7MMr_JPEG/p-12314122725-s-3-A-26.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 369507,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_88/1783065180356TSlX6_JPEG/p-12314122725-s-3-A-27.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 357944,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_296/1783065180351JUyPV_JPEG/p-12314122725-s-3-A-28.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 345768,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_176/1783065180428uQnQR_JPEG/p-12314122725-s-3-A-29.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 347019,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_135/178306518036218YBs_JPEG/p-12314122725-s-3-A-30.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 361414,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_59/17830651804312WYo9_JPEG/p-12314122725-s-3-A-31.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 346458,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_56/1783065180446mSzpW_JPEG/p-12314122725-s-3-A-32.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 351850,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_169/1783065180435L9h2Q_JPEG/p-12314122725-s-3-A-33.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 342141,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_216/1783065180451mBEbz_JPEG/p-12314122725-s-3-A-34.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 353011,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_3/1783065180451Pb1lm_JPEG/p-12314122725-s-3-A-35.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 273121,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_79/1783065180454vAlyB_JPEG/p-12314122725-s-3-A-36.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 201347,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_129/1783065180456gjGyL_JPEG/p-12314122725-s-3-A-37.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 222876,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_117/1783065180457fGxLJ_JPEG/p-12314122725-s-3-A-38.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 125917,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_106/17830651804657NQ3W_JPEG/p-12314122725-s-3-A-39.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 187502,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_148/1783065180521VtNFk_JPEG/p-12314122725-s-3-A-40.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 226020,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_185/1783065180527c8aj4_JPEG/p-12314122725-s-3-A-41.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 30230,
+   "height": 458,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260703_299/1783065180539cjBSz_JPEG/p-12314122725-s-3-A-42.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  }
+ ],
+ "key": "fairwardgolf:naver:101790697:12370291326",
+ "links_sha256": "0c66217b4cd12187b5688b8107e33cbadb94508483cea7bcb91e67b22c6e0dc9",
+ "product_id": "12370291326",
+ "seconds": 61.0,
+ "skipped": []
+}

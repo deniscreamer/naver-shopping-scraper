@@ -1,0 +1,2884 @@
+{
+ "key": "fairwardgolf:naver:101790697:12370291326",
+ "listing": {
+  "product_id": "12370291326",
+  "nv_mid": "89914802043",
+  "link": "https://smartstore.naver.com/2ela/products/12370291326",
+  "name": "투엘라 여성 여름 골프바지 세미부츠컷 기능성 스판 밴딩 골프팬츠(W6SP08)",
+  "store": {
+   "name": "투엘라 2ela",
+   "slug": "2ela",
+   "link": "https://smartstore.naver.com/2ela",
+   "channel_no": "101790697",
+   "grade": "POWER",
+   "is_brand_store": true
+  },
+  "pricing": {
+   "sale_price": 29800,
+   "discounted_price": 27800,
+   "discount_ratio": 6,
+   "currency": "KRW"
+  },
+  "category_id": "50002801",
+  "reviews": {
+   "count": 83,
+   "average_score": 4.48
+  },
+  "stock_quantity": 289,
+  "image": "https://shopping-phinf.pstatic.net/main_8991480/89914802043.3.jpg",
+  "is_ad": false,
+  "query": "가을 스트레치 골프 바지",
+  "batch": 4,
+  "seen_at": "2026-11-24T10:07:55+00:00",
+  "key": "fairwardgolf:naver:101790697:12370291326"
+ },
+ "details": {
+  "id": "12370291326",
+  "origin_product_id": "12314122725",
+  "name": "투엘라 여성 여름 골프바지 세미부츠컷 기능성 스판 밴딩 골프팬츠(W6SP08)",
+  "link": "https://smartstore.naver.com/2ela/products/12370291326",
+  "catalog_id": "89914802043",
+  "catalog_link": "https://search.shopping.naver.com/catalog/89914802043",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 29800,
+   "discounted_price": 27800,
+   "discount_ratio": 6,
+   "seller_discount": 2000,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 278,
+    "text_review": 150,
+    "photo_video_review": 150,
+    "after_use_text_review": 150,
+    "after_use_photo_video_review": 150,
+    "store_member_review": 150
+   }
+  },
+  "stock_quantity": 289,
+  "has_options": true,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20260703_63/1783062942759TYCSn_JPEG/116471152757566913_169718230.jpg",
+   "https://shop-phinf.pstatic.net/20260701_286/1782866934254x8XxG_JPEG/116999772368647127_1806471382.jpg",
+   "https://shop-phinf.pstatic.net/20260701_197/1782866934607yjJ3v_JPEG/116999772733539506_1913485843.jpg",
+   "https://shop-phinf.pstatic.net/20260701_61/1782866934999gBeDY_JPEG/116999773126103919_1047189184.jpg"
+  ],
+  "category": {
+   "id": "50002801",
+   "name": "바지",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프의류",
+    "바지"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001104",
+    "50002801"
+   ]
+  },
+  "brand": "투엘라",
+  "brand_id": "4665791",
+  "manufacturer": "이지바이",
+  "model_name": null,
+  "tags": [
+   "여자골프바지",
+   "여성골프바지",
+   "여성골프팬츠",
+   "골프바지",
+   "골프팬츠",
+   "골프웨어바지",
+   "골프웨어",
+   "골프하의",
+   "골프웨어룩",
+   "여자바지"
+  ],
+  "page_title": null,
+  "reviews": {
+   "count": 83,
+   "average_score": 4.48,
+   "score_counts": {
+    "1": 0,
+    "2": 1,
+    "3": 9,
+    "4": 22,
+    "5": 51
+   },
+   "text_count": 47,
+   "photo_count": 36,
+   "video_count": 0,
+   "after_use_count": 31,
+   "best_count": 1,
+   "recent": {
+    "count": 77,
+    "average_score": 4.48
+   },
+   "evaluations": [
+    {
+     "question": "사이즈는 어떤가요?",
+     "answers": [
+      {
+       "name": "많이 작아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "약간 작아요",
+       "count": 9,
+       "percent": 11
+      },
+      {
+       "name": "잘 맞아요",
+       "count": 59,
+       "percent": 71
+      },
+      {
+       "name": "약간 커요",
+       "count": 9,
+       "percent": 11
+      },
+      {
+       "name": "많이 커요",
+       "count": 6,
+       "percent": 7
+      }
+     ]
+    },
+    {
+     "question": "착용감은 어떤가요?",
+     "answers": [
+      {
+       "name": "불편해요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "편해요",
+       "count": 56,
+       "percent": 67
+      },
+      {
+       "name": "아주 편해요",
+       "count": 27,
+       "percent": 33
+      }
+     ]
+    },
+    {
+     "question": "길이감은 어떤가요?",
+     "answers": [
+      {
+       "name": "짧아요",
+       "count": 2,
+       "percent": 2
+      },
+      {
+       "name": "적당해요",
+       "count": 73,
+       "percent": 88
+      },
+      {
+       "name": "길어요",
+       "count": 8,
+       "percent": 10
+      }
+     ]
+    }
+   ],
+   "representative_reviews": [
+    {
+     "id": "5108410735",
+     "score": 5,
+     "text": "잘 늘어나서 진짜 편해요. 평소에도 잘 입고 있어요~^^",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261117_99/1794903603360re4Dp_JPEG/20261117_171931.jpg"
+    },
+    {
+     "id": "5025875447",
+     "score": 4,
+     "text": "일단 소재는 엄청시원한 바스락거리는 소재구요\n뱃살조이는게 싫고 사진상으로 하이웨스트는 아닌것 같아서 한사이즈 업했더니 엉덩이 허벅지 부분 너무 타이트하지않게 맞고요 허리는 좀 여유있어서 벨트로 조절하면 될것같아요. 길이도 저에게 딱이네요\n뒤꿈치살짝 올라오는 길이감으로 골프화 신으면 굽 라인정도 될것같아요.\nS했으면 부담스런 바디라인이 도드라졌을것같은..\n한가지 단점은  지퍼랑 버클이 좀 약한것 같아요\n입고 벗을때마다 언제 고장날까를 걱정할듯합니다.",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260721_98/1784621391703DObkv_JPEG/1000039368.jpg"
+    },
+    {
+     "id": "5049727075",
+     "score": 5,
+     "text": "스판이어서 잘 늘어나고 제가 허벅지가 굵은 편인데 입어보니 아주 편안합니다. 단지 허리가 살짝 큰 부분이 있어서 후크를 좀 더 당겨서 달았더니 딱 맞습니다. 다른 색상도 추가 주문할 예정입니다.",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260824_181/1787574753632gjnfo_JPEG/tmp_4789553171310429775.jpg"
+    },
+    {
+     "id": "5071794268",
+     "score": 5,
+     "text": "키가 작은데 길이 줄이지않고 입어요\n얇고 바스락거리는 소재인데 정전기가 생기네요\n운동때 편하게 입을수 있는 가성비 좋은 바지에요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260925_107/1790347153707eK6Xk_JPEG/1000045693.jpg"
+    },
+    {
+     "id": "5091198371",
+     "score": 5,
+     "text": "바지가 너무 괜찮아서 평소에도 입고있고 재구매도 고려중이에요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261025_282/1792931107704cly6T_JPEG/IMG_9052.jpeg"
+    },
+    {
+     "id": "5085792382",
+     "score": 5,
+     "text": "키작녀에 마른체형 60대인데\n잘 맞아요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261017_251/1792220413111wynnx_JPEG/1792220375650.jpg"
+    },
+    {
+     "id": "5079848253",
+     "score": 4,
+     "text": "밑위가 좀더 길었음 좋겠어요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261008_118/1791458699350YyYyN_JPEG/1791458682348.jpg"
+    },
+    {
+     "id": "5071616273",
+     "score": 5,
+     "text": "올여름 넘 잘입고 다녓어요 편해서 계속 입게 되네요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260925_269/179031360244782hFb_JPEG/1000042137.jpg"
+    },
+    {
+     "id": "5110473406",
+     "score": 4,
+     "text": "살짜 부츠컷 느낌이 나서 예쁘게 입고 있습니다",
+     "image": null
+    },
+    {
+     "id": "5100203987",
+     "score": 5,
+     "text": "빠른배송좋습니다 텐션도좋아요",
+     "image": null
+    },
+    {
+     "id": "5097802928",
+     "score": 5,
+     "text": "스판이 있어서 너무 편합니다",
+     "image": null
+    },
+    {
+     "id": "5096499272",
+     "score": 5,
+     "text": "편하고적당한길이 추천합니다",
+     "image": null
+    }
+   ]
+  },
+  "delivery": {
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 2500,
+   "is_free": false,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "TODAY",
+   "is_today_delivery": null,
+   "company": "우체국택배",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": false,
+  "is_today_delivery": true,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": [
+   {
+    "id": "10732986039",
+    "name": "색상",
+    "type": "COMBINATION"
+   },
+   {
+    "id": "10732986040",
+    "name": "사이즈",
+    "type": "COMBINATION"
+   }
+  ],
+  "variants": [
+   {
+    "id": "51708617294",
+    "name": "베이지 / S",
+    "options": [
+     "베이지",
+     "S"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 27,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   },
+   {
+    "id": "51708617297",
+    "name": "베이지 / M",
+    "options": [
+     "베이지",
+     "M"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 45,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   },
+   {
+    "id": "51708617299",
+    "name": "베이지 / L",
+    "options": [
+     "베이지",
+     "L"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 39,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   },
+   {
+    "id": "51708617301",
+    "name": "베이지 / XL",
+    "options": [
+     "베이지",
+     "XL"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 28,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   },
+   {
+    "id": "51708617302",
+    "name": "베이지 / 2XL",
+    "options": [
+     "베이지",
+     "2XL"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 15,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   },
+   {
+    "id": "51708617303",
+    "name": "블랙 / S",
+    "options": [
+     "블랙",
+     "S"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 15,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   },
+   {
+    "id": "51708617304",
+    "name": "블랙 / M",
+    "options": [
+     "블랙",
+     "M"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 41,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   },
+   {
+    "id": "51708617305",
+    "name": "블랙 / L",
+    "options": [
+     "블랙",
+     "L"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 20,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   },
+   {
+    "id": "51708617306",
+    "name": "블랙 / XL",
+    "options": [
+     "블랙",
+     "XL"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 27,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   },
+   {
+    "id": "51708617307",
+    "name": "블랙 / 2XL",
+    "options": [
+     "블랙",
+     "2XL"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 16,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   },
+   {
+    "id": "51708617308",
+    "name": "화이트 / S",
+    "options": [
+     "화이트",
+     "S"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 8,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   },
+   {
+    "id": "51708617309",
+    "name": "화이트 / M",
+    "options": [
+     "화이트",
+     "M"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 7,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   },
+   {
+    "id": "51708617310",
+    "name": "화이트 / L",
+    "options": [
+     "화이트",
+     "L"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 1,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   },
+   {
+    "id": "51708617311",
+    "name": "화이트 / XL",
+    "options": [
+     "화이트",
+     "XL"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 0,
+    "is_available": false,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   },
+   {
+    "id": "51708617312",
+    "name": "화이트 / 2XL",
+    "options": [
+     "화이트",
+     "2XL"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 0,
+    "is_available": false,
+    "is_today_dispatch": true,
+    "registered_at": "2025-09-08"
+   }
+  ],
+  "supplements": [],
+  "description": {
+   "html": "<center><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://ezbuy.diskn.com/nobrand/bottoms/NO_4424/NO_4424_1.jpg\"  /><br />\n<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://ezbuy.diskn.com/nobrand/bottoms/NO_4424/NO_4424_2.jpg\"  /><br />\n<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://ezbuy.diskn.com/2ELA/storeparm/information_1.jpg\"  /></center>",
+   "text": null,
+   "editor_type": "NONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20260703_251/1783065180144K5aYD_JPEG/p-12314122725-s-3-A-0.jpg",
+    "https://shop-phinf.pstatic.net/20260703_266/1783065180146xEVOE_JPEG/p-12314122725-s-3-A-1.jpg",
+    "https://shop-phinf.pstatic.net/20260703_82/1783065180145OqncJ_JPEG/p-12314122725-s-3-A-2.jpg",
+    "https://shop-phinf.pstatic.net/20260703_50/1783065180144zb7z7_JPEG/p-12314122725-s-3-A-3.jpg",
+    "https://shop-phinf.pstatic.net/20260703_131/1783065180143cLx76_JPEG/p-12314122725-s-3-A-4.jpg",
+    "https://shop-phinf.pstatic.net/20260703_262/1783065180142HsvWx_JPEG/p-12314122725-s-3-A-5.jpg",
+    "https://shop-phinf.pstatic.net/20260703_180/1783065180146skbll_JPEG/p-12314122725-s-3-A-6.jpg",
+    "https://shop-phinf.pstatic.net/20260703_189/1783065180142bEWAI_JPEG/p-12314122725-s-3-A-7.jpg",
+    "https://shop-phinf.pstatic.net/20260703_188/1783065180146YWJx5_JPEG/p-12314122725-s-3-A-8.jpg",
+    "https://shop-phinf.pstatic.net/20260703_33/1783065180146myChO_JPEG/p-12314122725-s-3-A-9.jpg",
+    "https://shop-phinf.pstatic.net/20260703_103/178306518022820tvC_JPEG/p-12314122725-s-3-A-10.jpg",
+    "https://shop-phinf.pstatic.net/20260703_94/1783065180233LJePk_JPEG/p-12314122725-s-3-A-11.jpg",
+    "https://shop-phinf.pstatic.net/20260703_88/1783065180241CdsJz_JPEG/p-12314122725-s-3-A-12.jpg",
+    "https://shop-phinf.pstatic.net/20260703_263/1783065180245dUyph_JPEG/p-12314122725-s-3-A-13.jpg",
+    "https://shop-phinf.pstatic.net/20260703_165/1783065180246XGfIL_JPEG/p-12314122725-s-3-A-14.jpg",
+    "https://shop-phinf.pstatic.net/20260703_235/17830651802473wJCP_JPEG/p-12314122725-s-3-A-15.jpg",
+    "https://shop-phinf.pstatic.net/20260703_201/1783065180246b7zqO_JPEG/p-12314122725-s-3-A-16.jpg",
+    "https://shop-phinf.pstatic.net/20260703_291/1783065180252sxoFx_JPEG/p-12314122725-s-3-A-17.jpg",
+    "https://shop-phinf.pstatic.net/20260703_275/17830651802574Ts6x_JPEG/p-12314122725-s-3-A-18.jpg",
+    "https://shop-phinf.pstatic.net/20260703_45/1783065180261X36Y8_JPEG/p-12314122725-s-3-A-19.jpg",
+    "https://shop-phinf.pstatic.net/20260703_74/1783065180328j5dQv_JPEG/p-12314122725-s-3-A-20.jpg",
+    "https://shop-phinf.pstatic.net/20260703_295/1783065180332Ov5p4_JPEG/p-12314122725-s-3-A-21.jpg",
+    "https://shop-phinf.pstatic.net/20260703_201/1783065180336TGDEi_JPEG/p-12314122725-s-3-A-22.jpg",
+    "https://shop-phinf.pstatic.net/20260703_41/1783065180339kyrji_JPEG/p-12314122725-s-3-A-23.jpg",
+    "https://shop-phinf.pstatic.net/20260703_147/1783065180341v6URY_JPEG/p-12314122725-s-3-A-24.jpg",
+    "https://shop-phinf.pstatic.net/20260703_66/1783065180348u7Huz_JPEG/p-12314122725-s-3-A-25.jpg",
+    "https://shop-phinf.pstatic.net/20260703_175/1783065180351O7MMr_JPEG/p-12314122725-s-3-A-26.jpg",
+    "https://shop-phinf.pstatic.net/20260703_88/1783065180356TSlX6_JPEG/p-12314122725-s-3-A-27.jpg",
+    "https://shop-phinf.pstatic.net/20260703_296/1783065180351JUyPV_JPEG/p-12314122725-s-3-A-28.jpg",
+    "https://shop-phinf.pstatic.net/20260703_176/1783065180428uQnQR_JPEG/p-12314122725-s-3-A-29.jpg",
+    "https://shop-phinf.pstatic.net/20260703_135/178306518036218YBs_JPEG/p-12314122725-s-3-A-30.jpg",
+    "https://shop-phinf.pstatic.net/20260703_59/17830651804312WYo9_JPEG/p-12314122725-s-3-A-31.jpg",
+    "https://shop-phinf.pstatic.net/20260703_56/1783065180446mSzpW_JPEG/p-12314122725-s-3-A-32.jpg",
+    "https://shop-phinf.pstatic.net/20260703_169/1783065180435L9h2Q_JPEG/p-12314122725-s-3-A-33.jpg",
+    "https://shop-phinf.pstatic.net/20260703_216/1783065180451mBEbz_JPEG/p-12314122725-s-3-A-34.jpg",
+    "https://shop-phinf.pstatic.net/20260703_3/1783065180451Pb1lm_JPEG/p-12314122725-s-3-A-35.jpg",
+    "https://shop-phinf.pstatic.net/20260703_79/1783065180454vAlyB_JPEG/p-12314122725-s-3-A-36.jpg",
+    "https://shop-phinf.pstatic.net/20260703_129/1783065180456gjGyL_JPEG/p-12314122725-s-3-A-37.jpg",
+    "https://shop-phinf.pstatic.net/20260703_117/1783065180457fGxLJ_JPEG/p-12314122725-s-3-A-38.jpg",
+    "https://shop-phinf.pstatic.net/20260703_106/17830651804657NQ3W_JPEG/p-12314122725-s-3-A-39.jpg",
+    "https://shop-phinf.pstatic.net/20260703_148/1783065180521VtNFk_JPEG/p-12314122725-s-3-A-40.jpg",
+    "https://shop-phinf.pstatic.net/20260703_185/1783065180527c8aj4_JPEG/p-12314122725-s-3-A-41.jpg",
+    "https://shop-phinf.pstatic.net/20260703_299/1783065180539cjBSz_JPEG/p-12314122725-s-3-A-42.jpg"
+   ]
+  },
+  "notice": {
+   "type": "WEAR",
+   "items": [
+    {
+     "label": "제품소재",
+     "value": "나일론 86%, 폴리우레탄 14%",
+     "is_see_description": false
+    },
+    {
+     "label": "색상",
+     "value": "베이지, 블랙, 화이트",
+     "is_see_description": false
+    },
+    {
+     "label": "치수",
+     "value": "S, M, L, XL, 2XL",
+     "is_see_description": false
+    },
+    {
+     "label": "제조자(사)",
+     "value": "투엘라협력업체",
+     "is_see_description": false
+    },
+    {
+     "label": "제조국",
+     "value": "베트남산(이지바이)",
+     "is_see_description": false
+    },
+    {
+     "label": "세탁방법 및 취급시 주의사항",
+     "value": "본 제품은 첫 세탁시 물빠짐이 있을수 있으니 단독 세탁을 권장합니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "제조연월",
+     "value": "2025.02",
+     "is_see_description": false
+    },
+    {
+     "label": "품질보증기준",
+     "value": "1. 전자상거래 소비자보호법에 따라 처리됨\n2. 관련법 및 소비자분쟁해결 규정에 따름",
+     "is_see_description": false
+    },
+    {
+     "label": "A/S 책임자와 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 2500원 (최초 배송비 무료인 경우 5000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": {
+    "value": "투엘라",
+    "source": "search_info.brandName"
+   },
+   "manufacturer": {
+    "value": "이지바이",
+    "source": "search_info.manufacturerName"
+   },
+   "model_name": null,
+   "origin": {
+    "value": "베트남산(이지바이)",
+    "source": "notice:제조국"
+   }
+  },
+  "store": {
+   "id": "101790697",
+   "uid": "2sWE1y70Xk62fdUGjH0WH",
+   "name": "투엘라",
+   "slug": "2ela",
+   "link": "https://brand.naver.com/2ela",
+   "type": "brand_store",
+   "grade": "THIRD",
+   "sale_count": 145,
+   "merchant_id": "511703962",
+   "business": {
+    "legal_name": "(주)이지바이",
+    "representative": "김동욱",
+    "type": "CORPORATION",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "12370291326",
+  "name": "투엘라 여성 여름 골프바지 세미부츠컷 기능성 스판 밴딩 골프팬츠(W6SP08)",
+  "link": "https://smartstore.naver.com/2ela/products/12370291326",
+  "query": "가을 스트레치 골프 바지",
+  "category": {
+   "id": "50002801",
+   "name": "바지",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프의류",
+    "바지"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001104",
+    "50002801"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "12370291326"
+   },
+   {
+    "label": "제조사",
+    "value": "이지바이"
+   },
+   {
+    "label": "브랜드",
+    "value": "투엘라"
+   },
+   {
+    "label": "이벤트",
+    "value": "! 구매 후기 작성시 포인트 지급 이벤트 !"
+   },
+   {
+    "label": "원산지",
+    "value": "베트남산(이지바이)"
+   },
+   {
+    "label": "제조일자",
+    "value": "2025.02.01."
+   },
+   {
+    "label": "특징",
+    "value": "신축성"
+   },
+   {
+    "label": "소재",
+    "value": "폴리우레탄, 나일론"
+   },
+   {
+    "label": "사용계절",
+    "value": "봄, 여름, 가을"
+   },
+   {
+    "label": "충전재",
+    "value": "없음"
+   },
+   {
+    "label": "하의기장",
+    "value": "9부"
+   },
+   {
+    "label": "하의핏",
+    "value": "부츠컷핏"
+   },
+   {
+    "label": "출시",
+    "value": "2025년형"
+   },
+   {
+    "label": "성별",
+    "value": "여성용"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": {
+    "value": "투엘라",
+    "source": "specs:브랜드"
+   },
+   "manufacturer": {
+    "value": "이지바이",
+    "source": "specs:제조사"
+   },
+   "model_name": null,
+   "origin": {
+    "value": "베트남산(이지바이)",
+    "source": "specs:원산지"
+   }
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 289,
+   "option_groups": [
+    {
+     "id": "10732986039",
+     "name": "색상",
+     "type": "COMBINATION"
+    },
+    {
+     "id": "10732986040",
+     "name": "사이즈",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "51708617294",
+     "name": "베이지 / S",
+     "options": [
+      "베이지",
+      "S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 27,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    },
+    {
+     "id": "51708617297",
+     "name": "베이지 / M",
+     "options": [
+      "베이지",
+      "M"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 45,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    },
+    {
+     "id": "51708617299",
+     "name": "베이지 / L",
+     "options": [
+      "베이지",
+      "L"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 39,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    },
+    {
+     "id": "51708617301",
+     "name": "베이지 / XL",
+     "options": [
+      "베이지",
+      "XL"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 28,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    },
+    {
+     "id": "51708617302",
+     "name": "베이지 / 2XL",
+     "options": [
+      "베이지",
+      "2XL"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 15,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    },
+    {
+     "id": "51708617303",
+     "name": "블랙 / S",
+     "options": [
+      "블랙",
+      "S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 15,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    },
+    {
+     "id": "51708617304",
+     "name": "블랙 / M",
+     "options": [
+      "블랙",
+      "M"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 41,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    },
+    {
+     "id": "51708617305",
+     "name": "블랙 / L",
+     "options": [
+      "블랙",
+      "L"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 20,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    },
+    {
+     "id": "51708617306",
+     "name": "블랙 / XL",
+     "options": [
+      "블랙",
+      "XL"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 27,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    },
+    {
+     "id": "51708617307",
+     "name": "블랙 / 2XL",
+     "options": [
+      "블랙",
+      "2XL"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 16,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    },
+    {
+     "id": "51708617308",
+     "name": "화이트 / S",
+     "options": [
+      "화이트",
+      "S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 8,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    },
+    {
+     "id": "51708617309",
+     "name": "화이트 / M",
+     "options": [
+      "화이트",
+      "M"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 7,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    },
+    {
+     "id": "51708617310",
+     "name": "화이트 / L",
+     "options": [
+      "화이트",
+      "L"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 1,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    },
+    {
+     "id": "51708617311",
+     "name": "화이트 / XL",
+     "options": [
+      "화이트",
+      "XL"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 0,
+     "is_available": false,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    },
+    {
+     "id": "51708617312",
+     "name": "화이트 / 2XL",
+     "options": [
+      "화이트",
+      "2XL"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 0,
+     "is_available": false,
+     "is_today_dispatch": true,
+     "registered_at": "2025-09-08"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 2500,
+   "is_free": false,
+   "policy_text": "30,000원 이상 구매 시 무료",
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "TODAY",
+   "is_today_delivery": true,
+   "company": "우체국택배",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 1.5862069,
+    "product_average_days": 2.0,
+    "today_cutoff": "11:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.26.(목)",
+    "arrival_probability": 90,
+    "ship_date_text": null
+   }
+  },
+  "catalog": {
+   "id": "59097829396",
+   "nsin": null
+  },
+  "measures": {
+   "is_set": false,
+   "weights": [],
+   "dimensions": [],
+   "references": [],
+   "review": []
+  },
+  "read_at": "2026-11-24T11:16:43Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 27800,
+  "variants": [
+   {
+    "id": "51708617294",
+    "name": "베이지 / S",
+    "options": [
+     "베이지",
+     "S"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 27,
+    "is_available": true
+   },
+   {
+    "id": "51708617297",
+    "name": "베이지 / M",
+    "options": [
+     "베이지",
+     "M"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 45,
+    "is_available": true
+   },
+   {
+    "id": "51708617299",
+    "name": "베이지 / L",
+    "options": [
+     "베이지",
+     "L"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 39,
+    "is_available": true
+   },
+   {
+    "id": "51708617301",
+    "name": "베이지 / XL",
+    "options": [
+     "베이지",
+     "XL"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 28,
+    "is_available": true
+   },
+   {
+    "id": "51708617302",
+    "name": "베이지 / 2XL",
+    "options": [
+     "베이지",
+     "2XL"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 15,
+    "is_available": true
+   },
+   {
+    "id": "51708617303",
+    "name": "블랙 / S",
+    "options": [
+     "블랙",
+     "S"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 15,
+    "is_available": true
+   },
+   {
+    "id": "51708617304",
+    "name": "블랙 / M",
+    "options": [
+     "블랙",
+     "M"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 41,
+    "is_available": true
+   },
+   {
+    "id": "51708617305",
+    "name": "블랙 / L",
+    "options": [
+     "블랙",
+     "L"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 20,
+    "is_available": true
+   },
+   {
+    "id": "51708617306",
+    "name": "블랙 / XL",
+    "options": [
+     "블랙",
+     "XL"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 27,
+    "is_available": true
+   },
+   {
+    "id": "51708617307",
+    "name": "블랙 / 2XL",
+    "options": [
+     "블랙",
+     "2XL"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 16,
+    "is_available": true
+   },
+   {
+    "id": "51708617308",
+    "name": "화이트 / S",
+    "options": [
+     "화이트",
+     "S"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 8,
+    "is_available": true
+   },
+   {
+    "id": "51708617309",
+    "name": "화이트 / M",
+    "options": [
+     "화이트",
+     "M"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 7,
+    "is_available": true
+   },
+   {
+    "id": "51708617310",
+    "name": "화이트 / L",
+    "options": [
+     "화이트",
+     "L"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 1,
+    "is_available": true
+   },
+   {
+    "id": "51708617311",
+    "name": "화이트 / XL",
+    "options": [
+     "화이트",
+     "XL"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 0,
+    "is_available": false
+   },
+   {
+    "id": "51708617312",
+    "name": "화이트 / 2XL",
+    "options": [
+     "화이트",
+     "2XL"
+    ],
+    "extra_price": 0,
+    "price": 27800,
+    "price_in_name": null,
+    "stock_quantity": 0,
+    "is_available": false
+   }
+  ],
+  "available": 13,
+  "sold_out": 2,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": "51708617294",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "51708617297",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "51708617299",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "51708617301",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "51708617302",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "51708617303",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "51708617304",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "51708617305",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "51708617306",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "51708617307",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "51708617308",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "51708617309",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "51708617310",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "51708617311",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "51708617312",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 380,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_weight_g": {
+     "low": 350,
+     "central": 480,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 240,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 17,
+     "approved_by": "owner",
+     "approved_at": "2026-11-23"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "12370291326",
+   "name": "투엘라 여성 여름 골프바지 세미부츠컷 기능성 스판 밴딩 골프팬츠(W6SP08)",
+   "link": "https://smartstore.naver.com/2ela/products/12370291326"
+  },
+  "summary": {
+   "count": 83,
+   "average_score": 4.48,
+   "score_counts": {
+    "1": 0,
+    "2": 1,
+    "3": 9,
+    "4": 22,
+    "5": 51
+   },
+   "text_count": 47,
+   "photo_count": 36,
+   "video_count": 0,
+   "after_use_count": 31,
+   "best_count": 1,
+   "recent": {
+    "count": 77,
+    "average_score": 4.48
+   },
+   "evaluations": [
+    {
+     "question": "사이즈는 어떤가요?",
+     "answers": [
+      {
+       "name": "많이 작아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "약간 작아요",
+       "count": 9,
+       "percent": 11
+      },
+      {
+       "name": "잘 맞아요",
+       "count": 59,
+       "percent": 71
+      },
+      {
+       "name": "약간 커요",
+       "count": 9,
+       "percent": 11
+      },
+      {
+       "name": "많이 커요",
+       "count": 6,
+       "percent": 7
+      }
+     ]
+    },
+    {
+     "question": "착용감은 어떤가요?",
+     "answers": [
+      {
+       "name": "불편해요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "편해요",
+       "count": 56,
+       "percent": 67
+      },
+      {
+       "name": "아주 편해요",
+       "count": 27,
+       "percent": 33
+      }
+     ]
+    },
+    {
+     "question": "길이감은 어떤가요?",
+     "answers": [
+      {
+       "name": "짧아요",
+       "count": 2,
+       "percent": 2
+      },
+      {
+       "name": "적당해요",
+       "count": 73,
+       "percent": 88
+      },
+      {
+       "name": "길어요",
+       "count": 8,
+       "percent": 10
+      }
+     ]
+    }
+   ],
+   "representative_reviews": [
+    {
+     "id": "5108410735",
+     "score": 5,
+     "text": "잘 늘어나서 진짜 편해요. 평소에도 잘 입고 있어요~^^",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261117_99/1794903603360re4Dp_JPEG/20261117_171931.jpg"
+    },
+    {
+     "id": "5025875447",
+     "score": 4,
+     "text": "일단 소재는 엄청시원한 바스락거리는 소재구요\n뱃살조이는게 싫고 사진상으로 하이웨스트는 아닌것 같아서 한사이즈 업했더니 엉덩이 허벅지 부분 너무 타이트하지않게 맞고요 허리는 좀 여유있어서 벨트로 조절하면 될것같아요. 길이도 저에게 딱이네요\n뒤꿈치살짝 올라오는 길이감으로 골프화 신으면 굽 라인정도 될것같아요.\nS했으면 부담스런 바디라인이 도드라졌을것같은..\n한가지 단점은  지퍼랑 버클이 좀 약한것 같아요\n입고 벗을때마다 언제 고장날까를 걱정할듯합니다.",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260721_98/1784621391703DObkv_JPEG/1000039368.jpg"
+    },
+    {
+     "id": "5049727075",
+     "score": 5,
+     "text": "스판이어서 잘 늘어나고 제가 허벅지가 굵은 편인데 입어보니 아주 편안합니다. 단지 허리가 살짝 큰 부분이 있어서 후크를 좀 더 당겨서 달았더니 딱 맞습니다. 다른 색상도 추가 주문할 예정입니다.",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260824_181/1787574753632gjnfo_JPEG/tmp_4789553171310429775.jpg"
+    },
+    {
+     "id": "5071794268",
+     "score": 5,
+     "text": "키가 작은데 길이 줄이지않고 입어요\n얇고 바스락거리는 소재인데 정전기가 생기네요\n운동때 편하게 입을수 있는 가성비 좋은 바지에요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260925_107/1790347153707eK6Xk_JPEG/1000045693.jpg"
+    },
+    {
+     "id": "5091198371",
+     "score": 5,
+     "text": "바지가 너무 괜찮아서 평소에도 입고있고 재구매도 고려중이에요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261025_282/1792931107704cly6T_JPEG/IMG_9052.jpeg"
+    },
+    {
+     "id": "5085792382",
+     "score": 5,
+     "text": "키작녀에 마른체형 60대인데\n잘 맞아요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261017_251/1792220413111wynnx_JPEG/1792220375650.jpg"
+    },
+    {
+     "id": "5079848253",
+     "score": 4,
+     "text": "밑위가 좀더 길었음 좋겠어요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261008_118/1791458699350YyYyN_JPEG/1791458682348.jpg"
+    },
+    {
+     "id": "5071616273",
+     "score": 5,
+     "text": "올여름 넘 잘입고 다녓어요 편해서 계속 입게 되네요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260925_269/179031360244782hFb_JPEG/1000042137.jpg"
+    },
+    {
+     "id": "5110473406",
+     "score": 4,
+     "text": "살짜 부츠컷 느낌이 나서 예쁘게 입고 있습니다",
+     "image": null
+    },
+    {
+     "id": "5100203987",
+     "score": 5,
+     "text": "빠른배송좋습니다 텐션도좋아요",
+     "image": null
+    },
+    {
+     "id": "5097802928",
+     "score": 5,
+     "text": "스판이 있어서 너무 편합니다",
+     "image": null
+    },
+    {
+     "id": "5096499272",
+     "score": 5,
+     "text": "편하고적당한길이 추천합니다",
+     "image": null
+    }
+   ]
+  },
+  "mode": "quality",
+  "count": 7,
+  "scanned": 83,
+  "passes": [
+   {
+    "media": "photo_video",
+    "pages": 2,
+    "total_count": 36,
+    "is_exhausted": true
+   },
+   {
+    "media": "text",
+    "pages": 3,
+    "total_count": 47,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "5049727075",
+    "score": 5,
+    "text": "스판이어서 잘 늘어나고 제가 허벅지가 굵은 편인데 입어보니 아주 편안합니다. 단지 허리가 살짝 큰 부분이 있어서 후크를 좀 더 당겨서 달았더니 딱 맞습니다. 다른 색상도 추가 주문할 예정입니다.",
+    "created_at": "2026-08-24T12:32:43Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "색상: 베이지 / 사이즈: XL",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "whit****",
+     "profile_image": "https://phinf.pstatic.net/contact/20200921_188/1600679608206EV4rc_JPEG/office-620817_1920.jpg"
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260824_181/1787574753632gjnfo_JPEG/tmp_4789553171310429775.jpg",
+      "width": 3000,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "12370291326",
+     "origin_product_id": "12314122725",
+     "name": "투엘라 여성 여름 골프바지 세미부츠컷 기능성 스판 밴딩 골프팬츠(W6SP08)"
+    },
+    "likes": null,
+    "tier": "primary"
+   },
+   {
+    "id": "5071794268",
+    "score": 5,
+    "text": "키가 작은데 길이 줄이지않고 입어요\n얇고 바스락거리는 소재인데 정전기가 생기네요\n운동때 편하게 입을수 있는 가성비 좋은 바지에요",
+    "created_at": "2026-09-25T14:39:25Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "색상: 블랙 / 사이즈: S",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "cy****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260925_107/1790347153707eK6Xk_JPEG/1000045693.jpg",
+      "width": 3000,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "12370291326",
+     "origin_product_id": "12314122725",
+     "name": "투엘라 여성 여름 골프바지 세미부츠컷 기능성 스판 밴딩 골프팬츠(W6SP08)"
+    },
+    "likes": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5063574975",
+    "score": 3,
+    "text": "사이즈가 작게 나왔어요 편하고 시원한 재질이고 잘 늘어나서 좋을것 같은데 핏이 아쉬워요 평소 s사이즈도 잘 맞고 여유있게 M입는데 이건 M인데도 딱붙게 맞는데 주머니가 튀어나와요 핏이 아쉽습니다. 후기가 좋아서 산건데 좋은 후기만 거르시는 듯... 입을만해서 품습니다.",
+    "created_at": "2026-09-13T01:11:05Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "색상: 화이트 / 사이즈: M",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "shy0****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260913_14/1789261858102d5YY3_JPEG/8687.jpg",
+      "width": 3000,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "12370291326",
+     "origin_product_id": "12314122725",
+     "name": "투엘라 여성 여름 골프바지 세미부츠컷 기능성 스판 밴딩 골프팬츠(W6SP08)"
+    },
+    "likes": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5048551387",
+    "score": 4,
+    "text": "S 주문했는데.. 작아서 M으로 교환함\n너무 빨리 순리롭게 교환해주심에 감사합니다 \n가성비대비 재질좋음 편하게 잘 입을게요",
+    "created_at": "2026-08-22T14:23:18Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "색상: 화이트 / 사이즈: S",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "wjdt****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260822_181/1787408588869TLY92_JPEG/20260822_212616.jpg",
+      "width": 4000,
+      "height": 3000
+     }
+    ],
+    "product": {
+     "id": "12370291326",
+     "origin_product_id": "12314122725",
+     "name": "투엘라 여성 여름 골프바지 세미부츠컷 기능성 스판 밴딩 골프팬츠(W6SP08)"
+    },
+    "likes": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5025875447",
+    "score": 4,
+    "text": "일단 소재는 엄청시원한 바스락거리는 소재구요\n뱃살조이는게 싫고 사진상으로 하이웨스트는 아닌것 같아서 한사이즈 업했더니 엉덩이 허벅지 부분 너무 타이트하지않게 맞고요 허리는 좀 여유있어서 벨트로 조절하면 될것같아요. 길이도 저에게 딱이네요\n뒤꿈치살짝 올라오는 길이감으로 골프화 신으면 굽 라인정도 될것같아요.\nS했으면 부담스런 바디라인이 도드라졌을것같은..\n한가지 단점은  지퍼랑 버클이 좀 약한것 같아요\n입고 벗을때마다 언제 고장날까를 걱정할듯합니다.",
+    "created_at": "2026-07-21T08:10:03Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "색상: 베이지 / 사이즈: M",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "wend***",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260721_137/17846213915612GLqv_JPEG/1000039366.jpg",
+      "width": 3000,
+      "height": 4000
+     },
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260721_98/1784621391703DObkv_JPEG/1000039368.jpg",
+      "width": 3000,
+      "height": 4000
+     },
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260721_28/1784621391599nAtde_JPEG/1000039365.jpg",
+      "width": 3000,
+      "height": 4000
+     },
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260721_182/1784621391698mjhYy_JPEG/1000039364.jpg",
+      "width": 3000,
+      "height": 4000
+     },
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260721_168/17846213914294QF7Q_JPEG/1000039367.jpg",
+      "width": 3000,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "12370291326",
+     "origin_product_id": "12314122725",
+     "name": "투엘라 여성 여름 골프바지 세미부츠컷 기능성 스판 밴딩 골프팬츠(W6SP08)"
+    },
+    "likes": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5060847085",
+    "score": 5,
+    "text": "나이들어 뱃살땜 입던못입어서 사이즈크게 주문해서 받았는데 넘잘맞고 핏이뻐요 이전 골프복 다버리고 다시 다 사야해서 가성비짱 비줄어짱인제품 잘입을께요 검정색으로 주문또할예정 ㅎ",
+    "created_at": "2026-09-09T04:38:34Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "색상: 화이트 / 사이즈: L",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "pshe*****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "12370291326",
+     "origin_product_id": "12314122725",
+     "name": "투엘라 여성 여름 골프바지 세미부츠컷 기능성 스판 밴딩 골프팬츠(W6SP08)"
+    },
+    "likes": null,
+    "tier": "text"
+   },
+   {
+    "id": "5035301058",
+    "score": 5,
+    "text": "요즘 살쪄서 그냥 편하게 미듐 주문했는데 딱이예요!\n길이감도 너무 좋고 한여름에 입기에도 좋은 얇은 두께감에 약간 사걱거리는 소재라고 해야하나..\n암튼 딱입니다용\n근데 블랙 화이트 똑같이 미듐 주문했는데 화이트가 좀 더 크게 나온 거 같아요\n블랙은 허리가 거의 딱 맞는데 화이트는 여유있어요!\n다들 사세요 얼른~~~~~",
+    "created_at": "2026-08-03T13:52:58Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "색상: 블랙 / 사이즈: M",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "babo*****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "12370291326",
+     "origin_product_id": "12314122725",
+     "name": "투엘라 여성 여름 골프바지 세미부츠컷 기능성 스판 밴딩 골프팬츠(W6SP08)"
+    },
+    "likes": null,
+    "tier": "text"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 4,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20260703_63/1783062942759TYCSn_JPEG/116471152757566913_169718230.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20260703_63/1783062942759TYCSn_JPEG/116471152757566913_169718230.jpg",
+    "source_sha256": "1e23b68a881cd873cf298b38ac36e1c1db2e257b96e435754779c7beefcb52e3",
+    "source_bytes": 258415,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/12370291326/fairwardgolf-12370291326-001-ac45749b2ab7e14f.webp",
+    "sha256": "ac45749b2ab7e14f5097bd7912fe8544d68ad1dd047b91af798110113be562c3",
+    "bytes": 92456,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   },
+   {
+    "position": 1,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20260701_286/1782866934254x8XxG_JPEG/116999772368647127_1806471382.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20260701_286/1782866934254x8XxG_JPEG/116999772368647127_1806471382.jpg",
+    "source_sha256": "6bfd6c7248294cd06efbf2b7986e31c469baf32000361386ecad29018507cc38",
+    "source_bytes": 311190,
+    "source_format": "JPEG",
+    "source_width": 1080,
+    "source_height": 1400,
+    "first_frame_of": null,
+    "file": "images/12370291326/fairwardgolf-12370291326-002-8c647e267fa540e3.webp",
+    "sha256": "8c647e267fa540e38966c8d90c1629b18dab968e5af999c28890401a62b54cf3",
+    "bytes": 93014,
+    "width": 1080,
+    "height": 1400,
+    "quality": 85
+   },
+   {
+    "position": 2,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20260701_197/1782866934607yjJ3v_JPEG/116999772733539506_1913485843.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20260701_197/1782866934607yjJ3v_JPEG/116999772733539506_1913485843.jpg",
+    "source_sha256": "6eb7f7c1dd9076e21d6b6b04ac6b05f64cf614a25b69230f8ec4cde351cc4030",
+    "source_bytes": 158786,
+    "source_format": "JPEG",
+    "source_width": 1080,
+    "source_height": 1400,
+    "first_frame_of": null,
+    "file": "images/12370291326/fairwardgolf-12370291326-003-0aaf186d708bf9f8.webp",
+    "sha256": "0aaf186d708bf9f8990281f0d3fd8cfc962fd1fd0064de527e954631a4b28a92",
+    "bytes": 36538,
+    "width": 1080,
+    "height": 1400,
+    "quality": 85
+   },
+   {
+    "position": 3,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20260701_61/1782866934999gBeDY_JPEG/116999773126103919_1047189184.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20260701_61/1782866934999gBeDY_JPEG/116999773126103919_1047189184.jpg",
+    "source_sha256": "a3c6e8b2594ccf27e32efd1a1c9ff1ebbceb474df67fdd1c8e8d4b55de400b9e",
+    "source_bytes": 163783,
+    "source_format": "JPEG",
+    "source_width": 1080,
+    "source_height": 1400,
+    "first_frame_of": null,
+    "file": "images/12370291326/fairwardgolf-12370291326-004-4a528349c3259e37.webp",
+    "sha256": "4a528349c3259e3702b9a710b6e4979bafea1c050e022007ef397c1f430abf3b",
+    "bytes": 33374,
+    "width": 1080,
+    "height": 1400,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 4
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [
+   {
+    "review_id": "5049727075",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260824_181/1787574753632gjnfo_JPEG/tmp_4789553171310429775.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260824_181/1787574753632gjnfo_JPEG/tmp_4789553171310429775.jpg",
+    "source_sha256": "2e414107dec71229579a986fbcf962c581db59dd26a117bfb1e4af1eee28b860",
+    "source_bytes": 5455209,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/12370291326/fairwardgolf-review-image-ee6c0682c0f06b02.webp",
+    "sha256": "ee6c0682c0f06b02f5cd04a690d9882fc5d640fc86091dae4e8edc6a9722c265",
+    "bytes": 97226,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5049727075",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20200921_188/1600679608206EV4rc_JPEG/office-620817_1920.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20200921_188/1600679608206EV4rc_JPEG/office-620817_1920.jpg",
+    "source_sha256": "28f988aeb052779e71ef417cc29993aa1133e1e3babf3b9e8894ec1adfb50d66",
+    "source_bytes": 429667,
+    "source_format": "JPEG",
+    "source_width": 1920,
+    "source_height": 1275,
+    "first_frame_of": null,
+    "file": "images/12370291326/fairwardgolf-review-avatar-0449bd38e62584bc.webp",
+    "sha256": "0449bd38e62584bc0c8c596decf7660021187ae2fdb7a04a3ef4810191287373",
+    "bytes": 101930,
+    "width": 1024,
+    "height": 680,
+    "quality": 85
+   },
+   {
+    "review_id": "5071794268",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260925_107/1790347153707eK6Xk_JPEG/1000045693.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260925_107/1790347153707eK6Xk_JPEG/1000045693.jpg",
+    "source_sha256": "a4a2f28b525fcaa22d241f090e2d425a103169a03e04a279a0ba5be8f81bce64",
+    "source_bytes": 7292384,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/12370291326/fairwardgolf-review-image-026bd2337bc70d21.webp",
+    "sha256": "026bd2337bc70d21b635b049ed9c6226ae9152e01a2c8612b3c67d2e483dbfd9",
+    "bytes": 147748,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5063574975",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260913_14/1789261858102d5YY3_JPEG/8687.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260913_14/1789261858102d5YY3_JPEG/8687.jpg",
+    "source_sha256": "8ddb60882bd5156bf2ceeedb7f836f6eb99609611ad16ec60cbbd71eabc4f639",
+    "source_bytes": 2658214,
+    "source_format": "MPO",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/12370291326/fairwardgolf-review-image-249531744a18d7a6.webp",
+    "sha256": "249531744a18d7a6f7ec6750634a9a1082f1891dc162221421b977e72f48112b",
+    "bytes": 48774,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5048551387",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260822_181/1787408588869TLY92_JPEG/20260822_212616.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260822_181/1787408588869TLY92_JPEG/20260822_212616.jpg",
+    "source_sha256": "c51d0ac9befb669024b29e3d10ebc14f55b051319a9096dbd220a3580d1528f1",
+    "source_bytes": 4430822,
+    "source_format": "JPEG",
+    "source_width": 4000,
+    "source_height": 3000,
+    "first_frame_of": null,
+    "file": "images/12370291326/fairwardgolf-review-image-825327e0d386070e.webp",
+    "sha256": "825327e0d386070ecfed00685f0c74b1278d3a33bb2e3208bde5a01e7cce000e",
+    "bytes": 76642,
+    "width": 1024,
+    "height": 768,
+    "quality": 85
+   },
+   {
+    "review_id": "5025875447",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260721_137/17846213915612GLqv_JPEG/1000039366.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260721_137/17846213915612GLqv_JPEG/1000039366.jpg",
+    "source_sha256": "8212800637100c2eb513fd0b8bd0824b70ec70cf2eaccbb27c56d5fbb30bca77",
+    "source_bytes": 3304039,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/12370291326/fairwardgolf-review-image-2f679c9b33d13003.webp",
+    "sha256": "2f679c9b33d13003dab811d7fabaad97fd8d21a92732efbfbc690ff8023eb66e",
+    "bytes": 39642,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5025875447",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260721_98/1784621391703DObkv_JPEG/1000039368.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260721_98/1784621391703DObkv_JPEG/1000039368.jpg",
+    "source_sha256": "bcaa737c2e00b4fa8b7dcf85838bf1692ab15e3cf77eafad76731fc4eeddbf2e",
+    "source_bytes": 4155675,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/12370291326/fairwardgolf-review-image-a2e98053ae42d7ba.webp",
+    "sha256": "a2e98053ae42d7bac7707fc0d2cf4882fd269cd5e05eee4d2183398cff2873a4",
+    "bytes": 40420,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5025875447",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260721_28/1784621391599nAtde_JPEG/1000039365.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260721_28/1784621391599nAtde_JPEG/1000039365.jpg",
+    "source_sha256": "7818076ea3ebce70573731c3c082c8baf2a0cfb6e65e69893ee46d3b14033e96",
+    "source_bytes": 3300448,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/12370291326/fairwardgolf-review-image-fa2d33400cfea4d8.webp",
+    "sha256": "fa2d33400cfea4d8b363cd64e1bc978182471b383443c92cbb2db8d132353668",
+    "bytes": 39220,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5025875447",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260721_182/1784621391698mjhYy_JPEG/1000039364.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260721_182/1784621391698mjhYy_JPEG/1000039364.jpg",
+    "source_sha256": "057cfb1fa90d744ae967821616f2a5b4e001b8d7d554d59ac3961ec80e6261e1",
+    "source_bytes": 3673460,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/12370291326/fairwardgolf-review-image-a9a72e3201616bff.webp",
+    "sha256": "a9a72e3201616bffe9138efd91c29d4014e5769aa381d669fbc9d321cb818109",
+    "bytes": 44790,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5025875447",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260721_168/17846213914294QF7Q_JPEG/1000039367.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260721_168/17846213914294QF7Q_JPEG/1000039367.jpg",
+    "source_sha256": "cdf12389e07768ecfccfa606dfdf4651dc2b5788f72b44f8eeb264b3c439fdbf",
+    "source_bytes": 4210825,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/12370291326/fairwardgolf-review-image-de8ccf0c1f0b151c.webp",
+    "sha256": "de8ccf0c1f0b151c5ae34e90ffcf1e52bf3e83a3ad7d67253e5abf9a9a429f6a",
+    "bytes": 44518,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

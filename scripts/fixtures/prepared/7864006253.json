@@ -1,0 +1,2919 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101728681:7864006253",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 8); 3 trimmed"
+  },
+  {
+   "code": "title_names_one_variant",
+   "detail": "아이보리, S"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "CONDITIONAL_FREE 3000 KRW"
+  },
+  {
+   "code": "size_values_merged",
+   "detail": "L = L（66사이즈）, XL = XL（77사이즈）"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/naturalmode/products/7864006253",
+  "channel_no": "101728681",
+  "product_id": "7864006253",
+  "category_id": "50002801"
+ },
+ "product": {
+  "title_ko": "골프패딩바지 여성골프조거팬츠 여자골프웨어 겨울 누빔 기모 카고 아이보리 S",
+  "brand_ko": "내추럴모드",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "womens",
+      "text": "여성용"
+     },
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "골프패딩바지 여성골프조거팬츠 여자골프웨어 겨울 누빔 기모 카고 아이보리 S"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "가을 스트레치 골프 바지"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "디자인",
+    "values_ko": [
+     "패딩조거팬츠",
+     "패딩일자바지",
+     "카고와이드"
+    ]
+   },
+   {
+    "name_ko": "컬러",
+    "values_ko": [
+     "아이보리",
+     "블랙",
+     "카키"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "S（44사이즈）",
+     "M（55사이즈）",
+     "FREE",
+     "L（66사이즈）",
+     "XL（77사이즈）"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"패딩조거팬츠\",\"아이보리\",\"S（44사이즈）\"]",
+    "naver_variant_id": "57342830888",
+    "options_ko": [
+     "패딩조거팬츠",
+     "아이보리",
+     "S（44사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-4eec043ba8bda6fdc476b633",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩조거팬츠\",\"아이보리\",\"M（55사이즈）\"]",
+    "naver_variant_id": "57342830889",
+    "options_ko": [
+     "패딩조거팬츠",
+     "아이보리",
+     "M（55사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-73a0c3c93d238a7a58c4abe8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩조거팬츠\",\"아이보리\",\"L（66사이즈）\"]",
+    "naver_variant_id": "57342830890",
+    "options_ko": [
+     "패딩조거팬츠",
+     "아이보리",
+     "L（66사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-88c810669f4056bd9215afa6",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩조거팬츠\",\"아이보리\",\"XL（77사이즈）\"]",
+    "naver_variant_id": "57342830891",
+    "options_ko": [
+     "패딩조거팬츠",
+     "아이보리",
+     "XL（77사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-e5e85b3290a394b76e562a4b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩조거팬츠\",\"블랙\",\"S（44사이즈）\"]",
+    "naver_variant_id": "57342830892",
+    "options_ko": [
+     "패딩조거팬츠",
+     "블랙",
+     "S（44사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-d24a1437bd7f9cf4651aeb27",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩조거팬츠\",\"블랙\",\"M（55사이즈）\"]",
+    "naver_variant_id": "57342830893",
+    "options_ko": [
+     "패딩조거팬츠",
+     "블랙",
+     "M（55사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-25f611f02deed8263380fa15",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩조거팬츠\",\"블랙\",\"L（66사이즈）\"]",
+    "naver_variant_id": "57342830894",
+    "options_ko": [
+     "패딩조거팬츠",
+     "블랙",
+     "L（66사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-5c96a4df5dbcca4b6516e07c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩조거팬츠\",\"블랙\",\"XL（77사이즈）\"]",
+    "naver_variant_id": "57342830895",
+    "options_ko": [
+     "패딩조거팬츠",
+     "블랙",
+     "XL（77사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-c32029e758bdaccd727edf00",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩조거팬츠\",\"카키\",\"S（44사이즈）\"]",
+    "naver_variant_id": "57342830896",
+    "options_ko": [
+     "패딩조거팬츠",
+     "카키",
+     "S（44사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-c395535e23d0d1bfb948f580",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩조거팬츠\",\"카키\",\"M（55사이즈）\"]",
+    "naver_variant_id": "57342830897",
+    "options_ko": [
+     "패딩조거팬츠",
+     "카키",
+     "M（55사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-cc442d884536985603127880",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩조거팬츠\",\"카키\",\"L（66사이즈）\"]",
+    "naver_variant_id": "57342830898",
+    "options_ko": [
+     "패딩조거팬츠",
+     "카키",
+     "L（66사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-55ae4be01798bd2c757bfbd3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩조거팬츠\",\"카키\",\"XL（77사이즈）\"]",
+    "naver_variant_id": "57342830899",
+    "options_ko": [
+     "패딩조거팬츠",
+     "카키",
+     "XL（77사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-424c4994134d2f53b605dfc2",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩일자바지\",\"아이보리\",\"S（44사이즈）\"]",
+    "naver_variant_id": "57342830900",
+    "options_ko": [
+     "패딩일자바지",
+     "아이보리",
+     "S（44사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-4b86e73dc81a03330f74237e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩일자바지\",\"아이보리\",\"M（55사이즈）\"]",
+    "naver_variant_id": "57342830901",
+    "options_ko": [
+     "패딩일자바지",
+     "아이보리",
+     "M（55사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-b5c4e595522c5ce7996a8c35",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩일자바지\",\"아이보리\",\"L（66사이즈）\"]",
+    "naver_variant_id": "57342830902",
+    "options_ko": [
+     "패딩일자바지",
+     "아이보리",
+     "L（66사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-217de977f02a9271c3a64246",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩일자바지\",\"아이보리\",\"XL（77사이즈）\"]",
+    "naver_variant_id": "57342830903",
+    "options_ko": [
+     "패딩일자바지",
+     "아이보리",
+     "XL（77사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-38a89ba9c0cffc23c93289b8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩일자바지\",\"블랙\",\"S（44사이즈）\"]",
+    "naver_variant_id": "57342830904",
+    "options_ko": [
+     "패딩일자바지",
+     "블랙",
+     "S（44사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-b2f292ec6c1eca51425924f0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩일자바지\",\"블랙\",\"M（55사이즈）\"]",
+    "naver_variant_id": "57342830905",
+    "options_ko": [
+     "패딩일자바지",
+     "블랙",
+     "M（55사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-896a0f83d83ce847c6f63340",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩일자바지\",\"블랙\",\"XL（77사이즈）\"]",
+    "naver_variant_id": "57342830906",
+    "options_ko": [
+     "패딩일자바지",
+     "블랙",
+     "XL（77사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-25b66cf3c052ed93ce583d66",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩일자바지\",\"카키\",\"S（44사이즈）\"]",
+    "naver_variant_id": "57342830907",
+    "options_ko": [
+     "패딩일자바지",
+     "카키",
+     "S（44사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-33cb86327eb679a7893faee7",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩일자바지\",\"카키\",\"M（55사이즈）\"]",
+    "naver_variant_id": "57342830908",
+    "options_ko": [
+     "패딩일자바지",
+     "카키",
+     "M（55사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-569d563785dcb10626a3a75f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩일자바지\",\"카키\",\"L（66사이즈）\"]",
+    "naver_variant_id": "57342830909",
+    "options_ko": [
+     "패딩일자바지",
+     "카키",
+     "L（66사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-8a278649532c3c01289deacb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"패딩일자바지\",\"카키\",\"XL（77사이즈）\"]",
+    "naver_variant_id": "57342830910",
+    "options_ko": [
+     "패딩일자바지",
+     "카키",
+     "XL（77사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-a2336402fd29d9e14f1f9ae1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"카고와이드\",\"아이보리\",\"FREE\"]",
+    "naver_variant_id": "53296316157",
+    "options_ko": [
+     "카고와이드",
+     "아이보리",
+     "FREE"
+    ],
+    "price_krw": 22700,
+    "price_usd": "22.70",
+    "sku": "FW-8e7a50b075c65add3d253504",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"카고와이드\",\"아이보리\",\"XL\"]",
+    "naver_variant_id": "53296316155",
+    "options_ko": [
+     "카고와이드",
+     "아이보리",
+     "XL（77사이즈）"
+    ],
+    "price_krw": 22700,
+    "price_usd": "22.70",
+    "sku": "FW-091cad1c68dfd139b2fd7bfc",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null,
+    "naver_options_ko": [
+     "카고와이드",
+     "아이보리",
+     "XL"
+    ]
+   },
+   {
+    "source_id": "observed:[\"카고와이드\",\"블랙\",\"XL\"]",
+    "naver_variant_id": "53296316159",
+    "options_ko": [
+     "카고와이드",
+     "블랙",
+     "XL（77사이즈）"
+    ],
+    "price_krw": 22700,
+    "price_usd": "22.70",
+    "sku": "FW-d6643aa9d6a644a14193e36d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null,
+    "naver_options_ko": [
+     "카고와이드",
+     "블랙",
+     "XL"
+    ]
+   },
+   {
+    "source_id": "observed:[\"패딩일자바지\",\"블랙\",\"L\"]",
+    "naver_variant_id": "60363478730",
+    "options_ko": [
+     "패딩일자바지",
+     "블랙",
+     "L（66사이즈）"
+    ],
+    "price_krw": 19700,
+    "price_usd": "19.70",
+    "sku": "FW-c43a212ba5b5bf841fc20dbb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null,
+    "naver_options_ko": [
+     "패딩일자바지",
+     "블랙",
+     "L"
+    ]
+   },
+   {
+    "source_id": "observed:[\"카고와이드\",\"블랙\",\"FREE\"]",
+    "naver_variant_id": "60363478731",
+    "options_ko": [
+     "카고와이드",
+     "블랙",
+     "FREE"
+    ],
+    "price_krw": 22700,
+    "price_usd": "22.70",
+    "sku": "FW-8e11b0ae5bd97e62316cf840",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 19700,
+   "original_krw": 39700,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "내추럴모드"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "내추럴모드"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "내추럴모드협력업체CN"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2025년형"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "여성용"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "겨울, 가을"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "기모, 폴리에스테르, 나일론"
+   },
+   {
+    "label_ko": "충전재",
+    "value_ko": "솜"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "방풍, 기모안감"
+   },
+   {
+    "label_ko": "하의핏",
+    "value_ko": "슬림핏, 일자핏"
+   },
+   {
+    "label_ko": "하의기장",
+    "value_ko": "긴바지"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.52,
+   "count": 837
+  },
+  "reviews": [
+   {
+    "id": "5083769946",
+    "score": 5,
+    "text_ko": "제작에 조금 문제가 생겨서 교환 요청드렸는데 잘 처리해주셨어요. 겨울 작업바지로 검정이랑 카키 구매했는데 제 체형에 맞는 거 찾기 어려운데 매우 만족합니다. 적당히 도톰해서 움직임에 지장 없고 디자인도 잘 빠졌어요. 키 작은 분들은 꼭 구입하시길 바랍니다. 참고로 155/43입니다.",
+    "created_at": "2026-10-14T11:16:31Z",
+    "writer": "yjj0***",
+    "photos": [
+     "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-image-8cc7447c3147200a.webp",
+     "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-image-3a6a03f8fdc56801.webp",
+     "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-image-5ba9b5316ffdef70.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-avatar-74940efcb9fd8ad0.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 100
+   },
+   {
+    "id": "5066574344",
+    "score": 5,
+    "text_ko": "155/43\n44사이즈 스몰 사세요.\n상세 사이즈가 작게 나와서 사이즈 고민이 많았는데 허리 밴딩이 짱짱한 편이 아니라 편합니다. 신축성은 없지만 편하고요. 카키도 구매했는데 10월 말에 입고된다고 미리 겨울에 엄청 따뜻할 것 같아요.",
+    "created_at": "2026-09-17T03:12:27Z",
+    "writer": "yjj0***",
+    "photos": [
+     "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-image-3772d5ef453fa3c7.webp",
+     "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-image-a11ce6e7415cf7d4.webp",
+     "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-image-f8ae4d286bb46872.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-avatar-74940efcb9fd8ad0.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 96,
+    "text_original_ko": "155/43 \n44사이즈 스몰 사세요. \n상세 사이즈가 작게 나와서 사이즈 고민이 많았는데 허리 밴딩이 짱짱한 편이 아니라 편합니다. 신축성은 없지만 편하고요. 카키도 구매했는데 10월 말에 입고된다고 미리 연락도 주시고 친절해요. 겨울에 엄청 따뜻할 것 같아요.",
+    "text_cut": [
+     "seller"
+    ]
+   },
+   {
+    "id": "4901859664",
+    "score": 5,
+    "text_ko": "상품도 마음에 들어요.\nM햘까 고민하다가 L 했는데 여유있게 잘 맞아요. M 했으면 살짝타이트 하게 핏은 더 예뻤을 거 같아요.\n추위를 정말 많이 타는데 제법 따뜻해요. 다른 디자인이랑 색상도 구매하고 싶어요.",
+    "created_at": "2026-02-04T23:22:30Z",
+    "writer": "koji***",
+    "photos": [
+     "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-image-06f7f7d986e20dfa.webp",
+     "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-image-da3d6e166ad937af.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-avatar-0f284d4243e5d1da.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 95,
+    "text_original_ko": "배송도 하루만에 오고(부산임) 상품도 마음에 들어요.\nM햘까 고민하다가 L 했는데 여유있게 잘 맞아요.M 했으면 살짝타이트 하게 핏은 더 예뻤을 거 같아요.\n추위를 정말 많이 타는데 제법 따뜻해요. 다른 디자인이랑 색상도 구매하고 싶어요.",
+    "text_cut": [
+     "shipping"
+    ]
+   },
+   {
+    "id": "4855101540",
+    "score": 5,
+    "text_ko": "와 갑자기 겨울라운딩 때문에 바지 급해서 주문했는데 생각외 너무 만족스럽습니다!\n패딩바지 뚱뚱해보이기 쉬운데 적당한 볼륨감에 도톰함에 따숩기는 말로 표현할 수 없어요. 색깔도 누렇지않은 여리한 아이보리 색깔로 너무 좋습니다.\n짧다는 분들 계시던데 전 짤순이라 잘 맞아요! 밴딩 편하구요! 강추!",
+    "created_at": "2025-12-04T05:45:53Z",
+    "writer": "uh20***",
+    "photos": [
+     "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-image-b96a8854d528244d.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-avatar-8b658e21f394dab1.webp",
+    "tier": "primary",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "와 갑자기 겨울라운딩 때문에 바지 급해서 주문했는데 생각외 너무 만족스럽습니다!\n패딩바지 뚱뚱해보이기 쉬운데 적당한 볼륨감에 도톰함에 따숩기는 말로 표현할 수 없어요. 색깔도 누렇지않은 여리한 아이보리 색깔로 너무 좋습니다. \n짧다는 분들 계시던데 전 짤순이라 잘 맞아요! 밴딩 편하구요! 강추!"
+   },
+   {
+    "id": "4630400771",
+    "score": 5,
+    "text_ko": "너무 편하고 따뜻하고 이쁘기 까지 해요\n사진이 이쁘게 안 나와서 그렇긴한데\n실물은 훨씬 이뻐요\n마음에 쏙 들어요 지인이 입어보고\n구매할거라고 했고요 나도 언니꺼 하나 더 주문할거에요",
+    "created_at": "2024-12-27T08:27:11Z",
+    "writer": "oksj***",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-avatar-0898f7e44c1d3cd4.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 79
+   },
+   {
+    "id": "4391788910",
+    "score": 5,
+    "text_ko": "L 착용했는데. 엉덩이 부분은 조금 크지만 이상하지 않아요. 오히려 좁으면 불편할것 같아요. 하체가 긴편이라서 기장도 발목정도로 조금 짧지만 만족스럽습니다.\n반면 같은체형인 친구는 발목을 덮어서 딱 좋더라고요.",
+    "created_at": "2023-12-19T09:02:54Z",
+    "writer": "semi*****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-avatar-4d33bda2a5e63b63.webp",
+    "tier": "primary",
+    "likes": 2,
+    "text_grade": "full",
+    "text_quality": 61,
+    "text_original_ko": "L 착용했는데...엉덩이 부분은 조금 크지만 이상하지 않아요.오히려 좁으면 불편할것 같아요.하체가 긴편이라서 기장도 발목정도로 조금 짧지만 만족스럽습니다.\n반면 같은체형인 친구는 발목을 덮어서 딱 좋더라고요."
+   },
+   {
+    "id": "4371496317",
+    "score": 5,
+    "text_ko": "갑자기 추워진 날씨에 패딩바지 찾다가 후기 좋아 구매해요. 패딩도 적당하고 바지품도 넉넉한 편은 아니지만 길이가 제겐 좀 짧네요. 조금 길었으면 발목시림에도 도움이 되었을텐데 아쉬움 있네요. 긴 양말 신어야 할듯요. 옆에 있는 주머니가 커서 아이폰14플러스도 쏙 들어가서 운동 다닐때도 젛을것 같아요. 주말에 입고 산책이라도 가야할것 같아요.",
+    "created_at": "2023-11-17T08:26:37Z",
+    "writer": "sale*****",
+    "photos": [
+     "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-image-3589b0ef5622cdba.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-avatar-d1a60ccabe88d002.webp",
+    "tier": "primary",
+    "likes": 2,
+    "text_grade": "full",
+    "text_quality": 100
+   },
+   {
+    "id": "4371452526",
+    "score": 5,
+    "text_ko": "수령하자 마자 궁금해서 입어봤어요. 온라인쇼핑은 늘 불만족 하게 되더라구요. 나름 따스해요 편안하게\n집에서 가까운곳 나갈때 따스히 이쁘게 입을것 같아요 이 다자인으로 검은색도 주문해야겠어요",
+    "created_at": "2023-11-17T07:24:53Z",
+    "writer": "tjdr****",
+    "photos": [
+     "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-image-ba8fe44fd603f055.webp",
+     "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-image-fba1e38a69354824.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/7864006253/fairwardgolf-review-avatar-9973e9a4f80d3289.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 95,
+    "text_original_ko": "ㅎㅎ 수령하자 마자 궁금해서  입어봤어요.  온라인쇼핑은 늘  불만족 하게 되더라구요.가격좋고  나름  따스해요 편안하게 \n집에서  가까운곳 나갈때 따스히  이쁘게 입을것 같아요 이 다자인으로  검은색도 주문해야겠어요 ^^",
+    "text_cut": [
+     "price"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/7864006253/fairwardgolf-7864006253-001-484fbca4f9a6f966.webp",
+    "sha256": "484fbca4f9a6f9662ebd19cf83a86e35c46a58f572215d259ee7424b04a5e5bf",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/7864006253/fairwardgolf-7864006253-002-7cf67ba01892ee1b.webp",
+    "sha256": "7cf67ba01892ee1b375e740869f185aacdb8b6cd0b4ef8789f321961f4185767",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/7864006253/fairwardgolf-7864006253-004-e409ae846c46373c.webp",
+    "sha256": "e409ae846c46373ceaac5ed77824980744afa0467e1343d05c8030addff0f08f",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/7864006253/fairwardgolf-7864006253-005-84c5cd9bb18cac34.webp",
+    "sha256": "84c5cd9bb18cac34955f26e3728631380cf98e1e4ba71601bf7dcd711fe32749",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/7864006253/fairwardgolf-7864006253-006-b57c268ee58fb948.webp",
+    "sha256": "b57c268ee58fb9485827afd1e5dd65701b9537c6fcb3947996a2282db0e8847d",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/7864006253/fairwardgolf-7864006253-007-604c6ad2fcee18dd.webp",
+    "sha256": "604c6ad2fcee18dd703ed91b9c1a8c8f212058d97ed9d4e9169d7e8c6cf70e8a",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": 5000,
+   "policy_text": "80,000원 이상 구매 시 무료 / 제주 추가 4,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 2.3363636,
+    "product_average_days": 2.0833333,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 3,
+    "arrival_date_text": null,
+    "arrival_probability": 100,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "↑\n★오리털 100% 55~88까지 진행★\n\n2027년 버전 ! 패딩+융기모 !팬츠\n3일만 특가진행\n23,800 원 → 19,700원\n패딩 조거팬츠 -2027년 버전\n한 겨울에도 너무나 따뜻하게 입을 수 있는\n여성골프패딩바지 소개해드려요.\n기본 스타일과 조거팬츠 스타일 두 가지로 준비했어요.\n착한 가격으로 진행되는 상품이에요.\n너무 얇지도 두껍지도 않은 적당히 도톰한\n패딩바지로 입었을때 편안하면서 따뜻하게 입기 좋아요.\n소재는 웰론 충전재로 제작되었어요.\n요즘 기능성 운동복에 많이 들어가있는 소재죠^^\n\n요즘 기능성 운동복에 많이 들어가 있어요.\n웰론 충전재로 팬츠를 만들게되면 운동하거나 활동시에 땀이나거나 습기가 차더라도 옷이 손생되지 않는데\n오리털같은 경우는 습기에 약해서 바지로 만들게되면\n손상이될수있어요.\n\n컬러 -블랙, 아이보리 ,카키 (컬러추가)\n소재 - 웰론\n사이즈 - S(44),M(55),L(66), XL(77)\nS사이즈는 44사이즈인 언냐들에게 추천드려요.\nS(44)사이즈 - 허리:28.5 힙:44 밑위:28 총장:88\nM(55)사이즈 - 허리:30 힙:46 밑위:29 총장:89\nL(66)사이즈 - 허리:32 힙:48 밑위:30 총장:90\nXL(77)사이즈 - 허리:34 힙:50 밑위:31 총장:91\n사이즈는 재는 위치에 따라 1~3센치정도 차이가 있을 수 있습니다.\n\n웰론은 세탁시에도 편하고 땀이나 눈 비가 왔을때\n옷이 손상되지 않기 때문에 바지로 제격이에요.\n안감 보이시나요?ㅎ\n\n컬러 -블랙, 아이보리, 카키( 컬러추가)\n소재 -웰론소재\n사이즈- S(44), M(55),L(66),XL(77)\nS(44) - 허리30 힙:46 총장:90\nM(55) - 허리32 힙:48 총장:91\nL(66) - 허리34 힙:50 총장:92\nXL(77) - 허리36 힙:53 총장:93\n\n사이즈는 S(44),M(55),L(66),XL(77)이렇게 진행되요\nS사이즌 마른44나 25입으시는 분들만 추천드려요.\n\n마른 언냐들부터 통통 언냐들까지 입을 수 있게\n사이즈는 다양하게 준비되어있어요.\n\n포켓 포인트^^\n밑단 부분에는 시보리로 디자인된 조거팬츠\n\n허리 부분은 밴딩으로 되어있어 불편함이 없어요.\n\n패딩 일자바지\n\n일자 바지는 깔끔한 느낌이에요.\n밑단의 시보리가없어 일자로 떨어지는\n여성골프바지 랍니다.\n\n조거팬츠 스타일이 아닌 일자 여성골프패딩바지 입니다.\n평상복으로도 좋고 라운딩이나 운동시에도\n입을 수 있는 활용도 좋은 여성골프바지\n평펑해보이지 않고 패딩바지인데도 슬림하게\n연출할 수 있어서 더욱 인기바지랍니다.\n요즘은 패딩바지도 트랜드하게^^\n여성겨울 골프바지 제품으로도 제격이에요.\n카고 와이드",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20241120_90/1732028759090RqPzp_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94_-001_(2).jpg?type=w848",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMjY5/MDAxNjcyNzQyNjU0MDA5.5RLXBZZstWKl4_td82cD-VvMYgAeuc_QGoZXWtdb1b0g.FkSChem6xX45EJjc5lrc0LKWqZmWZYK7cZFSjtlo1e4g.JPEG.natural8787/20221228_164714.jpg?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMTU3/MDAxNjcyNzQyNjY1Nzk0.bSmr9jXaPKxwTwwRmiNrzOBa3v3lC720kYJU36h77cgg.lrELbPA6P5GQYmgcxfJvZ2PzhJHtQQSe2ocUEm2xK6cg.JPEG.natural8787/20221228_163032.jpg?type=w966",
+   "https://shop-phinf.pstatic.net/20251109_133/1762665372416A8cVn_PNG/KakaoTalk_20251109_135949785_03.png?type=w848",
+   "https://shop-phinf.pstatic.net/20241120_119/1732028772342aF4TP_JPEG/%EC%95%BD%EC%86%8D.jpg?type=w848",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMjQ3/MDAxNjcyNzQyNzM2Mjgx.QRRfD7TsUUQSB65-gRIA1hVrqwGGtZ-C85GoIVRurEgg.pVGlBBKrRDchRN_jUrTPeKSjjXDn5dqI9m8nU3TxLzkg.JPEG.natural8787/20221228_163402.jpg?type=w966",
+   "https://shop-phinf.pstatic.net/20251109_201/1762665384195ShPDz_PNG/KakaoTalk_20251109_135949785.png?type=w848",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMjYg/MDAxNjcyNzQyNjcxNTE5.lCpWCjMNQ6gWuuRlgutT7O0nQPkYV1m85hzYgEekWm0g.np_WuM8cDCaV3BA7PrDLlk7SOB3j1RhyINd6WZgRRCYg.PNG.natural8787/IMG_6945.PNG?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMTgy/MDAxNjcyNzQyNjkzMDA4.uVwhFl97flxXqB-taYXViR6EbDvv_KsGuSjv3bvpKIMg.nFgAgk8_tePK6J03Lqv71k8dIp9G3t08shllKs9XUG4g.JPEG.natural8787/20221228_164636.jpg?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMjkg/MDAxNjcyNzQyNjkzMDAx.r9Iy88Pg02ui9kYC540dzYpebuoE9FJ4L-M-Qu52z44g.U0rzI8QtJggXVj1JxjmS1I5Zpi0re_xBAdjC7L3hHIwg.JPEG.natural8787/20221228_164639.jpg?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMTA4/MDAxNjcyNzQyNjkyOTc3.Iu3pdZtX15Ztk0dPkNwJ7QEFWPgnxWDKmN4uO4C2wNsg.6kYpxnpIw8wo_XrG9h836SKTCsR8dzMxX6X7onwecSYg.JPEG.natural8787/IMG_6755.JPEG?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMTk5/MDAxNjcyNzQyNjkyOTc3.mDOTFDiW9Tlr2AhWTynk4XDdtYS1FtgfxeWvn7_mTBEg.nqLpV7dimHDlrk3o2fZHOBgnnF7IpVZzYXCF5MKQk68g.JPEG.natural8787/IMG_6757.JPEG?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMjk3/MDAxNjcyNzQyNjkyOTgz.0jAeALGwhzuGG7h8RbpCAnDpq6_D1d152aU1PkzCvdIg.oC_9UTsrn70J7RV4-MbpeFSZT8cPZFIr6NLZlaEy25Ig.JPEG.natural8787/IMG_6758.JPEG?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMTk5/MDAxNjcyNzQyNjkzMDA2.hFZrPp4WnO2GqpCTXAi6wNCF4-J-0WiZQMgj0zTKXNMg.rDuduxWoZdmA7TTFCJzc82ZpWwxhN7pJM19Dqv4x4aIg.JPEG.natural8787/IMG_6762.JPEG?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMjYw/MDAxNjcyNzQyNjkzMzUw.knd7zJwa_iWtoujxeyMg0zATDtjekeLusDZWqk0qfSIg.bL2So2MePeb67rH3Dhdfz8P84rdxs9yZ082aNuZI2FMg.JPEG.natural8787/IMG_6764.JPEG?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfNDAg/MDAxNjcyNzQyNjkzNDc5.qvCZZVxXM3bYCrZVw2cADdQWtBP0iW9iKwb3QvUSJdog.7vLyrOB-MCwocRAjsT14LalnMtP9YfMiXAQpi1R2WU0g.PNG.natural8787/IMG_6942.PNG?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMTY4/MDAxNjcyNzQyNjkzNDkx.4X8yQpzZxZApU84Vu1QUxJrNATNFmoSI4X5TUWgP8kwg.sYclzuSyiyRGPmFaCxXqakBBApFdWsCV9yvzeEBkMjkg.PNG.natural8787/IMG_6943.PNG?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMTQ5/MDAxNjcyNzQyNzAyNTkz.6oCxMT6FssNrnGC6L8o-Cz5V9J4pdg_HYGtp-zLkfTYg.Ug9kbeu7w5YgrIghwGM3WTMETJmhnkxvZPQ4XeLAGe8g.JPEG.natural8787/20221228_163803.jpg?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMTE1/MDAxNjcyNzQyNzAyNTc3.b-vATSgE9PpOswyqoqeZhd_VhUGT7Dt1BXsLv-mEsosg.UZkDZWJXf2DYdzb-_UdE3-B4qRgzBGqtS3gG7ZUN5hIg.JPEG.natural8787/20221228_163806.jpg?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMjUw/MDAxNjcyNzQyNzAyNTYy.JuV_pER08vZA6tuMufCLw2lulaWolM1wKVVwkS8lNRQg.d9dDoJ9T0EfNJTUjcr--y6qjLgOCHF59sCfVkg-LbzEg.JPEG.natural8787/20221228_163808.jpg?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMTc0/MDAxNjcyNzQyNzA5NTU3.mnrKsOcOedjwZLhE5fa3ANlexuyXuH_8zqK2aXulwIYg.if2dCV0wTub6kJaSXYcL_DhKkzSIUIy2cZ_8MlY0vKQg.JPEG.natural8787/IMG_6735.JPEG?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMTY4/MDAxNjcyNzQyNzA5NTkw.QD8fP_Vi6m-Z1Du2_W2OUQr5MqzWpc-4fNoePUTgW-Mg.g3C5fE6o-6HuodkFYZsEATXrfzaPrcdPM2T3Sdd7TVQg.JPEG.natural8787/IMG_6738.JPEG?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMTIz/MDAxNjcyNzQyNzA5NTgx.lvYkCs8dVQMNnX_IpdnWde04hukGTEStFIm__pqchKog.X4a5AowOJLAm8hVCf2UYLX_VL2hgnyQD9croeAiO9tYg.JPEG.natural8787/IMG_6741.JPEG?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMjYz/MDAxNjcyNzQyNzA5NTk4.Uf5dKh_nOhykJRim4fJLWdcadriW1-ehyBsb5tPFtLIg.3rE0qAaOpkFiHliBd6xIw_WmVLrPcCFdA5_CV9R-9log.JPEG.natural8787/IMG_6743.JPEG?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMjQx/MDAxNjcyNzQyNzA5NTg0.tPoIEU0eEc183eHua_XwZej4S062LDsBz0v31E1_HrEg.uTUSc79TP7qAtGRBMAX1jo14XFp6I1xTkknXsdx7QCog.JPEG.natural8787/IMG_6749.JPEG?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMjY1/MDAxNjcyNzQyNzA5NTkx.R9r0yRudhGOKmATzlJ8FoTXskUmb1bl6TJAQlHs-U64g.0f_Ha79q4QNZT0fdRa56OfmmiNlfPqP9mT_zZih6uiog.JPEG.natural8787/IMG_6752.JPEG?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMSAg/MDAxNjcyNzQyNzIxODcz.SKbSBnzIWZkkqGKmWy7tBmvxUWH9YW6zU8d7sJye-Iog.rLcYAT7QQwxFuS3W6vNqdPp9MWUd-R9aap2llF9m5icg.JPEG.natural8787/20221228_163204.jpg?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfNzAg/MDAxNjcyNzQyNzIxODg5.aBN3sv74lzj3fP9ee4fSLPpf8RFOe73wKNvHIAme9fkg.kurAAlriGO6DABPYytAcs1xYENjsyGsmhpx6VJocvN0g.JPEG.natural8787/20221228_163208.jpg?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMTcy/MDAxNjcyNzQyNzIxODgw.MFWyouVqX-DFKCyo7tSF9_JXe3VSuaaqOzV_-T7hQC8g.hUNvf2s1x3nUvU7xSCh2NoTWLFYF48Y-ePJQP-vaWhMg.JPEG.natural8787/20221228_163221.jpg?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfMjc5/MDAxNjcyNzQyNzIxODc2._4iV-7yRzwxtLQZmufqlTxtiLGCgptf6q1tujkUhKiQg.Nh_494NiCDE-SFTbQw8fSRaBt1TpmWi5hVYuSJarYeQg.JPEG.natural8787/20221228_163305.jpg?type=w966",
+   "https://shop-phinf.pstatic.net/20251109_265/1762665408587OWrwW_PNG/KakaoTalk_20251109_135949785_02.png?type=w848",
+   "https://shop-phinf.pstatic.net/20251109_36/17626654129125GEWe_PNG/KakaoTalk_20251109_135949785_01.png?type=w848",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfODMg/MDAxNjcyNzQyNzIxODg4.swp3zfIheJgVhY4gH_1LvoYptvhW36yv-Fhnt1j7VFog.dKzTWx9ch3PLfDdSa2OMUkzBrZhOmh6zDof-cxsWjBog.JPEG.natural8787/20221228_163313.jpg?type=w966",
+   "https://postfiles.pstatic.net/MjAyMzAxMDNfOTcg/MDAxNjcyNzQzMzA1NTQw.PwHk1Q4a9mpx9QBcmG-hetjTHE7-54Wbrgx-s0mgSsAg.YLqJ296-Nq7XT1Jkwd-MZpGuWvYlKMmPylHKSSkhBhcg.JPEG.natural8787/%EC%A0%9C%EB%AA%A9_%EC%97%86%EC%9D%8C-1.jpg?type=w966",
+   "https://shop-phinf.pstatic.net/20251106_12/1762381553867JYYLN_JPEG/001.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_30/1762381553873cwNOH_JPEG/002.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_103/1762381553892H5Cp8_JPEG/003.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_154/1762381554418RMjjA_GIF/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__-_2025-11-05T085450.778.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20251106_186/1762381554726KCxwW_GIF/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__-_2025-11-05T085524.713.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20251106_10/1762381554206JnTq7_GIF/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__-_2025-11-05T085559.653.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20251106_143/1762381554206TuprA_GIF/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__-_2025-11-05T085625.829.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20251106_166/1762381554730os2AS_GIF/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__-_2025-11-05T085652.543.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20251106_110/1762381555066AOdC6_GIF/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__-_2025-11-05T085720.699.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20251106_190/1762381554798VDgv7_GIF/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__-_2025-11-05T085746.961_(1).gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20251106_52/1762381553862eDXrX_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94_-019.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_31/1762381577092xSAJY_JPEG/IMG_0001.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_57/1762381577106LJBbs_JPEG/IMG_0003.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_62/1762381577088MQrsP_JPEG/IMG_0004.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_202/17623815846902Qbxw_JPEG/IMG_9926.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_10/1762381584669GJASR_JPEG/IMG_9928.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_202/1762381584737i5MKo_JPEG/IMG_9931.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_69/17623815847191MXaj_JPEG/IMG_9936.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_88/1762381584734y52zs_JPEG/IMG_9940.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_228/1762381584724XTDAN_JPEG/IMG_9978.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_261/1762381585403NOcri_JPEG/IMG_9991.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_214/1762381585532EyDC1_JPEG/IMG_9994.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_205/1762381585575P4Cyo_JPEG/IMG_9999.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_242/1762381593796SvHoK_JPEG/IMG_0085.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_45/1762381593820Nf11z_JPEG/IMG_0091.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_230/1762381593837FXMoG_JPEG/IMG_0117.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_127/17623815937652lbvt_JPEG/IMG_0134.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_299/1762381593856DAGFg_JPEG/IMG_0136.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_283/1762381593852jG0sf_JPEG/IMG_0140.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_240/1762381594525AGLLf_JPEG/IMG_0142.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_79/1762381594605xaWFB_JPEG/IMG_0145.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_86/1762381612999Jbq0L_JPEG/IMG_9586_%EB%B3%B5%EC%82%AC.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251106_270/1762381647474gWobD_JPEG/IMG_9591.JPG?type=w848"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "기모, 폴리에스테르, 나일론",
+    "source": "spec"
+   },
+   {
+    "label_ko": "제품소재",
+    "value_ko": "폴리에스테르,나일론",
+    "source": "notice"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_pants",
+   "option": 2,
+   "values": [
+    {
+     "ko": "S（44사이즈）",
+     "us": "XS (US 0-2)",
+     "letter": "XS",
+     "chest_cm": 61,
+     "basis": "label",
+     "chart_label": "S(44)"
+    },
+    {
+     "ko": "M（55사이즈）",
+     "us": "S (US 4-6)",
+     "letter": "S",
+     "chest_cm": 66,
+     "basis": "label",
+     "chart_label": "M(55)"
+    },
+    {
+     "ko": "FREE",
+     "us": "S-M (US 4-10)",
+     "letter": null,
+     "chest_cm": 66,
+     "basis": "label",
+     "chart_label": "FREE (55~66)"
+    },
+    {
+     "ko": "L（66사이즈）",
+     "us": "M (US 8-10)",
+     "letter": "M",
+     "chest_cm": 71.1,
+     "basis": "label",
+     "chart_label": "L(66)"
+    },
+    {
+     "ko": "XL（77사이즈）",
+     "us": "L (US 12-14)",
+     "letter": "L",
+     "chest_cm": 76.2,
+     "basis": "label",
+     "chart_label": "XL(77)"
+    }
+   ],
+   "merged": {
+    "L": "L（66사이즈）",
+    "XL": "XL（77사이즈）"
+   },
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "waist": null,
+     "hip": null,
+     "rise": null,
+     "length": null,
+     "hem": null
+    },
+    "rows": [
+     {
+      "us": "XS (US 0-2)",
+      "cm": {
+       "waist": 28.5,
+       "hip": 44.0,
+       "rise": 28.0,
+       "length": 88.0
+      }
+     },
+     {
+      "us": "S (US 4-6)",
+      "cm": {
+       "waist": 30.0,
+       "hip": 46.0,
+       "rise": 29.0,
+       "length": 89.0
+      }
+     },
+     {
+      "us": "S-M (US 4-10)",
+      "cm": {
+       "waist": 34.0,
+       "hip": 49.0,
+       "rise": 31.0,
+       "hem": 26.0,
+       "length": 94.0
+      }
+     },
+     {
+      "us": "M (US 8-10)",
+      "cm": {
+       "waist": 32.0,
+       "hip": 48.0,
+       "rise": 30.0,
+       "length": 90.0
+      }
+     },
+     {
+      "us": "L (US 12-14)",
+      "cm": {
+       "waist": 34.0,
+       "hip": 50.0,
+       "rise": 31.0,
+       "length": 91.0
+      }
+     }
+    ]
+   },
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:aa2a6f5b02532ce5",
+   "kind": "title",
+   "ko": "골프패딩바지 여성골프조거팬츠 여자골프웨어 겨울 누빔 기모 카고 아이보리 S"
+  },
+  {
+   "id": "brand:b5d3f73bd74b36da",
+   "kind": "brand",
+   "ko": "내추럴모드"
+  },
+  {
+   "id": "option_name:a333d62d9be4e2be",
+   "kind": "option_name",
+   "ko": "디자인"
+  },
+  {
+   "id": "option_value:62b55ba4cf951e71",
+   "kind": "option_value",
+   "ko": "패딩조거팬츠"
+  },
+  {
+   "id": "option_value:5102dec21351d0e8",
+   "kind": "option_value",
+   "ko": "패딩일자바지"
+  },
+  {
+   "id": "option_value:aff4d15fce37e10a",
+   "kind": "option_value",
+   "ko": "카고와이드"
+  },
+  {
+   "id": "option_name:5a2fdefe4a62f26a",
+   "kind": "option_name",
+   "ko": "컬러"
+  },
+  {
+   "id": "option_value:e459e7986767ebd1",
+   "kind": "option_value",
+   "ko": "아이보리"
+  },
+  {
+   "id": "option_value:91f171f68356ec23",
+   "kind": "option_value",
+   "ko": "블랙"
+  },
+  {
+   "id": "option_value:ed9237d2b02caedb",
+   "kind": "option_value",
+   "ko": "카키"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:33988c484ba22eb3",
+   "kind": "option_value",
+   "ko": "S（44사이즈）"
+  },
+  {
+   "id": "option_value:cc3a5ed2f29a41ac",
+   "kind": "option_value",
+   "ko": "M（55사이즈）"
+  },
+  {
+   "id": "option_value:19f1fa5ec989d121",
+   "kind": "option_value",
+   "ko": "FREE"
+  },
+  {
+   "id": "option_value:260c81763702113c",
+   "kind": "option_value",
+   "ko": "L（66사이즈）"
+  },
+  {
+   "id": "option_value:0595f29d42b4d48b",
+   "kind": "option_value",
+   "ko": "XL（77사이즈）"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:b5d3f73bd74b36da",
+   "kind": "spec_value",
+   "ko": "내추럴모드"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:3528f67a249be841",
+   "kind": "spec_value",
+   "ko": "내추럴모드협력업체CN"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:6aea4c4b3fb65e70",
+   "kind": "spec_value",
+   "ko": "2025년형"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:ff90d7cd3c519c1f",
+   "kind": "spec_value",
+   "ko": "여성용"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:3ceec0cb97eb2ebe",
+   "kind": "spec_value",
+   "ko": "겨울, 가을"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:7687c5ef08971c80",
+   "kind": "spec_value",
+   "ko": "기모, 폴리에스테르, 나일론"
+  },
+  {
+   "id": "spec_label:ea32a6046e98fd76",
+   "kind": "spec_label",
+   "ko": "충전재"
+  },
+  {
+   "id": "spec_value:b2ae4e83e442940c",
+   "kind": "spec_value",
+   "ko": "솜"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:fc2c0e4e0ea2414d",
+   "kind": "spec_value",
+   "ko": "방풍, 기모안감"
+  },
+  {
+   "id": "spec_label:35e8af68e7a1b980",
+   "kind": "spec_label",
+   "ko": "하의핏"
+  },
+  {
+   "id": "spec_value:340ed540b53cd7a5",
+   "kind": "spec_value",
+   "ko": "슬림핏, 일자핏"
+  },
+  {
+   "id": "spec_label:777511e7e585c6f2",
+   "kind": "spec_label",
+   "ko": "하의기장"
+  },
+  {
+   "id": "spec_value:e51b009720d94497",
+   "kind": "spec_value",
+   "ko": "긴바지"
+  },
+  {
+   "id": "review:87410092b6e83920",
+   "kind": "review",
+   "ko": "제작에 조금 문제가 생겨서 교환 요청드렸는데 잘 처리해주셨어요. 겨울 작업바지로 검정이랑 카키 구매했는데 제 체형에 맞는 거 찾기 어려운데 매우 만족합니다. 적당히 도톰해서 움직임에 지장 없고 디자인도 잘 빠졌어요. 키 작은 분들은 꼭 구입하시길 바랍니다. 참고로 155/43입니다."
+  },
+  {
+   "id": "review:8947bf1fa3193024",
+   "kind": "review",
+   "ko": "155/43\n44사이즈 스몰 사세요.\n상세 사이즈가 작게 나와서 사이즈 고민이 많았는데 허리 밴딩이 짱짱한 편이 아니라 편합니다. 신축성은 없지만 편하고요. 카키도 구매했는데 10월 말에 입고된다고 미리 겨울에 엄청 따뜻할 것 같아요."
+  },
+  {
+   "id": "review:5020e3f31f762364",
+   "kind": "review",
+   "ko": "상품도 마음에 들어요.\nM햘까 고민하다가 L 했는데 여유있게 잘 맞아요. M 했으면 살짝타이트 하게 핏은 더 예뻤을 거 같아요.\n추위를 정말 많이 타는데 제법 따뜻해요. 다른 디자인이랑 색상도 구매하고 싶어요."
+  },
+  {
+   "id": "review:6d789872654dfc5d",
+   "kind": "review",
+   "ko": "와 갑자기 겨울라운딩 때문에 바지 급해서 주문했는데 생각외 너무 만족스럽습니다!\n패딩바지 뚱뚱해보이기 쉬운데 적당한 볼륨감에 도톰함에 따숩기는 말로 표현할 수 없어요. 색깔도 누렇지않은 여리한 아이보리 색깔로 너무 좋습니다.\n짧다는 분들 계시던데 전 짤순이라 잘 맞아요! 밴딩 편하구요! 강추!"
+  },
+  {
+   "id": "review:54f416b58fe32fdc",
+   "kind": "review",
+   "ko": "너무 편하고 따뜻하고 이쁘기 까지 해요\n사진이 이쁘게 안 나와서 그렇긴한데\n실물은 훨씬 이뻐요\n마음에 쏙 들어요 지인이 입어보고\n구매할거라고 했고요 나도 언니꺼 하나 더 주문할거에요"
+  },
+  {
+   "id": "review:d8fdae686fb45eee",
+   "kind": "review",
+   "ko": "L 착용했는데. 엉덩이 부분은 조금 크지만 이상하지 않아요. 오히려 좁으면 불편할것 같아요. 하체가 긴편이라서 기장도 발목정도로 조금 짧지만 만족스럽습니다.\n반면 같은체형인 친구는 발목을 덮어서 딱 좋더라고요."
+  },
+  {
+   "id": "review:6f561771a2e10874",
+   "kind": "review",
+   "ko": "갑자기 추워진 날씨에 패딩바지 찾다가 후기 좋아 구매해요. 패딩도 적당하고 바지품도 넉넉한 편은 아니지만 길이가 제겐 좀 짧네요. 조금 길었으면 발목시림에도 도움이 되었을텐데 아쉬움 있네요. 긴 양말 신어야 할듯요. 옆에 있는 주머니가 커서 아이폰14플러스도 쏙 들어가서 운동 다닐때도 젛을것 같아요. 주말에 입고 산책이라도 가야할것 같아요."
+  },
+  {
+   "id": "review:64a58e054ee57763",
+   "kind": "review",
+   "ko": "수령하자 마자 궁금해서 입어봤어요. 온라인쇼핑은 늘 불만족 하게 되더라구요. 나름 따스해요 편안하게\n집에서 가까운곳 나갈때 따스히 이쁘게 입을것 같아요 이 다자인으로 검은색도 주문해야겠어요"
+  }
+ ]
+}

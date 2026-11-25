@@ -1,0 +1,1911 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 469130,
+   "height": 696,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240822_77/1724318535556bCEtL_JPEG/SE-bdeeb344-bbae-45a4-8b09-116deda6243b.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.881,
+       "text": "핑크골프",
+       "y": 14
+      },
+      {
+       "conf": 0.998,
+       "text": "2",
+       "y": 41
+      },
+      {
+       "conf": 0.879,
+       "text": "PINK / GOLF",
+       "y": 450
+      },
+      {
+       "conf": 0.99,
+       "text": "필드와 일상을 / 함께하는",
+       "y": 580
+      },
+      {
+       "conf": 0.978,
+       "text": "합리적 가격의 / |베이직 골프웨어",
+       "y": 632
+      }
+     ],
+     "y0": 0,
+     "y1": 696
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 706895,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260322_62/1774181348487aFbbK_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "네오플랜 / 와이드 밴딩 스커트",
+       "y": 14
+      },
+      {
+       "conf": 0.927,
+       "text": "T&JEE",
+       "y": 173
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 615857,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240916_197/1726490889301nAkwt_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(4).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.992,
+       "text": "롱주름 긴기장 플리츠스커트 빅사이즈",
+       "y": 11
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 431858,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250412_223/174445540411819ev9_JPEG/%EC%8B%A0%EC%A0%9C%ED%92%88_(25).jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "여성 골프 투톤 스타킹",
+       "y": 9
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 623558,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260216_195/17711703479513wbMd_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94_(9).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.991,
+       "text": "방풍 안감 니트 집업 가디건",
+       "y": 20
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 1694440,
+   "height": 1254,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261102_233/1793617771879Xy2dx_PNG/b6e5ec2c-bf86-4ed8-8572-6259baed691f.png",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "니트카라조끼",
+       "y": 7
+      }
+     ],
+     "y0": 0,
+     "y1": 1254
+    }
+   ],
+   "status": "read",
+   "width": 1254
+  },
+  {
+   "bytes": 565535,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260216_50/1771170122110GE7JJ_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94_(7).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.938,
+       "text": "방풍 안감 니트 집업 점퍼",
+       "y": 19
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 646039,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260524_209/17796205541596Pocq_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(2).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.96,
+       "text": "여름 쿨링 반집업 반팔티셔츠",
+       "y": 9
+      },
+      {
+       "conf": 0.898,
+       "text": "eeolf",
+       "y": 290
+      },
+      {
+       "conf": 0.83,
+       "text": "amont",
+       "y": 394
+      },
+      {
+       "conf": 0.936,
+       "text": "F PLAY GOLF PLAY / YGOLF PLAY",
+       "y": 592
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 487663,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260524_198/1779626343683ysk25_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(4).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.993,
+       "text": "허리밴딩 브랜드퀄리티 골프조끼",
+       "y": 9
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 686621,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260524_246/1779626379541B37G9_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(5).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.959,
+       "text": "브랜드 퀄리티 스트링 골프조끼",
+       "y": 9
+      },
+      {
+       "conf": 0.793,
+       "text": "of",
+       "y": 184
+      },
+      {
+       "conf": 0.847,
+       "text": "Teeolf",
+       "y": 216
+      },
+      {
+       "conf": 0.87,
+       "text": "salbon",
+       "y": 774
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 673490,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260524_83/1779620542340MCsK9_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(1).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "여름 망사 리본끈 골프 조끼",
+       "y": 7
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 548659,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260216_62/17711717702249Sx0H_JPEG/%EA%B0%80%EB%B0%A9%ED%94%84%EB%A1%9C%ED%95%84_(54).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.992,
+       "text": "와이드 매끈 허리밴딩 일자 부츠컷 바지",
+       "y": 12
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 559851,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240916_275/1726491997186PGIlo_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(8).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.961,
+       "text": "카고 뒷주름 치마 빅사이즈",
+       "y": 9
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 443508,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260216_65/1771171342875NJMYn_JPEG/%EC%8B%A0%EC%A0%9C%ED%92%88_(30).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "여성 골프 여름 매쉬 조끼",
+       "y": 7
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 501577,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250316_20/1742103794278Wwwr7_JPEG/%EC%8B%A0%EC%A0%9C%ED%92%88_(15).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "골프이너티-여름/쿨링/냉감/반목",
+       "y": 12
+      },
+      {
+       "conf": 0.997,
+       "text": "흡한속건 / 냉감",
+       "y": 818
+      },
+      {
+       "conf": 0.945,
+       "text": "UV차단 / 스트레치",
+       "y": 1010
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 775867,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260216_263/1771171356097z5Axi_JPEG/%EC%8B%A0%EC%A0%9C%ED%92%88_(36).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.99,
+       "text": "망사 그물 레이어드 조끼",
+       "y": 7
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 363289,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250316_295/174210417647423ynL_JPEG/%EA%B0%80%EB%B0%A9%ED%94%84%EB%A1%9C%ED%95%84_(61).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "대두용 얼굴소멸 쿠션 썬캡",
+       "y": 7
+      },
+      {
+       "conf": 0.999,
+       "text": "구매자총평점 / 5.0/5",
+       "y": 112
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 373570,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251011_69/1760164021465Su6Sa_JPEG/%EC%8B%A0%EC%A0%9C%ED%92%88_(48).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.975,
+       "text": "브랜드 퀄리티 골프힙색",
+       "y": 22
+      },
+      {
+       "conf": 0.986,
+       "text": "EVERY",
+       "y": 361
+      },
+      {
+       "conf": 0.954,
+       "text": "QU",
+       "y": 389
+      },
+      {
+       "conf": 0.994,
+       "text": "BIRDIE",
+       "y": 403
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 645106,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251111_188/17628680932584Qp7Q_JPEG/%EA%B0%80%EB%B0%A9%ED%94%84%EB%A1%9C%ED%95%84_(68).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.983,
+       "text": "여성골프모자 버킷햇 와이드 와이어챙",
+       "y": 12
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 1193774,
+   "height": 1058,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261010_249/1791621402159i0VtU_JPEG/SE-07711e3e-8298-479e-948b-f87003f6ed05.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1058
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 81501,
+   "height": 263,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240817_120/1723896643306xSnzp_JPEG/SE-7bc5a5b8-9fe2-4403-87f7-a94130ca675a.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.957,
+       "text": "입어본 고객님들의",
+       "y": 93
+      },
+      {
+       "conf": 0.982,
+       "text": "찐-리뷰",
+       "y": 144
+      },
+      {
+       "conf": 0.961,
+       "text": "재구매에는다 / 이유가 있습니다.",
+       "y": 209
+      }
+     ],
+     "y0": 0,
+     "y1": 263
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 609595,
+   "height": 1066,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240817_223/1723896718988riaTL_JPEG/SE-5f874458-d7f5-46f7-bdc4-21b321ff53f5.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.944,
+       "text": "씬구매 고객님들의 / 생생한 후기",
+       "y": 36
+      },
+      {
+       "conf": 0.556,
+       "text": "별점 / ∗ㅊㅊㅊㅊ",
+       "y": 162
+      },
+      {
+       "conf": 0.965,
+       "text": "후기에 좀 인색한 편인데 얘는 칭찬좀 해야겠어요.너무 착한 금액이",
+       "y": 197
+      },
+      {
+       "conf": 0.979,
+       "text": "라 솔직히 호기심반 기대반으로 구매했는데 역쉬~~~탁월한 선택이었",
+       "y": 226
+      },
+      {
+       "conf": 0.995,
+       "text": "어요.다들 치마 넘 이뿌다고 난리였고요사진도 잘 나오고 스윙할",
+       "y": 256
+      },
+      {
+       "conf": 0.984,
+       "text": "때 편하고 더할 나위가 없었어요.단골되겠음되!!",
+       "y": 283
+      },
+      {
+       "conf": 0.914,
+       "text": "kong** / *23.03,29",
+       "y": 316
+      },
+      {
+       "conf": 1.0,
+       "text": "별점",
+       "y": 394
+      },
+      {
+       "conf": 0.997,
+       "text": "가격 좋고 편하고 예뻐요.",
+       "y": 455
+      },
+      {
+       "conf": 0.931,
+       "text": "저렴하고 핏도 좋아요.",
+       "y": 491
+      },
+      {
+       "conf": 0.96,
+       "text": "mj55****23.06.11",
+       "y": 537
+      },
+      {
+       "conf": 1.0,
+       "text": "별점",
+       "y": 628
+      },
+      {
+       "conf": 0.996,
+       "text": "배송도 빠르고 상품 질이 좋네요.치마는 너무 편하고 진짜 편함.",
+       "y": 666
+      },
+      {
+       "conf": 0.98,
+       "text": "모자도 ㅎㅎ 정말 얼굴 작아보이는 사계절 사용가능.뻔도 모자와 함께",
+       "y": 697
+      },
+      {
+       "conf": 0.978,
+       "text": "너무 이쁘고 니삭스 스타킹도 그냥 이빨듯요.창피하지만 너무 만족스러",
+       "y": 723
+      },
+      {
+       "conf": 0.98,
+       "text": "워서 사진 올립니다.",
+       "y": 752
+      },
+      {
+       "conf": 0.951,
+       "text": "gase*****23.07.18",
+       "y": 786
+      },
+      {
+       "conf": 0.609,
+       "text": "별점 / ㅊㅊㅊㅊ",
+       "y": 855
+      },
+      {
+       "conf": 0.981,
+       "text": "주말 라운딩 앞두고 디자인이 맘에 들어 주문했는데 다행히 빠르게 잘 도",
+       "y": 886
+      },
+      {
+       "conf": 0.98,
+       "text": "착했습니다.이번에 진짜 완전 성공했습니다.일단 길이가 짧지 않아서 너",
+       "y": 916
+      },
+      {
+       "conf": 0.966,
+       "text": "무 좋구여 가격도 착하네요.리뷰 진자 꼼꼼하게 읽어보고 산건데 너무 맘",
+       "y": 947
+      },
+      {
+       "conf": 0.985,
+       "text": "에 들고 칭찬이 많은 이유를 알겠어요.",
+       "y": 977
+      },
+      {
+       "conf": 0.928,
+       "text": "S0n5****23.04.14",
+       "y": 1005
+      }
+     ],
+     "y0": 0,
+     "y1": 1066
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 548044,
+   "height": 939,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240817_123/1723896813798uOQ3p_JPEG/SE-38f59e1a-430b-4cd9-85ec-09adedcae1c7.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "별점",
+       "y": 30
+      },
+      {
+       "conf": 0.984,
+       "text": "이번 태국 골프에서 정말 만족하며 입었습니다.어디 하나 거슬리는거 없",
+       "y": 72
+      },
+      {
+       "conf": 0.976,
+       "text": "이 편안했고 시원하며 가볍고 좀 넉넉한 속바지까지 오히려 좋았네요.",
+       "y": 104
+      },
+      {
+       "conf": 0.971,
+       "text": "블랙 색상 재구매 들어가요~감사합니다^^",
+       "y": 133
+      },
+      {
+       "conf": 0.909,
+       "text": "chri* / **23.10.17",
+       "y": 184
+      },
+      {
+       "conf": 1.0,
+       "text": "별점",
+       "y": 259
+      },
+      {
+       "conf": 0.95,
+       "text": "너무 맘에 들어요.",
+       "y": 306
+      },
+      {
+       "conf": 0.992,
+       "text": "요즘 날씨가 더운데 집에서도 입고 있으면 깔끔하고 시원하고",
+       "y": 335
+      },
+      {
+       "conf": 0.994,
+       "text": "단정해보여서 만족해요 하나 더 구매할려구요",
+       "y": 368
+      },
+      {
+       "conf": 0.894,
+       "text": "meon* / **23.08.05",
+       "y": 409
+      },
+      {
+       "conf": 1.0,
+       "text": "별점",
+       "y": 497
+      },
+      {
+       "conf": 0.968,
+       "text": "전 요즘 이거 입고 연습장도 가게되네요.",
+       "y": 541
+      },
+      {
+       "conf": 0.973,
+       "text": "스윙할 때랑 편하게 돌아맹길때 불편하지 않고 역시 날씬해보이는게",
+       "y": 574
+      },
+      {
+       "conf": 0.992,
+       "text": "젤 장점인듯 해요~내돈내산 후기였음니다~",
+       "y": 610
+      },
+      {
+       "conf": 0.908,
+       "text": "kong** / **23.04.12",
+       "y": 652
+      },
+      {
+       "conf": 0.566,
+       "text": "별점 / ∗ㅊㅊㅊㅊ",
+       "y": 732
+      },
+      {
+       "conf": 0.969,
+       "text": "드라이해서 입으면 더 예쁘겠어요.",
+       "y": 781
+      },
+      {
+       "conf": 0.957,
+       "text": "색상 너무 예뻐요.검정하고 베이지 두 개 주문예정입니다.",
+       "y": 814
+      },
+      {
+       "conf": 0.978,
+       "text": "센스있는 고무줄도 감사해요.",
+       "y": 848
+      },
+      {
+       "conf": 0.921,
+       "text": "SSS2*****23.11.29",
+       "y": 884
+      }
+     ],
+     "y0": 0,
+     "y1": 939
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 146104,
+   "height": 686,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251111_61/1762869586481Uj3GB_JPEG/%EC%82%AC%EC%9D%B4%EC%A6%88%ED%91%9C_-_2025-11-11T225842.762.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "원단 / OPTION",
+       "y": 11
+      },
+      {
+       "conf": 0.997,
+       "text": "원단 / 착용 계절",
+       "y": 147
+      },
+      {
+       "conf": 0.988,
+       "text": "긴기장 밴딩 / 봄,여름,초가을",
+       "y": 254
+      },
+      {
+       "conf": 0.992,
+       "text": "긴기장 밴딩 / 가을~초겨울~초봄",
+       "y": 370
+      },
+      {
+       "conf": 0.954,
+       "text": "(도통원단) / 기모 착용이 답답하신 분",
+       "y": 441
+      },
+      {
+       "conf": 0.99,
+       "text": "긴기장 밴딩",
+       "y": 540
+      },
+      {
+       "conf": 1.0,
+       "text": "겨울",
+       "y": 576
+      },
+      {
+       "conf": 1.0,
+       "text": "(기모원단)",
+       "y": 611
+      }
+     ],
+     "y0": 0,
+     "y1": 686
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 672395,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251116_162/1763282475924saEUJ_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94_(20).jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "기모원단",
+       "y": 119
+      },
+      {
+       "conf": 0.845,
+       "text": "<",
+       "y": 99
+      },
+      {
+       "conf": 0.902,
+       "text": "도통원단",
+       "y": 291
+      },
+      {
+       "conf": 0.967,
+       "text": "일반원단",
+       "y": 542
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 1100
+  },
+  {
+   "bytes": 926289,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251116_164/1763282795177IiGCn_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94_(21).jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "일반원단",
+       "y": 118
+      },
+      {
+       "conf": 0.888,
+       "text": "도통원단",
+       "y": 463
+      },
+      {
+       "conf": 1.0,
+       "text": "기모원단",
+       "y": 848
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 1100
+  },
+  {
+   "bytes": 22407,
+   "height": 139,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_34/1714476241422FEwVA_JPEG/SE-5ee6494c-e4bc-4bd2-9960-fe8ddca870f7.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "SPAN / BAND",
+       "y": 60
+      }
+     ],
+     "y0": 0,
+     "y1": 139
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 39434,
+   "height": 277,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_205/1714476006743lg2lD_JPEG/intro_pinkgolf_07_spanband.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.892,
+       "text": "올록볼록 뱃살 NO,NO!",
+       "y": 34
+      },
+      {
+       "conf": 0.983,
+       "text": "신축성 뛰어난 매끈 밴딩으로",
+       "y": 117
+      },
+      {
+       "conf": 0.97,
+       "text": "뱃살이 있어도 / 편안하게!",
+       "y": 172
+      }
+     ],
+     "y0": 0,
+     "y1": 277
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 20287,
+   "height": 138,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_100/17144760165331Mlde_JPEG/intro_pinkgolf_08_ultra.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.994,
+       "text": "ULTRA / STRETCH",
+       "y": 57
+      }
+     ],
+     "y0": 0,
+     "y1": 138
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 40666,
+   "height": 275,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_48/17144760477171u4tc_JPEG/intro_pinkgolf_10_stretch.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.935,
+       "text": "항상편안한 / 사방스판!",
+       "y": 39
+      },
+      {
+       "conf": 0.994,
+       "text": "신축성 / 뛰어난 사방스판 원단으로",
+       "y": 120
+      },
+      {
+       "conf": 0.996,
+       "text": "어떤 / 활동도 자유자재로!",
+       "y": 175
+      }
+     ],
+     "y0": 0,
+     "y1": 275
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 22627,
+   "height": 119,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240908_82/1725754783800WnhV9_JPEG/SE-1635fddb-49fa-4460-8c96-a658f83def1d.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "WRINKLE / FREE",
+       "y": 42
+      }
+     ],
+     "y0": 0,
+     "y1": 119
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 45120,
+   "height": 310,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_162/1714476161758YKHsN_JPEG/SE-f0e139f5-8d88-4a3d-a435-4e99080fb73d.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "늘깨끗하고 / 깔끔하게!",
+       "y": 41
+      },
+      {
+       "conf": 0.999,
+       "text": "구김이 잘 가지 않고",
+       "y": 117
+      },
+      {
+       "conf": 0.991,
+       "text": "먼지가 들러붙지 / 않는",
+       "y": 174
+      },
+      {
+       "conf": 0.999,
+       "text": "관리하기 편한 실용적인 원단",
+       "y": 227
+      }
+     ],
+     "y0": 0,
+     "y1": 310
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1206640,
+   "height": 1250,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231218_122/1702907842021EyYaS_JPEG/SE-1e035c9b-7a77-4db1-94bc-c198f1c2b246.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1250
+    }
+   ],
+   "status": "read",
+   "width": 1250
+  },
+  {
+   "bytes": 228751,
+   "height": 555,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231218_67/1702907857175VEbPQ_JPEG/SE-2be469f9-ebdc-4d22-889f-a029f79faef0.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 555
+    }
+   ],
+   "status": "read",
+   "width": 555
+  },
+  {
+   "bytes": 964859,
+   "height": 1135,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231218_170/1702907151014blyam_JPEG/SE-06e391d9-ae01-47f7-9e77-80cf25ca9976.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "앞",
+       "y": 865
+      }
+     ],
+     "y0": 0,
+     "y1": 1135
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1027365,
+   "height": 1110,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231218_190/1702907208977FIkw4_JPEG/SE-cbe6a1fa-4bae-47a2-999a-3d228608c2db.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.965,
+       "text": "뒤",
+       "y": 943
+      }
+     ],
+     "y0": 0,
+     "y1": 1110
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 566594,
+   "height": 1122,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231218_65/1702908889049O1ybn_JPEG/KakaoTalk_20231213_200921937_20.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1122
+    }
+   ],
+   "status": "read",
+   "width": 1122
+  },
+  {
+   "bytes": 485792,
+   "height": 1064,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231218_93/1702908801540amDXl_JPEG/KakaoTalk_20231213_200954034_11.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1064
+    }
+   ],
+   "status": "read",
+   "width": 1064
+  },
+  {
+   "bytes": 388061,
+   "height": 1048,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231218_225/1702908830805Bntwi_JPEG/KakaoTalk_20231213_200954034_22.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1048
+    }
+   ],
+   "status": "read",
+   "width": 1048
+  },
+  {
+   "bytes": 1088770,
+   "height": 1199,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231218_103/1702908554363c39eJ_JPEG/SE-4fb20b57-d060-433c-b513-336f2e439dc6.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1199
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 504398,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231218_219/1702908444793abdRS_JPEG/KakaoTalk_20231218_230535495.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 496105,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231218_170/1702908467047Eiw2P_JPEG/KakaoTalk_20231218_230535495_01.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.657,
+       "text": "→",
+       "y": 817
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 504413,
+   "height": 1061,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231218_61/1702909019781ka4Ti_JPEG/KakaoTalk_20231213_200921937_23.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1061
+    }
+   ],
+   "status": "read",
+   "width": 1061
+  },
+  {
+   "bytes": 412030,
+   "height": 974,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231218_163/17029090432652NpHi_JPEG/KakaoTalk_20231213_200954034_02.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 974
+    }
+   ],
+   "status": "read",
+   "width": 974
+  },
+  {
+   "bytes": 310062,
+   "height": 943,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231218_141/1702909120764pVKWO_JPEG/KakaoTalk_20231213_200954034_26.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 943
+    }
+   ],
+   "status": "read",
+   "width": 943
+  },
+  {
+   "bytes": 457896,
+   "height": 1036,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231219_128/1702912831767V6Ctp_JPEG/KakaoTalk_20231213_200921937_24.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1036
+    }
+   ],
+   "status": "read",
+   "width": 1036
+  },
+  {
+   "bytes": 327667,
+   "height": 963,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231219_121/1702912797242QgHsU_JPEG/KakaoTalk_20231213_200954034_07.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 963
+    }
+   ],
+   "status": "read",
+   "width": 963
+  },
+  {
+   "bytes": 319286,
+   "height": 925,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231219_74/1702912777852Cns8K_JPEG/KakaoTalk_20231213_200954034_17.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 925
+    }
+   ],
+   "status": "read",
+   "width": 925
+  },
+  {
+   "bytes": 411864,
+   "height": 557,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250316_171/1742132000423y8nKu_JPEG/SE-d666aa58-bacf-4c12-8b5f-a7a02bf0e776.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 557
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 96991,
+   "height": 931,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250831_186/1756648558042HVqgp_JPEG/%EB%8C%80%ED%91%9C2.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.978,
+       "text": "EVER",
+       "y": 223
+      },
+      {
+       "conf": 0.918,
+       "text": "BAY / BIRDI",
+       "y": 262
+      }
+     ],
+     "y0": 0,
+     "y1": 931
+    }
+   ],
+   "status": "read",
+   "width": 931
+  },
+  {
+   "bytes": 147190,
+   "height": 1038,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250831_238/1756648561865Wi8Nq_JPEG/%EB%8C%80%ED%91%9C%EC%82%AC%EC%A7%84.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.908,
+       "text": "EVERY / GREENC",
+       "y": 226
+      },
+      {
+       "conf": 0.925,
+       "text": "QU",
+       "y": 258
+      },
+      {
+       "conf": 0.996,
+       "text": "BIRDIE",
+       "y": 270
+      },
+      {
+       "conf": 0.998,
+       "text": "+",
+       "y": 305
+      }
+     ],
+     "y0": 0,
+     "y1": 1038
+    }
+   ],
+   "status": "read",
+   "width": 1024
+  },
+  {
+   "bytes": 1197816,
+   "height": 1036,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260517_289/1779006464433BrASi_JPEG/SE-e1649948-212a-44a2-9b9a-3228bb3d047a.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1036
+    }
+   ],
+   "status": "read",
+   "width": 1036
+  },
+  {
+   "bytes": 1447232,
+   "height": 1058,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260517_47/1779006445201uxQCX_JPEG/SE-109fe4b4-41c5-498d-b680-fc405c76c065.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1058
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 397747,
+   "height": 720,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240916_80/1726483874625DPrKd_JPEG/%EC%82%AC%EC%9D%B4%EC%A6%88%ED%91%9C_-_2024-09-16T195040.862.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.983,
+       "text": "SIZE / TIP-밴딩플레어치마",
+       "y": 18
+      },
+      {
+       "conf": 0.994,
+       "text": "(단위:cm)",
+       "y": 118
+      },
+      {
+       "conf": 0.991,
+       "text": "아래 실측 사이즈는 / 단면의 / 길이입니다",
+       "y": 220
+      },
+      {
+       "conf": 0.979,
+       "text": "사이즈는 / 측정방법에 / 따라1 / 2cm정도의 / 오차가 있을 수 있습니다.",
+       "y": 269
+      },
+      {
+       "conf": 0.945,
+       "text": "사이즈(cm) / 허리 단면 / 총기장",
+       "y": 378
+      },
+      {
+       "conf": 0.999,
+       "text": "F-프리(55~66) / 33 / 43",
+       "y": 463
+      },
+      {
+       "conf": 0.993,
+       "text": "L-라지(통통66~77) / 35 / 43",
+       "y": 539
+      },
+      {
+       "conf": 0.996,
+       "text": "XL-엑스라지(통통77~) / 37 / 45",
+       "y": 613
+      }
+     ],
+     "y0": 0,
+     "y1": 720
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 706895,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260517_72/1779006195165mdrd0_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "네오플랜 / 와이드 밴딩 스커트",
+       "y": 14
+      },
+      {
+       "conf": 0.927,
+       "text": "T&JEE",
+       "y": 173
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 524367,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250316_141/1742107852542osSiR_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(10).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.983,
+       "text": "와이드 매끈 허리밴딩 여성골프바지",
+       "y": 8
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 828161,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250316_66/1742109523406hpNC6_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(13).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.995,
+       "text": "겨울 기모 롱주름 플리츠스커트",
+       "y": 12
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 562942,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250316_66/1742107970142HKUfK_JPEG/%EC%8B%A0%EC%A0%9C%ED%92%88_(1).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.944,
+       "text": "허리밴딩 단추오픈 패딩롱치마",
+       "y": 10
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 518619,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250316_56/1742107783428Hmf9l_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(14).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.97,
+       "text": "기모 이너티셔츠",
+       "y": 11
+      },
+      {
+       "conf": 0.705,
+       "text": "01",
+       "y": 696
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 442239,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250316_286/1742110044792K2Ac9_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(29).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.98,
+       "text": "겨울 기모 투톤 골프스타킹",
+       "y": 13
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 580776,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260217_186/1771255308045QFwiO_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(43).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.928,
+       "text": "반팔 경량 집업 패딩 점퍼",
+       "y": 11
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 664433,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250323_63/1742704286419iScJN_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(33).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "가벼운 패딩 손가방",
+       "y": 10
+      },
+      {
+       "conf": 0.932,
+       "text": "OLIVA / VOGUE",
+       "y": 103
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 657852,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251115_176/1763212511369g2eKv_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(48).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.931,
+       "text": "얇고 가볍고 부드러운 목폴라",
+       "y": 14
+      },
+      {
+       "conf": 0.68,
+       "text": "N",
+       "y": 397
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 580324,
+   "height": 1080,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250316_144/1742108642604P2zDA_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(27).jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.997,
+       "text": "귀도리 벙거지 패딩 양털 방한모자",
+       "y": 11
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 381709,
+   "height": 1209,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_41/1714476360044zyxOG_JPEG/intro_pinkgolf_17.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.98,
+       "text": "PINK GOLF",
+       "y": 127
+      },
+      {
+       "conf": 0.999,
+       "text": "EVENT",
+       "y": 178
+      },
+      {
+       "conf": 0.997,
+       "text": "01 / 02",
+       "y": 381
+      },
+      {
+       "conf": 0.994,
+       "text": "베스트 리뷰어 선정 / 네이버페이 지급",
+       "y": 439
+      },
+      {
+       "conf": 0.953,
+       "text": "매월말일, / 구매 제품을 착용한",
+       "y": 508
+      },
+      {
+       "conf": 0.925,
+       "text": "베스트 포토 리뷰어 / 포토 후기를",
+       "y": 556
+      },
+      {
+       "conf": 0.968,
+       "text": "1명을 선정하여 / 남겨주셨을 때,",
+       "y": 600
+      },
+      {
+       "conf": 0.961,
+       "text": "스타버스 아메리카노 증정 / 네이버페이1,000원 지급",
+       "y": 658
+      },
+      {
+       "conf": 0.992,
+       "text": "pay",
+       "y": 816
+      },
+      {
+       "conf": 0.995,
+       "text": "1,000 / 원",
+       "y": 894
+      }
+     ],
+     "y0": 0,
+     "y1": 1209
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 116961,
+   "height": 797,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_293/1714476367196owVoa_JPEG/intro_pinkgolf_18.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.987,
+       "text": "CUSTOMER CENTER",
+       "y": 120
+      },
+      {
+       "conf": 1.0,
+       "text": "고객센터",
+       "y": 154
+      },
+      {
+       "conf": 0.997,
+       "text": "문의사항은'네이버 톡톡'으로 보내주시면",
+       "y": 353
+      },
+      {
+       "conf": 0.984,
+       "text": "빠르게 도와드리겠습니다.",
+       "y": 410
+      },
+      {
+       "conf": 0.989,
+       "text": "조금 늦어지더라도 한 분도 빠짐없이",
+       "y": 463
+      },
+      {
+       "conf": 0.974,
+       "text": "정성껏 답변해드리고 있습니다.",
+       "y": 520
+      },
+      {
+       "conf": 0.977,
+       "text": "핑크골프",
+       "y": 679
+      },
+      {
+       "conf": 0.784,
+       "text": "• / 2",
+       "y": 713
+      }
+     ],
+     "y0": 0,
+     "y1": 797
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  }
+ ],
+ "key": "fairwardgolf:naver:101730292:7965635614",
+ "links_sha256": "604b202c5d774c235264e963c5358e66a718492b5578d7ddf433165c99d5930b",
+ "product_id": "7965635614",
+ "seconds": 51.1,
+ "skipped": [
+  {
+   "link": "https://shop-phinf.pstatic.net/20250112_165/1736610792733tCuJB_JPEG/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD_(6).jpg?type=w848",
+   "rule": "boilerplate_name"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240511_246/1715434012522szEf5_GIF/%EC%88%98%EC%A0%95KakaoTalk_20240510_141125776.gif",
+   "rule": "gif_animated"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20171017_299/editorteam_1508229319474zsS9U_PNG/%C0%CC%B9%CC%C1%F6_%B1%B8%BA%D0%BC%B1_2.png",
+   "rule": "tiny"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240430_185/1714466530683F44ja_GIF/intro_pinkgolf_05.gif",
+   "rule": "gif_animated"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240430_40/1714476023418sizp7_GIF/intro_pinkgolf_09.gif",
+   "rule": "gif_animated"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240430_131/1714464129462t30y7_GIF/intro_pinkgolf_09.gif",
+   "rule": "gif_animated"
+  }
+ ]
+}

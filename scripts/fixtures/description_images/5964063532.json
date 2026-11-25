@@ -1,0 +1,733 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 4724996,
+   "height": 1662,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_294/1635351967399LtY99_JPEG/5A31435F-4871-4940-BB32-C6D0157F4E01.jpeg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.534,
+       "text": "ROU",
+       "y": 1425
+      }
+     ],
+     "y0": 0,
+     "y1": 1662
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 60605,
+   "height": 261,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210411_184/1618067316515abAdl_JPEG/613DFE06-5946-4156-A197-5378978BB698.jpeg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.948,
+       "text": "MMEN",
+       "y": 48
+      }
+     ],
+     "y0": 0,
+     "y1": 261
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 5541180,
+   "height": 1707,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_142/1635351993394X5EDb_JPEG/3EE1F2ED-0204-4BCF-8284-DC69271242BB.jpeg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.641,
+       "text": "lut",
+       "y": 514
+      }
+     ],
+     "y0": 0,
+     "y1": 1707
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 5263561,
+   "height": 1550,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_118/1635352018899BF7bE_JPEG/FAF2E2DE-DB60-4679-A512-8D6746CEF745.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1550
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 3551843,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_165/1635352080650nYIHN_JPEG/49950D74-F5F3-4678-9364-FF1B2F3A9988.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 485413,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_16/1635352464271bEchp_JPEG/6374B5BD-CBED-42BF-A660-F6812431039A.jpeg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.889,
+       "text": "0",
+       "y": 953
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1527106,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_221/1635352052961CLNlk_JPEG/6EDE7717-9D05-494E-8745-E65E5975F160.jpeg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.861,
+       "text": "4",
+       "y": 201
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 4722042,
+   "height": 1518,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_127/1635352139710mDPWW_JPEG/F9F8C8FC-1827-4D73-B2A2-F0D2A29D6D04.jpeg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.743,
+       "text": "ileist",
+       "y": 436
+      }
+     ],
+     "y0": 0,
+     "y1": 1518
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 3837826,
+   "height": 1622,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_13/1635352139540qy902_JPEG/DCADA0F8-207D-4DAC-B547-E1A2404CEB59.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1622
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 3051235,
+   "height": 1250,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_77/1635352270562oi28j_JPEG/BA98700E-4158-4770-B684-1A811873ACEC.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1250
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 3036432,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_141/16353522705590IcBx_JPEG/AB1452A9-DC00-48D2-8420-2FAB22C5B672.jpeg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.508,
+       "text": "1",
+       "y": 131
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 4724996,
+   "height": 1662,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_95/1635352139758HDBeJ_JPEG/87BE0A04-DB18-4483-8FF2-97FE2FFD1E98.jpeg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.534,
+       "text": "ROU",
+       "y": 1425
+      }
+     ],
+     "y0": 0,
+     "y1": 1662
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 312281,
+   "height": 1075,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_78/1635353872840wJywM_JPEG/28438A10-94BF-4FAA-B323-FD1C070E5867.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1075
+    }
+   ],
+   "status": "read",
+   "width": 1043
+  },
+  {
+   "bytes": 451423,
+   "height": 1115,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_184/1635353873081JrM1L_JPEG/9FB6574D-8CD7-4DBB-8C85-6EAF198A806B.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1115
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 328299,
+   "height": 1117,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_160/1635353873022FFSOh_JPEG/566B77A4-88DF-43AD-A37C-5DC692DAE772.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1117
+    }
+   ],
+   "status": "read",
+   "width": 1073
+  },
+  {
+   "bytes": 275894,
+   "height": 1131,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_233/1635353872981DcPii_JPEG/CF32D80E-6C8B-4AB4-8DCB-E0AEFA74004B.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1131
+    }
+   ],
+   "status": "read",
+   "width": 1002
+  },
+  {
+   "bytes": 231123,
+   "height": 1059,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_278/1635353873577r7cxa_JPEG/08EFFA14-580B-4B9C-9F58-40116C0007CF.jpeg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.525,
+       "text": "→",
+       "y": 229
+      }
+     ],
+     "y0": 0,
+     "y1": 1059
+    }
+   ],
+   "status": "read",
+   "width": 968
+  },
+  {
+   "bytes": 199609,
+   "height": 981,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_29/1635353873615cKnDy_JPEG/05367A4F-DA24-4B0C-B4E7-3A7A1A0E6D83.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 981
+    }
+   ],
+   "status": "read",
+   "width": 1025
+  },
+  {
+   "bytes": 214530,
+   "height": 1042,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_22/1635353873650JiqJk_JPEG/45859546-1071-48DF-9959-87E7E0BF19CE.jpeg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1042
+    }
+   ],
+   "status": "read",
+   "width": 785
+  },
+  {
+   "bytes": 221675,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_50/1635353873700d7RwH_JPEG/84CD0BFD-C797-4636-8A22-82330B383A4F.jpeg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.918,
+       "text": "R",
+       "y": 145
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1010
+  },
+  {
+   "bytes": 194025,
+   "height": 363,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210410_155/16180564006302jEyv_JPEG/SE-41aced3b-7b47-4df8-8487-15f4fea1df9f.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.591,
+       "text": ".",
+       "y": 44
+      },
+      {
+       "conf": 0.704,
+       "text": "-..........·.",
+       "y": 116
+      },
+      {
+       "conf": 0.788,
+       "text": "SIZE& [ / DIT'AⅡL",
+       "y": 201
+      }
+     ],
+     "y0": 0,
+     "y1": 363
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 218318,
+   "height": 983,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211028_108/16353538740500Epk8_JPEG/E27276AB-2707-45B9-B1DD-D4589D97CD8B.jpeg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "고급원단 소재",
+       "y": 31
+      },
+      {
+       "conf": 0.992,
+       "text": "고급원단을 사용하였습니다.",
+       "y": 110
+      },
+      {
+       "conf": 0.997,
+       "text": "할동성을 높이기 위하여",
+       "y": 143
+      },
+      {
+       "conf": 0.998,
+       "text": "울+폴리에스테르",
+       "y": 177
+      },
+      {
+       "conf": 0.999,
+       "text": "활동성+스타일",
+       "y": 212
+      },
+      {
+       "conf": 0.974,
+       "text": "모두다 잡았습니다.",
+       "y": 249
+      },
+      {
+       "conf": 0.996,
+       "text": "스퀘어 고급 포인트",
+       "y": 375
+      },
+      {
+       "conf": 0.919,
+       "text": "꼼꼼한 공정으로",
+       "y": 440
+      },
+      {
+       "conf": 0.995,
+       "text": "신경써서 만들었습니다.",
+       "y": 477
+      },
+      {
+       "conf": 0.999,
+       "text": "고급 원단 과 부자재사용",
+       "y": 512
+      },
+      {
+       "conf": 0.957,
+       "text": "포인트로 이뽑니다.",
+       "y": 547
+      },
+      {
+       "conf": 0.997,
+       "text": "데일리&필드",
+       "y": 699
+      },
+      {
+       "conf": 0.998,
+       "text": "필드 또는 데일리룩",
+       "y": 768
+      },
+      {
+       "conf": 0.987,
+       "text": "너무이쁘게 나온 가을 신상입니다.",
+       "y": 804
+      },
+      {
+       "conf": 0.99,
+       "text": "원단 또한 고급스럽게",
+       "y": 840
+      },
+      {
+       "conf": 0.998,
+       "text": "잘나왔습니다.",
+       "y": 873
+      }
+     ],
+     "y0": 0,
+     "y1": 983
+    }
+   ],
+   "status": "read",
+   "width": 922
+  },
+  {
+   "bytes": 65821,
+   "height": 232,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210410_197/1618063834538W7QTq_JPEG/C4F3DF68-4414-425B-9605-710E79B0FDB3.jpeg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 232
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 162002,
+   "height": 256,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210411_202/1618070715794DSBOf_JPEG/F133FD14-741E-42A5-8E01-C0BDA79647FB.jpeg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "사진의 / 색상은 / 사용자의 모니터 / 화면 / 색상에 / 따라",
+       "y": 17
+      },
+      {
+       "conf": 0.809,
+       "text": "다르게 / 보일 / 1수 / 있습니다.",
+       "y": 62
+      },
+      {
+       "conf": 0.983,
+       "text": "사이즈는 단면을 / 기준으로 / 하며,측정방식에 / 따라",
+       "y": 146
+      },
+      {
+       "conf": 0.96,
+       "text": "1-2cm 의 오차가 발생 할 수 있습니다.",
+       "y": 185
+      }
+     ],
+     "y0": 0,
+     "y1": 256
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 126030,
+   "height": 322,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210410_172/1618063786541qEtrA_JPEG/3CED98CF-7B1D-466C-8FAB-94FE6CD193E4.jpeg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.583,
+       "text": "·····..······",
+       "y": 115
+      },
+      {
+       "conf": 0.979,
+       "text": "CAUTION",
+       "y": 212
+      }
+     ],
+     "y0": 0,
+     "y1": 322
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 280668,
+   "height": 2232,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240711_79/1720699513663fCEi4_JPEG/1.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.966,
+       "text": "TODAY GOLF",
+       "y": 111
+      },
+      {
+       "conf": 0.998,
+       "text": "CAUTION",
+       "y": 181
+      },
+      {
+       "conf": 0.85,
+       "text": "상 담 안 내",
+       "y": 379
+      },
+      {
+       "conf": 0.952,
+       "text": "톡톡문의",
+       "y": 561
+      },
+      {
+       "conf": 0.981,
+       "text": "가장 빠른 답변이 가능합니다.(10:00~20:00)",
+       "y": 617
+      },
+      {
+       "conf": 0.84,
+       "text": "배 송 안 내",
+       "y": 794
+      },
+      {
+       "conf": 0.989,
+       "text": "주문 완료 후에 1~2일 후 상품을 발송해드립니다.",
+       "y": 928
+      },
+      {
+       "conf": 0.994,
+       "text": "상품이 늦여지는 경우 고객님께 안내 연락드립니다.",
+       "y": 978
+      },
+      {
+       "conf": 0.971,
+       "text": "상품 발송 후 택배사 상황에 따라 1~3일 후 도착합니다.",
+       "y": 1028
+      },
+      {
+       "conf": 0.925,
+       "text": "교환 및 반품",
+       "y": 1144
+      },
+      {
+       "conf": 0.989,
+       "text": "네이버페이에서 교환 및 반품 사유를 적어 신청해주세요.",
+       "y": 1284
+      },
+      {
+       "conf": 0.983,
+       "text": "색상이 화이트,아이보리인 경우와 오염 및 사용흔적이 있는",
+       "y": 1338
+      },
+      {
+       "conf": 0.94,
+       "text": "경우는 교환, 반품 불가합니다.",
+       "y": 1376
+      },
+      {
+       "conf": 0.968,
+       "text": "스타킹, / 속바지,언더웨어 제품은 반품 불가합니다.",
+       "y": 1440
+      },
+      {
+       "conf": 0.971,
+       "text": "오늘도 골프의 모든 사진은",
+       "y": 1591
+      },
+      {
+       "conf": 0.988,
+       "text": "저작권법에 의거하여 보호받고 있습니다.",
+       "y": 1645
+      }
+     ],
+     "y0": 0,
+     "y1": 1802
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "TODAY / GOLF",
+       "y": 199
+      }
+     ],
+     "y0": 1802,
+     "y1": 2232
+    }
+   ],
+   "status": "read",
+   "width": 888
+  },
+  {
+   "bytes": 156339,
+   "height": 346,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210411_288/1618070773402KQOTb_JPEG/ED4BE5A3-F23C-429F-9FAC-2CDFDE05E594.jpeg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.995,
+       "text": "저작권법에 의거하여 보호받고있는",
+       "y": 43
+      },
+      {
+       "conf": 0.989,
+       "text": "오늘도 골프의 모든 사진을 무단 사용하지 마시오.",
+       "y": 86
+      },
+      {
+       "conf": 0.974,
+       "text": "TODAYGOLF오늘도골프",
+       "y": 290
+      }
+     ],
+     "y0": 0,
+     "y1": 346
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  }
+ ],
+ "key": "fairwardgolf:naver:100017333:5964063532",
+ "links_sha256": "34c67d6dcd8bb4f060260eebc45c7d6887644280a76da8a3d160aa6c5e245db0",
+ "product_id": "5964063532",
+ "seconds": 33.1,
+ "skipped": [
+  {
+   "link": "https://shop-phinf.pstatic.net/20210410_18/1618055773212pi7Wh_JPEG/SE-3d30f20b-1d1a-4050-90a7-9c7a50e681a8.jpg?type=w848",
+   "rule": "first_header"
+  }
+ ]
+}

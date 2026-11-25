@@ -1,0 +1,1833 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:100954126:6485458095",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "off_section_variants_left_out",
+   "detail": "14 variants: 여름냉감"
+  },
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 8); 3 trimmed"
+  },
+  {
+   "code": "title_names_one_variant",
+   "detail": "여성, 블랙"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "CONDITIONAL_FREE 3000 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/tee_and/products/6485458095",
+  "channel_no": "100954126",
+  "product_id": "6485458095",
+  "category_id": "50002796"
+ },
+ "product": {
+  "title_ko": "티앤드 여성 골프이너웨어 티셔츠 두줄 반폴라 블랙 빅사이즈 골프웨어",
+  "brand_ko": "티앤드",
+  "brand_source": "shop_wordmark",
+  "attributes": {
+   "gender": {
+    "value": "mixed",
+    "variants": {
+     "FW-0640dbdd5d19efa703e0ee65": "womens",
+     "FW-ad73ec3c9625851148e4ddfd": "womens",
+     "FW-312bedd88a514285dae88825": "womens",
+     "FW-af7823a0930aa87878e74db8": "mens",
+     "FW-bde2e378d5edbdeb35cc1bcf": "mens",
+     "FW-eb504a1df2267e34637b61fa": "mens",
+     "FW-773089e71421d4bc3d82cc33": "mens",
+     "FW-6c8cfe182f06fc341f20f350": "womens",
+     "FW-a8cb21179737416cf76b06f0": "womens",
+     "FW-ff397e0d10c77dcf45c94dae": "womens",
+     "FW-d504ff8a7d1dfa69d42f7fce": "mens",
+     "FW-faaf8acc4cff7d956720bbac": "mens",
+     "FW-7778857ea3947723ff56de25": "mens",
+     "FW-ec6159bfd64a7482daca0954": "mens"
+    },
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "unisex",
+      "text": "남녀공용"
+     },
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "티앤드 여성 골프이너웨어 티셔츠 두줄 반폴라 블랙 빅사이즈 골프웨어"
+     },
+     {
+      "source": "rule",
+      "value": "womens",
+      "text": "the title's gender over a unisex row"
+     },
+     {
+      "source": "variants",
+      "value": "mens,womens",
+      "text": "14 of 14 variants"
+     },
+     {
+      "source": "listing",
+      "value": "womens",
+      "text": "여성 골프 가을 긴팔 티셔츠"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "색상",
+    "values_ko": [
+     "블랙",
+     "화이트"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "여성 55(M)",
+     "여성 66(L)",
+     "여성 77(XL)",
+     "남성 95(M)",
+     "남성 100(L)",
+     "남성 105(XL)",
+     "남성 110(2XL)"
+    ]
+   }
+  ],
+  "facts": [
+   {
+    "label_ko": "타입",
+    "value_ko": "약기모"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"약기모\",\"블랙\",\"여성 55(M)\"]",
+    "naver_variant_id": "52048337783",
+    "options_ko": [
+     "블랙",
+     "여성 55(M)"
+    ],
+    "price_krw": 24000,
+    "price_usd": "24.00",
+    "sku": "FW-0640dbdd5d19efa703e0ee65",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"약기모\",\"블랙\",\"여성 66(L)\"]",
+    "naver_variant_id": "52048337786",
+    "options_ko": [
+     "블랙",
+     "여성 66(L)"
+    ],
+    "price_krw": 24000,
+    "price_usd": "24.00",
+    "sku": "FW-ad73ec3c9625851148e4ddfd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"약기모\",\"블랙\",\"여성 77(XL)\"]",
+    "naver_variant_id": "52048337789",
+    "options_ko": [
+     "블랙",
+     "여성 77(XL)"
+    ],
+    "price_krw": 24000,
+    "price_usd": "24.00",
+    "sku": "FW-312bedd88a514285dae88825",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"약기모\",\"블랙\",\"남성 95(M)\"]",
+    "naver_variant_id": "52048337792",
+    "options_ko": [
+     "블랙",
+     "남성 95(M)"
+    ],
+    "price_krw": 24000,
+    "price_usd": "24.00",
+    "sku": "FW-af7823a0930aa87878e74db8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"약기모\",\"블랙\",\"남성 100(L)\"]",
+    "naver_variant_id": "52048337795",
+    "options_ko": [
+     "블랙",
+     "남성 100(L)"
+    ],
+    "price_krw": 24000,
+    "price_usd": "24.00",
+    "sku": "FW-bde2e378d5edbdeb35cc1bcf",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"약기모\",\"블랙\",\"남성 105(XL)\"]",
+    "naver_variant_id": "52048337798",
+    "options_ko": [
+     "블랙",
+     "남성 105(XL)"
+    ],
+    "price_krw": 24000,
+    "price_usd": "24.00",
+    "sku": "FW-eb504a1df2267e34637b61fa",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"약기모\",\"블랙\",\"남성 110(2XL)\"]",
+    "naver_variant_id": "52048337802",
+    "options_ko": [
+     "블랙",
+     "남성 110(2XL)"
+    ],
+    "price_krw": 24000,
+    "price_usd": "24.00",
+    "sku": "FW-773089e71421d4bc3d82cc33",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"약기모\",\"화이트\",\"여성 55(M)\"]",
+    "naver_variant_id": "52048337804",
+    "options_ko": [
+     "화이트",
+     "여성 55(M)"
+    ],
+    "price_krw": 24000,
+    "price_usd": "24.00",
+    "sku": "FW-6c8cfe182f06fc341f20f350",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"약기모\",\"화이트\",\"여성 66(L)\"]",
+    "naver_variant_id": "52048337806",
+    "options_ko": [
+     "화이트",
+     "여성 66(L)"
+    ],
+    "price_krw": 24000,
+    "price_usd": "24.00",
+    "sku": "FW-a8cb21179737416cf76b06f0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"약기모\",\"화이트\",\"여성 77(XL)\"]",
+    "naver_variant_id": "52048337808",
+    "options_ko": [
+     "화이트",
+     "여성 77(XL)"
+    ],
+    "price_krw": 24000,
+    "price_usd": "24.00",
+    "sku": "FW-ff397e0d10c77dcf45c94dae",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"약기모\",\"화이트\",\"남성 95(M)\"]",
+    "naver_variant_id": "52048337810",
+    "options_ko": [
+     "화이트",
+     "남성 95(M)"
+    ],
+    "price_krw": 24000,
+    "price_usd": "24.00",
+    "sku": "FW-d504ff8a7d1dfa69d42f7fce",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"약기모\",\"화이트\",\"남성 100(L)\"]",
+    "naver_variant_id": "52048337812",
+    "options_ko": [
+     "화이트",
+     "남성 100(L)"
+    ],
+    "price_krw": 24000,
+    "price_usd": "24.00",
+    "sku": "FW-faaf8acc4cff7d956720bbac",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"약기모\",\"화이트\",\"남성 105(XL)\"]",
+    "naver_variant_id": "52048337813",
+    "options_ko": [
+     "화이트",
+     "남성 105(XL)"
+    ],
+    "price_krw": 24000,
+    "price_usd": "24.00",
+    "sku": "FW-7778857ea3947723ff56de25",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"약기모\",\"화이트\",\"남성 110(2XL)\"]",
+    "naver_variant_id": "52048337814",
+    "options_ko": [
+     "화이트",
+     "남성 110(2XL)"
+    ],
+    "price_krw": 24000,
+    "price_usd": "24.00",
+    "sku": "FW-ec6159bfd64a7482daca0954",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 22000,
+   "original_krw": 24000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "티앤드 협력업체"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "티앤드"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "ND 두줄이너"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "국산"
+   },
+   {
+    "label_ko": "네크라인",
+    "value_ko": "반목"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "자외선차단, 신축성, 기모안감"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 기모, 스판"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "봄, 가을, 겨울, 여름"
+   },
+   {
+    "label_ko": "소매기장",
+    "value_ko": "긴팔"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2025년형"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "티셔츠"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남녀공용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.42,
+   "count": 19
+  },
+  "reviews": [
+   {
+    "id": "4934377267",
+    "score": 4,
+    "text_ko": "사이즈 약기모 다 좋아요.\n다만 남여 공용이라 그런지 팔 통은 약간 여유있네요. 살짝 큰느낌 (팔통)다른건 다 좋아요. 퀄리트도 너무 좋아요.\n다른색도 구매할려구요.",
+    "created_at": "2026-03-20T01:45:30Z",
+    "writer": "miso******",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 56,
+    "text_original_ko": "사이즈 약기모 다 좋ㅈ아요..\n다만 남여 공용이라 그런지 팔 통은 약간 여유있네요..살짝 큰느낌 (팔통)다른건 다 좋아요...퀄리트도 너무 좋ㅈ아요..\n다른색도 구매할려구요.."
+   },
+   {
+    "id": "4814208031",
+    "score": 5,
+    "text_ko": "봄부터 초가을 까지 있을수 있겠어요\n신축성도 적당하고 비침이 없어요",
+    "created_at": "2025-09-30T14:00:22Z",
+    "writer": "kj****",
+    "photos": [
+     "collected/50002788-fixtures/images/6485458095/fairwardgolf-review-image-25f4c86d2ebdb696.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 62,
+    "text_original_ko": "봄부터 초가을 까지 있을수 있겠어요\n가격도 저렴하네요\n신축성도 적당하고 비침이 없어요",
+    "text_cut": [
+     "price"
+    ]
+   },
+   {
+    "id": "4808303525",
+    "score": 3,
+    "text_ko": "냉감소재로 번뜩본뜩하고 쫀쫀해요.",
+    "created_at": "2025-09-22T00:23:28Z",
+    "writer": "happ******",
+    "photos": [
+     "collected/50002788-fixtures/images/6485458095/fairwardgolf-review-image-caa15bcc98e97298.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 38
+   },
+   {
+    "id": "4719280557",
+    "score": 4,
+    "text_ko": "착용감굿.\n가볍게입기 좋아요.",
+    "created_at": "2025-05-09T10:20:36Z",
+    "writer": "kkj1***",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 43,
+    "text_original_ko": "착용감굿..\n가볍게입기 좋아요."
+   },
+   {
+    "id": "4440619406",
+    "score": 5,
+    "text_ko": "가볍고 신축성좋은 밀착냉감 소재\n살빼고 입어야겠습니다\n이너로는 좋아요",
+    "created_at": "2024-03-10T06:45:22Z",
+    "writer": "pela*****",
+    "photos": [
+     "collected/50002788-fixtures/images/6485458095/fairwardgolf-review-image-c693b7e434621258.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 82
+   },
+   {
+    "id": "4359765097",
+    "score": 5,
+    "text_ko": "원단이 많이 부드러우며 색상이 화면에 보이는 그대로 정확합니다.\n상의는 정사이즈 같은데 하의는 약간 타이트한 감이 있어요.\n그래서 두개가 한치수 큰걸로 교환했는데 더 좋았습니다.",
+    "created_at": "2023-10-30T02:50:27Z",
+    "writer": "cosm****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/6485458095/fairwardgolf-review-avatar-4ec6aeb6633c0d96.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 78,
+    "text_original_ko": "원단이 많이 부드러우며 색상이 화면에 보이는 그대로 정확합니다.\n상의는 정사이즈 같은데 하의는 약간 타이트한 감이 있어요.\n그래서 두개가 한치수 큰걸로 교환했는데 배송도 빠르고 친절하셔서 더 좋았습니다.",
+    "text_cut": [
+     "seller",
+     "shipping"
+    ]
+   },
+   {
+    "id": "4092112554",
+    "score": 5,
+    "text_ko": "이너웨어라 넉넉하게 나온편 아니고 딱 피팅되게 나왔어요. 어깨좀 있는 평소55~66입는데 66이 딱 맞아요. 편안한 착용감에 실용적으로 입기 좋아요. 만족합니다",
+    "created_at": "2022-09-27T07:34:15Z",
+    "writer": "wo****",
+    "photos": [
+     "collected/50002788-fixtures/images/6485458095/fairwardgolf-review-image-1c4218de5ac27cc6.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/6485458095/fairwardgolf-review-avatar-53576a6c002943e5.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 90,
+    "text_original_ko": "이너웨어라 넉넉하게 나온편 아니고 딱 피팅되게 나왔어요.  어깨좀 있는 평소55~66입는데 66이 딱 맞아요. 편안한 착용감에 실용적으로 입기 좋아요.   배송 빨랐어요.  만족합니다",
+    "text_cut": [
+     "shipping"
+    ]
+   },
+   {
+    "id": "4078925211",
+    "score": 5,
+    "text_ko": "냉감있는 재질로주문했고\n은근 목이 올라오는거라 잘입었습니다",
+    "created_at": "2022-09-05T14:03:41Z",
+    "writer": "wing****",
+    "photos": [
+     "collected/50002788-fixtures/images/6485458095/fairwardgolf-review-image-df6f179b8cd166e1.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/6485458095/fairwardgolf-review-avatar-be4ff47898e492a6.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 61
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/6485458095/fairwardgolf-6485458095-001-14bd903f3eeb06ee.webp",
+    "sha256": "14bd903f3eeb06ee52a3c4e9aeb492022ff70edb8939b4366c537547b3a45edc",
+    "width": 1500,
+    "height": 1500
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/6485458095/fairwardgolf-6485458095-002-57524c371519990d.webp",
+    "sha256": "57524c371519990d857ea393b274a2b257cd642d13dc0cd8522c5a8c649c49f0",
+    "width": 1500,
+    "height": 1500
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/6485458095/fairwardgolf-6485458095-003-be0fbe64c83d780a.webp",
+    "sha256": "be0fbe64c83d780a1d729080a9458cd3c63fe9e71064608050099ed1cf56accc",
+    "width": 1500,
+    "height": 1500
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/6485458095/fairwardgolf-6485458095-004-907cb67f9cec0e81.webp",
+    "sha256": "907cb67f9cec0e817471571e00672d1220e8938f3a2e98cd5970b9c3c164a2e5",
+    "width": 1500,
+    "height": 1500
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3500,
+   "extra_fee_area3": 3500,
+   "policy_text": "50,000원 이상 구매 시 무료 / 제주 추가 3,500원, 제주 외 도서지역 추가 3,500원",
+   "lead_time": {
+    "seller_average_days": 1.8235294,
+    "product_average_days": 2.0,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.25.(수)",
+    "arrival_probability": 96,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "골프 냉감 두줄 이너 티셔츠\n\n🎯 필드 위, 세련됨을 더하다\n골프 필수 아이템 이너웨어를 소개합니다.\n기분 좋은 따뜻함을 주는 약기모 소재와\n여름에도 착용할 수 있는 냉감 소재로\n두가지 타입으로 준비해보았어요 :)\n봄, 여름, 가을은 물론 추운 겨울까지\n활용할 수 있는 필수 아이템입니다!\n스판력이 아주 뛰어나\n스윙할 때도 움직임이 편안합니다.\n또한, 넥 라인에 두줄 라인 디테일이 더해져\n심플하면서도 세련된 포인트를 놓치지 않았어요.\n자칫 밋밋할 수 있는 이너웨어에\n작은 디테일로 고급스러운 분위기를 더해줍니다.\n베이직한 블랙과 화이트 컬러 구성으로\n어떤 아우터, 어떤 스커트/팬츠와도 매치가 쉬워\n하나쯤 소장하시면\n활용도 만점 아이템이 되어줄 거예요.\n게다가 남녀공용 디자인으로\nS부터 XL까지 다양한 사이즈로 구성되어\n커플룩이나 팀복으로도 활용하기 좋습니다.\n지금 바로, 스타일과 기능을 모두 갖춘\n완벽한 골프 이너웨어를 만나보세요.\n\nINFO.\n컬러 / 블랙,화이트\nFITTING INFO.\n비침 있음 보통 없음\n두께 두꺼움 보통 얇음\n신축성 좋음 보통 없음\nSIZE.\n여성\nM(55), L(66), XL(77)\nM : 총장 58 / 어깨 단면 34 / 가슴 단면 42\nL : 총장 59 / 어깨 단면 35 / 가슴 단면 44.5\nXL : 총장 60 / 어깨 단면 46 / 가슴 단면 47\n남성\n95(M) 가슴단면 50 어깨단면 43 팔길이 61 총장 67\n100(L) 가슴단면 52.5 어깨단면 44 팔길이 62 총기장 68\n105(XL) 가슴단면 55 어깨단면 45 팔길이 63 총기장 69\n110(2XL) 가슴단면 57.5 어깨단면 46 팔길이 64 총기장 70\n인치가 아닌 센티로 측정 되었습니다.\n사이즈를 재는 방법, 재는 사람,\n제작되는 과정에서\n1~3CM 오차가 있을 수 있습니다.\nMODEL.\n165/50 [상의 55/하의 M]\n모델은 M(55) 사이즈를 착용하였습니다.\n\n블랙\n\n화이트",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20250919_86/1758261942132zfzCE_PNG/002.png?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_105/1648714687218MBqV1_JPEG/20211117_164501.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_157/1648714687222GyUqH_JPEG/20211117_165647.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_55/1648714832656zfPRI_JPEG/20211117_164503.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_270/1648714832596JiTdE_JPEG/20211117_164501.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_86/16487148326458I8jA_JPEG/20211117_164508.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_235/1648714832645IjODf_JPEG/20211117_164511.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_142/1648714832651Uo9LG_JPEG/20211117_164538.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_294/1648714832663mlFu0_JPEG/20211117_164543.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_150/1648714832899dOvJb_JPEG/20211117_164545.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_92/1648714843909Nna6W_JPEG/20211117_165647.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_162/16487148439378OIFb_JPEG/20211117_165729.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_45/16487148439125YYJt_JPEG/20211117_165730.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_167/16487148439752eIlw_JPEG/20211117_165738.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_158/1648714843986YOj9u_JPEG/20211117_165740.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_248/1648714843974yvcRV_JPEG/20211117_165743.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_19/1648714844238EGGdp_JPEG/20211117_182157.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220331_66/1648714844302La5Q4_JPEG/20211117_182235.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250919_159/1758261951804xp0j8_PNG/003.png?type=w848"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 기모, 스판",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_tops",
+   "option": 1,
+   "values": [
+    {
+     "ko": "여성 55(M)",
+     "us": "Women's S (US 4-6)",
+     "letter": "S",
+     "chest_cm": 90,
+     "basis": "label",
+     "chart_label": "M",
+     "gender": "womens",
+     "profile": "womens_tops"
+    },
+    {
+     "ko": "여성 66(L)",
+     "us": "Women's M (US 8-10)",
+     "letter": "M",
+     "chest_cm": 95,
+     "basis": "label",
+     "chart_label": "L",
+     "gender": "womens",
+     "profile": "womens_tops"
+    },
+    {
+     "ko": "여성 77(XL)",
+     "us": "Women's L (US 12-14)",
+     "letter": "L",
+     "chest_cm": 100,
+     "basis": "label",
+     "chart_label": "XL",
+     "gender": "womens",
+     "profile": "womens_tops"
+    },
+    {
+     "ko": "남성 95(M)",
+     "us": "Men's S",
+     "letter": "S",
+     "chest_cm": 95,
+     "basis": "label",
+     "chart_label": "95(M)",
+     "gender": "mens",
+     "profile": "mens_tops"
+    },
+    {
+     "ko": "남성 100(L)",
+     "us": "Men's M",
+     "letter": "M",
+     "chest_cm": 100,
+     "basis": "label",
+     "chart_label": "100(L)",
+     "gender": "mens",
+     "profile": "mens_tops"
+    },
+    {
+     "ko": "남성 105(XL)",
+     "us": "Men's L",
+     "letter": "L",
+     "chest_cm": 105,
+     "basis": "label",
+     "chart_label": "105(XL)",
+     "gender": "mens",
+     "profile": "mens_tops"
+    },
+    {
+     "ko": "남성 110(2XL)",
+     "us": "Men's XL",
+     "letter": "XL",
+     "chest_cm": 110,
+     "basis": "label",
+     "chart_label": "110(2XL)",
+     "gender": "mens",
+     "profile": "mens_tops"
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "length": null,
+     "shoulder": "flat",
+     "chest": "flat",
+     "sleeve": null
+    },
+    "rows": [
+     {
+      "us": "Women's S (US 4-6)",
+      "cm": {
+       "length": 58.0,
+       "shoulder": 34.0,
+       "chest": 42.0
+      }
+     },
+     {
+      "us": "Women's M (US 8-10)",
+      "cm": {
+       "length": 59.0,
+       "shoulder": 35.0,
+       "chest": 44.5
+      }
+     },
+     {
+      "us": "Women's L (US 12-14)",
+      "cm": {
+       "length": 60.0,
+       "shoulder": 46.0,
+       "chest": 47.0
+      }
+     },
+     {
+      "us": "Men's S",
+      "cm": {
+       "chest": 50.0,
+       "shoulder": 43.0,
+       "sleeve": 61.0,
+       "length": 67.0
+      }
+     },
+     {
+      "us": "Men's M",
+      "cm": {
+       "chest": 52.5,
+       "shoulder": 44.0,
+       "sleeve": 62.0,
+       "length": 68.0
+      }
+     },
+     {
+      "us": "Men's L",
+      "cm": {
+       "chest": 55.0,
+       "shoulder": 45.0,
+       "sleeve": 63.0,
+       "length": 69.0
+      }
+     },
+     {
+      "us": "Men's XL",
+      "cm": {
+       "chest": 57.5,
+       "shoulder": 46.0,
+       "sleeve": 64.0,
+       "length": 70.0
+      }
+     }
+    ]
+   },
+   "held": null,
+   "profiles": {
+    "womens": "womens_tops",
+    "mens": "mens_tops"
+   }
+  }
+ },
+ "texts": [
+  {
+   "id": "title:a9566c5cc4f16561",
+   "kind": "title",
+   "ko": "티앤드 여성 골프이너웨어 티셔츠 두줄 반폴라 블랙 빅사이즈 골프웨어"
+  },
+  {
+   "id": "brand:21f6546fac70a613",
+   "kind": "brand",
+   "ko": "티앤드"
+  },
+  {
+   "id": "option_name:d1b87acb2d2239e7",
+   "kind": "option_name",
+   "ko": "색상"
+  },
+  {
+   "id": "option_value:91f171f68356ec23",
+   "kind": "option_value",
+   "ko": "블랙"
+  },
+  {
+   "id": "option_value:4b6304d7eb9d5185",
+   "kind": "option_value",
+   "ko": "화이트"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:f09d05e9a8c8daac",
+   "kind": "option_value",
+   "ko": "여성 55(M)"
+  },
+  {
+   "id": "option_value:8425f6fd9bfffd1d",
+   "kind": "option_value",
+   "ko": "여성 66(L)"
+  },
+  {
+   "id": "option_value:2320b6cdf873c70e",
+   "kind": "option_value",
+   "ko": "여성 77(XL)"
+  },
+  {
+   "id": "option_value:09830502608df7ed",
+   "kind": "option_value",
+   "ko": "남성 95(M)"
+  },
+  {
+   "id": "option_value:d9fbe4f9db341500",
+   "kind": "option_value",
+   "ko": "남성 100(L)"
+  },
+  {
+   "id": "option_value:d2065bd679f06342",
+   "kind": "option_value",
+   "ko": "남성 105(XL)"
+  },
+  {
+   "id": "option_value:425b028ccc9e81b6",
+   "kind": "option_value",
+   "ko": "남성 110(2XL)"
+  },
+  {
+   "id": "fact_label:2083b6c7cd874f09",
+   "kind": "fact_label",
+   "ko": "타입"
+  },
+  {
+   "id": "fact_value:cc56c75bd790385c",
+   "kind": "fact_value",
+   "ko": "약기모"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:25aafa5fe7311277",
+   "kind": "spec_value",
+   "ko": "티앤드 협력업체"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:21f6546fac70a613",
+   "kind": "spec_value",
+   "ko": "티앤드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:1847c26635d36177",
+   "kind": "spec_value",
+   "ko": "ND 두줄이너"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2c9897140d6cbb96",
+   "kind": "spec_value",
+   "ko": "국산"
+  },
+  {
+   "id": "spec_label:521009f503e491a5",
+   "kind": "spec_label",
+   "ko": "네크라인"
+  },
+  {
+   "id": "spec_value:8d3513546a49b769",
+   "kind": "spec_value",
+   "ko": "반목"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:0ec72130092375a4",
+   "kind": "spec_value",
+   "ko": "자외선차단, 신축성, 기모안감"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:3cbf589db43c9bce",
+   "kind": "spec_value",
+   "ko": "폴리에스테르, 기모, 스판"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:6bf4cc8e63d125f8",
+   "kind": "spec_value",
+   "ko": "봄, 가을, 겨울, 여름"
+  },
+  {
+   "id": "spec_label:c595482b55571d6a",
+   "kind": "spec_label",
+   "ko": "소매기장"
+  },
+  {
+   "id": "spec_value:2fa60fab30cad430",
+   "kind": "spec_value",
+   "ko": "긴팔"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:6aea4c4b3fb65e70",
+   "kind": "spec_value",
+   "ko": "2025년형"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:f977ac4486c2b67c",
+   "kind": "spec_value",
+   "ko": "티셔츠"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:e012efbcc2aa417e",
+   "kind": "spec_value",
+   "ko": "남녀공용"
+  },
+  {
+   "id": "review:6fe4245c453735fd",
+   "kind": "review",
+   "ko": "사이즈 약기모 다 좋아요.\n다만 남여 공용이라 그런지 팔 통은 약간 여유있네요. 살짝 큰느낌 (팔통)다른건 다 좋아요. 퀄리트도 너무 좋아요.\n다른색도 구매할려구요."
+  },
+  {
+   "id": "review:298f7d0acb5d982d",
+   "kind": "review",
+   "ko": "봄부터 초가을 까지 있을수 있겠어요\n신축성도 적당하고 비침이 없어요"
+  },
+  {
+   "id": "review:c6e26c9dd07be4b8",
+   "kind": "review",
+   "ko": "냉감소재로 번뜩본뜩하고 쫀쫀해요."
+  },
+  {
+   "id": "review:ebadc50447745469",
+   "kind": "review",
+   "ko": "착용감굿.\n가볍게입기 좋아요."
+  },
+  {
+   "id": "review:5eadff94df75628b",
+   "kind": "review",
+   "ko": "가볍고 신축성좋은 밀착냉감 소재\n살빼고 입어야겠습니다\n이너로는 좋아요"
+  },
+  {
+   "id": "review:114fc053e7482e4e",
+   "kind": "review",
+   "ko": "원단이 많이 부드러우며 색상이 화면에 보이는 그대로 정확합니다.\n상의는 정사이즈 같은데 하의는 약간 타이트한 감이 있어요.\n그래서 두개가 한치수 큰걸로 교환했는데 더 좋았습니다."
+  },
+  {
+   "id": "review:09f6e6010fe01584",
+   "kind": "review",
+   "ko": "이너웨어라 넉넉하게 나온편 아니고 딱 피팅되게 나왔어요. 어깨좀 있는 평소55~66입는데 66이 딱 맞아요. 편안한 착용감에 실용적으로 입기 좋아요. 만족합니다"
+  },
+  {
+   "id": "review:e9ccd178e1d9633e",
+   "kind": "review",
+   "ko": "냉감있는 재질로주문했고\n은근 목이 올라오는거라 잘입었습니다"
+  }
+ ]
+}

@@ -127,8 +127,9 @@ def _resolve(values, texts=(), brand=None, title="여성 가디건", name="사�
 @pytest.mark.parametrize("values", [["S(55)", "M(66)", "L(77+)"], ["XS", "S", "XXS(3)"], ["M", "L", "가디건 XL"],
                                     # 2026-11-21 (the second windbreaker pilot): an option named a size with no value
                                     # read went out raw, no US size, no hold
-                                    ["WS", "WM", "WL"], ["A.0", "B.1", "C.2"], ["0호", "1호", "2호"]])
-                                    # "S(상세사이즈 확인했습니다)" reads as S since 2026-11-22 (a note in brackets)
+                                    ["W", "WHITE"], ["A.0", "B.1", "C.2"], ["0호", "1호", "2호"]])
+                                    # "S(상세사이즈 확인했습니다)" reads as S since 2026-11-22 (a note in brackets),
+                                    # "WS / WM / WL" as S / M / L since 2026-11-24 (13483086996)
 def test_an_unread_value_of_the_size_option_holds_never_reaches_the_store(values):
     r = _resolve(values)
     assert r["option"] == 0 and r["held"] and "not read" in r["held"] and not r["values"]
@@ -137,10 +138,19 @@ def test_an_unread_value_of_the_size_option_holds_never_reaches_the_store(values
 @pytest.mark.parametrize("text, free, women", [
     ("ONE SIZE", True, ()), ("원사이즈", True, ()), ("ONESIZE", True, ()), ("FREE SIZE(44-77)", True, (44, 77)),
     ("FREESIZE(55-66)", True, (55, 66)), ("프리사이즈(55-66)", True, (55, 66)), ("L(77~)", False, (77,)),
+    ("L（FREE）", True, ()), ("XL(프리)", True, ()),                 # a one-size poncho under a letter (2026-11-24)
 ])
 def test_free_and_open_ranges(text, free, women):
     label = A.parse_label(text)
     assert label is not None and label.free is free and label.women == women
+
+
+def test_a_letter_with_its_chest_in_ho():
+    """Titleist Japan rainwear (4819248041, 2026-11-24): "S(90호)" is S with a 90 chest; a bare "0호" stays unread."""
+    label = A.parse_label("S(90호)")
+    assert label is not None and label.letter == "S" and label.chest == (90.0,)
+    assert A.parse_label("0호") is None
+
 
 
 def test_a_letter_range():
@@ -242,6 +252,23 @@ def test_a_merged_size_keeps_the_buyable_row():
     ov = _ov([("M(66)", 50000, False), ("M (66)", 50000, True)])
     out = T._sizes(ov, "womens_tops", "", [], None, "여성 가디건")
     assert not out["held"] and len(ov["variants"]) == 1 and ov["variants"][0]["sku"] == "v1"
+
+
+def test_a_merged_variant_keeps_its_own_naver_value():
+    """2026-11-25 (the re-review): a merged spelling must never become the value the owner orders: the variant whose
+    Naver row says "M(66)" keeps it as naver_options_ko, the store shows the kept spelling."""
+    ov = {"options": [{"name_ko": "컬러", "values_ko": ["블랙", "화이트"]},
+                      {"name_ko": "사이즈", "values_ko": ["M(66)", "M (66)"]}], "facts": [],
+          "variants": [{"sku": "v0", "options_ko": ["블랙", "M(66)"], "price_krw": 50000, "available": True},
+                       {"sku": "v1", "options_ko": ["화이트", "M (66)"], "price_krw": 50000, "available": True}]}
+    out = T._sizes(ov, "womens_tops", "", [], None, "여성 가디건")
+    assert not out["held"] and out["merged"]
+    by_sku = {v["sku"]: v for v in ov["variants"]}
+    kept = out["merged"].get("M(66)") or "M(66)"
+    for sku, own in (("v0", "M(66)"), ("v1", "M (66)")):
+        v = by_sku[sku]
+        assert v["options_ko"][1] == kept
+        assert v.get("naver_options_ko", v["options_ko"])[1] == own
 
 
 def test_a_size_written_twice_at_two_prices_holds():
@@ -747,7 +774,8 @@ def test_new_label_shapes_read(label, letter, chest, women):
     assert got and (got.letter, got.chest, got.women) == (letter, chest, women)
 
 
-@pytest.mark.parametrize("value", ["블랙", "남색", "남성", "여름", "XL(100-여성77이상/남성M)"])
+@pytest.mark.parametrize("value", ["블랙", "남색", "남성", "여름", "L(100-남색)", "M(95-여름)"])   # 2026-11-24: who
+# the chest fits after a dash reads ("XL(100-여성77이상/남성M)", test_size_unmapped_review_labels), a colour does not
 def test_new_label_shapes_leave_words_unread(value):
     assert A.parse_label(value) is None
 
@@ -767,7 +795,7 @@ def test_an_option_joining_a_colour_and_a_size_is_split_in_two():
         == (0, [("남성 골프 이너웨어 블랙", "95"), ("남성 골프 이너웨어 블랙", "100")])
 
 
-@pytest.mark.parametrize("values", [["오프화이트 85 XS", "오프화이트 90 S"],                  # two size words: no split
+@pytest.mark.parametrize("values", [["블랙 85 L", "블랙 90 S"],     # two size words, the letters not rising: no split
                                     ["AXL (110)", "AL (105)", "AM (100)"],                  # adidas' Asian letters
                                     ["블랙", "화이트"], ["블랙 FREE", "화이트 FREE"]])
 def test_a_joined_option_is_not_split_when_unsure(values):
@@ -921,7 +949,8 @@ def test_the_pants_profile_follows_the_stated_gender():
     assert [T.size_profile(pants, g) for g in ("mens", "womens", "unisex", "mixed", None)] == \
         ["mens_bottoms", "womens_pants", "mens_bottoms", "mens_bottoms", "womens_pants"]
     assert [T.size_profile(tops, g) for g in ("mens", "unisex", None)] == ["mens_tops", "womens_tops", "womens_tops"]
-    assert pants.variant_screen == ("shorts", "other_item", "not_golf_use") and pants.reviewed   # the owner 2026-11-24
+    assert pants.variant_screen == ("not_golf_use",) and pants.reviewed   # the owner 2026-11-24
+    assert pants.variant_drop == ("other_item", "shorts")         # left out, not held, since 2026-11-25
 
 
 def test_one_waist_in_inches_and_cm_is_one_size():
@@ -935,10 +964,12 @@ def test_one_waist_in_inches_and_cm_is_one_size():
 
 
 def _pants_variant_screen(value: str) -> str | None:
-    """The pants' variant screen as transform.prepare applies it: the codes of variant_screen, `requires` left out."""
+    """The pants' variant screen as transform.prepare applies it: the codes of variant_screen and variant_drop (left
+    out since 2026-11-25), `requires` left out."""
     import listing_filter as LF
     from transform_shops import rules_for
-    codes = rules_for("fairwardgolf").categories["50002801"].variant_screen
+    pants = rules_for("fairwardgolf").categories["50002801"]
+    codes = pants.variant_screen + pants.variant_drop
     screen = [{k: r[k] for k in r if k != "requires"} for r in LF.title_rules("50002801") if r["code"] in codes]
     return LF.title_rule(value, screen)
 
@@ -1279,8 +1310,10 @@ def test_a_letter_with_about_inches_is_the_letter():
 
 def test_a_womens_size_beside_each_letter_sizes_it():
     """10997837767: "S(44사이즈)" (the bare letters went out one US size over); 6033600342: "M / 보통55 / 91 ..." rows
-    and the two-row recommendation "S / M / L / XL" over "~마른 55 / 보통55 / 보통66 / 통통77": S and M are both 55, so
-    the product holds for the owner rather than guess."""
+    and the recommendation "S / M / L / XL" over "~마른 55 / 보통55 / 보통66 / 통통77" over "날씬66 / 보통77 / 날씬88"
+    (2026-11-25, the owner's yes to the Fable review: the second line is the last letters' upper ends, right-aligned;
+    "~마른 55" alone is the size under 55): S 44, M 55-66, L 66-77, XL 77-88. Without that second line S and M are
+    both 55: the product holds for the owner rather than guess."""
     lines = ["S(44사이즈) :", "총기장 101cm / 허리단면 34-38cm /", "M(55사이즈) :", "L(66사이즈) :", "XL(77사이즈) :"]
     r = _pants(["S", "M", "L", "XL"], lines, "womens_pants")
     assert [v["us"] for v in r["values"]] == ["XS (US 0-2)", "S (US 4-6)", "M (US 8-10)", "L (US 12-14)"]
@@ -1288,10 +1321,20 @@ def test_a_womens_size_beside_each_letter_sizes_it():
     rows = ["S / 90 / 32 / 42 / 28", "마른55 / (왕밴딩)", "M / 보통55 / 91 / 34.5 / 44 / 29", "날씬66 / (왕밴딩)",
             "L / 보통66 / 92 / 37 / 46 / 30", "XL / 통통77 / 93 / 39.5 / 48 / 31", "권장 사이즈 참고!", "S / M / L / XL",
             "~마른 55 / 보통55 / 보통66 / 통통77", "날씬66 / 보통77 / 날씬88"]
-    assert A.letter_cells(rows) == [("M", "55"), ("L", "66"), ("XL", "77"), ("S", "55"), ("M", "55"), ("L", "66"),
-                                    ("XL", "77")]
-    held = _pants(["S", "M", "L", "XL"], rows, "womens_pants")
+    assert A.letter_cells(rows) == [("S", "44"), ("M", "55-66"), ("L", "66-77"), ("XL", "77-88")]
+    got = _pants(["S", "M", "L", "XL"], rows, "womens_pants")
+    assert not got["held"] and [v["us"] for v in got["values"]] == [
+        "XS (US 0-2)", "S-M (US 4-10)", "M-L (US 8-14)", "L-XL (US 12-16)"]
+    one_line = rows[:-1]                                              # no second line: S and M both 55, held
+    assert A.letter_cells(one_line) == [("M", "55"), ("L", "66"), ("XL", "77"), ("S", "55"), ("M", "55"),
+                                        ("L", "66"), ("XL", "77")]
+    held = _pants(["S", "M", "L", "XL"], one_line, "womens_pants")
     assert held["held"] == "two Korean sizes on one US size: S (US 4-6)"
+    # a second line as long as the first (or a lower upper end) is no upper end: as today
+    assert A.letter_cells(["S / M / L", "보통55 / 보통66 / 보통77", "날씬66 / 보통77 / 날씬88"]) == [
+        ("S", "55"), ("M", "66"), ("L", "77")]
+    assert A.letter_cells(["S / M / L", "보통55 / 보통66 / 보통77", "날씬55 / 보통66"]) == [
+        ("S", "55"), ("M", "66"), ("L", "77")]
     part = _pants(["S", "M", "L", "XL"], rows[:6], "womens_pants")    # the rows alone: S has none, today's letters
     assert {v["basis"] for v in part["values"]} == {"fallback_letters"}
 
@@ -1320,3 +1363,806 @@ def test_a_row_read_twice_is_no_next_size():
     assert "XXL" not in chart.rows and "XL" in chart.rows
     twice = C.read_chart(["사이즈 / 허리 / 엉덩이", "S / 34 / 90", "S / 34 / 90"], "trousers")
     assert not twice.ordered
+
+
+# ---- 2026-11-24: the size_unmapped review (the verified fixes) -----------------------------------------------------
+@pytest.mark.parametrize("text, letter, chest, women", [
+    ("LL(105호)", "LL", (105.0,), ()), ("3L(110호)", "3L", (110.0,), ()), ("S(90호)", "S", (90.0,), ()),   # 4819248041
+    ("75(44/S)", "S", (), (44.0,)), ("80(55/M)", "M", (), (55.0,)), ("90(77/XL)", "XL", (), (77.0,)),     # pgr
+    ("85(XS.44)", "XS", (), (44.0,)), ("105(XL.88)", "XL", (), (88.0,)),                                 # Hillcrest
+    ("85(XS)", "XS", (85.0,), ()), ("44(85)", None, (85.0,), (44.0,)), ("S(44/55)", "S", (), (44.0, 55.0)),
+    ("46(90)", None, (90.0,), ()), ("52(105)", None, (105.0,), ()), ("55(90)", None, (90.0,), (55.0,)),  # IKALOOK
+    ("XL(100-여성77이상/남성M)", "XL", (100.0,), ()), ("M(95-남성S)", "M", (95.0,), ()),                     # 5964063532
+    ("L(55-66)", "L", (), (55.0, 66.0)), ("M(95-100)", "M", (95.0, 100.0), ()), ("남_M(95)", "M", (95.0,), ()),
+    ("WS", "S", (), ()), ("WL", "L", (), ()),                                                             # 13483086996
+    ("AL(95)", None, (95.0,), ()), ("AXL(100)", None, (100.0,), ()), ("AS (85)", None, (85.0,), ()),       # 10861903381
+    ("A2XL(110)", None, (110.0,), ()),
+])
+def test_size_unmapped_review_labels(text, letter, chest, women):
+    label = A.parse_label(text)
+    assert label is not None and (label.letter, label.chest, label.women) == (letter, chest, women)
+
+
+@pytest.mark.parametrize("text", ["0호", "1호", "82(32)", "블랙(44/S)", "46", "48(M)", "46(44)", "W", "WHITE", "WM-L",
+                                  "W32", "L(100-남색)", "M(95-여름)", "AL", "AXL", "A(95)", "AL(60)", "모델착용컷",
+                                  "부츠컷"])
+def test_size_unmapped_review_leaves_these_unread(text):
+    assert A.parse_label(text) is None
+
+
+def test_size_unmapped_review_label_rules_stay_off_in_the_waist_profiles():
+    with A.waist_labels(True):
+        assert A.parse_label("75(44/S)") is None
+    with A.waist_labels(A.MENS_WAIST):
+        assert A.parse_label("50(100)") is None and A.parse_label("W32") is None
+        assert A.parse_label("AL(95)") != A.parse_label("(95)")
+
+
+def test_a_letter_with_a_japanese_chest_in_ho_resolves_in_the_mens_tops():
+    """Titleist Japan rain suit 4819248041: S/M/L/LL/3L with the chest 90..110 in 호."""
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["S(90호)", "M(95호)", "L(100호)", "LL(105호)", "3L(110호)"]}], [],
+                  None, "타이틀리스트 레인웨어", "mens_tops")
+    assert not r["held"] and [v["us"] for v in r["values"]] == ["XS", "S", "M", "L", "XL"]
+
+
+def test_a_womens_letter_w_and_a_model_photo_note():
+    """13483086996 "WS / WM / WL"; 5202996089 "FREE(44~55)모델착용컷" (the model's photo wears it)."""
+    assert [v["us"] for v in _resolve(["WS", "WM", "WL"])["values"]] == ["S (US 4-6)", "M (US 8-10)", "L (US 12-14)"]
+    assert A.parse_label("FREE(44~55)모델착용컷") == A.parse_label("FREE(44~55)")
+    assert A.parse_label("S모델착용컷") == A.parse_label("S")
+    assert A.parse_label("S(44)모델착용사이즈") == A.parse_label("S(44)")
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["FREE(44~55)모델착용컷", "L(66~77)"]}], [], None, "바지",
+                  "womens_bottoms")
+    assert not r["held"] and [v["us"] for v in r["values"]] == ["XS-S (US 0-6)", "M-L (US 8-14)"]
+
+
+def test_a_mens_waist_of_46_inches():
+    """6818506441: 30..46; its 46 held "not read" (the men's waist stopped at 44)."""
+    with A.waist_labels(A.MENS_WAIST):
+        assert A.parse_label("46").waist == (116.8,) and A.parse_label("47") is None
+    with A.waist_labels(True):
+        assert A.parse_label("46") is None
+    values = ["30", "32", "34", "36", "38", "40", "42", "44", "46"]
+    r = _pants(values, [], "mens_bottoms")
+    assert not r["held"] and [v["us"] for v in r["values"]] == [f"W{v}" for v in values]
+    assert r["values"][-1]["letter"] == "4XL"
+    assert _pants(values[:-1], [], "mens_bottoms")["values"][-1]["us"] == "W44"
+    assert _pants(["44", "46", "48"], [], "mens_bottoms")["held"] == "'48': not read as a size"
+    mens = A.grids()["profiles"]["mens_bottoms"]
+    assert A._grid_row(mens, 125.0) is None and A._grid_row(mens, 111.8)["us"] == "4XL"
+
+
+def test_a_mens_letter_ladder_with_its_waist_in_cm():
+    """Nike 10522424335: "S(75) / M(80) / L(85) / XL(90) / 2XL(95)": XL(90) read as a top's chest and held."""
+    r = _pants(["S(75)", "M(80)", "L(85)", "XL(90)", "2XL(95)"], [], "mens_bottoms")
+    assert not r["held"] and [v["us"] for v in r["values"]] == ["W29", "W31", "W33", "W35", "W37"]
+    assert "no US size" in _pants(["S(85)", "M(90)", "L(95)", "XL(100)", "2XL(105)"], [], "mens_bottoms")["held"]
+    assert _pants(["S(75)", "M(80)", "XL(100)"], [], "mens_bottoms")["held"]
+    assert _pants(["XL(90)", "2XL(95)"], [], "mens_bottoms")["held"]
+    assert "'M(95)': no US size" in _pants(["82(32)", "85(33)", "88(34)", "92(36)", "M(95)", "L(100)", "XL(105)",
+                                            "2XL(110)"], [], "mens_bottoms")["held"]
+    assert _pants(["M(32)", "L(34)", "M (95)", "L (100)"], [], "mens_bottoms")["held"]
+
+
+def test_a_womens_size_glued_to_a_hangul_word_and_a_letter_after_a_dash():
+    """5895988627 "블랙하운드55", 10968014964 "긴팔55", 7124536208 "화이트-S" (2026-11-24)."""
+    with A.waist_labels(True):
+        got = A.split_joined([{"name_ko": "사이즈", "values_ko": ["블루하운드 55", "블루하운드 66", "블랙하운드55",
+                                                                "블랙하운드66"]}])
+    assert got == (0, [("블루하운드", "55"), ("블루하운드", "66"), ("블랙하운드", "55"), ("블랙하운드", "66")])
+    assert A._words("긴팔55") == ["긴팔", "55"]
+    for whole in ("네이비82", "화이트95", "HG329255", "반팔2", "블랙-95", "잔피엘-151", "S-M", "55-66", "L(55-66)",
+                  "SW-422", "10부-네이비"):
+        assert A._words(whole) == [whole]
+    with A.waist_labels(A.MENS_WAIST):
+        assert A._words("블랙34") == ["블랙", "34"]
+    assert A._words("화이트-S") == ["화이트", "S"]
+    assert A.split_joined([{"name_ko": "컬러/ 사이즈", "values_ko": ["화이트-S", "화이트-M", "블랙-S"]}]) \
+        == (0, [("화이트", "S"), ("화이트", "M"), ("블랙", "S")])
+
+
+def test_one_sleeve_word_before_every_size_is_dropped():
+    """10968014964: 사이즈 "긴팔55 / 긴팔66 / 긴팔77" beside 컬러: the sizes alone, no second 컬러 option."""
+    colours = ["베이직카라티 블랙", "베이직카라티 화이트"]
+    sizes = ["긴팔55", "긴팔66", "긴팔77"]
+    ov = {"options": [{"name_ko": "컬러", "values_ko": colours}, {"name_ko": "사이즈", "values_ko": sizes}],
+          "facts": [], "variants": [{"options_ko": [c, x], "price_krw": 1} for c in colours for x in sizes]}
+    out = T._sizes(ov, "womens_tops", "", [], None, "여성 카라티")
+    assert not out["held"] and ov["options"] == [{"name_ko": "컬러", "values_ko": colours},
+                                                 {"name_ko": "사이즈", "values_ko": ["55", "66", "77"]}]
+    assert ov["variants"][0]["options_ko"] == ["베이직카라티 블랙", "55"]
+    # a colour before the size keeps an option of its own; an option not named a size, two sleeve words: as before
+    ov = {"options": [{"name_ko": "사이즈", "values_ko": ["베이지 S", "베이지 M"]}], "facts": [],
+          "variants": [{"options_ko": [x], "price_krw": 1} for x in ("베이지 S", "베이지 M")]}
+    T._sizes(ov, "womens_tops", "", [], None, "여성 니트")
+    assert ov["options"] == [{"name_ko": "컬러", "values_ko": ["베이지"]}, {"name_ko": "사이즈", "values_ko": ["S", "M"]}]
+    ov = {"options": [{"name_ko": "선택", "values_ko": ["긴팔 S", "긴팔 M"]}], "facts": [],
+          "variants": [{"options_ko": [x], "price_krw": 1} for x in ("긴팔 S", "긴팔 M")]}
+    T._sizes(ov, "womens_tops", "", [], None, "여성 니트")
+    assert ov["options"][0] == {"name_ko": "선택", "values_ko": ["긴팔"]}
+    two = ["긴팔55", "반팔55", "긴팔66", "반팔66"]
+    ov = {"options": [{"name_ko": "사이즈", "values_ko": two}], "facts": [],
+          "variants": [{"options_ko": [x], "price_krw": 1} for x in two]}
+    T._sizes(ov, "womens_tops", "", [], None, "여성 니트")
+    assert ov["options"][0] == {"name_ko": "컬러", "values_ko": ["긴팔", "반팔"]}
+
+
+def test_a_size_fact_of_a_colour_and_free_in_brackets_is_one_size():
+    """11492588480 "컬러/사이즈: 블랙(free)" held "not read"."""
+    for value, held in (("블랙(free)", False), ("화이트 (FREE)", False), ("블랙(55)", True),
+                        ("블랙(free)사이즈별상이", True)):
+        ov = {"options": [], "facts": [{"label_ko": "컬러/사이즈", "value_ko": value}],
+              "variants": [{"options_ko": [], "price_krw": 1}]}
+        out = T._sizes(ov, "womens_tops", "", [], None, "여성 니트")
+        assert bool(out["held"]) is held, value
+        if not held:
+            assert out["fact"] == {"label_ko": "컬러/사이즈", "ko": value, "us": "One Size"}
+
+
+def test_adidas_asian_waist_code_with_its_inch():
+    """7191019224, 10159594995: "HG3292 블랙 A82 (32인치)" held as colour and size in one option; the seller's inch."""
+    with A.waist_labels(A.MENS_WAIST):
+        assert A.parse_label("A82 (32인치)") == A.parse_label("82(32)") == A.parse_label("A82(32인치)")
+        assert A.parse_label("A82") is None
+        got = A.split_joined([{"name_ko": "선택", "values_ko": ["HG3292 블랙 A82 (32인치)", "HG3296 그레이 A76 (31인치)"]}])
+        assert A.split_joined([{"name_ko": "선택2", "values_ko": ["AXL (110)", "AL (105)"]}]) is None
+    assert got == (0, [("HG3292 블랙", "A82 (32인치)"), ("HG3296 그레이", "A76 (31인치)")])
+    assert A.cm_inch("A82 (32인치)") == (82, 32) and A.cm_inch("A82 (45인치)") is None
+    with A.waist_labels(None):
+        assert A.parse_label("A82 (32인치)") is None
+    r = _pants(["A79 (30인치)", "A82 (31인치)", "A85 (33인치)", "A88 (34인치)", "A92 (35인치)", "A96 (37인치)"], [],
+               "mens_bottoms")
+    assert not r["held"] and [v["us"] for v in r["values"]] == ["W30", "W31", "W33", "W34", "W35", "W37"]
+    assert [v["us"] for v in _pants(["A76 (31인치)"], [], "mens_bottoms")["values"]] == ["W31"]
+    # two codes on one inch (8116691038's models) are never merged: held
+    r = _pants(["A76 (31인치)", "A79 (31인치)", "A82 (32인치)"], [], "mens_bottoms")
+    assert r["held"] == "two Korean sizes on one US size: W31" and not r["merged"]
+    assert _pants(["A79", "A82"], [], "mens_bottoms")["held"]
+
+
+def test_a_colour_a_chest_and_its_letter_in_one_value():
+    """10940191023 "오프화이트 85 XS" .. "블랙 100 L": split by the number, the seller's letter must agree."""
+    values = ["오프화이트 85 XS", "오프화이트 90 S", "티블루 95 M", "블랙 100 L"]
+    assert A.split_joined([{"name_ko": "선택사항", "values_ko": values}]) \
+        == (0, [("오프화이트", "85"), ("오프화이트", "90"), ("티블루", "95"), ("블랙", "100")])
+    for bad in (["블랙 85 L", "블랙 90 S"], ["블랙 85 XS", "블랙 90 XS"], ["블랙 85 XS"]):
+        assert A.number_letter_split([{"name_ko": "선택", "values_ko": bad}]) is None
+    ov = {"options": [{"name_ko": "선택사항", "values_ko": values}], "facts": [],
+          "variants": [{"options_ko": [x], "price_krw": 1} for x in values]}
+    out = T._sizes(ov, "womens_tops", "", [], None, "여성 니트")
+    assert not out["held"] and [v["us"] for v in out["values"]] == ["XS (US 0-2)", "S (US 4-6)", "M (US 8-10)",
+                                                                    "L (US 12-14)"]
+    off = ["블랙 90 XS", "블랙 95 S"]                        # the profile says S / M: held on the disagreement
+    ov = {"options": [{"name_ko": "선택", "values_ko": off}], "facts": [],
+          "variants": [{"options_ko": [x], "price_krw": 1} for x in off]}
+    assert "disagrees" in T._sizes(ov, "womens_tops", "", [], None, "여성 니트")["held"]
+
+
+def test_a_bare_letter_beside_its_numbered_spelling_is_merged():
+    """7864006253: "L" beside "L（66사이즈）" (the chart's "L(66)" row sizes the bare L): one size written twice."""
+    lines = ["사이즈 / 허리 / 엉덩이 / 밑위 / 총장", "S(44) / 28.5 / 44 / 28 / 88", "M(55) / 30 / 46 / 29 / 89",
+             "L(66) / 32 / 48 / 30 / 90", "XL(77) / 34 / 50 / 31 / 91"]
+    r = _pants(["S（44사이즈）", "M（55사이즈）", "L（66사이즈）", "XL（77사이즈）", "FREE", "XL", "L"], lines,
+               "womens_pants")
+    assert not r["held"] and r["merged"] == {"XL": "XL（77사이즈）", "L": "L（66사이즈）"}
+    assert [v["us"] for v in r["values"]] == ["XS (US 0-2)", "S (US 4-6)", "M (US 8-10)", "L (US 12-14)", "One Size"]
+    # a bare letter on the fallback beside its numbered spelling, two letters on one size: held as before
+    assert _resolve(["S(90)", "S"])["held"] == "two Korean sizes on one US size: S (US 4-6)"
+    assert _resolve(["S(95)", "M(95)"])["held"]
+
+
+def test_a_womens_waist_range_in_inches_up_to_three_apart():
+    """12370291326 "2XL(32~33)", "M(26반~27)" held: 33 read as a women's 33, 26반 not read."""
+    with A.waist_labels(True):
+        assert A.parse_label("2XL(32~33)").waist == (81.3, 83.8) and not A.parse_label("2XL(32~33)").women
+        assert A.parse_label("M(26반~27)").waist == (67.3, 68.6)
+        assert A.parse_label("XXL(33~34인치)").waist == (83.8, 86.4)
+        assert A.parse_label("2XL(33~35)").waist == (83.8, 88.9)
+        assert A.parse_label("XS(33~44)").women == (33.0, 44.0)
+        assert A.parse_label("55~66").women == (55.0, 66.0)
+        assert A.parse_label("26반") is None
+    assert A.parse_label("XS (33~44)").women == (33.0, 44.0)
+    with A.waist_labels(A.MENS_WAIST):
+        assert A.parse_label("55~66").waist == (66.0,)                                  # as before
+        assert A.parse_label("XS(33~44)").waist == (83.8, 111.8)
+
+
+def test_a_mens_waist_and_length_in_one_value():
+    """9918112671 "33-30" (waist 33, length 30): held as two Korean sizes on one US size."""
+    values = ["30-30", "32-32", "32-34", "33-30", "34-32", "40-32", "30-32", "32-30"]
+    with A.waist_labels(A.MENS_WAIST):
+        assert A.split_joined([{"name_ko": "컬러", "values_ko": ["블랙"]}, {"name_ko": "사이즈", "values_ko": values}]) \
+            == (1, [(f"기장{v[3:]}", v[:2]) for v in values])
+        assert A.parse_label("기장30") is None
+        assert A.split_waist_length([{"name_ko": "사이즈", "values_ko": ["30-31", "32-33"]}]) is None
+        assert A.split_waist_length([{"name_ko": "사이즈", "values_ko": ["30-30", "M"]}]) is None
+    with A.waist_labels(True):
+        assert A.split_waist_length([{"name_ko": "사이즈", "values_ko": ["25-26", "27-28"]}]) is None
+    ov = {"options": [{"name_ko": "컬러", "values_ko": ["블랙"]}, {"name_ko": "사이즈", "values_ko": values}], "facts": [],
+          "variants": [{"options_ko": ["블랙", v], "price_krw": 1} for v in values]}
+    out = T._sizes(ov, "mens_bottoms", "", [], None, "남성 골프바지")
+    assert not out["held"] and not out["merged"]
+    assert [v["us"] for v in out["values"]] == ["W30", "W32", "W33", "W34", "W40"]
+    assert ov["options"][1] == {"name_ko": "기장", "values_ko": ["기장30", "기장32", "기장34"]}
+    assert ov["variants"][2]["options_ko"] == ["블랙", "기장34", "32"]
+    assert _pants(["32~33인치", "33~34인치"], [], "mens_bottoms")["values"][0]["us"] == "W32-33"
+
+
+def test_one_variant_joining_a_colour_and_a_numbered_size_in_a_fact():
+    """halfclub 12487907002, 13291281940, 13684467368: "선택하기: Dark Navy/090", one variant, held as an unknown
+    size of the chart's several."""
+    chart = ["사이즈 / 가슴 / 총장", "085 / 88 / 60", "090 / 93 / 61", "095 / 98 / 62"]
+
+    def run(value: str, variants: int = 1, lines: list[str] = chart) -> dict[str, Any]:
+        ov = {"options": [], "facts": [{"label_ko": "선택하기", "value_ko": value}],
+              "variants": [{"options_ko": [], "price_krw": 1}] * variants}
+        return T._sizes(ov, "womens_tops", "\n".join(lines), [], None, "여성 니트")
+    assert A.single_joined("Dark Navy/090") == ("Dark Navy", "090")
+    out = run("Dark Navy/090")
+    assert not out["held"] and out["fact"] == {"label_ko": "선택하기", "ko": "090", "us": "S (US 4-6)"}
+    assert run("Black/095")["fact"]["us"] == "M (US 8-10)"
+    assert "the chart lists" in run("CW4742 화이트 L")["held"]                      # a letter alone: as before
+    assert "colour and size in one value" in run("CW4742 화이트 L", lines=[])["held"]          # (5152708008)
+    assert "the chart lists" in run("Dark Navy/090", 2)["held"]
+    assert "colour and size in one value" in run("Dark Navy/090", 2, [])["held"]
+    assert "the chart lists" in run("Black")["held"]
+    assert A.single_joined("IS7132 블랙 AL (110)") is None                          # adidas' (9998916822)
+    assert not A.joined_value("FREE/그레이") or A.single_joined("FREE/그레이") is None
+
+
+def test_adidas_asian_letter_with_its_chest_one_to_one():
+    """10861903381 "IS4776 화이트 AL(95)"; 5176506757's AM (100) beside AM (105) and AL (105) holds, never merged."""
+    assert A.split_joined([{"name_ko": "선택", "values_ko": ["IS4776 화이트 AL(95)", "IS4777 블랙 AS(85)"]}]) \
+        == (0, [("IS4776 화이트", "AL(95)"), ("IS4777 블랙", "AS(85)")])
+    r = _resolve(["AS(85)", "AM(90)", "AL(95)", "AXL(100)"])
+    assert not r["held"] and [v["us"] for v in r["values"]] == ["XS (US 0-2)", "S (US 4-6)", "M (US 8-10)",
+                                                                "L (US 12-14)"]
+    r = _resolve(["AM (100)", "AM (105)", "AL (105)"], name="선택2")
+    assert "an adidas Asian size with two numbers" in r["held"] and not r["merged"]
+    assert A.split_joined([{"name_ko": "선택", "values_ko": ["KG2154 화이트 AS", "KG2154 화이트 AM"]}]) is None
+    with A.waist_labels(A.MENS_WAIST):
+        assert A.parse_label("AL(95)") is None
+
+
+def test_a_group_products_size_in_its_title():
+    """베러투데이 13004790971: the title "... 가디건 블랙, 105", the listing's name "... 가디건", one variant, no option."""
+    one = {"options": [], "facts": [], "variants": [{"options_ko": [], "price_krw": 1}]}
+    base = "베러투데이 여성 가을 니트 코디 빅사이즈 골프웨어 사계절 포켓 가디건"
+    assert T.title_size(one, f"{base} 블랙, 105", base, f"{base}") == ("블랙", "105")
+    assert T.title_size(one, f"{base} 블랙, 105", f"{base} 블랙, 105", None) is None
+    assert T.title_size(one, f"{base} 블랙, 105", None, None) is None
+    assert T.title_size(one, "베러투데이 티셔츠 1+1, 2", "베러투데이 티셔츠", None) is None
+    assert T.title_size(one, f"{base} 화이트, FREE", base, None) is None
+    assert T.title_size(one, f"{base} 핑크, 110", base, "베러투데이 티셔츠 95") is None      # 12994831966
+    assert T.title_size(one, "나이키 폴로 코랄핑크, S", "나이키 폴로", None) is None              # 13660201494
+    assert T.title_size({**one, "options": [{"name_ko": "사이즈", "values_ko": ["95"]}]}, f"{base} 블랙, 105", base,
+                        None) is None
+    assert T.title_size(one, "집업 니트 블랙 가디건 RWSCN8208,N8208", "집업 니트 블랙 가디건", None) is None
+
+
+
+# ---- 2026-11-25: the size_unmapped review, second pass (Fable's review, the products chosen to sell) --------------
+def _rows(names: list[str], combos: list[tuple[str, ...]]) -> list[dict[str, Any]]:
+    return [{"options": list(c), "price": 1} for c in combos]
+
+
+def test_a_garment_the_section_does_not_sell_is_left_out_not_held():
+    """13762280030 (A): a Volvik and an adidas polo with two trousers under one design option; the trousers' rows
+    go, the size option's own values are never matched, two garments kept under the option take no size chart."""
+    names = ["디자인 선택", "사이즈 선택"]
+    rows = _rows(names, [("볼빅 남성 골프 긴팔 카라티 티셔츠", "M(95)"), ("아디다스 골프티_긴팔", "L(100)"),
+                         ("아디다스 [봄/가을]골프 긴바지", "82(32)"), ("볼빅 남성 [기모본딩] 밴딩스판 골프 바지", "M(86cm / 32인치)")])
+    kept, left, mixed = T._drop_off_section(names, rows, ("trousers",), "50002796")
+    assert [r["options"][0] for r in kept] == ["볼빅 남성 골프 긴팔 카라티 티셔츠", "아디다스 골프티_긴팔"]
+    assert left and left.startswith("2 variants: 아디다스 [봄/가을]골프 긴바지") and mixed and "디자인 선택" in mixed
+    # one garment left (9177463189), one garment in colours (9068863945): the chart stays
+    rows = _rows(names, [("(골프폴로티셔츠)블랙", "M"), ("(골프폴로티셔츠)화이트", "L"), ("(골프바지)블랙", "82(32)")])
+    kept, left, mixed = T._drop_off_section(names, rows, ("trousers",), "50002796")
+    assert len(kept) == 2 and left == "1 variants: (골프바지)블랙" and mixed is None
+    # every row matches: nothing left out (prepare holds off_section_variant as before)
+    rows = _rows(names, [("골프 바지 블랙", "82"), ("골프 바지 네이비", "85")])
+    assert T._drop_off_section(names, rows, ("trousers",), "50002796") == (rows, None, None)
+    # a size option's own values are never matched: an option named a size, or most values sizes
+    rows = _rows(["컬러", "사이즈"], [("블랙", "M(팬츠)"), ("블랙", "L")])
+    assert T._drop_off_section(["컬러", "사이즈"], rows, ("trousers",), "50002796")[1] is None
+    # five adidas trousers of one maker are one garment kind (5534297375): the polo goes, the chart stays
+    rows = _rows(["선택", "사이즈"], [("아디다스 바지(봄/가을)25", "82(32)"), ("아디다스 쿨바지(여름)26new", "85(33)"),
+                                    ("아디다스 긴팔 폴로티 26new", "M(95)")])
+    kept, left, mixed = T._drop_off_section(["선택", "사이즈"], rows, ("other_item", "shorts"), "50002801")
+    assert len(kept) == 2 and left == "1 variants: 아디다스 긴팔 폴로티 26new" and mixed is None
+
+
+def test_the_trousers_code_never_drops_a_top():
+    """The new code 'trousers' of 50002796 (바지, 팬츠, pants); a top's words stay."""
+    import listing_filter as LF
+    rules = [{k: r[k] for k in r if k != "requires"} for r in LF.title_rules("50002796") if r["code"] == "trousers"]
+    for value in ("조거 팬츠 블랙", "(골프바지)네이비", "아디다스 [봄/가을]골프 긴바지"):
+        assert LF.title_rule(value, rules) == "title:trousers"
+    for value in ("맨투맨 블랙", "후드 집업 그레이", "볼빅 남성 골프 긴팔 카라티 티셔츠", "(골프폴로티셔츠)블랙", "S 28~29인치"):
+        assert LF.title_rule(value, rules) is None
+
+
+def test_two_spellings_of_one_cm_waist_are_one_size_and_two_cm_on_one_inch_part():
+    """5815131892: "85(33)" and "85(35)", "88(34)" and "88(35)" (one row per cm in each colour): one US waist, the
+    cm_round's, each spelling its own Naver value (2026-11-25, the correctness review: the merge rewrote 블랙's
+    "85(35)" to "85(33)", a size 블랙 does not sell), allowed only when no colour sells both; 11017948766: "85(34)"
+    beside "88(34)": 85 takes its own cm_round, W33."""
+    values = ["82(32)", "85(33)", "88(34)", "92(36)", "88(35)", "85(35)"]
+    colours = {"블랙": ["85(35)", "88(35)"], "그레이": ["85(33)", "88(35)"], "네이비": ["82(32)", "85(33)", "88(34)", "92(36)"]}
+    combos = [[c, v] for c, vs in colours.items() for v in vs]
+    options = [{"name_ko": "컬러", "values_ko": list(colours)}, {"name_ko": "사이즈", "values_ko": values}]
+    lines = ["사이즈 / 82 / 85 / 88 / 92", "허리 / 81 / 84 / 87 / 91"]
+    r = A.resolve(options, lines, None, "골프 바지", "mens_bottoms", combos=combos)
+    assert not r["held"] and r["merged"] == {}
+    assert [(v["ko"], v["us"], v["basis"]) for v in r["values"]] == [
+        ("82(32)", "W32", "waist"), ("85(33)", "W33", "waist"), ("85(35)", "W33", "cm_round"),
+        ("88(34)", "W34", "waist"), ("88(35)", "W34", "cm_round"), ("92(36)", "W36", "waist")]
+    assert r["chart"] and "chart_left_out" not in r                   # one cm written two ways: its one row
+    # negatives: a colour selling both spellings holds; without combos it holds (never merged)
+    both = A.resolve(options, lines, None, "골프 바지", "mens_bottoms", combos=combos + [["블랙", "85(33)"]])
+    assert both["held"] == "two Korean sizes on one US size: W33, W34"
+    assert _pants(values, [], "mens_bottoms")["held"] == "two Korean sizes on one US size: W33, W34"
+    r = _pants(["82(32)", "85(34)", "88(34)", "92(36)"], [], "mens_bottoms")
+    assert not r["held"] and [(v["ko"], v["us"], v["basis"]) for v in r["values"]] == [
+        ("82(32)", "W32", "waist"), ("85(34)", "W33", "cm_round"), ("88(34)", "W34", "waist"), ("92(36)", "W36", "waist")]
+    # negatives: adidas' codes on one inch hold; 86 = 34 and 88 = 35 stay two sizes; the seller's inch otherwise wins
+    assert "two Korean sizes on one US size" in _pants(["A76 (31인치)", "A79 (31인치)"], [], "mens_bottoms")["held"]
+    assert [v["us"] for v in _pants(["86(34)", "88(35)"], [], "mens_bottoms")["values"]] == ["W34", "W35"]
+    assert [v["us"] for v in _pants(["85(34)", "92(36)"], [], "mens_bottoms")["values"]] == ["W34", "W36"]
+    # the cm_round inch taken already: held as before
+    assert _pants(["85(34)", "88(34)", "84(33)"], [], "mens_bottoms")["held"]
+    # two spellings of one cm, neither the cm_round inch: nothing merged
+    assert not _pants(["85(35)", "85(36)"], [], "mens_bottoms")["merged"]
+    assert A._cm_inch_collisions({"values_ko": ["85(33)", "85(35)"]}, A.grids()["profiles"]["womens_pants"]) == {}
+
+
+def test_5815131892_every_variant_orders_its_own_naver_size():
+    """The fixture (2026-11-25, the correctness review): each variant's size value is the one Naver sells it under."""
+    import json
+    from transform import prepare
+    from transform_shops import rules_for
+    here = os.path.dirname(os.path.abspath(__file__))
+    with open(os.path.join(here, "fixtures", "collected", "5815131892.json"), encoding="utf-8") as f:
+        line = json.load(f)
+    with open(os.path.join(here, "fixtures", "description_images", "5815131892.json"), encoding="utf-8") as f:
+        side = json.load(f)
+    p = prepare(line, rules_for("fairwardgolf"), "r", 1, side)
+    naver = {str(v["id"]): v["options"] for v in line["specs"]["options"]["variants"]}
+    assert p["status"] == "ready" and p["product"]["variants"]
+    for v in p["product"]["variants"]:
+        assert v["options_ko"][-1] == naver[str(v["naver_variant_id"])][-1].strip()
+    black = [v for v in p["product"]["variants"] if v["naver_variant_id"] == "52973793593"]
+    assert black and black[0]["options_ko"][-1] == "85(35)"
+    us = {v["ko"]: v["us"] for v in p["product"]["sizes"]["values"]}
+    assert us["85(35)"] == us["85(33)"] == "W33" and us["88(35)"] == us["88(34)"] == "W34"
+
+
+def _gendered(values: list[str], genders: list[str], extra: list[str] | None = None) -> dict[str, Any]:
+    return {"options": [{"name_ko": "사이즈", "values_ko": values}], "facts": [],
+            "variants": [{"sku": f"s{i}", "options_ko": [v], "price_krw": 1, "available": True}
+                         for i, v in enumerate(values)]}, {f"s{i}": g for i, g in enumerate(genders)}
+
+
+def test_a_mixed_product_is_sized_per_gender():
+    """Hallo 7266270685 (B): 여성용 55 / 66 / 77 beside 남성용 100 / 105 / 110, all once on the women's tops (77 and 100
+    both L (US 12-14)); each gender on its own profile, the labels say whose."""
+    from transform_shops import rules_for
+    tops = rules_for("fairwardgolf").categories["50002796"]
+    ov, by_sku = _gendered(["55", "66", "77", "100", "105", "110"], ["womens"] * 3 + ["mens"] * 3)
+    chart = ["여성용 상세 사이즈", "사이즈 / 55 / 66 / 77", "가슴단면 / 43 / 45 / 47", "남성용 상세 사이즈",
+             "사이즈 / 100 / 105 / 110", "가슴단면 / 53 / 55 / 57"]
+    out = T._sizes_by_gender(ov, tops, by_sku, "\n".join(chart), [], None, "할로 티셔츠")
+    assert out and not out["held"]
+    assert [(v["ko"], v["us"], v["profile"]) for v in out["values"]] == [
+        ("55", "Women's S (US 4-6)", "womens_tops"), ("66", "Women's M (US 8-10)", "womens_tops"),
+        ("77", "Women's L (US 12-14)", "womens_tops"), ("100", "Men's M", "mens_tops"), ("105", "Men's L", "mens_tops"),
+        ("110", "Men's XL", "mens_tops")]
+    assert out["profiles"] == {"womens": "womens_tops", "mens": "mens_tops"}
+    html = A.chart_html(out)
+    assert "Fits bust / chest" in html and "<td>Men's M</td>" in html and "<td>38–40 in</td>" in html
+    # by the value's own prefix (6485458095, 8325761055): "남성(95)" beside "여성(95)" stays two sizes
+    ov, by_sku = _gendered(["여성(85)", "여성(95)", "남성(95)", "남성(100)"], ["unisex"] * 4)
+    out = T._sizes_by_gender(ov, tops, by_sku, "", [], None, "레인코트")
+    assert [v["us"] for v in out["values"]] == ["Women's XS (US 0-2)", "Women's M (US 8-10)", "Men's S", "Men's M"]
+    # one value under both genders, a unisex value, one gender's values only: held, never sized on one profile
+    # (2026-11-25, the Fable review: Dennis 11287527628, Malbon 12375182812)
+    ov, by_sku = _gendered(["95", "100", "100"], ["womens", "mens", "womens"])
+    ov["variants"][1]["options_ko"] = ["100"]
+    shared = T._sizes_by_gender(ov, tops, {"s0": "womens", "s1": "mens", "s2": "womens"}, "", [], None, "")
+    assert shared and "not each one gender's" in shared["held"]
+    ov, by_sku = _gendered(["90", "100"], ["unisex", "mens"])
+    assert "not each one gender's" in T._sizes_by_gender(ov, tops, by_sku, "", [], None, "")["held"]
+    ov, by_sku = _gendered(["55", "66"], ["womens", "womens"])
+    assert T._sizes_by_gender(ov, tops, by_sku, "", [], None, "")["held"]
+    # no size option, one size only: not this rule (None)
+    assert T._sizes_by_gender({"options": [], "facts": [], "variants": []}, tops, {}, "", [], None, "") is None
+    ov, by_sku = _gendered(["FREE"], ["womens"])
+    assert T._sizes_by_gender(ov, tops, by_sku, "", [], None, "") is None
+    # a category with the women's profile only (windbreakers 50002798): held
+    wind = rules_for("fairwardgolf").categories["50002798"]
+    ov, by_sku = _gendered(["090", "100"], ["womens", "mens"])
+    assert "no men's size profile" in T._sizes_by_gender(ov, wind, by_sku, "", [], None, "")["held"]
+    # either gender held: the result holds (prepare holds it; the trousers, sized as men's, take the one profile)
+    ov, by_sku = _gendered(["44", "130(XXXL)"], ["womens", "mens"])
+    assert T._sizes_by_gender(ov, tops, by_sku, "", [], None, "")["held"]
+    # a single-profile chart keeps its words
+    one = A.resolve([{"name_ko": "사이즈", "values_ko": ["95", "100"]}], [], None, "", "mens_tops")
+    assert "Fits chest is" in A.chart_html(one)
+
+
+def test_a_variant_naming_both_genders_leaves_a_one_gender_product():
+    """Pinkpang 5691897960 (C): '남성용 XXL (여성용 88)' beside the women's M (55) / L (66) / XL (77), the 성별 row and
+    the title women's: left out; then "체크 A라인 M (55)" splits and reads by the women's sizes."""
+    rows = [{"label": "성별", "value": "여성용"}]
+
+    def ov() -> dict[str, Any]:
+        values = ["체크 A라인 M (55)", "체크 A라인 L (66)", "체크 A라인 XL (77)", "남성용 XXL (여성용 88)"]
+        return {"options": [{"name_ko": "종류", "values_ko": list(values)}], "facts": [],
+                "variants": [{"sku": f"s{i}", "options_ko": [v]} for i, v in enumerate(values)]}
+    o = ov()
+    assert T._drop_both_genders(o, rows, "4사이즈 체크 레인코트 여성용 골프우비", None) == \
+        "1 variants: 남성용 XXL (여성용 88)"
+    assert o["options"][0]["values_ko"] == ["체크 A라인 M (55)", "체크 A라인 L (66)", "체크 A라인 XL (77)"]
+    out = T._sizes(o, "womens_tops", "", [], None, "레인코트")
+    assert not out["held"] and [v["us"] for v in out["values"]] == ["S (US 4-6)", "M (US 8-10)", "L (US 12-14)"]
+    # negatives: a unisex row, a title of another gender, no title gender, every variant naming both
+    assert T._drop_both_genders(ov(), [{"label": "성별", "value": "남녀공용"}], "레인코트 여성용", None) is None
+    assert T._drop_both_genders(ov(), rows, "4사이즈 체크 레인코트 남성용", None) is None
+    assert T._drop_both_genders(ov(), rows, "체크 레인코트", None) is None
+    both = {"options": [{"name_ko": "종류", "values_ko": ["남성용 XXL (여성용 88)"]}], "facts": [],
+            "variants": [{"sku": "s0", "options_ko": ["남성용 XXL (여성용 88)"]}]}
+    assert T._drop_both_genders(both, rows, "레인코트 여성용", None) is None
+
+
+@pytest.mark.parametrize("value, words", [
+    ("체크 A라인 M (55)", ["체크", "A라인", "M (55)"]),                     # 5691897960
+    ("AS (85)", ["AS (85)"]), ("IS4776 화이트 AS (85)", ["IS4776", "화이트", "AS (85)"]),
+    ("오프화이트 85 XS", ["오프화이트", "85", "XS"]), ("M (66)", ["M", "(66)"]),  # a whole label: not joined (2 words)
+])
+def test_a_letter_and_its_bracketed_size_after_a_space_is_one_word(value, words):
+    assert A._words(value) == words
+    with A.waist_labels(A.MENS_WAIST):
+        assert A._words("블랙 M (32)") == ["블랙", "M", "(32)"]           # never in the waist profiles
+        assert A._words("HG3292 블랙 A82 (32인치)")[-1] == "A82 (32인치)"
+    assert A._joined_size("M (66)") is None                              # a whole value is a label, no colour
+
+
+def test_a_korean_size_word_with_its_letter_and_the_tip_floor():
+    """핑크골프 7965635614 (D): 프리(F) / 라지(L) / 엑스라지(XL), the chart "F-프리(55~66)" / "L-라지(통통66~77)" /
+    "XL-엑스라지(통통77~)", the tip "엑스라지(XL)사이즈 - 88이상"."""
+    from size_labels import parse_label as P
+    assert P("라지(L)").letter == "L" and P("엑스라지(XL)").letter == "XL" and P("프리(F)").free
+    assert P("라지(XL)") is None and P("라지(77-88)").women == (77.0, 88.0)          # the word and letter must agree
+    assert P("F-프리(55~66)").free and P("F-프리(55~66)").women == (55.0, 66.0)
+    assert P("L-라지(통통66~77)").women == (66.0, 77.0) and P("XL-라지(77~)") is None
+    chart = ["사이즈(cm) / 허리 단면 / 총기장", "F-프리(55~66) / 33 / 43", "L-라지(통통66~77) / 35 / 43",
+             "XL-엑스라지(통통77~) / 37 / 45"]
+    tip = ["프리(F) - 정66까지", "라지(L) - 77반까지", "엑스라지(XL)사이즈 - 88이상"]
+    r = _pants(["프리(F)", "라지(L)", "엑스라지(XL)"], chart + tip, "womens_bottoms")
+    assert not r["held"] and [(v["us"], v["basis"]) for v in r["values"]] == [
+        ("S-M (US 4-10)", "label"), ("M-L (US 8-14)", "chart_pair"), ("XL (US 16)", "text_tip")]
+    assert A.tip_floors(tip) == {"XL": 88.0}
+    # negatives: F alone is One Size; without the tip XL takes the chart's 77 as before
+    assert _pants(["프리(F)"], chart, "womens_bottoms")["values"][0]["us"] == "One Size"
+    assert [v["us"] for v in _pants(["라지(L)", "엑스라지(XL)"], chart, "womens_bottoms")["values"]] == \
+        ["M-L (US 8-14)", "L (US 12-14)"]
+
+
+def test_a_free_size_and_letters_by_the_sellers_inch_line():
+    """할로 5282622633 (D): FREE（44-66반） / XL（통통66반이상） / 2XL（77이상） and the seller's "25-27인치 free /
+    28-30인치 XL / 30-31인치2XL"."""
+    from size_labels import parse_label as P
+    assert P("XL（통통66반이상）").women == (66.5,) and P("2XL（77이상）").women == (77.0,)
+    lines = ["평소사이즈:26-27inch", "25-27인치 free", "28-30인치 XL", "30-31인치2XL"]
+    r = _pants(["FREE（44-66반）", "XL（통통66반이상）", "2XL（77이상）"], lines, "womens_bottoms")
+    assert not r["held"] and [(v["us"], v["basis"]) for v in r["values"]] == [
+        ("XS-S (US 0-6)", "text_waist"), ("M-L (US 8-14)", "text_waist"), ("L (US 12-14)", "text_waist")]
+    # negatives: FREE alone stays One Size; a model line never pairs; a waist for only some values: none taken
+    assert _pants(["FREE（44-66반）"], lines, "womens_bottoms")["values"][0]["us"] == "One Size"
+    assert A.waist_text_pairs(["모델 평소사이즈 25-27인치 free"], A.grids()["profiles"]["womens_bottoms"]) == {}
+    r = _pants(["FREE（44-66반）", "XL（통통66반이상）", "2XL（77이상）"], ["25-27인치 free", "28-30인치 XL"],
+               "womens_bottoms")
+    assert "text_waist" not in {v["basis"] for v in r["values"]}
+
+
+def test_a_size_line_of_the_options_letters_over_a_chart_lettered_otherwise():
+    """로로얼로이 9317474764 (D): "사이즈 / S(55), M(66), L(77)" over the chart's "M(55) / L(66) / XL(77)"."""
+    chart = ["사이즈 (cm) / 어깨단면 / 가슴단면 / 팔길이 / 총기장", "M(55) / 32 / 40 / 58 / 56.5", "L(66) / 33 / 42 / 59 / 58",
+             "XL(77) / 35 / 44 / 60 / 60"]
+    r = _resolve(["S", "M", "L"], chart + ["사이즈 / S(55), M(66), L(77)"])
+    assert not r["held"] and [(v["us"], v["basis"]) for v in r["values"]] == [
+        ("S (US 4-6)", "text_line"), ("M (US 8-10)", "text_line"), ("L (US 12-14)", "text_line")]
+    assert [row["cm"]["chest"] for row in r["chart"]["rows"]] == [40.0, 42.0, 44.0]       # the 55 row under S
+    # negatives: a chart lettered as the option keeps winning; a line of some letters; other women's sizes
+    assert A.size_line(["S(55), M(66), L(77)"], ["S", "M", "L"],
+                       A.read_chart(["사이즈 / 가슴", "S(44) / 40", "M(55) / 42", "L(66) / 44"])) == {}
+    ch = A.read_chart(chart)
+    assert A.size_line(["L[55~66]/XL[77]"], ["M", "L", "XL"], ch) == {}
+    assert A.size_line(["S(44), M(55), L(66)"], ["S", "M", "L"], ch) == {}
+    assert A.size_line(["S(77), M(66), L(55)"], ["S", "M", "L"], ch) == {}
+
+
+def test_a_letter_written_with_two_ranges_takes_the_one_that_fits_the_ladder():
+    """투엘라 12370291326 (D): L(28~29) twice in the text, L(27~29) in the chart's row label: 27~29 overlaps M's
+    26반~27, 28~29 completes the ladder."""
+    lines = ["사이즈:S(25~26)/M(26반~27)/L(28~29)", "/XL(30~31)/2XL(32~33)", "사이즈 / S(25~26)/M(26반~27)/L(28~29)",
+             "사이즈 / 총길이 / 허리 / 엉덩이", "S(25~26) / 91.5 / 36 / 44", "L(27~29) / 94.5 / 41 / 49",
+             "XL(30~31) / 96 / 43.5 / 51.5", "2XL(32~33) / 97.5 / 46 / 54"]
+    r = _pants(["S", "M", "L", "XL", "2XL"], lines, "womens_pants")
+    assert not r["held"] and [v["us"] for v in r["values"]] == [
+        "XS-S (US 0-6)", "S (US 4-6)", "M (US 8-10)", "L (US 12-14)", "L-XL (US 12-16)"]
+    w = A.waist_text_pairs(lines, A.grids()["profiles"]["womens_pants"])
+    assert w["L"] == [71.1, 73.7] and w["M"] == [67.3, 68.6]
+    # negatives: two ranges that both fit (or both break) stay unpaired; written less often: unpaired
+    prof = A.grids()["profiles"]["womens_pants"]
+    assert "L" not in A.waist_text_pairs(["M(26~27)", "L(28~29)", "L(28~29반)", "XL(30~31)"], prof)
+    assert "L" not in A.waist_text_pairs(["M(26~27)", "L(28~29)", "L(27~29)", "L(27~29)", "XL(30~31)"], prof)
+
+
+def test_about_a_chest_and_a_4xl_where_the_profile_has_it():
+    """Klattermusen 5460564989 'XXS사이즈(약80)', a rain suit's '4XL' 11859489664 (mens_tops 120) (D)."""
+    from size_labels import parse_label as P
+    assert P("XXS사이즈(약80)").letter == "XXS" and P("XXS사이즈(약80)").chest == (80.0,)
+    assert P("화이트(약기모)") is None and P("4XL") is None
+    r = _resolve(["XXS사이즈(약80)", "XS사이즈(약85)", "L사이즈(약100)"])
+    assert [v["us"] for v in r["values"]] == ["XXS (US 00)", "XS (US 0-2)", "L (US 12-14)"]
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["M", "L", "XL", "2XL", "3XL", "4XL"]}], [], None, "우비", "mens_tops")
+    assert not r["held"] and [v["us"] for v in r["values"]] == ["S", "M", "L", "XL", "XXL", "XXXL"]
+    # negatives: no 4XL in the profile, a joined "아이보리 4XL": unread as before
+    assert "'4XL'" in _resolve(["L", "4XL"])["held"]
+    assert "'4XL'" in _pants(["L", "4XL"], [], "mens_bottoms")["held"]
+
+
+_ADIDAS_A_TABLE = ["주문사이즈 / A76 / A79 / A82 / A85 / A88 / A92 / A96", "(31) / (32) / (33) / (34) / (35) / (36) / (38)"]
+
+
+def test_adidas_bare_codes_by_the_products_size_table():
+    """majorgolf 11493370731 (E): 'IQ2921 블랙 A79' bare beside 'IQ2921 블랙 A82 (33인치)', the table A79 = (32)."""
+    values = ["IQ2921 블랙 A76 (31인치)", "IQ2921 블랙 A79", "IQ2921 블랙 A82 (33인치)", "IU2824 네이비 A85"]
+    with A.waist_labels(A.MENS_WAIST):
+        got = A.split_joined([{"name_ko": "선택", "values_ko": values}])
+    assert got == (0, [("IQ2921 블랙", "A76 (31인치)"), ("IQ2921 블랙", "A79"), ("IQ2921 블랙", "A82 (33인치)"),
+                       ("IU2824 네이비", "A85")])
+    sizes = ["A76 (31인치)", "A79", "A82 (33인치)", "A85"]
+    r = _pants(sizes, _ADIDAS_A_TABLE * 2, "mens_bottoms")
+    assert not r["held"] and [(v["ko"], v["us"], v["basis"]) for v in r["values"]] == [
+        ("A76 (31인치)", "W31", "waist"), ("A79", "W32", "chart_inch"), ("A82 (33인치)", "W33", "waist"),
+        ("A85", "W34", "chart_inch")]
+    # negatives: no table, two reads disagreeing, a written inch the table contradicts: held "not read"
+    assert "'A79': not read" in _pants(sizes, [], "mens_bottoms")["held"]
+    other = ["주문사이즈 / A76 / A79 / A82 / A85", "(31) / (33) / (33) / (34)"]
+    assert "'A79': not read" in _pants(sizes, _ADIDAS_A_TABLE + other, "mens_bottoms")["held"]
+    assert "'A79': not read" in _pants(["A76 (31인치)", "A79", "A82 (32인치)"], _ADIDAS_A_TABLE, "mens_bottoms")["held"]
+    with A.waist_labels(A.MENS_WAIST):                                   # a set of bare codes alone: no split
+        assert A.split_joined([{"name_ko": "선택", "values_ko": ["IQ2921 블랙 A79", "IQ2921 블랙 A85"]}]) is None
+
+
+def test_adidas_asian_fact_by_its_own_size_table():
+    """majorgolf 9998916822 (E): one variant 'IS7132 블랙 AL (110)', the table "s / M / L" (a letter lost) over four
+    numbers and elsewhere "S / M / L / XL": L = (110). Since 2026-11-25 the owner's adidas row sizes the letter (AL =
+    105, L), the bracket number no longer: the table only lets the fact be read."""
+    lines = ["주문사이즈 / s / M / L", "(100) / (105) / (110) / (115)", "주문사이즈 / S / M / L / XL"]
+    pairs = A.order_pairs(lines)
+    assert pairs == {"S": {100}, "M": {105}, "L": {110}, "XL": {115}}
+    assert A.single_joined("IS7132 블랙 AL (110)", pairs) == ("IS7132 블랙", "AL (110)")
+    ov = {"options": [], "facts": [{"label_ko": "", "value_ko": "IS7132 블랙 AL (110)"}],
+          "variants": [{"options_ko": [], "price_krw": 1}]}
+    out = T._sizes(ov, "mens_tops", "\n".join(lines), [], None, "아디다스 쿼터집")
+    assert not out["held"] and out["fact"]["us"] == "L"
+    other = {"options": [], "facts": [{"label_ko": "", "value_ko": "IS7132 블랙 AL (110)"}],
+             "variants": [{"options_ko": [], "price_krw": 1}]}
+    assert T._sizes(other, "mens_tops", "\n".join(lines), [], None, "푸마 쿼터집")["fact"]["us"] == "XL"   # no row
+    # negatives: no table, the table pairing L with another number (5176506757's 'AL (105)'), a lone 3-letter row
+    assert A.single_joined("IS7132 블랙 AL (110)") is None
+    assert A.single_joined("IS7132 블랙 AL (105)", pairs) is None
+    assert A.order_pairs(lines[:2]) == {}
+    assert A.single_joined("CW4742 화이트 L", pairs) is None
+
+
+def test_two_models_spellings_of_one_waist_when_no_choice_sells_both():
+    """soneva 10076109143 (E): the fleece model's 82..92 and the plain model's M(32)..XXL(36), "네이비82" glued."""
+    with A.waist_labels(A.MENS_WAIST):
+        assert A._words("네이비82") == ["네이비", "82"] and A._words("카본120") == ["카본120"]
+        assert A._words("바지(봄/가을)25")[-1] == "가을)25"
+    assert A._words("네이비82") == ["네이비82"]                              # outside the waist profiles
+    values = ["82", "M(32)", "85", "L(33)"]
+    combos = [["기모", "네이비", "82"], ["기모", "네이비", "85"], ["일반", "블랙", "M(32)"], ["일반", "블랙", "L(33)"]]
+    opts = [{"name_ko": "모델명", "values_ko": ["기모", "일반"]}, {"name_ko": "컬러", "values_ko": ["네이비", "블랙"]},
+            {"name_ko": "사이즈", "values_ko": values}]
+    r = A.resolve(opts, [], None, "아디다스 바지", "mens_bottoms", combos=combos)
+    assert not r["held"] and not r["merged"] and [v["us"] for v in r["values"]] == ["W32", "W32", "W33", "W33"]
+    # negatives: both under one choice of the others hold; no combos (as before) hold; women's profiles hold
+    assert r is not None and A.resolve(opts, [], None, "", "mens_bottoms", combos=combos + [["기모", "네이비", "M(32)"]])["held"]
+    assert A.resolve(opts, [], None, "", "mens_bottoms")["held"]
+    sizes = {"profile": "mens_bottoms", "values": r["values"], "chart": None}
+    assert A.chart_html(sizes).count("<td>W32</td>") == 1
+    import shopify_payload as SP2
+    product = {"options": opts, "variants": [], "sizes": {**r, "option": 2}}
+    out, _ = SP2._options(product, _en([]))
+    assert [v["name"] for v in out[2]["values"]] == ["W32", "W33"]
+
+
+def test_a_womens_models_rows_are_left_out_of_a_mens_product():
+    """Master Bear 5489884876 (F): the women's model M2-0B053 (S / M / L) left out before the cap, the men's sold."""
+    import inspect
+    src = inspect.getsource(T.options_and_variants)
+    assert "leave_out_model" in src and "len(model_rows) * 2 < len(rows)" in src
+    src = inspect.getsource(T.prepare)
+    assert "womens_model_left_out" in src and 'own == "mens"' in src and "a bare letter left" in src
+
+
+# ---- 2026-11-25, the two reviews of the size_unmapped second pass and the owner's three yes answers ----------------
+
+RAINCOAT_8325761055 = [
+    "상품사이즈(cm)", "사이즈는 측정 방법에 따라1~3cm 차이가 있을수 있습니다.", "어깨너비", "-가슴단면", "소매길이", "총장", "남성용",
+    "95 / 100 / 105 / 110", "추천사이즈 / 남성M / 남성L / 남성XL / 남성XXL", "총장 / 110 / 111.5 / 113 / 114.5",
+    "가슴둘레 / 125 / 130 / 135 / 140", "허리둘레 / 123 / 128 / 133 / 138", "소매길이 / 84 / 86 / 88 / 90",
+    "* 모델 착용사이즈: 남성모델105(남성XL)", "여성용", "85 / 90 / 95", "추천사이즈 / 여성s / 여성M / 여성L",
+    "총장 / 93 / 94.5 / 96", "가슴둘레 / 103 / 108 / 113", "허리둘레 / 97 / 102 / 107", "소매길이 / 79 / 81 / 83",
+    "* 모델 착용 사이즈 :여성모델 95(여성L)"]
+
+
+def _tops():
+    from transform_shops import rules_for
+    return rules_for("fairwardgolf").categories["50002796"]
+
+
+def test_the_genders_chart_marks_merge_to_mixed_on_any_disagreement():
+    """The correctness review: women's chest with no mark (a round 92 cm) beside men's "flat" (53) made both flat, so the
+    women's S read 72.5 in; any disagreement, None included, is "mixed" (read by the number)."""
+    assert T._gender_kinds([{"chest": None}, {"chest": "flat"}]) == {"chest": "mixed"}
+    assert T._gender_kinds([{"chest": "flat"}, {"chest": None}]) == {"chest": "mixed"}
+    assert T._gender_kinds([{"chest": "circ"}, {"chest": None}]) == {"chest": "mixed"}
+    assert T._gender_kinds([{"chest": "flat"}, {"chest": "circ"}]) == {"chest": "mixed"}
+    # negatives: the same mark stays; a field only one chart has keeps that chart's mark
+    assert T._gender_kinds([{"chest": "flat", "length": None}, {"chest": "flat", "length": None}]) == {
+        "chest": "flat", "length": None}
+    assert T._gender_kinds([{"shoulder": "flat"}, {"chest": "circ"}]) == {"shoulder": "flat", "chest": "circ"}
+    sizes = {"profile": "womens_tops", "values": [
+        {"ko": "92", "us": "Women's S (US 4-6)", "letter": "S", "chest_cm": 90, "profile": "womens_tops"},
+        {"ko": "100", "us": "Men's M", "letter": "M", "chest_cm": 100, "profile": "mens_tops"}],
+        "chart": {"kinds": T._gender_kinds([{"chest": None}, {"chest": "flat"}]),
+                  "rows": [{"us": "Women's S (US 4-6)", "cm": {"chest": 92}}, {"us": "Men's M", "cm": {"chest": 53}}]}}
+    html = A.chart_html(sizes)
+    assert "<td>36 in</td>" in html and "72.5 in" not in html and "<td>41.5 in</td>" in html
+
+
+def test_each_gender_takes_chart_rows_only_from_its_own_table():
+    """8325761055 (the correctness review): the OCR holds "남성용 / 95 / 100 / 105 / 110 ... 가슴둘레 / 125 ..." and then
+    "여성용 / 85 / 90 / 95 ... 가슴둘레 / 103 / 108 / 113": the women's 95 took the men's 95 row (chest 125 cm)."""
+    tables = T._gender_tables("", [RAINCOAT_8325761055])
+    assert tables["mens"][0] == "95 / 100 / 105 / 110" and tables["womens"][0] == "85 / 90 / 95"
+    assert "가슴둘레 / 125 / 130 / 135 / 140" not in tables["womens"]
+    ov, by_sku = _gendered(["여성(85)", "여성(90)", "여성(95)", "남성(95)", "남성(100)", "남성(105)", "남성(110)"],
+                           ["womens"] * 3 + ["mens"] * 4)
+    out = T._sizes_by_gender(ov, _tops(), by_sku, "", [RAINCOAT_8325761055], None, "레인코트")
+    assert out and not out["held"]
+    rows = {r["us"]: r["cm"] for r in out["chart"]["rows"]}
+    assert rows["Women's M (US 8-10)"]["chest"] == 113 and rows["Men's S"]["chest"] == 125
+    assert all(r["cm"]["chest"] != 125 for r in out["chart"]["rows"] if r["us"].startswith("Women's"))
+    # negatives: no gender headings (the tables cannot be told apart): no chart, a reason; one gender's heading alone
+    # is a heading line, never a value ("남성모델105" is no heading)
+    plain = [line for line in RAINCOAT_8325761055 if line not in ("남성용", "여성용")]
+    ov, by_sku = _gendered(["여성(85)", "여성(90)", "여성(95)", "남성(95)", "남성(100)", "남성(105)", "남성(110)"],
+                           ["womens"] * 3 + ["mens"] * 4)
+    out = T._sizes_by_gender(ov, _tops(), by_sku, "", [plain], None, "레인코트")
+    assert not out["held"] and out["chart"] is None and "not told apart" in out["chart_left_out"]
+    assert T._GENDER_HEAD_RE.match("여성용 상세 사이즈") and T._GENDER_HEAD_RE.match("남성")
+    assert not T._GENDER_HEAD_RE.match("* 모델 착용사이즈: 남성모델105(남성XL)") and not T._GENDER_HEAD_RE.match("남성 95")
+
+
+def test_two_models_on_one_waist_show_no_chart():
+    """10076109143 (the correctness review): the plain model's XL(35) took the fleece 88's row by position; when the
+    combos exemption lets two models share a US waist, no chart (one cm written two ways keeps its row: 5815131892)."""
+    values = ["82", "M(32)", "85", "L(33)", "88", "XL(35)"]
+    combos = [["기모", "82"], ["기모", "85"], ["기모", "88"], ["일반", "M(32)"], ["일반", "L(33)"], ["일반", "XL(35)"]]
+    opts = [{"name_ko": "모델명", "values_ko": ["기모", "일반"]}, {"name_ko": "사이즈", "values_ko": values}]
+    lines = ["82 - 허리둘레 81cm", "85 - 허리둘레 84cm", "88 - 허리둘레 87cm"]
+    r = A.resolve(opts, lines, None, "아디다스 바지", "mens_bottoms", combos=combos)
+    assert not r["held"] and r["chart"] is None and r["chart_left_out"].startswith("two models' sizes on one US size")
+    # negative: the fleece model alone keeps its chart
+    alone = A.resolve([{"name_ko": "사이즈", "values_ko": ["82", "85", "88"]}], lines, None, "아디다스 바지",
+                      "mens_bottoms")
+    assert "chart_left_out" not in alone
+
+
+def test_a_button_down_shirt_is_no_outerwear():
+    """50002796: 다운 (down) after 버튼 is a button-down shirt: neither left out of a product (the variant drop) nor
+    screened from the listing; a down jacket still is."""
+    import listing_filter as LF
+    rules = [{k: r[k] for k in r if k != "requires"} for r in LF.title_rules("50002796") if r["code"] == "outerwear"]
+    assert LF.title_rule("버튼다운 셔츠 화이트", rules) is None
+    assert LF.title_rule("다운 자켓 블랙", rules) == "title:outerwear" and LF.title_rule("경량 다운 블랙", rules) == "title:outerwear"
+    names = ["디자인", "사이즈"]
+    rows = [{"options": [d, s]} for d in ("버튼다운 셔츠 화이트", "라운드 티셔츠", "경량 다운 점퍼") for s in ("M", "L")]
+    kept, left, _ = T._drop_off_section(names, rows, ("outerwear",), "50002796")
+    assert [r["options"][0] for r in kept] == ["버튼다운 셔츠 화이트"] * 2 + ["라운드 티셔츠"] * 2
+    assert left == "2 variants: 경량 다운 점퍼"
+    # the listing screen of 50002796 (the title rules, every code): a button-down title passes, a down jacket not
+    screen = LF.title_rules("50002796")
+    assert LF.title_rule("남성 골프 버튼다운 긴팔 셔츠", [{k: r[k] for k in r if k != "requires"} for r in screen
+                                                    if r["code"] == "outerwear"]) is None
+
+
+def test_a_ladder_read_two_ways_holds():
+    """티앤드 5587004670 (the correctness review): S..XL by the profile's letters (the OCR misread "XL(31~33)"), 2XL by
+    another style's chart row "2XL(33~35)": "XL-XXL (US 16-18)" beside "XL (US 16)", its hip smaller than XL's."""
+    rows = ["사이즈 / 총기장 / 허리 단면 / 힙단면", "S(25~26) / 89 / 32 / 42", "M(27~28) / 90 / 34 / 44",
+            "L(29~30) / 91 / 36 / 46", "XL(3]~33) / 92 / 38 / 48", "2XL(33~35) / 93 / 47 / 50"]
+    r = _pants(["S", "M", "L", "XL", "2XL"], rows, "womens_pants")
+    assert r["held"] == "'2XL' XL-XXL (US 16-18) (chart_pair) overlaps 'XL' XL (US 16) (fallback_letters): one ladder read two ways"
+    # negatives: one basis for the whole ladder, a gap of a letter, a letter range: as before
+    assert not _pants(["S", "M", "L", "XL", "2XL"], [], "womens_pants")["held"]
+    fixed = rows[:4] + ["XL(31~33) / 92 / 38 / 48", "2XL(33~35) / 93 / 47 / 50"]
+    assert not _pants(["S", "M", "L", "XL", "2XL"], fixed, "womens_pants")["held"]
+    assert A._ladder_broken([{"ko": "M", "us": "M (US 8-10)", "basis": "fallback_letters"},
+                             {"ko": "XL", "us": "L-XL (US 12-16)", "basis": "chart_pair"}], {}) is None
+
+
+def test_the_owners_adidas_asian_letters_on_mens_tops():
+    """The owner, 2026-11-25: AS = 95, AM = 100, AL = 105, AXL = 110, A2XL = 115 for adidas' men's tops, the letter
+    winning over the number in brackets (majorgolf: 5176506757 sells "AM (100)" for one model and "AM (105)" for
+    another; 13740514016 sells the bare "KG2154 화이트 AS" .. "A2XL")."""
+    row = A.grids()["profiles"]["mens_tops"]["brands"]["adidas"]
+    assert row["asian_letters"] == {"AS": 95, "AM": 100, "AL": 105, "AXL": 110, "A2XL": 115}
+    assert "owner 2026-11-25" in row["basis"] and "13740514016" in row["evidence"]
+    values = ["AXL (110)", "AL (105)", "AM (100)", "AM (105)", "AL (110)", "AXL (115)"]
+    combos = [["IM7295", "AXL (110)"], ["IX4323", "AM (100)"], ["IX4323", "AL (105)"], ["IT7211", "AM (105)"],
+              ["IT7211", "AL (110)"], ["IT7211", "AXL (115)"]]
+    opts = [{"name_ko": "선택1", "values_ko": ["IM7295", "IX4323", "IT7211"]}, {"name_ko": "선택2", "values_ko": values}]
+    r = A.resolve(opts, [], "아디다스", "아디다스 남성 긴팔", "mens_tops", combos=combos)
+    assert not r["held"] and not r["merged"] and r["chart"] is None
+    assert {v["ko"]: v["us"] for v in r["values"]} == {"AM (100)": "M", "AM (105)": "M", "AL (105)": "L",
+                                                       "AL (110)": "L", "AXL (110)": "XL", "AXL (115)": "XL"}
+    assert {v["basis"] for v in r["values"]} == {"brand_asian:adidas"}
+    # the bare letters after a colour: split by the brand row only
+    joined = [{"name_ko": "선택", "values_ko": ["KG2154 화이트 AS", "KG2154 화이트 AM", "KG2154 화이트 A2XL"]}]
+    assert A.split_joined(joined, asian=True) == (0, [("KG2154 화이트", "AS"), ("KG2154 화이트", "AM"),
+                                                      ("KG2154 화이트", "A2XL")])
+    assert A.split_joined(joined) is None
+    bare = A.resolve([{"name_ko": "사이즈", "values_ko": ["AS", "AM", "AL", "AXL", "A2XL"]}], [], "아디다스", "",
+                     "mens_tops")
+    assert [v["us"] for v in bare["values"]] == ["S", "M", "L", "XL", "XXL"]
+    assert A.resolve([{"name_ko": "사이즈", "values_ko": ["AL (110)"]}], [], "아디다스", "", "mens_tops")["values"][0]["us"] == "L"
+    # negatives: another brand, the women's tops ("AS(85)" by its number), a bare S of adidas, two models' AM under
+    # one choice of the others: as before (held or by the number)
+    assert A.resolve(opts, [], "나이키", "나이키 긴팔", "mens_tops", combos=combos)["held"]
+    women = A.resolve([{"name_ko": "사이즈", "values_ko": ["AS(85)", "AM(90)"]}], [], "아디다스", "", "womens_tops")
+    assert [v["us"] for v in women["values"]] == ["XS (US 0-2)", "S (US 4-6)"]
+    plain = A.resolve([{"name_ko": "사이즈", "values_ko": ["S", "M"]}], [], "아디다스", "", "mens_tops")
+    assert [v["us"] for v in plain["values"]] == ["XS", "S"] and {v["basis"] for v in plain["values"]} == {"fallback_letters"}
+    assert A.resolve(opts, [], "아디다스", "", "mens_tops", combos=combos + [["IM7295", "AM (100)"], ["IM7295", "AM (105)"]])["held"]
+
+
+def test_7455950253s_waist_with_a_big_letter_is_the_waist():
+    """매일츄리닝 7455950253: "36(4XL)" .. "40(6XL)" in the men's trousers are the waist (as "30(XL)" already reads),
+    each its own Naver value beside another style's bare "36" (both W36, no style sells both)."""
+    with A.waist_labels(A.MENS_WAIST):
+        assert A.parse_label("36(4XL)") == A.parse_label("36") and A.parse_label("40(6XL)") == A.parse_label("40")
+        assert A.parse_label("4XL") is None                              # a bare 4XL stays unread
+    assert A.parse_label("36(4XL)") is None or not A.parse_label("36(4XL)").waist   # never outside the waist profiles
+    values = ["30", "36", "30(XL)", "36(4XL)", "40(6XL)"]
+    combos = [["약기모카고", "30"], ["약기모카고", "36"], ["융기모패딩조거", "30(XL)"], ["융기모패딩조거", "36(4XL)"],
+              ["융기모패딩조거", "40(6XL)"]]
+    opts = [{"name_ko": "스타일", "values_ko": ["약기모카고", "융기모패딩조거"]}, {"name_ko": "사이즈", "values_ko": values}]
+    r = A.resolve(opts, [], None, "카고 조거", "mens_bottoms", combos=combos)
+    assert not r["held"] and not r["merged"]
+    assert {v["ko"]: v["us"] for v in r["values"]} == {"30": "W30", "30(XL)": "W30", "36": "W36", "36(4XL)": "W36",
+                                                       "40(6XL)": "W40"}
+
+
+def test_the_owners_variants_are_left_out_before_the_sizes():
+    """The owner's variants_by_owner.json (2026-11-25): 7455950253 drops 사선포켓 and the 밀리터리 styles, matched as
+    written or without the numbering, never a part of another value (사선포켓Ver2 stays)."""
+    names = ["스타일", "사이즈"]
+    rows = [{"options": [st, sz]} for st in ("1. 사선포켓", "2. 사선포켓Ver2", "3-1. 밀리터리(냉감)") for sz in ("M", "30")]
+    kept, said = T._owner_dropped(names, rows, {"스타일": ["사선포켓", "밀리터리(냉감)"]})
+    assert [r["options"][0] for r in kept] == ["2. 사선포켓Ver2"] * 2
+    assert said == {"left_out": "4 variants: 스타일: 1. 사선포켓, 3-1. 밀리터리(냉감)"}
+    kept, said = T._owner_dropped(names, rows, {"0": ["1. 사선포켓"], "없는옵션": ["x"]})
+    assert len(kept) == 4 and said["unused"] == "없는옵션: x"
+    kept, said = T._owner_dropped(names, rows, {"스타일": ["사선포켓", "없는값"]})
+    assert len(kept) == 4 and said["unused"] == "스타일: 없는값"
+    # every row named: none left out (prepare holds the product variants_by_owner)
+    kept, said = T._owner_dropped(names, rows, {"사이즈": ["M", "30"]})
+    assert kept == rows and said and said["all"]

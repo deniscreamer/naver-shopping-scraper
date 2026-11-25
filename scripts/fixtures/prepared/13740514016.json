@@ -1,0 +1,1606 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:500000592:13740514016",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "2 of 2 kept (full 2); 0 trimmed"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "선택"
+  },
+  {
+   "code": "paid_addons_left_out",
+   "detail": "19 paid add-ons"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "event_main.jpg, maincopyright.jpg, CSinfo_Majorgolf.jpg"
+  },
+  {
+   "code": "size_chart_left_out",
+   "detail": "adidas' Asian letters sized by the owner's row (AM = 100 ...), not the charts' numbers"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/majorgolf/products/13740514016",
+  "channel_no": "500000592",
+  "product_id": "13740514016",
+  "category_id": "50002796"
+ },
+ "product": {
+  "title_ko": "아디다스 FW 가을 겨울 클리마웜 브러쉬드 남성 긴팔 카라 티셔츠 골프웨어 상의 SO62",
+  "brand_ko": "아디다스",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "아디다스 FW 가을 겨울 클리마웜 브러쉬드 남성 긴팔 카라 티셔츠 골프웨어 상의 SO62"
+     },
+     {
+      "source": "listing",
+      "value": "mens",
+      "text": "남성 골프 긴팔 카라티"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "선택",
+    "values_ko": [
+     "KG2154 화이트",
+     "KG2155 네이비",
+     "KG2156 블랙"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "AS",
+     "AM",
+     "AL",
+     "AXL",
+     "A2XL"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"KG2154 화이트 AS\"]",
+    "naver_variant_id": "60464527439",
+    "options_ko": [
+     "KG2154 화이트",
+     "AS"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-226e9f03aad3126ce9827c0b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"KG2154 화이트 AM\"]",
+    "naver_variant_id": "60464527440",
+    "options_ko": [
+     "KG2154 화이트",
+     "AM"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-a4eecf8f7ddedf5c2e922789",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"KG2154 화이트 AL\"]",
+    "naver_variant_id": "59873567678",
+    "options_ko": [
+     "KG2154 화이트",
+     "AL"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-ea35919ea99f784518e6c444",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"KG2154 화이트 AXL\"]",
+    "naver_variant_id": "59873567680",
+    "options_ko": [
+     "KG2154 화이트",
+     "AXL"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-54acef1f8446e46c0466ded0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"KG2154 화이트 A2XL\"]",
+    "naver_variant_id": "59873567683",
+    "options_ko": [
+     "KG2154 화이트",
+     "A2XL"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-a002719995f789f49af6164b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"KG2155 네이비 AS\"]",
+    "naver_variant_id": "60464527441",
+    "options_ko": [
+     "KG2155 네이비",
+     "AS"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-4ecccc04aecc1479ac69d02e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"KG2155 네이비 AM\"]",
+    "naver_variant_id": "60464527442",
+    "options_ko": [
+     "KG2155 네이비",
+     "AM"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-3c01c6af83db4c941266e77b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"KG2155 네이비 AL\"]",
+    "naver_variant_id": "59873567689",
+    "options_ko": [
+     "KG2155 네이비",
+     "AL"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-039bda09b04d81b5146980a9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"KG2155 네이비 AXL\"]",
+    "naver_variant_id": "59873567691",
+    "options_ko": [
+     "KG2155 네이비",
+     "AXL"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-472242969ae2300a78c9212d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"KG2155 네이비 A2XL\"]",
+    "naver_variant_id": "60464527443",
+    "options_ko": [
+     "KG2155 네이비",
+     "A2XL"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-de7a7852ef0a134045980138",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"KG2156 블랙 AS\"]",
+    "naver_variant_id": "60474114195",
+    "options_ko": [
+     "KG2156 블랙",
+     "AS"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-4829eaf6c573c486d9091a77",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"KG2156 블랙 AM\"]",
+    "naver_variant_id": "60474114196",
+    "options_ko": [
+     "KG2156 블랙",
+     "AM"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-c95564a4d57ad66c059264b9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"KG2156 블랙 AL\"]",
+    "naver_variant_id": "59873567699",
+    "options_ko": [
+     "KG2156 블랙",
+     "AL"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-d0c0e08756b285194ec187a1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"KG2156 블랙 AXL\"]",
+    "naver_variant_id": "60474114197",
+    "options_ko": [
+     "KG2156 블랙",
+     "AXL"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-d02154ad38c09e652b181c17",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"KG2156 블랙 A2XL\"]",
+    "naver_variant_id": "60474114198",
+    "options_ko": [
+     "KG2156 블랙",
+     "A2XL"
+    ],
+    "price_krw": 88000,
+    "price_usd": "88.00",
+    "sku": "FW-90e8824047f44810ea4097fc",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 88000,
+   "original_krw": 158000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "아디다스"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "아디다스"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "KG2156 KG2154 KG2155"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "베트남"
+   },
+   {
+    "label_ko": "네크라인",
+    "value_ko": "칼라넥"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "신축성"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 폴리우레탄"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "가을, 겨울"
+   },
+   {
+    "label_ko": "소매기장",
+    "value_ko": "긴팔"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2026년형"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "티셔츠"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.76,
+   "count": 34
+  },
+  "reviews": [
+   {
+    "id": "5093503677",
+    "score": 5,
+    "text_ko": "사이즈가 커서 평소에 입던 100으로 교환했는데 예쁘게 잘 맞아요. 요즘입기에 딱 좋고 소재도 부드럽고 신축성이 좋아서 입기 편해요. 남편이 넘 좋다고 하네요. 무료교환 감사드려요.",
+    "created_at": "2026-10-28T14:18:38Z",
+    "writer": "gajh****",
+    "photos": [
+     "collected/50002788-fixtures/images/13740514016/fairwardgolf-review-image-8dd3a81dfcdd1818.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/13740514016/fairwardgolf-review-avatar-7536eaebe9891c09.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 92,
+    "text_original_ko": "사이즈가 커서 평소에 입던 100으로 교환했는데 예쁘게 잘 맞아요.요즘입기에 딱 좋고 소재도 부드럽고 신축성이 좋아서 입기 편해요.남편이 넘 좋다고 하네요.무료교환 감사드려요."
+   },
+   {
+    "id": "5091656566",
+    "score": 5,
+    "text_ko": "부드럽고 따뜻해서 입었을 때 착용감이 좋습니다. 추워지는 간절기 골프상의로 아주 제격이예요. 스포티한 옷 맵시도 맘에 들어요.",
+    "created_at": "2026-10-26T07:18:14Z",
+    "writer": "is****",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 73
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13740514016/fairwardgolf-13740514016-001-14fdcd5316a18952.webp",
+    "sha256": "14fdcd5316a189521d9cf3ae9bcd29cd9887a1c7ec14631dd791c41a59724599",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13740514016/fairwardgolf-13740514016-002-6480b2ffcb21fa68.webp",
+    "sha256": "6480b2ffcb21fa683cb97fe0bb9a710482212c335451b57879a8b9da76cae424",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13740514016/fairwardgolf-13740514016-003-b0a09af499869b81.webp",
+    "sha256": "b0a09af499869b81ea503468bcd7c5a23ca237b0708dccad574206b8d3efbcf7",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13740514016/fairwardgolf-13740514016-004-acd23911b57d6242.webp",
+    "sha256": "acd23911b57d6242a8d5b4597c9592a6060bea557952e955766ba8d8bf5249e2",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13740514016/fairwardgolf-13740514016-005-874456b6b54669f9.webp",
+    "sha256": "874456b6b54669f9752c6870e9fe942a6374685aa060ccf9fcb3544105362850",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/13740514016/fairwardgolf-13740514016-006-8f5c56a5b1b4f330.webp",
+    "sha256": "8f5c56a5b1b4f3305090326f37b978f408fca9acfdd0109ebc311baa50e109f8",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/13740514016/fairwardgolf-13740514016-007-a2fa5b4a1001e686.webp",
+    "sha256": "a2fa5b4a1001e6860dea50c09fd797d5d6f97030ef6a644fe8ef42bc88c0c408",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/13740514016/fairwardgolf-13740514016-008-58cbdb263c1beaee.webp",
+    "sha256": "58cbdb263c1beaee6192dbb9ec215ac8a2119f0839e7f2325e7ef18ce1833f8b",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/13740514016/fairwardgolf-13740514016-009-a44a5d5bca3c6120.webp",
+    "sha256": "a44a5d5bca3c612048450e4bbc8aa225ce6a0b7edbd6665d13e8d71e813c9a5d",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/13740514016/fairwardgolf-13740514016-010-01f8ebbbb8930ffa.webp",
+    "sha256": "01f8ebbbb8930ffaf6e2c421f2a20dd2077cba1289a7e2ed0643cbaf524091f8",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.2600439,
+    "product_average_days": 2.0,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.25.(수)",
+    "arrival_probability": 96,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20261105_185/17938649920172S7Gx_JPEG/p-13679889880-s-5-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20261105_5/17938649920190m3FJ_JPEG/p-13679889880-s-5-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20261105_131/1793864992014TuYGL_JPEG/p-13679889880-s-5-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20261105_120/1793864992016zGDeo_JPEG/p-13679889880-s-5-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20261105_190/17938649920127bF0H_JPEG/p-13679889880-s-5-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20261105_170/1793864992015tpO5K_JPEG/p-13679889880-s-5-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20261105_185/1793864992011cglH6_JPEG/p-13679889880-s-5-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20261105_296/1793864992121eUYQr_JPEG/p-13679889880-s-5-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20261105_219/1793864992020qjajY_JPEG/p-13679889880-s-5-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20261105_203/1793864992021qpHjj_JPEG/p-13679889880-s-5-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20261105_204/1793864992111OPf7A_JPEG/p-13679889880-s-5-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20261105_284/1793864992105le2P5_JPEG/p-13679889880-s-5-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20261105_143/1793864992016yHjfV_JPEG/p-13679889880-s-5-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20261105_265/1793864992085mjcKW_JPEG/p-13679889880-s-5-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20261105_80/1793864992107KB8oI_JPEG/p-13679889880-s-5-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20261105_209/1793864992110A4VHe_JPEG/p-13679889880-s-5-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20261105_148/1793864992111hl8qK_JPEG/p-13679889880-s-5-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20261105_96/1793864992115HnGSb_JPEG/p-13679889880-s-5-A-17.jpg",
+   "https://shop-phinf.pstatic.net/20261105_44/1793864992114y0gDQ_JPEG/p-13679889880-s-5-A-18.jpg",
+   "https://shop-phinf.pstatic.net/20261105_201/1793864992122TWRjq_JPEG/p-13679889880-s-5-A-19.jpg",
+   "https://shop-phinf.pstatic.net/20261105_92/1793864992164t2OWQ_JPEG/p-13679889880-s-5-A-20.jpg",
+   "https://shop-phinf.pstatic.net/20261105_2/1793864992208szWXm_JPEG/p-13679889880-s-5-A-21.jpg",
+   "https://shop-phinf.pstatic.net/20261105_210/1793864992197hVvvF_JPEG/p-13679889880-s-5-A-22.jpg",
+   "https://shop-phinf.pstatic.net/20261105_78/1793864992207QWxNE_JPEG/p-13679889880-s-5-A-23.jpg",
+   "https://shop-phinf.pstatic.net/20261105_140/1793864992212a53Wu_JPEG/p-13679889880-s-5-A-24.jpg",
+   "https://shop-phinf.pstatic.net/20261105_5/1793864992208NCCyo_JPEG/p-13679889880-s-5-A-25.jpg",
+   "https://shop-phinf.pstatic.net/20261105_195/1793864992215Dzo1u_JPEG/p-13679889880-s-5-A-26.jpg",
+   "https://shop-phinf.pstatic.net/20261105_134/1793864992211xaxFD_JPEG/p-13679889880-s-5-A-27.jpg",
+   "https://shop-phinf.pstatic.net/20261105_176/1793864992233Heq3a_JPEG/p-13679889880-s-5-A-28.jpg",
+   "https://shop-phinf.pstatic.net/20261105_152/1793864992251jFOf1_JPEG/p-13679889880-s-5-A-29.jpg"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 폴리우레탄",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_tops",
+   "option": 1,
+   "values": [
+    {
+     "ko": "AS",
+     "us": "S",
+     "letter": "S",
+     "chest_cm": 95,
+     "basis": "brand_asian:adidas",
+     "chart_label": "(95)"
+    },
+    {
+     "ko": "AM",
+     "us": "M",
+     "letter": "M",
+     "chest_cm": 100,
+     "basis": "brand_asian:adidas",
+     "chart_label": "(100)"
+    },
+    {
+     "ko": "AL",
+     "us": "L",
+     "letter": "L",
+     "chest_cm": 105,
+     "basis": "brand_asian:adidas",
+     "chart_label": "(105)"
+    },
+    {
+     "ko": "AXL",
+     "us": "XL",
+     "letter": "XL",
+     "chest_cm": 110,
+     "basis": "brand_asian:adidas",
+     "chart_label": "(110)"
+    },
+    {
+     "ko": "A2XL",
+     "us": "XXL",
+     "letter": "XXL",
+     "chest_cm": 115,
+     "basis": "brand_asian:adidas",
+     "chart_label": null
+    }
+   ],
+   "merged": {},
+   "brand_row": "adidas",
+   "chart": null,
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:ca9223511c6831fd",
+   "kind": "title",
+   "ko": "아디다스 FW 가을 겨울 클리마웜 브러쉬드 남성 긴팔 카라 티셔츠 골프웨어 상의 SO62"
+  },
+  {
+   "id": "brand:8201e93c449b38b1",
+   "kind": "brand",
+   "ko": "아디다스"
+  },
+  {
+   "id": "option_name:8d1a750c9351d1b8",
+   "kind": "option_name",
+   "ko": "선택"
+  },
+  {
+   "id": "option_value:4f323e228fa47c60",
+   "kind": "option_value",
+   "ko": "KG2154 화이트"
+  },
+  {
+   "id": "option_value:2af40c5342afc69c",
+   "kind": "option_value",
+   "ko": "KG2155 네이비"
+  },
+  {
+   "id": "option_value:7e3db9da3f98caf7",
+   "kind": "option_value",
+   "ko": "KG2156 블랙"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:de148153b07d4292",
+   "kind": "option_value",
+   "ko": "AS"
+  },
+  {
+   "id": "option_value:c8f48a68649d1cae",
+   "kind": "option_value",
+   "ko": "AM"
+  },
+  {
+   "id": "option_value:b7aea05ac84d296a",
+   "kind": "option_value",
+   "ko": "AL"
+  },
+  {
+   "id": "option_value:62649e6fd04ba8b7",
+   "kind": "option_value",
+   "ko": "AXL"
+  },
+  {
+   "id": "option_value:4c9bbf0b400d8647",
+   "kind": "option_value",
+   "ko": "A2XL"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:8201e93c449b38b1",
+   "kind": "spec_value",
+   "ko": "아디다스"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:5e33fca11ad4513b",
+   "kind": "spec_value",
+   "ko": "KG2156 KG2154 KG2155"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:7828e86d4b195798",
+   "kind": "spec_value",
+   "ko": "베트남"
+  },
+  {
+   "id": "spec_label:521009f503e491a5",
+   "kind": "spec_label",
+   "ko": "네크라인"
+  },
+  {
+   "id": "spec_value:fee81e32c77a25d6",
+   "kind": "spec_value",
+   "ko": "칼라넥"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:6fa36796eea775e0",
+   "kind": "spec_value",
+   "ko": "신축성"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:0136c94aa10dbfb4",
+   "kind": "spec_value",
+   "ko": "폴리에스테르, 폴리우레탄"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:61f8c9eb28f47d84",
+   "kind": "spec_value",
+   "ko": "가을, 겨울"
+  },
+  {
+   "id": "spec_label:c595482b55571d6a",
+   "kind": "spec_label",
+   "ko": "소매기장"
+  },
+  {
+   "id": "spec_value:2fa60fab30cad430",
+   "kind": "spec_value",
+   "ko": "긴팔"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:f36c488b8e796503",
+   "kind": "spec_value",
+   "ko": "2026년형"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:f977ac4486c2b67c",
+   "kind": "spec_value",
+   "ko": "티셔츠"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "review:75027df0c1bb4f9b",
+   "kind": "review",
+   "ko": "사이즈가 커서 평소에 입던 100으로 교환했는데 예쁘게 잘 맞아요. 요즘입기에 딱 좋고 소재도 부드럽고 신축성이 좋아서 입기 편해요. 남편이 넘 좋다고 하네요. 무료교환 감사드려요."
+  },
+  {
+   "id": "review:ffaac32f2dcb9608",
+   "kind": "review",
+   "ko": "부드럽고 따뜻해서 입었을 때 착용감이 좋습니다. 추워지는 간절기 골프상의로 아주 제격이예요. 스포티한 옷 맵시도 맘에 들어요."
+  }
+ ]
+}

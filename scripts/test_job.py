@@ -251,12 +251,12 @@ def test_heartbeat_of_a_reused_pid_is_not_a_live_runner(tmp_path):
 
 def _translating_job(tmp_path, statuses=None):
     """A job taken to translated, its products prepared from fixtures, translated.jsonl with the given statuses."""
-    from test_translate import fixture, FIXTURES
+    from test_translate import fixture, SOLD             # the fixtures the transform does not hold (2026-11-25)
     job = make_job(tmp_path)
     job.meta["translate"] = True
     job.save_meta()
     products = []
-    for key, name in zip(KEYS, FIXTURES):
+    for key, name in zip(KEYS, SOLD):
         p = fixture(name)
         products.append({**p, "key": key})
     shop = tmp_path / "shops" / SHOP

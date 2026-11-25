@@ -108,6 +108,7 @@ TITLE_SIZES = {"50002797": re.compile(r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|85|
 TITLE_SIZES["50002798"] = TITLE_SIZES["50002797"]           # women's windbreakers: the same garment sizes (2026-11-20)
 TITLE_SIZES["50002796"] = TITLE_SIZES["50002797"]           # women's long-sleeve tops: the same sizes (2026-11-21)
 TITLE_SIZES["50002799"] = TITLE_SIZES["50002797"]           # 재킷, the same section (2026-11-21)
+TITLE_SIZES["50002816"] = TITLE_SIZES["50002797"]           # rainwear: the garment sizes (2026-11-24)
 # skirts: the women's sizes and the waists in inches and cm a title may list ("25 26 27 28", "64 67 70"; 2026-11-22)
 TITLE_SIZES["50002802"] = re.compile(r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|2[3-9]|3[0-4]|6[1-9]|7[0-9])(?![\d.%])")
 # golf pants: the women's sizes, the waists in inches (23-48) and in cm (61-112) a title may list ("28 30 32", "76 79
@@ -129,6 +130,9 @@ TITLE_PICK = re.compile(r"(?<!\d)\d\s*\+\s*\d(?!\d)|\d{1,2}\s*(?:종|컬러|가�
 TITLE_SIZE_LETTERS = re.compile(r"(?<![A-Za-z\d])(XXS|2XS|XS|XL|XXL|2XL|XXXL|3XL|4XL|FREE)(?![A-Za-z\d])", re.I)
 # ... and "2026년 SS시즌" (2026-11-24, 10160025240: went out as "Volvik Golfwear 2026 SS Men's ...")
 TITLE_SEASON = re.compile(r"(?<![A-Za-z\d])(\d{2}|\d{4})\s?(?:년\s?)?(?:FW|SS|F/W|S/S|AW)(?:\s?시즌)?(?![A-Za-z])", re.I)
+# ... and a garment's model year ("2024년 모델", "2025년형", "2024 모델": 2026-11-24, the rainwear pilot, Titleist
+# 10311872120 "... 상하세트 2024년 모델" failed "numbers changed: missing 2024" while the brief leaves the year out)
+TITLE_MODEL_YEAR = re.compile(r"(?<![A-Za-z\d])20\d{2}\s?(?:년\s?(?:형|모델|식)?|모델)(?![A-Za-z\d])")
 # a seller's promotion word in a garment title (2026-11-24, 5489884876: "마스터베어 인기 BEST 골프팬츠" went out as
 # "MASTER BEAR BEST Golf Pants"): left out, and its English taken out of the answer
 TITLE_PROMO = re.compile(r"(?<![A-Za-z가-힣])(?:인기|BEST|베스트)(?![A-Za-z가-힣])", re.I)
@@ -620,7 +624,7 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
             # a season code may go whole, its letters too: "22ss", "23FW" failed "codes lost" (the second
             # windbreaker pilot 2026-11-21, 7114115147, 11092759396) while only its digits were freed
             season_codes = [m.group(0) for m in TITLE_SEASON.finditer(item["source"])]
-            seasons = list(season_codes)
+            seasons = list(season_codes) + [m.group(0) for m in TITLE_MODEL_YEAR.finditer(item["source"])]
             # "1+1" (a 2-Pack) and a choice count ("3종 택1", "6컬러"): the brief says them otherwise or leaves them out
             # (2026-11-21, the tops pilot: "... 1+1", "Choose 1 of 3 pcs" kept to keep their digits)
             seasons += [m.group(0) for m in TITLE_PICK.finditer(item["source"])]

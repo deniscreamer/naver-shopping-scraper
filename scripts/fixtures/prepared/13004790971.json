@@ -1,0 +1,488 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102167425:13004790971",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/onh1/products/13004790971",
+  "channel_no": "102167425",
+  "product_id": "13004790971",
+  "category_id": "50002797"
+ },
+ "product": {
+  "title_ko": "베러투데이 여성 가을 니트 코디 빅사이즈 골프웨어 사계절 포켓 가디건 블랙, 105",
+  "brand_ko": "베러투데이",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "womens",
+      "text": "여성용"
+     },
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "베러투데이 여성 가을 니트 코디 빅사이즈 골프웨어 사계절 포켓 가디건 블랙, 105"
+     },
+     {
+      "source": "listing",
+      "value": "womens",
+      "text": "여성 골프 니트 가디건"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [],
+  "facts": [
+   {
+    "label_ko": "색상",
+    "value_ko": "블랙"
+   },
+   {
+    "label_ko": "사이즈",
+    "value_ko": "105"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "13004790971",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 55000,
+    "price_usd": "55.00",
+    "sku": "FW-f9a7cfcf065fc9bf6e4e2da9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 400,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 55000,
+   "original_krw": 104000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "온에이치"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "베러투데이"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "베러투데이 여성 가을 니트 코디 골프웨어 사계절 포켓 가디건"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "국산"
+   },
+   {
+    "label_ko": "네크라인",
+    "value_ko": "V넥"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "신축성"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "아크릴, 울/모"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "가을, 겨울, 봄"
+   },
+   {
+    "label_ko": "총기장",
+    "value_ko": "미디엄"
+   },
+   {
+    "label_ko": "소매기장",
+    "value_ko": "긴팔"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2025년형"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "여성용"
+   },
+   {
+    "label_ko": "패턴",
+    "value_ko": "무지"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13004790971/fairwardgolf-13004790971-001-1f93b77640974d0c.webp",
+    "sha256": "1f93b77640974d0c549ab0986e94bfbb3bb1d816345413dbb991fc75c8b5d1b9",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13004790971/fairwardgolf-13004790971-002-37a07a44b93dcbe6.webp",
+    "sha256": "37a07a44b93dcbe64c8cb886aa0bb4737034bf710d79a65f52ba41f6ce488b4c",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13004790971/fairwardgolf-13004790971-003-c446506629279f64.webp",
+    "sha256": "c446506629279f64b55ed4c9cfd8f37b4f96d1363013c66b3a781090500375de",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13004790971/fairwardgolf-13004790971-004-48e3acc7add2b4e3.webp",
+    "sha256": "48e3acc7add2b4e321cd55c9e800a0050ea81be2118e83f54b80f3a96962989c",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": null,
+   "lead_time": {
+    "seller_average_days": 1.4,
+    "product_average_days": null,
+    "today_cutoff": "15:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.25.(수)",
+    "arrival_probability": 98,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20261019_221/17924108441334T43J_JPEG/p-12947005944-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20261019_30/1792410844128wqSQS_JPEG/p-12947005944-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20261019_36/1792410844127grFrf_JPEG/p-12947005944-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20261019_113/1792410844126wYwX9_JPEG/p-12947005944-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20261019_102/1792410844133VE3cA_JPEG/p-12947005944-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20261019_34/1792410844127PBOiO_JPEG/p-12947005944-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20261019_177/1792410844126nK0oU_JPEG/p-12947005944-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20261019_170/17924108441315z9DK_JPEG/p-12947005944-s-1-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20261019_205/1792410844128iBzCA_JPEG/p-12947005944-s-1-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20261019_31/1792410844127CLnh5_JPEG/p-12947005944-s-1-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20261019_117/17924108442062TSWK_JPEG/p-12947005944-s-1-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20261019_192/1792410844213sTYE8_JPEG/p-12947005944-s-1-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20261019_24/1792410844213ywB7H_JPEG/p-12947005944-s-1-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20261019_32/1792410844216eSgES_JPEG/p-12947005944-s-1-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20261019_158/1792410844220MQQNQ_JPEG/p-12947005944-s-1-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20261019_204/1792410844230cDach_JPEG/p-12947005944-s-1-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20261019_147/1792410844233bqJQI_JPEG/p-12947005944-s-1-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20261019_98/1792410844244pKPFS_JPEG/p-12947005944-s-1-A-17.jpg",
+   "https://shop-phinf.pstatic.net/20261019_263/1792410844241eqeSx_JPEG/p-12947005944-s-1-A-18.jpg",
+   "https://shop-phinf.pstatic.net/20261019_198/17924108442974Lhy5_JPEG/p-12947005944-s-1-A-19.jpg",
+   "https://shop-phinf.pstatic.net/20261019_254/1792410844311Ko7wU_JPEG/p-12947005944-s-1-A-20.jpg",
+   "https://shop-phinf.pstatic.net/20261019_107/1792410844308M01Az_JPEG/p-12947005944-s-1-A-21.jpg",
+   "https://shop-phinf.pstatic.net/20261019_284/1792410844328Hznsb_JPEG/p-12947005944-s-1-A-22.jpg",
+   "https://shop-phinf.pstatic.net/20261019_300/1792410844330CUPOc_JPEG/p-12947005944-s-1-A-23.jpg",
+   "https://shop-phinf.pstatic.net/20261019_27/17924108443591Chkl_JPEG/p-12947005944-s-1-A-24.jpg",
+   "https://shop-phinf.pstatic.net/20261019_251/17924108443402z2XW_JPEG/p-12947005944-s-1-A-25.jpg",
+   "https://shop-phinf.pstatic.net/20261019_147/1792410844363UKfeT_JPEG/p-12947005944-s-1-A-26.jpg",
+   "https://shop-phinf.pstatic.net/20261019_82/1792410844402xHjys_JPEG/p-12947005944-s-1-A-27.jpg",
+   "https://shop-phinf.pstatic.net/20261019_134/1792410844357XUhj2_JPEG/p-12947005944-s-1-A-28.jpg",
+   "https://shop-phinf.pstatic.net/20261019_267/1792410844413AYP6u_JPEG/p-12947005944-s-1-A-29.jpg",
+   "https://shop-phinf.pstatic.net/20261019_266/1792410844414lL1vQ_JPEG/p-12947005944-s-1-A-30.jpg",
+   "https://shop-phinf.pstatic.net/20261019_92/1792410844441TSfA2_JPEG/p-12947005944-s-1-A-31.jpg",
+   "https://shop-phinf.pstatic.net/20261019_188/1792410844447u0Czq_JPEG/p-12947005944-s-1-A-32.jpg",
+   "https://shop-phinf.pstatic.net/20261019_216/1792410844450WLlCb_JPEG/p-12947005944-s-1-A-33.jpg",
+   "https://shop-phinf.pstatic.net/20261019_6/1792410844462umeHK_JPEG/p-12947005944-s-1-A-34.jpg"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "아크릴, 울/모",
+    "source": "spec"
+   },
+   {
+    "label_ko": "제품소재",
+    "value_ko": "상세페이지에 기재",
+    "source": "notice"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_tops",
+   "option": null,
+   "values": [],
+   "merged": {},
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "chest": "flat",
+     "shoulder": "flat",
+     "sleeve": null,
+     "length": null
+    },
+    "rows": [
+     {
+      "us": "XL (US 16)",
+      "cm": {
+       "chest": 54.0,
+       "shoulder": 43.5,
+       "sleeve": 62.0,
+       "length": 66.0
+      }
+     }
+    ]
+   },
+   "held": null,
+   "fact": {
+    "label_ko": "사이즈",
+    "ko": "105",
+    "us": "XL (US 16)"
+   }
+  }
+ },
+ "texts": [
+  {
+   "id": "title:40c1944fb1fb77d1",
+   "kind": "title",
+   "ko": "베러투데이 여성 가을 니트 코디 빅사이즈 골프웨어 사계절 포켓 가디건 블랙, 105"
+  },
+  {
+   "id": "brand:446f0efa51255a27",
+   "kind": "brand",
+   "ko": "베러투데이"
+  },
+  {
+   "id": "fact_label:d1b87acb2d2239e7",
+   "kind": "fact_label",
+   "ko": "색상"
+  },
+  {
+   "id": "fact_value:91f171f68356ec23",
+   "kind": "fact_value",
+   "ko": "블랙"
+  },
+  {
+   "id": "fact_label:e0511ad24076321c",
+   "kind": "fact_label",
+   "ko": "사이즈"
+  },
+  {
+   "id": "fact_value:1253e9373e781b75",
+   "kind": "fact_value",
+   "ko": "105"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:d78c029a8c184bd1",
+   "kind": "spec_value",
+   "ko": "온에이치"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:446f0efa51255a27",
+   "kind": "spec_value",
+   "ko": "베러투데이"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:0f687a3572036bec",
+   "kind": "spec_value",
+   "ko": "베러투데이 여성 가을 니트 코디 골프웨어 사계절 포켓 가디건"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2c9897140d6cbb96",
+   "kind": "spec_value",
+   "ko": "국산"
+  },
+  {
+   "id": "spec_label:521009f503e491a5",
+   "kind": "spec_label",
+   "ko": "네크라인"
+  },
+  {
+   "id": "spec_value:00e9e919842f3779",
+   "kind": "spec_value",
+   "ko": "V넥"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:6fa36796eea775e0",
+   "kind": "spec_value",
+   "ko": "신축성"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:7b2ab27bdd52b014",
+   "kind": "spec_value",
+   "ko": "아크릴, 울/모"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:9e61457baea5b6b5",
+   "kind": "spec_value",
+   "ko": "가을, 겨울, 봄"
+  },
+  {
+   "id": "spec_label:26336d857e5ea726",
+   "kind": "spec_label",
+   "ko": "총기장"
+  },
+  {
+   "id": "spec_value:914c153c9a8f58e1",
+   "kind": "spec_value",
+   "ko": "미디엄"
+  },
+  {
+   "id": "spec_label:c595482b55571d6a",
+   "kind": "spec_label",
+   "ko": "소매기장"
+  },
+  {
+   "id": "spec_value:2fa60fab30cad430",
+   "kind": "spec_value",
+   "ko": "긴팔"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:6aea4c4b3fb65e70",
+   "kind": "spec_value",
+   "ko": "2025년형"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:ff90d7cd3c519c1f",
+   "kind": "spec_value",
+   "ko": "여성용"
+  },
+  {
+   "id": "spec_label:15e62f04a0d53e0c",
+   "kind": "spec_label",
+   "ko": "패턴"
+  },
+  {
+   "id": "spec_value:0efed567b77e1a8a",
+   "kind": "spec_value",
+   "ko": "무지"
+  }
+ ]
+}

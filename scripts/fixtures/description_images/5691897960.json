@@ -1,0 +1,607 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 327084,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250415_74/1744694848079gIo4W_JPEG/%EB%A6%AC%EB%B7%B0%EC%83%81%ED%8E%98.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.924,
+       "text": "평점4.69 / 540여건 누적 리뷰",
+       "y": 109
+      },
+      {
+       "conf": 0.998,
+       "text": "소비자의 선택,핑크팡 체크 레인코트",
+       "y": 269
+      },
+      {
+       "conf": 0.992,
+       "text": "4.69(최근6개월4.7) / 547리뷰보기> / ?",
+       "y": 406
+      },
+      {
+       "conf": 0.938,
+       "text": "포토/동영상(228) / 스토어PICK(2)",
+       "y": 487
+      },
+      {
+       "conf": 0.997,
+       "text": "5",
+       "y": 533
+      },
+      {
+       "conf": 0.734,
+       "text": "cjyl* / 24.10.30. / 종류: 체크A라인×L(77)",
+       "y": 552
+      },
+      {
+       "conf": 0.939,
+       "text": "무난하니가법고 착용하기 좋아요배송도 빨라요~",
+       "y": 581
+      },
+      {
+       "conf": 0.988,
+       "text": "5",
+       "y": 665
+      },
+      {
+       "conf": 0.918,
+       "text": "pear* / 24.05.04.·종류: 체크 A라인 L(66)",
+       "y": 682
+      },
+      {
+       "conf": 0.922,
+       "text": "이가격에 너무 좋네요비싼것보다 가끔 입으니까가성비 짱",
+       "y": 710
+      },
+      {
+       "conf": 0.999,
+       "text": "전체보기 / 1/10",
+       "y": 788
+      },
+      {
+       "conf": 0.997,
+       "text": "5",
+       "y": 831
+      },
+      {
+       "conf": 0.84,
+       "text": "24.10.25. / 종류: 체크 A라인 xL(77)",
+       "y": 853
+      },
+      {
+       "conf": 0.908,
+       "text": "스윙도 편하고 색상도 고급져서 동반자들도 칭찬많이 했구요.필드5",
+       "y": 879
+      },
+      {
+       "conf": 0.909,
+       "text": "부터비많이 왔는데 전혀 문제없이18홀마무리 할수있었어요L사이",
+       "y": 899
+      },
+      {
+       "conf": 0.997,
+       "text": "5",
+       "y": 962
+      },
+      {
+       "conf": 0.925,
+       "text": "wjdt* / 24.10.10. / 종류: 체크 A라인M(55)",
+       "y": 982
+      },
+      {
+       "conf": 0.911,
+       "text": "완전 만족합니다비오는날 착용하려고 골프백에 넣어웠어요",
+       "y": 1010
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 22691,
+   "height": 572,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220309_138/1646830425463wILrc_JPEG/%EB%A1%9C%EA%B3%A0%ED%95%91%ED%81%AC%ED%8C%A1.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.996,
+       "text": "Golf / Edition",
+       "y": 330
+      },
+      {
+       "conf": 0.985,
+       "text": "pinkpang",
+       "y": 310
+      }
+     ],
+     "y0": 0,
+     "y1": 572
+    }
+   ],
+   "status": "read",
+   "width": 674
+  },
+  {
+   "bytes": 362646,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210704_251/16253245887449zxRW_JPEG/SE-b68ae66a-52c3-4178-8121-98ae94545913.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.981,
+       "text": "STYLE:FASHION",
+       "y": 433
+      },
+      {
+       "conf": 0.982,
+       "text": "WATER-REPELLENT",
+       "y": 448
+      },
+      {
+       "conf": 0.897,
+       "text": "ADAILY STYLE RAN COAT.",
+       "y": 460
+      },
+      {
+       "conf": 0.949,
+       "text": "Ican be woen en the rainy days.",
+       "y": 472
+      },
+      {
+       "conf": 0.895,
+       "text": "and the chily days.",
+       "y": 480
+      }
+     ],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 356896,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210704_81/16253245901868QwB0_JPEG/SE-005f919d-7ded-485b-a6b5-a4cd5719acea.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 370847,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210704_17/1625324592646lf0Rb_JPEG/SE-a3a2f2a5-2888-4c37-9681-253fac25860e.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 398161,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210704_174/1625324593950NIzXa_JPEG/SE-9e50b5ca-954b-44f3-8d6d-0522bb702ec6.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 514879,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210704_100/1625324595367t65Gf_JPEG/SE-17e7f0c5-e73c-4601-9385-b9f609ea76ad.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 344313,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210704_140/16253245968464EjVk_JPEG/SE-ab866953-3019-46fa-add3-972112926e5c.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 387330,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210704_54/1625324598196KaF5T_JPEG/SE-29ee4287-aaab-4e89-a8f6-cd8a634853a7.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 453277,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210704_262/1625324599522iYKby_JPEG/SE-c875bb3a-d0f7-49d3-8a07-e00c29412247.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 351093,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210704_149/1625324601000ff5Ud_JPEG/SE-24c0de8f-8d8d-43f1-bce5-2574145a1f07.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 444239,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210704_129/16253246024351PUbt_JPEG/SE-ccd9aef3-fd2d-4b7e-86b7-a863fa1ed920.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 447998,
+   "height": 1440,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220630_263/1656565132396eeNOK_JPEG/KakaoTalk_20220630_135057192.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1440
+    }
+   ],
+   "status": "read",
+   "width": 811
+  },
+  {
+   "bytes": 503441,
+   "height": 1440,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220630_80/1656565132403Adcy0_JPEG/KakaoTalk_20220630_135057192_01.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1440
+    }
+   ],
+   "status": "read",
+   "width": 811
+  },
+  {
+   "bytes": 538295,
+   "height": 1440,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220630_212/1656565132690ggTrA_JPEG/KakaoTalk_20220630_135057192_03.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1440
+    }
+   ],
+   "status": "read",
+   "width": 811
+  },
+  {
+   "bytes": 4410515,
+   "height": 1707,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230922_154/1695361043384mWVXk_JPEG/SE-243dd1af-055b-4f63-adf8-f4334ac08058.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.905,
+       "text": "K",
+       "y": 607
+      }
+     ],
+     "y0": 0,
+     "y1": 1707
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 4936461,
+   "height": 1707,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230922_25/16953610125145w3pC_JPEG/KakaoTalk_20230921_215105940_07.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.673,
+       "text": "Ticleist",
+       "y": 626
+      }
+     ],
+     "y0": 0,
+     "y1": 1707
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 3478164,
+   "height": 880,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230922_293/1695361093712FlzCr_JPEG/SE-6a059761-a95a-4609-a5f2-3807b24b5f1c.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.98,
+       "text": "4",
+       "y": 642
+      }
+     ],
+     "y0": 0,
+     "y1": 880
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 184674,
+   "height": 477,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210704_134/1625324606246XVigy_JPEG/SE-e27d7668-8316-4ce5-ac79-5cb5366d2bd5.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 477
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 351268,
+   "height": 776,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210704_153/1625324607375sehhN_JPEG/SE-72dd472e-5eb2-481f-9261-bc77de2888ee.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 776
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 150819,
+   "height": 1195,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230205_119/1675584689246maLxT_JPEG/KakaoTalk_20230130_141448066.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.955,
+       "text": "주문 전 유의사항!",
+       "y": 45
+      },
+      {
+       "conf": 0.98,
+       "text": "-7만원이상결제시배송료는무료입니다",
+       "y": 230
+      },
+      {
+       "conf": 0.974,
+       "text": "-7만원미만결제시3,500원의배송료가추가됩니다",
+       "y": 258
+      },
+      {
+       "conf": 0.917,
+       "text": "-핑크팡자체제작 제품및재고가있는제품은12시전주문시 당일발송 가능합니다.",
+       "y": 290
+      },
+      {
+       "conf": 0.965,
+       "text": "-협력업체 제품은주문후2~3일소요되며",
+       "y": 318
+      },
+      {
+       "conf": 0.958,
+       "text": "리오더중인경우 기일이더소요될수있으며,이경우개별안내를드리고있습니다",
+       "y": 348
+      },
+      {
+       "conf": 0.975,
+       "text": "배송안내 / -협력업체제품은주문을완료해주신다음상품입고가이루어지기때문에",
+       "y": 376
+      },
+      {
+       "conf": 0.977,
+       "text": "주문완료후상품품절안내를드릴수있으니이점양해부탁드립니다",
+       "y": 410
+      },
+      {
+       "conf": 0.923,
+       "text": "-교환을원하시는경우네이버톡톡o스토어팜교환처리부탁드립니다",
+       "y": 532
+      },
+      {
+       "conf": 0.94,
+       "text": "-교환및 반품시제품을수령하신 그대로재포장반송 부탁드립니다",
+       "y": 562
+      },
+      {
+       "conf": 0.974,
+       "text": "-제품수령후2~3일내에신청후7일이내에도착되어야정상처리됩니다",
+       "y": 590
+      },
+      {
+       "conf": 0.908,
+       "text": "-불량, 오배송 상품의 경우상담후처리 가능하며",
+       "y": 624
+      },
+      {
+       "conf": 0.969,
+       "text": "동일상품교환시에는당사비용으로무상교환처리 가능합니다..",
+       "y": 652
+      },
+      {
+       "conf": 0.877,
+       "text": "교환 및 반품 비용",
+       "y": 722
+      },
+      {
+       "conf": 0.951,
+       "text": "-교환시 반송료3500원+재배송료3500원고객님 부담입니다",
+       "y": 777
+      },
+      {
+       "conf": 0.956,
+       "text": "-반품시 반송료3500원+초기배송료3500원",
+       "y": 809
+      },
+      {
+       "conf": 0.974,
+       "text": "(7만원이상무료배송받으신분에한함)발생합니다.",
+       "y": 839
+      },
+      {
+       "conf": 0.995,
+       "text": "교환및반품",
+       "y": 872
+      },
+      {
+       "conf": 0.997,
+       "text": "안내 / 교환/반품이불가한경우",
+       "y": 901
+      },
+      {
+       "conf": 0.977,
+       "text": "-제품수령후7일이경과한경우",
+       "y": 966
+      },
+      {
+       "conf": 0.986,
+       "text": "-택이부착된제품의택이제거된경우",
+       "y": 994
+      },
+      {
+       "conf": 0.919,
+       "text": "-소비자부주의에의한제품이훼손,파손된경우",
+       "y": 1025
+      },
+      {
+       "conf": 0.922,
+       "text": "-소비자사용으로인하여 제품의 가치가저하된경우(착용흔적,세탁,수선등)",
+       "y": 1056
+      },
+      {
+       "conf": 0.943,
+       "text": "-모니터 사양에 따라색상밝기나색감의차이가있을수있습니다",
+       "y": 1084
+      },
+      {
+       "conf": 0.914,
+       "text": "-모델컷은실제 색상보다 왜곡되는경우가 있으니상세이미지컷을 참고해 주세요",
+       "y": 1116
+      }
+     ],
+     "y0": 0,
+     "y1": 1195
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:500054439:5691897960",
+ "links_sha256": "52100ac007fe28960b3168b54a1b00e3d17e4062016bbb305c327eed14b2f6da",
+ "product_id": "5691897960",
+ "seconds": 26.1,
+ "skipped": []
+}

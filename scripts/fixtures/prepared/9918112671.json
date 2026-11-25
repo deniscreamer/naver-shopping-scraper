@@ -1,0 +1,3922 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101843308:9918112671",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "7 of 7 kept (full 7); 2 trimmed"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "PAID 2900 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/secret1649/products/9918112671",
+  "channel_no": "101843308",
+  "product_id": "9918112671",
+  "category_id": "50002801"
+ },
+ "product": {
+  "title_ko": "[국내매장판] 나이키 조던 골프 바지 팬츠 헴프 블랙 슬림핏 DZ0543 200 010 502",
+  "brand_ko": "나이키골프",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "가을 스트레치 골프 바지"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "컬러",
+    "values_ko": [
+     "헴프",
+     "블랙",
+     "바이올렛"
+    ]
+   },
+   {
+    "name_ko": "기장",
+    "values_ko": [
+     "기장30",
+     "기장32",
+     "기장34"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "30",
+     "32",
+     "33",
+     "34",
+     "35",
+     "36",
+     "38",
+     "40"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"헴프\",\"30-30\"]",
+    "naver_variant_id": "50728307737",
+    "options_ko": [
+     "헴프",
+     "기장30",
+     "30"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-b6ee61cf07242e80713a03db",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"헴프\",\"32-32\"]",
+    "naver_variant_id": "50728307740",
+    "options_ko": [
+     "헴프",
+     "기장32",
+     "32"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-8d796c1a4906459f2943154f",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"헴프\",\"32-34\"]",
+    "naver_variant_id": "50728307744",
+    "options_ko": [
+     "헴프",
+     "기장34",
+     "32"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-dfbdf39d3ef17bdd7e814e01",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"헴프\",\"33-30\"]",
+    "naver_variant_id": "50728307747",
+    "options_ko": [
+     "헴프",
+     "기장30",
+     "33"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-2c46ad60714ffb6a9a9a1580",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"헴프\",\"33-32\"]",
+    "naver_variant_id": "50728307750",
+    "options_ko": [
+     "헴프",
+     "기장32",
+     "33"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-9ddb147179868e8647747169",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"헴프\",\"34-30\"]",
+    "naver_variant_id": "50728307753",
+    "options_ko": [
+     "헴프",
+     "기장30",
+     "34"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-19b62e7b5de4002442402247",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"헴프\",\"34-32\"]",
+    "naver_variant_id": "50728307756",
+    "options_ko": [
+     "헴프",
+     "기장32",
+     "34"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-065c0ec994ad2db0027481f1",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"헴프\",\"34-34\"]",
+    "naver_variant_id": "50728307758",
+    "options_ko": [
+     "헴프",
+     "기장34",
+     "34"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-20aeb8ed352ba5b199eb1fbb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"헴프\",\"35-30\"]",
+    "naver_variant_id": "50728307760",
+    "options_ko": [
+     "헴프",
+     "기장30",
+     "35"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-6f038b94db4bf6e1553d2beb",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"헴프\",\"35-32\"]",
+    "naver_variant_id": "50728307764",
+    "options_ko": [
+     "헴프",
+     "기장32",
+     "35"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-fe5c3aa75217902624af53c3",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"헴프\",\"36-30\"]",
+    "naver_variant_id": "50728307765",
+    "options_ko": [
+     "헴프",
+     "기장30",
+     "36"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-39c091b27d0e5774d1c76375",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"헴프\",\"36-32\"]",
+    "naver_variant_id": "50728307766",
+    "options_ko": [
+     "헴프",
+     "기장32",
+     "36"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-11f6986a3d4810f5f14ebcd1",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"헴프\",\"38-32\"]",
+    "naver_variant_id": "50728307767",
+    "options_ko": [
+     "헴프",
+     "기장32",
+     "38"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-e78e8d98812fe67726262573",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"헴프\",\"40-30\"]",
+    "naver_variant_id": "50728307768",
+    "options_ko": [
+     "헴프",
+     "기장30",
+     "40"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-7540dc8dc53537639ba75588",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"헴프\",\"40-32\"]",
+    "naver_variant_id": "50728307769",
+    "options_ko": [
+     "헴프",
+     "기장32",
+     "40"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-f9574ab9a3d15ce23fb3fada",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"30-32\"]",
+    "naver_variant_id": "50728307771",
+    "options_ko": [
+     "블랙",
+     "기장32",
+     "30"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-7077723ca68cc6ccc6e2dd74",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"32-30\"]",
+    "naver_variant_id": "50728307773",
+    "options_ko": [
+     "블랙",
+     "기장30",
+     "32"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-b604e210d1ed0858850a4916",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"32-32\"]",
+    "naver_variant_id": "50728307775",
+    "options_ko": [
+     "블랙",
+     "기장32",
+     "32"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-5cffb350a6a4999f715e22c4",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"33-30\"]",
+    "naver_variant_id": "50728307778",
+    "options_ko": [
+     "블랙",
+     "기장30",
+     "33"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-a86b03a46601da8181054d95",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"33-32\"]",
+    "naver_variant_id": "50728307781",
+    "options_ko": [
+     "블랙",
+     "기장32",
+     "33"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-854b2d31f2be8b0b4bbf6974",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"34-30\"]",
+    "naver_variant_id": "50728307784",
+    "options_ko": [
+     "블랙",
+     "기장30",
+     "34"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-1de2b6aeafcc9554acbe42ed",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"34-32\"]",
+    "naver_variant_id": "50728307786",
+    "options_ko": [
+     "블랙",
+     "기장32",
+     "34"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-7c680bd91d15e54e83f37704",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"34-34\"]",
+    "naver_variant_id": "50728307787",
+    "options_ko": [
+     "블랙",
+     "기장34",
+     "34"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-063c99ebd04f3fa218689384",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"35-30\"]",
+    "naver_variant_id": "50728307788",
+    "options_ko": [
+     "블랙",
+     "기장30",
+     "35"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-83ea910257e082754ebd4d86",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"35-32\"]",
+    "naver_variant_id": "50728307789",
+    "options_ko": [
+     "블랙",
+     "기장32",
+     "35"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-d997bd9795df13e237350516",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"36-30\"]",
+    "naver_variant_id": "50728307790",
+    "options_ko": [
+     "블랙",
+     "기장30",
+     "36"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-2b66c0da40478965f45353ee",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"36-32\"]",
+    "naver_variant_id": "50728307791",
+    "options_ko": [
+     "블랙",
+     "기장32",
+     "36"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-fe948d8975307454abdebb89",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"38-30\"]",
+    "naver_variant_id": "50728307792",
+    "options_ko": [
+     "블랙",
+     "기장30",
+     "38"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-4b296a1d999a617bcc185382",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"40-30\"]",
+    "naver_variant_id": "50728307793",
+    "options_ko": [
+     "블랙",
+     "기장30",
+     "40"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-3773021a9b044ac0f77c75f3",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"40-32\"]",
+    "naver_variant_id": "50728307794",
+    "options_ko": [
+     "블랙",
+     "기장32",
+     "40"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-14f684d16ed4415f5ba05459",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"30-32\"]",
+    "naver_variant_id": "50728307795",
+    "options_ko": [
+     "바이올렛",
+     "기장32",
+     "30"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-0c9ec0c0505a6564380414b1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"32-30\"]",
+    "naver_variant_id": "50728307796",
+    "options_ko": [
+     "바이올렛",
+     "기장30",
+     "32"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-2e8682f903195a42cc713d7c",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"32-32\"]",
+    "naver_variant_id": "50728307797",
+    "options_ko": [
+     "바이올렛",
+     "기장32",
+     "32"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-6d5dbf87f0d162797098e3fa",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"33-30\"]",
+    "naver_variant_id": "50728307798",
+    "options_ko": [
+     "바이올렛",
+     "기장30",
+     "33"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-ddd9eeeb22d735d143c184aa",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"33-32\"]",
+    "naver_variant_id": "50728307799",
+    "options_ko": [
+     "바이올렛",
+     "기장32",
+     "33"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-f8250912c5d0fc3eac6a1a0a",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"34-30\"]",
+    "naver_variant_id": "50728307800",
+    "options_ko": [
+     "바이올렛",
+     "기장30",
+     "34"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-6049e7cfb298a813b38929be",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"34-32\"]",
+    "naver_variant_id": "50728307801",
+    "options_ko": [
+     "바이올렛",
+     "기장32",
+     "34"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-251af11e638f213691f1728f",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"34-34\"]",
+    "naver_variant_id": "50728307802",
+    "options_ko": [
+     "바이올렛",
+     "기장34",
+     "34"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-5d6b01826ac609971582e592",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"35-30\"]",
+    "naver_variant_id": "50728307803",
+    "options_ko": [
+     "바이올렛",
+     "기장30",
+     "35"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-5b29ee2fec25385bb2ec67e8",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"35-32\"]",
+    "naver_variant_id": "50728307804",
+    "options_ko": [
+     "바이올렛",
+     "기장32",
+     "35"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-b8dcca47ad3478bebef208eb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"36-30\"]",
+    "naver_variant_id": "50728307805",
+    "options_ko": [
+     "바이올렛",
+     "기장30",
+     "36"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-eda92be25f8c68c79688380a",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"36-32\"]",
+    "naver_variant_id": "50728307806",
+    "options_ko": [
+     "바이올렛",
+     "기장32",
+     "36"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-088cbc697a7c3776ad916147",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"38-32\"]",
+    "naver_variant_id": "50728307807",
+    "options_ko": [
+     "바이올렛",
+     "기장32",
+     "38"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-22f248c1652381a16256279e",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"40-30\"]",
+    "naver_variant_id": "50728307808",
+    "options_ko": [
+     "바이올렛",
+     "기장30",
+     "40"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-56a04058c78a6271fdcefe8d",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"바이올렛\",\"40-32\"]",
+    "naver_variant_id": "50728307809",
+    "options_ko": [
+     "바이올렛",
+     "기장32",
+     "40"
+    ],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-9d43b427aa7e7a6273d8b42a",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 79000,
+   "original_krw": 149000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "나이키"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "나이키골프"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "나이키 조던 골프 팬츠 헴프 블랙 슬림핏 DZ0543 200 502"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "인도네시아산"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "신축성"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "면"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "여름, 봄, 가을"
+   },
+   {
+    "label_ko": "충전재",
+    "value_ko": "없음"
+   },
+   {
+    "label_ko": "하의기장",
+    "value_ko": "9부"
+   },
+   {
+    "label_ko": "하의핏",
+    "value_ko": "슬림핏"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2024년형"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.66,
+   "count": 68
+  },
+  "reviews": [
+   {
+    "id": "4451583554",
+    "score": 4,
+    "text_ko": "신축성이 좋으니 착용감은 좋습니다! 다만 슬림핏이라 약간 살집이 있는분이라면 좀 타이트할 수 있습니다.\n상품 안내글에 슬림핏 표기가 필요할것 같네요!\n날씨가 더운 봄이나 여름용으로 입기는 좋은것 같네요!",
+    "created_at": "2024-03-28T00:10:50Z",
+    "writer": "jhki*****",
+    "photos": [
+     "collected/50002788-fixtures/images/9918112671/fairwardgolf-review-image-bc3f38de59602667.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/9918112671/fairwardgolf-review-avatar-c7b42d5c7d80d012.webp",
+    "tier": "primary",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 96,
+    "text_original_ko": "신축성이  좋으니 착용감은 좋습니다! 다만 슬림핏이라 약간 살집이 있는분이라면 좀 타이트할 수 있습니다. \n상품 안내글에 슬림핏 표기가 필요할것 같네요! \n날씨가 더운 봄이나 여름용으로 입기는 좋은것 같네요!"
+   },
+   {
+    "id": "4794453622",
+    "score": 1,
+    "text_ko": "주문하고 2주동안 기다리다 소식이 없어 문의하니\n취소하라고.\n한사이즈 업해서 다시 주문했더니.\n이번주 일괄 지급해주신다는 포인트.\n9월 마지막주가 다되었는데도 아직도 안들어왔네요\n언제 보내주실지. 끝까지 기다려볼께요\n약속은 지키셔야죠 사장님.",
+    "created_at": "2025-08-31T07:53:20Z",
+    "writer": "miss****",
+    "photos": [
+     "collected/50002788-fixtures/images/9918112671/fairwardgolf-review-image-e8848aa3956f9c31.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 60,
+    "text_original_ko": "주문하고 2주동안 기다리다 소식이 없어 문의하니\n배송지연이라고 취소하라고..\n한사이즈 업해서 다시 주문했더니..\n배송지연으로인해 네이버 포인트로 보상해주신다고 사장님께서 먼저 말씀해놓고선 소식도 없네요..\n\n이번주 일괄 지급해주신다는 포인트..\n9월 마지막주가 다되었는데도 아직도 안들어왔네요 \n언제 보내주실지..끝까지 기다려볼께요\n약속은 지키셔야죠 사장님..",
+    "text_cut": [
+     "seller",
+     "shipping"
+    ]
+   },
+   {
+    "id": "4761713571",
+    "score": 5,
+    "text_ko": "평소 하의 29사이즈 입는데 30사이즈 타이트하지 않고 잘 맞아요 초여름 봄 가을 입으면 적당 할것 같아요. 원단이 부들부들 너무 좋아요 스판기도 조좋아서 착용 시 너무 편합니다. 기장도 수선 안해도 될 만큼 딱 적당합니다. 좋은 제품 감사합니다.",
+    "created_at": "2025-07-11T05:18:49Z",
+    "writer": "df20****",
+    "photos": [
+     "collected/50002788-fixtures/images/9918112671/fairwardgolf-review-image-b9dee361045beaa1.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 98
+   },
+   {
+    "id": "4718983105",
+    "score": 3,
+    "text_ko": "메드인 차이나 라고 돼어 있네요 세탁해도 주름은 가질 않고. 그냥 싼마이는 아닌데 제품은 좀 떨어지네요. 내부에 텍 때구 입음심 됄듯.",
+    "created_at": "2025-05-09T04:19:38Z",
+    "writer": "susu****",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 33,
+    "text_original_ko": "메드인 차이나 라고 돼어 있네요 세탁해도 주름은 가질 않고..그냥 싼마이는 아닌데 제품은 좀 떨어지네요..내부에 텍 때구 입음심 됄듯..."
+   },
+   {
+    "id": "4705104112",
+    "score": 5,
+    "text_ko": "약간 타이트 하나 신축성이 좋아 무리 없이 입을수 있을꺼 같습니다\n잘 산거 같아요\n강추합니다 길이감이 짧은걸 싫어 하시는 분은 32로 사서 입으면 됩니다 좋습니더 그매 하셔유",
+    "created_at": "2025-04-17T12:31:53Z",
+    "writer": "orio******",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 77,
+    "text_original_ko": "약간 타이트 하나 신축성이 좋아 무리 없이 입을수 있을꺼 같습니다\n잘 산거 같아요\n강추합니다 길이감이 짧은걸 싫어 하시는 분은 32로 사서 입으면 됩니다 좋습니더 그매 하셔유 ㅎㅎ"
+   },
+   {
+    "id": "4493600852",
+    "score": 5,
+    "text_ko": "허리부분 미니밴드가 귀엽네요. 나름 한사이즈 잡아줍니다. 평소 32 입는데 종아리부분이 살짝 타이트 합니다. 얇아서 여름철 필드복으로 딱입니다. 키크신분들은 기장 고려하시길",
+    "created_at": "2024-06-05T06:36:33Z",
+    "writer": "jjss****",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 77
+   },
+   {
+    "id": "4466272408",
+    "score": 5,
+    "text_ko": "옷이 굉장히 편합니다.\n통기성도 좋구요. 한 여름에도 입을것 같네요. 히 잘 입을게요.\n다음에도 또 구매의사 있습니다.",
+    "created_at": "2024-04-22T00:10:45Z",
+    "writer": "chd8***",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 31,
+    "text_original_ko": "배송도 빠르고 옷이 굉장히 편합니다.\n통기성도 좋구요. 한 여름에도 입을것 같네요. 감사히 잘 입을게요.\n다음에도 또 구매의사 있습니다.",
+    "text_cut": [
+     "filler",
+     "shipping"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/9918112671/fairwardgolf-9918112671-001-335d20bb70e46f11.webp",
+    "sha256": "335d20bb70e46f11a4f578a5582979fb16313876ee59398f8ffe92c03c2db6af",
+    "width": 1500,
+    "height": 1876
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/9918112671/fairwardgolf-9918112671-002-7d910ea9481b2a10.webp",
+    "sha256": "7d910ea9481b2a10882adaf1a1421ab8f3b6f0406c1f174531de749b96d1051b",
+    "width": 936,
+    "height": 1170
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/9918112671/fairwardgolf-9918112671-003-85f579f4a0263ae1.webp",
+    "sha256": "85f579f4a0263ae1c76788c4b62f3a938b46ba0e404d7a740cc6346c9a90cc2a",
+    "width": 936,
+    "height": 1170
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/9918112671/fairwardgolf-9918112671-004-199bc284c46d2de2.webp",
+    "sha256": "199bc284c46d2de241ed798a1034ac36d639c29d499533902e16a6bca56132dd",
+    "width": 936,
+    "height": 1170
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/9918112671/fairwardgolf-9918112671-005-f694a6cc58c35272.webp",
+    "sha256": "f694a6cc58c352721f0dc454b17ee620e1a4e64b92723b127d5a33b5e7b9a088",
+    "width": 936,
+    "height": 1170
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/9918112671/fairwardgolf-9918112671-006-bea6049e3bf0ae8a.webp",
+    "sha256": "bea6049e3bf0ae8af1edb9aab36bbdf40aab8ebf41fc35cb45898a961affbb42",
+    "width": 936,
+    "height": 1170
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/9918112671/fairwardgolf-9918112671-007-ec0c616a026bceb2.webp",
+    "sha256": "ec0c616a026bceb25ba49cbed2a9dd5838a189119462f40aa1f9a534e48339e5",
+    "width": 936,
+    "height": 1170
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/9918112671/fairwardgolf-9918112671-008-8105199c29df2d50.webp",
+    "sha256": "8105199c29df2d509e7b27b23907db219adfc863803d70aa3ba2fe6b0564f1ae",
+    "width": 800,
+    "height": 1000
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/9918112671/fairwardgolf-9918112671-009-ab6bc6a9be28e2d4.webp",
+    "sha256": "ab6bc6a9be28e2d456a6f49f554a496a675c4faf5c387ede4cefce871352a2a5",
+    "width": 800,
+    "height": 1000
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/9918112671/fairwardgolf-9918112671-010-be5cab586879e054.webp",
+    "sha256": "be5cab586879e054abc8f15b70f9003dd9401c64be6bea9a7c4cde0af343e718",
+    "width": 800,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "PAID",
+   "base_fee": 2900,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 4,000원",
+   "lead_time": {
+    "seller_average_days": 1.8588235,
+    "product_average_days": null,
+    "today_cutoff": "09:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.26.(목)",
+    "arrival_probability": 90,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "남성 골프 바지, 팬츠\n\n나코탭\n100%국내매장판 정품\n\n나이키 조던 골프 팬츠\n헴프 블랙 슬림핏\n\n☆해외 원정 라운딩☆\n필수템\n\n데일리 룩으로 최고~!!!\n☆기장은 9부바지 입니다.☆\n☆고객님들 의견 : 슬림핏으로 살집이 있으신 분들은 타이트할 수 있습니다.\n\n여름 조던 카고 반바지\n\n조던 골프 카고 바지 2칼라\n\n조던 골프 자켓\n\nDZ0543-200(헴프)\n\nDZ0543-010(블랙)\n\nDZ0543-502(바이올렛)\n\n헴프골프화\n\n헴프 &조거 시리즈\n\n가을 겨울 라운딩 준비",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20241203_233/1733234656443K0CRq_JPEG/8e6905f18371413dbd63151ad9ddc26d.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241203_234/1733219680047gccTY_JPEG/20241203_133211.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241203_299/1733219736599lcINX_JPEG/AS+M+J+GLF+STMT+PANT_(10).jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20241203_21/1733219736476xmzUk_JPEG/AS+M+J+GLF+STMT+PANT_(11).jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20241203_70/1733219736651bNm4y_JPEG/AS+M+J+GLF+STMT+PANT_(12).jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20241203_85/17332197363940s27k_JPEG/AS+M+J+GLF+STMT+PANT_(9).jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20241203_298/1733219736366QONoL_JPEG/AS+M+J+GLF+STMT+PANT_(8).jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20241203_224/1733219736390VACxD_JPEG/AS+M+J+GLF+STMT+PANT_(13).jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20241203_220/1733219913262xodKV_JPEG/AS+M+J+GLF+STMT+PANT_(3).jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20241203_37/1733219913259CWBED_JPEG/AS+M+J+GLF+STMT+PANT_(2).jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20241203_274/1733219913405VORhd_JPEG/AS+M+J+GLF+STMT+PANT_(4).jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20241203_3/1733219915192KYNE3_JPEG/AS+M+J+GLF+STMT+PANT_(5).jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20241203_226/1733219913407q07zX_JPEG/AS+M+J+GLF+STMT+PANT_(1).jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20241203_63/1733219913691cvXde_JPEG/AS+M+J+GLF+STMT+PANT.jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20241203_183/1733219913416NjHbE_JPEG/AS+M+J+GLF+STMT+PANT_(6).jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20250805_155/17543264571758ij0F_JPEG/108620738807940916_1434085259.jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20250805_297/1754326457185KTacA_JPEG/108620737682977931_1414038920.jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20250805_201/1754326457181uxXTV_JPEG/108620737939369344_1572927186.jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20250805_50/175432645718075ovT_JPEG/108620738125361808_1760057901.jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20250805_141/1754326457195gDV9f_JPEG/108620738365471071_98774598.jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20250805_56/1754326457181wJbFQ_JPEG/108620738666528346_1250195968.jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20250805_233/1754326457548wXKTw_JPEG/108620718543518530_1702001710.jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20230528_289/16852209009351dQ1r_JPEG/Screenshot_20230525-160412_Gallery.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230528_155/1685220786521pPqev_GIF/%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80.gif?type=wg848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "phone",
+    "text": "DZ0543 200 010 502"
+   },
+   {
+    "rule": "store_name",
+    "text": "☆시크릿1649 추천상품☆"
+   },
+   {
+    "rule": "store_name",
+    "text": "☆시크릿1649 추천상품☆"
+   }
+  ],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "면",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_bottoms",
+   "option": 2,
+   "values": [
+    {
+     "ko": "30",
+     "us": "W30",
+     "letter": "M",
+     "chest_cm": 76.2,
+     "basis": "waist",
+     "chart_label": null
+    },
+    {
+     "ko": "32",
+     "us": "W32",
+     "letter": "L",
+     "chest_cm": 81.3,
+     "basis": "waist",
+     "chart_label": null
+    },
+    {
+     "ko": "33",
+     "us": "W33",
+     "letter": "L",
+     "chest_cm": 81.3,
+     "basis": "waist",
+     "chart_label": "85"
+    },
+    {
+     "ko": "34",
+     "us": "W34",
+     "letter": "XL",
+     "chest_cm": 86.4,
+     "basis": "waist",
+     "chart_label": null
+    },
+    {
+     "ko": "35",
+     "us": "W35",
+     "letter": "XL",
+     "chest_cm": 86.4,
+     "basis": "waist",
+     "chart_label": "90"
+    },
+    {
+     "ko": "36",
+     "us": "W36",
+     "letter": "XXL",
+     "chest_cm": 91.4,
+     "basis": "waist",
+     "chart_label": null
+    },
+    {
+     "ko": "38",
+     "us": "W38",
+     "letter": "XXXL",
+     "chest_cm": 96.5,
+     "basis": "waist",
+     "chart_label": null
+    },
+    {
+     "ko": "40",
+     "us": "W40",
+     "letter": "XXXL",
+     "chest_cm": 96.5,
+     "basis": "waist",
+     "chart_label": null
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": null,
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:59a77d7b042f46e6",
+   "kind": "title",
+   "ko": "[국내매장판] 나이키 조던 골프 바지 팬츠 헴프 블랙 슬림핏 DZ0543 200 010 502"
+  },
+  {
+   "id": "brand:bd6b745ddc845fe6",
+   "kind": "brand",
+   "ko": "나이키골프"
+  },
+  {
+   "id": "option_name:5a2fdefe4a62f26a",
+   "kind": "option_name",
+   "ko": "컬러"
+  },
+  {
+   "id": "option_value:312be168ffaeef80",
+   "kind": "option_value",
+   "ko": "헴프"
+  },
+  {
+   "id": "option_value:91f171f68356ec23",
+   "kind": "option_value",
+   "ko": "블랙"
+  },
+  {
+   "id": "option_value:e91f389b076dda9d",
+   "kind": "option_value",
+   "ko": "바이올렛"
+  },
+  {
+   "id": "option_name:fd231737a8dae587",
+   "kind": "option_name",
+   "ko": "기장"
+  },
+  {
+   "id": "option_value:1a1083fba0d1109f",
+   "kind": "option_value",
+   "ko": "기장30"
+  },
+  {
+   "id": "option_value:f73f0c886213f378",
+   "kind": "option_value",
+   "ko": "기장32"
+  },
+  {
+   "id": "option_value:9dada411cce0e673",
+   "kind": "option_value",
+   "ko": "기장34"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:624b60c58c9d8bfb",
+   "kind": "option_value",
+   "ko": "30"
+  },
+  {
+   "id": "option_value:e29c9c180c6279b0",
+   "kind": "option_value",
+   "ko": "32"
+  },
+  {
+   "id": "option_value:c6f3ac57944a5314",
+   "kind": "option_value",
+   "ko": "33"
+  },
+  {
+   "id": "option_value:86e5014965866131",
+   "kind": "option_value",
+   "ko": "34"
+  },
+  {
+   "id": "option_value:9f14025af0065b30",
+   "kind": "option_value",
+   "ko": "35"
+  },
+  {
+   "id": "option_value:76a50887d8f1c2e9",
+   "kind": "option_value",
+   "ko": "36"
+  },
+  {
+   "id": "option_value:aea92132c4cbeb26",
+   "kind": "option_value",
+   "ko": "38"
+  },
+  {
+   "id": "option_value:d59eced1ded07f84",
+   "kind": "option_value",
+   "ko": "40"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:4e3b3a3dfa43c3d0",
+   "kind": "spec_value",
+   "ko": "나이키"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:bd6b745ddc845fe6",
+   "kind": "spec_value",
+   "ko": "나이키골프"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:3aa23e607f8d0e39",
+   "kind": "spec_value",
+   "ko": "나이키 조던 골프 팬츠 헴프 블랙 슬림핏 DZ0543 200 502"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:5281607bf73dc589",
+   "kind": "spec_value",
+   "ko": "인도네시아산"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:6fa36796eea775e0",
+   "kind": "spec_value",
+   "ko": "신축성"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:cd4530df02c851d2",
+   "kind": "spec_value",
+   "ko": "면"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:4da2f438079da94d",
+   "kind": "spec_value",
+   "ko": "여름, 봄, 가을"
+  },
+  {
+   "id": "spec_label:ea32a6046e98fd76",
+   "kind": "spec_label",
+   "ko": "충전재"
+  },
+  {
+   "id": "spec_value:72ea3d64ace5bc94",
+   "kind": "spec_value",
+   "ko": "없음"
+  },
+  {
+   "id": "spec_label:777511e7e585c6f2",
+   "kind": "spec_label",
+   "ko": "하의기장"
+  },
+  {
+   "id": "spec_value:aa31e2e602123b3c",
+   "kind": "spec_value",
+   "ko": "9부"
+  },
+  {
+   "id": "spec_label:35e8af68e7a1b980",
+   "kind": "spec_label",
+   "ko": "하의핏"
+  },
+  {
+   "id": "spec_value:a45e6e68a234a7ad",
+   "kind": "spec_value",
+   "ko": "슬림핏"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:8040f01b1433a292",
+   "kind": "spec_value",
+   "ko": "2024년형"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "review:64686b532e8f22de",
+   "kind": "review",
+   "ko": "신축성이 좋으니 착용감은 좋습니다! 다만 슬림핏이라 약간 살집이 있는분이라면 좀 타이트할 수 있습니다.\n상품 안내글에 슬림핏 표기가 필요할것 같네요!\n날씨가 더운 봄이나 여름용으로 입기는 좋은것 같네요!"
+  },
+  {
+   "id": "review:e3bb7b09839bbdbb",
+   "kind": "review",
+   "ko": "주문하고 2주동안 기다리다 소식이 없어 문의하니\n취소하라고.\n한사이즈 업해서 다시 주문했더니.\n이번주 일괄 지급해주신다는 포인트.\n9월 마지막주가 다되었는데도 아직도 안들어왔네요\n언제 보내주실지. 끝까지 기다려볼께요\n약속은 지키셔야죠 사장님."
+  },
+  {
+   "id": "review:bf6c36fb13f412c7",
+   "kind": "review",
+   "ko": "평소 하의 29사이즈 입는데 30사이즈 타이트하지 않고 잘 맞아요 초여름 봄 가을 입으면 적당 할것 같아요. 원단이 부들부들 너무 좋아요 스판기도 조좋아서 착용 시 너무 편합니다. 기장도 수선 안해도 될 만큼 딱 적당합니다. 좋은 제품 감사합니다."
+  },
+  {
+   "id": "review:fe0a9c7428ebe449",
+   "kind": "review",
+   "ko": "메드인 차이나 라고 돼어 있네요 세탁해도 주름은 가질 않고. 그냥 싼마이는 아닌데 제품은 좀 떨어지네요. 내부에 텍 때구 입음심 됄듯."
+  },
+  {
+   "id": "review:1cf714513d714a95",
+   "kind": "review",
+   "ko": "약간 타이트 하나 신축성이 좋아 무리 없이 입을수 있을꺼 같습니다\n잘 산거 같아요\n강추합니다 길이감이 짧은걸 싫어 하시는 분은 32로 사서 입으면 됩니다 좋습니더 그매 하셔유"
+  },
+  {
+   "id": "review:b7575cd59b72489f",
+   "kind": "review",
+   "ko": "허리부분 미니밴드가 귀엽네요. 나름 한사이즈 잡아줍니다. 평소 32 입는데 종아리부분이 살짝 타이트 합니다. 얇아서 여름철 필드복으로 딱입니다. 키크신분들은 기장 고려하시길"
+  },
+  {
+   "id": "review:63c6aaf5a155cc8a",
+   "kind": "review",
+   "ko": "옷이 굉장히 편합니다.\n통기성도 좋구요. 한 여름에도 입을것 같네요. 히 잘 입을게요.\n다음에도 또 구매의사 있습니다."
+  }
+ ]
+}

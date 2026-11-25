@@ -1,0 +1,471 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 119053,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_184/1710228554055Gf5HC_JPEG/SKU-07-213%E7%81%B0%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 18402,
+   "height": 389,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_249/17102285459214oNgw_PNG/image.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.846,
+       "text": "SIZE INFO / 단위:cI",
+       "y": 19
+      },
+      {
+       "conf": 0.995,
+       "text": "SIZE / 가슴둘레 / 어깨너비 / 소매길이 / 기장 / 몸무게KG",
+       "y": 76
+      },
+      {
+       "conf": 0.931,
+       "text": "M / 96 / 42 / 58 / 66",
+       "y": 110
+      },
+      {
+       "conf": 0.999,
+       "text": "L / 100 / 43 / 59 / 68",
+       "y": 135
+      },
+      {
+       "conf": 0.952,
+       "text": "XL / 104 / 44 / 60 / 70",
+       "y": 160
+      },
+      {
+       "conf": 0.967,
+       "text": "XXL / 108 / 45 / 61 / 72",
+       "y": 184
+      },
+      {
+       "conf": 0.849,
+       "text": "3XL / 112 / 46 / 62 / 74",
+       "y": 210
+      },
+      {
+       "conf": 0.998,
+       "text": "4XL / 116 / 47 / 63 / 75",
+       "y": 237
+      },
+      {
+       "conf": 0.951,
+       "text": "*상품 사이즈 측정시 원단 신축성 및 측정 방식에 따라 1‘3CI 오차가 있을수 있습니다.",
+       "y": 263
+      },
+      {
+       "conf": 0.979,
+       "text": "*의류의 부속품인 단추,지퍼등이 상품 이미지와 다를수 있습니다",
+       "y": 288
+      },
+      {
+       "conf": 0.99,
+       "text": "*모니터 해상도,밝기,조명에 따라 약간의 색상 차이가 있을수 있습니다.",
+       "y": 313
+      },
+      {
+       "conf": 0.983,
+       "text": "*원산지:중국",
+       "y": 339
+      }
+     ],
+     "y0": 0,
+     "y1": 389
+    }
+   ],
+   "status": "read",
+   "width": 782
+  },
+  {
+   "bytes": 66458,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_82/1710228553929S5qTC_JPEG/SKU-01-213%E7%B1%B3%E7%99%BD-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 58415,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_281/17102285538993p7x8_JPEG/SKU-17-213%E9%BB%91%E8%89%B2-185_3XL_%E5%BB%BA%E8%AE%AE170-185%E6%96%A4.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 94000,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_98/1710228554023ME1yO_JPEG/SKU-19-213%E9%BB%84%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 75694,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_113/17102285539931V3gh_JPEG/SKU-25-213%E8%93%9D%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 97941,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_247/1710228554040bzQqC_JPEG/SKU-31-213%E5%9C%9F%E9%BB%84-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 96181,
+   "height": 800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_154/1710228555111EDRON_JPEG/SKU-37-213%E7%BB%BF%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 800
+    }
+   ],
+   "status": "read",
+   "width": 800
+  },
+  {
+   "bytes": 66986,
+   "height": 802,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_15/1710228555182CtiLa_JPEG/%E8%AF%A6%E6%83%85-13.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.916,
+       "text": "// FASHION LEISURE //",
+       "y": 781
+      }
+     ],
+     "y0": 0,
+     "y1": 802
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 71365,
+   "height": 781,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_182/1710228555058ce9R8_JPEG/%E8%AF%A6%E6%83%85-14.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.876,
+       "text": ":",
+       "y": 651
+      }
+     ],
+     "y0": 0,
+     "y1": 781
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 109635,
+   "height": 807,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_184/17102285551124baqL_JPEG/%E8%AF%A6%E6%83%85-16.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.928,
+       "text": "// FASHION LEISURE //",
+       "y": 782
+      }
+     ],
+     "y0": 0,
+     "y1": 807
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 118205,
+   "height": 773,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_294/1710228555162QyLor_JPEG/%E8%AF%A6%E6%83%85-17.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 773
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 51088,
+   "height": 775,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_184/1710228556517xyJuS_JPEG/%E8%AF%A6%E6%83%85-19.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 775
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 68226,
+   "height": 799,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_169/1710228556297InGFw_JPEG/%E8%AF%A6%E6%83%85-20.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.914,
+       "text": "// FASHION LEISURE //",
+       "y": 13
+      }
+     ],
+     "y0": 0,
+     "y1": 799
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 113062,
+   "height": 802,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_236/1710228556145aIlEJ_JPEG/%E8%AF%A6%E6%83%85-21.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.908,
+       "text": "1/ FASHION LEISURE //",
+       "y": 779
+      }
+     ],
+     "y0": 0,
+     "y1": 802
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 108947,
+   "height": 781,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_83/1710228556421ro1aC_JPEG/%E8%AF%A6%E6%83%85-22.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.508,
+       "text": "L",
+       "y": 340
+      }
+     ],
+     "y0": 0,
+     "y1": 781
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 71700,
+   "height": 807,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_112/1710228556409J9USw_JPEG/%E8%AF%A6%E6%83%85-23.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.957,
+       "text": "// FASHION LEISURE //",
+       "y": 784
+      }
+     ],
+     "y0": 0,
+     "y1": 807
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 73300,
+   "height": 773,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_195/1710228556220MiHYn_JPEG/%E8%AF%A6%E6%83%85-24.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 773
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 89140,
+   "height": 775,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_149/1710228557187QAUN2_JPEG/%E8%AF%A6%E6%83%85-25.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 775
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 110037,
+   "height": 799,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_288/1710228557374FfCdf_JPEG/%E8%AF%A6%E6%83%85-26.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.896,
+       "text": "11 FASHION LEISURE //",
+       "y": 11
+      }
+     ],
+     "y0": 0,
+     "y1": 799
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 87507,
+   "height": 799,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_157/1710228557382I2GKV_JPEG/%E8%AF%A6%E6%83%85-27.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.91,
+       "text": "I1 FASHION LEISURE //",
+       "y": 11
+      }
+     ],
+     "y0": 0,
+     "y1": 799
+    }
+   ],
+   "status": "read",
+   "width": 750
+  },
+  {
+   "bytes": 86875,
+   "height": 799,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240312_55/17102285574359Im09_JPEG/%E8%AF%A6%E6%83%85-28.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.91,
+       "text": "I1 FASHION LEISURE //",
+       "y": 11
+      }
+     ],
+     "y0": 0,
+     "y1": 799
+    }
+   ],
+   "status": "read",
+   "width": 750
+  }
+ ],
+ "key": "fairwardgolf:naver:102341092:10332996284",
+ "links_sha256": "a3193c92a82ce67b4e44c36547677c01878f8c3e82b1559653b49da9b7330f6f",
+ "product_id": "10332996284",
+ "seconds": 23.8,
+ "skipped": []
+}

@@ -1,0 +1,836 @@
+{
+ "key": "fairwardgolf:naver:500007665:12487907002",
+ "listing": {
+  "product_id": "12487907002",
+  "nv_mid": "90032417846",
+  "link": "https://smartstore.naver.com/halfclub/products/12487907002",
+  "name": "[헤지스골프]여성 네이비 긴소매 풀집 원피스형 점퍼 HWJU3D624N3",
+  "store": {
+   "name": "하프클럽mall",
+   "slug": "halfclub",
+   "link": "https://smartstore.naver.com/halfclub",
+   "channel_no": "500007665",
+   "grade": "BIG_POWER",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 180460,
+   "discounted_price": 117290,
+   "discount_ratio": 35,
+   "currency": "KRW"
+  },
+  "category_id": "50002798",
+  "reviews": {
+   "count": 2,
+   "average_score": 4.5
+  },
+  "stock_quantity": 1,
+  "image": "https://shopping-phinf.pstatic.net/main_9003241/90032417846.jpg",
+  "is_ad": false,
+  "query": "여성 골프 바람막이 점퍼",
+  "batch": 3,
+  "seen_at": "2026-11-21T02:55:14+00:00",
+  "key": "fairwardgolf:naver:500007665:12487907002"
+ },
+ "details": {
+  "id": "12487907002",
+  "origin_product_id": "12431422104",
+  "name": "[헤지스골프]여성 네이비 긴소매 풀집 원피스형 점퍼 HWJU3D624N3",
+  "link": "https://smartstore.naver.com/halfclub/products/12487907002",
+  "catalog_id": "90032417846",
+  "catalog_link": "https://search.shopping.naver.com/catalog/90032417846",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 180460,
+   "discounted_price": 117290,
+   "discount_ratio": 35,
+   "seller_discount": 63170,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 1172,
+    "text_review": 0,
+    "photo_video_review": 0,
+    "after_use_text_review": 0,
+    "after_use_photo_video_review": 0,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 1,
+  "has_options": true,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20251001_148/1759297509640ecWa8_JPEG/93430309792083563_1453649919.jpg"
+  ],
+  "category": {
+   "id": "50002798",
+   "name": "점퍼",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프의류",
+    "점퍼"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001104",
+    "50002798"
+   ]
+  },
+  "brand": "헤지스골프",
+  "brand_id": null,
+  "manufacturer": "LF",
+  "model_name": "점퍼",
+  "tags": null,
+  "page_title": null,
+  "reviews": {
+   "count": 2,
+   "average_score": 4.5,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 1,
+    "5": 1
+   },
+   "text_count": 0,
+   "photo_count": 2,
+   "video_count": 0,
+   "after_use_count": 1,
+   "best_count": 0,
+   "recent": {
+    "count": 1,
+    "average_score": 4.0
+   },
+   "evaluations": [
+    {
+     "question": "사이즈는 어떤가요?",
+     "answers": [
+      {
+       "name": "많이 작아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "약간 작아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "잘 맞아요",
+       "count": 2,
+       "percent": 100
+      },
+      {
+       "name": "약간 커요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "많이 커요",
+       "count": 0,
+       "percent": 0
+      }
+     ]
+    },
+    {
+     "question": "핏은 어떤가요?",
+     "answers": [
+      {
+       "name": "슬림해요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "적당해요",
+       "count": 2,
+       "percent": 100
+      },
+      {
+       "name": "오버핏이에요",
+       "count": 0,
+       "percent": 0
+      }
+     ]
+    },
+    {
+     "question": "두께는 어떤가요?",
+     "answers": [
+      {
+       "name": "얇아요",
+       "count": 1,
+       "percent": 50
+      },
+      {
+       "name": "보통 두께예요",
+       "count": 1,
+       "percent": 50
+      },
+      {
+       "name": "두꺼워요",
+       "count": 0,
+       "percent": 0
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": null,
+   "company": "CJ대한통운",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": true,
+  "is_today_delivery": false,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": "<center><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://cdn2.halfclub.com/Images_Web/Etc/half/20170822/half.jpg\"  style=\"width:90%\" /></center><br />\r\n<div style=\"max-width:820px; margin:0 auto;\"><a>\n  <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://cdn2.halfclub.com/cdn/brandNews/465066/2026/11/465066_1520072179.jpg\"  alt=\"상세 페이지 이미지\" style=\"display:block; width:100%; height:auto;\" />\n</a><div style=\"width:100%; overflow:hidden; background:#fff;\">\n        <div style=\"text-align:center; margin-bottom:20px;\">\n          <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/title/h4_product_full_shot.gif\"  />\n        </div>\n        <div style=\"text-align:center;\">      \n          <p style=\"margin-bottom:50px;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://nimg.lfmall.co.kr//file/product/prd/HW/2023/640/HWJU3D624N3_00.jpg\"  width=\"850\" height=\"850\" /></p>      \n          <p style=\"margin-bottom:50px;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://nimg.lfmall.co.kr//file/product/prd/HW/2023/640/HWJU3D624N3_01.jpg\"  width=\"850\" height=\"850\" /></p>                 \n                \n          <p style=\"margin-bottom:50px;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://nimg.lfmall.co.kr//file/product/prd/HW/2023/640/HWJU3D624N3_02.jpg\"  width=\"850\" height=\"850\" /></p>                 \n          </div>\n          <div style=\"text-align:center; margin-bottom:20px;\">\n            <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/title/h4_product_detail1.gif\"  />\n          </div>\n          <div style=\"text-align:center;\"><p style=\"margin-bottom:50px;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://nimg.lfmall.co.kr//file/product/prd/HW/2023/640/HWJU3D624N3_D0.jpg\"  width=\"850\" height=\"850\" /></p>      \n            <p style=\"margin-bottom:50px;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://nimg.lfmall.co.kr//file/product/prd/HW/2023/640/HWJU3D624N3_D1.jpg\"  width=\"850\" height=\"850\" /></p>                 \n                  \n            <p style=\"margin-bottom:50px;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://nimg.lfmall.co.kr//file/product/prd/HW/2023/640/HWJU3D624N3_D2.jpg\"  width=\"850\" height=\"850\" /></p>                 \n                  \n            <p style=\"margin-bottom:50px;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://nimg.lfmall.co.kr//file/product/prd/HW/2023/640/HWJU3D624N3_D3.jpg\"  width=\"850\" height=\"850\" /></p>                 \n            </div>\n          <div style=\"text-align:center; margin-bottom:20px;\">\n            <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/title/h4_product_fabric.gif\"  />\n          </div>\n          <div style=\"text-align:center;\"><p style=\"margin-bottom:50px;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://nimg.lfmall.co.kr//file/product/prd/HW/2023/640/HWJU3D624N3_F0.jpg\"  width=\"850\" height=\"850\" /></p></div>\n          <div style=\"text-align:center; margin-bottom:20px;\">\n            <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/title/h4_product_label.gif\"  />\n          </div>\n          <div style=\"text-align:center;\"><p style=\"margin-bottom:50px;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://nimg.lfmall.co.kr//file/product/prd/HW/2023/640/HWJU3D624N3_L0.jpg\"  width=\"850\" height=\"850\" /></p>      \n            <p style=\"margin-bottom:50px;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://nimg.lfmall.co.kr//file/product/prd/HW/2023/640/HWJU3D624N3_L1.jpg\"  width=\"850\" height=\"850\" /></p>                 \n                  \n            <p style=\"margin-bottom:50px;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://nimg.lfmall.co.kr//file/product/prd/HW/2023/640/HWJU3D624N3_L2.jpg\"  width=\"850\" height=\"850\" /></p>                 \n                  \n            <p style=\"margin-bottom:50px;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://nimg.lfmall.co.kr//file/product/prd/HW/2023/640/HWJU3D624N3_L3.jpg\"  width=\"850\" height=\"850\" /></p>                 \n            </div>       \n                  \n             <div style=\"margin-bottom:100px; text-align: center;\">                 \n                <p style=\"margin-top: 75px;\">                 \n                    <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/title/h4_product_tip.gif\"  style=\"width:37px;max-width:37px;height:18px;\" />                 \n                </p>                 \n                                     \n                <div style=\"margin-top: 20px; height: 20px; font-size: 14px; font-weight: bold;\">                 \n                    <span style=\"margin-left: 0px;\">성별 :  / 계절 : </span>                 \n                </div>                 \n                              \n                    <table style=\"margin-top: 10px; border: 1px solid #ccc; width: 850px; padding:0; margin:0; border-collapse:collapse; font-family:                      &#39;Dotum&#39;, &#39;Gulim&#39;, &#39;serif&#39;; font-size: 12px;  color: #444;  letter-spacing: 0px;                     margin-top: 10px; border-top: 1px solid #ccc; border-left: 1px solid #ccc; width: 743px; display: inline-block !important;\"><colgroup><col width=\"25%\" /><col width=\"25%\" /><col width=\"25%\" /><col width=\"25%\" /></colgroup><tbody><tr><th style=\"background-color: #eaeaea; border-bottom: 1px solid #ccc; height:30px;\">두께감</th><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_nocheck.gif&#39;) no-repeat 27px center;\">얇아요</td><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_check.gif&#39;) no-repeat 27px center;\">적당한 편</td><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_nocheck.gif&#39;) no-repeat 27px center;\">두꺼워요</td></tr><tr><th style=\"background-color: #eaeaea; border-bottom: 1px solid #ccc; height:30px;\">신축성</th><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_nocheck.gif&#39;) no-repeat 27px center;\">신축성이 없어요</td><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_check.gif&#39;) no-repeat 27px center;\">약간 있어요</td><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_nocheck.gif&#39;) no-repeat 27px center;\">신축성이 좋아요</td></tr><tr><th style=\"background-color: #eaeaea; border-bottom: 1px solid #ccc; height:30px;\">촉감</th><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_nocheck.gif&#39;) no-repeat 27px center;\">까실한 느낌</td><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_check.gif&#39;) no-repeat 27px center;\">적당한 느낌</td><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_nocheck.gif&#39;) no-repeat 27px center;\">부드러운 느낌</td></tr><tr><th style=\"background-color: #eaeaea; border-bottom: 1px solid #ccc; height:30px;\">안감</th><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_check.gif&#39;) no-repeat 27px center;\">안감이 없어요</td><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_nocheck.gif&#39;) no-repeat 27px center;\">안감이 있어요</td><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_nocheck.gif&#39;) no-repeat 27px center;\">안감이 부분적으로 있어요</td></tr><tr><th style=\"background-color: #eaeaea; border-bottom: 1px solid #ccc; height:30px;\">비침</th><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_check.gif&#39;) no-repeat 27px center;\">비침이 없어요</td><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_nocheck.gif&#39;) no-repeat 27px center;\">약간 있어요(화이트)</td><td style=\"height:30px; border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;text-align: left; padding-left: 45px;                          background: url(&#39;http://img.lfmall.co.kr/file/WAS/apps/2013/image/frontoffice/common/ico/ico_nocheck.gif&#39;) no-repeat 27px center;\">비침이 있어요</td></tr></tbody></table>    \n                </div> </div><div style=\"width:100%;top:0;right:0;bottom:0;align-items:center;justify-content:center;-webkit-align-items:center;-webkit-justify-content:center;-webkit-box-pack:center;-webkit-box-align:center;-moz-box-pack:center;-moz-box-align:center;-ms-box-pack:center;-ms-box-align:center;\"><div><h4 style=\"text-align: center;\">실측 사이즈</h4><div style=\"text-align: center;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://nimg.lfmall.co.kr/file/product/prd/size_2024/jumper.jpg\"  alt=\"\" /></div></div><div style=\"text-align: center;\"><div style=\"width:100%; margin:0 0 10px 0;text-align: center;\"><div style=\"width:100%; overflow:hidden; white-space:nowrap; font-size:12px; line-height:0;text-align: center;\"><div style=\"width:120px; display:inline-block;text-align: center;font-size:12px;\"><table border=\"1\" width=\"120px\" cellpadding=\"0\" cellspacing=\"0\"><thead><tr><th style=\"background-color: #eaeaea; border-bottom: 1px solid #ccc; text-align: center;height: 60px;\">점퍼</th></tr><tr><td style=\"background-color: #eaeaea;border-bottom: 1px solid #ccc; text-align: center;height: 30px;\"><span>A</span> 총길이</td></tr><tr><td style=\"background-color: #eaeaea;border-bottom: 1px solid #ccc; text-align: center;height: 30px;\"><span>B</span> 어깨너비</td></tr><tr><td style=\"background-color: #eaeaea;border-bottom: 1px solid #ccc; text-align: center;height: 30px;\"><span>C</span> 가슴둘레</td></tr><tr><td style=\"background-color: #eaeaea;border-bottom: 1px solid #ccc; text-align: center;height: 30px;\"><span>D</span> 소매길이</td></tr><tr><td style=\"background-color: #eaeaea;border-bottom: 1px solid #ccc; text-align: center;height: 30px;\"><span>E</span> 소매화장</td></tr></thead></table></div><div style=\"width:400px; display:inline-block; text-align: center;font-size: 12px;\"><table border=\"1\" width=\"400px\" cellpadding=\"0\" cellspacing=\"0\"><tbody><tr><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 60px;\">085</td><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 60px;\">090</td><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 60px;\">095</td></tr><tr><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">88.5</td><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">90</td><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">91.5</td></tr><tr><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">-</td><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">-</td><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">-</td></tr><tr><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">87</td><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">92</td><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">98</td></tr><tr><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">-</td><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">-</td><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">-</td></tr><tr><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">76</td><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">78</td><td style=\"border-bottom: 1px solid #ccc; text-align: center;height: 30px;\">80</td></tr></tbody></table></div></div></div><p style=\"position:relative; margin:10px 0 0 0; clear:both; color:#888; padding:0; font-size:12px;text-align: center;\">실측사이즈는 디자인, 소재, 측정 위치 및 방법에 따라 오차가 있을 수 있습니다. <span>    단위 cm</span></p></div></div></div>\r\n<div align=\"center\" width=\"100%\">\r\n<br /><br /><div>* 판매자 정보</div>\r\n<table width=\"668\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"font:normal 12px/20px dotum; color:#2d5373; border-collapse:collapse;\"><caption style=\"text-align:left;\">* 판매자 정보</caption><tbody><tr><td width=\"61\" align=\"center\" height=\"30\" style=\"text-align:center;\" bgcolor=\"#bed8e7\">판매자</td><td width=\"267\" bgcolor=\"#FFFFFF\" style=\"font-weight:normal; border:1px solid #a0bed8\"><span style=\"padding-left:20px; color:#000000\">하프클럽</span></td><td width=\"61\" align=\"center\" bgcolor=\"#bed8e7\" style=\"color:#2d5373;border:1px solid #a0bed8\">연락처</td><td width=\"289\" bgcolor=\"#FFFFFF\" style=\"border:1px solid #a0bed8\"><span style=\"padding-left:20px; color:#000000\">0215881812</span></td></tr><tr><td height=\"30\" align=\"center\" bgcolor=\"#bed8e7\" style=\"color:#2d5373;border:1px solid #a0bed8\">주소</td><td colspan=\"3\" bgcolor=\"#FFFFFF\" style=\"font-weight:normal; border:1px solid #a0bed8\"><span style=\"padding-left:20px; color:#000000\">경기도 안성시 양성면 양성로 174-13 하프클럽 물류센터  </span></td></tr></tbody></table><br />\r\n</div>",
+   "text": "성별 : / 계절 :\n두께감 | 얇아요 | 적당한 편 | 두꺼워요\n신축성 | 신축성이 없어요 | 약간 있어요 | 신축성이 좋아요\n촉감 | 까실한 느낌 | 적당한 느낌 | 부드러운 느낌\n안감 | 안감이 없어요 | 안감이 있어요 | 안감이 부분적으로 있어요\n비침 | 비침이 없어요 | 약간 있어요(화이트) | 비침이 있어요\n실측 사이즈\n점퍼\nA 총길이\nB 어깨너비\nC 가슴둘레\nD 소매길이\nE 소매화장\n085 | 090 | 095\n88.5 | 90 | 91.5\n- | - | -\n87 | 92 | 98\n- | - | -\n76 | 78 | 80\n실측사이즈는 디자인, 소재, 측정 위치 및 방법에 따라 오차가 있을 수 있습니다. 단위 cm\n* 판매자 정보\n판매자 | 하프클럽 | 연락처 | 0215881812\n주소 | 경기도 안성시 양성면 양성로 174-13 하프클럽 물류센터",
+   "editor_type": "NONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20261112_153/1794476008582gLXIY_JPEG/p-12431422104-s-4-A-0.jpg",
+    "https://shop-phinf.pstatic.net/20261112_291/1794476008585Y7gEq_JPEG/p-12431422104-s-4-A-1.jpg",
+    "https://shop-phinf.pstatic.net/20261112_292/1794476008588EARPx_JPEG/p-12431422104-s-4-A-2.jpg",
+    "https://shop-phinf.pstatic.net/20261112_186/1794476008592CORAt_JPEG/p-12431422104-s-4-A-3.jpg",
+    "https://shop-phinf.pstatic.net/20261112_24/1794476008591uS2ak_JPEG/p-12431422104-s-4-A-4.jpg",
+    "https://shop-phinf.pstatic.net/20261112_128/1794476008585XCxeM_JPEG/p-12431422104-s-4-A-5.jpg",
+    "https://shop-phinf.pstatic.net/20261112_167/1794476008585uQrKf_JPEG/p-12431422104-s-4-A-6.jpg",
+    "https://shop-phinf.pstatic.net/20261112_4/1794476008590pjivs_JPEG/p-12431422104-s-4-A-7.jpg",
+    "https://shop-phinf.pstatic.net/20261112_279/1794476008593wToNn_JPEG/p-12431422104-s-4-A-8.jpg",
+    "https://shop-phinf.pstatic.net/20261112_57/17944760085821Q7P4_JPEG/p-12431422104-s-4-A-9.jpg",
+    "https://shop-phinf.pstatic.net/20261112_41/1794476008669H3v4l_JPEG/p-12431422104-s-4-A-10.jpg"
+   ]
+  },
+  "notice": {
+   "type": "WEAR",
+   "items": [
+    {
+     "label": "제품소재",
+     "value": "겉감-나일론 86% 폴리우레탄 14% 안감-폴리에스터 100%",
+     "is_see_description": false
+    },
+    {
+     "label": "색상",
+     "value": "네이비",
+     "is_see_description": false
+    },
+    {
+     "label": "치수",
+     "value": "상세페이지로 참조",
+     "is_see_description": false
+    },
+    {
+     "label": "제조자(사)",
+     "value": "LF",
+     "is_see_description": false
+    },
+    {
+     "label": "제조국",
+     "value": "상세설명에 표시",
+     "is_see_description": true
+    },
+    {
+     "label": "세탁방법 및 취급시 주의사항",
+     "value": "1.세탁기 세탁 시 손상될 수 있으니 삼가해 주십시오. 2.표백성 세제를 삼가해 주시고 물에 10분 이상 담궈 두지 마십시오. 3.다림질 할 경우 반드시 저온에서 천을 대고 하십시오.",
+     "is_see_description": false
+    },
+    {
+     "label": "제조연월",
+     "value": "판매자 문의",
+     "is_see_description": false
+    },
+    {
+     "label": "품질보증기준",
+     "value": "A/S 기간은 품목별로 상이하며, 하프클럽은 관련법 및 소비자 분쟁 해결 규정을 따릅니다. A/S 신청시 부자재가 없는 경우 다른 자재로 대체되거나, A/S 진행이 불가할 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "A/S 책임자와 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "판매자 문의",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 3000원 (최초 배송비 무료인 경우 6000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "판매자 문의",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "판매자 문의",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "판매자 문의",
+     "is_see_description": false
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "판매자 문의",
+     "is_see_description": false
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": {
+    "value": "헤지스골프",
+    "source": "search_info.brandName"
+   },
+   "manufacturer": {
+    "value": "LF",
+    "source": "search_info.manufacturerName"
+   },
+   "model_name": {
+    "value": "점퍼",
+    "source": "search_info.modelName"
+   },
+   "origin": null
+  },
+  "store": {
+   "id": "500007665",
+   "uid": "2sWDvNKfMSzUcRqtS1Lfz",
+   "name": "하프클럽mall",
+   "slug": "halfclub",
+   "link": "https://smartstore.naver.com/halfclub",
+   "type": "smart_store",
+   "grade": "SECOND",
+   "sale_count": 2282,
+   "merchant_id": "500007665",
+   "business": {
+    "legal_name": "(주)트라이씨클",
+    "representative": "허진희,구자현",
+    "type": "CORPORATION",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "12487907002",
+  "name": "[헤지스골프]여성 네이비 긴소매 풀집 원피스형 점퍼 HWJU3D624N3",
+  "link": "https://smartstore.naver.com/halfclub/products/12487907002",
+  "query": "여성 골프 바람막이 점퍼",
+  "category": {
+   "id": "50002798",
+   "name": "점퍼",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프의류",
+    "점퍼"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001104",
+    "50002798"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "12487907002"
+   },
+   {
+    "label": "제조사",
+    "value": "LF"
+   },
+   {
+    "label": "브랜드",
+    "value": "헤지스골프"
+   },
+   {
+    "label": "모델명",
+    "value": "점퍼"
+   },
+   {
+    "label": "원산지",
+    "value": "상세설명에 표시"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": {
+    "value": "헤지스골프",
+    "source": "specs:브랜드"
+   },
+   "manufacturer": {
+    "value": "LF",
+    "source": "specs:제조사"
+   },
+   "model_name": {
+    "value": "점퍼",
+    "source": "specs:모델명"
+   },
+   "origin": null
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 1,
+   "option_groups": [
+    {
+     "id": "10830036701",
+     "name": "선택하기",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "52381518674",
+     "name": "Dark Navy/090",
+     "options": [
+      "Dark Navy/090"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 1,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2025-10-01"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 2,500원",
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": false,
+   "company": "CJ 대한통운(오네)",
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 2500,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 2.516279,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   }
+  },
+  "catalog": {
+   "id": "43382569437",
+   "nsin": null
+  },
+  "measures": {
+   "is_set": false,
+   "weights": [],
+   "dimensions": [],
+   "references": [],
+   "review": []
+  },
+  "read_at": "2026-11-21T03:04:00Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 117290,
+  "variants": [
+   {
+    "id": "52381518674",
+    "name": "Dark Navy/090",
+    "options": [
+     "Dark Navy/090"
+    ],
+    "extra_price": 0,
+    "price": 117290,
+    "price_in_name": null,
+    "stock_quantity": 1,
+    "is_available": true
+   }
+  ],
+  "available": 1,
+  "sold_out": 0,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": "52381518674",
+   "fields": {
+    "product_weight_g": {
+     "low": 150,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 13,
+     "approved_by": "owner",
+     "approved_at": "2026-11-20"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 400,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 13,
+     "approved_by": "owner",
+     "approved_at": "2026-11-20"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 13,
+     "approved_by": "owner",
+     "approved_at": "2026-11-20"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 13,
+     "approved_by": "owner",
+     "approved_at": "2026-11-20"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 13,
+     "approved_by": "owner",
+     "approved_at": "2026-11-20"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "12487907002",
+   "name": "[헤지스골프]여성 네이비 긴소매 풀집 원피스형 점퍼 HWJU3D624N3",
+   "link": "https://smartstore.naver.com/halfclub/products/12487907002"
+  },
+  "summary": {
+   "count": 2,
+   "average_score": 4.5,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 1,
+    "5": 1
+   },
+   "text_count": 0,
+   "photo_count": 2,
+   "video_count": 0,
+   "after_use_count": 1,
+   "best_count": 0,
+   "recent": {
+    "count": 1,
+    "average_score": 4.0
+   },
+   "evaluations": [
+    {
+     "question": "사이즈는 어떤가요?",
+     "answers": [
+      {
+       "name": "많이 작아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "약간 작아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "잘 맞아요",
+       "count": 2,
+       "percent": 100
+      },
+      {
+       "name": "약간 커요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "많이 커요",
+       "count": 0,
+       "percent": 0
+      }
+     ]
+    },
+    {
+     "question": "핏은 어떤가요?",
+     "answers": [
+      {
+       "name": "슬림해요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "적당해요",
+       "count": 2,
+       "percent": 100
+      },
+      {
+       "name": "오버핏이에요",
+       "count": 0,
+       "percent": 0
+      }
+     ]
+    },
+    {
+     "question": "두께는 어떤가요?",
+     "answers": [
+      {
+       "name": "얇아요",
+       "count": 1,
+       "percent": 50
+      },
+      {
+       "name": "보통 두께예요",
+       "count": 1,
+       "percent": 50
+      },
+      {
+       "name": "두꺼워요",
+       "count": 0,
+       "percent": 0
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "mode": "small_source",
+  "count": 2,
+  "scanned": 2,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 2,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "5023581398",
+    "score": 4,
+    "text": "할인 많이된 가격으로 잘. 구매 했고요.약간 얇은듯 하고. 잠잖게. 입기 좋을듯 얇아요....",
+    "created_at": "2026-07-17T10:59:13Z",
+    "type": "AFTER_USE",
+    "content_type": "PHOTO",
+    "option": "선택하기: Dark Navy/090",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "js****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260717_146/1784285934804k7VTf_JPEG/1000022684.jpg",
+      "width": 3024,
+      "height": 4032
+     }
+    ],
+    "product": {
+     "id": "12487907002",
+     "origin_product_id": "12431422104",
+     "name": "[헤지스골프]여성 네이비 긴소매 풀집 원피스형 점퍼 HWJU3D624N3"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4969015182",
+    "score": 5,
+    "text": "편하게 잘 입을듯 사이즈 색상 다 화면과 같아요",
+    "created_at": "2026-05-05T10:25:06Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "선택하기: Dark Navy/090",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "js****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260505_50/1777976696086EEzY3_JPEG/1000021829.jpg",
+      "width": 3024,
+      "height": 4032
+     }
+    ],
+    "product": {
+     "id": "12487907002",
+     "origin_product_id": "12431422104",
+     "name": "[헤지스골프]여성 네이비 긴소매 풀집 원피스형 점퍼 HWJU3D624N3"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 1,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20251001_148/1759297509640ecWa8_JPEG/93430309792083563_1453649919.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20251001_148/1759297509640ecWa8_JPEG/93430309792083563_1453649919.jpg",
+    "source_sha256": "cf9af0d0ce93aa5d4f229ed2f44e13282bafae7d40421b7ab36945fd49aed245",
+    "source_bytes": 13654,
+    "source_format": "JPEG",
+    "source_width": 600,
+    "source_height": 600,
+    "first_frame_of": null,
+    "file": "images/12487907002/fairwardgolf-12487907002-001-40b968ef76fad19d.webp",
+    "sha256": "40b968ef76fad19da9b4f16e41d3e9dee3f0ba4492155da9b3e89a54d76452f6",
+    "bytes": 7226,
+    "width": 600,
+    "height": 600,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 1
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [
+   {
+    "review_id": "5023581398",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260717_146/1784285934804k7VTf_JPEG/1000022684.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260717_146/1784285934804k7VTf_JPEG/1000022684.jpg",
+    "source_sha256": "1fb1baab5e17567becac89ac7c7e92a784e5d1cf0b6d90977c4b80413d67201c",
+    "source_bytes": 3253653,
+    "source_format": "JPEG",
+    "source_width": 3024,
+    "source_height": 4032,
+    "first_frame_of": null,
+    "file": "images/12487907002/fairwardgolf-review-image-6c16bfa192e58826.webp",
+    "sha256": "6c16bfa192e5882639c0a4effd5f70910b0eba4105c48c61556c799b3de55b3b",
+    "bytes": 46490,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4969015182",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260505_50/1777976696086EEzY3_JPEG/1000021829.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260505_50/1777976696086EEzY3_JPEG/1000021829.jpg",
+    "source_sha256": "2e391a953bb6884ae432c945220c374cf070f11b51d9e0bb5d4cb280205c3bc6",
+    "source_bytes": 3681739,
+    "source_format": "JPEG",
+    "source_width": 3024,
+    "source_height": 4032,
+    "first_frame_of": null,
+    "file": "images/12487907002/fairwardgolf-review-image-d4dd0fc464c0406a.webp",
+    "sha256": "d4dd0fc464c0406a90732cecb5ff9174df3f4f271390ab91c6f45ad1bfbd6c8f",
+    "bytes": 30688,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

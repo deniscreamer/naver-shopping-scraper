@@ -1,0 +1,819 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 273054,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211230_225/16408447999259vPp0_JPEG/%EA%B3%A8%ED%94%84%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4_(2).jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.912,
+       "text": "|다크네이비 / |블랙",
+       "y": 229
+      },
+      {
+       "conf": 0.988,
+       "text": "Dark Navy / Black",
+       "y": 287
+      },
+      {
+       "conf": 0.892,
+       "text": "Hlallo",
+       "y": 385
+      },
+      {
+       "conf": 0.996,
+       "text": "GOLF",
+       "y": 449
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 380751,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20211230_289/1640844828880Cqszz_JPEG/%EA%B3%A8%ED%94%84%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4_(1).jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "기모",
+       "y": 137
+      },
+      {
+       "conf": 0.506,
+       "text": "APZAA / HRAN / 안감",
+       "y": 163
+      },
+      {
+       "conf": 0.925,
+       "text": "|블랙 / |차콜 / |네이비",
+       "y": 229
+      },
+      {
+       "conf": 0.879,
+       "text": "Black / Chacole / Navy",
+       "y": 288
+      },
+      {
+       "conf": 0.999,
+       "text": "grey",
+       "y": 312
+      },
+      {
+       "conf": 0.875,
+       "text": "flall",
+       "y": 390
+      },
+      {
+       "conf": 0.986,
+       "text": "GOLF",
+       "y": 449
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 308507,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_141/1608220635659A0iM0_JPEG/%EA%B3%A8%ED%94%84%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A41.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 300954,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_242/1608220635822LxnOa_JPEG/%EA%B3%A8%ED%94%84%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A43.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.549,
+       "text": "H / llo",
+       "y": 391
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 348036,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_296/1608220634346m50rf_JPEG/%ED%95%A0%EB%A1%9C%EA%B3%A8%ED%94%842.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.676,
+       "text": "Hallo",
+       "y": 384
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 105259,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231025_117/1698231145316iICbS_JPEG/%EA%B3%A8%ED%94%84%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A422.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.982,
+       "text": "BEST 기모 치마레킹스",
+       "y": 659
+      },
+      {
+       "conf": 0.964,
+       "text": "+ 바로가기 클릭!",
+       "y": 740
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 452381,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201217_185/1608215909980qicCx_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___19.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.723,
+       "text": "Hallo",
+       "y": 385
+      },
+      {
+       "conf": 0.997,
+       "text": "GOLF",
+       "y": 452
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 446110,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201217_207/1608215909216x5jge_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___20.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.817,
+       "text": "Hallo",
+       "y": 383
+      },
+      {
+       "conf": 0.993,
+       "text": "GOLF",
+       "y": 450
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 454689,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_250/16082178537832HyhE_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___26.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.962,
+       "text": "Hallo",
+       "y": 383
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 456675,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_230/1608217855289Rry05_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___25.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.897,
+       "text": "Hallo",
+       "y": 380
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 469045,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_33/1608217918370JhE2s_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___10.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.917,
+       "text": "Halld",
+       "y": 383
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 459177,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_184/1608218014808xaeht_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___22.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.674,
+       "text": "Hallo",
+       "y": 382
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 446110,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_124/1608217993272036IQ_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___20.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.817,
+       "text": "Hallo",
+       "y": 383
+      },
+      {
+       "conf": 0.993,
+       "text": "GOLF",
+       "y": 450
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 451923,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_43/1608217991877e2qKN_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___23.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.798,
+       "text": "Hallo",
+       "y": 385
+      },
+      {
+       "conf": 0.993,
+       "text": "GOLF",
+       "y": 450
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 452948,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_103/16082180624787e2v7_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___8.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.934,
+       "text": "Hallo",
+       "y": 386
+      },
+      {
+       "conf": 0.997,
+       "text": "GOLF",
+       "y": 451
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 451496,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_169/1608218066350wVf2o_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___9.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.813,
+       "text": "Iallo",
+       "y": 383
+      },
+      {
+       "conf": 0.998,
+       "text": "GOLF",
+       "y": 451
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 455486,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_233/1608218062442yimxA_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___2.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.616,
+       "text": "allo",
+       "y": 386
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 461806,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_146/1608218061702Ez8FE_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___3.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.889,
+       "text": "Hallo",
+       "y": 387
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 458185,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_28/1608218064118Lwifi_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___4.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.77,
+       "text": "Hallo",
+       "y": 381
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 453458,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_46/1608218062889lyGkc_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___5.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.872,
+       "text": "Hallo",
+       "y": 385
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 452119,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_149/1608218067699StoAV_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___11.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.946,
+       "text": "Hallo",
+       "y": 385
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 448324,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_94/16082180626579PT5W_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___1.JPG",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.865,
+       "text": "Hallo",
+       "y": 380
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 113433,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231025_286/1698231512419gj3GE_JPEG/%EA%B3%A8%ED%94%84_%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A433.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "모델166/52kg",
+       "y": 50
+      },
+      {
+       "conf": 0.983,
+       "text": "평소사이즈:26-27inch",
+       "y": 148
+      },
+      {
+       "conf": 0.953,
+       "text": "상의: 55 size",
+       "y": 186
+      },
+      {
+       "conf": 0.983,
+       "text": "착용사이즈 free",
+       "y": 275
+      },
+      {
+       "conf": 0.979,
+       "text": "25-27인치 free",
+       "y": 326
+      },
+      {
+       "conf": 0.915,
+       "text": "28-30인치 XL",
+       "y": 356
+      },
+      {
+       "conf": 0.927,
+       "text": "30-31인치2XL",
+       "y": 383
+      },
+      {
+       "conf": 0.994,
+       "text": "추천드립니다",
+       "y": 409
+      },
+      {
+       "conf": 0.895,
+       "text": "*체형에 따라 맞는 사이즈가",
+       "y": 465
+      },
+      {
+       "conf": 0.967,
+       "text": "달라질수있으니,",
+       "y": 495
+      },
+      {
+       "conf": 0.933,
+       "text": "상세사이즈 확인 부탁드립니다.",
+       "y": 524
+      },
+      {
+       "conf": 0.879,
+       "text": "치마레깅스 / 허리(밴딩) / 힙(레깅스) / 밑위 / 총장",
+       "y": 633
+      },
+      {
+       "conf": 0.999,
+       "text": "Free / 31~ / 34 / 29 / 90",
+       "y": 693
+      },
+      {
+       "conf": 0.927,
+       "text": "XL / 34~ / 38 / 30 / 91",
+       "y": 741
+      },
+      {
+       "conf": 0.985,
+       "text": "2XL / 36~ / 42 / 31 / 92",
+       "y": 784
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 469167,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20201218_294/1608220686606W42kl_JPEG/%ED%95%A0%EB%A1%9C%EA%B3%A8%ED%94%843.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.986,
+       "text": "Strel",
+       "y": 104
+      },
+      {
+       "conf": 0.981,
+       "text": "Natural & Quick Dry",
+       "y": 184
+      },
+      {
+       "conf": 0.93,
+       "text": "천연감축의 부드러움",
+       "y": 234
+      },
+      {
+       "conf": 0.879,
+       "text": "Stretching / 우수한 흡한속건",
+       "y": 248
+      },
+      {
+       "conf": 0.871,
+       "text": "부드럽고편안한 터치",
+       "y": 260
+      },
+      {
+       "conf": 0.902,
+       "text": "Beyond / 우수한형태안정성",
+       "y": 262
+      },
+      {
+       "conf": 0.949,
+       "text": "HYOSUNG / Natural touch",
+       "y": 312
+      },
+      {
+       "conf": 0.967,
+       "text": "Quick drying property",
+       "y": 325
+      },
+      {
+       "conf": 0.954,
+       "text": "Soft & comfortable touch",
+       "y": 337
+      },
+      {
+       "conf": 0.894,
+       "text": "Shape stability",
+       "y": 352
+      },
+      {
+       "conf": 0.991,
+       "text": "creora",
+       "y": 378
+      },
+      {
+       "conf": 0.937,
+       "text": "its in our every fiber",
+       "y": 411
+      },
+      {
+       "conf": 0.913,
+       "text": "HYOSUNG / HYOSUNG",
+       "y": 488
+      },
+      {
+       "conf": 0.996,
+       "text": "Hallo",
+       "y": 751
+      },
+      {
+       "conf": 0.993,
+       "text": "GOLF",
+       "y": 813
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 995833,
+   "height": 1280,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20210128_117/1611825023010Jni2d_JPEG/%ED%95%A0%EB%A1%9C%EA%B3%A0%EA%B0%9D%EC%84%BC%ED%84%B0.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "-상담안내-",
+       "y": 100
+      },
+      {
+       "conf": 0.956,
+       "text": "사이즈 및 배송 문의는 NAVER'톡톡문의'와 고객 센터를 이용해 주세요.",
+       "y": 214
+      },
+      {
+       "conf": 0.996,
+       "text": "친절하고 빠르게 해결해 드리겠습니다.",
+       "y": 266
+      },
+      {
+       "conf": 0.966,
+       "text": "교환/반품이 어려운 경우",
+       "y": 417
+      },
+      {
+       "conf": 0.969,
+       "text": "·악세사리와 이너웨어 및 아이보리 화이트컬러 계열은 교환 및 반품이 어려우니",
+       "y": 516
+      },
+      {
+       "conf": 0.95,
+       "text": "신중한 구매 부탁드립니다.",
+       "y": 567
+      },
+      {
+       "conf": 0.977,
+       "text": "-상품 수령 후 착용 과정 중 생기는 스크래치,오염,올 풀림,늘어짐 등",
+       "y": 612
+      },
+      {
+       "conf": 0.986,
+       "text": "상품가치가 손상된 경우 (비누 향,착용 흔적,늘어짐,택제거)",
+       "y": 659
+      },
+      {
+       "conf": 0.99,
+       "text": "교환&반품 신청",
+       "y": 801
+      },
+      {
+       "conf": 0.996,
+       "text": "-불량 시에는 같은상품으로 교환 가능하고 2일 내로 사진과 함께 톡톡 문의주세요.",
+       "y": 898
+      },
+      {
+       "conf": 0.966,
+       "text": "-단순 변심의 교환 반품은 7일 내로 반송되어야 합니다.",
+       "y": 946
+      },
+      {
+       "conf": 0.984,
+       "text": "-빠르고 안전한 배송을 위해 로젠 택배로 보내드립니다.",
+       "y": 991
+      },
+      {
+       "conf": 0.978,
+       "text": "고객센터: 070-8064-2127",
+       "y": 1119
+      }
+     ],
+     "y0": 0,
+     "y1": 1280
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  }
+ ],
+ "key": "fairwardgolf:naver:100818498:5282622633",
+ "links_sha256": "9ba88d695a6ac687dbcffd6b18be0a4f9a192f79a3f557bf15709c19245bb6ed",
+ "product_id": "5282622633",
+ "seconds": 28.4,
+ "skipped": []
+}

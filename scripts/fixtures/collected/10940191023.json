@@ -1,0 +1,1712 @@
+{
+ "key": "fairwardgolf:naver:101325141:10940191023",
+ "listing": {
+  "product_id": "10940191023",
+  "nv_mid": "88484697058",
+  "link": "https://smartstore.naver.com/compuzonemall/products/10940191023",
+  "name": "[듀빅] 라인배색 포인트 니트 여성 가디건",
+  "store": {
+   "name": "컴퓨존mall",
+   "slug": "compuzonemall",
+   "link": "https://smartstore.naver.com/compuzonemall",
+   "channel_no": "101325141",
+   "grade": "PREMIUM",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 105000,
+   "discounted_price": 105000,
+   "discount_ratio": 0,
+   "currency": "KRW"
+  },
+  "category_id": "50002797",
+  "reviews": {
+   "count": 1,
+   "average_score": 5
+  },
+  "stock_quantity": 10989,
+  "image": "https://shopping-phinf.pstatic.net/main_8848469/88484697058.jpg",
+  "is_ad": false,
+  "query": "여성 골프 니트 가디건",
+  "batch": 2,
+  "seen_at": "2026-11-20T09:16:36+00:00",
+  "key": "fairwardgolf:naver:101325141:10940191023"
+ },
+ "details": {
+  "id": "10940191023",
+  "origin_product_id": "10888386705",
+  "name": "[듀빅] 라인배색 포인트 니트 여성 가디건",
+  "link": "https://smartstore.naver.com/compuzonemall/products/10940191023",
+  "catalog_id": "88484697058",
+  "catalog_link": "https://search.shopping.naver.com/catalog/88484697058",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 105000,
+   "discounted_price": 105000,
+   "discount_ratio": 0,
+   "seller_discount": 0,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 1050,
+    "text_review": 0,
+    "photo_video_review": 0,
+    "after_use_text_review": 0,
+    "after_use_photo_video_review": 0,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 10989,
+  "has_options": true,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20240930_269/1727672581305SLiRu_JPEG/7247945171535535_1958974437.jpg"
+  ],
+  "category": {
+   "id": "50002797",
+   "name": "니트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프의류",
+    "니트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001104",
+    "50002797"
+   ]
+  },
+  "brand": null,
+  "brand_id": null,
+  "manufacturer": "듀빅",
+  "model_name": null,
+  "tags": null,
+  "page_title": null,
+  "reviews": {
+   "count": 1,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 1
+   },
+   "text_count": 1,
+   "photo_count": 0,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": null,
+   "evaluations": [
+    {
+     "question": "사이즈는 어떤가요?",
+     "answers": [
+      {
+       "name": "많이 작아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "약간 작아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "잘 맞아요",
+       "count": 1,
+       "percent": 100
+      },
+      {
+       "name": "약간 커요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "많이 커요",
+       "count": 0,
+       "percent": 0
+      }
+     ]
+    },
+    {
+     "question": "핏은 어떤가요?",
+     "answers": [
+      {
+       "name": "슬림해요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "적당해요",
+       "count": 1,
+       "percent": 100
+      },
+      {
+       "name": "오버핏이에요",
+       "count": 0,
+       "percent": 0
+      }
+     ]
+    },
+    {
+     "question": "착용감은 어떤가요?",
+     "answers": [
+      {
+       "name": "불편해요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "편해요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "아주 편해요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": null,
+   "company": "롯데택배",
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": null,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": true,
+  "is_today_delivery": false,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": "<center><table width=\"860\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"\"><tbody><tr><td align=\"center\" valign=\"top\"><div align=\"center\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shsports82.speedgabia.com/notice/top/parcelservice.jpg\"  /></div><div align=\"center\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shsports82.speedgabia.com/wear/2024/duviv/y_fw_40_de3wsc276.jpg\"  /></div><div align=\"center\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shsports82.speedgabia.com/notice/shsports_delivery.jpg\"  /></div><table width=\"680\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"> <tbody><tr> <td align=\"center\"> </td> </tr> </tbody></table> </td></tr></tbody></table><table width=\"860\" height=\"580\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"\"><tbody><tr><td align=\"center\" valign=\"top\"><!-- Not Allowed Attribute Filtered ( border=\"0\") --><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://image2.compuzone.co.kr/mall/info/img/deliveryN_intro.jpg\"  /></td></tr></tbody></table><table width=\"860\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"\"><tbody><tr><td align=\"center\" valign=\"top\"><!-- Not Allowed Attribute Filtered ( border=\"0\") --><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://image2.compuzone.co.kr/mall/info/img/deliveryN_kind.jpg\"  /></td></tr></tbody></table><table width=\"860\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"\"><tbody><tr><td align=\"center\" valign=\"top\"><table width=\"860\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"\"><tbody><tr><td align=\"center\" valign=\"top\"><!-- Not Allowed Attribute Filtered ( border=\"0\") --><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://image2.compuzone.co.kr/mall/info/img/deliveryN_info.jpg\"  /></td></tr></tbody></table></td></tr></tbody></table><table width=\"860\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"\"><tbody><tr><td align=\"center\" valign=\"top\"><table width=\"860\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"\"><tbody><tr><td align=\"center\" valign=\"top\"><!-- Not Allowed Attribute Filtered ( border=\"0\") --><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://image2.compuzone.co.kr/mall/info/img/deliveryN_return.jpg\"  /></td></tr></tbody></table></td></tr></tbody></table><table width=\"860\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"\"><tbody><tr><td align=\"center\" valign=\"top\"><!-- Not Allowed Attribute Filtered ( border=\"0\") --><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://image2.compuzone.co.kr/mall/info/img/Ncheck_delivery.jpg\"  /><br /></td></tr></tbody></table></center>",
+   "text": null,
+   "editor_type": "NONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20260415_107/17762150343354FPDn_JPEG/p-10888386705-s-2-A-0.jpg",
+    "https://shop-phinf.pstatic.net/20260415_294/1776215034333qv5L2_JPEG/p-10888386705-s-2-A-1.jpg",
+    "https://shop-phinf.pstatic.net/20260415_121/1776215034332JPjyM_JPEG/p-10888386705-s-2-A-2.jpg",
+    "https://shop-phinf.pstatic.net/20260415_181/1776215034341kLB1n_JPEG/p-10888386705-s-2-A-3.jpg",
+    "https://shop-phinf.pstatic.net/20260415_265/1776215034332NUjIo_JPEG/p-10888386705-s-2-A-4.jpg",
+    "https://shop-phinf.pstatic.net/20260415_70/1776215034333l9O1p_JPEG/p-10888386705-s-2-A-5.jpg",
+    "https://shop-phinf.pstatic.net/20260415_64/177621503433266TU5_JPEG/p-10888386705-s-2-A-6.jpg",
+    "https://shop-phinf.pstatic.net/20260415_157/1776215034333pACFu_JPEG/p-10888386705-s-2-A-7.jpg",
+    "https://shop-phinf.pstatic.net/20260415_193/1776215034331m36Vv_JPEG/p-10888386705-s-2-A-8.jpg",
+    "https://shop-phinf.pstatic.net/20260415_283/1776215034372v2h9x_JPEG/p-10888386705-s-2-A-9.jpg",
+    "https://shop-phinf.pstatic.net/20260415_142/1776215034421CubhC_JPEG/p-10888386705-s-2-A-10.jpg",
+    "https://shop-phinf.pstatic.net/20260415_168/1776215034417oxiDn_JPEG/p-10888386705-s-2-A-11.jpg",
+    "https://shop-phinf.pstatic.net/20260415_221/1776215034621VVNbB_JPEG/p-10888386705-s-2-A-12.jpg",
+    "https://shop-phinf.pstatic.net/20260415_68/1776215034642AfJfN_JPEG/p-10888386705-s-2-A-13.jpg",
+    "https://shop-phinf.pstatic.net/20260415_186/1776215034626oxlmP_JPEG/p-10888386705-s-2-A-14.jpg",
+    "https://shop-phinf.pstatic.net/20260415_134/1776215034670F33QJ_JPEG/p-10888386705-s-2-A-15.jpg",
+    "https://shop-phinf.pstatic.net/20260415_175/1776215034655gmQo1_JPEG/p-10888386705-s-2-A-16.jpg",
+    "https://shop-phinf.pstatic.net/20260415_270/1776215034670woRjE_JPEG/p-10888386705-s-2-A-17.jpg",
+    "https://shop-phinf.pstatic.net/20260415_31/1776215034702JIeSK_JPEG/p-10888386705-s-2-A-18.jpg",
+    "https://shop-phinf.pstatic.net/20260415_52/1776215034712KOyew_JPEG/p-10888386705-s-2-A-19.jpg",
+    "https://shop-phinf.pstatic.net/20260415_80/1776215034426YLlJD_JPEG/p-10888386705-s-2-A-20.jpg",
+    "https://shop-phinf.pstatic.net/20260415_50/1776215034420v9HC0_JPEG/p-10888386705-s-2-A-21.jpg",
+    "https://shop-phinf.pstatic.net/20260415_36/1776215034427cRQIM_JPEG/p-10888386705-s-2-A-22.jpg",
+    "https://shop-phinf.pstatic.net/20260415_269/17762150344296hCyt_JPEG/p-10888386705-s-2-A-23.jpg",
+    "https://shop-phinf.pstatic.net/20260415_156/1776215034438XthLK_JPEG/p-10888386705-s-2-A-24.jpg",
+    "https://shop-phinf.pstatic.net/20260415_26/1776215034433BuzbS_JPEG/p-10888386705-s-2-A-25.jpg",
+    "https://shop-phinf.pstatic.net/20260415_227/17762150344577KkSx_JPEG/p-10888386705-s-2-A-26.jpg",
+    "https://shop-phinf.pstatic.net/20260415_210/1776215034499IAHe4_JPEG/p-10888386705-s-2-A-27.jpg",
+    "https://shop-phinf.pstatic.net/20260415_157/1776215034462Q9u6q_JPEG/p-10888386705-s-2-A-28.jpg",
+    "https://shop-phinf.pstatic.net/20260415_247/17762150345095GWaf_JPEG/p-10888386705-s-2-A-29.jpg",
+    "https://shop-phinf.pstatic.net/20260415_259/1776215034510BFlpf_JPEG/p-10888386705-s-2-A-30.jpg",
+    "https://shop-phinf.pstatic.net/20260415_233/1776215034522sHQD9_JPEG/p-10888386705-s-2-A-31.jpg",
+    "https://shop-phinf.pstatic.net/20260415_215/1776215034513xJHqP_JPEG/p-10888386705-s-2-A-32.jpg",
+    "https://shop-phinf.pstatic.net/20260415_118/1776215034525e6RIL_JPEG/p-10888386705-s-2-A-33.jpg",
+    "https://shop-phinf.pstatic.net/20260415_234/1776215034559Nrmo4_JPEG/p-10888386705-s-2-A-34.jpg",
+    "https://shop-phinf.pstatic.net/20260415_33/177621503453287szJ_JPEG/p-10888386705-s-2-A-35.jpg",
+    "https://shop-phinf.pstatic.net/20260415_180/1776215034588wAG3a_JPEG/p-10888386705-s-2-A-36.jpg",
+    "https://shop-phinf.pstatic.net/20260415_68/1776215034537fFkD7_JPEG/p-10888386705-s-2-A-37.jpg",
+    "https://shop-phinf.pstatic.net/20260415_102/1776215034595qB3p6_JPEG/p-10888386705-s-2-A-38.jpg",
+    "https://shop-phinf.pstatic.net/20260415_267/1776215034608da8es_JPEG/p-10888386705-s-2-A-39.jpg",
+    "https://shop-phinf.pstatic.net/20260415_120/1776215034612vFOc8_JPEG/p-10888386705-s-2-A-40.jpg",
+    "https://shop-phinf.pstatic.net/20260415_286/1776215034727PabJw_JPEG/p-10888386705-s-2-A-41.jpg",
+    "https://shop-phinf.pstatic.net/20260415_112/1776215034727kTgcr_JPEG/p-10888386705-s-2-A-42.jpg",
+    "https://shop-phinf.pstatic.net/20260415_77/1776215034729m2jbd_JPEG/p-10888386705-s-2-A-43.jpg",
+    "https://shop-phinf.pstatic.net/20260415_263/17762150347325zECh_JPEG/p-10888386705-s-2-A-44.jpg"
+   ]
+  },
+  "notice": {
+   "type": "ETC",
+   "items": [
+    {
+     "label": "품명 / 모델명",
+     "value": "[듀빅] 라인배색 포인트 니트 여성 가디건 / [듀빅] 라인배색 포인트 니트 여성 가디건",
+     "is_see_description": false
+    },
+    {
+     "label": "법에 의한 인증, 허가 등을 받았음을 확인할 수 있는 경우 그에 대한 사항",
+     "value": "제품 상세정보에서 확인가능",
+     "is_see_description": false
+    },
+    {
+     "label": "제조자(사)",
+     "value": "제품 상세정보에서 확인가능",
+     "is_see_description": false
+    },
+    {
+     "label": "제조국",
+     "value": "상세설명참조",
+     "is_see_description": true
+    },
+    {
+     "label": "A/S 책임자",
+     "value": "제품 상세정보에서 확인가능",
+     "is_see_description": false
+    },
+    {
+     "label": "A/S 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "상품상세 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 2500원 (최초 배송비 무료인 경우 5000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "상품상세 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "상품상세 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "상품상세 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "상품상세 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": {
+    "value": "듀빅",
+    "source": "search_info.manufacturerName"
+   },
+   "manufacturer": {
+    "value": "듀빅",
+    "source": "search_info.manufacturerName"
+   },
+   "model_name": null,
+   "origin": null
+  },
+  "store": {
+   "id": "101325141",
+   "uid": "2sWE0KAsxi4lc9mCl74ZL",
+   "name": "컴퓨존mall",
+   "slug": "compuzonemall",
+   "link": "https://smartstore.naver.com/compuzonemall",
+   "type": "smart_store",
+   "grade": "FIRST",
+   "sale_count": 3165,
+   "merchant_id": "511254300",
+   "business": {
+    "legal_name": "(주)컴퓨존",
+    "representative": "노인호",
+    "type": "CORPORATION",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "10940191023",
+  "name": "[듀빅] 라인배색 포인트 니트 여성 가디건",
+  "link": "https://smartstore.naver.com/compuzonemall/products/10940191023",
+  "query": "여성 골프 니트 가디건",
+  "category": {
+   "id": "50002797",
+   "name": "니트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프의류",
+    "니트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001104",
+    "50002797"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "10940191023"
+   },
+   {
+    "label": "제조사",
+    "value": "듀빅"
+   },
+   {
+    "label": "원산지",
+    "value": "상세설명참조"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": {
+    "value": "듀빅",
+    "source": "specs:제조사"
+   },
+   "manufacturer": {
+    "value": "듀빅",
+    "source": "specs:제조사"
+   },
+   "model_name": null,
+   "origin": null
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 10989,
+   "option_groups": [
+    {
+     "id": "11962912832",
+     "name": "선택사항",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "60691530310",
+     "name": "오프화이트 85 XS",
+     "options": [
+      "오프화이트 85 XS"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-11-10"
+    },
+    {
+     "id": "60691530312",
+     "name": "오프화이트 90 S",
+     "options": [
+      "오프화이트 90 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-11-10"
+    },
+    {
+     "id": "60691530313",
+     "name": "오프화이트 95 M",
+     "options": [
+      "오프화이트 95 M"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-11-10"
+    },
+    {
+     "id": "60691530314",
+     "name": "오프화이트 100 L",
+     "options": [
+      "오프화이트 100 L"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-11-10"
+    },
+    {
+     "id": "60691530315",
+     "name": "티블루 85 XS",
+     "options": [
+      "티블루 85 XS"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-11-10"
+    },
+    {
+     "id": "60691530316",
+     "name": "티블루 90 S",
+     "options": [
+      "티블루 90 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-11-10"
+    },
+    {
+     "id": "60691530317",
+     "name": "티블루 95 M",
+     "options": [
+      "티블루 95 M"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-11-10"
+    },
+    {
+     "id": "60691530318",
+     "name": "티블루 100 L",
+     "options": [
+      "티블루 100 L"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-11-10"
+    },
+    {
+     "id": "60691530319",
+     "name": "블랙 85 XS",
+     "options": [
+      "블랙 85 XS"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-11-10"
+    },
+    {
+     "id": "60691530320",
+     "name": "블랙 90 S",
+     "options": [
+      "블랙 90 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-11-10"
+    },
+    {
+     "id": "60691530321",
+     "name": "블랙 95 M",
+     "options": [
+      "블랙 95 M"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 0,
+     "is_available": false,
+     "is_today_dispatch": null,
+     "registered_at": "2026-11-10"
+    },
+    {
+     "id": "60691530322",
+     "name": "블랙 100 L",
+     "options": [
+      "블랙 100 L"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-11-10"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": "제주,도서지역 추가 3,000원",
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": false,
+   "company": "롯데택배",
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": null,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 1.4341342,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 94,
+    "ship_date_text": null
+   }
+  },
+  "catalog": {
+   "id": "50539972330",
+   "nsin": null
+  },
+  "measures": {
+   "is_set": false,
+   "weights": [],
+   "dimensions": [],
+   "references": [],
+   "review": []
+  },
+  "read_at": "2026-11-20T10:44:50Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 105000,
+  "variants": [
+   {
+    "id": "60691530310",
+    "name": "오프화이트 85 XS",
+    "options": [
+     "오프화이트 85 XS"
+    ],
+    "extra_price": 0,
+    "price": 105000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "60691530312",
+    "name": "오프화이트 90 S",
+    "options": [
+     "오프화이트 90 S"
+    ],
+    "extra_price": 0,
+    "price": 105000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "60691530313",
+    "name": "오프화이트 95 M",
+    "options": [
+     "오프화이트 95 M"
+    ],
+    "extra_price": 0,
+    "price": 105000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "60691530314",
+    "name": "오프화이트 100 L",
+    "options": [
+     "오프화이트 100 L"
+    ],
+    "extra_price": 0,
+    "price": 105000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "60691530315",
+    "name": "티블루 85 XS",
+    "options": [
+     "티블루 85 XS"
+    ],
+    "extra_price": 0,
+    "price": 105000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "60691530316",
+    "name": "티블루 90 S",
+    "options": [
+     "티블루 90 S"
+    ],
+    "extra_price": 0,
+    "price": 105000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "60691530317",
+    "name": "티블루 95 M",
+    "options": [
+     "티블루 95 M"
+    ],
+    "extra_price": 0,
+    "price": 105000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "60691530318",
+    "name": "티블루 100 L",
+    "options": [
+     "티블루 100 L"
+    ],
+    "extra_price": 0,
+    "price": 105000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "60691530319",
+    "name": "블랙 85 XS",
+    "options": [
+     "블랙 85 XS"
+    ],
+    "extra_price": 0,
+    "price": 105000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "60691530320",
+    "name": "블랙 90 S",
+    "options": [
+     "블랙 90 S"
+    ],
+    "extra_price": 0,
+    "price": 105000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "60691530321",
+    "name": "블랙 95 M",
+    "options": [
+     "블랙 95 M"
+    ],
+    "extra_price": 0,
+    "price": 105000,
+    "price_in_name": null,
+    "stock_quantity": 0,
+    "is_available": false
+   },
+   {
+    "id": "60691530322",
+    "name": "블랙 100 L",
+    "options": [
+     "블랙 100 L"
+    ],
+    "extra_price": 0,
+    "price": 105000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   }
+  ],
+  "available": 11,
+  "sold_out": 1,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": "60691530310",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 400,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 400,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "60691530312",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 400,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 400,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "60691530313",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 400,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 400,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "60691530314",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 400,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 400,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "60691530315",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 400,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 400,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "60691530316",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 400,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 400,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "60691530317",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 400,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 400,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "60691530318",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 400,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 400,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "60691530319",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 400,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 400,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "60691530320",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 400,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 400,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "60691530321",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 400,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 400,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "60691530322",
+   "fields": {
+    "product_weight_g": {
+     "low": 250,
+     "central": 400,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 400,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 12,
+     "approved_by": "owner",
+     "approved_at": "2026-11-19"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "10940191023",
+   "name": "[듀빅] 라인배색 포인트 니트 여성 가디건",
+   "link": "https://smartstore.naver.com/compuzonemall/products/10940191023"
+  },
+  "summary": {
+   "count": 1,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 1
+   },
+   "text_count": 1,
+   "photo_count": 0,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": null,
+   "evaluations": [
+    {
+     "question": "사이즈는 어떤가요?",
+     "answers": [
+      {
+       "name": "많이 작아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "약간 작아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "잘 맞아요",
+       "count": 1,
+       "percent": 100
+      },
+      {
+       "name": "약간 커요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "많이 커요",
+       "count": 0,
+       "percent": 0
+      }
+     ]
+    },
+    {
+     "question": "핏은 어떤가요?",
+     "answers": [
+      {
+       "name": "슬림해요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "적당해요",
+       "count": 1,
+       "percent": 100
+      },
+      {
+       "name": "오버핏이에요",
+       "count": 0,
+       "percent": 0
+      }
+     ]
+    },
+    {
+     "question": "착용감은 어떤가요?",
+     "answers": [
+      {
+       "name": "불편해요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "편해요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "아주 편해요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "mode": "small_source",
+  "count": 1,
+  "scanned": 1,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 1,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "4594504236",
+    "score": 5,
+    "text": "디자인도 이쁘고,톡톡하니 따뜻해요.\n이정도 이가격에 이런 퀄리티 대만족입니다.",
+    "created_at": "2024-11-08T01:22:35Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "선택사항: 블랙 90 S",
+    "is_repurchase": true,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "phss*****",
+     "profile_image": "https://phinf.pstatic.net/contact/20171216_14/1513428060954aqGNY_PNG/avatar_profile.png"
+    },
+    "attachments": [],
+    "product": {
+     "id": "10940191023",
+     "origin_product_id": "10888386705",
+     "name": "[듀빅] 라인배색 포인트 니트 여성 가디건"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 1,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20240930_269/1727672581305SLiRu_JPEG/7247945171535535_1958974437.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20240930_269/1727672581305SLiRu_JPEG/7247945171535535_1958974437.jpg",
+    "source_sha256": "18cb2519c77555af7355864ff8bd871af5ab21ef3cf81f8bbd56943070adbfba",
+    "source_bytes": 57027,
+    "source_format": "JPEG",
+    "source_width": 600,
+    "source_height": 600,
+    "first_frame_of": null,
+    "file": "images/10940191023/fairwardgolf-10940191023-001-51373e1000ef54be.webp",
+    "sha256": "51373e1000ef54bed9989a97957b29c5eb9ca35f6895595e8234a7513fac15d2",
+    "bytes": 22264,
+    "width": 600,
+    "height": 600,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 1
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [
+   {
+    "review_id": "4594504236",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20171216_14/1513428060954aqGNY_PNG/avatar_profile.png",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20171216_14/1513428060954aqGNY_PNG/avatar_profile.png",
+    "source_sha256": "572951aee3ac4059b6fb2fb7610eccc39978358b00972b71164470f2aaae68a8",
+    "source_bytes": 45957,
+    "source_format": "PNG",
+    "source_width": 300,
+    "source_height": 300,
+    "first_frame_of": null,
+    "file": "images/10940191023/fairwardgolf-review-avatar-347aaabdc72be7ed.webp",
+    "sha256": "347aaabdc72be7ed50479ff2aa8d6a8be308c56c176d867a0c3c90dd9e615cbd",
+    "bytes": 11938,
+    "width": 300,
+    "height": 300,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

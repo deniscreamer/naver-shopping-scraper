@@ -1,0 +1,977 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "error": "HTTP 403 on https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/ec9ea283e276d9d485b451b9cfb914b3.jpg",
+   "host": "seller",
+   "link": "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/ec9ea283e276d9d485b451b9cfb914b3.jpg",
+   "status": "refused"
+  },
+  {
+   "error": "HTTP 403 on https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/12a6280b30757509c105a649b0ffd125.jpg",
+   "host": "seller",
+   "link": "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/12a6280b30757509c105a649b0ffd125.jpg",
+   "status": "refused"
+  },
+  {
+   "error": "HTTP 403 on https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/4d291fb6548930abab8a59567c736d84.jpg",
+   "host": "seller",
+   "link": "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/4d291fb6548930abab8a59567c736d84.jpg",
+   "status": "refused"
+  },
+  {
+   "error": "HTTP 403 on https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/9bf6e09cd49981caf8d5ece275c4975c.jpg",
+   "host": "seller",
+   "link": "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/9bf6e09cd49981caf8d5ece275c4975c.jpg",
+   "status": "refused"
+  },
+  {
+   "error": "HTTP 403 on https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/648301f9158c7df3209985ea418212a7.jpg",
+   "host": "seller",
+   "link": "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/648301f9158c7df3209985ea418212a7.jpg",
+   "status": "refused"
+  },
+  {
+   "error": "HTTP 403 on https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/3f5f1626177ae1a30afd6176b1793cbd.jpg",
+   "host": "seller",
+   "link": "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/3f5f1626177ae1a30afd6176b1793cbd.jpg",
+   "status": "refused"
+  },
+  {
+   "error": "HTTP 403 on https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/426e16546a88ff63c2fbb88bdaacb81c.jpg",
+   "host": "seller",
+   "link": "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/426e16546a88ff63c2fbb88bdaacb81c.jpg",
+   "status": "refused"
+  },
+  {
+   "error": "HTTP 403 on https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/c966a2e976391fc6e264a81b4ff65176.jpg",
+   "host": "seller",
+   "link": "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/c966a2e976391fc6e264a81b4ff65176.jpg",
+   "status": "refused"
+  },
+  {
+   "bytes": 143073,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_231/1696403889476Je98H_JPEG/KakaoTalk_20231003_102838461_21.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 128462,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_36/16964039704173x2vp_JPEG/KakaoTalk_20231003_102838461_17.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 131097,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_20/1696403970420iKmtk_JPEG/KakaoTalk_20231003_102838461_18.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 143073,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_108/16964039704318t1Yq_JPEG/KakaoTalk_20231003_102838461_21.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 133039,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_257/1696403970465Pin2s_JPEG/KakaoTalk_20231003_102838461_22.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 129508,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_190/1696403970428o9xgE_JPEG/KakaoTalk_20231003_102838461_23.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 160436,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_76/1696403970430gUdWQ_JPEG/KakaoTalk_20231003_102838461_26.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.592,
+       "text": "6",
+       "y": 597
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 152724,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_112/1696403970628QNH6b_JPEG/KakaoTalk_20231003_102910638_04.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 112965,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_253/1696403970645mUCtN_JPEG/KakaoTalk_20231003_102910638_07.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 120439,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_52/169640397064695OpU_JPEG/KakaoTalk_20231003_102910638_10.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 112638,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_145/1696403970677swlvO_JPEG/KakaoTalk_20231003_102910638_14.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 134258,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_114/16964039707113W7V0_JPEG/KakaoTalk_20231003_102910638_16.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 158885,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_222/1696404173408ujyg8_JPEG/KakaoTalk_20231003_102934455_09.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 160400,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_121/1696404173415Px0Ew_JPEG/KakaoTalk_20231003_102934455_13.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 148744,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_274/1696404173419K9iCY_JPEG/KakaoTalk_20231003_102934455_16.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 120777,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_33/1696404173416aIf1q_JPEG/KakaoTalk_20231003_102934455_17.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 121130,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_195/1696404173412RDB8c_JPEG/KakaoTalk_20231003_102934455_20.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 135968,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231004_157/1696404173412Uj0Tx_JPEG/KakaoTalk_20231003_102934455_22.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "error": "HTTP 403 on https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/1ece2c11bc4d33c504b4bf4813310c54.jpg",
+   "host": "seller",
+   "link": "https://hryss.openhost.cafe24.com/web/upload/NNEditor/20231005/1ece2c11bc4d33c504b4bf4813310c54.jpg",
+   "status": "refused"
+  },
+  {
+   "bytes": 387476,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231005_30/1696495065820GfTeM_JPEG/KakaoTalk_20231005_173415801_01.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 326326,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231005_11/16964950726455cQF9_JPEG/KakaoTalk_20231005_173415801_02.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.796,
+       "text": "_",
+       "y": 110
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 298326,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231005_223/1696495085404bziOC_JPEG/KakaoTalk_20231005_173415801_03.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 365944,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231005_198/1696495093079u5cYr_JPEG/KakaoTalk_20231005_173415801.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 417155,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251013_146/1760332479180JyuF4_JPEG/%EC%99%84%EB%A3%8C_%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC_1.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.916,
+       "text": "SIZE INFO / loloalloy",
+       "y": 17
+      },
+      {
+       "conf": 1.0,
+       "text": "어깨단면",
+       "y": 141
+      },
+      {
+       "conf": 0.997,
+       "text": "소매길이",
+       "y": 208
+      },
+      {
+       "conf": 0.999,
+       "text": "가슴단면",
+       "y": 245
+      },
+      {
+       "conf": 1.0,
+       "text": "총기장",
+       "y": 378
+      },
+      {
+       "conf": 0.96,
+       "text": "사이즈 (cm) / 어깨단면 / 가슴단면 / 팔길이 / 총기장",
+       "y": 542
+      },
+      {
+       "conf": 0.905,
+       "text": "M(55) / 32 / 40 / 58 / 56.5",
+       "y": 609
+      },
+      {
+       "conf": 0.985,
+       "text": "L(66) / 33 / 42 / 59 / 58",
+       "y": 682
+      },
+      {
+       "conf": 0.934,
+       "text": "XL(77) / 35 / 44 / 60 / 60",
+       "y": 752
+      },
+      {
+       "conf": 0.967,
+       "text": "MODEL SIZE",
+       "y": 854
+      },
+      {
+       "conf": 0.999,
+       "text": "키 / 몸무게 / 상의 / 하의",
+       "y": 906
+      },
+      {
+       "conf": 0.985,
+       "text": "162cm / 47Kg / 55/S착용 / 55/M착용",
+       "y": 967
+      },
+      {
+       "conf": 0.986,
+       "text": "-상세페이지의 기재된 사이즈 표기는 상품의 실제 측정 사이즈입니다.",
+       "y": 1034
+      },
+      {
+       "conf": 0.966,
+       "text": "-사이즈 단위는 cm이며,소재나 재는 방법과 위치에 따라1~3cm정도의 오차가 발생 할 수 있습니다.",
+       "y": 1059
+      },
+      {
+       "conf": 0.984,
+       "text": "-화면속 해상도는 모니터 설정 및 주변 환경에 따라 실제 상품과 약간의 색상 차이가 있을 수 있습니다.",
+       "y": 1088
+      },
+      {
+       "conf": 0.981,
+       "text": "-비침이 없는 옷이라도 밝은 색상의 경우에는 일부 비침이 있을 수 있습니다.",
+       "y": 1116
+      },
+      {
+       "conf": 0.961,
+       "text": "-같은 사이즈라도 체형 및 디자인에 따라 핏에 차이가 있을 수 있습니다.",
+       "y": 1145
+      }
+     ],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 188585,
+   "height": 729,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251013_190/1760332481363rY3gQ_JPEG/%EC%99%84%EB%A3%8C_%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC_2.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.975,
+       "text": "PRODUCT TIP",
+       "y": 63
+      },
+      {
+       "conf": 0.999,
+       "text": "두께감",
+       "y": 148
+      },
+      {
+       "conf": 0.88,
+       "text": "얇음 / 보통 / 두꺼움",
+       "y": 178
+      },
+      {
+       "conf": 1.0,
+       "text": "신축성",
+       "y": 228
+      },
+      {
+       "conf": 0.999,
+       "text": "없음 / 보통 / 좋음",
+       "y": 260
+      },
+      {
+       "conf": 0.989,
+       "text": "재질",
+       "y": 318
+      },
+      {
+       "conf": 1.0,
+       "text": "부드러움 / 보통 / 거침",
+       "y": 342
+      },
+      {
+       "conf": 0.999,
+       "text": "비침",
+       "y": 391
+      },
+      {
+       "conf": 0.998,
+       "text": "없음 / 밝은컬러만 / 있음",
+       "y": 416
+      },
+      {
+       "conf": 0.999,
+       "text": "피팅감",
+       "y": 469
+      },
+      {
+       "conf": 0.853,
+       "text": "슬림핏 / 레큘러핏 / 오버핏",
+       "y": 498
+      },
+      {
+       "conf": 1.0,
+       "text": "활용계절",
+       "y": 548
+      },
+      {
+       "conf": 0.964,
+       "text": "사계절 / 봄 / 여름 / 기을 / 겨울",
+       "y": 575
+      },
+      {
+       "conf": 0.977,
+       "text": "*착용감은 개인마다 약간의 차이가 있을 수 있습니다.",
+       "y": 632
+      }
+     ],
+     "y0": 0,
+     "y1": 729
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 471866,
+   "height": 1054,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251013_196/1760332483964iuct5_JPEG/%EC%99%84%EB%A3%8C_%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC_3.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.933,
+       "text": "WASHING GUIDE / loloalloy",
+       "y": 53
+      },
+      {
+       "conf": 0.979,
+       "text": "찬물 또는 미지근한물에 중성세제를 사용하여 손세탁 해주세요.",
+       "y": 169
+      },
+      {
+       "conf": 0.986,
+       "text": "물 온도가 높으면 기능성 제품의 변형 또는 물 빠짐이 발생할 수",
+       "y": 216
+      },
+      {
+       "conf": 0.997,
+       "text": "있습니다.",
+       "y": 258
+      },
+      {
+       "conf": 0.995,
+       "text": "염소 표백제 및 강력 효소 세제는 절대 사용 하지 마십시요.",
+       "y": 388
+      },
+      {
+       "conf": 0.989,
+       "text": "강하게 힘을 주어 비틀거나 쥐어짜시면 제품에 변형이 올 수 있어",
+       "y": 531
+      },
+      {
+       "conf": 0.98,
+       "text": "오래 사용하실 수 없습니다.",
+       "y": 576
+      },
+      {
+       "conf": 0.982,
+       "text": "다림질이나 건조기 사용 시 뜨거운 열에 의해 약간의 수축 현상이",
+       "y": 691
+      },
+      {
+       "conf": 0.989,
+       "text": "일어날 수 있으며,기능성 원단의 경우 손상을 입을 수 있습니다.",
+       "y": 738
+      },
+      {
+       "conf": 0.984,
+       "text": "자외선이 강한 곳에서 건조 시,제품의 변형이 발생 할 수 있습니다.",
+       "y": 865
+      },
+      {
+       "conf": 0.981,
+       "text": "그늘 건조를 권장드려요.",
+       "y": 909
+      }
+     ],
+     "y0": 0,
+     "y1": 1054
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 527241,
+   "height": 1054,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251013_108/1760332486529ywqdA_JPEG/%EC%99%84%EB%A3%8C_%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC_4.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.933,
+       "text": "WASHING NOTICE / loloalloy",
+       "y": 1
+      },
+      {
+       "conf": 0.977,
+       "text": "물에 장시간 담귀놓으면 물 빠짐이 발생 할 수 있습니다.",
+       "y": 141
+      },
+      {
+       "conf": 0.981,
+       "text": "가볍게 행군 후 바로 꺼내어 주세요.",
+       "y": 188
+      },
+      {
+       "conf": 0.989,
+       "text": "상품이 땀에 젖은 상태로 지속될 경우 이염 또는 변색 될 수 있습니",
+       "y": 280
+      },
+      {
+       "conf": 0.98,
+       "text": "다.착용 전 세탁 후 착용해주세요.",
+       "y": 327
+      },
+      {
+       "conf": 0.962,
+       "text": "ex)색이 있는 의류 위에 흰색조끼나 점퍼 착용시 장시간 땀에 젖은 상태로 활동 할 경우",
+       "y": 367
+      },
+      {
+       "conf": 0.983,
+       "text": "겨드랑이,등,옷과 맞닿는 부위에 이염발생 가능",
+       "y": 401
+      },
+      {
+       "conf": 0.845,
+       "text": "00000",
+       "y": 472
+      },
+      {
+       "conf": 0.997,
+       "text": "건조기 사용 시 옷이 줄어들고 원단이 손실되니,자연건조를",
+       "y": 484
+      },
+      {
+       "conf": 0.998,
+       "text": "추천드립니다.",
+       "y": 527
+      },
+      {
+       "conf": 0.995,
+       "text": "자외선 차단제,화장품 등 이물질이 묻은 경우 유분이 남지 않도록",
+       "y": 657
+      },
+      {
+       "conf": 0.949,
+       "text": "세탁 후 보관해 주세요.",
+       "y": 703
+      },
+      {
+       "conf": 0.964,
+       "text": "※ 세탁 및 착용 부주의에 의한 이염 및 웨손된 경우는 교환 및 반품의",
+       "y": 923
+      },
+      {
+       "conf": 0.972,
+       "text": "사유가 어려운 점 양해 말씀드립니다.",
+       "y": 972
+      }
+     ],
+     "y0": 0,
+     "y1": 1054
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 346281,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251013_182/1760332489097ljGee_JPEG/%EC%99%84%EB%A3%8C_%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC_5.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.991,
+       "text": "PRODUCT INFO",
+       "y": 41
+      },
+      {
+       "conf": 0.994,
+       "text": "제품명 / 여성 골프티셔츠 봄 가을 블랙핑크 카라 지퍼 스판 기능성 긴팔",
+       "y": 130
+      },
+      {
+       "conf": 0.986,
+       "text": "품 / 번 / T.34767",
+       "y": 197
+      },
+      {
+       "conf": 0.993,
+       "text": "색 / 상 / 블랙",
+       "y": 269
+      },
+      {
+       "conf": 0.969,
+       "text": "사이즈 / S(55), M(66), L(77)",
+       "y": 332
+      },
+      {
+       "conf": 0.994,
+       "text": "소 / 재 / 폴리에스터100%",
+       "y": 405
+      },
+      {
+       "conf": 0.94,
+       "text": "제조국 / MADE IN CHINA (중국 OEM)",
+       "y": 472
+      },
+      {
+       "conf": 0.969,
+       "text": "제조사 / 주식회사 로로얼로이",
+       "y": 536
+      },
+      {
+       "conf": 0.965,
+       "text": "제조연월 / 2023년 10월 (이후 상시제작)",
+       "y": 609
+      },
+      {
+       "conf": 0.978,
+       "text": "품질보증기준 / 소비자 피해보상 규정에 의거 관련법 및 기준에 따름",
+       "y": 674
+      },
+      {
+       "conf": 0.993,
+       "text": "A/S책임자 / 로로얼로이 0507-1469-1902",
+       "y": 739
+      },
+      {
+       "conf": 0.981,
+       "text": "*본 이미지의 소유권은 주식회사 로로얼로이에 있으며 무단 복제 및 도용 시",
+       "y": 895
+      },
+      {
+       "conf": 0.981,
+       "text": "저작권법(97조5항)에 의거하여 민사,형사상의 법적 처벌을 받을 수 있습니다.",
+       "y": 924
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 918856,
+   "height": 1250,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20251013_127/1760332491441y3v4S_JPEG/%EC%99%84%EB%A3%8C_%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC_6.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.97,
+       "text": "배송및 교환/반품 안내",
+       "y": 43
+      },
+      {
+       "conf": 0.975,
+       "text": "로로얼로이를 찾아주셔서 감사드립니다.아래의 안내사항을 꼭 체크해주세요.",
+       "y": 230
+      },
+      {
+       "conf": 0.976,
+       "text": "·택배사:우체국택배",
+       "y": 318
+      },
+      {
+       "conf": 0.961,
+       "text": "·평일 오후 3시 이전 구매시 당일 배송되오며,결제 확인 후,평균적으로 영업일 기준",
+       "y": 348
+      },
+      {
+       "conf": 0.969,
+       "text": "1~2일정도 소요됩니다.(택배사 사정에 따라 지연 될 수 있는 점 양해부탁드립니다.)",
+       "y": 381
+      },
+      {
+       "conf": 0.986,
+       "text": "배송안내 / ·오배송에 의한 경우 교환 및 반품 배송비는 자사에서 부담합니다.",
+       "y": 407
+      },
+      {
+       "conf": 0.948,
+       "text": "·택배사:한진택배",
+       "y": 527
+      },
+      {
+       "conf": 0.972,
+       "text": "·교환 및 반품은 상품 수령 후 7일이내에 톡톡으로 사진첨부와함께 접수 부탁드립니다.",
+       "y": 561
+      },
+      {
+       "conf": 0.977,
+       "text": "·단순변심에 의한 교환 및 반품의 경우 교환/반품 택배비가발생합니다.",
+       "y": 592
+      },
+      {
+       "conf": 0.969,
+       "text": "(ex.사이즈,디자인,소재, 오차범위내의 크기 등)",
+       "y": 622
+      },
+      {
+       "conf": 0.965,
+       "text": "교환/반품 안내 / ·교환은 같은상품으로만 가능하며,다른상품과는 교환이 되지 않습니다.",
+       "y": 652
+      },
+      {
+       "conf": 0.969,
+       "text": "·교환 및 반품 접수 시 택배비용 결제방법은 환불금 차감 및 지금결체함-추가결제 를",
+       "y": 685
+      },
+      {
+       "conf": 0.996,
+       "text": "선택하여 접수해주시면 빠르고 정확한 처리를 도와드리겠습니다",
+       "y": 716
+      },
+      {
+       "conf": 0.961,
+       "text": "·교환 및 반품은 제품 입고 후 검수가 완료된 제품 순으로 진행됩니다",
+       "y": 747
+      },
+      {
+       "conf": 0.986,
+       "text": "·화이트,아이보리 색상계열의 악세사리,속옷, 양말의 경우 교환반품이 불가하니,",
+       "y": 830
+      },
+      {
+       "conf": 0.951,
+       "text": "신중한 구매 부탁드립니다.",
+       "y": 862
+      },
+      {
+       "conf": 0.991,
+       "text": "·사용흔적,세탁부주의,고의적 웨손 등 상품적 가치가 손상된 경우 반품 및 교환이",
+       "y": 892
+      },
+      {
+       "conf": 0.98,
+       "text": "×",
+       "y": 914
+      },
+      {
+       "conf": 0.997,
+       "text": "어렵습니다",
+       "y": 924
+      },
+      {
+       "conf": 0.959,
+       "text": "교환/반품불가 / ·개인사정으로 뒤늦은 상품 개봉,뒤늦은 불량 발견 등 구매확정 이후의 교환 및 반품은",
+       "y": 944
+      },
+      {
+       "conf": 0.983,
+       "text": "어떠한 처리도 어렵습니다.상품을 받으신 후 반드시 상태확인 후 소장해주세요.",
+       "y": 986
+      },
+      {
+       "conf": 0.996,
+       "text": "·전화문의:0507.1469.1902",
+       "y": 1079
+      },
+      {
+       "conf": 0.989,
+       "text": "·운영시간: AM10:00-PM17:00(점심시간AM11:30-PM13:00)",
+       "y": 1110
+      },
+      {
+       "conf": 0.943,
+       "text": "고객센터 / ·휴 무 일: 토요일,일요일,공휴일(법정공휴일)",
+       "y": 1139
+      }
+     ],
+     "y0": 0,
+     "y1": 1250
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  }
+ ],
+ "key": "fairwardgolf:naver:100199147:9317474764",
+ "links_sha256": "b2ba1a0340ff51b87a0006bcb234d2a57618639ea61ac663f2e9a8ee7b613b36",
+ "product_id": "9317474764",
+ "seconds": 52.4,
+ "skipped": []
+}

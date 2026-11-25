@@ -1,0 +1,524 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 192550,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261028_30/1793118996558iCamP_JPEG/%EB%84%A4%EC%9D%B4%EB%B9%84_%EC%83%81%EC%9D%98%EC%99%80_%EA%B3%A8%ED%94%84_%EC%8A%AC%EB%9E%99%EC%8A%A4_%EC%8A%A4%ED%83%80%EC%9D%BC%EC%B4%AC%EC%98%81.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 193425,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261028_288/17931189973829FOFa_JPEG/%ED%99%94%EC%9D%B4%ED%8A%B8_%EC%85%94%EC%B8%A0%EC%99%80_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B3%A8%ED%94%84_%ED%8C%AC%EC%B8%A0.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 186325,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261028_143/1793118998814nxCXu_JPEG/%ED%99%94%EC%9D%B4%ED%8A%B8_%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EC%B9%B4%ED%83%88%EB%A1%9C%EA%B7%B8_%EC%83%B7.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 193425,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261028_299/1793119039449YJuLS_JPEG/%ED%99%94%EC%9D%B4%ED%8A%B8_%EC%85%94%EC%B8%A0%EC%99%80_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B3%A8%ED%94%84_%ED%8C%AC%EC%B8%A0.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 150415,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261010_203/1791606015991tIfMO_JPEG/%EC%A0%95%EA%B0%88%ED%95%9C_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B3%A8%ED%94%84_%ED%8C%AC%EC%B8%A0_%EC%A0%9C%ED%92%88_%EC%82%AC%EC%A7%84.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.549,
+       "text": "-",
+       "y": 464
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 171095,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261010_136/1791606023128neMD8_JPEG/%EB%94%A5_%EB%84%A4%EC%9D%B4%EB%B9%84_%ED%9B%84%EB%A9%B4_%ED%8C%AC%EC%B8%A0_%EC%A0%9C%ED%92%88_%EC%82%AC%EC%A7%84.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 192550,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261028_199/1793119032901mc669_JPEG/%EB%84%A4%EC%9D%B4%EB%B9%84_%EC%83%81%EC%9D%98%EC%99%80_%EA%B3%A8%ED%94%84_%EC%8A%AC%EB%9E%99%EC%8A%A4_%EC%8A%A4%ED%83%80%EC%9D%BC%EC%B4%AC%EC%98%81.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 148928,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261010_156/1791605958906BrL4O_JPEG/%EA%B9%94%EB%81%94%ED%95%9C_%EB%B8%94%EB%9E%99_%ED%8D%BC%ED%8F%AC%EB%A8%BC%EC%8A%A4_%ED%8C%AC%EC%B8%A0_%EC%A0%9C%ED%92%88_%EC%82%AC%EC%A7%84.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.549,
+       "text": "-",
+       "y": 464
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 149203,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261010_223/17916059651043H88u_JPEG/%EB%B8%94%EB%9E%99_%EA%B3%A8%ED%94%84_%ED%8C%AC%EC%B8%A0_%ED%9B%84%EB%A9%B4_%EC%A0%9C%ED%92%88_%EC%82%AC%EC%A7%84.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 186325,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261028_90/1793119044040oDwWK_JPEG/%ED%99%94%EC%9D%B4%ED%8A%B8_%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EC%B9%B4%ED%83%88%EB%A1%9C%EA%B7%B8_%EC%83%B7.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 145339,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261010_143/1791606035136pzXQL_JPEG/%EB%8B%A4%ED%81%AC_%EC%B0%A8%EC%BD%9C_%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%93%9C_%ED%8C%AC%EC%B8%A0_%EC%A0%9C%ED%92%88%EC%83%B7.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.549,
+       "text": "-",
+       "y": 464
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 157201,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261010_82/1791606044330UFhos_JPEG/%EC%B0%A8%EC%BD%9C_%EA%B7%B8%EB%A0%88%EC%9D%B4_%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%93%9C_%ED%8C%AC%EC%B8%A0_%EC%A0%9C%ED%92%88_%EC%82%AC%EC%A7%84.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 548234,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261026_231/1792996755806HBqfR_PNG/tmp2094858732058136676.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 559222,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261026_171/1792996755808u2MK2_PNG/tmp8946521743253791550.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 559222,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261026_152/1792996014725CEIrL_PNG/tmp1003047171263111770.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 200310,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260309_1/17729862148267MvlP_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%94%EC%A7%80_-_%EB%B8%94%EB%9E%99.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 206998,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260309_252/1772986222499HaJVc_JPEG/Gemini_Generated_Image_rhk881rhk881rhk8.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.908,
+       "text": "4",
+       "y": 100
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 548234,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261026_242/1792996040330b3SGq_PNG/tmp8219473528518465427.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 182417,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260309_41/1772986232378l0aPT_JPEG/Gemini_Generated_Image_5ce9jb5ce9jb5ce9.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 205422,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260309_277/1772986237472qKgfs_JPEG/Gemini_Generated_Image_ospf2cospf2cospf.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.908,
+       "text": "4",
+       "y": 100
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 417734,
+   "height": 700,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231113_244/1699855573834svQE4_JPEG/860001.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "배송안내",
+       "y": 25
+      },
+      {
+       "conf": 0.518,
+       "text": "• / •",
+       "y": 93
+      },
+      {
+       "conf": 0.996,
+       "text": "매장방문시 제품 품절일 경우 수령인께 품절안내 문자 발송 해드리며",
+       "y": 163
+      },
+      {
+       "conf": 0.996,
+       "text": "취소요청해주시면 취소 처리 해드리겠습니다.",
+       "y": 197
+      },
+      {
+       "conf": 0.988,
+       "text": "배송준비중 상태라도 실제 포장완료후 발송이 될수있기 때문에",
+       "y": 259
+      },
+      {
+       "conf": 0.981,
+       "text": "만약 취소힌다면 단순반품으로 처리되어 반품비가 발생되는점 양해 부",
+       "y": 293
+      },
+      {
+       "conf": 0.986,
+       "text": "탁드립니다.",
+       "y": 323
+      },
+      {
+       "conf": 0.989,
+       "text": "배송중 제품이 파손 되었을경우 반드시 파손된 제품이 회수되어야지만",
+       "y": 391
+      },
+      {
+       "conf": 0.98,
+       "text": "반품및 교환이 가능합니다.(제품 폐기시 교환 및 반품이 어려운점 양해",
+       "y": 424
+      },
+      {
+       "conf": 0.996,
+       "text": "부탁드립니다.)",
+       "y": 457
+      },
+      {
+       "conf": 0.994,
+       "text": "배송비는 상품의 특성,무게,크기,포장방법에 따라 부과되며 합배송이 되",
+       "y": 522
+      },
+      {
+       "conf": 0.978,
+       "text": "어도 배송비 환불은 어렵습니다.(제품크기와 무게에 따라 배송비가 다르",
+       "y": 555
+      },
+      {
+       "conf": 0.971,
+       "text": "기 때문입니다.)",
+       "y": 587
+      }
+     ],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 514246,
+   "height": 700,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20231113_124/1699855576247i8fIi_JPEG/860004.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.997,
+       "text": "반품/교환안내",
+       "y": 11
+      },
+      {
+       "conf": 0.985,
+       "text": "단순 변심,혹은 상품의 불량으로 인한 교환/반품은 판매자 톡톡으로",
+       "y": 143
+      },
+      {
+       "conf": 0.988,
+       "text": "문의해 진행 해주시기 바랍니다.",
+       "y": 172
+      },
+      {
+       "conf": 0.985,
+       "text": "임의적으로 반품신청 접수하시면 과다한 배송비가 발생할수 있습니다.",
+       "y": 202
+      },
+      {
+       "conf": 0.991,
+       "text": "상품의 교환,반품시엔 사진첨부 꼭 필요합니다.",
+       "y": 256
+      },
+      {
+       "conf": 0.965,
+       "text": "1.운송장사진 2.제품박스 사진 3.상품실물사진",
+       "y": 285
+      },
+      {
+       "conf": 0.982,
+       "text": "상품훼손,일부상품 스티커 제거,상품오염등 고의적 고객과실이",
+       "y": 341
+      },
+      {
+       "conf": 0.983,
+       "text": "있는 경우 반품이 불가합니다.",
+       "y": 370
+      },
+      {
+       "conf": 0.958,
+       "text": "반품진행시 반송된 상품이 도착한후 상품상태 검수 후 환불 진행이",
+       "y": 427
+      },
+      {
+       "conf": 1.0,
+       "text": "가능합니다.",
+       "y": 454
+      },
+      {
+       "conf": 0.981,
+       "text": "냉장/냉동 상품의 경우,택배도착후 바로 수령하지 못하면 외부 기온에",
+       "y": 510
+      },
+      {
+       "conf": 0.942,
+       "text": "의해 상품의 가치가 훼손될수 있습니다.",
+       "y": 538
+      },
+      {
+       "conf": 0.992,
+       "text": "빠른수령을 요청드리며 해당사유로 교환/반품은 불가합니다.",
+       "y": 566
+      },
+      {
+       "conf": 0.958,
+       "text": "그외 상품의 고의적 웨손,재판매의 가치 상실,시간의 경과로 인한",
+       "y": 622
+      },
+      {
+       "conf": 0.992,
+       "text": "가치상실 등은 반품/교환이 불가합니다.",
+       "y": 651
+      }
+     ],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:101010206:10076109143",
+ "links_sha256": "cef73ef73cb3088737acd8f0ba11997072f75f83adfff22122bf96a7950291e0",
+ "product_id": "10076109143",
+ "seconds": 22.0,
+ "skipped": []
+}

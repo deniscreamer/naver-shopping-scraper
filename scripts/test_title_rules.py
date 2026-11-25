@@ -382,6 +382,10 @@ def test_a_model_codes_tail_is_no_size():
     # a season code's digits are freed too (2026-11-20, the windbreaker pilot: "26FW" kept in a TaylorMade title)
     assert T.TITLE_SEASON.findall("테일러메이드 26FW 여성 바람막이 TJ6-72HG01-199 2025 SS 23F/W") == ["26", "2025", "23"]
     assert T.TITLE_SEASON.findall("BGBWSJ704 K90 FW 3레이어") == []
+    # a garment's model year (2026-11-24, the rainwear pilot: Titleist "... 상하세트 2024년 모델"); a model code's digits never
+    assert [m.group(0) for m in T.TITLE_MODEL_YEAR.finditer("레인웨어 상하세트 2024년 모델 / 2025년형 / 2023 모델")] == [
+        "2024년 모델", "2025년형", "2023 모델"]
+    assert not list(T.TITLE_MODEL_YEAR.finditer("TSMR2024 레인슈트 C25989100 2024"))
     assert sizes.findall("WWW24K90 여성 가디건 C100 55 66 77 90 울 100%") == ["55", "66", "77", "90"]
 
 

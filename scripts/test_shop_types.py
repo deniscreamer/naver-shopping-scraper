@@ -37,7 +37,9 @@ def test_golden_prepared_matches_the_types(name):
     with open(os.path.join(PREPARED, name), encoding="utf-8") as f:
         prepared = json.load(f)
     assert mismatches(prepared, Prepared) == []
-    assert set(prepared["product"]) == set(PreparedProduct.__annotations__) - RUN_TRANSFORM_ADDS - CATEGORY_ADDS
+    keys = set(PreparedProduct.__annotations__) - RUN_TRANSFORM_ADDS
+    # an apparel category's product (the size fixtures, 2026-11-25) carries the category's keys, a club's not
+    assert set(prepared["product"]) in (keys - CATEGORY_ADDS, keys), name
 
 
 def test_an_image_text_flag_and_an_empty_product_match():

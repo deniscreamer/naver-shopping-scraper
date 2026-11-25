@@ -1,0 +1,1446 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101730292:9435597606",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "off_section_variants_left_out",
+   "detail": "6 variants: 여름용 쿨링기능성원단(-5000원)"
+  },
+  {
+   "code": "reviews_cleaned",
+   "detail": "4 of 4 kept (full 4); 2 trimmed"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "CONDITIONAL_FREE 3000 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/greengreengolf/products/9435597606",
+  "channel_no": "101730292",
+  "product_id": "9435597606",
+  "category_id": "50002796"
+ },
+ "product": {
+  "title_ko": "여성 골프이너티셔츠 반목 기모 겨울 발열 빅사이즈",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "womens",
+      "text": "여성용"
+     },
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "여성 골프이너티셔츠 반목 기모 겨울 발열 빅사이즈"
+     },
+     {
+      "source": "listing",
+      "value": "womens",
+      "text": "여성 골프 가을 긴팔 티셔츠"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "색상",
+    "values_ko": [
+     "백아이보리",
+     "블랙",
+     "핑크"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "S",
+     "M",
+     "L",
+     "XL"
+    ]
+   }
+  ],
+  "facts": [
+   {
+    "label_ko": "두께",
+    "value_ko": "겨울용 발열기모원단"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"겨울용 발열기모원단\",\"백아이보리\",\"S\"]",
+    "naver_variant_id": "46859002308",
+    "options_ko": [
+     "백아이보리",
+     "S"
+    ],
+    "price_krw": 33900,
+    "price_usd": "33.90",
+    "sku": "FW-d3dbb4a1786caf82b740e203",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 발열기모원단\",\"백아이보리\",\"M\"]",
+    "naver_variant_id": "46859002309",
+    "options_ko": [
+     "백아이보리",
+     "M"
+    ],
+    "price_krw": 33900,
+    "price_usd": "33.90",
+    "sku": "FW-6f44c67d04b73474a5b6f937",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 발열기모원단\",\"백아이보리\",\"L\"]",
+    "naver_variant_id": "46859002310",
+    "options_ko": [
+     "백아이보리",
+     "L"
+    ],
+    "price_krw": 33900,
+    "price_usd": "33.90",
+    "sku": "FW-d2e875336ab04b75a4647635",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 발열기모원단\",\"백아이보리\",\"XL\"]",
+    "naver_variant_id": "46859002311",
+    "options_ko": [
+     "백아이보리",
+     "XL"
+    ],
+    "price_krw": 33900,
+    "price_usd": "33.90",
+    "sku": "FW-67accfb288cb34829cc36fe1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 발열기모원단\",\"블랙\",\"S\"]",
+    "naver_variant_id": "46859002312",
+    "options_ko": [
+     "블랙",
+     "S"
+    ],
+    "price_krw": 33900,
+    "price_usd": "33.90",
+    "sku": "FW-b79b0f306cd72745457e3fda",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 발열기모원단\",\"블랙\",\"M\"]",
+    "naver_variant_id": "46859002313",
+    "options_ko": [
+     "블랙",
+     "M"
+    ],
+    "price_krw": 33900,
+    "price_usd": "33.90",
+    "sku": "FW-50d2c7795d79a54c0daaf0da",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 발열기모원단\",\"블랙\",\"L\"]",
+    "naver_variant_id": "46859002314",
+    "options_ko": [
+     "블랙",
+     "L"
+    ],
+    "price_krw": 33900,
+    "price_usd": "33.90",
+    "sku": "FW-512e580112001f29d80846e7",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 발열기모원단\",\"핑크\",\"S\"]",
+    "naver_variant_id": "53614341510",
+    "options_ko": [
+     "핑크",
+     "S"
+    ],
+    "price_krw": 33900,
+    "price_usd": "33.90",
+    "sku": "FW-4d64bc7e802932196b0fc1c6",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 발열기모원단\",\"핑크\",\"M\"]",
+    "naver_variant_id": "53614341511",
+    "options_ko": [
+     "핑크",
+     "M"
+    ],
+    "price_krw": 33900,
+    "price_usd": "33.90",
+    "sku": "FW-7acc72652d8c4fc3b0c3911a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 발열기모원단\",\"핑크\",\"L\"]",
+    "naver_variant_id": "53614341512",
+    "options_ko": [
+     "핑크",
+     "L"
+    ],
+    "price_krw": 33900,
+    "price_usd": "33.90",
+    "sku": "FW-d284ecb950f7663751d42ac0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 발열기모원단\",\"핑크\",\"XL\"]",
+    "naver_variant_id": "53614341513",
+    "options_ko": [
+     "핑크",
+     "XL"
+    ],
+    "price_krw": 33900,
+    "price_usd": "33.90",
+    "sku": "FW-d7c4f302190d1937c239d22f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 33900,
+   "original_krw": 36900,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "핑크골프 협력업체"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "핑크골프"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "국산"
+   },
+   {
+    "label_ko": "네크라인",
+    "value_ko": "반목"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "흡습, Dri-Fit, 신축성, 자외선차단"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "스판, 폴리에스테르, 스판덱스"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2023년형"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "티셔츠"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "여성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.81,
+   "count": 27
+  },
+  "reviews": [
+   {
+    "id": "4662158356",
+    "score": 5,
+    "text_ko": "진짜 좋아요 기본이너티 아울렛에서 매번 8 주고 비 샀었는데 세상에! m으로 구매했는데 담번엔 s구매해도될거같아요 골프 이너는 딱붙는게 예쁘던데 이건 조금 커도 무난하고 핏 좋네요. 흰색으로",
+    "created_at": "2025-02-14T09:41:47Z",
+    "writer": "ht****",
+    "photos": [
+     "collected/50002788-fixtures/images/9435597606/fairwardgolf-review-image-a9c0f5e90bd6e31d.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/9435597606/fairwardgolf-review-avatar-02c1e605ec3fbecd.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 94,
+    "text_original_ko": "진짜 좋아요 기본이너티 아울렛에서 매번 8~9만원 주고 비싸게 샀었는데 세상에! m으로 구매했는데 담번엔 s구매해도될거같아요 골프 이너는 딱붙는게 예쁘던데 이건 조금 커도 무난하고 핏 좋네요 ㅎㅎ 흰색으로 또 구매할게요",
+    "text_cut": [
+     "price",
+     "seller"
+    ]
+   },
+   {
+    "id": "4649322681",
+    "score": 5,
+    "text_ko": "평소 66입는데 77사이즈 입어도 괜찮네요\n여행가는데 급하게 필요했는데 블랙이 약간 짙은검정은 아닌거 같아요\n골프칠때 잘 입어볼께요",
+    "created_at": "2025-01-24T06:50:50Z",
+    "writer": "dbsq********",
+    "photos": [
+     "collected/50002788-fixtures/images/9435597606/fairwardgolf-review-image-573bc54b21e68343.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 88
+   },
+   {
+    "id": "4612274311",
+    "score": 5,
+    "text_ko": "방풍기능이 있는지 너무 따뜻하게 잘 입었어요. 겨울에 평상시에도 입으려고 합니다. 하나 더 장만할까 고민이네요. 겨울 추위에 강추합니다",
+    "created_at": "2024-12-02T07:30:35Z",
+    "writer": "pes8***",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 34
+   },
+   {
+    "id": "4381450856",
+    "score": 5,
+    "text_ko": "넉넉하게 미듐주문했는데 딱 맞아요 한치수크게 주문해도 될듯. 원단이 부드럽고 따뜻해요 핑크골프 옷은 왠만하면 실패안하는듯. 주인장님도 1대1. 넘",
+    "created_at": "2023-12-03T05:54:56Z",
+    "writer": "jdh7***",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/9435597606/fairwardgolf-review-avatar-400a8c4a5cdae4e5.webp",
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 75,
+    "text_original_ko": "넉넉하게 미듐주문했는데 딱 맞아요 한치수크게 주문해도 될듯..원단이 부드럽고 따뜻해요 핑크골프 옷은 왠만하면 실패안하는듯...주인장님도 1대1. 답변금방해주시고 넘친절하세요",
+    "text_cut": [
+     "seller"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/9435597606/fairwardgolf-9435597606-001-12b92f8807916d20.webp",
+    "sha256": "12b92f8807916d205f984550002d3eee563d467a5dde60d8bb2bf4ccfaf74e54",
+    "width": 1080,
+    "height": 1080
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/9435597606/fairwardgolf-9435597606-002-085d24856703ead8.webp",
+    "sha256": "085d24856703ead842a678d82b75f6aa3948c2a8bc3e20211b33db8138bb3738",
+    "width": 1440,
+    "height": 1440
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/9435597606/fairwardgolf-9435597606-003-37325511ca214dfd.webp",
+    "sha256": "37325511ca214dfd7acbe0d6929f6d2d8370073b3e72ef664ca9dfd84c7332bd",
+    "width": 1440,
+    "height": 1440
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/9435597606/fairwardgolf-9435597606-004-dc84a2d770a50de2.webp",
+    "sha256": "dc84a2d770a50de21a64ee34995788d5fe2e6db9b2f18dc30a63d395bc68425c",
+    "width": 1440,
+    "height": 1440
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/9435597606/fairwardgolf-9435597606-005-8e9464be76810ea1.webp",
+    "sha256": "8e9464be76810ea1b6b610de6ff6610fbb80160d3a6d24aa340f98a207a6433b",
+    "width": 1440,
+    "height": 1440
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/9435597606/fairwardgolf-9435597606-006-74e73e15c03ccf9c.webp",
+    "sha256": "74e73e15c03ccf9c0400ca6ed00877e51a131bdc0b7b6bc6883e418d1b62fdc8",
+    "width": 1250,
+    "height": 1250
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/9435597606/fairwardgolf-9435597606-007-a16e92ef11e66e8b.webp",
+    "sha256": "a16e92ef11e66e8ba6e1abbe7eb591c9f507c38ac9b3d3977337359fe1f3d10f",
+    "width": 1080,
+    "height": 1080
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/9435597606/fairwardgolf-9435597606-008-39d547f44f879476.webp",
+    "sha256": "39d547f44f879476fd395f4235817903380dd8b6406c3007bff1c3aaccb5a730",
+    "width": 1440,
+    "height": 1440
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "100,000원 이상 구매 시 무료 / 제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 2.0370371,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.25.(수)",
+    "arrival_probability": 93,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "핑크골프는\n합리적인 가격으로\n정직하게 판매합니다.\n\n상품을 클릭하시면\n해당페이지로 이동합니다.\n\n여성 골프이너티셔츠\n(겨울 기모/여름 쿨링)\n\n직접 착용해 본 제품들만 소개합니다.\n고급 원단으로 국내에서 제조합니다.\nS(55)사이즈부터 XL(88)까지\n선택의 폭이 넓습니다.\n체형에 맞게 선택해주세요.\n\n원단이 정말 훌륭합니다.\n비싼 브랜드에 결코 뒤지지 않습니다.\n\n겉모양은 같아도 품질은 다릅니다.\n저가의 중국산 제품들과\n가격 비교하지 말아주세요.\n\n부들부들 가볍고 따뜻한 느낌의\n발열 히트텍입니다.\n\n가볍고 부드러운 촉감!!!\n맨살에 입어도 부드럽습니다.\n\n패딩조끼와 함께 착용했습니다.\n단독으로도 착용할 수 있으며\n어떤 골프웨어와도 잘 어울립니다.\n\n슬림핏으로 사이즈 여유 없는 편입니다.\n평소 사이즈대로 선택하시되,\n사이즈 애매하게 걸치신 분들은\n위의 상세사이즈를 확인 후\n사이즈 크게하시길 추천합니다.\n좀 더 가볍고 소프트한 착용감의\n↓↓제품을 찾고계신다면 클릭하세요.↓↓\n\n골프이너티셔츠\n(여름 냉감 UV차단 기능성)\n\n직접 착용해 본 제품들만 소개합니다.\n기능성원단으로 국내에서 제조합니다.\n\n아무것도 안입은 듯 뛰어난 착용감!!!\n어떤 동작도 가능한 어마어마한 신축성!!!\n기능성 NY-SHELRON 소재와\ncreora 소재로 제작되었습니다.\n\n예쁘게 핏되는 긴팔이너티셔츠로\n단독으로도 입을 수 있으며\n어떤 골프웨어와도 잘 어울립니다.\n이 옵션은 봄, 여름, 초가을까지\n착용하시기 알맞습니다.\n\n반목 카라의 흰색 이너티셔츠로\n자외선 차단에 유리합니다.\n\n신축성이 매우 뛰어나\n어떤 활동도 자유롭습니다.\n팔 부분의 착용감까지 너무 좋습니다.\n소재 자체가 깃털처럼 가볍고\n뛰어난 착용감에 쿨링기능까지!!!\n\n기능성 고급 소재를 사용하여\n국내에서 제조했습니다.\n\n베이직한 디자인으로\n어떤 골프복과도 잘 어울려\n자주 손이 가실겁니다.\n\n※ 골프힙색을 함께 착용해보세요.\n\n뛰어난 수납에 안정적인 착용감에 스타일까지\n브랜드힙색을 능가하는 고퀄리티를 자랑합니다.\n거리측정기, 핸드폰, 공, 티,장갑, 지폐, 귀중품...\n다 넣어도 너무 편합니다!!!!!\n\n핑크골프 추천 상품",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20240822_77/1724318535556bCEtL_JPEG/SE-bdeeb344-bbae-45a4-8b09-116deda6243b.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240511_246/1715434012522szEf5_GIF/%EC%88%98%EC%A0%95KakaoTalk_20240510_141125776.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20250316_141/1742107852542osSiR_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(10).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250316_66/1742109523406hpNC6_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(13).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250316_66/1742107970142HKUfK_JPEG/%EC%8B%A0%EC%A0%9C%ED%92%88_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260216_195/17711703479513wbMd_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94_(9).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260322_62/1774181348487aFbbK_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260216_50/1771170122110GE7JJ_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94_(7).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260524_209/17796205541596Pocq_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(2).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260524_198/1779626343683ysk25_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(4).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260524_246/1779626379541B37G9_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(5).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251011_69/1760164021465Su6Sa_JPEG/%EC%8B%A0%EC%A0%9C%ED%92%88_(48).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260217_186/1771255308045QFwiO_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(43).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260216_260/1771171040826MB7f6_JPEG/%EA%B0%80%EB%B0%A9%ED%94%84%EB%A1%9C%ED%95%84_(58).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250323_40/1742704786512vTkSm_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(34).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260322_185/1774186338048RAk9Q_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94_(2).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250316_286/1742110044792K2Ac9_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(29).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250323_63/1742704286419iScJN_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(33).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251115_176/1763212511369g2eKv_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(48).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250316_144/1742108642604P2zDA_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(27).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260216_159/1771170860547fSEIn_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94_(11).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251125_28/17640718276555h4lk_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(2).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251125_135/1764071904060J9yeK_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(3).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20171017_299/editorteam_1508229319474zsS9U_PNG/%C0%CC%B9%CC%C1%F6_%B1%B8%BA%D0%BC%B1_2.png?type=w848",
+   "https://shop-phinf.pstatic.net/20231026_288/1698319084010nH8tp_JPEG/%EA%B2%A8%EC%9A%B8%EA%B8%B0%EB%AA%A8%EC%9D%B4%EB%84%88%ED%8B%B0%EC%85%94%EC%B8%A0.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240817_120/1723896643306xSnzp_JPEG/SE-7bc5a5b8-9fe2-4403-87f7-a94130ca675a.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241015_175/1728997205811N1Qrp_JPEG/SE-2d79341e-6d1c-487d-ac13-0e58b2b3a41d.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231026_128/1698319926712rsLLj_JPEG/SE-919c5dfc-00d2-4032-af69-93d9e0dedbf3.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231026_32/1698319945620vhzUV_JPEG/SE-f79d07c5-1219-4df9-bc84-94ba2f9cb033.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231026_167/1698319552852pl2r0_JPEG/KakaoTalk_20231026_121203677_03.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231026_96/1698319872273bWRsz_JPEG/SE-d1790e4b-840d-442b-bdf7-c93e5840c0f7.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231026_218/1698319972913jfebr_JPEG/SE-80f14ee2-2976-40ae-9f12-f4c749f7c750.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231026_284/1698320098904uaJpS_JPEG/KakaoTalk_20231026_121258126.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241015_72/1728996979074T90e7_JPEG/%EC%82%AC%EC%9D%B4%EC%A6%88%ED%91%9C_-_2024-10-15T211334.696.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251115_33/1763211145781erA5h_JPEG/KakaoTalk_20230216_232537719.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230712_155/1689167154154OCwyp_JPEG/%EC%9D%B4%EB%84%88%ED%8B%B0%EC%85%94%EC%B8%A0_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231011_64/1697006744654eayeD_JPEG/KakaoTalk_20231011_153947478.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230712_96/1689168577923dcNJB_JPEG/KakaoTalk_20230708_224343991.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230712_194/1689169073091u7CJw_JPEG/KakaoTalk_20230708_232851811.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230712_151/16891695365013bNe5_JPEG/KakaoTalk_20230710_184841176.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230712_81/1689169558037idRdP_JPEG/KakaoTalk_20230711_094613916.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230712_269/1689169752495tFBly_JPEG/KakaoTalk_20230710_184553532.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230712_32/1689170674377T103Q_JPEG/KakaoTalk_20230708_223911464.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230712_132/1689171062291MQWgF_JPEG/KakaoTalk_20230708_224416205.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250330_81/174331276368719US0_JPEG/SE-eb9a156a-c22d-4162-8df4-b6bcd7a491b0.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250831_186/1756648558042HVqgp_JPEG/%EB%8C%80%ED%91%9C2.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250831_238/1756648561865Wi8Nq_JPEG/%EB%8C%80%ED%91%9C%EC%82%AC%EC%A7%84.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240504_13/1714830660331Wq2cW_JPEG/intro_pinkgolf_17.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240504_151/1714830680354lg3Pj_JPEG/intro_pinkgolf_18.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20230712_129/1689167957499h0DaD_JPEG/%EB%A6%AC%EB%B7%B0%EC%9D%B4%EB%B2%A4%ED%8A%B8_(8).jpg?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20230713_212/1689233863763WXNWE_JPEG/%EB%A6%AC%EB%B7%B0%EC%9D%B4%EB%B2%A4%ED%8A%B8_(9).jpg?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20250207_2/17388540441675hzB1_JPEG/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD_(6).jpg?type=w848"
+   }
+  ],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "스판, 폴리에스테르, 스판덱스",
+    "source": "spec"
+   },
+   {
+    "label_ko": "재질",
+    "value_ko": "폴리에스테르, 스판덱스",
+    "source": "notice"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_tops",
+   "option": 1,
+   "values": [
+    {
+     "ko": "S",
+     "us": "S (US 4-6)",
+     "letter": "S",
+     "chest_cm": 90,
+     "basis": "chart_pair",
+     "chart_label": "S"
+    },
+    {
+     "ko": "M",
+     "us": "M (US 8-10)",
+     "letter": "M",
+     "chest_cm": 95,
+     "basis": "chart_pair",
+     "chart_label": "M"
+    },
+    {
+     "ko": "L",
+     "us": "L (US 12-14)",
+     "letter": "L",
+     "chest_cm": 100,
+     "basis": "chart_pair",
+     "chart_label": "L"
+    },
+    {
+     "ko": "XL",
+     "us": "XL (US 16)",
+     "letter": "XL",
+     "chest_cm": 105,
+     "basis": "text_pair",
+     "chart_label": "XL"
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "length": null,
+     "shoulder": "flat",
+     "chest": "mixed",
+     "sleeve": null
+    },
+    "rows": [
+     {
+      "us": "S (US 4-6)",
+      "cm": {
+       "length": 58.0,
+       "shoulder": 34.0,
+       "chest": 82.0,
+       "sleeve": 58.0
+      }
+     },
+     {
+      "us": "M (US 8-10)",
+      "cm": {
+       "length": 59.0,
+       "shoulder": 35.0,
+       "chest": 86.0,
+       "sleeve": 59.0
+      }
+     },
+     {
+      "us": "L (US 12-14)",
+      "cm": {
+       "length": 60.0,
+       "shoulder": 36.0,
+       "chest": 90.0,
+       "sleeve": 60.0
+      }
+     },
+     {
+      "us": "XL (US 16)",
+      "cm": {
+       "length": 61.0,
+       "shoulder": 37.0,
+       "chest": 94.0,
+       "sleeve": 61.0
+      }
+     }
+    ]
+   },
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:0ef62c7319a18184",
+   "kind": "title",
+   "ko": "여성 골프이너티셔츠 반목 기모 겨울 발열 빅사이즈"
+  },
+  {
+   "id": "option_name:d1b87acb2d2239e7",
+   "kind": "option_name",
+   "ko": "색상"
+  },
+  {
+   "id": "option_value:7bb93683649ad1d0",
+   "kind": "option_value",
+   "ko": "백아이보리"
+  },
+  {
+   "id": "option_value:91f171f68356ec23",
+   "kind": "option_value",
+   "ko": "블랙"
+  },
+  {
+   "id": "option_value:5c94888b2e8d96b6",
+   "kind": "option_value",
+   "ko": "핑크"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:8de0b3c47f112c59",
+   "kind": "option_value",
+   "ko": "S"
+  },
+  {
+   "id": "option_value:08f271887ce94707",
+   "kind": "option_value",
+   "ko": "M"
+  },
+  {
+   "id": "option_value:72dfcfb0c470ac25",
+   "kind": "option_value",
+   "ko": "L"
+  },
+  {
+   "id": "option_value:f365705bb0612eed",
+   "kind": "option_value",
+   "ko": "XL"
+  },
+  {
+   "id": "fact_label:6953a4195620df2e",
+   "kind": "fact_label",
+   "ko": "두께"
+  },
+  {
+   "id": "fact_value:64b029b9722d9d07",
+   "kind": "fact_value",
+   "ko": "겨울용 발열기모원단"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:21c8837cb64df60b",
+   "kind": "spec_value",
+   "ko": "핑크골프 협력업체"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:04bf35ba5d220e6e",
+   "kind": "spec_value",
+   "ko": "핑크골프"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2c9897140d6cbb96",
+   "kind": "spec_value",
+   "ko": "국산"
+  },
+  {
+   "id": "spec_label:521009f503e491a5",
+   "kind": "spec_label",
+   "ko": "네크라인"
+  },
+  {
+   "id": "spec_value:8d3513546a49b769",
+   "kind": "spec_value",
+   "ko": "반목"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:407d380f73ceb235",
+   "kind": "spec_value",
+   "ko": "흡습, Dri-Fit, 신축성, 자외선차단"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:d3f516435c519516",
+   "kind": "spec_value",
+   "ko": "스판, 폴리에스테르, 스판덱스"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:bed47e98ee4bbea0",
+   "kind": "spec_value",
+   "ko": "2023년형"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:f977ac4486c2b67c",
+   "kind": "spec_value",
+   "ko": "티셔츠"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:ff90d7cd3c519c1f",
+   "kind": "spec_value",
+   "ko": "여성용"
+  },
+  {
+   "id": "review:85a8c8018c7fbe17",
+   "kind": "review",
+   "ko": "진짜 좋아요 기본이너티 아울렛에서 매번 8 주고 비 샀었는데 세상에! m으로 구매했는데 담번엔 s구매해도될거같아요 골프 이너는 딱붙는게 예쁘던데 이건 조금 커도 무난하고 핏 좋네요. 흰색으로"
+  },
+  {
+   "id": "review:53178efcd080e838",
+   "kind": "review",
+   "ko": "평소 66입는데 77사이즈 입어도 괜찮네요\n여행가는데 급하게 필요했는데 블랙이 약간 짙은검정은 아닌거 같아요\n골프칠때 잘 입어볼께요"
+  },
+  {
+   "id": "review:50707ba03c1ff6cc",
+   "kind": "review",
+   "ko": "방풍기능이 있는지 너무 따뜻하게 잘 입었어요. 겨울에 평상시에도 입으려고 합니다. 하나 더 장만할까 고민이네요. 겨울 추위에 강추합니다"
+  },
+  {
+   "id": "review:b15066b8e35a7192",
+   "kind": "review",
+   "ko": "넉넉하게 미듐주문했는데 딱 맞아요 한치수크게 주문해도 될듯. 원단이 부드럽고 따뜻해요 핑크골프 옷은 왠만하면 실패안하는듯. 주인장님도 1대1. 넘"
+  }
+ ]
+}

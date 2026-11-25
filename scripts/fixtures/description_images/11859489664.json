@@ -1,0 +1,583 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 177960,
+   "height": 915,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250519_83/1747636309912Btrut_JPEG/raincoat_01.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "레인코드 / 상하의세트",
+       "y": 785
+      }
+     ],
+     "y0": 0,
+     "y1": 915
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 160796,
+   "height": 1098,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250519_205/1747636309909mBUFx_JPEG/raincoat_02.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "레인코트",
+       "y": 87
+      },
+      {
+       "conf": 0.963,
+       "text": "상하세트 분리형으로 입고 벗기가 편리하며",
+       "y": 177
+      },
+      {
+       "conf": 0.972,
+       "text": "휴대용 파우치 포함으로 휴대성이 뛰어납니다.",
+       "y": 223
+      }
+     ],
+     "y0": 0,
+     "y1": 1098
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 215751,
+   "height": 824,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250519_103/1747636310377j4i3p_JPEG/raincoat_03.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.996,
+       "text": "다양한 활용성",
+       "y": 86
+      },
+      {
+       "conf": 0.997,
+       "text": "야외,여행시 갑작스런 비에",
+       "y": 175
+      },
+      {
+       "conf": 0.963,
+       "text": "언제 어디서나 쉽게 사용할 수 있습니다.",
+       "y": 223
+      },
+      {
+       "conf": 0.999,
+       "text": "런닝 / 낚시 / 아웃도어",
+       "y": 788
+      }
+     ],
+     "y0": 0,
+     "y1": 824
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 192078,
+   "height": 1174,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250519_38/17476363104186XovO_JPEG/raincoat_04.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "야간에도 안전한 반사기능",
+       "y": 91
+      },
+      {
+       "conf": 0.965,
+       "text": "안전한 야간 활동을 위한",
+       "y": 178
+      },
+      {
+       "conf": 0.949,
+       "text": "전면 및 후면에 고휘도 반사기능 적용",
+       "y": 227
+      }
+     ],
+     "y0": 0,
+     "y1": 1174
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 187951,
+   "height": 1601,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250519_298/1747636310404JAn9c_JPEG/raincoat_05.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "완벽 / 방수원단",
+       "y": 92
+      },
+      {
+       "conf": 0.997,
+       "text": "미세 나노 코팅 원단으로 완벽방수와",
+       "y": 178
+      },
+      {
+       "conf": 0.991,
+       "text": "가볍고 통풍성이 뛰어납니다.",
+       "y": 226
+      },
+      {
+       "conf": 1.0,
+       "text": "방수지수",
+       "y": 405
+      },
+      {
+       "conf": 0.795,
+       "text": "> / 10000N / MMH2O",
+       "y": 462
+      },
+      {
+       "conf": 0.872,
+       "text": "1500",
+       "y": 497
+      },
+      {
+       "conf": 1.0,
+       "text": "투습지수",
+       "y": 541
+      },
+      {
+       "conf": 0.999,
+       "text": "10000 / G/M2/24H",
+       "y": 590
+      },
+      {
+       "conf": 1.0,
+       "text": "원단두께",
+       "y": 674
+      },
+      {
+       "conf": 0.998,
+       "text": "150D",
+       "y": 720
+      },
+      {
+       "conf": 0.999,
+       "text": "폭우에도 / 강력한",
+       "y": 942
+      },
+      {
+       "conf": 0.983,
+       "text": "미세 나노코팅 완벽 방수원단",
+       "y": 990
+      },
+      {
+       "conf": 0.999,
+       "text": "방수",
+       "y": 1181
+      },
+      {
+       "conf": 1.0,
+       "text": "방풍",
+       "y": 1271
+      },
+      {
+       "conf": 0.561,
+       "text": "222 / 투습",
+       "y": 1356
+      }
+     ],
+     "y0": 0,
+     "y1": 1601
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 187207,
+   "height": 1375,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250519_264/1747636309924a0Jyp_JPEG/raincoat_06.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "선택사항",
+       "y": 92
+      },
+      {
+       "conf": 0.997,
+       "text": "색상:블랙,화이트,형광",
+       "y": 177
+      },
+      {
+       "conf": 0.95,
+       "text": "사이즈:M, L, XL,2XL,3XL, 4XL",
+       "y": 226
+      },
+      {
+       "conf": 0.998,
+       "text": "블랙 / Black / 화이트 / White",
+       "y": 732
+      },
+      {
+       "conf": 0.617,
+       "text": "※",
+       "y": 914
+      },
+      {
+       "conf": 0.999,
+       "text": "형광 / Fluorescent",
+       "y": 1223
+      }
+     ],
+     "y0": 0,
+     "y1": 1375
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 213662,
+   "height": 1302,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250519_176/17476363099961IHCQ_JPEG/raincoat_07.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "상품제원",
+       "y": 69
+      },
+      {
+       "conf": 0.991,
+       "text": "PRODUCT INFORMATION",
+       "y": 193
+      },
+      {
+       "conf": 1.0,
+       "text": "사이즈",
+       "y": 330
+      },
+      {
+       "conf": 0.934,
+       "text": "사이즈(cm)상의길이 가슴둘레 소매길이바지길이엉덩이추천키추천몸무게",
+       "y": 415
+      },
+      {
+       "conf": 0.994,
+       "text": "M / 65 / 105 / 60 / 100 / 120 / 155~260 / 40~45Kg",
+       "y": 455
+      },
+      {
+       "conf": 0.997,
+       "text": "L / 67 / 109 / 61 / 102 / 124 / 160~165 / 50~55Kg",
+       "y": 491
+      },
+      {
+       "conf": 0.904,
+       "text": "XL / 69 / 113 / 62 / 104 / 128 / 165~170 / 60~65Kg",
+       "y": 526
+      },
+      {
+       "conf": 0.835,
+       "text": "2XL / 73 / 121 / 64 / 108 / 136 / 175~180 / 70~75Kg",
+       "y": 562
+      },
+      {
+       "conf": 0.963,
+       "text": "3XL / 75 / 125 / 65 / 110 / 140 / 180~185 / 80~85Kg",
+       "y": 595
+      },
+      {
+       "conf": 0.755,
+       "text": "4XL / 77 / 129 / 66 / 112 / 144 / 180~185 / 90~95Kg",
+       "y": 633
+      },
+      {
+       "conf": 0.999,
+       "text": "제품명:레인코트 상하세트",
+       "y": 720
+      },
+      {
+       "conf": 0.997,
+       "text": "재질:폴리에스터",
+       "y": 758
+      },
+      {
+       "conf": 0.998,
+       "text": "색상:블랙,화이트,형광",
+       "y": 789
+      },
+      {
+       "conf": 0.968,
+       "text": "사이즈:M,L, XL,2XL,3XL, 4XL",
+       "y": 828
+      },
+      {
+       "conf": 0.999,
+       "text": "제조국:중국",
+       "y": 862
+      },
+      {
+       "conf": 0.995,
+       "text": "<세탁방법 및 취급시 주의사항>",
+       "y": 924
+      },
+      {
+       "conf": 0.987,
+       "text": "30도이하의 물에 중성세제로 손세탁",
+       "y": 962
+      },
+      {
+       "conf": 0.957,
+       "text": "NoctiRos / 판매 및 수입원:녹티로스",
+       "y": 1056
+      },
+      {
+       "conf": 0.999,
+       "text": "고객센터:010-5048-6465",
+       "y": 1094
+      },
+      {
+       "conf": 0.957,
+       "text": "* 제품의 색상은 촬영환경과 모니터의 설정에 따라 다르게 보일 수 있습니다.",
+       "y": 1189
+      },
+      {
+       "conf": 0.96,
+       "text": "* 사이즈는 재는 방법과 위치에 따라 오차가 있을수 있습니다.",
+       "y": 1220
+      }
+     ],
+     "y0": 0,
+     "y1": 1302
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 155118,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250519_11/1747636309912JNLpi_JPEG/raincoat_08.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.982,
+       "text": "방수원단",
+       "y": 90
+      },
+      {
+       "conf": 0.968,
+       "text": "폭우에도 강력한 완벽 방수원단",
+       "y": 178
+      },
+      {
+       "conf": 0.96,
+       "text": "RAINSTORM NATERPROOF",
+       "y": 347
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 323755,
+   "height": 2250,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250519_238/1747636310407wYCha_JPEG/raincoat_09.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "휴대용 파우치",
+       "y": 89
+      },
+      {
+       "conf": 0.977,
+       "text": "휴대용 파우치가 있어 보관 및 휴대가 편리합니다.",
+       "y": 176
+      }
+     ],
+     "y0": 0,
+     "y1": 1499
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.603,
+       "text": "V",
+       "y": 542
+      }
+     ],
+     "y0": 1499,
+     "y1": 2250
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 111083,
+   "height": 777,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250519_125/17476363099135YofI_JPEG/raincoat_10.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 777
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 246773,
+   "height": 1636,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250519_35/17476363104827A5sJ_JPEG/raincoat_11.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.991,
+       "text": "쾌적한 통풍성",
+       "y": 87
+      },
+      {
+       "conf": 0.978,
+       "text": "경량 원단과 습기를 배출시켜",
+       "y": 178
+      },
+      {
+       "conf": 0.99,
+       "text": "땀배출에 효과적입니다.",
+       "y": 224
+      },
+      {
+       "conf": 0.972,
+       "text": "PREVENT HEAVY RAIN LIGHT AND LIGHT",
+       "y": 504
+      },
+      {
+       "conf": 0.992,
+       "text": "WATERPROOF SUIT",
+       "y": 533
+      }
+     ],
+     "y0": 0,
+     "y1": 1636
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 225929,
+   "height": 1389,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250519_201/1747636310769JOAFz_JPEG/raincoat_12.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "상세 / 이미지",
+       "y": 89
+      },
+      {
+       "conf": 0.999,
+       "text": "Detail View",
+       "y": 174
+      },
+      {
+       "conf": 0.984,
+       "text": "후드 스타일",
+       "y": 719
+      },
+      {
+       "conf": 0.999,
+       "text": "고품질 방수원단",
+       "y": 1277
+      }
+     ],
+     "y0": 0,
+     "y1": 1389
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 301764,
+   "height": 1665,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250519_43/1747636310354AVrBe_JPEG/raincoat_13.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "고품질 지퍼",
+       "y": 450
+      },
+      {
+       "conf": 0.856,
+       "text": "RaiNcoar",
+       "y": 1278
+      }
+     ],
+     "y0": 0,
+     "y1": 1665
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:102378116:11859489664",
+ "links_sha256": "49b97c6d15c7c9c987c689710e4b2decc71bc110795d1b98f5d41700e8ecafeb",
+ "product_id": "11859489664",
+ "seconds": 16.3,
+ "skipped": []
+}

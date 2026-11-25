@@ -82,6 +82,12 @@ class CategoryRules:
     variant_screen: tuple[str, ...] = ()  # the codes of listing_title_rules.json whose words in a variant's option
                                          # value hold the product (off_section_variant): a long-sleeve top sold with
                                          # 반팔 variants (2026-11-21, the tops pilot: 5418772209, 5751294772)
+    variant_drop: tuple[str, ...] = ()    # codes of listing_title_rules.json whose words in a variant's option value
+                                         # (never the size option's) leave that variant out instead of holding the
+                                         # product (2026-11-25, the size_unmapped review: a top sold with trousers
+                                         # among its designs, 13762280030; a pants listing selling a polo, 5534297375);
+                                         # a note off_section_variants_left_out names them; when every variant has
+                                         # the word nothing is left out and the product holds off_section_variant
     reviewed: bool = False               # publish.py creates its new products ACTIVE; False: DRAFT, until the agent's
                                          # lens review and the owner's activation (2026-11-16: 369 products, 15.7%,
                                          # of those published were withdrawn later; each new category showed buyers
@@ -192,7 +198,11 @@ RULES = {
             "50002796": CategoryRules(
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
                 no_choice_out=True, composition=True, sizes="womens_tops", own_brand_wordmark=True,
-                variant_screen=("short_sleeve", "cardigan", "vest", "cooling", "outerwear"),
+                variant_screen=("short_sleeve", "cardigan", "vest"),
+                # 2026-11-25 (the size_unmapped review, chosen for the owner's "sell as many as possible without a
+                # wrong size"): trousers, a jacket or a summer cooling top sold as a design of a long-sleeve top are left
+                # out, the tops sold (13762280030, 13740610318, 9435597606); outerwear and cooling held before
+                variant_drop=("trousers", "outerwear", "cooling"),
                 sizes_mens="mens_tops",                     # the men's section (the owner 2026-11-21)
                 # draft_leaves ("mens-fall-long-sleeve-tops", DRAFT until its pilot's review): none since the owner
                 # activated the men's pilot 2026-11-22 (91 drafts after the lens review of 100, 15 held)
@@ -218,10 +228,23 @@ RULES = {
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
                 no_choice_out=True, composition=True, sizes="womens_pants", sizes_mens="mens_bottoms",
                 sizes_unisex="mens_bottoms", own_brand_wordmark=True,
-                variant_screen=("shorts", "other_item",    # a belt or a polo sold as an option (2026-11-23, the pilot),
-                                "not_golf_use"),           # a long-sleeve top (10933958968) or tactical work pants
-                                                           # (8162342503) sold as an option (2026-11-24, the drafts' review)
+                variant_screen=("not_golf_use",),          # tactical work pants (8162342503) sold as an option
+                                                           # (2026-11-24, the drafts' review); Volvik's fleece long-sleeve
+                                                           # tops (10933958968) are left out by other_item since 2026-11-25
+                # a belt, a polo or shorts sold as an option (2026-11-23, the pilot: held) left out since 2026-11-25,
+                # the trousers sold (the size_unmapped review: 5534297375, 11017948766, 5815131892)
+                variant_drop=("other_item", "shorts"),
                 reviewed=True),       # the owner 2026-11-24: the pilots' 142 drafts reviewed, 130 activated, 12 held
+            # 2026-11-24, the owner: Rainwear & Midlayers (rainwear-midlayers under apparel, one section, no split, the
+            # agent picks the adjacent leaves: none yet, 50002816 alone; the Golf Pants choices; the package defaults
+            # fitted to the probe and reviewed after the 30 pilot). The rest the agent's (the probe of 골프 레인코트,
+            # decision.md): rain coats, suits, ponchos and rain skirts, men's, women's and unisex; the sizes by the
+            # stated gender, women's by the tops' grid, men's and unisex by the men's tops' (letters S-3XL)
+            "50002816": CategoryRules(
+                paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
+                no_choice_out=True, composition=True, sizes="womens_tops", sizes_mens="mens_tops",
+                sizes_unisex="mens_tops", own_brand_wordmark=True,
+                reviewed=False),      # a new category: DRAFT until the lens review and the owner's activation
         }),
 }
 

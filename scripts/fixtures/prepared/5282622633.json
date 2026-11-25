@@ -1,0 +1,2397 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:100818498:5282622633",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 8); 2 trimmed"
+  },
+  {
+   "code": "paid_addons_left_out",
+   "detail": "5 paid add-ons"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "CONDITIONAL_FREE 3000 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/hallostore/products/5282622633",
+  "channel_no": "100818498",
+  "product_id": "5282622633",
+  "category_id": "50002802"
+ },
+ "product": {
+  "title_ko": "여성 골프 주름 치마레깅스 스커트 골프치랭스 연습복 할로",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "여성 골프 주름 치마레깅스 스커트 골프치랭스 연습복 할로"
+     },
+     {
+      "source": "listing",
+      "value": "womens",
+      "text": "여성 골프 플리츠 큐롯 스커트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "간절기용/ 여름용",
+    "values_ko": [
+     "간절기용",
+     "여름용",
+     "겨울용 기모"
+    ]
+   },
+   {
+    "name_ko": "컬러",
+    "values_ko": [
+     "블랙（허리밴딩）",
+     "다크네이비(허리밴딩)",
+     "차콜（허리밴딩）",
+     "네이비（허리밴딩）"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "FREE（44-66반）",
+     "XL（통통66반이상）",
+     "2XL（77이상）"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"간절기용\",\"블랙（허리밴딩）\",\"FREE（44-66반）\"]",
+    "naver_variant_id": "21954427216",
+    "options_ko": [
+     "간절기용",
+     "블랙（허리밴딩）",
+     "FREE（44-66반）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-82fe56aa5917bef61c9edc2b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"간절기용\",\"블랙（허리밴딩）\",\"XL（통통66반이상）\"]",
+    "naver_variant_id": "21954427217",
+    "options_ko": [
+     "간절기용",
+     "블랙（허리밴딩）",
+     "XL（통통66반이상）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-9ab395595429ee78adca6cec",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"간절기용\",\"블랙（허리밴딩）\",\"2XL（77이상）\"]",
+    "naver_variant_id": "21954427218",
+    "options_ko": [
+     "간절기용",
+     "블랙（허리밴딩）",
+     "2XL（77이상）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-31f06484dc857682f42c8abb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"간절기용\",\"다크네이비(허리밴딩)\",\"FREE（44-66반）\"]",
+    "naver_variant_id": "21954427219",
+    "options_ko": [
+     "간절기용",
+     "다크네이비(허리밴딩)",
+     "FREE（44-66반）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-defe702ddb1ae2f297d9b675",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"간절기용\",\"다크네이비(허리밴딩)\",\"XL（통통66반이상）\"]",
+    "naver_variant_id": "21954427220",
+    "options_ko": [
+     "간절기용",
+     "다크네이비(허리밴딩)",
+     "XL（통통66반이상）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-0a345d26b509d5f042401580",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"간절기용\",\"다크네이비(허리밴딩)\",\"2XL（77이상）\"]",
+    "naver_variant_id": "21954427221",
+    "options_ko": [
+     "간절기용",
+     "다크네이비(허리밴딩)",
+     "2XL（77이상）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-ecc917fcf9b69487b7eb9aa9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"여름용\",\"블랙（허리밴딩）\",\"FREE（44-66반）\"]",
+    "naver_variant_id": "21954427222",
+    "options_ko": [
+     "여름용",
+     "블랙（허리밴딩）",
+     "FREE（44-66반）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-dfb7d863512b0fcca2e29c93",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"여름용\",\"블랙（허리밴딩）\",\"XL（통통66반이상）\"]",
+    "naver_variant_id": "21954427223",
+    "options_ko": [
+     "여름용",
+     "블랙（허리밴딩）",
+     "XL（통통66반이상）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-7991e64ee8c8c4a3c29b6d71",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"여름용\",\"블랙（허리밴딩）\",\"2XL（77이상）\"]",
+    "naver_variant_id": "21954427224",
+    "options_ko": [
+     "여름용",
+     "블랙（허리밴딩）",
+     "2XL（77이상）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-5e9867af528fdbabd1b2c48a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"여름용\",\"차콜（허리밴딩）\",\"FREE（44-66반）\"]",
+    "naver_variant_id": "21954427225",
+    "options_ko": [
+     "여름용",
+     "차콜（허리밴딩）",
+     "FREE（44-66반）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-505a5eee343531bf1b4c6992",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"여름용\",\"차콜（허리밴딩）\",\"XL（통통66반이상）\"]",
+    "naver_variant_id": "21954427226",
+    "options_ko": [
+     "여름용",
+     "차콜（허리밴딩）",
+     "XL（통통66반이상）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-9262e4334581cde635401a0a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"여름용\",\"차콜（허리밴딩）\",\"2XL（77이상）\"]",
+    "naver_variant_id": "21954427227",
+    "options_ko": [
+     "여름용",
+     "차콜（허리밴딩）",
+     "2XL（77이상）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-9dcbc21c2fe82b3bbb97f701",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"여름용\",\"네이비（허리밴딩）\",\"FREE（44-66반）\"]",
+    "naver_variant_id": "21954427228",
+    "options_ko": [
+     "여름용",
+     "네이비（허리밴딩）",
+     "FREE（44-66반）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-867663ba3297b5b4ce87c52b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"여름용\",\"네이비（허리밴딩）\",\"XL（통통66반이상）\"]",
+    "naver_variant_id": "21954427229",
+    "options_ko": [
+     "여름용",
+     "네이비（허리밴딩）",
+     "XL（통통66반이상）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-b8bc8e60a86d9ce44d53a3c1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"여름용\",\"네이비（허리밴딩）\",\"2XL（77이상）\"]",
+    "naver_variant_id": "21954427230",
+    "options_ko": [
+     "여름용",
+     "네이비（허리밴딩）",
+     "2XL（77이상）"
+    ],
+    "price_krw": 28000,
+    "price_usd": "28.00",
+    "sku": "FW-d6bafac0ee90fe9d1f86ac94",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 기모\",\"블랙（허리밴딩）\",\"FREE（44-66반）\"]",
+    "naver_variant_id": "26086100879",
+    "options_ko": [
+     "겨울용 기모",
+     "블랙（허리밴딩）",
+     "FREE（44-66반）"
+    ],
+    "price_krw": 30000,
+    "price_usd": "30.00",
+    "sku": "FW-e422142d48be02336f108c71",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 기모\",\"블랙（허리밴딩）\",\"XL（통통66반이상）\"]",
+    "naver_variant_id": "26086100880",
+    "options_ko": [
+     "겨울용 기모",
+     "블랙（허리밴딩）",
+     "XL（통통66반이상）"
+    ],
+    "price_krw": 30000,
+    "price_usd": "30.00",
+    "sku": "FW-a4050b5a25c0191a19d1cd3a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 기모\",\"블랙（허리밴딩）\",\"2XL（77이상）\"]",
+    "naver_variant_id": "26086100881",
+    "options_ko": [
+     "겨울용 기모",
+     "블랙（허리밴딩）",
+     "2XL（77이상）"
+    ],
+    "price_krw": 30000,
+    "price_usd": "30.00",
+    "sku": "FW-8778895c86c2b1ef730f0559",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 기모\",\"차콜（허리밴딩）\",\"FREE（44-66반）\"]",
+    "naver_variant_id": "26086100885",
+    "options_ko": [
+     "겨울용 기모",
+     "차콜（허리밴딩）",
+     "FREE（44-66반）"
+    ],
+    "price_krw": 30000,
+    "price_usd": "30.00",
+    "sku": "FW-8e750e81d6046132af971800",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 기모\",\"차콜（허리밴딩）\",\"XL（통통66반이상）\"]",
+    "naver_variant_id": "26086100886",
+    "options_ko": [
+     "겨울용 기모",
+     "차콜（허리밴딩）",
+     "XL（통통66반이상）"
+    ],
+    "price_krw": 30000,
+    "price_usd": "30.00",
+    "sku": "FW-e1b7e27d1ab88e852b4b1725",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 기모\",\"차콜（허리밴딩）\",\"2XL（77이상）\"]",
+    "naver_variant_id": "26086100887",
+    "options_ko": [
+     "겨울용 기모",
+     "차콜（허리밴딩）",
+     "2XL（77이상）"
+    ],
+    "price_krw": 30000,
+    "price_usd": "30.00",
+    "sku": "FW-30b681444c10c3a561f12cd4",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 기모\",\"네이비（허리밴딩）\",\"FREE（44-66반）\"]",
+    "naver_variant_id": "26086100888",
+    "options_ko": [
+     "겨울용 기모",
+     "네이비（허리밴딩）",
+     "FREE（44-66반）"
+    ],
+    "price_krw": 30000,
+    "price_usd": "30.00",
+    "sku": "FW-77417d8bd517ca7386f76cae",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 기모\",\"네이비（허리밴딩）\",\"XL（통통66반이상）\"]",
+    "naver_variant_id": "26086100889",
+    "options_ko": [
+     "겨울용 기모",
+     "네이비（허리밴딩）",
+     "XL（통통66반이상）"
+    ],
+    "price_krw": 30000,
+    "price_usd": "30.00",
+    "sku": "FW-415197c43ce355dff334b33d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"겨울용 기모\",\"네이비（허리밴딩）\",\"2XL（77이상）\"]",
+    "naver_variant_id": "26086100891",
+    "options_ko": [
+     "겨울용 기모",
+     "네이비（허리밴딩）",
+     "2XL（77이상）"
+    ],
+    "price_krw": 30000,
+    "price_usd": "30.00",
+    "sku": "FW-630d7a28da42445fcfe5f093",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 28000,
+   "original_krw": 40000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "할로협력업체"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "할로"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "국산"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "봄, 가을, 겨울"
+   },
+   {
+    "label_ko": "총기장",
+    "value_ko": "미니"
+   },
+   {
+    "label_ko": "스커트스타일",
+    "value_ko": "플리츠/주름, A라인"
+   },
+   {
+    "label_ko": "패턴",
+    "value_ko": "무지"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2020년형"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "신축성"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "스판, 폴리에스테르"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.7,
+   "count": 641
+  },
+  "reviews": [
+   {
+    "id": "4387878629",
+    "score": 5,
+    "text_ko": "골반넓지 않고 허벅지 보통인 66사이즈 프리사이즈 딱맞아요. 기존에 검정구매했었고 이번엔 얇은기모로 그레이 주문했는데 원단 신축성이 더 좋아진거 같은데 그냥느낌인가요? 그레이와 검정색 비교해볼수있게 같이찍은 사진 올려보아요",
+    "created_at": "2023-12-13T02:48:56Z",
+    "writer": "cs****",
+    "photos": [
+     "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-image-f04b5887c003914a.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-avatar-1f1fa7f436c18d08.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 99,
+    "text_original_ko": "골반넓지 않고 허벅지 보통인 66사이즈 프리사이즈 딱맞아요~기존에 검정구매했었고 이번엔 얇은기모로 그레이 주문했는데 원단 신축성이 더 좋아진거 같은데 그냥느낌인가요?ㅎ 그레이와 검정색 비교해볼수있게 같이찍은 사진 올려보아요"
+   },
+   {
+    "id": "4207412016",
+    "score": 5,
+    "text_ko": "158cm 49~50kg. 허리 27사이즈(스커트:64,바지:70)\n탁구,테니스,골프(호주머니없음),가벼운 산행,산책에 입으려고 구매했네요.\n전체적으로 핏감 좋고 구김없고 허릿살 커버되고 운동복으로 손색없이 예쁘게 입을 수 있겠어요\n편하게 입으려면 한치수 크게 입어도 될듯합니다.\n허리가 조여서 허리고무줄 간단하게 수선이 가능해서 늘렸는데 전체적으로 작긴합니다.",
+    "created_at": "2023-03-10T11:53:41Z",
+    "writer": "bchj*****",
+    "photos": [
+     "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-image-9a5aa50c5a0cc086.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-avatar-66fd665b9be747c7.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "158cm 49~50kg .허리 27사이즈(스커트:64,바지:70)\n탁구,테니스,골프(호주머니없음),가벼운 산행,산책에 입으려고 구매했네요.\n전체적으로 핏감 좋고 구김없고 허릿살 커버되고  운동복으로 손색없이 예쁘게 입을 수 있겠어요\n편하게 입으려면  한치수 크게 입어도 될듯합니다.\n허리가 조여서  허리고무줄 간단하게 수선이 가능해서  늘렸는데 전체적으로 작긴합니다."
+   },
+   {
+    "id": "4197080629",
+    "score": 5,
+    "text_ko": "원단도좋고 갠춘.\n66반까지 날씬77까진 프리입으셔도 될듯요\n허리밴드는 짱짱. 다리 레깅스 편합니다. 허리부분 치마 있는곳이 여유가있으니 뜨는것이 딱맞으면 더 이쁜옷일것같아여\n교환하기 힘든상황이라 약간의 허리치마부분 들뜸이 있어도 편하게 입으려구요.\n오로지 핏을위함은 프리사이즈\n약간의핏과 편한길이감을 위함은 XL추천요.\n스판이 짱짱하니 좋아서\n편한건 작거나 크거나 동일하게 편할듯.\n라지 다리를 스몰다리로 줄여주는 쫄은 아니지만작은사이즈로 약간의 힘을 빌릴순있겠어요. 그래도 밉지않은 핏이 나올듯요.\n담에 프리로 주문할게요",
+    "created_at": "2023-02-24T01:22:07Z",
+    "writer": "akyo******",
+    "photos": [
+     "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-image-7ae0fc3c7cd6a69f.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-avatar-251d7a591588f2fa.webp",
+    "tier": "primary",
+    "likes": 3,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "원단도좋고 갠춘.\n66반까지 날씬77까진 프리입으셔도 될듯요\n허리밴드는 짱짱.다리 레깅스 편합니다.허리부분 치마 있는곳이 여유가있으니 뜨는것이 딱맞으면 더 이쁜옷일것같아여\n교환하기 힘든상황이라 약간의 허리치마부분 들뜸이 있어도 편하게 입으려구요^^\n오로지 핏을위함은 프리사이즈\n약간의핏과 편한길이감을 위함은 XL추천요.\n스판이 짱짱하니 좋아서\n편한건 작거나 크거나 동일하게 편할듯.\n라지 다리를 스몰다리로 줄여주는 쫄은 아니지만ㅋ작은사이즈로 약간의 힘을 빌릴순있겠어요.그래도 밉지않은 핏이 나올듯요~\n담에 프리로 주문할게요^^"
+   },
+   {
+    "id": "4107951363",
+    "score": 4,
+    "text_ko": "s사이즈가 66까지로고 적혀 있어서 자신있게 구매했네요.\n근데 넘 타이트해요.\n레깅스는 입다보면 늘어나니까 하고 제 살을 잘구겨넣어보아요.\n원단이 부들부들 탄성이 아주",
+    "created_at": "2022-10-20T11:52:36Z",
+    "writer": "kiki***",
+    "photos": [
+     "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-image-57566b596bf8739f.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-avatar-2a10cfc069b6f46b.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 92,
+    "text_original_ko": "s사이즈가 66까지로고 적혀 있어서 자신있게 구매했네요ㅎㅎ\n근데 넘 타이트해요ㅜ\n레깅스는 입다보면 늘어나니까 하고 제 살을 잘구겨넣어보아요ㅎ\n원단이 부들부들 탄성이 아주 톡톡하니 좋네요^^",
+    "text_cut": [
+     "seller"
+    ]
+   },
+   {
+    "id": "3407051676",
+    "score": 5,
+    "text_ko": "기모소재 아니어도 도톰해서 지금 입기엔 덥구요.\n가을겨울 잘 입어질거 같아요.\n스커트길이가 짧지 않아 좋구요.\n좋습니다",
+    "created_at": "2022-04-09T12:24:08Z",
+    "writer": "rose****",
+    "photos": [
+     "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-image-85b2ef1c10e93cf0.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-avatar-08250be0e2c8424b.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 87,
+    "text_original_ko": "기모소재 아니어도 도톰해서 지금 입기엔 덥구요. \n가을겨울 잘 입어질거 같아요.\n스커트길이가 짧지 않아 좋구요.\n배송도 빠르고 좋습니다~",
+    "text_cut": [
+     "shipping"
+    ]
+   },
+   {
+    "id": "3365163363",
+    "score": 5,
+    "text_ko": "청바지27사이즈 몸무게55kg\n프리사이즈 편하게 맞네용\n다른색상도 구매해야되나 생각중입니당\n스크린이나 연습장에서 잘입어질거같아요",
+    "created_at": "2022-02-11T07:46:26Z",
+    "writer": "outi*****",
+    "photos": [
+     "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-image-2ef77edd6f598dcb.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-avatar-9b20f91c101b2e5a.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 89,
+    "text_original_ko": "청바지27사이즈 몸무게55kg   \n프리사이즈 편하게  맞네용\n다른색상도 구매해야되나 생각중입니당 ㅎㅎ\n스크린이나 연습장에서 잘입어질거같아요"
+   },
+   {
+    "id": "3360212286",
+    "score": 5,
+    "text_ko": "일반버젼인데 두껍네요 실내연습장 넘더워서 일반샀어요냄새 심하네요 세탁해봐야알듯 배가길어편해요 17에 60키로 xl편해요",
+    "created_at": "2022-02-05T08:40:11Z",
+    "writer": "kb****",
+    "photos": [
+     "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-image-3cf4398a1b8aad07.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-avatar-af8e50ae9fdc2f32.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 88
+   },
+   {
+    "id": "3354081296",
+    "score": 5,
+    "text_ko": "연습장에서 입으려고 샀는데.\n전체적으로 쫀쫀하고 기장도 좋습니다. 근데 괜히 큰 걸 샀나봐요. 다리쪽이 주름잡히고 우네요. 좀 더 핏하게 입어야 이쁠듯 해서 프리사이즈로 다시 재구매했습니다.",
+    "created_at": "2022-01-25T00:59:57Z",
+    "writer": "jbon*****",
+    "photos": [
+     "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-image-91578c572703cc7d.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5282622633/fairwardgolf-review-avatar-ffb44cda407aef48.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 94,
+    "text_original_ko": "연습장에서 입으려고 샀는데.\n전체적으로 쫀쫀하고 기장도 좋습니다. 근데 괜히 큰 걸 샀나봐요ㅡㅡㅋ 다리쪽이 주름잡히고 우네요ㅠ 좀 더 핏하게 입어야 이쁠듯 해서 프리사이즈로 다시 재구매했습니다.^^"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/5282622633/fairwardgolf-5282622633-001-842a3339403ea657.webp",
+    "sha256": "842a3339403ea6579f8bc57092dd57f51c505212593d4d41afe85cb60d5fd716",
+    "width": 500,
+    "height": 500
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/5282622633/fairwardgolf-5282622633-002-b37ab4c989c0c46f.webp",
+    "sha256": "b37ab4c989c0c46f2878bd10e261aa6fb0ea9f5d4bc58623be2486462252891b",
+    "width": 500,
+    "height": 500
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/5282622633/fairwardgolf-5282622633-003-a87d24eb02daac4c.webp",
+    "sha256": "a87d24eb02daac4c71978b58aaf8873329ce5cabfc87c8663df1b3f01fb89d15",
+    "width": 500,
+    "height": 500
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/5282622633/fairwardgolf-5282622633-004-7abca3a2250c05d0.webp",
+    "sha256": "7abca3a2250c05d01bfbd22f0f951d32eb236061e044fa10aed6453de852ad60",
+    "width": 500,
+    "height": 500
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/5282622633/fairwardgolf-5282622633-005-4fd197325dc770b4.webp",
+    "sha256": "4fd197325dc770b473686b2990b2fcc7d2373de0346cb36cf4a2b848e47de58c",
+    "width": 500,
+    "height": 500
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/5282622633/fairwardgolf-5282622633-006-8144b1bd12b8ddd4.webp",
+    "sha256": "8144b1bd12b8ddd49140cb999e262959f48f2151c600caa977d732989ac58436",
+    "width": 500,
+    "height": 500
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/5282622633/fairwardgolf-5282622633-007-589e3ea23cc07f93.webp",
+    "sha256": "589e3ea23cc07f93dbd4776eb0602f7b3a02b9236f9397dda0d331fe30b64271",
+    "width": 500,
+    "height": 500
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/5282622633/fairwardgolf-5282622633-009-a0a2907591d0fc1a.webp",
+    "sha256": "a0a2907591d0fc1a80bd3936406ce8defb8b3b9dfdd062cf154b5b733d568ec3",
+    "width": 500,
+    "height": 500
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/5282622633/fairwardgolf-5282622633-010-414dc06f0bb3ad1d.webp",
+    "sha256": "414dc06f0bb3ad1d2900ae51723593724587285e795d5a800e878d3bbe90f2da",
+    "width": 500,
+    "height": 500
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 2000,
+   "extra_fee_area3": 2000,
+   "policy_text": "50,000원 이상 구매 시 무료 / 제주 추가 2,000원, 제주 외 도서지역 추가 2,000원",
+   "lead_time": {
+    "seller_average_days": 2.903226,
+    "product_average_days": 4.5,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 3,
+    "arrival_date_text": null,
+    "arrival_probability": 74,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "사진 모델 정보 :\n키 166cm / 몸무게 52kg /\n하의 27inch ( 허벅지얇고 골반있는편)\n상의 55\n모델 착용 사이즈\nfree ( 44-55 )\nColor\n블랙 / 다크네이비 / 차콜 / 네이비\n\n/여성 골프 주름치마 레깅스/\n\n레깅스는 제품 특성상 교환 및 반품이 불가합니다.\n신중한 구매 부탁드립니다.\n\n사계절 내내 활용할 수 있는\n여성 골프 치마레깅스!\n골프웨어와 테니스 ,등산\n필라테스등 활용성GOOD!\n일반 면소재 레깅스는\n입다보면 무릎이 나오고 ,\n보풀이 잘생기죠!\n할로에서 준비한\n골프용 치마 레깅스는\n스포츠 브랜드에서 많이 사용하는\n기능성소재로\n신축성과 복원력이 뛰어납니다 :)\n\n간절기용\n\n여름버전 /기모버전\n\n모델 사이즈\n26-27inch\n(골반이 있고, 다리가 얇은 체형 )\n착용 사이즈\nfree size / 블랙\n\n골프 연습장에서\n뭘 입을지 고민하셨던 분들!\n치마만 입거나, 레깅스만 입기\n부담스러우셨던 분들!\n먼지가 잘 묻지 않는\n쫀쫀한 레깅스로 소재로\n몸매를 정말 잘잡아줘서\n다리가 너무너무 날씬해 보여요!\n라운딩에서도 활용성이 좋습니다!\n스윙도 잘보이고,\n날씬해 보이는 치마레깅스로\n두껍지 않아 사계절 내내 활용이\n가능합니다.\n허리는 밴딩처리해서\n움직임에도 굉장히 편하고,\n3가지 사이즈로 제작되어\n사이즈 선택권이 넓습니다♥\n퀄리티 좋은 국내생산 제품입니다.\n\n적당히 힙을 덮어주는 스커트 라인으로 부담스럽지 않아요\n쫀쫀한 재질로 다리라인을 정말\n예-쁘고 날씬하게 만들어준답니다!\n\n봄부터 겨울까지 사계절 활용하기 좋아요!\n\n요즘 라운딩에서도 레깅스를 많이 활용하시죠~!\n\n골프 주름치마 레깅스 연습복\n\n상세디테일",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20211230_225/16408447999259vPp0_JPEG/%EA%B3%A8%ED%94%84%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4_(2).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211230_289/1640844828880Cqszz_JPEG/%EA%B3%A8%ED%94%84%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_141/1608220635659A0iM0_JPEG/%EA%B3%A8%ED%94%84%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A41.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_242/1608220635822LxnOa_JPEG/%EA%B3%A8%ED%94%84%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A43.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_296/1608220634346m50rf_JPEG/%ED%95%A0%EB%A1%9C%EA%B3%A8%ED%94%842.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231025_117/1698231145316iICbS_JPEG/%EA%B3%A8%ED%94%84%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A422.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20201217_185/1608215909980qicCx_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___19.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20201217_207/1608215909216x5jge_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___20.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_250/16082178537832HyhE_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___26.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_230/1608217855289Rry05_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___25.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_33/1608217918370JhE2s_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___10.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_184/1608218014808xaeht_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___22.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_124/1608217993272036IQ_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___20.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_43/1608217991877e2qKN_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___23.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_103/16082180624787e2v7_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___8.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_169/1608218066350wVf2o_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___9.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_233/1608218062442yimxA_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___2.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_146/1608218061702Ez8FE_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___3.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_28/1608218064118Lwifi_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___4.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_46/1608218062889lyGkc_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___5.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_149/1608218067699StoAV_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___11.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_94/16082180626579PT5W_JPEG/%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A4___1.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20231025_286/1698231512419gj3GE_JPEG/%EA%B3%A8%ED%94%84_%EC%B9%98%EB%A7%88%EB%A0%88%EA%B9%85%EC%8A%A433.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20201218_294/1608220686606W42kl_JPEG/%ED%95%A0%EB%A1%9C%EA%B3%A8%ED%94%843.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210128_117/1611825023010Jni2d_JPEG/%ED%95%A0%EB%A1%9C%EA%B3%A0%EA%B0%9D%EC%84%BC%ED%84%B0.jpg?type=w848"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "스판, 폴리에스테르",
+    "source": "spec"
+   },
+   {
+    "label_ko": "제품소재",
+    "value_ko": "폴리 95% , 스판5%",
+    "source": "notice"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_bottoms",
+   "option": 2,
+   "values": [
+    {
+     "ko": "FREE（44-66반）",
+     "us": "XS-S (US 0-6)",
+     "letter": null,
+     "chest_cm": 61,
+     "basis": "text_waist",
+     "chart_label": "Free"
+    },
+    {
+     "ko": "XL（통통66반이상）",
+     "us": "M-L (US 8-14)",
+     "letter": null,
+     "chest_cm": 71.1,
+     "basis": "text_waist",
+     "chart_label": "XL"
+    },
+    {
+     "ko": "2XL（77이상）",
+     "us": "L (US 12-14)",
+     "letter": "L",
+     "chest_cm": 76.2,
+     "basis": "text_waist",
+     "chart_label": null
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": null,
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:eaed1ef5540be45a",
+   "kind": "title",
+   "ko": "여성 골프 주름 치마레깅스 스커트 골프치랭스 연습복 할로"
+  },
+  {
+   "id": "option_name:d1817511028318c5",
+   "kind": "option_name",
+   "ko": "간절기용/ 여름용"
+  },
+  {
+   "id": "option_value:3006b9c4228544ef",
+   "kind": "option_value",
+   "ko": "간절기용"
+  },
+  {
+   "id": "option_value:abb7639da232c5a6",
+   "kind": "option_value",
+   "ko": "여름용"
+  },
+  {
+   "id": "option_value:724c1dca57ad2449",
+   "kind": "option_value",
+   "ko": "겨울용 기모"
+  },
+  {
+   "id": "option_name:5a2fdefe4a62f26a",
+   "kind": "option_name",
+   "ko": "컬러"
+  },
+  {
+   "id": "option_value:522d5202f614947d",
+   "kind": "option_value",
+   "ko": "블랙（허리밴딩）"
+  },
+  {
+   "id": "option_value:dcfbe8415501eb2d",
+   "kind": "option_value",
+   "ko": "다크네이비(허리밴딩)"
+  },
+  {
+   "id": "option_value:c6848312a86bc2c4",
+   "kind": "option_value",
+   "ko": "차콜（허리밴딩）"
+  },
+  {
+   "id": "option_value:c7478a5c50da3fab",
+   "kind": "option_value",
+   "ko": "네이비（허리밴딩）"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:5a5f4c809ab9b5b0",
+   "kind": "option_value",
+   "ko": "FREE（44-66반）"
+  },
+  {
+   "id": "option_value:43005c15f185b125",
+   "kind": "option_value",
+   "ko": "XL（통통66반이상）"
+  },
+  {
+   "id": "option_value:eebc13ed7119fc35",
+   "kind": "option_value",
+   "ko": "2XL（77이상）"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:2f65e222c8c643ce",
+   "kind": "spec_value",
+   "ko": "할로협력업체"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:58930d32d76e40f2",
+   "kind": "spec_value",
+   "ko": "할로"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2c9897140d6cbb96",
+   "kind": "spec_value",
+   "ko": "국산"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:b9a7f0a8ab860d75",
+   "kind": "spec_value",
+   "ko": "봄, 가을, 겨울"
+  },
+  {
+   "id": "spec_label:26336d857e5ea726",
+   "kind": "spec_label",
+   "ko": "총기장"
+  },
+  {
+   "id": "spec_value:e08ac8ae394c7197",
+   "kind": "spec_value",
+   "ko": "미니"
+  },
+  {
+   "id": "spec_label:5fa034b552064e43",
+   "kind": "spec_label",
+   "ko": "스커트스타일"
+  },
+  {
+   "id": "spec_value:78d67fa01c42e52a",
+   "kind": "spec_value",
+   "ko": "플리츠/주름, A라인"
+  },
+  {
+   "id": "spec_label:15e62f04a0d53e0c",
+   "kind": "spec_label",
+   "ko": "패턴"
+  },
+  {
+   "id": "spec_value:0efed567b77e1a8a",
+   "kind": "spec_value",
+   "ko": "무지"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:bd8c63f1284e3e15",
+   "kind": "spec_value",
+   "ko": "2020년형"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:6fa36796eea775e0",
+   "kind": "spec_value",
+   "ko": "신축성"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:307caff7a1a8f46c",
+   "kind": "spec_value",
+   "ko": "스판, 폴리에스테르"
+  },
+  {
+   "id": "review:26d9fa549a0b1bbe",
+   "kind": "review",
+   "ko": "골반넓지 않고 허벅지 보통인 66사이즈 프리사이즈 딱맞아요. 기존에 검정구매했었고 이번엔 얇은기모로 그레이 주문했는데 원단 신축성이 더 좋아진거 같은데 그냥느낌인가요? 그레이와 검정색 비교해볼수있게 같이찍은 사진 올려보아요"
+  },
+  {
+   "id": "review:06255098622ad146",
+   "kind": "review",
+   "ko": "158cm 49~50kg. 허리 27사이즈(스커트:64,바지:70)\n탁구,테니스,골프(호주머니없음),가벼운 산행,산책에 입으려고 구매했네요.\n전체적으로 핏감 좋고 구김없고 허릿살 커버되고 운동복으로 손색없이 예쁘게 입을 수 있겠어요\n편하게 입으려면 한치수 크게 입어도 될듯합니다.\n허리가 조여서 허리고무줄 간단하게 수선이 가능해서 늘렸는데 전체적으로 작긴합니다."
+  },
+  {
+   "id": "review:13f518cd999a2def",
+   "kind": "review",
+   "ko": "원단도좋고 갠춘.\n66반까지 날씬77까진 프리입으셔도 될듯요\n허리밴드는 짱짱. 다리 레깅스 편합니다. 허리부분 치마 있는곳이 여유가있으니 뜨는것이 딱맞으면 더 이쁜옷일것같아여\n교환하기 힘든상황이라 약간의 허리치마부분 들뜸이 있어도 편하게 입으려구요.\n오로지 핏을위함은 프리사이즈\n약간의핏과 편한길이감을 위함은 XL추천요.\n스판이 짱짱하니 좋아서\n편한건 작거나 크거나 동일하게 편할듯.\n라지 다리를 스몰다리로 줄여주는 쫄은 아니지만작은사이즈로 약간의 힘을 빌릴순있겠어요. 그래도 밉지않은 핏이 나올듯요.\n담에 프리로 주문할게요"
+  },
+  {
+   "id": "review:fbf97c748ec07c97",
+   "kind": "review",
+   "ko": "s사이즈가 66까지로고 적혀 있어서 자신있게 구매했네요.\n근데 넘 타이트해요.\n레깅스는 입다보면 늘어나니까 하고 제 살을 잘구겨넣어보아요.\n원단이 부들부들 탄성이 아주"
+  },
+  {
+   "id": "review:d4b4373bba6ed4c3",
+   "kind": "review",
+   "ko": "기모소재 아니어도 도톰해서 지금 입기엔 덥구요.\n가을겨울 잘 입어질거 같아요.\n스커트길이가 짧지 않아 좋구요.\n좋습니다"
+  },
+  {
+   "id": "review:8e2f50b182853a59",
+   "kind": "review",
+   "ko": "청바지27사이즈 몸무게55kg\n프리사이즈 편하게 맞네용\n다른색상도 구매해야되나 생각중입니당\n스크린이나 연습장에서 잘입어질거같아요"
+  },
+  {
+   "id": "review:62233dfb67049be4",
+   "kind": "review",
+   "ko": "일반버젼인데 두껍네요 실내연습장 넘더워서 일반샀어요냄새 심하네요 세탁해봐야알듯 배가길어편해요 17에 60키로 xl편해요"
+  },
+  {
+   "id": "review:ba96899a354d41f8",
+   "kind": "review",
+   "ko": "연습장에서 입으려고 샀는데.\n전체적으로 쫀쫀하고 기장도 좋습니다. 근데 괜히 큰 걸 샀나봐요. 다리쪽이 주름잡히고 우네요. 좀 더 핏하게 입어야 이쁠듯 해서 프리사이즈로 다시 재구매했습니다."
+  }
+ ]
+}

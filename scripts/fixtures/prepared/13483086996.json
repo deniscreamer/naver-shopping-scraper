@@ -1,0 +1,603 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101025332:13483086996",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (short 1); 0 trimmed"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "PAID 4000 KRW"
+  },
+  {
+   "code": "description_all_boilerplate",
+   "detail": "1 dropped"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/fantas/products/13483086996",
+  "channel_no": "101025332",
+  "product_id": "13483086996",
+  "category_id": "50002798"
+ },
+ "product": {
+  "title_ko": "골든베어 아울렛 여성 골프 경량 바람막이 G4UAM25401PIX",
+  "brand_ko": "골든베어",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "womens",
+      "text": "여성용"
+     },
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "골든베어 아울렛 여성 골프 경량 바람막이 G4UAM25401PIX"
+     },
+     {
+      "source": "listing",
+      "value": "womens",
+      "text": "여성 골프 바람막이 점퍼"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "WS",
+     "WM",
+     "WL"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"WS\"]",
+    "naver_variant_id": "58114068703",
+    "options_ko": [
+     "WS"
+    ],
+    "price_krw": 127000,
+    "price_usd": "127.00",
+    "sku": "FW-2ad657e1fbc53353b1cd83eb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 150,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"WM\"]",
+    "naver_variant_id": "58114068704",
+    "options_ko": [
+     "WM"
+    ],
+    "price_krw": 127000,
+    "price_usd": "127.00",
+    "sku": "FW-ebce73877c0734ac1a6935dc",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 150,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"WL\"]",
+    "naver_variant_id": "58114068705",
+    "options_ko": [
+     "WL"
+    ],
+    "price_krw": 127000,
+    "price_usd": "127.00",
+    "sku": "FW-a2f2a79e747d415e6325ffcc",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 150,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 127000,
+   "original_krw": 238000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "코오롱인더스트리"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "골든베어"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "국산"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "나일론, 폴리우레탄"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "봄, 가을, 여름"
+   },
+   {
+    "label_ko": "소매기장",
+    "value_ko": "긴팔"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "바람막이"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "여성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "4987996413",
+    "score": 5,
+    "text_ko": "만족합니다 재구매 의사있어요",
+    "created_at": "2026-05-30T21:24:35Z",
+    "writer": "se****",
+    "photos": [
+     "collected/50002788-fixtures/images/13483086996/fairwardgolf-review-image-a7aabd5dcec103a0.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 18
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13483086996/fairwardgolf-13483086996-001-7f9908b43efc448d.webp",
+    "sha256": "7f9908b43efc448d4652630576eb9df495e837cae69a9fad5b28a70de3a31a48",
+    "width": 1024,
+    "height": 1002
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13483086996/fairwardgolf-13483086996-002-df5ad5201527631e.webp",
+    "sha256": "df5ad5201527631e6a7c5edb0edb9650701451cd5b59c096a03ddfcad56bb6d9",
+    "width": 1024,
+    "height": 996
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13483086996/fairwardgolf-13483086996-003-c311a6938b32ec88.webp",
+    "sha256": "c311a6938b32ec8899ac31a7ef0e599b863e1bf04acc3cc31313b07b9cb26879",
+    "width": 805,
+    "height": 912
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "PAID",
+   "base_fee": 4000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 4,000원",
+   "lead_time": {
+    "seller_average_days": 1.8095238,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 83,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260503_84/1777799647340N3cv8_JPEG/tmp2910867796743725879.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260503_206/1777799647336B4LmT_JPEG/tmp2873793443283011589.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260503_66/17777996473634V8BL_JPEG/tmp6908806240777455584.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260503_207/1777799986321ttITa_JPEG/tmp3110060500214379793.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260503_170/1777799595041w0NMM_PNG/tmp7562403456693138151.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260503_89/1777799718994BEioI_JPEG/tmp6149887048153693914.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260503_139/1777799677986fIvS9_JPEG/tmp2097939915616512670.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260503_127/1777799677972zb4CS_JPEG/tmp7612294628190229796.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260503_238/17777996614577a8v1_JPEG/tmp6398297819152348489.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260503_188/1777799661436sCwTR_JPEG/tmp6297848191027466972.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260503_163/1777799615973Ucbd0_JPEG/tmp6422613776867871694.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260503_263/1777799634141cUFgv_JPEG/tmp881784288764412608.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "label",
+    "text": "상세설명"
+   }
+  ],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "나일론, 폴리우레탄",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_tops",
+   "option": 0,
+   "values": [
+    {
+     "ko": "WS",
+     "us": "S (US 4-6)",
+     "letter": "S",
+     "chest_cm": 90,
+     "basis": "fallback_letters",
+     "chart_label": "ws"
+    },
+    {
+     "ko": "WM",
+     "us": "M (US 8-10)",
+     "letter": "M",
+     "chest_cm": 95,
+     "basis": "fallback_letters",
+     "chart_label": "WM"
+    },
+    {
+     "ko": "WL",
+     "us": "L (US 12-14)",
+     "letter": "L",
+     "chest_cm": 100,
+     "basis": "fallback_letters",
+     "chart_label": "WL"
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "length": null,
+     "chest": "circ",
+     "shoulder": "flat",
+     "sleeve": null
+    },
+    "rows": [
+     {
+      "us": "S (US 4-6)",
+      "cm": {
+       "length": 56.5,
+       "chest": 107.5,
+       "shoulder": 43.5,
+       "sleeve": 58.0
+      }
+     },
+     {
+      "us": "M (US 8-10)",
+      "cm": {
+       "length": 58.5,
+       "chest": 112.5,
+       "shoulder": 45.0,
+       "sleeve": 59.0
+      }
+     },
+     {
+      "us": "L (US 12-14)",
+      "cm": {
+       "length": 60.5,
+       "chest": 117.5,
+       "shoulder": 46.5,
+       "sleeve": 60.0
+      }
+     }
+    ]
+   },
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:c56ca1d0bbe33d74",
+   "kind": "title",
+   "ko": "골든베어 아울렛 여성 골프 경량 바람막이 G4UAM25401PIX"
+  },
+  {
+   "id": "brand:d96a13b662356184",
+   "kind": "brand",
+   "ko": "골든베어"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:dbc9c4a7e48f437d",
+   "kind": "option_value",
+   "ko": "WS"
+  },
+  {
+   "id": "option_value:0efad226cd83e1c1",
+   "kind": "option_value",
+   "ko": "WM"
+  },
+  {
+   "id": "option_value:034f519b2478c03f",
+   "kind": "option_value",
+   "ko": "WL"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:2528ad2c30240a18",
+   "kind": "spec_value",
+   "ko": "코오롱인더스트리"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:d96a13b662356184",
+   "kind": "spec_value",
+   "ko": "골든베어"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2c9897140d6cbb96",
+   "kind": "spec_value",
+   "ko": "국산"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:5bd23dfa1f0e44ca",
+   "kind": "spec_value",
+   "ko": "나일론, 폴리우레탄"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:35937cec8d1cf396",
+   "kind": "spec_value",
+   "ko": "봄, 가을, 여름"
+  },
+  {
+   "id": "spec_label:c595482b55571d6a",
+   "kind": "spec_label",
+   "ko": "소매기장"
+  },
+  {
+   "id": "spec_value:2fa60fab30cad430",
+   "kind": "spec_value",
+   "ko": "긴팔"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:74cb3b61867d2693",
+   "kind": "spec_value",
+   "ko": "바람막이"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:ff90d7cd3c519c1f",
+   "kind": "spec_value",
+   "ko": "여성용"
+  },
+  {
+   "id": "review:09c67849ab6bbb50",
+   "kind": "review",
+   "ko": "만족합니다 재구매 의사있어요"
+  }
+ ]
+}

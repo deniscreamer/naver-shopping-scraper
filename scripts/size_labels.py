@@ -23,6 +23,10 @@ _NUM = r"\d{1,3}(?:\.\d)?(?:반)?"
 _RANGE_RE = re.compile(rf"^({_NUM})\s*[-~]\s*({_NUM})$")
 _OPEN_RE = re.compile(rf"^~?\s*({_NUM})\s*~?$")              # "77~", "~55": one end of a fit range, that number
 _PAREN_RE = re.compile(r"[(\[]([^)\]]*)[)\]]")
+_SIZE_WORD = {"투엑스라지": "XXL", "엑스라지": "XL", "라지": "L", "미디움": "M", "미디엄": "M", "스몰": "S", "프리": "F"}
+_WORD_LETTER = {"XXL": "XXL", "2XL": "XXL", "XL": "XL", "L": "L", "M": "M", "S": "S", "F": "F", "FREE": "F"}
+_SIZE_WORDS = "투엑스라지|엑스라지|라지|미디움|미디엄|스몰|프리"
+_WORD_LETTERS = "FREE|XXL|2XL|XL|L|M|S|F"
 _WOMEN = {33, 44, 55, 66, 77, 88, 99}            # 33: below 44 ("XS (33~44)", PXG 5429994082, 2026-11-20)
 
 
@@ -30,8 +34,9 @@ _WOMEN = {33, 44, 55, 66, 77, 88, 99}            # 33: below 44 ("XS (33~44)", P
 # a size; apparel_sizes.resolve and transform._sizes turn it on for such a profile
 WOMENS_WAIST = (22.0, 38.0, 58.0, 79.0, False)
 # men's trousers (Golf Pants 50002801, 2026-11-23): waists 26..44 inches, 66..112 cm, read before the women's sizes
-# and the chest ("88", "85" are a men's waist in cm there, never a women's 88 or a chest)
-MENS_WAIST = (26.0, 44.0, 66.0, 112.0, True)
+# and the chest ("88", "85" are a men's waist in cm there, never a women's 88 or a chest); up to 46 inches since
+# 2026-11-24 (6818506441: 30..46, its chart's 46 a flat 58 cm waist)
+MENS_WAIST = (26.0, 46.0, 66.0, 112.0, True)
 # (inches low, high, cm low, high, read first) or None
 _WAIST: contextvars.ContextVar[tuple[float, float, float, float, bool] | None] = contextvars.ContextVar("waist",
                                                                                                       default=None)
@@ -90,6 +95,12 @@ def _numbers(part: str, letter: str | None,
         if nums is None:
             return None
         w = _WAIST.get()
+        # a women's waist profile: a range of inches up to 3 apart, whole or 반, is the body waist, even with a women's
+        # 33 at one end ("2XL(32~33)", "M(26반~27)": 12370291326, 2026-11-24, held "not read"); never the men's
+        if r and w and not w[4] and all(w[0] <= n <= w[1] and (n * 2) == int(n * 2) for n in nums) \
+                and 0 < nums[1] - nums[0] <= 3:
+            waist += [round(n * 2.54, 1) for n in nums]
+            continue
         for n in nums:
             if w and w[4] and ((n == int(n) and w[0] <= n <= w[1]) or w[2] <= n <= w[3]) \
                     and not (letter and n >= 90 and n % 5 == 0):   # "M(95)": a top's chest beside a letter (a polo
@@ -121,7 +132,8 @@ def parse_label(text: str) -> Label | None:
     # 2026-11-21, the long-sleeve tops pilot: a seller's note after the size ("S(44)모델착용사이즈": the model wears it,
     # 7303524506, 6454520137), the word 사이즈 inside the brackets ("55(S사이즈)", 5857396168) and a size's number before
     # the women's sizes it fits ("1사이즈(44-55사이즈)", "2번(66-77)": 5627070774, 5660255053) read as the size itself
-    t = re.sub(r"(?:모델\s*착용(?:사이즈)?|모델사이즈|추천)$", "", t)
+    # "FREE(44~55)모델착용컷": the model's photo (컷) wears it (5202996089, 2026-11-24)
+    t = re.sub(r"(?:모델\s*착용(?:사이즈|컷)?|모델사이즈|추천)$", "", t)
     t = re.sub(r"(?:사이즈|SIZE)(?=\))", "", t)
     t = re.sub(r"^(?:\d{1,2}번|\d사이즈)(?=\()", "", t)    # "1사이즈(...)", "2번(...)"; never "55사이즈(S)"
     t = re.sub(r"\((?:UP|DOWN|업|다운)추천\)", "", t)   # "S(up추천)": size up advised, the size S (2026-11-23, 5117895030)
@@ -132,23 +144,71 @@ def parse_label(text: str) -> Label | None:
     # 여_S(55) stays two systems), a Korean letter word ("라지(77-88)") and the chest after a bare letter ("S 95사이즈",
     # "S 95~100사이즈": Nike 7973150842, Callaway 7184031093, 5033870845) read as the size they name
     t = re.sub(r"\((?:모델|상세|착용|확인|기준|정사이즈)[가-힣]*\)$", "", t)
+    # who the chest fits after a dash in its brackets: "XL(100-여성77이상/남성M)" is XL(100) (5964063532, 2026-11-24);
+    # the whole words 여성 / 남성 only, never a bare 여 / 남 ("L(100-남색)": navy stays unread)
+    t = re.sub(r"\((\d{2,3})-(?:여성|남성)[^)]*\)$", r"(\1)", t)
     t = re.sub(r"날씬|통통", "", t)                       # "S（55~날씬66）": slim / chubby (8628740416, 2026-11-22)
+    # "이상" (and over) after a women's size is the open end: "XL（통통66반이상）", "2XL（77이상）" (할로 5282622633,
+    # 2026-11-25) are "66반~", "77~"
+    t = re.sub(r"(?<!\d)((?:44|55|66|77|88|99)반?)이상(?=\)|$)", r"\1~", t)
+    w = _WAIST.get()
+    if w and w[4]:
+        # adidas' Asian waist code with the inch the seller writes for it, in the men's trousers: "A82 (32인치)" is
+        # 82 cm with its inch 32 (cm_inch takes the inch: 7191019224, 10159594995, 2026-11-24); 인치 must be written,
+        # a bare "A79" stays unread
+        t = re.sub(r"^A(\d{2,3})\((\d{2})인치\)$", r"\1(\2)", t)
+    # "about" in the brackets after a letter and 사이즈: "XXS사이즈(약80)" is XXS with the chest 80 (Klattermusen rainwear
+    # 5460564989, 2026-11-25); never 약 alone ("화이트(약기모)" is a light fleece)
+    t = re.sub(r"^(XXXL|3XL|XXL|2XL|XXS|2XS|XS|XL|S|M|L)(?:사이즈)?\(약(\d{2,3})\)$", r"\1(\2)", t)
     t = re.sub(r"(?<=\d)인치", "", t)                     # "XS（25인치）", "XS (25인치 전후)" (J.Lindeberg, 2026-11-22)
     t = re.sub(r"(?<=\d)전후(?=\))", "", t)
-    w = _WAIST.get()
+    # a Japanese maker's chest in 호 after the letter: "S(90호)" (Titleist Japan rainwear 4819248041, 2026-11-24) is
+    # S(90); a bare "0호" stays unread (a Japanese 0..4 written so is not taken)
+    # LL / 3L too, the Japanese letters ("LL(105호)", "3L(110호)": the same product, 2026-11-24)
+    t = re.sub(r"^(XXXL|3XL|XXL|2XL|XS|XL|LL|3L|S|M|L)\((\d{2,3})호\)$", r"\1(\2)", t)
+    if not w:
+        # outside the waist profiles (2026-11-24, the size_unmapped review):
+        # a head number with a women's size and a letter in one bracket, "75(44/S)", "85(XS.44)" (pgr 4260789645 /
+        # 4648580312, Hillcrest 12931719346): the women's size and the letter, the head number dropped
+        t = re.sub(r"^\d{2,3}\((33|44|55|66|77|88|99)[/.](XXL|2XL|XL|XS|S|M|L)\)$", r"\1(\2)", t)
+        t = re.sub(r"^\d{2,3}\((XXL|2XL|XL|XS|S|M|L)[/.](33|44|55|66|77|88|99)\)$", r"\2(\1)", t)
+        # a European 46..54 with the Korean chest in brackets, "46(90)" (IKALOOK 7557074073): the chest; "44(85)"
+        # stays the women's 44 with its chest
+        t = re.sub(r"^(46|48|50|52|54)\((8[5-9]|9\d|1[01]\d)\)$", r"(\2)", t)
+        # a women's letter, "WS / WM / WL" (13483086996: the brand's guide, WS for a 90 bust): the letter; the whole
+        # label W and one letter only
+        t = re.sub(r"^W(XS|S|M|L|XL)$", r"\1", t)
+        # adidas' Asian letter with the Korean chest, "AL(95)", "AS (85)" (10861903381): the chest, 80..125 only
+        t = re.sub(r"^A(?:XS|S|M|L|XL|2XL|3XL)\((\d{2,3})\)$",
+                   lambda m: f"({m.group(1)})" if 80 <= int(m.group(1)) <= 125 else m.group(0), t)
     if w and w[4]:
         # the men's trousers (Golf Pants 50002801, 2026-11-24): J.Lindeberg writes the maker's waist with the Korean
         # one, an inch up, in brackets: "29(30인치)" (6780190931), "29(30)" (4720043508), "29인치(30인치전후)"
         # (7006521057), "30(국내31)" (4530831170: "한국사이즈 33 이시면 32로 주문"; the reviews "31(국내32)"): one
         # waist, the maker's (the first number), never a band from one to the other
         t = re.sub(r"^(\d{2})\((?:국내|한국)\d{2,3}\)$", r"\1", t)
+        # a waist with a big letter of that style's own in brackets, "36(4XL)", "38(5XL)", "40(6XL)" (매일츄리닝
+        # 7455950253, 2026-11-25: its 융기모패딩조거 sells "30(XL)" .. "40(6XL)", the 32-inch model wears "2XL(32)"): the
+        # waist; "30(XL)" .. "34(3XL)" read so already, a bare "4XL" stays unread
+        t = re.sub(r"^(\d{2})\((?:4|5|6)XL\)$", r"\1", t)
         m = re.match(r"^(\d{2})\((\d{2})\)$", t)
         if m and int(m.group(2)) == int(m.group(1)) + 1 and w[0] <= int(m.group(1)) < w[1]:
             t = m.group(1)
     t = re.sub(r"^(?:여성|남성|여자|남자|여|남)[_\-:]?(?=[0-9SMLX(])", "", t)
+    # 2026-11-25 (핑크골프 7965635614): a Korean size word with its own letter in brackets, "라지(L)", "엑스라지(XL)",
+    # "프리(F)", is that letter; its chart's "L-라지(66~77)", "F-프리(55~66)" the letter with that range; the word and
+    # the letter must agree ("라지(XL)" stays unread)
+    t = re.sub(rf"^({_SIZE_WORDS})\(({_WORD_LETTERS})\)$",
+               lambda m: m.group(2) if _SIZE_WORD[m.group(1)] == _WORD_LETTER.get(m.group(2)) else m.group(0), t)
+    t = re.sub(rf"^({_WORD_LETTERS})-({_SIZE_WORDS})(\([^)]*\))$",
+               lambda m: m.group(1) + m.group(3) if _SIZE_WORD[m.group(2)] == _WORD_LETTER.get(m.group(1))
+               else m.group(0), t)
     for word, said in (("투엑스라지", "XXL"), ("엑스라지", "XL"), ("라지", "L"), ("미디움", "M"), ("미디엄", "M"),
                          ("스몰", "S")):
         t = re.sub(rf"^{word}(?=\(|$)", said, t)
+    # a one-size garment the seller files under a letter, the free word in brackets: "L（FREE）" (Rainwear 50002816,
+    # 2026-11-24, the poncho 8731658115: one size, its spec row 사이즈) is one size, never a letter
+    t = re.sub(r"^(?:XXXL|3XL|XXL|2XL|XL|S|M|L)\((FREE|F|프리|프리사이즈|FREESIZE|ONESIZE)\)$", r"\1", t)
     if _FREE_RE.match(t):                       # "ONE SIZE", "원사이즈": before the 사이즈 / SIZE suffix goes
         return Label(free=True)
     t = re.sub(r"사이즈$|SIZE$", "", t)

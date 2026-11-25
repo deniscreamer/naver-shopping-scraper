@@ -93,5 +93,7 @@ def test_prepare_is_json_native_and_reads_only_the_measures_table(monkeypatch):
         assert json.loads(json.dumps(got, ensure_ascii=False)) == got, name
     monkeypatch.undo()
     profiles = {f.name for f in apparel_sizes.PROFILES_DIR.glob("*.json")}    # an apparel category's (hashed too)
-    assert "category_measures.json" in opened and set(opened) <= {"category_measures.json"} | profiles, (
+    # listing_title_rules.json: an apparel category's variant screen and drop (2026-11-25, in the signature too)
+    assert "category_measures.json" in opened and set(opened) <= {"category_measures.json",
+                                                                  "listing_title_rules.json"} | profiles, (
         f"prepare opened {sorted(set(opened))}: add it to run_transform's cache signature")

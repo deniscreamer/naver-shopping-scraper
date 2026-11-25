@@ -17,3 +17,5 @@ venv/
 /server/output/
 /scripts/output/*
 !/scripts/output/.gitkeep
+.env.*
+!.env.example

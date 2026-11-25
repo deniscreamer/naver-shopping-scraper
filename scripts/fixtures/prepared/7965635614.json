@@ -1,0 +1,1836 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101730292:7965635614",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 8); 2 trimmed"
+  },
+  {
+   "code": "title_names_one_variant",
+   "detail": "긴기장 밴딩"
+  },
+  {
+   "code": "specs_name_one_variant",
+   "detail": "모델명 여성골프치마 긴기장 밴딩 기본 플레어스커트 빅사이즈F: F"
+  },
+  {
+   "code": "paid_addons_left_out",
+   "detail": "2 paid add-ons"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "CONDITIONAL_FREE 3000 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/greengreengolf/products/7965635614",
+  "channel_no": "101730292",
+  "product_id": "7965635614",
+  "category_id": "50002802"
+ },
+ "product": {
+  "title_ko": "여성골프치마바지 긴기장 밴딩 플레어 스커트 빅사이즈 골프웨어 롱",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "여성골프치마바지 긴기장 밴딩 플레어 스커트 빅사이즈 골프웨어 롱"
+     },
+     {
+      "source": "listing",
+      "value": "womens",
+      "text": "여성 골프 스커트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "타입",
+    "values_ko": [
+     "긴기장 밴딩",
+     "긴기장 밴딩(도톰원단)",
+     "긴기장 밴딩(기모원단)"
+    ]
+   },
+   {
+    "name_ko": "컬러",
+    "values_ko": [
+     "블랙",
+     "베이지",
+     "핑크"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "프리(F)",
+     "라지(L)",
+     "엑스라지(XL)"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"긴기장 밴딩\",\"블랙\",\"프리(F)\"]",
+    "naver_variant_id": "48160130046",
+    "options_ko": [
+     "긴기장 밴딩",
+     "블랙",
+     "프리(F)"
+    ],
+    "price_krw": 38900,
+    "price_usd": "38.90",
+    "sku": "FW-20e75d072ed3855c96042e15",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"긴기장 밴딩\",\"블랙\",\"라지(L)\"]",
+    "naver_variant_id": "48160130047",
+    "options_ko": [
+     "긴기장 밴딩",
+     "블랙",
+     "라지(L)"
+    ],
+    "price_krw": 40900,
+    "price_usd": "40.90",
+    "sku": "FW-cdc9d5f0fc91192ae54c7dfd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"긴기장 밴딩\",\"블랙\",\"엑스라지(XL)\"]",
+    "naver_variant_id": "48160130048",
+    "options_ko": [
+     "긴기장 밴딩",
+     "블랙",
+     "엑스라지(XL)"
+    ],
+    "price_krw": 42900,
+    "price_usd": "42.90",
+    "sku": "FW-79d874a13035a178445293e8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"긴기장 밴딩\",\"베이지\",\"프리(F)\"]",
+    "naver_variant_id": "48160130049",
+    "options_ko": [
+     "긴기장 밴딩",
+     "베이지",
+     "프리(F)"
+    ],
+    "price_krw": 38900,
+    "price_usd": "38.90",
+    "sku": "FW-cdff54a4e1d6ef0e4c812e06",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"긴기장 밴딩\",\"베이지\",\"라지(L)\"]",
+    "naver_variant_id": "48160130050",
+    "options_ko": [
+     "긴기장 밴딩",
+     "베이지",
+     "라지(L)"
+    ],
+    "price_krw": 40900,
+    "price_usd": "40.90",
+    "sku": "FW-e8b54115a8d674aac0d76651",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"긴기장 밴딩\",\"베이지\",\"엑스라지(XL)\"]",
+    "naver_variant_id": "48160130051",
+    "options_ko": [
+     "긴기장 밴딩",
+     "베이지",
+     "엑스라지(XL)"
+    ],
+    "price_krw": 42900,
+    "price_usd": "42.90",
+    "sku": "FW-dd70c6f5d89eaecc438b9135",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"긴기장 밴딩\",\"핑크\",\"프리(F)\"]",
+    "naver_variant_id": "48160130052",
+    "options_ko": [
+     "긴기장 밴딩",
+     "핑크",
+     "프리(F)"
+    ],
+    "price_krw": 38900,
+    "price_usd": "38.90",
+    "sku": "FW-155dbe94471569253849e7cf",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"긴기장 밴딩\",\"핑크\",\"라지(L)\"]",
+    "naver_variant_id": "48160130053",
+    "options_ko": [
+     "긴기장 밴딩",
+     "핑크",
+     "라지(L)"
+    ],
+    "price_krw": 40900,
+    "price_usd": "40.90",
+    "sku": "FW-0361ba315a40c43a8ad60635",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"긴기장 밴딩\",\"핑크\",\"엑스라지(XL)\"]",
+    "naver_variant_id": "48160130054",
+    "options_ko": [
+     "긴기장 밴딩",
+     "핑크",
+     "엑스라지(XL)"
+    ],
+    "price_krw": 42900,
+    "price_usd": "42.90",
+    "sku": "FW-b53b51f7768b77acd3dc9955",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"긴기장 밴딩(도톰원단)\",\"블랙\",\"프리(F)\"]",
+    "naver_variant_id": "44088140250",
+    "options_ko": [
+     "긴기장 밴딩(도톰원단)",
+     "블랙",
+     "프리(F)"
+    ],
+    "price_krw": 40900,
+    "price_usd": "40.90",
+    "sku": "FW-4e8676396aa5d84b5fdaf997",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"긴기장 밴딩(도톰원단)\",\"블랙\",\"라지(L)\"]",
+    "naver_variant_id": "44088140251",
+    "options_ko": [
+     "긴기장 밴딩(도톰원단)",
+     "블랙",
+     "라지(L)"
+    ],
+    "price_krw": 42900,
+    "price_usd": "42.90",
+    "sku": "FW-188962c52bb4e9d49f1e3569",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"긴기장 밴딩(도톰원단)\",\"블랙\",\"엑스라지(XL)\"]",
+    "naver_variant_id": "44088140252",
+    "options_ko": [
+     "긴기장 밴딩(도톰원단)",
+     "블랙",
+     "엑스라지(XL)"
+    ],
+    "price_krw": 44900,
+    "price_usd": "44.90",
+    "sku": "FW-b675a38ed9ebf5cb2a3c5f5b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 200,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"긴기장 밴딩(기모원단)\",\"블랙\",\"프리(F)\"]",
+    "naver_variant_id": "53486131269",
+    "options_ko": [
+     "긴기장 밴딩(기모원단)",
+     "블랙",
+     "프리(F)"
+    ],
+    "price_krw": 41900,
+    "price_usd": "41.90",
+    "sku": "FW-bf13ddc95976f9f2e0bb0adf",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"긴기장 밴딩(기모원단)\",\"블랙\",\"라지(L)\"]",
+    "naver_variant_id": "53486131271",
+    "options_ko": [
+     "긴기장 밴딩(기모원단)",
+     "블랙",
+     "라지(L)"
+    ],
+    "price_krw": 43900,
+    "price_usd": "43.90",
+    "sku": "FW-8d81448d00d72699865113d7",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"긴기장 밴딩(기모원단)\",\"블랙\",\"엑스라지(XL)\"]",
+    "naver_variant_id": "53828800938",
+    "options_ko": [
+     "긴기장 밴딩(기모원단)",
+     "블랙",
+     "엑스라지(XL)"
+    ],
+    "price_krw": 45900,
+    "price_usd": "45.90",
+    "sku": "FW-a9da5cb9467725b5a89a694d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 16,
+      "approved_by": "owner",
+      "approved_at": "2026-11-22"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 38900,
+   "original_krw": 41900,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "핑크골프 협력업체"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "핑크골프"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "여성골프치마 긴기장 밴딩 기본 플레어스커트 빅사이즈F"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "국산"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "신축성, 기모안감"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 스판덱스, 폴리우레탄"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "봄, 여름, 겨울, 가을"
+   },
+   {
+    "label_ko": "총기장",
+    "value_ko": "미디"
+   },
+   {
+    "label_ko": "스커트스타일",
+    "value_ko": "A라인"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2023년형"
+   },
+   {
+    "label_ko": "패턴",
+    "value_ko": "무지"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.69,
+   "count": 478
+  },
+  "reviews": [
+   {
+    "id": "4834260588",
+    "score": 5,
+    "text_ko": "이거 치마 완전완전 이뻐요!\n핏도 말라보이고 엄마랑 언니도 이쁘다고 칭찬해줬어요!\n다른 골프치마들이 다 너무 짧아서 스윙할 때 굉장히 신경쓰였었는데, 요 치마는 길이 너무 좋아요.\n제 키가 157인데 무릎 위로 아주 이쁘게 잘맞습니다.\n그리고 편해서 그런지 볼도 너무 잘맞았어요.\n역시 골프는 옷이 편해야합니다",
+    "created_at": "2025-11-04T01:15:22Z",
+    "writer": "0315****",
+    "photos": [
+     "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-image-719b26f7afe619a9.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-avatar-ecc6beb9820f8cd4.webp",
+    "tier": "primary",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "이거 치마 완전완전 이뻐요!! \n핏도 말라보이고 엄마랑 언니도 이쁘다고 칭찬해줬어요!\n다른 골프치마들이 다 너무 짧아서 스윙할 때 굉장히 신경쓰였었는데, 요 치마는 길이 너무 좋아요. \n제 키가 157인데 무릎 위로 아주 이쁘게 잘맞습니다.\n그리고 편해서 그런지 볼도 너무 잘맞았어요😊\n역시 골프는 옷이 편해야합니다~"
+   },
+   {
+    "id": "4758735381",
+    "score": 4,
+    "text_ko": "허리신축성이 많지는 않아서 조금 타이트하게 올라가는데 안에 속바지는 또 넉넉? 헐렁? 해요. 여름이라 딱맞게 입으면 불편했겠지만 여유있어서 좋긴해요 사이드로 퍼진 치마인데 제봉자체가 옆으로 더 늘린느낌이라 골반이 넓은 저에겐 더 넓게 보이긴 합니다. 체형보정보다는 편하게 입긴 좋겠어요",
+    "created_at": "2025-07-07T04:20:14Z",
+    "writer": "boku*****",
+    "photos": [
+     "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-image-f34130afb332606b.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-avatar-675e9ace23745aeb.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "허리신축성이 많지는 않아서 조금 타이트하게 올라가는데 안에 속바지는 또 넉넉?헐렁?해요ㅎㅎ 여름이라 딱맞게 입으면 불편했겠지만 여유있어서 좋긴해요 사이드로 퍼진 치마인데 제봉자체가 옆으로 더 늘린느낌이라 골반이 넓은 저에겐 더 넓게 보이긴 합니다ㅎㅎ 체형보정보다는 편하게 입긴 좋겠어요~"
+   },
+   {
+    "id": "4230550763",
+    "score": 5,
+    "text_ko": "지금 계절에 덥지도 춥지도 않은 옷 고르기가 까다로웠는데 찰떡을 만나서 참 좋았구요\n전 요즘 이거입고 연습장도 가게되네요\n메이커 비싼거 아껴입는것보다 이쁜옷 실컷 입어주는게 가성비면에서 짱인듯해요.\n담주엔 판매자님 다른 스커트 사봤는데\n그거입고 롼딩 갑니다.\n이쁜거 마니마니 올려주세욤!\n스윙할때랑 편하게 돌아댕긴때 불편하지않고 역시 날씬해 보이는게 젤 장점인듯해요.\n길이감도 적당하고요\n나이가 어렸음 더 짪은거 찾았겠으나 키가 안커서 요게 딱 찰떡이네요.\n겨울 빼고는 무난하게 입기 좋아요.\n이번에 주문한 스커트도 기대 만땅하구 있을께욤?\n요기까지 내돈내산 후기였음돠",
+    "created_at": "2023-04-12T14:41:09Z",
+    "writer": "kong******",
+    "photos": [
+     "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-image-bf1d4275b2f756fb.webp",
+     "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-image-3148f6c901c742b4.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-avatar-6f0ded387b52f216.webp",
+    "tier": "primary",
+    "likes": 4,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "지금 계절에 덥지도 춥지도 않은 옷 고르기가 까다로웠는데 찰떡을 만나서 참 좋았구요\n전 요즘 이거입고 연습장도 가게되네요\n메이커 비싼거 아껴입는것보다 이쁜옷 실컷 입어주는게 가성비면에서 짱인듯해요~\n담주엔 판매자님 다른 스커트 사봤는데 ㅋㅋ\n그거입고 롼딩 갑니다~~~~\n이쁜거 마니마니 올려주세욤!\n스윙할때랑 편하게 돌아댕긴때 불편하지않고 역시 날씬해 보이는게 젤 장점인듯해요~\n길이감도 적당하고요\n나이가 어렸음 더 짪은거 찾았겠으나 키가 안커서 요게 딱 찰떡이네요 ㅋㅋ \n겨울 빼고는 무난하게 입기 좋아요~~~~~\n이번에 주문한 스커트도 기대 만땅하구 있을께욤?\n요기까지 내돈내산 후기였음돠~~~"
+   },
+   {
+    "id": "4229660556",
+    "score": 3,
+    "text_ko": "제가 기대를 많이 했나봐요. 원단이 넘 저렴이라 놀랐어요, 속바지도 통이 크고 헐렁해서 뭔가 어설프구요. 길이가 타 브랜드 제품들보다 약간 길고 (유일하게 만족하는 점입니다) 그냥저냥 반품하느니 허리도 그냥 늘어나는 치마와 같은 스판 원단으로 처리된 제품이라 편하긴하겠다 싶어서 구매확정합니다. (허리 밴드 그런거 따로 없고 그냥 다 같은 원단으로 되어있습니다 원단 자체가 그냥 늘어나요)\n아 그리구 뱃살 커버는. 옷 자체가 헐렁해서 안나와 보인다는 건지? 속옷 뱃살커버도 이거보단 요즘 좋아서요. 커버 기능이 전혀 없는 것 같은데 제품 상세설명에 그 부분 강조된게 좀 의아하네요. 마지막으로 원단가격이 큰 차이 없다면, 조금 더 신경써서 좋은 제품 제작하시길 하는 바람은 그냥 제 개인적인 의견입니다",
+    "created_at": "2023-04-11T12:24:08Z",
+    "writer": "cest******",
+    "photos": [
+     "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-image-74658211f0a9c647.webp",
+     "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-image-5884048193940ff1.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-avatar-c1850a9d90f0af26.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "제가 기대를 많이 했나봐요. 원단이 넘 저렴이라 놀랐어요, 속바지도 통이 크고 헐렁해서 뭔가 어설프구요. 길이가 타 브랜드 제품들보다 약간 길고 (유일하게 만족하는 점입니다)  그냥저냥 반품하느니 허리도 그냥 늘어나는 치마와 같은 스판 원단으로 처리된 제품이라 편하긴하겠다 싶어서 구매확정합니다. (허리 밴드 그런거 따로 없고 그냥 다 같은 원단으로 되어있습니다 원단 자체가 그냥 늘어나요) \n아 그리구 뱃살 커버는... 옷 자체가 헐렁해서 안나와 보인다는 건지? 속옷 뱃살커버도 이거보단 요즘 좋아서요. 커버 기능이 전혀 없는 것 같은데 제품 상세설명에 그 부분 강조된게 좀 의아하네요.. 마지막으로 원단가격이 큰 차이 없다면, 조금 더 신경써서 좋은 제품 제작하시길 하는 바람은 그냥 제 개인적인 의견입니다"
+   },
+   {
+    "id": "4220318322",
+    "score": 5,
+    "text_ko": "내돈내산 후기 적습니다. 후기에 좀 인색한 편인데 얘는 칭찬좀 해야겠어요. 친구들이랑 라운딩 계획 잡히고 따땃한 봄에 어울리는 치마 찾다가 이렇게 착한 금액으로 골프치마가? 솔직히 호기심반 기대반으로 구매했는데요. 역쉬 탁월한 선택였어요.\n다들 치마 넘 이뿌다고 난리였고요.\n사진도 잘 나오고 스윙할때 편하고 더할나위가 없었어요.\n단점이라면 주머니가 없다는거. 근데 뭐 이정도 아쉬운건 가성비로 보자면 패쑤\n저처럼 골린이는 주머니가 공 두개쯤 넣어가지고 다녀야 하는데 주머니가 없는게 조금 아쉬웠지만 이쁜 볼주머니 차면 되니까 더 좋았어요.\n에이라인으로 떨어지는 디자인이라서 날씬해보이는건 안비밀.\n겨울아니면 다 입을수 있을꺼 같은것도 좋은점인거 같아요\n단골되겠음돠!",
+    "created_at": "2023-03-29T02:46:40Z",
+    "writer": "kong******",
+    "photos": [
+     "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-image-928c92ebb46cd7e0.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-avatar-6f0ded387b52f216.webp",
+    "tier": "primary",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "내돈내산 후기 적습니다. 후기에 좀 인색한 편인데 얘는 칭찬좀 해야겠어요....ㅋㅋㅋ 친구들이랑 라운딩 계획 잡히고 따땃한 봄에 어울리는 치마 찾다가 이렇게 착한 금액으로 골프치마가??? 솔직히 호기심반 기대반으로 구매했는데요~ 역쉬~~~ 탁월한 선택였어요^^ ㅋㅋ\n다들 치마 넘 이뿌다고 난리였고요....\n사진도 잘 나오고 스윙할때 편하고 더할나위가 없었어요...\n단점이라면 주머니가 없다는거..... 근데 뭐 이정도 아쉬운건 가성비로 보자면 패쑤~\n저처럼 골린이는 주머니가 공 두개쯤 넣어가지고 다녀야 하는데 주머니가 없는게 조금 아쉬웠지만 이쁜 볼주머니 차면 되니까 더 좋았어요...ㅋㅋㅋ\n에이라인으로 떨어지는 디자인이라서 날씬해보이는건 안비밀....ㅋㅋ\n겨울아니면 다 입을수 있을꺼 같은것도 좋은점인거 같아요~\n판매자님 이런 가성비 좋은 골프웨어 많이 내놔주시길 바래요...ㅋㅋㅋ 단골되겠음돠!!",
+    "text_cut": [
+     "price",
+     "seller"
+    ]
+   },
+   {
+    "id": "4548243516",
+    "score": 5,
+    "text_ko": "평소 28사이즈인데 작을수도 있겠다싶어 L를 샀어요 m샀으면 큰일 날뻔했어요 자크가없어서 살짝 안올라갈뻔!\n포장뜯었을때 주름이 있기래 혹시하고 다림질해서 입어보니까 자클하니 더 예쁘구요\n입어보다 다른색도 살까싶어요",
+    "created_at": "2024-08-31T02:14:42Z",
+    "writer": "jeon*****",
+    "photos": [
+     "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-image-0f6381cc2549227b.webp",
+     "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-image-0f6b9223fa27086b.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 97,
+    "text_original_ko": "평소 28사이즈인데 작을수도 있겠다싶어 L를 샀어요 m샀으면 큰일 날뻔했어요 자크가없어서 살짝 안올라갈뻔!\n\n포장뜯었을때 주름이 있기래 혹시하고 다림질해서 입어보니까 자클하니 더 예쁘구요 \n\n입어보다 다른색도 살까싶어요"
+   },
+   {
+    "id": "4500672086",
+    "score": 5,
+    "text_ko": "큰 기대없이 구매했는데 꽤 괜찮은 치마인것 같습니다.\n일단 날씬해보이는 점이 제일 장점이고 여름에도 입을 수 있을 것 같네요.\n옷이 엄청 편해요.\n다른 리뷰에서도 본거같은데, 주머니가 없다는 점과 속바지가 쫄바지처럼 딱붙지 않는점이 조금 아쉽지만 가격 생각하면 만족합니다.\n링고리가 있긴한데 하트모양이 제 취향은 아니지만\n계속 보다보니 여성스럽게 포인트가 되는거같기도 하네요.\n암튼 몬가 날씬하고 다리가 예뻐보입니다.",
+    "created_at": "2024-06-16T21:02:13Z",
+    "writer": "yong*****",
+    "photos": [
+     "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-image-c07a781165279190.webp",
+     "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-image-61350699c224ba8f.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "큰 기대없이 구매했는데 꽤 괜찮은 치마인것 같습니다.   \n일단 날씬해보이는 점이 제일 장점이고 여름에도 입을 수 있을 것 같네요.\n옷이 엄청 편해요.\n다른 리뷰에서도 본거같은데, 주머니가 없다는 점과 속바지가 쫄바지처럼 딱붙지 않는점이 조금 아쉽지만 가격 생각하면 만족합니다.\n링고리가 있긴한데 하트모양이 제 취향은 아니지만\n계속 보다보니 여성스럽게 포인트가 되는거같기도 하네요.\n암튼 몬가 날씬하고 다리가 예뻐보입니다."
+   },
+   {
+    "id": "4458685130",
+    "score": 5,
+    "text_ko": "일주일동안 망설이다 구매했는데요 저는 너무 맘에 드네요. 특히 여름에 진짜진짜 너무 시원할것같아요. 여름에는 연습장에 이거입고가면 진짜 편할것같네요\n너무 시원하고 너무 가볍고 길이도 짧지 않아서 뒷사람 신경쓸일도 없겠어요\n골프치마들이 너무 짧아서 티꽂을때나 퍼팅할때 여간 신경쓰이는게 아닌데\n이 치마는 길이가 짧지 않아서 좋아요. 길이가 조금만 짧았으면 좋겠다는 리뷰도 있던데 저는 오히려 딱 1센티만 더 길었음 좋겠네요. 암튼 너무 짧지 않고 날씬해보이고 너무 맘에 듭니다. 그런데 주머니까지 바라면 욕심인걸까요? 주머니 없어서 아쉽다는 리뷰도 몇개 있던데 격하게 공감합니다.",
+    "created_at": "2024-04-09T04:17:08Z",
+    "writer": "gkgm********",
+    "photos": [
+     "collected/50002788-fixtures/images/7965635614/fairwardgolf-review-image-7e3de3bdf864d0cb.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 3,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "일주일동안 망설이다 구매했는데요 저는 너무 맘에 드네요. 특히 여름에 진짜진짜 너무 시원할것같아요. 여름에는 연습장에 이거입고가면 진짜 편할것같네요\n너무 시원하고 너무 가볍고 길이도 짧지 않아서 뒷사람 신경쓸일도 없겠어요\n골프치마들이 너무 짧아서 티꽂을때나 퍼팅할때 여간 신경쓰이는게 아닌데 \n이 치마는 길이가 짧지 않아서 좋아요. 길이가 조금만 짧았으면 좋겠다는 리뷰도 있던데 저는 오히려 딱 1센티만 더 길었음 좋겠네요. 암튼 너무 짧지 않고 날씬해보이고 너무 맘에 듭니다. 그런데 이가격에 주머니까지 바라면 욕심인걸까요? 주머니 없어서 아쉽다는 리뷰도 몇개 있던데 격하게 공감합니다.",
+    "text_cut": [
+     "price"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/7965635614/fairwardgolf-7965635614-001-6a9c9bb8890ed1e6.webp",
+    "sha256": "6a9c9bb8890ed1e6ec477557ae3867579a93b1dff8289702a88f1710bda18e8c",
+    "width": 1250,
+    "height": 1250
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/7965635614/fairwardgolf-7965635614-002-cd1c7666a8727dc4.webp",
+    "sha256": "cd1c7666a8727dc4b28b94a1ab5d6eec19e83592d56cc8cafd4f8ea6d96a9a86",
+    "width": 1440,
+    "height": 1440
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/7965635614/fairwardgolf-7965635614-003-9376405874beef34.webp",
+    "sha256": "9376405874beef349b731fbabfeb042ef9b5c333b324a50cdba4bad92b1f1fbb",
+    "width": 1048,
+    "height": 1048
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/7965635614/fairwardgolf-7965635614-004-fac9c34c9b29d13b.webp",
+    "sha256": "fac9c34c9b29d13b91e374092dd9e119017d192623d6525399711d2ab911d4ca",
+    "width": 1036,
+    "height": 1036
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/7965635614/fairwardgolf-7965635614-005-92b96c8a4ad3daeb.webp",
+    "sha256": "92b96c8a4ad3daebfd9d600ae5b663a5b375fe8abd49dbc428c35255de76fd7b",
+    "width": 1064,
+    "height": 1064
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/7965635614/fairwardgolf-7965635614-006-62e5e823e1f9aa36.webp",
+    "sha256": "62e5e823e1f9aa360bbd1d01d468ebc347328ac9c849914e3864eb43f3013be4",
+    "width": 1440,
+    "height": 1440
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/7965635614/fairwardgolf-7965635614-007-f5c314a4435128a2.webp",
+    "sha256": "f5c314a4435128a20a49de6f2f041a0698d398c005a72a57b50963c3124799d7",
+    "width": 555,
+    "height": 555
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/7965635614/fairwardgolf-7965635614-008-8f01258f0f6ac440.webp",
+    "sha256": "8f01258f0f6ac440d6ade97b4818fcf462b8f928302da027494b0b5ec6f5e9a6",
+    "width": 1440,
+    "height": 1440
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/7965635614/fairwardgolf-7965635614-009-394069e5e80557b0.webp",
+    "sha256": "394069e5e80557b026153d787f527ce22d27fe3d02a4b2321e846639fa2a47d0",
+    "width": 1440,
+    "height": 1440
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/7965635614/fairwardgolf-7965635614-010-f52a6e142b2fa194.webp",
+    "sha256": "f52a6e142b2fa194c28af89a7d9d95c0f0c547529f888f39f5c51f9614687ec3",
+    "width": 1440,
+    "height": 1440
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "100,000원 이상 구매 시 무료 / 제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 2.0370371,
+    "product_average_days": 2.0,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 3,
+    "arrival_date_text": null,
+    "arrival_probability": 100,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "핑크골프는\n합리적인 가격으로\n정직하게 판매합니다.\n\n상품을 클릭하시면\n해당페이지로 이동합니다.\n\n골프 밴딩스커트\n(일반/도톰/기모원단)\n\n직접 착용해 본 제품들만 소개합니다.\n좋은 원단으로 국내에서 제조합니다.\n편안한 허리 밴딩과 충분한 길이감으로\n활동성과 착용감이 매우 뛰어납니다.\n\n도톰/기모원단 출시!!!\n(길이, 사이즈, 겉감은 동일함)\n\n여러분들의 성원과 요청으로\n도톰, 기모원단을 추가 제작합니다.\n이제 원단별로 착용하실 수 있습니다.\n\n겉감의 재질은 동일합니다.\n사진상의 서로 다른 느낌은\n원단 두께의 차이로 인한 것입니다.\n\n안감의 차이를 비교해보세요.\n일반원단은 매우 얇고 가벼우며\n도톰원단은 살짝 두께감을 주었으며\n기모원단은 소프트한 약기모 안감입니다.\n\n평소 골프브랜드 70사이즈를 착용하는\n160cm 뱃살 많은 66사이즈 모델이\n프리사이즈와 라지사이즈를 모두 입고\n조명이나 보정 전혀없이 촬영했습니다.\n\n위 사진은 프리사이즈 착용컷입니다.\n(아래부터는 모두 라지사이즈 착용입니다.)\n치마길이 43cm!!!\n무릎 위로 올라오면서\n일반 골프치마보다 좀 더 긴 기장감의\n편안하고 세련된 골프스커트를\n찾고계신 모든 여성 골퍼분들께\n정말 자신있게!!!강력추천!!!합니다.\n\n치마의 기본 앞, 뒤 모습입니다.\n볼주머니를 걸어야 하는 경우\n앞, 뒤를 바꿔 착용해도\n전혀 불편함없이 착용가능하십니다.\n\n박음질이 없는 밑단 컷팅으로\n디자인이 정말 깔끔합니다.\n레이저 컷팅 공법을 사용하여\n절대 올이 풀리거나하지 않습니다.\n\n치마와 동일한 색상의\n속바지가 달려있습니다.\n\n과하지 않은 A라인의 플레어로\n몸에 붙지 않고 가볍게 촤르르 떨어져\n착용시 실제보다 훨씬 날씬해보입니다.\n\n짧은 치마를 부담스러워 하시는 분들도\n편안하게 착용가능한 길이감입니다.\n\n필드, 연습장, 스크린, 파쓰리,\n데일리까지 모두 커버 가능합니다.\n※ 골프힙색을 함께 착용하시길 추천합니다.\n\n초경량, 뛰어난 수납력에 안정적인 착용감까지\n브랜드힙색을 능가하는 고퀄리티를 자랑합니다.\n거리측정기, 핸드폰, 공, 티,장갑, 지폐, 귀중품...\n다 넣어도 너무 편합니다!!!!!\n\n베이직한 디자인으로\n어떤 골프웨어와도 멋스럽게 어울립니다.\n오랫동안 소장하며\n자주 손이 가실겁니다.\n\n☞ 사이즈 선택 tip\n허리가 쭉~ 늘어나는 밴딩치마입니다.\n프리(F) - 정66까지\n라지(L) - 77반까지\n엑스라지(XL)사이즈 - 88이상\n착용을 권장합니다.\n아래의 상세사이즈 확인 후\n본인의 체형 특성에 맞게 선택하세요.\n\n※비슷한 디자인의 브랜드퀄 스커트를\n↓↓↓찾고 계시다면 아래를 클릭하세요.↓↓↓\n\n아래를 클릭하셔서\n↓↓더 많은 겨울 상품들을 둘러보세요.↓↓\n\n핑크골프 추천 상품",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20240822_77/1724318535556bCEtL_JPEG/SE-bdeeb344-bbae-45a4-8b09-116deda6243b.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240511_246/1715434012522szEf5_GIF/%EC%88%98%EC%A0%95KakaoTalk_20240510_141125776.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20260322_62/1774181348487aFbbK_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240916_197/1726490889301nAkwt_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(4).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250412_223/174445540411819ev9_JPEG/%EC%8B%A0%EC%A0%9C%ED%92%88_(25).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260216_195/17711703479513wbMd_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94_(9).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261102_233/1793617771879Xy2dx_PNG/b6e5ec2c-bf86-4ed8-8572-6259baed691f.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260216_50/1771170122110GE7JJ_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94_(7).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260524_209/17796205541596Pocq_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(2).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260524_198/1779626343683ysk25_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(4).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260524_246/1779626379541B37G9_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(5).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260524_83/1779620542340MCsK9_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260216_62/17711717702249Sx0H_JPEG/%EA%B0%80%EB%B0%A9%ED%94%84%EB%A1%9C%ED%95%84_(54).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240916_275/1726491997186PGIlo_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(8).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260216_65/1771171342875NJMYn_JPEG/%EC%8B%A0%EC%A0%9C%ED%92%88_(30).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250316_20/1742103794278Wwwr7_JPEG/%EC%8B%A0%EC%A0%9C%ED%92%88_(15).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260216_263/1771171356097z5Axi_JPEG/%EC%8B%A0%EC%A0%9C%ED%92%88_(36).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250316_295/174210417647423ynL_JPEG/%EA%B0%80%EB%B0%A9%ED%94%84%EB%A1%9C%ED%95%84_(61).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251011_69/1760164021465Su6Sa_JPEG/%EC%8B%A0%EC%A0%9C%ED%92%88_(48).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251111_188/17628680932584Qp7Q_JPEG/%EA%B0%80%EB%B0%A9%ED%94%84%EB%A1%9C%ED%95%84_(68).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20171017_299/editorteam_1508229319474zsS9U_PNG/%C0%CC%B9%CC%C1%F6_%B1%B8%BA%D0%BC%B1_2.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261010_249/1791621402159i0VtU_JPEG/SE-07711e3e-8298-479e-948b-f87003f6ed05.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240817_120/1723896643306xSnzp_JPEG/SE-7bc5a5b8-9fe2-4403-87f7-a94130ca675a.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240817_223/1723896718988riaTL_JPEG/SE-5f874458-d7f5-46f7-bdc4-21b321ff53f5.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240817_123/1723896813798uOQ3p_JPEG/SE-38f59e1a-430b-4cd9-85ec-09adedcae1c7.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251111_61/1762869586481Uj3GB_JPEG/%EC%82%AC%EC%9D%B4%EC%A6%88%ED%91%9C_-_2025-11-11T225842.762.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251116_162/1763282475924saEUJ_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94_(20).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251116_164/1763282795177IiGCn_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94_(21).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_34/1714476241422FEwVA_JPEG/SE-5ee6494c-e4bc-4bd2-9960-fe8ddca870f7.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_185/1714466530683F44ja_GIF/intro_pinkgolf_05.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240430_205/1714476006743lg2lD_JPEG/intro_pinkgolf_07_spanband.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_100/17144760165331Mlde_JPEG/intro_pinkgolf_08_ultra.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_40/1714476023418sizp7_GIF/intro_pinkgolf_09.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240430_48/17144760477171u4tc_JPEG/intro_pinkgolf_10_stretch.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240908_82/1725754783800WnhV9_JPEG/SE-1635fddb-49fa-4460-8c96-a658f83def1d.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_131/1714464129462t30y7_GIF/intro_pinkgolf_09.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240430_162/1714476161758YKHsN_JPEG/SE-f0e139f5-8d88-4a3d-a435-4e99080fb73d.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231218_122/1702907842021EyYaS_JPEG/SE-1e035c9b-7a77-4db1-94bc-c198f1c2b246.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231218_67/1702907857175VEbPQ_JPEG/SE-2be469f9-ebdc-4d22-889f-a029f79faef0.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231218_170/1702907151014blyam_JPEG/SE-06e391d9-ae01-47f7-9e77-80cf25ca9976.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231218_190/1702907208977FIkw4_JPEG/SE-cbe6a1fa-4bae-47a2-999a-3d228608c2db.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231218_65/1702908889049O1ybn_JPEG/KakaoTalk_20231213_200921937_20.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231218_93/1702908801540amDXl_JPEG/KakaoTalk_20231213_200954034_11.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231218_225/1702908830805Bntwi_JPEG/KakaoTalk_20231213_200954034_22.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231218_103/1702908554363c39eJ_JPEG/SE-4fb20b57-d060-433c-b513-336f2e439dc6.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231218_219/1702908444793abdRS_JPEG/KakaoTalk_20231218_230535495.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231218_170/1702908467047Eiw2P_JPEG/KakaoTalk_20231218_230535495_01.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231218_61/1702909019781ka4Ti_JPEG/KakaoTalk_20231213_200921937_23.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231218_163/17029090432652NpHi_JPEG/KakaoTalk_20231213_200954034_02.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231218_141/1702909120764pVKWO_JPEG/KakaoTalk_20231213_200954034_26.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231219_128/1702912831767V6Ctp_JPEG/KakaoTalk_20231213_200921937_24.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231219_121/1702912797242QgHsU_JPEG/KakaoTalk_20231213_200954034_07.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231219_74/1702912777852Cns8K_JPEG/KakaoTalk_20231213_200954034_17.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250316_171/1742132000423y8nKu_JPEG/SE-d666aa58-bacf-4c12-8b5f-a7a02bf0e776.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250831_186/1756648558042HVqgp_JPEG/%EB%8C%80%ED%91%9C2.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250831_238/1756648561865Wi8Nq_JPEG/%EB%8C%80%ED%91%9C%EC%82%AC%EC%A7%84.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260517_289/1779006464433BrASi_JPEG/SE-e1649948-212a-44a2-9b9a-3228bb3d047a.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260517_47/1779006445201uxQCX_JPEG/SE-109fe4b4-41c5-498d-b680-fc405c76c065.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240916_80/1726483874625DPrKd_JPEG/%EC%82%AC%EC%9D%B4%EC%A6%88%ED%91%9C_-_2024-09-16T195040.862.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260517_72/1779006195165mdrd0_JPEG/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250316_141/1742107852542osSiR_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(10).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250316_66/1742109523406hpNC6_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(13).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250316_66/1742107970142HKUfK_JPEG/%EC%8B%A0%EC%A0%9C%ED%92%88_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250316_56/1742107783428Hmf9l_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(14).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250316_286/1742110044792K2Ac9_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(29).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260217_186/1771255308045QFwiO_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(43).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250323_63/1742704286419iScJN_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(33).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251115_176/1763212511369g2eKv_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(48).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250316_144/1742108642604P2zDA_JPEG/%EB%A7%81%ED%81%AC%EC%82%AC%EC%A7%84_(27).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_41/1714476360044zyxOG_JPEG/intro_pinkgolf_17.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_293/1714476367196owVoa_JPEG/intro_pinkgolf_18.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20250112_165/1736610792733tCuJB_JPEG/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD_(6).jpg?type=w848"
+   }
+  ],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 스판덱스, 폴리우레탄",
+    "source": "spec"
+   },
+   {
+    "label_ko": "재질",
+    "value_ko": "폴리에스테르, 스판덱스",
+    "source": "notice"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_bottoms",
+   "option": 2,
+   "values": [
+    {
+     "ko": "프리(F)",
+     "us": "S-M (US 4-10)",
+     "letter": null,
+     "chest_cm": 66,
+     "basis": "label",
+     "chart_label": "F-프리(55~66)"
+    },
+    {
+     "ko": "라지(L)",
+     "us": "M-L (US 8-14)",
+     "letter": null,
+     "chest_cm": 71.1,
+     "basis": "chart_pair",
+     "chart_label": "L-라지(통통66~77)"
+    },
+    {
+     "ko": "엑스라지(XL)",
+     "us": "XL (US 16)",
+     "letter": "XL",
+     "chest_cm": 83.8,
+     "basis": "text_tip",
+     "chart_label": "XL-엑스라지(통통77~)"
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "length": null,
+     "waist": "flat"
+    },
+    "rows": [
+     {
+      "us": "S-M (US 4-10)",
+      "cm": {
+       "waist": 33.0,
+       "length": 43.0
+      }
+     },
+     {
+      "us": "M-L (US 8-14)",
+      "cm": {
+       "waist": 35.0,
+       "length": 43.0
+      }
+     },
+     {
+      "us": "XL (US 16)",
+      "cm": {
+       "waist": 37.0,
+       "length": 45.0
+      }
+     }
+    ]
+   },
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:5ebf0aad7f2ecac8",
+   "kind": "title",
+   "ko": "여성골프치마바지 긴기장 밴딩 플레어 스커트 빅사이즈 골프웨어 롱"
+  },
+  {
+   "id": "option_name:2083b6c7cd874f09",
+   "kind": "option_name",
+   "ko": "타입"
+  },
+  {
+   "id": "option_value:53e9ce02c047c740",
+   "kind": "option_value",
+   "ko": "긴기장 밴딩"
+  },
+  {
+   "id": "option_value:b6e92e814daa3025",
+   "kind": "option_value",
+   "ko": "긴기장 밴딩(도톰원단)"
+  },
+  {
+   "id": "option_value:1e63074035758f90",
+   "kind": "option_value",
+   "ko": "긴기장 밴딩(기모원단)"
+  },
+  {
+   "id": "option_name:5a2fdefe4a62f26a",
+   "kind": "option_name",
+   "ko": "컬러"
+  },
+  {
+   "id": "option_value:91f171f68356ec23",
+   "kind": "option_value",
+   "ko": "블랙"
+  },
+  {
+   "id": "option_value:6a108d57e91962d3",
+   "kind": "option_value",
+   "ko": "베이지"
+  },
+  {
+   "id": "option_value:5c94888b2e8d96b6",
+   "kind": "option_value",
+   "ko": "핑크"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:c62164ab215a3864",
+   "kind": "option_value",
+   "ko": "프리(F)"
+  },
+  {
+   "id": "option_value:b5b104cb1e0fcf0e",
+   "kind": "option_value",
+   "ko": "라지(L)"
+  },
+  {
+   "id": "option_value:736f4aab5315f122",
+   "kind": "option_value",
+   "ko": "엑스라지(XL)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:21c8837cb64df60b",
+   "kind": "spec_value",
+   "ko": "핑크골프 협력업체"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:04bf35ba5d220e6e",
+   "kind": "spec_value",
+   "ko": "핑크골프"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:d0d4fb676d31a3cd",
+   "kind": "spec_value",
+   "ko": "여성골프치마 긴기장 밴딩 기본 플레어스커트 빅사이즈F"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2c9897140d6cbb96",
+   "kind": "spec_value",
+   "ko": "국산"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:ca8bbcd06b8c0ace",
+   "kind": "spec_value",
+   "ko": "신축성, 기모안감"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:e619cb74aef2141f",
+   "kind": "spec_value",
+   "ko": "폴리에스테르, 스판덱스, 폴리우레탄"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:7d9a169adb7b6302",
+   "kind": "spec_value",
+   "ko": "봄, 여름, 겨울, 가을"
+  },
+  {
+   "id": "spec_label:26336d857e5ea726",
+   "kind": "spec_label",
+   "ko": "총기장"
+  },
+  {
+   "id": "spec_value:dd04a452a3daf18f",
+   "kind": "spec_value",
+   "ko": "미디"
+  },
+  {
+   "id": "spec_label:5fa034b552064e43",
+   "kind": "spec_label",
+   "ko": "스커트스타일"
+  },
+  {
+   "id": "spec_value:15d40cede9189d3c",
+   "kind": "spec_value",
+   "ko": "A라인"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:bed47e98ee4bbea0",
+   "kind": "spec_value",
+   "ko": "2023년형"
+  },
+  {
+   "id": "spec_label:15e62f04a0d53e0c",
+   "kind": "spec_label",
+   "ko": "패턴"
+  },
+  {
+   "id": "spec_value:0efed567b77e1a8a",
+   "kind": "spec_value",
+   "ko": "무지"
+  },
+  {
+   "id": "review:8cdac578a973a37a",
+   "kind": "review",
+   "ko": "이거 치마 완전완전 이뻐요!\n핏도 말라보이고 엄마랑 언니도 이쁘다고 칭찬해줬어요!\n다른 골프치마들이 다 너무 짧아서 스윙할 때 굉장히 신경쓰였었는데, 요 치마는 길이 너무 좋아요.\n제 키가 157인데 무릎 위로 아주 이쁘게 잘맞습니다.\n그리고 편해서 그런지 볼도 너무 잘맞았어요.\n역시 골프는 옷이 편해야합니다"
+  },
+  {
+   "id": "review:de1d412c4f63ed42",
+   "kind": "review",
+   "ko": "허리신축성이 많지는 않아서 조금 타이트하게 올라가는데 안에 속바지는 또 넉넉? 헐렁? 해요. 여름이라 딱맞게 입으면 불편했겠지만 여유있어서 좋긴해요 사이드로 퍼진 치마인데 제봉자체가 옆으로 더 늘린느낌이라 골반이 넓은 저에겐 더 넓게 보이긴 합니다. 체형보정보다는 편하게 입긴 좋겠어요"
+  },
+  {
+   "id": "review:8f5b3fc4ddc3424f",
+   "kind": "review",
+   "ko": "지금 계절에 덥지도 춥지도 않은 옷 고르기가 까다로웠는데 찰떡을 만나서 참 좋았구요\n전 요즘 이거입고 연습장도 가게되네요\n메이커 비싼거 아껴입는것보다 이쁜옷 실컷 입어주는게 가성비면에서 짱인듯해요.\n담주엔 판매자님 다른 스커트 사봤는데\n그거입고 롼딩 갑니다.\n이쁜거 마니마니 올려주세욤!\n스윙할때랑 편하게 돌아댕긴때 불편하지않고 역시 날씬해 보이는게 젤 장점인듯해요.\n길이감도 적당하고요\n나이가 어렸음 더 짪은거 찾았겠으나 키가 안커서 요게 딱 찰떡이네요.\n겨울 빼고는 무난하게 입기 좋아요.\n이번에 주문한 스커트도 기대 만땅하구 있을께욤?\n요기까지 내돈내산 후기였음돠"
+  },
+  {
+   "id": "review:3e59b9271875967c",
+   "kind": "review",
+   "ko": "제가 기대를 많이 했나봐요. 원단이 넘 저렴이라 놀랐어요, 속바지도 통이 크고 헐렁해서 뭔가 어설프구요. 길이가 타 브랜드 제품들보다 약간 길고 (유일하게 만족하는 점입니다) 그냥저냥 반품하느니 허리도 그냥 늘어나는 치마와 같은 스판 원단으로 처리된 제품이라 편하긴하겠다 싶어서 구매확정합니다. (허리 밴드 그런거 따로 없고 그냥 다 같은 원단으로 되어있습니다 원단 자체가 그냥 늘어나요)\n아 그리구 뱃살 커버는. 옷 자체가 헐렁해서 안나와 보인다는 건지? 속옷 뱃살커버도 이거보단 요즘 좋아서요. 커버 기능이 전혀 없는 것 같은데 제품 상세설명에 그 부분 강조된게 좀 의아하네요. 마지막으로 원단가격이 큰 차이 없다면, 조금 더 신경써서 좋은 제품 제작하시길 하는 바람은 그냥 제 개인적인 의견입니다"
+  },
+  {
+   "id": "review:21f26548a87843c4",
+   "kind": "review",
+   "ko": "내돈내산 후기 적습니다. 후기에 좀 인색한 편인데 얘는 칭찬좀 해야겠어요. 친구들이랑 라운딩 계획 잡히고 따땃한 봄에 어울리는 치마 찾다가 이렇게 착한 금액으로 골프치마가? 솔직히 호기심반 기대반으로 구매했는데요. 역쉬 탁월한 선택였어요.\n다들 치마 넘 이뿌다고 난리였고요.\n사진도 잘 나오고 스윙할때 편하고 더할나위가 없었어요.\n단점이라면 주머니가 없다는거. 근데 뭐 이정도 아쉬운건 가성비로 보자면 패쑤\n저처럼 골린이는 주머니가 공 두개쯤 넣어가지고 다녀야 하는데 주머니가 없는게 조금 아쉬웠지만 이쁜 볼주머니 차면 되니까 더 좋았어요.\n에이라인으로 떨어지는 디자인이라서 날씬해보이는건 안비밀.\n겨울아니면 다 입을수 있을꺼 같은것도 좋은점인거 같아요\n단골되겠음돠!"
+  },
+  {
+   "id": "review:49fd5dd29de43a19",
+   "kind": "review",
+   "ko": "평소 28사이즈인데 작을수도 있겠다싶어 L를 샀어요 m샀으면 큰일 날뻔했어요 자크가없어서 살짝 안올라갈뻔!\n포장뜯었을때 주름이 있기래 혹시하고 다림질해서 입어보니까 자클하니 더 예쁘구요\n입어보다 다른색도 살까싶어요"
+  },
+  {
+   "id": "review:7c822d949d7dc5b2",
+   "kind": "review",
+   "ko": "큰 기대없이 구매했는데 꽤 괜찮은 치마인것 같습니다.\n일단 날씬해보이는 점이 제일 장점이고 여름에도 입을 수 있을 것 같네요.\n옷이 엄청 편해요.\n다른 리뷰에서도 본거같은데, 주머니가 없다는 점과 속바지가 쫄바지처럼 딱붙지 않는점이 조금 아쉽지만 가격 생각하면 만족합니다.\n링고리가 있긴한데 하트모양이 제 취향은 아니지만\n계속 보다보니 여성스럽게 포인트가 되는거같기도 하네요.\n암튼 몬가 날씬하고 다리가 예뻐보입니다."
+  },
+  {
+   "id": "review:9163c04e1f5a6cf1",
+   "kind": "review",
+   "ko": "일주일동안 망설이다 구매했는데요 저는 너무 맘에 드네요. 특히 여름에 진짜진짜 너무 시원할것같아요. 여름에는 연습장에 이거입고가면 진짜 편할것같네요\n너무 시원하고 너무 가볍고 길이도 짧지 않아서 뒷사람 신경쓸일도 없겠어요\n골프치마들이 너무 짧아서 티꽂을때나 퍼팅할때 여간 신경쓰이는게 아닌데\n이 치마는 길이가 짧지 않아서 좋아요. 길이가 조금만 짧았으면 좋겠다는 리뷰도 있던데 저는 오히려 딱 1센티만 더 길었음 좋겠네요. 암튼 너무 짧지 않고 날씬해보이고 너무 맘에 듭니다. 그런데 주머니까지 바라면 욕심인걸까요? 주머니 없어서 아쉽다는 리뷰도 몇개 있던데 격하게 공감합니다."
+  }
+ ]
+}

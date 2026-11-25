@@ -1,0 +1,4929 @@
+{
+ "key": "fairwardgolf:naver:102341092:10332996284",
+ "listing": {
+  "product_id": "10332996284",
+  "nv_mid": "87877500494",
+  "link": "https://smartstore.naver.com/liping11/products/10332996284",
+  "name": "남성 긴팔 와플 피케 카라 티셔츠 기능성 골프상의 그레이 165/M",
+  "store": {
+   "name": "좋구나 좋아  스토어",
+   "slug": "liping11",
+   "link": "https://smartstore.naver.com/liping11",
+   "channel_no": "102341092",
+   "grade": "SEED",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 16600,
+   "discounted_price": 14480,
+   "discount_ratio": 12,
+   "currency": "KRW"
+  },
+  "category_id": "50002796",
+  "reviews": {
+   "count": 20,
+   "average_score": 4.5
+  },
+  "stock_quantity": 41970,
+  "image": "https://shopping-phinf.pstatic.net/main_8787750/87877500494.jpg",
+  "is_ad": false,
+  "query": "남성 골프 긴팔 카라티",
+  "batch": 2,
+  "seen_at": "2026-11-22T11:23:28+00:00",
+  "key": "fairwardgolf:naver:102341092:10332996284"
+ },
+ "details": {
+  "id": "10332996284",
+  "origin_product_id": "10283161120",
+  "name": "남성 긴팔 와플 피케 카라 티셔츠 기능성 골프상의 그레이 165/M",
+  "link": "https://smartstore.naver.com/liping11/products/10332996284",
+  "catalog_id": "87877500494",
+  "catalog_link": "https://search.shopping.naver.com/catalog/87877500494",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 16600,
+   "discounted_price": 14480,
+   "discount_ratio": 12,
+   "seller_discount": 2120,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 144,
+    "text_review": 0,
+    "photo_video_review": 0,
+    "after_use_text_review": 0,
+    "after_use_photo_video_review": 0,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 41970,
+  "has_options": true,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20240516_185/1715835600404l5H01_JPEG/116971443114069158_1010000831.jpg",
+   "https://shop-phinf.pstatic.net/20240516_201/1715835643608bG2sd_JPEG/116971486317707975_586868726.jpg",
+   "https://shop-phinf.pstatic.net/20240516_87/1715835643777gm6mq_JPEG/116971486491047662_795280071.jpg",
+   "https://shop-phinf.pstatic.net/20240516_13/17158356439788Nv4I_JPEG/116971486681171905_967821589.jpg",
+   "https://shop-phinf.pstatic.net/20240516_219/1715835644203JmCx5_JPEG/116971486917643436_1817945954.jpg",
+   "https://shop-phinf.pstatic.net/20240516_265/1715835644347jcYr7_JPEG/116971487062770140_1162385706.jpg",
+   "https://shop-phinf.pstatic.net/20240516_85/1715835644472CsyPF_JPEG/116971487180461182_552520610.jpg",
+   "https://shop-phinf.pstatic.net/20240516_116/1715835644647ebSdX_JPEG/116971487362779412_1768216068.jpg"
+  ],
+  "category": {
+   "id": "50002796",
+   "name": "티셔츠",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프의류",
+    "티셔츠"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001104",
+    "50002796"
+   ]
+  },
+  "brand": null,
+  "brand_id": null,
+  "manufacturer": null,
+  "model_name": null,
+  "tags": null,
+  "page_title": null,
+  "reviews": {
+   "count": 20,
+   "average_score": 4.5,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 3,
+    "4": 4,
+    "5": 13
+   },
+   "text_count": 14,
+   "photo_count": 4,
+   "video_count": 2,
+   "after_use_count": 3,
+   "best_count": 0,
+   "recent": {
+    "count": 2,
+    "average_score": 3.0
+   },
+   "evaluations": [
+    {
+     "question": "사이즈는 어떤가요?",
+     "answers": [
+      {
+       "name": "많이 작아요",
+       "count": 3,
+       "percent": 15
+      },
+      {
+       "name": "약간 작아요",
+       "count": 3,
+       "percent": 15
+      },
+      {
+       "name": "잘 맞아요",
+       "count": 14,
+       "percent": 70
+      },
+      {
+       "name": "약간 커요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "많이 커요",
+       "count": 0,
+       "percent": 0
+      }
+     ]
+    },
+    {
+     "question": "핏은 어떤가요?",
+     "answers": [
+      {
+       "name": "슬림해요",
+       "count": 5,
+       "percent": 25
+      },
+      {
+       "name": "적당해요",
+       "count": 15,
+       "percent": 75
+      },
+      {
+       "name": "오버핏이에요",
+       "count": 0,
+       "percent": 0
+      }
+     ]
+    },
+    {
+     "question": "착용감은 어떤가요?",
+     "answers": [
+      {
+       "name": "불편해요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "편해요",
+       "count": 19,
+       "percent": 95
+      },
+      {
+       "name": "아주 편해요",
+       "count": 1,
+       "percent": 5
+      }
+     ]
+    }
+   ],
+   "representative_reviews": [
+    {
+     "id": "4686402686",
+     "score": 4,
+     "text": "화면처럼고급지진않지만 가격대비 괜찮네요 배송은 느립니다",
+     "image": "https://phinf.pstatic.net/image.nmv/shopnbuyer_2025_03_21_2149/4llOjQHmRm_01.jpg"
+    },
+    {
+     "id": "4686403275",
+     "score": 4,
+     "text": "배송느려요 가격대비 괜찮아요",
+     "image": "https://phinf.pstatic.net/image.nmv/shopnbuyer_2025_03_21_2165/24p1Tf1b7s_01.jpg"
+    },
+    {
+     "id": "4892044478",
+     "score": 5,
+     "text": "싼 맛에 샀는데 바늘질이 잘 안됐어요",
+     "image": null
+    },
+    {
+     "id": "4685921072",
+     "score": 5,
+     "text": "배송은 아주 늦었지만 상품의 가성비는 최고입니다. 만족합니다.",
+     "image": null
+    },
+    {
+     "id": "4685920197",
+     "score": 5,
+     "text": "배송은 아주 늦었지만 상품의 가성비는 최고입니다. 만족합니다.",
+     "image": null
+    },
+    {
+     "id": "4687570274",
+     "score": 5,
+     "text": "제품 잘맞고 좋습니다",
+     "image": null
+    },
+    {
+     "id": "4687570148",
+     "score": 5,
+     "text": "제품 잘맞고 좋습니다",
+     "image": null
+    },
+    {
+     "id": "4687570013",
+     "score": 5,
+     "text": "제품 잘맞고 좋습니다",
+     "image": null
+    },
+    {
+     "id": "4687569669",
+     "score": 5,
+     "text": "제품 잘맞고 좋습니다",
+     "image": null
+    },
+    {
+     "id": "4665116933",
+     "score": 5,
+     "text": "가성비가 짱이고 가격대비 싼티가 덜합니다. 그런데 배송은 인내가 필요할 듯 합니다. 그래도 만족합니다.",
+     "image": null
+    },
+    {
+     "id": "4665117608",
+     "score": 5,
+     "text": "배송은 아주아주 늦어요. 하지만 가성비는 매우 높습니다. 만족합니다.",
+     "image": null
+    },
+    {
+     "id": "4650773252",
+     "score": 5,
+     "text": "옷이 편하고 핏이 살아서 좋습니다. 추천힙니다.",
+     "image": null
+    }
+   ]
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": null,
+   "company": "CJ대한통운",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": 5000,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": true,
+  "is_today_delivery": false,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": "<div class=\"se-viewer se-theme-default\" lang=\"ko-KR\">\n    <!-- SE_DOC_HEADER_START -->\n    <!--@CONTENTS_HEADER-->\n    <!-- SE_DOC_HEADER_END -->\n    <div class=\"se-main-container\">\n                <div class=\"se-component se-image se-l-default\" id=\"SE-d8d98feb-c53d-4346-afa3-8bed7d100e20\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:800px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-d8d98feb-c53d-4346-afa3-8bed7d100e20&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_184/1710228554055Gf5HC_JPEG/SKU-07-213%E7%81%B0%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;800&quot;,&quot;originalHeight&quot;:&quot;800&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_184/1710228554055Gf5HC_JPEG/SKU-07-213%E7%81%B0%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-d8d98feb-c53d-4346-afa3-8bed7d100e20&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-7188793d-186b-4c58-848d-a798120808cf\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"\" id=\"SE-ef35a74e-8e4e-4fc6-8d1c-a9f6efd9ea74\"><span style=\"\" class=\"se-fs- se-ff-   \" id=\"SE-0adb59f2-dd44-46bc-9043-a9e1f87614f2\">​</span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-7188793d-186b-4c58-848d-a798120808cf&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>                <div class=\"se-component se-image se-l-default\" id=\"SE-4ddfd1ae-a043-472e-a5af-2c3581d8b5c4\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:782px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-4ddfd1ae-a043-472e-a5af-2c3581d8b5c4&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_249/17102285459214oNgw_PNG/image.png?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;782&quot;,&quot;originalHeight&quot;:&quot;389&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_249/17102285459214oNgw_PNG/image.png?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-4ddfd1ae-a043-472e-a5af-2c3581d8b5c4&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-6a8b5595-82bb-4bfa-bb8d-003c6b32ad30\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"line-height:1.8;\" id=\"SE-56395d88-f551-492a-9f9d-f5dcee9eb185\"><span style=\"color:#000000;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-49ce458c-da54-4bf9-8fb1-c06c8747902d\"><i><b>​</b></i></span></p><!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"line-height:1.8;\" id=\"SE-28a999a1-fcd0-4749-9bd1-190c15d50e07\"><span style=\"color:#000000;background-color:#ffffff;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-093e7e5e-56c5-461a-96cb-ff8895a3e790\"><i><b>그레이</b></i></span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-6a8b5595-82bb-4bfa-bb8d-003c6b32ad30&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>                <div class=\"se-component se-image se-l-default\" id=\"SE-028fc7c7-0d79-49e4-a5e3-29a49cf940f6\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:800px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-028fc7c7-0d79-49e4-a5e3-29a49cf940f6&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_184/1710228554055Gf5HC_JPEG/SKU-07-213%E7%81%B0%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;800&quot;,&quot;originalHeight&quot;:&quot;800&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_184/1710228554055Gf5HC_JPEG/SKU-07-213%E7%81%B0%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-028fc7c7-0d79-49e4-a5e3-29a49cf940f6&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-88639c6e-1f5a-4fec-8bd1-a584f78f3281\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"line-height:1.8;\" id=\"SE-2782fb3b-48d7-46fb-896d-95c612fe704c\"><span style=\"color:#000000;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-afa261f9-225e-48e9-be5f-6ae434eeb992\"><i><b>​</b></i></span></p><!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"line-height:1.8;\" id=\"SE-c4e439d8-a845-4674-9f9b-aad4dcd4ef0e\"><span style=\"color:#000000;background-color:#ffffff;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-f8fd935c-4a2b-4793-a49b-b7fe2873e2f6\"><i><b>베이지</b></i></span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-88639c6e-1f5a-4fec-8bd1-a584f78f3281&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>                <div class=\"se-component se-image se-l-default\" id=\"SE-25aabc23-69a3-4906-9efd-d09987ec96d1\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:800px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-25aabc23-69a3-4906-9efd-d09987ec96d1&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_82/1710228553929S5qTC_JPEG/SKU-01-213%E7%B1%B3%E7%99%BD-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;800&quot;,&quot;originalHeight&quot;:&quot;800&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_82/1710228553929S5qTC_JPEG/SKU-01-213%E7%B1%B3%E7%99%BD-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-25aabc23-69a3-4906-9efd-d09987ec96d1&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-480eefbb-09a0-4d10-bfb2-c0fd7e4ead1f\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"line-height:1.8;\" id=\"SE-a6b5423e-aa42-4211-bcc9-5633bfb2b40d\"><span style=\"color:#000000;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-90fa7f9b-6f5e-41a7-9059-332c5931087a\"><i><b>​</b></i></span></p><!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"line-height:1.8;\" id=\"SE-b9896094-3751-4647-8825-930e285c4a57\"><span style=\"color:#000000;background-color:#ffffff;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-875422e1-9e25-4626-aacc-9666ad8d38f8\"><i><b>블랙</b></i></span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-480eefbb-09a0-4d10-bfb2-c0fd7e4ead1f&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>                <div class=\"se-component se-image se-l-default\" id=\"SE-508abd51-36f7-4273-91fa-0bd799f2b655\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:800px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-508abd51-36f7-4273-91fa-0bd799f2b655&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_281/17102285538993p7x8_JPEG/SKU-17-213%E9%BB%91%E8%89%B2-185_3XL_%E5%BB%BA%E8%AE%AE170-185%E6%96%A4.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;800&quot;,&quot;originalHeight&quot;:&quot;800&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_281/17102285538993p7x8_JPEG/SKU-17-213%E9%BB%91%E8%89%B2-185_3XL_%E5%BB%BA%E8%AE%AE170-185%E6%96%A4.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-508abd51-36f7-4273-91fa-0bd799f2b655&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-bd260b5a-1eb6-4767-9eb4-9b0874db157d\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"line-height:1.8;\" id=\"SE-a28ad35c-488a-434a-ab51-53a8bddb3d08\"><span style=\"color:#000000;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-6f1574ec-0abe-427f-a045-5adc36ee9213\"><i><b>​</b></i></span></p><!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"line-height:1.8;\" id=\"SE-984d6200-420f-4ca6-9e28-01de3f070dac\"><span style=\"color:#000000;background-color:#ffffff;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-87e740e5-92b1-4a6f-9e18-349638878468\"><i><b>옐로우</b></i></span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-bd260b5a-1eb6-4767-9eb4-9b0874db157d&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>                <div class=\"se-component se-image se-l-default\" id=\"SE-1ad0d61b-1e8c-4f69-9134-4984c1ee62ed\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:800px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-1ad0d61b-1e8c-4f69-9134-4984c1ee62ed&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_98/1710228554023ME1yO_JPEG/SKU-19-213%E9%BB%84%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;800&quot;,&quot;originalHeight&quot;:&quot;800&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_98/1710228554023ME1yO_JPEG/SKU-19-213%E9%BB%84%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-1ad0d61b-1e8c-4f69-9134-4984c1ee62ed&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-40f2e3a9-acc2-4c5c-bf3e-d2c97fe4c927\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"line-height:1.8;\" id=\"SE-f5467357-f6ea-455b-ab90-72c230cbfb42\"><span style=\"color:#000000;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-5cc7a589-7650-499e-a19b-04f7bae7c807\"><i><b>​</b></i></span></p><!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"line-height:1.8;\" id=\"SE-832aeb1b-4b61-4f58-8ce4-93745b01b3f7\"><span style=\"color:#000000;background-color:#ffffff;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-30a29d9a-dcc0-4411-b928-555a18506e21\"><i><b>블루</b></i></span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-40f2e3a9-acc2-4c5c-bf3e-d2c97fe4c927&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>                <div class=\"se-component se-image se-l-default\" id=\"SE-82945e4c-adfb-410e-a676-afa7e93b3ac9\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:800px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-82945e4c-adfb-410e-a676-afa7e93b3ac9&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_113/17102285539931V3gh_JPEG/SKU-25-213%E8%93%9D%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;800&quot;,&quot;originalHeight&quot;:&quot;800&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_113/17102285539931V3gh_JPEG/SKU-25-213%E8%93%9D%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-82945e4c-adfb-410e-a676-afa7e93b3ac9&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-c3dc241d-829e-41d7-b3ea-951071cfe8ee\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"line-height:1.8;\" id=\"SE-39be0112-ce8f-4dea-a06d-20348232dabf\"><span style=\"color:#000000;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-e6cc3217-4dc2-4518-b44b-72c92050fb9c\"><i><b>​</b></i></span></p><!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"line-height:1.8;\" id=\"SE-9b58fd9d-2087-43cb-b1ab-4e7a5ef6ed54\"><span style=\"color:#000000;background-color:#ffffff;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-46e39b25-fa66-47b6-8f4c-26b951e59ae4\"><i><b>올리브</b></i></span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-c3dc241d-829e-41d7-b3ea-951071cfe8ee&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>                <div class=\"se-component se-image se-l-default\" id=\"SE-950a7e12-ab44-45a7-b24d-74eeb410faf2\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:800px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-950a7e12-ab44-45a7-b24d-74eeb410faf2&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_247/1710228554040bzQqC_JPEG/SKU-31-213%E5%9C%9F%E9%BB%84-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;800&quot;,&quot;originalHeight&quot;:&quot;800&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_247/1710228554040bzQqC_JPEG/SKU-31-213%E5%9C%9F%E9%BB%84-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-950a7e12-ab44-45a7-b24d-74eeb410faf2&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-2c78a64b-9d41-468c-979a-107effeb3a5d\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"line-height:1.8;\" id=\"SE-e67bf692-84c6-4179-ac1f-583da45dbcd0\"><span style=\"color:#000000;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-c87c4715-f1b5-4679-804f-d3c43ca56685\"><i><b>​</b></i></span></p><!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"line-height:1.8;\" id=\"SE-9c39c40e-aeaa-4cef-b985-50c111e2e2cd\"><span style=\"color:#000000;background-color:#ffffff;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-296bd55c-47ac-4792-be1a-6fa707ca3f88\"><i><b>그린</b></i></span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-2c78a64b-9d41-468c-979a-107effeb3a5d&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>                <div class=\"se-component se-image se-l-default\" id=\"SE-91848f3d-b4be-4101-8a96-d87031182375\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:800px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-91848f3d-b4be-4101-8a96-d87031182375&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_154/1710228555111EDRON_JPEG/SKU-37-213%E7%BB%BF%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;800&quot;,&quot;originalHeight&quot;:&quot;800&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_154/1710228555111EDRON_JPEG/SKU-37-213%E7%BB%BF%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-91848f3d-b4be-4101-8a96-d87031182375&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-b7460ef5-d8dc-406c-9ea4-f9575da52778\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"\" id=\"SE-e6148ee9-e1a7-4079-b515-18354e8f1a08\"><span style=\"color:#000000;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-4f84cf91-b735-4661-888e-42f9df30220d\"><i><b>​</b></i></span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-b7460ef5-d8dc-406c-9ea4-f9575da52778&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>                <div class=\"se-component se-image se-l-default\" id=\"SE-cf1f6e61-6f17-4a4e-b3af-3852de055016\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:750px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-cf1f6e61-6f17-4a4e-b3af-3852de055016&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_15/1710228555182CtiLa_JPEG/%E8%AF%A6%E6%83%85-13.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;750&quot;,&quot;originalHeight&quot;:&quot;802&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_15/1710228555182CtiLa_JPEG/%E8%AF%A6%E6%83%85-13.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-cf1f6e61-6f17-4a4e-b3af-3852de055016&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-a36b934b-b123-48c9-825c-39010be1138a\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:750px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-a36b934b-b123-48c9-825c-39010be1138a&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_182/1710228555058ce9R8_JPEG/%E8%AF%A6%E6%83%85-14.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;750&quot;,&quot;originalHeight&quot;:&quot;781&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_182/1710228555058ce9R8_JPEG/%E8%AF%A6%E6%83%85-14.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-a36b934b-b123-48c9-825c-39010be1138a&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-60772268-c326-48a0-9c10-3b83c688c8c0\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:750px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-60772268-c326-48a0-9c10-3b83c688c8c0&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_184/17102285551124baqL_JPEG/%E8%AF%A6%E6%83%85-16.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;750&quot;,&quot;originalHeight&quot;:&quot;807&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_184/17102285551124baqL_JPEG/%E8%AF%A6%E6%83%85-16.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-60772268-c326-48a0-9c10-3b83c688c8c0&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-8ff78e76-f3c1-4cc6-9a74-249afae4aabe\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:750px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-8ff78e76-f3c1-4cc6-9a74-249afae4aabe&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_294/1710228555162QyLor_JPEG/%E8%AF%A6%E6%83%85-17.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;750&quot;,&quot;originalHeight&quot;:&quot;773&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_294/1710228555162QyLor_JPEG/%E8%AF%A6%E6%83%85-17.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-8ff78e76-f3c1-4cc6-9a74-249afae4aabe&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-5e150141-3f11-4de0-b8af-a8640bcaf394\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:750px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-5e150141-3f11-4de0-b8af-a8640bcaf394&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_184/1710228556517xyJuS_JPEG/%E8%AF%A6%E6%83%85-19.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;750&quot;,&quot;originalHeight&quot;:&quot;775&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_184/1710228556517xyJuS_JPEG/%E8%AF%A6%E6%83%85-19.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-5e150141-3f11-4de0-b8af-a8640bcaf394&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-49835ca4-ead9-441b-9da3-8318ca451527\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:750px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-49835ca4-ead9-441b-9da3-8318ca451527&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_169/1710228556297InGFw_JPEG/%E8%AF%A6%E6%83%85-20.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;750&quot;,&quot;originalHeight&quot;:&quot;799&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_169/1710228556297InGFw_JPEG/%E8%AF%A6%E6%83%85-20.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-49835ca4-ead9-441b-9da3-8318ca451527&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-05d61fc8-a77a-40b8-9a8d-70c4e3c56d88\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:750px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-05d61fc8-a77a-40b8-9a8d-70c4e3c56d88&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_236/1710228556145aIlEJ_JPEG/%E8%AF%A6%E6%83%85-21.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;750&quot;,&quot;originalHeight&quot;:&quot;802&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_236/1710228556145aIlEJ_JPEG/%E8%AF%A6%E6%83%85-21.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-05d61fc8-a77a-40b8-9a8d-70c4e3c56d88&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-e48a96a9-0472-4384-b6b7-72e061fc080d\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:750px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-e48a96a9-0472-4384-b6b7-72e061fc080d&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_83/1710228556421ro1aC_JPEG/%E8%AF%A6%E6%83%85-22.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;750&quot;,&quot;originalHeight&quot;:&quot;781&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_83/1710228556421ro1aC_JPEG/%E8%AF%A6%E6%83%85-22.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-e48a96a9-0472-4384-b6b7-72e061fc080d&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-0142c74c-8cc1-46b9-a1cd-90cc2694314a\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:750px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-0142c74c-8cc1-46b9-a1cd-90cc2694314a&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_112/1710228556409J9USw_JPEG/%E8%AF%A6%E6%83%85-23.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;750&quot;,&quot;originalHeight&quot;:&quot;807&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_112/1710228556409J9USw_JPEG/%E8%AF%A6%E6%83%85-23.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-0142c74c-8cc1-46b9-a1cd-90cc2694314a&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-66a07fbc-e416-49a8-b81c-b7027a2de994\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:750px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-66a07fbc-e416-49a8-b81c-b7027a2de994&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_195/1710228556220MiHYn_JPEG/%E8%AF%A6%E6%83%85-24.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;750&quot;,&quot;originalHeight&quot;:&quot;773&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_195/1710228556220MiHYn_JPEG/%E8%AF%A6%E6%83%85-24.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-66a07fbc-e416-49a8-b81c-b7027a2de994&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-d6cd1ebf-5929-4476-933c-5f7d02512d07\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:750px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-d6cd1ebf-5929-4476-933c-5f7d02512d07&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_149/1710228557187QAUN2_JPEG/%E8%AF%A6%E6%83%85-25.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;750&quot;,&quot;originalHeight&quot;:&quot;775&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_149/1710228557187QAUN2_JPEG/%E8%AF%A6%E6%83%85-25.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-d6cd1ebf-5929-4476-933c-5f7d02512d07&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-a7adfcdc-e14d-4564-9edc-cb87de60bc96\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:750px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-a7adfcdc-e14d-4564-9edc-cb87de60bc96&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_288/1710228557374FfCdf_JPEG/%E8%AF%A6%E6%83%85-26.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;750&quot;,&quot;originalHeight&quot;:&quot;799&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_288/1710228557374FfCdf_JPEG/%E8%AF%A6%E6%83%85-26.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-a7adfcdc-e14d-4564-9edc-cb87de60bc96&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-44cfe01f-4af3-4d9f-8b0a-ca9ec7f6f789\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:750px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-44cfe01f-4af3-4d9f-8b0a-ca9ec7f6f789&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_157/1710228557382I2GKV_JPEG/%E8%AF%A6%E6%83%85-27.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;750&quot;,&quot;originalHeight&quot;:&quot;799&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_157/1710228557382I2GKV_JPEG/%E8%AF%A6%E6%83%85-27.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-44cfe01f-4af3-4d9f-8b0a-ca9ec7f6f789&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-eee56066-9dad-4ba0-9e14-cf550a7fdbfa\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:750px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-eee56066-9dad-4ba0-9e14-cf550a7fdbfa&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20240312_55/17102285574359Im09_JPEG/%E8%AF%A6%E6%83%85-28.jpg?type\\u003dw860&quot;,&quot;originalWidth&quot;:&quot;750&quot;,&quot;originalHeight&quot;:&quot;799&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20240312_55/17102285574359Im09_JPEG/%E8%AF%A6%E6%83%85-28.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-eee56066-9dad-4ba0-9e14-cf550a7fdbfa&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-c7973c41-2711-4ffa-82b7-28c58b881dc5\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"\" id=\"SE-1445b0a9-502e-4d0d-854b-9a24bd03894e\"><span style=\"color:#000000;\" class=\"se-fs-fs30 se-ff-system   \" id=\"SE-d0c4eb95-6e35-4c3a-ac6a-9ee22b63f5ca\"><i><b>​</b></i></span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-c7973c41-2711-4ffa-82b7-28c58b881dc5&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>    </div>\n</div>\n",
+   "text": "그레이\n\n베이지\n\n블랙\n\n옐로우\n\n블루\n\n올리브\n\n그린",
+   "editor_type": "SEONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20240312_184/1710228554055Gf5HC_JPEG/SKU-07-213%E7%81%B0%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_249/17102285459214oNgw_PNG/image.png?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_82/1710228553929S5qTC_JPEG/SKU-01-213%E7%B1%B3%E7%99%BD-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_281/17102285538993p7x8_JPEG/SKU-17-213%E9%BB%91%E8%89%B2-185_3XL_%E5%BB%BA%E8%AE%AE170-185%E6%96%A4.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_98/1710228554023ME1yO_JPEG/SKU-19-213%E9%BB%84%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_113/17102285539931V3gh_JPEG/SKU-25-213%E8%93%9D%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_247/1710228554040bzQqC_JPEG/SKU-31-213%E5%9C%9F%E9%BB%84-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_154/1710228555111EDRON_JPEG/SKU-37-213%E7%BB%BF%E8%89%B2-165_M_%E5%BB%BA%E8%AE%AE90-110%E6%96%A4.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_15/1710228555182CtiLa_JPEG/%E8%AF%A6%E6%83%85-13.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_182/1710228555058ce9R8_JPEG/%E8%AF%A6%E6%83%85-14.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_184/17102285551124baqL_JPEG/%E8%AF%A6%E6%83%85-16.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_294/1710228555162QyLor_JPEG/%E8%AF%A6%E6%83%85-17.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_184/1710228556517xyJuS_JPEG/%E8%AF%A6%E6%83%85-19.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_169/1710228556297InGFw_JPEG/%E8%AF%A6%E6%83%85-20.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_236/1710228556145aIlEJ_JPEG/%E8%AF%A6%E6%83%85-21.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_83/1710228556421ro1aC_JPEG/%E8%AF%A6%E6%83%85-22.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_112/1710228556409J9USw_JPEG/%E8%AF%A6%E6%83%85-23.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_195/1710228556220MiHYn_JPEG/%E8%AF%A6%E6%83%85-24.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_149/1710228557187QAUN2_JPEG/%E8%AF%A6%E6%83%85-25.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_288/1710228557374FfCdf_JPEG/%E8%AF%A6%E6%83%85-26.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_157/1710228557382I2GKV_JPEG/%E8%AF%A6%E6%83%85-27.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240312_55/17102285574359Im09_JPEG/%E8%AF%A6%E6%83%85-28.jpg?type=w848"
+   ]
+  },
+  "notice": {
+   "type": "WEAR",
+   "items": [
+    {
+     "label": "제품소재",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "색상",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "치수",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조자(사)",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조국",
+     "value": "상세설명에 표시",
+     "is_see_description": true
+    },
+    {
+     "label": "세탁방법 및 취급시 주의사항",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조연월",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "품질보증기준",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "A/S 책임자와 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 5000원 (최초 배송비 무료인 경우 10000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": null,
+   "manufacturer": null,
+   "model_name": null,
+   "origin": null
+  },
+  "store": {
+   "id": "102341092",
+   "uid": "2wHo8ZTS7qiSQmewKnMFG",
+   "name": "좋구나 좋아  스토어",
+   "slug": "liping11",
+   "link": "https://smartstore.naver.com/liping11",
+   "type": "smart_store",
+   "grade": "FIFTH",
+   "sale_count": 2691,
+   "merchant_id": "512238039",
+   "business": {
+    "legal_name": "주식회사 오이걸샵",
+    "representative": "REN LIPING 랜리핑",
+    "type": "CORPORATION",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "10332996284",
+  "name": "남성 긴팔 와플 피케 카라 티셔츠 기능성 골프상의 그레이 165/M",
+  "link": "https://smartstore.naver.com/liping11/products/10332996284",
+  "query": "남성 골프 긴팔 카라티",
+  "category": {
+   "id": "50002796",
+   "name": "티셔츠",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프의류",
+    "티셔츠"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001104",
+    "50002796"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "10332996284"
+   },
+   {
+    "label": "원산지",
+    "value": "상세설명에 표시"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": null,
+   "manufacturer": null,
+   "model_name": null,
+   "origin": null
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 41970,
+   "option_groups": [
+    {
+     "id": "9215370421",
+     "name": "컬러",
+     "type": "COMBINATION"
+    },
+    {
+     "id": "9215370422",
+     "name": "사이즈",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "41306081616",
+     "name": "그레이 / 165/M",
+     "options": [
+      "그레이",
+      "165/M"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081618",
+     "name": "그레이 / 170/L",
+     "options": [
+      "그레이",
+      "170/L"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 996,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081623",
+     "name": "그레이 / 175/XL",
+     "options": [
+      "그레이",
+      "175/XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 998,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081624",
+     "name": "그레이 / 180/2XL",
+     "options": [
+      "그레이",
+      "180/2XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081626",
+     "name": "그레이 / 185/3XL",
+     "options": [
+      "그레이",
+      "185/3XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081628",
+     "name": "그레이 / 190/4XL",
+     "options": [
+      "그레이",
+      "190/4XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081602",
+     "name": "베이지 / 165/M",
+     "options": [
+      "베이지",
+      "165/M"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081604",
+     "name": "베이지 / 170/L",
+     "options": [
+      "베이지",
+      "170/L"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081606",
+     "name": "베이지 / 175/XL",
+     "options": [
+      "베이지",
+      "175/XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081609",
+     "name": "베이지 / 180/2XL",
+     "options": [
+      "베이지",
+      "180/2XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081611",
+     "name": "베이지 / 185/3XL",
+     "options": [
+      "베이지",
+      "185/3XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081614",
+     "name": "베이지 / 190/4XL",
+     "options": [
+      "베이지",
+      "190/4XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081630",
+     "name": "블랙 / 165/M",
+     "options": [
+      "블랙",
+      "165/M"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081632",
+     "name": "블랙 / 170/L",
+     "options": [
+      "블랙",
+      "170/L"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 997,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081633",
+     "name": "블랙 / 175/XL",
+     "options": [
+      "블랙",
+      "175/XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 998,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081635",
+     "name": "블랙 / 180/2XL",
+     "options": [
+      "블랙",
+      "180/2XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081637",
+     "name": "블랙 / 185/3XL",
+     "options": [
+      "블랙",
+      "185/3XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081638",
+     "name": "블랙 / 190/4XL",
+     "options": [
+      "블랙",
+      "190/4XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081639",
+     "name": "옐로우 / 165/M",
+     "options": [
+      "옐로우",
+      "165/M"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081641",
+     "name": "옐로우 / 170/L",
+     "options": [
+      "옐로우",
+      "170/L"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081642",
+     "name": "옐로우 / 175/XL",
+     "options": [
+      "옐로우",
+      "175/XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081643",
+     "name": "옐로우 / 180/2XL",
+     "options": [
+      "옐로우",
+      "180/2XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081646",
+     "name": "옐로우 / 185/3XL",
+     "options": [
+      "옐로우",
+      "185/3XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081647",
+     "name": "옐로우 / 190/4XL",
+     "options": [
+      "옐로우",
+      "190/4XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081649",
+     "name": "블루 / 165/M",
+     "options": [
+      "블루",
+      "165/M"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081651",
+     "name": "블루 / 170/L",
+     "options": [
+      "블루",
+      "170/L"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081653",
+     "name": "블루 / 175/XL",
+     "options": [
+      "블루",
+      "175/XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 997,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081661",
+     "name": "블루 / 180/2XL",
+     "options": [
+      "블루",
+      "180/2XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 998,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081667",
+     "name": "블루 / 185/3XL",
+     "options": [
+      "블루",
+      "185/3XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081669",
+     "name": "블루 / 190/4XL",
+     "options": [
+      "블루",
+      "190/4XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081672",
+     "name": "올리브 / 165/M",
+     "options": [
+      "올리브",
+      "165/M"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081677",
+     "name": "올리브 / 170/L",
+     "options": [
+      "올리브",
+      "170/L"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081679",
+     "name": "올리브 / 175/XL",
+     "options": [
+      "올리브",
+      "175/XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081680",
+     "name": "올리브 / 180/2XL",
+     "options": [
+      "올리브",
+      "180/2XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081681",
+     "name": "올리브 / 185/3XL",
+     "options": [
+      "올리브",
+      "185/3XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081682",
+     "name": "올리브 / 190/4XL",
+     "options": [
+      "올리브",
+      "190/4XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081683",
+     "name": "그린 / 165/M",
+     "options": [
+      "그린",
+      "165/M"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081684",
+     "name": "그린 / 170/L",
+     "options": [
+      "그린",
+      "170/L"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 998,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081685",
+     "name": "그린 / 175/XL",
+     "options": [
+      "그린",
+      "175/XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081686",
+     "name": "그린 / 180/2XL",
+     "options": [
+      "그린",
+      "180/2XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081687",
+     "name": "그린 / 185/3XL",
+     "options": [
+      "그린",
+      "185/3XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    },
+    {
+     "id": "41306081688",
+     "name": "그린 / 190/4XL",
+     "options": [
+      "그린",
+      "190/4XL"
+     ],
+     "extra_price": 6000,
+     "stock_quantity": 1000,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-05-16"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": "제주 추가 5,000원, 제주 외 도서지역 추가 5,000원",
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": false,
+   "company": "CJ 대한통운(오네)",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": 5000,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 6.2871094,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   }
+  },
+  "catalog": {
+   "id": "53354615504",
+   "nsin": "N000019223663"
+  },
+  "measures": {
+   "is_set": false,
+   "weights": [],
+   "dimensions": [],
+   "references": [
+    {
+     "quote": "치수: 상품상세참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 2
+     },
+     "measure": "size",
+     "reason": "description_reference"
+    }
+   ],
+   "review": []
+  },
+  "read_at": "2026-11-22T11:58:58Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 14480,
+  "variants": [
+   {
+    "id": "41306081616",
+    "name": "그레이 / 165/M",
+    "options": [
+     "그레이",
+     "165/M"
+    ],
+    "extra_price": 0,
+    "price": 14480,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "41306081618",
+    "name": "그레이 / 170/L",
+    "options": [
+     "그레이",
+     "170/L"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 996,
+    "is_available": true
+   },
+   {
+    "id": "41306081623",
+    "name": "그레이 / 175/XL",
+    "options": [
+     "그레이",
+     "175/XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 998,
+    "is_available": true
+   },
+   {
+    "id": "41306081624",
+    "name": "그레이 / 180/2XL",
+    "options": [
+     "그레이",
+     "180/2XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081626",
+    "name": "그레이 / 185/3XL",
+    "options": [
+     "그레이",
+     "185/3XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "41306081628",
+    "name": "그레이 / 190/4XL",
+    "options": [
+     "그레이",
+     "190/4XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "41306081602",
+    "name": "베이지 / 165/M",
+    "options": [
+     "베이지",
+     "165/M"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "41306081604",
+    "name": "베이지 / 170/L",
+    "options": [
+     "베이지",
+     "170/L"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "41306081606",
+    "name": "베이지 / 175/XL",
+    "options": [
+     "베이지",
+     "175/XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "41306081609",
+    "name": "베이지 / 180/2XL",
+    "options": [
+     "베이지",
+     "180/2XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081611",
+    "name": "베이지 / 185/3XL",
+    "options": [
+     "베이지",
+     "185/3XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081614",
+    "name": "베이지 / 190/4XL",
+    "options": [
+     "베이지",
+     "190/4XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081630",
+    "name": "블랙 / 165/M",
+    "options": [
+     "블랙",
+     "165/M"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "41306081632",
+    "name": "블랙 / 170/L",
+    "options": [
+     "블랙",
+     "170/L"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 997,
+    "is_available": true
+   },
+   {
+    "id": "41306081633",
+    "name": "블랙 / 175/XL",
+    "options": [
+     "블랙",
+     "175/XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 998,
+    "is_available": true
+   },
+   {
+    "id": "41306081635",
+    "name": "블랙 / 180/2XL",
+    "options": [
+     "블랙",
+     "180/2XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "41306081637",
+    "name": "블랙 / 185/3XL",
+    "options": [
+     "블랙",
+     "185/3XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "41306081638",
+    "name": "블랙 / 190/4XL",
+    "options": [
+     "블랙",
+     "190/4XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081639",
+    "name": "옐로우 / 165/M",
+    "options": [
+     "옐로우",
+     "165/M"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081641",
+    "name": "옐로우 / 170/L",
+    "options": [
+     "옐로우",
+     "170/L"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081642",
+    "name": "옐로우 / 175/XL",
+    "options": [
+     "옐로우",
+     "175/XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081643",
+    "name": "옐로우 / 180/2XL",
+    "options": [
+     "옐로우",
+     "180/2XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081646",
+    "name": "옐로우 / 185/3XL",
+    "options": [
+     "옐로우",
+     "185/3XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081647",
+    "name": "옐로우 / 190/4XL",
+    "options": [
+     "옐로우",
+     "190/4XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081649",
+    "name": "블루 / 165/M",
+    "options": [
+     "블루",
+     "165/M"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081651",
+    "name": "블루 / 170/L",
+    "options": [
+     "블루",
+     "170/L"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "41306081653",
+    "name": "블루 / 175/XL",
+    "options": [
+     "블루",
+     "175/XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 997,
+    "is_available": true
+   },
+   {
+    "id": "41306081661",
+    "name": "블루 / 180/2XL",
+    "options": [
+     "블루",
+     "180/2XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 998,
+    "is_available": true
+   },
+   {
+    "id": "41306081667",
+    "name": "블루 / 185/3XL",
+    "options": [
+     "블루",
+     "185/3XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081669",
+    "name": "블루 / 190/4XL",
+    "options": [
+     "블루",
+     "190/4XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081672",
+    "name": "올리브 / 165/M",
+    "options": [
+     "올리브",
+     "165/M"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081677",
+    "name": "올리브 / 170/L",
+    "options": [
+     "올리브",
+     "170/L"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081679",
+    "name": "올리브 / 175/XL",
+    "options": [
+     "올리브",
+     "175/XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "41306081680",
+    "name": "올리브 / 180/2XL",
+    "options": [
+     "올리브",
+     "180/2XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "41306081681",
+    "name": "올리브 / 185/3XL",
+    "options": [
+     "올리브",
+     "185/3XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081682",
+    "name": "올리브 / 190/4XL",
+    "options": [
+     "올리브",
+     "190/4XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081683",
+    "name": "그린 / 165/M",
+    "options": [
+     "그린",
+     "165/M"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081684",
+    "name": "그린 / 170/L",
+    "options": [
+     "그린",
+     "170/L"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 998,
+    "is_available": true
+   },
+   {
+    "id": "41306081685",
+    "name": "그린 / 175/XL",
+    "options": [
+     "그린",
+     "175/XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081686",
+    "name": "그린 / 180/2XL",
+    "options": [
+     "그린",
+     "180/2XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081687",
+    "name": "그린 / 185/3XL",
+    "options": [
+     "그린",
+     "185/3XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   },
+   {
+    "id": "41306081688",
+    "name": "그린 / 190/4XL",
+    "options": [
+     "그린",
+     "190/4XL"
+    ],
+    "extra_price": 6000,
+    "price": 20480,
+    "price_in_name": null,
+    "stock_quantity": 1000,
+    "is_available": true
+   }
+  ],
+  "available": 42,
+  "sold_out": 0,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": "41306081616",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081618",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081623",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081624",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081626",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081628",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081602",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081604",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081606",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081609",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081611",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081614",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081630",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081632",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081633",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081635",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081637",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081638",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081639",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081641",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081642",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081643",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081646",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081647",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081649",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081651",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081653",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081661",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081667",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081669",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081672",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081677",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081679",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081680",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081681",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081682",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081683",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081684",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081685",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081686",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081687",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "41306081688",
+   "fields": {
+    "product_weight_g": {
+     "low": 120,
+     "central": 250,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 350,
+     "high": 800,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 15,
+     "approved_by": "owner",
+     "approved_at": "2026-11-21"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "10332996284",
+   "name": "남성 긴팔 와플 피케 카라 티셔츠 기능성 골프상의 그레이 165/M",
+   "link": "https://smartstore.naver.com/liping11/products/10332996284"
+  },
+  "summary": {
+   "count": 20,
+   "average_score": 4.5,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 3,
+    "4": 4,
+    "5": 13
+   },
+   "text_count": 14,
+   "photo_count": 4,
+   "video_count": 2,
+   "after_use_count": 3,
+   "best_count": 0,
+   "recent": {
+    "count": 2,
+    "average_score": 3.0
+   },
+   "evaluations": [
+    {
+     "question": "사이즈는 어떤가요?",
+     "answers": [
+      {
+       "name": "많이 작아요",
+       "count": 3,
+       "percent": 15
+      },
+      {
+       "name": "약간 작아요",
+       "count": 3,
+       "percent": 15
+      },
+      {
+       "name": "잘 맞아요",
+       "count": 14,
+       "percent": 70
+      },
+      {
+       "name": "약간 커요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "많이 커요",
+       "count": 0,
+       "percent": 0
+      }
+     ]
+    },
+    {
+     "question": "핏은 어떤가요?",
+     "answers": [
+      {
+       "name": "슬림해요",
+       "count": 5,
+       "percent": 25
+      },
+      {
+       "name": "적당해요",
+       "count": 15,
+       "percent": 75
+      },
+      {
+       "name": "오버핏이에요",
+       "count": 0,
+       "percent": 0
+      }
+     ]
+    },
+    {
+     "question": "착용감은 어떤가요?",
+     "answers": [
+      {
+       "name": "불편해요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "편해요",
+       "count": 19,
+       "percent": 95
+      },
+      {
+       "name": "아주 편해요",
+       "count": 1,
+       "percent": 5
+      }
+     ]
+    }
+   ],
+   "representative_reviews": [
+    {
+     "id": "4686402686",
+     "score": 4,
+     "text": "화면처럼고급지진않지만 가격대비 괜찮네요 배송은 느립니다",
+     "image": "https://phinf.pstatic.net/image.nmv/shopnbuyer_2025_03_21_2149/4llOjQHmRm_01.jpg"
+    },
+    {
+     "id": "4686403275",
+     "score": 4,
+     "text": "배송느려요 가격대비 괜찮아요",
+     "image": "https://phinf.pstatic.net/image.nmv/shopnbuyer_2025_03_21_2165/24p1Tf1b7s_01.jpg"
+    },
+    {
+     "id": "4892044478",
+     "score": 5,
+     "text": "싼 맛에 샀는데 바늘질이 잘 안됐어요",
+     "image": null
+    },
+    {
+     "id": "4685921072",
+     "score": 5,
+     "text": "배송은 아주 늦었지만 상품의 가성비는 최고입니다. 만족합니다.",
+     "image": null
+    },
+    {
+     "id": "4685920197",
+     "score": 5,
+     "text": "배송은 아주 늦었지만 상품의 가성비는 최고입니다. 만족합니다.",
+     "image": null
+    },
+    {
+     "id": "4687570274",
+     "score": 5,
+     "text": "제품 잘맞고 좋습니다",
+     "image": null
+    },
+    {
+     "id": "4687570148",
+     "score": 5,
+     "text": "제품 잘맞고 좋습니다",
+     "image": null
+    },
+    {
+     "id": "4687570013",
+     "score": 5,
+     "text": "제품 잘맞고 좋습니다",
+     "image": null
+    },
+    {
+     "id": "4687569669",
+     "score": 5,
+     "text": "제품 잘맞고 좋습니다",
+     "image": null
+    },
+    {
+     "id": "4665116933",
+     "score": 5,
+     "text": "가성비가 짱이고 가격대비 싼티가 덜합니다. 그런데 배송은 인내가 필요할 듯 합니다. 그래도 만족합니다.",
+     "image": null
+    },
+    {
+     "id": "4665117608",
+     "score": 5,
+     "text": "배송은 아주아주 늦어요. 하지만 가성비는 매우 높습니다. 만족합니다.",
+     "image": null
+    },
+    {
+     "id": "4650773252",
+     "score": 5,
+     "text": "옷이 편하고 핏이 살아서 좋습니다. 추천힙니다.",
+     "image": null
+    }
+   ]
+  },
+  "mode": "small_source",
+  "count": 8,
+  "scanned": 20,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 20,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "4892044478",
+    "score": 5,
+    "text": "싼 맛에 샀는데 바늘질이 잘 안됐어요",
+    "created_at": "2026-01-23T02:35:46Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "컬러: 베이지 / 사이즈: 165/M",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "smar****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "10332996284",
+     "origin_product_id": "10283161120",
+     "name": "남성 긴팔 와플 피케 카라 티셔츠 기능성 골프상의 그레이 165/M"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4835354206",
+    "score": 3,
+    "text": "가격대비 좋은거같아요",
+    "created_at": "2025-11-05T07:09:07Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "컬러: 블랙 / 사이즈: 165/M",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "go21****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "10332996284",
+     "origin_product_id": "10283161120",
+     "name": "남성 긴팔 와플 피케 카라 티셔츠 기능성 골프상의 그레이 165/M"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4687570274",
+    "score": 5,
+    "text": "제품 잘맞고 좋습니다",
+    "created_at": "2025-03-23T08:17:08Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "컬러: 블랙 / 사이즈: 175/XL",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "hw****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "10332996284",
+     "origin_product_id": "10283161120",
+     "name": "남성 긴팔 와플 피케 카라 티셔츠 기능성 골프상의"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4686402686",
+    "score": 4,
+    "text": "화면처럼고급지진않지만 가격대비 괜찮네요 배송은 느립니다",
+    "created_at": "2025-03-21T08:54:17Z",
+    "type": "NORMAL",
+    "content_type": "VIDEO",
+    "option": "컬러: 그레이 / 사이즈: 170/L",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "skmm****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/image.nmv/shopnbuyer_2025_03_21_2149/4llOjQHmRm_01.jpg",
+      "width": 2400,
+      "height": 1080,
+      "source": "video_poster"
+     }
+    ],
+    "product": {
+     "id": "10332996284",
+     "origin_product_id": "10283161120",
+     "name": "남성 긴팔 와플 피케 카라 티셔츠 기능성 골프상의"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4650773252",
+    "score": 5,
+    "text": "옷이 편하고 핏이 살아서 좋습니다. 추천힙니다.",
+    "created_at": "2025-01-27T03:21:15Z",
+    "type": "AFTER_USE",
+    "content_type": "TEXT",
+    "option": "컬러: 블루 / 사이즈: 170/L",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "jo****",
+     "profile_image": "https://phinf.pstatic.net/contact/20230801_12/1690894330983BR3aV_JPEG/Untitled-1.jpg"
+    },
+    "attachments": [],
+    "product": {
+     "id": "10332996284",
+     "origin_product_id": "10283161120",
+     "name": "남성 긴팔 와플 피케 카라 티셔츠 기능성 골프상의"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4619085008",
+    "score": 5,
+    "text": "옷이 너무 마음에 듭니다. 사진보다 더 좋은 듯.....",
+    "created_at": "2024-12-11T06:23:00Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "컬러: 블루 / 사이즈: 170/L",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "jo****",
+     "profile_image": "https://phinf.pstatic.net/contact/20230801_12/1690894330983BR3aV_JPEG/Untitled-1.jpg"
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20241211_182/1733898177051r09Mc_JPEG/KakaoTalk_20241211_152104145.jpg",
+      "width": 1632,
+      "height": 734
+     }
+    ],
+    "product": {
+     "id": "10332996284",
+     "origin_product_id": "10283161120",
+     "name": "남성 긴팔 와플 피케 카라 티셔츠 기능성 골프상의"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4595546191",
+    "score": 5,
+    "text": "가격 대비 품질 만족 합니다",
+    "created_at": "2024-11-09T07:46:53Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "컬러: 블랙 / 사이즈: 185/3XL",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "idst****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "10332996284",
+     "origin_product_id": "10283161120",
+     "name": "남성 긴팔 와플 피케 카라 티셔츠 기능성 골프상의"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4595545245",
+    "score": 5,
+    "text": "디자인 잘 나왔습니다 \n사이즈가 좀 작고요",
+    "created_at": "2024-11-09T07:45:21Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "컬러: 그레이 / 사이즈: 175/XL",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "idst****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20241109_274/1731138315919qJYT1_JPEG/1000005706.jpg",
+      "width": 2252,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "10332996284",
+     "origin_product_id": "10283161120",
+     "name": "남성 긴팔 와플 피케 카라 티셔츠 기능성 골프상의"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ],
+  "picked": {
+   "rule": "review_pick/1",
+   "from": 20,
+   "kept": 8,
+   "photos_from": 6,
+   "photos_kept": 3,
+   "scores": {
+    "5090780269": -24.0,
+    "5090780231": -24.0,
+    "4892044478": 3.0,
+    "4835354206": 1.0,
+    "4687570274": 2.0,
+    "4687570148": 2.0,
+    "4687570013": 2.0,
+    "4687569669": 2.0,
+    "4686403275": -4.0,
+    "4686402686": -2.0,
+    "4685921072": -23.0,
+    "4685920197": -23.0,
+    "4665117608": -21.0,
+    "4665116933": -20.0,
+    "4650773252": 44.0,
+    "4619085008": 64.0,
+    "4595546191": 41.0,
+    "4595545245": 84.0,
+    "4583104224": -3.0,
+    "4583104025": -3.0
+   }
+  }
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 8,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20240516_185/1715835600404l5H01_JPEG/116971443114069158_1010000831.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20240516_185/1715835600404l5H01_JPEG/116971443114069158_1010000831.jpg",
+    "source_sha256": "6b39b6548f50e63ad286c192eb79df892024db5fddb958edfd781aa3e62ce290",
+    "source_bytes": 83704,
+    "source_format": "JPEG",
+    "source_width": 640,
+    "source_height": 640,
+    "first_frame_of": null,
+    "file": "images/10332996284/fairwardgolf-10332996284-001-413daddcbef04c1f.webp",
+    "sha256": "413daddcbef04c1f914dc5764fe1072dc4ef2ca5a61899161eb6acb518ecb4a1",
+    "bytes": 69750,
+    "width": 640,
+    "height": 640,
+    "quality": 85
+   },
+   {
+    "position": 1,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20240516_201/1715835643608bG2sd_JPEG/116971486317707975_586868726.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20240516_201/1715835643608bG2sd_JPEG/116971486317707975_586868726.jpg",
+    "source_sha256": "706ab00440489446d8c15df7922dbc58337c1a66b456fb58c31889d29bac063c",
+    "source_bytes": 66458,
+    "source_format": "JPEG",
+    "source_width": 800,
+    "source_height": 800,
+    "first_frame_of": null,
+    "file": "images/10332996284/fairwardgolf-10332996284-002-019f68e354918fda.webp",
+    "sha256": "019f68e354918fdae2a2bd03c84458c3b26b11068827672afa0a416025e5edca",
+    "bytes": 57400,
+    "width": 800,
+    "height": 800,
+    "quality": 85
+   },
+   {
+    "position": 2,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20240516_87/1715835643777gm6mq_JPEG/116971486491047662_795280071.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20240516_87/1715835643777gm6mq_JPEG/116971486491047662_795280071.jpg",
+    "source_sha256": "2eb24857a4733abd808ad0f0ce5068a0439569d29f860f56d85994198dbce00d",
+    "source_bytes": 119053,
+    "source_format": "JPEG",
+    "source_width": 800,
+    "source_height": 800,
+    "first_frame_of": null,
+    "file": "images/10332996284/fairwardgolf-10332996284-003-9c83ac569ca8bb13.webp",
+    "sha256": "9c83ac569ca8bb1374043462e63a20b727f2bd713ac53aa85fc1783570bf5df2",
+    "bytes": 114582,
+    "width": 800,
+    "height": 800,
+    "quality": 85
+   },
+   {
+    "position": 3,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20240516_13/17158356439788Nv4I_JPEG/116971486681171905_967821589.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20240516_13/17158356439788Nv4I_JPEG/116971486681171905_967821589.jpg",
+    "source_sha256": "86168384835e9bc761659eb9a949937ea067b599f58398d1620743011ce36d5d",
+    "source_bytes": 58415,
+    "source_format": "JPEG",
+    "source_width": 800,
+    "source_height": 800,
+    "first_frame_of": null,
+    "file": "images/10332996284/fairwardgolf-10332996284-004-222d037af15dfef4.webp",
+    "sha256": "222d037af15dfef44425c9d6ef0c49350bc773d6e6c25dc95c38580d1ab2e353",
+    "bytes": 49920,
+    "width": 800,
+    "height": 800,
+    "quality": 85
+   },
+   {
+    "position": 4,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20240516_219/1715835644203JmCx5_JPEG/116971486917643436_1817945954.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20240516_219/1715835644203JmCx5_JPEG/116971486917643436_1817945954.jpg",
+    "source_sha256": "5d9c530ec131d681652dafdc68be0189ac6d7ac84a15b05bfca90ebafe6866f7",
+    "source_bytes": 94000,
+    "source_format": "JPEG",
+    "source_width": 800,
+    "source_height": 800,
+    "first_frame_of": null,
+    "file": "images/10332996284/fairwardgolf-10332996284-005-7aae2fa4442d9e9c.webp",
+    "sha256": "7aae2fa4442d9e9c83b48925d67df2b2f50c675cb92d9a815a1aa49e007d5293",
+    "bytes": 98594,
+    "width": 800,
+    "height": 800,
+    "quality": 85
+   },
+   {
+    "position": 5,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20240516_265/1715835644347jcYr7_JPEG/116971487062770140_1162385706.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20240516_265/1715835644347jcYr7_JPEG/116971487062770140_1162385706.jpg",
+    "source_sha256": "32bfcd52b1a58301ad2897af0b9633dc8c77a377b547c440f94bdc9787882169",
+    "source_bytes": 75694,
+    "source_format": "JPEG",
+    "source_width": 800,
+    "source_height": 800,
+    "first_frame_of": null,
+    "file": "images/10332996284/fairwardgolf-10332996284-006-9070b5aaf82bad8b.webp",
+    "sha256": "9070b5aaf82bad8b9f4082261bb5bad42ef44f72613e07702dee7d07cb257e38",
+    "bytes": 73938,
+    "width": 800,
+    "height": 800,
+    "quality": 85
+   },
+   {
+    "position": 6,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20240516_85/1715835644472CsyPF_JPEG/116971487180461182_552520610.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20240516_85/1715835644472CsyPF_JPEG/116971487180461182_552520610.jpg",
+    "source_sha256": "12747d4de39d2deca495c9f142288093ef997428add072bb91099ad9dd82acd0",
+    "source_bytes": 97941,
+    "source_format": "JPEG",
+    "source_width": 800,
+    "source_height": 800,
+    "first_frame_of": null,
+    "file": "images/10332996284/fairwardgolf-10332996284-007-5bdf15ef6b91a7e0.webp",
+    "sha256": "5bdf15ef6b91a7e0088d37989932a6106f7113e7e78ecb5f8fa13d250787938f",
+    "bytes": 100782,
+    "width": 800,
+    "height": 800,
+    "quality": 85
+   },
+   {
+    "position": 7,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20240516_116/1715835644647ebSdX_JPEG/116971487362779412_1768216068.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20240516_116/1715835644647ebSdX_JPEG/116971487362779412_1768216068.jpg",
+    "source_sha256": "4c1fce7e3c6274680ebb0fff04a6e84af5c9a2124e4c364e8de3664a7faa0c2d",
+    "source_bytes": 96181,
+    "source_format": "JPEG",
+    "source_width": 800,
+    "source_height": 800,
+    "first_frame_of": null,
+    "file": "images/10332996284/fairwardgolf-10332996284-008-4b6aaef052fe86d4.webp",
+    "sha256": "4b6aaef052fe86d438fd9c945c70138d803b02fca568b79da6b23098eab83e58",
+    "bytes": 101072,
+    "width": 800,
+    "height": 800,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 8
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [
+   {
+    "review_id": "4686402686",
+    "kind": "review-image",
+    "from_video": true,
+    "url": "https://phinf.pstatic.net/image.nmv/shopnbuyer_2025_03_21_2149/4llOjQHmRm_01.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/image.nmv/shopnbuyer_2025_03_21_2149/4llOjQHmRm_01.jpg",
+    "source_sha256": "122b91e00f497232ac5b479977f7e95a50a594404c0f0acff365ca8d41f0a91a",
+    "source_bytes": 80224,
+    "source_format": "JPEG",
+    "source_width": 1080,
+    "source_height": 2400,
+    "first_frame_of": null,
+    "file": "images/10332996284/fairwardgolf-review-image-5a4aece9ae949dcc.webp",
+    "sha256": "5a4aece9ae949dcc87c264a819ed60698d65cbc5534ef9aedd3d46c880b8851e",
+    "bytes": 18186,
+    "width": 461,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4650773252",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20230801_12/1690894330983BR3aV_JPEG/Untitled-1.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20230801_12/1690894330983BR3aV_JPEG/Untitled-1.jpg",
+    "source_sha256": "8cf7e9608274d24a1937aab409c33f1a366ce3d878fb646053f492bad84770a4",
+    "source_bytes": 116729,
+    "source_format": "JPEG",
+    "source_width": 900,
+    "source_height": 900,
+    "first_frame_of": null,
+    "file": "images/10332996284/fairwardgolf-review-avatar-c6e00f09155fb9ae.webp",
+    "sha256": "c6e00f09155fb9ae0e55c2dbd0b664cb5e5ebc3b9b521d063737924ab9ab9e90",
+    "bytes": 9022,
+    "width": 900,
+    "height": 900,
+    "quality": 85
+   },
+   {
+    "review_id": "4619085008",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20241211_182/1733898177051r09Mc_JPEG/KakaoTalk_20241211_152104145.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20241211_182/1733898177051r09Mc_JPEG/KakaoTalk_20241211_152104145.jpg",
+    "source_sha256": "1a59d481f0431d2c4cbc8791de2619472da067ab946665c5d21bc03a52ae8cad",
+    "source_bytes": 530590,
+    "source_format": "JPEG",
+    "source_width": 1632,
+    "source_height": 734,
+    "first_frame_of": null,
+    "file": "images/10332996284/fairwardgolf-review-image-3e178f75a6719107.webp",
+    "sha256": "3e178f75a67191070687decc15df4dd3643f5210e64dadb6d5fe6c1fbaa547c2",
+    "bytes": 104174,
+    "width": 1024,
+    "height": 461,
+    "quality": 85
+   },
+   {
+    "url": "https://phinf.pstatic.net/contact/20230801_12/1690894330983BR3aV_JPEG/Untitled-1.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20230801_12/1690894330983BR3aV_JPEG/Untitled-1.jpg",
+    "source_sha256": "8cf7e9608274d24a1937aab409c33f1a366ce3d878fb646053f492bad84770a4",
+    "source_bytes": 116729,
+    "source_format": "JPEG",
+    "source_width": 900,
+    "source_height": 900,
+    "first_frame_of": null,
+    "file": "images/10332996284/fairwardgolf-review-avatar-c6e00f09155fb9ae.webp",
+    "sha256": "c6e00f09155fb9ae0e55c2dbd0b664cb5e5ebc3b9b521d063737924ab9ab9e90",
+    "bytes": 9022,
+    "width": 900,
+    "height": 900,
+    "quality": 85,
+    "review_id": "4619085008",
+    "kind": "review-avatar",
+    "from_video": false
+   },
+   {
+    "review_id": "4595545245",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20241109_274/1731138315919qJYT1_JPEG/1000005706.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20241109_274/1731138315919qJYT1_JPEG/1000005706.jpg",
+    "source_sha256": "89db47a79c6af185ec7616bc5e7dde522408432bef6c31e6f5735191bcf8f71a",
+    "source_bytes": 3742207,
+    "source_format": "JPEG",
+    "source_width": 2252,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/10332996284/fairwardgolf-review-image-44aa77cfd5b69ad2.webp",
+    "sha256": "44aa77cfd5b69ad2583970028ee011c07fa3e86f1243bb6bcceb6378502417a3",
+    "bytes": 84358,
+    "width": 577,
+    "height": 1024,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

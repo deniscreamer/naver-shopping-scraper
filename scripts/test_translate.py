@@ -192,7 +192,10 @@ def test_no_fixture_left_out_unnamed():
     assert sorted({_category(n) for n in ALL_FIXTURES if not os.path.isdir(os.path.join(DICTS, _category(n)))}) \
         == sorted(NO_DICT_BACKUP)
 # held by the transform (nothing to translate into a product): 10504295292 choice_in_text_only, 13683785691 single_only
-HELD = {"10504295292", "13683785691"}
+# the apparel size fixtures that stay held (2026-11-25): 754260851, 4509557063, 10332996284 size_unmapped (5176506757
+# sized since the owner's adidas letters, 2026-11-25)
+HELD = {"10504295292", "13683785691", "754260851", "4509557063", "10332996284"}
+SOLD = [n for n in FIXTURES if n not in HELD]
 
 
 @pytest.mark.parametrize("name", FIXTURES[:12])
@@ -337,7 +340,7 @@ def test_held_and_offline_products(tmp_path):
 def test_run_writes_the_files_and_a_second_run_asks_nothing(tmp_path):
     shop = tmp_path / "shops" / "fairwardgolf"
     (shop / "prepared").mkdir(parents=True)
-    products = [fixture(n) for n in FIXTURES[:3]]
+    products = [fixture(n) for n in SOLD[:3]]
     (shop / "prepared" / "products.jsonl").write_text(
         "".join(json.dumps(p, ensure_ascii=False) + "\n" for p in products), encoding="utf-8")
     d = D.Dictionaries(str(tmp_path / "live"))
@@ -360,7 +363,7 @@ def test_limit_and_offline(tmp_path):
     shop = tmp_path / "shops" / "fairwardgolf"
     (shop / "prepared").mkdir(parents=True)
     (shop / "prepared" / "products.jsonl").write_text(
-        "".join(json.dumps(fixture(n), ensure_ascii=False) + "\n" for n in FIXTURES[:3]), encoding="utf-8")
+        "".join(json.dumps(fixture(n), ensure_ascii=False) + "\n" for n in SOLD[:3]), encoding="utf-8")
     got = T.run("fairwardgolf", FakeModel(), str(tmp_path / "shops"), dicts=D.Dictionaries(str(tmp_path / "l")),
                 limit=1)
     assert sorted(r["status"] for r in got["records"]) == ["pending", "pending", "translated"]
@@ -782,7 +785,7 @@ def test_a_title_word_only_one_variant_has_goes_to_the_model_as_context(tmp_path
 def test_an_interrupted_run_keeps_what_was_done_and_resumes(tmp_path):
     shop = tmp_path / "shops" / "fairwardgolf"
     (shop / "prepared").mkdir(parents=True)
-    products = [fixture(n) for n in FIXTURES[:3]]
+    products = [fixture(n) for n in SOLD[:3]]
     (shop / "prepared" / "products.jsonl").write_text(
         "".join(json.dumps(p, ensure_ascii=False) + "\n" for p in products), encoding="utf-8")
 

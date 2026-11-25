@@ -1,0 +1,921 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 384220,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_120/1664190207354S1TCL_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8823.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.876,
+       "text": "lallo",
+       "y": 388
+      },
+      {
+       "conf": 0.995,
+       "text": "GOLF",
+       "y": 451
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 467777,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_196/16641902073631O2wO_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8816.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.809,
+       "text": "al",
+       "y": 405
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 104905,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_86/166419124118054Urm_JPEG/2.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "Detail View",
+       "y": 41
+      },
+      {
+       "conf": 0.995,
+       "text": "Hallo golf",
+       "y": 71
+      },
+      {
+       "conf": 0.953,
+       "text": "다양한 연출이가능한 / 인체공학적인",
+       "y": 142
+      },
+      {
+       "conf": 0.987,
+       "text": "버튼스타일 / 패턴타입",
+       "y": 162
+      },
+      {
+       "conf": 0.994,
+       "text": "짧지않은 기장감으로 / 활동성에좋은",
+       "y": 772
+      },
+      {
+       "conf": 0.958,
+       "text": "안정감있는밑단 / 신축성원단",
+       "y": 794
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 128248,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_193/16641912515794sbme_JPEG/1.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.98,
+       "text": "Fabric Info",
+       "y": 55
+      },
+      {
+       "conf": 0.994,
+       "text": "뛰어난 흡한속건 기능으로",
+       "y": 112
+      },
+      {
+       "conf": 0.993,
+       "text": "어떠한 활동도 완벽하게 만들어줍니다.",
+       "y": 152
+      },
+      {
+       "conf": 0.978,
+       "text": "↑↓↑↓ / 흡한속건",
+       "y": 241
+      },
+      {
+       "conf": 0.705,
+       "text": "LO OINI / 신체의 땀과 수분을 빠르게 흡수하고",
+       "y": 243
+      },
+      {
+       "conf": 0.815,
+       "text": "000",
+       "y": 290
+      },
+      {
+       "conf": 0.982,
+       "text": "건조시켜 쾌적한 착용감을 선사합니다.",
+       "y": 310
+      },
+      {
+       "conf": 0.94,
+       "text": "뛰어난 신축성",
+       "y": 400
+      },
+      {
+       "conf": 0.959,
+       "text": "완벽한 비율의 사방 스트레치로 신축성이",
+       "y": 438
+      },
+      {
+       "conf": 0.949,
+       "text": "탁월하여 격한 활동에도 적합합니다.",
+       "y": 464
+      },
+      {
+       "conf": 0.932,
+       "text": "편안한 착용감",
+       "y": 552
+      },
+      {
+       "conf": 0.968,
+       "text": "우수한 내구성과 탄탄한 조직으로",
+       "y": 592
+      },
+      {
+       "conf": 0.931,
+       "text": "편안한 착용감을 선사하며 변형이 적습니다",
+       "y": 617
+      },
+      {
+       "conf": 0.974,
+       "text": "소프트한 터치",
+       "y": 705
+      },
+      {
+       "conf": 0.621,
+       "text": "To O-NI / 부드러운터치감을선사하여 민감한",
+       "y": 702
+      },
+      {
+       "conf": 0.94,
+       "text": "피부에도 편안하게 착용 가능합니다.",
+       "y": 768
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 411379,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_44/1664190256212jz27O_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8821.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.684,
+       "text": "Halld",
+       "y": 385
+      },
+      {
+       "conf": 0.991,
+       "text": "GOLF",
+       "y": 450
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 372118,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_142/1664190256213iQpNd_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8822.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 384220,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_81/1664190256209tuDmx_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8823.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.876,
+       "text": "lallo",
+       "y": 388
+      },
+      {
+       "conf": 0.995,
+       "text": "GOLF",
+       "y": 451
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 364770,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_3/16641902562146ccca_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8811.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.823,
+       "text": "Flallo",
+       "y": 389
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 348160,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_169/1664190256203dFCNW_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8812.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.919,
+       "text": "Hallo",
+       "y": 385
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 370356,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_8/1664190256213VjHmD_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8813.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.855,
+       "text": "Fallo",
+       "y": 387
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 364740,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_195/1664190256524TnlHL_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8814.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.865,
+       "text": "Fallo",
+       "y": 386
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 377395,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_113/1664190256536bTtcY_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8815.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.908,
+       "text": "Hallo",
+       "y": 387
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 380743,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_17/1664190256559CuY7f_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%889.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.85,
+       "text": "Flallo",
+       "y": 385
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 378767,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_103/1664190256594ITUIV_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8810.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.854,
+       "text": "Flallo",
+       "y": 386
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 467777,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_255/1664190312771SOwBr_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8816.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.809,
+       "text": "al",
+       "y": 405
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 395091,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_294/1664190312770N2LIz_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8817.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.82,
+       "text": "Hallo",
+       "y": 387
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 447031,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_153/16641903127790J69f_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8818.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.937,
+       "text": "all",
+       "y": 394
+      },
+      {
+       "conf": 0.617,
+       "text": "6O1-",
+       "y": 453
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 470495,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_146/16641903127778yacR_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%8819.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.883,
+       "text": "Hall",
+       "y": 387
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 403111,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_70/1664190312777diwDK_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%888.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.931,
+       "text": "Hallo",
+       "y": 387
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 401462,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_92/1664190312777aj63b_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%887.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.935,
+       "text": "Hallo",
+       "y": 385
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 381728,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_79/1664190312955TGPp6_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%886.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.914,
+       "text": "Hallo",
+       "y": 385
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 385523,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_241/16641903129638lLdx_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%885.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.808,
+       "text": "Hlallo",
+       "y": 385
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 391034,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_155/1664190312972fj2kg_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%884.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.834,
+       "text": "Plallo",
+       "y": 379
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 333116,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_272/1664190363071FIoYY_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%882.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 585556,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_39/1664190363073qHSPL_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%881.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 360835,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_237/16641903630672cAod_JPEG/%EA%B3%A8%ED%94%84_%EC%9D%B4%EC%9B%94%EC%83%81%ED%92%883.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.834,
+       "text": "Hlallo",
+       "y": 381
+      },
+      {
+       "conf": 0.989,
+       "text": "GOLF",
+       "y": 448
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 82826,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_276/1664192182557NTTiN_JPEG/%ED%8B%B0%EC%85%94%EC%B8%A0-001_(2).jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.995,
+       "text": "여성용 상세 사이즈",
+       "y": 11
+      },
+      {
+       "conf": 0.964,
+       "text": "어깨너비",
+       "y": 100
+      },
+      {
+       "conf": 0.942,
+       "text": "-가슴단면",
+       "y": 212
+      },
+      {
+       "conf": 0.996,
+       "text": "소매길이",
+       "y": 252
+      },
+      {
+       "conf": 0.995,
+       "text": "총기장",
+       "y": 327
+      },
+      {
+       "conf": 0.996,
+       "text": "총기장 / 어깨 / 가슴단면 / 소매길이",
+       "y": 559
+      },
+      {
+       "conf": 0.764,
+       "text": "55 / 61 / 34 / 43 / 57",
+       "y": 606
+      },
+      {
+       "conf": 0.996,
+       "text": "66 / 62 / 35 / 45 / 57",
+       "y": 656
+      },
+      {
+       "conf": 0.999,
+       "text": "77 / 63 / 36 / 47 / 58",
+       "y": 707
+      },
+      {
+       "conf": 0.952,
+       "text": "단면/cm기준입니다.",
+       "y": 809
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 83976,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220926_208/1664192182545MxCMO_JPEG/%ED%8B%B0%EC%85%94%EC%B8%A0-001_(3).jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.993,
+       "text": "남성용 상세 사이즈",
+       "y": 10
+      },
+      {
+       "conf": 0.964,
+       "text": "어깨너비",
+       "y": 100
+      },
+      {
+       "conf": 0.942,
+       "text": "-가슴단면",
+       "y": 212
+      },
+      {
+       "conf": 0.997,
+       "text": "소매길이",
+       "y": 253
+      },
+      {
+       "conf": 0.991,
+       "text": "총기장",
+       "y": 328
+      },
+      {
+       "conf": 0.996,
+       "text": "총기장 / 어깨 / 가슴단면 / 소매길이",
+       "y": 559
+      },
+      {
+       "conf": 0.999,
+       "text": "100 / 73 / 44 / 53 / 59",
+       "y": 605
+      },
+      {
+       "conf": 0.998,
+       "text": "105 / 74 / 45 / 55 / 60",
+       "y": 656
+      },
+      {
+       "conf": 0.998,
+       "text": "110 / 75 / 46 / 57 / 61",
+       "y": 707
+      },
+      {
+       "conf": 0.952,
+       "text": "단면/cm기준입니다.",
+       "y": 809
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 110902,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220904_137/1662289989818kUxrH_JPEG/63063540403076984_1946047769.jpeg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "교환 및 반품안내",
+       "y": 65
+      },
+      {
+       "conf": 0.921,
+       "text": "Hallo goll",
+       "y": 150
+      },
+      {
+       "conf": 0.886,
+       "text": "사이즈 및 배송 문의는 NAVER 톡톡문의'와 고객센터를 이용해 주세요.",
+       "y": 223
+      },
+      {
+       "conf": 0.942,
+       "text": "친절하고 빠르게 해결해 드리겠습니다",
+       "y": 252
+      },
+      {
+       "conf": 0.942,
+       "text": "1.구매 확정시",
+       "y": 312
+      },
+      {
+       "conf": 0.933,
+       "text": "2.악세사리와이너웨어및아이보리, 화이트컬러 계열은배송중",
+       "y": 338
+      },
+      {
+       "conf": 0.933,
+       "text": "반품및 / 오염위험이 높아교환및 반품이어려우니 신중한구매 부탁드립니다",
+       "y": 355
+      },
+      {
+       "conf": 0.912,
+       "text": "교환불가 / 3.상품수령후착용과정중생기는 스크래치,오염,늘어짐등",
+       "y": 375
+      },
+      {
+       "conf": 0.933,
+       "text": "상품가치가손상된 경우(로션향,착용흔적,늘어짐)",
+       "y": 418
+      },
+      {
+       "conf": 0.996,
+       "text": "4.택제거시",
+       "y": 445
+      },
+      {
+       "conf": 0.923,
+       "text": "1.제품에 하자가 있는 경우 무상으로 제품을교환해드립니다",
+       "y": 497
+      },
+      {
+       "conf": 0.878,
+       "text": "반품및 / ->같은 상품으로 교환 가능하고 2일 내로사진과함께 톡톡 문의주세요",
+       "y": 513
+      },
+      {
+       "conf": 0.938,
+       "text": "교환안내 / 3.단순 변심으로인한 교환/반품은택미제거시에만가능합니다",
+       "y": 532
+      },
+      {
+       "conf": 0.942,
+       "text": "4.교환/반품 접수 후2-3일이내로기사님이수거하러 가십니다.",
+       "y": 578
+      },
+      {
+       "conf": 1.0,
+       "text": "고객센터",
+       "y": 625
+      },
+      {
+       "conf": 0.996,
+       "text": "Customer Center",
+       "y": 645
+      },
+      {
+       "conf": 1.0,
+       "text": "010-2391-4551",
+       "y": 678
+      },
+      {
+       "conf": 0.956,
+       "text": "부재중일 경우 문자메세지나 /네이버 톡톡으로 문의 부탁드립니다.",
+       "y": 741
+      },
+      {
+       "conf": 0.978,
+       "text": "평일10:00~18:00/주말,공휴일 휴무",
+       "y": 792
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:100818498:7266270685",
+ "links_sha256": "e7b7dc8eb41bbf24ebb7822132ef2e43ed7f60b832285e0d2a58b1b33b386234",
+ "product_id": "7266270685",
+ "seconds": 36.0,
+ "skipped": [
+  {
+   "link": "https://shop-phinf.pstatic.net/20220926_80/1664190647452rHGy3_GIF/%EA%B3%A8%ED%94%84_%EC%9D%B4%EB%84%88%ED%8B%B0.GIF",
+   "rule": "gif_animated"
+  }
+ ]
+}

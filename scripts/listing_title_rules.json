@@ -3716,7 +3716,7 @@
    },
    {
     "code": "outerwear",
-    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a jacket, a windbreaker, padding or a coat (자켓, 재킷, 점퍼, 잠바, 바람막이, 패딩, 다운, 코트) is outerwear: the windbreakers' or the midlayers'; 다운블로우 is a brand, 트리코트 (tricot) no coat. 2026-11-21, the second pilot: a piste or an anorak (피스테, 아노락) too (Malbon 12375182812 sold a 컬러블록 피스테 among its tops). 2026-11-22 (the men's pilot review, 100 drafts): a down-filled pullover (마스터베어 오리털 티셔츠, 4759230721 / 5263599256) is outerwear: 오리털, 거위털, 구스.",
+    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a jacket, a windbreaker, padding or a coat (자켓, 재킷, 점퍼, 잠바, 바람막이, 패딩, 다운, 코트) is outerwear: the windbreakers' or the midlayers'; 다운블로우 is a brand, 트리코트 (tricot) no coat. 2026-11-21, the second pilot: a piste or an anorak (피스테, 아노락) too (Malbon 12375182812 sold a 컬러블록 피스테 among its tops). 2026-11-22 (the men's pilot review, 100 drafts): a down-filled pullover (마스터베어 오리털 티셔츠, 4759230721 / 5263599256) is outerwear: 오리털, 거위털, 구스. 2026-11-25 (the size_unmapped review): in a variant's option value it leaves that variant out (CategoryRules.variant_drop), no longer holds the product: Volvik 13740610318 sold a down jacket among its polos; the product holds off_section_variant only when every variant names it. 2026-11-25 (the size_unmapped review): 다운 after 버튼 is a button-down shirt (버튼다운 셔츠), a top: not outerwear, never left out (the variant drop) nor screened.",
     "tokens": [
      {
       "text": "자켓",
@@ -3783,7 +3783,9 @@
       "notFollowedBy": [
        "블로우"
       ],
-      "notPrecededBy": []
+      "notPrecededBy": [
+       "버튼"
+      ]
      },
      {
       "text": "코트",
@@ -3903,6 +3905,27 @@
     ]
    },
    {
+    "code": "trousers",
+    "why": "2026-11-25 (the size_unmapped review of fairwardgolf, Fable: 8 held tops of 50002796 sell trousers as a design: '아디다스 [봄/가을]골프 긴바지', '(골프바지)블랙', '조거 팬츠 블랙' beside the polo or the sweatshirt; their waists 82(32)..92(36) held the product size_unmapped): the trousers' word in a variant's option value (바지, 팬츠, pants) leaves that variant out (CategoryRules.variant_drop), the tops sold (13762280030, 9177463189, 9068863945, 9037071653, 13740610318, 12659358151). Checked on every option value of the collected products of 50002796: no top's value has the words. A title with them is already left out by bottoms_or_set (the same words), so the listing screen does not change.",
+    "tokens": [
+     {
+      "text": "바지",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "팬츠",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "pants",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
     "code": "arm_sleeves",
     "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): arm sleeves and a bolero (토시, 볼레로) are accessories, not a top.",
     "tokens": [
@@ -3920,7 +3943,7 @@
    },
    {
     "code": "cooling",
-    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a summer cooling top (냉감, 쿨링, 쿨티, 쿨긴팔: 17 of the 768) is no fall top. 2026-11-22: 쿨니트 (a summer cool knit, 애플라인드 26SS 남성 인견 썸머 쿨니트 in the probe of 남성 골프 니트). 2026-11-22 (the men's pilot review, 100 drafts): 쿨스판 (테일러메이드 ... 기본 쿨 스판 26-P1741C, 9953718175).",
+    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a summer cooling top (냉감, 쿨링, 쿨티, 쿨긴팔: 17 of the 768) is no fall top. 2026-11-22: 쿨니트 (a summer cool knit, 애플라인드 26SS 남성 인견 썸머 쿨니트 in the probe of 남성 골프 니트). 2026-11-22 (the men's pilot review, 100 drafts): 쿨스판 (테일러메이드 ... 기본 쿨 스판 26-P1741C, 9953718175). 2026-11-25 (the size_unmapped review): in a variant's option value it leaves that variant out (CategoryRules.variant_drop), no longer holds the product: 핑크골프 9435597606 '여름용 쿨링기능성원단', 티앤드 6485458095 '여름냉감' beside their fleece tops; the product holds off_section_variant only when every variant names it.",
     "tokens": [
      {
       "text": "냉감",
@@ -4215,7 +4238,7 @@
    },
    {
     "code": "shorts",
-    "why": "2026-11-23 (Golf Pants, golf-pants; the owner's words, the probe of 가을 스트레치 골프 바지: 147 cards of 50002801 read on their sheets): shorts left out (the owner 2026-11-23): 반바지, 숏팬츠, 쇼츠, shorts, 하프팬츠, the 3- to 5-part lengths (3부, 4부, 5부) and inner shorts (속바지): 26 of 147. A listing selling long trousers with a shorts option (마스터베어 ... 조거바지 반바지, 3 cards) goes too; 숏 alone stays (\"슬림일자 숏\": a short inseam of long trousers), 9부 / 7부 stay (cropped trousers). Also the variant screen (CategoryRules.variant_screen): a shorts variant holds the product. 2026-11-23 (Golf Pants, the brand probe: 14 queries, 1,347 cards of 50002801 read on their sheets): Bermuda shorts (WG 카고 버뮤다 팬츠).",
+    "why": "2026-11-23 (Golf Pants, golf-pants; the owner's words, the probe of 가을 스트레치 골프 바지: 147 cards of 50002801 read on their sheets): shorts left out (the owner 2026-11-23): 반바지, 숏팬츠, 쇼츠, shorts, 하프팬츠, the 3- to 5-part lengths (3부, 4부, 5부) and inner shorts (속바지): 26 of 147. A listing selling long trousers with a shorts option (마스터베어 ... 조거바지 반바지, 3 cards) goes too; 숏 alone stays (\"슬림일자 숏\": a short inseam of long trousers), 9부 / 7부 stay (cropped trousers). Also the variant screen (CategoryRules.variant_screen): a shorts variant holds the product. 2026-11-23 (Golf Pants, the brand probe: 14 queries, 1,347 cards of 50002801 read on their sheets): Bermuda shorts (WG 카고 버뮤다 팬츠). 2026-11-25 (the size_unmapped review): in a variant's option value it leaves that variant out (CategoryRules.variant_drop), no longer holds the product (11017948766 '아디다스 골프 [반바지]', 5815131892 '[볼빅] 골프 스판 (반바지)'); the product holds off_section_variant only when every variant names it.",
     "tokens": [
      {
       "text": "반바지",
@@ -4276,7 +4299,7 @@
    },
    {
     "code": "other_item",
-    "why": "2026-11-23 (Golf Pants, the pilot's review): another product sold as an option of the pants: golf belts (Alkans 4410392617: \"91_SM 골프벨트01\", its Free(허리28~36인치) went out as a One Size pants row) and polo shirts or T-shirts (Adidas 5534297375: \"아디다스 긴팔 폴로티\", its M(95) went out as W37). A variant naming one holds the product (variant_screen); a title naming one is a set or a mixed listing. 2026-11-24 (Golf Pants, the drafts' review): a top sold as a colour of the pants (Volvik 10933958968: \"기모긴소매블랙(어깨배색)\", fleece long-sleeve tops sized as pants waists): 긴소매, 반소매, 긴팔, 반팔, 맨투맨 and 상의 (not after 이 or 세: 이상의, 세상의); measured on the 164 collected products of 50002801 (option values: only 10933958968 newly held, the Adidas T-shirt options were already) and 1,717 titles (the two probes' 1,495, the jobs' listings' 222): no title hit.",
+    "why": "2026-11-23 (Golf Pants, the pilot's review): another product sold as an option of the pants: golf belts (Alkans 4410392617: \"91_SM 골프벨트01\", its Free(허리28~36인치) went out as a One Size pants row) and polo shirts or T-shirts (Adidas 5534297375: \"아디다스 긴팔 폴로티\", its M(95) went out as W37). A variant naming one holds the product (variant_screen); a title naming one is a set or a mixed listing. 2026-11-24 (Golf Pants, the drafts' review): a top sold as a colour of the pants (Volvik 10933958968: \"기모긴소매블랙(어깨배색)\", fleece long-sleeve tops sized as pants waists): 긴소매, 반소매, 긴팔, 반팔, 맨투맨 and 상의 (not after 이 or 세: 이상의, 세상의); measured on the 164 collected products of 50002801 (option values: only 10933958968 newly held, the Adidas T-shirt options were already) and 1,717 titles (the two probes' 1,495, the jobs' listings' 222): no title hit. 2026-11-25 (the size_unmapped review): in a variant's option value it leaves that variant out (CategoryRules.variant_drop), no longer holds the product: adidas 5534297375's polo, 11017948766 / 5815131892's tees; the product holds off_section_variant only when every variant names it.",
     "tokens": [
      {
       "text": "골프벨트",
@@ -4426,6 +4449,40 @@
      },
      {
       "text": "레인팬츠",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   }
+  ],
+  "50002816": [
+   {
+    "code": "umbrella",
+    "why": "2026-11-24 (Rainwear & Midlayers, rainwear-midlayers; the probe of 4 queries, 147 cards of 50002816 read on their sheets: rain coats, suits, ponchos, rain skirts; decision.md): an umbrella (PGA 70자동 스퀘어핸들 우산, 1 card) is 50002815's goods. No raincoat title of the 147 says 우산.",
+    "tokens": [
+     {
+      "text": "우산",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "not_golf_use",
+    "why": "2026-11-24 (Rainwear & Midlayers, rainwear-midlayers; the probe of 4 queries, 147 cards of 50002816 read on their sheets: rain coats, suits, ponchos, rain skirts; decision.md): a traffic and industry safety raincoat (D아람 도롱이 야광우비 교통산업 안전우의, 1 card): no golf rainwear. Not 반사 / 리플렉티브 (golf rain jackets carry reflective piping).",
+    "tokens": [
+     {
+      "text": "교통산업",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "안전우의",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "야광우비",
       "notFollowedBy": [],
       "notPrecededBy": []
      }

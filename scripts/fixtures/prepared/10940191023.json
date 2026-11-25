@@ -1,0 +1,1149 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101325141:10940191023",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (full 1); 1 trimmed"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "선택사항"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "shsports_delivery.jpg, deliveryN_intro.jpg, deliveryN_kind.jpg, deliveryN_info.jpg, deliveryN_return.jpg, Ncheck_delivery.jpg"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/compuzonemall/products/10940191023",
+  "channel_no": "101325141",
+  "product_id": "10940191023",
+  "category_id": "50002797"
+ },
+ "product": {
+  "title_ko": "[듀빅] 라인배색 포인트 니트 여성 가디건",
+  "brand_ko": "듀빅",
+  "brand_source": "specs:제조사",
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "[듀빅] 라인배색 포인트 니트 여성 가디건"
+     },
+     {
+      "source": "listing",
+      "value": "womens",
+      "text": "여성 골프 니트 가디건"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "선택사항",
+    "values_ko": [
+     "오프화이트",
+     "티블루",
+     "블랙"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "85",
+     "90",
+     "95",
+     "100"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"오프화이트 85 XS\"]",
+    "naver_variant_id": "60691530310",
+    "options_ko": [
+     "오프화이트",
+     "85"
+    ],
+    "price_krw": 105000,
+    "price_usd": "105.00",
+    "sku": "FW-a06d7991d3ed7b20cf09018e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 400,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"오프화이트 90 S\"]",
+    "naver_variant_id": "60691530312",
+    "options_ko": [
+     "오프화이트",
+     "90"
+    ],
+    "price_krw": 105000,
+    "price_usd": "105.00",
+    "sku": "FW-1dcb22fc068b678e5edac015",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 400,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"오프화이트 95 M\"]",
+    "naver_variant_id": "60691530313",
+    "options_ko": [
+     "오프화이트",
+     "95"
+    ],
+    "price_krw": 105000,
+    "price_usd": "105.00",
+    "sku": "FW-8d5dad0829c53c86bee4c7ac",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 400,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"오프화이트 100 L\"]",
+    "naver_variant_id": "60691530314",
+    "options_ko": [
+     "오프화이트",
+     "100"
+    ],
+    "price_krw": 105000,
+    "price_usd": "105.00",
+    "sku": "FW-91f63a039a6df0dd8bd5ea20",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 400,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"티블루 85 XS\"]",
+    "naver_variant_id": "60691530315",
+    "options_ko": [
+     "티블루",
+     "85"
+    ],
+    "price_krw": 105000,
+    "price_usd": "105.00",
+    "sku": "FW-91c5660930409a8279a29b6a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 400,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"티블루 90 S\"]",
+    "naver_variant_id": "60691530316",
+    "options_ko": [
+     "티블루",
+     "90"
+    ],
+    "price_krw": 105000,
+    "price_usd": "105.00",
+    "sku": "FW-af506a09bf6142d89b5b41be",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 400,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"티블루 95 M\"]",
+    "naver_variant_id": "60691530317",
+    "options_ko": [
+     "티블루",
+     "95"
+    ],
+    "price_krw": 105000,
+    "price_usd": "105.00",
+    "sku": "FW-520600d91b8ce44d1a554ebc",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 400,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"티블루 100 L\"]",
+    "naver_variant_id": "60691530318",
+    "options_ko": [
+     "티블루",
+     "100"
+    ],
+    "price_krw": 105000,
+    "price_usd": "105.00",
+    "sku": "FW-b8f78f85f9a7df925f9824d4",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 400,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙 85 XS\"]",
+    "naver_variant_id": "60691530319",
+    "options_ko": [
+     "블랙",
+     "85"
+    ],
+    "price_krw": 105000,
+    "price_usd": "105.00",
+    "sku": "FW-52e492d11097df984bce93ea",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 400,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙 90 S\"]",
+    "naver_variant_id": "60691530320",
+    "options_ko": [
+     "블랙",
+     "90"
+    ],
+    "price_krw": 105000,
+    "price_usd": "105.00",
+    "sku": "FW-fb22c9ed5f8dc5c0fece42cf",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 400,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙 95 M\"]",
+    "naver_variant_id": "60691530321",
+    "options_ko": [
+     "블랙",
+     "95"
+    ],
+    "price_krw": 105000,
+    "price_usd": "105.00",
+    "sku": "FW-2394c4fb684b2413a79d002f",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 400,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙 100 L\"]",
+    "naver_variant_id": "60691530322",
+    "options_ko": [
+     "블랙",
+     "100"
+    ],
+    "price_krw": 105000,
+    "price_usd": "105.00",
+    "sku": "FW-e4f548e71ecab3688f5f3dad",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 400,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 12,
+      "approved_by": "owner",
+      "approved_at": "2026-11-19"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 105000,
+   "original_krw": 105000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "듀빅"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "4594504236",
+    "score": 5,
+    "text_ko": "디자인도 이쁘고,톡톡하니 따뜻해요.\n이정도 이런 퀄리티 대만족입니다.",
+    "created_at": "2024-11-08T01:22:35Z",
+    "writer": "phss*****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/10940191023/fairwardgolf-review-avatar-347aaabdc72be7ed.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 67,
+    "text_original_ko": "디자인도 이쁘고,톡톡하니 따뜻해요.\n이정도 이가격에 이런 퀄리티 대만족입니다.",
+    "text_cut": [
+     "price"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/10940191023/fairwardgolf-10940191023-001-51373e1000ef54be.webp",
+    "sha256": "51373e1000ef54bed9989a97957b29c5eb9ca35f6895595e8234a7513fac15d2",
+    "width": 600,
+    "height": 600
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 3,000원",
+   "lead_time": {
+    "seller_average_days": 1.4341342,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 94,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260415_107/17762150343354FPDn_JPEG/p-10888386705-s-2-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20260415_294/1776215034333qv5L2_JPEG/p-10888386705-s-2-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20260415_121/1776215034332JPjyM_JPEG/p-10888386705-s-2-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20260415_181/1776215034341kLB1n_JPEG/p-10888386705-s-2-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20260415_265/1776215034332NUjIo_JPEG/p-10888386705-s-2-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20260415_70/1776215034333l9O1p_JPEG/p-10888386705-s-2-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20260415_64/177621503433266TU5_JPEG/p-10888386705-s-2-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20260415_157/1776215034333pACFu_JPEG/p-10888386705-s-2-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20260415_193/1776215034331m36Vv_JPEG/p-10888386705-s-2-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20260415_283/1776215034372v2h9x_JPEG/p-10888386705-s-2-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20260415_142/1776215034421CubhC_JPEG/p-10888386705-s-2-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20260415_168/1776215034417oxiDn_JPEG/p-10888386705-s-2-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20260415_221/1776215034621VVNbB_JPEG/p-10888386705-s-2-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20260415_68/1776215034642AfJfN_JPEG/p-10888386705-s-2-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20260415_186/1776215034626oxlmP_JPEG/p-10888386705-s-2-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20260415_134/1776215034670F33QJ_JPEG/p-10888386705-s-2-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20260415_175/1776215034655gmQo1_JPEG/p-10888386705-s-2-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20260415_270/1776215034670woRjE_JPEG/p-10888386705-s-2-A-17.jpg",
+   "https://shop-phinf.pstatic.net/20260415_31/1776215034702JIeSK_JPEG/p-10888386705-s-2-A-18.jpg",
+   "https://shop-phinf.pstatic.net/20260415_52/1776215034712KOyew_JPEG/p-10888386705-s-2-A-19.jpg",
+   "https://shop-phinf.pstatic.net/20260415_80/1776215034426YLlJD_JPEG/p-10888386705-s-2-A-20.jpg",
+   "https://shop-phinf.pstatic.net/20260415_50/1776215034420v9HC0_JPEG/p-10888386705-s-2-A-21.jpg",
+   "https://shop-phinf.pstatic.net/20260415_36/1776215034427cRQIM_JPEG/p-10888386705-s-2-A-22.jpg",
+   "https://shop-phinf.pstatic.net/20260415_269/17762150344296hCyt_JPEG/p-10888386705-s-2-A-23.jpg",
+   "https://shop-phinf.pstatic.net/20260415_156/1776215034438XthLK_JPEG/p-10888386705-s-2-A-24.jpg",
+   "https://shop-phinf.pstatic.net/20260415_26/1776215034433BuzbS_JPEG/p-10888386705-s-2-A-25.jpg",
+   "https://shop-phinf.pstatic.net/20260415_227/17762150344577KkSx_JPEG/p-10888386705-s-2-A-26.jpg",
+   "https://shop-phinf.pstatic.net/20260415_210/1776215034499IAHe4_JPEG/p-10888386705-s-2-A-27.jpg",
+   "https://shop-phinf.pstatic.net/20260415_157/1776215034462Q9u6q_JPEG/p-10888386705-s-2-A-28.jpg",
+   "https://shop-phinf.pstatic.net/20260415_247/17762150345095GWaf_JPEG/p-10888386705-s-2-A-29.jpg",
+   "https://shop-phinf.pstatic.net/20260415_259/1776215034510BFlpf_JPEG/p-10888386705-s-2-A-30.jpg",
+   "https://shop-phinf.pstatic.net/20260415_233/1776215034522sHQD9_JPEG/p-10888386705-s-2-A-31.jpg",
+   "https://shop-phinf.pstatic.net/20260415_215/1776215034513xJHqP_JPEG/p-10888386705-s-2-A-32.jpg",
+   "https://shop-phinf.pstatic.net/20260415_118/1776215034525e6RIL_JPEG/p-10888386705-s-2-A-33.jpg",
+   "https://shop-phinf.pstatic.net/20260415_234/1776215034559Nrmo4_JPEG/p-10888386705-s-2-A-34.jpg",
+   "https://shop-phinf.pstatic.net/20260415_33/177621503453287szJ_JPEG/p-10888386705-s-2-A-35.jpg",
+   "https://shop-phinf.pstatic.net/20260415_180/1776215034588wAG3a_JPEG/p-10888386705-s-2-A-36.jpg",
+   "https://shop-phinf.pstatic.net/20260415_68/1776215034537fFkD7_JPEG/p-10888386705-s-2-A-37.jpg",
+   "https://shop-phinf.pstatic.net/20260415_102/1776215034595qB3p6_JPEG/p-10888386705-s-2-A-38.jpg",
+   "https://shop-phinf.pstatic.net/20260415_267/1776215034608da8es_JPEG/p-10888386705-s-2-A-39.jpg",
+   "https://shop-phinf.pstatic.net/20260415_120/1776215034612vFOc8_JPEG/p-10888386705-s-2-A-40.jpg",
+   "https://shop-phinf.pstatic.net/20260415_286/1776215034727PabJw_JPEG/p-10888386705-s-2-A-41.jpg",
+   "https://shop-phinf.pstatic.net/20260415_112/1776215034727kTgcr_JPEG/p-10888386705-s-2-A-42.jpg",
+   "https://shop-phinf.pstatic.net/20260415_77/1776215034729m2jbd_JPEG/p-10888386705-s-2-A-43.jpg",
+   "https://shop-phinf.pstatic.net/20260415_263/17762150347325zECh_JPEG/p-10888386705-s-2-A-44.jpg"
+  ],
+  "description_dropped": [],
+  "composition_ko": [],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_tops",
+   "option": 1,
+   "values": [
+    {
+     "ko": "85",
+     "us": "XS (US 0-2)",
+     "letter": "XS",
+     "chest_cm": 85,
+     "basis": "label",
+     "chart_label": "85"
+    },
+    {
+     "ko": "90",
+     "us": "S (US 4-6)",
+     "letter": "S",
+     "chest_cm": 90,
+     "basis": "label",
+     "chart_label": "90"
+    },
+    {
+     "ko": "95",
+     "us": "M (US 8-10)",
+     "letter": "M",
+     "chest_cm": 95,
+     "basis": "label",
+     "chart_label": "95"
+    },
+    {
+     "ko": "100",
+     "us": "L (US 12-14)",
+     "letter": "L",
+     "chest_cm": 100,
+     "basis": "label",
+     "chart_label": "100"
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": null,
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:0c3c82eacf350443",
+   "kind": "title",
+   "ko": "[듀빅] 라인배색 포인트 니트 여성 가디건"
+  },
+  {
+   "id": "brand:21e2396fd96543b5",
+   "kind": "brand",
+   "ko": "듀빅"
+  },
+  {
+   "id": "option_name:7f769d165e2f7bdf",
+   "kind": "option_name",
+   "ko": "선택사항"
+  },
+  {
+   "id": "option_value:043f93f7d5e88b24",
+   "kind": "option_value",
+   "ko": "오프화이트"
+  },
+  {
+   "id": "option_value:143a0606b37916fe",
+   "kind": "option_value",
+   "ko": "티블루"
+  },
+  {
+   "id": "option_value:91f171f68356ec23",
+   "kind": "option_value",
+   "ko": "블랙"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:b4944c6ff08dc6f4",
+   "kind": "option_value",
+   "ko": "85"
+  },
+  {
+   "id": "option_value:69f59c273b6e669a",
+   "kind": "option_value",
+   "ko": "90"
+  },
+  {
+   "id": "option_value:ad48ff99415b2f00",
+   "kind": "option_value",
+   "ko": "95"
+  },
+  {
+   "id": "option_value:ad57366865126e55",
+   "kind": "option_value",
+   "ko": "100"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:21e2396fd96543b5",
+   "kind": "spec_value",
+   "ko": "듀빅"
+  },
+  {
+   "id": "review:980e165e9b750993",
+   "kind": "review",
+   "ko": "디자인도 이쁘고,톡톡하니 따뜻해요.\n이정도 이런 퀄리티 대만족입니다."
+  }
+ ]
+}

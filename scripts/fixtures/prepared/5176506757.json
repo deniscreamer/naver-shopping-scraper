@@ -1,0 +1,1982 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:500000592:5176506757",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 8); 1 trimmed"
+  },
+  {
+   "code": "title_names_one_variant",
+   "detail": "로고"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "선택1, 선택2"
+  },
+  {
+   "code": "paid_addons_left_out",
+   "detail": "19 paid add-ons"
+  },
+  {
+   "code": "size_chart_left_out",
+   "detail": "two models' sizes on one US size: AL (105) / AL (110); AM (100) / AM (105); AXL (110) / AXL (115)"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/majorgolf/products/5176506757",
+  "channel_no": "500000592",
+  "product_id": "5176506757",
+  "category_id": "50002796"
+ },
+ "product": {
+  "title_ko": "아디다스 남성 FW 겨울 로고 긴팔 티셔츠 남자 상의 골프복 카라티 기모 골프 웨어",
+  "brand_ko": "아디다스",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "아디다스 남성 FW 겨울 로고 긴팔 티셔츠 남자 상의 골프복 카라티 기모 골프 웨어"
+     },
+     {
+      "source": "listing",
+      "value": "mens",
+      "text": "남성 골프 가을 긴팔 티셔츠"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "선택1",
+    "values_ko": [
+     "로고 긴팔티 블랙 IM7295",
+     "유니크 하프집업 네이비화이트 IX2009",
+     "유니크 하프집업 카본블랙IX4323",
+     "스탠다드핏 긴팔티 네이비 IT7211",
+     "스탠다드핏 긴팔티 연카키 IT7212",
+     "스탠다드핏 긴팔티 화이트 IT7213",
+     "삼선 하프집업 블랙 IS7132"
+    ]
+   },
+   {
+    "name_ko": "선택2",
+    "values_ko": [
+     "AM (100)",
+     "AM (105)",
+     "AL (105)",
+     "AL (110)",
+     "AXL (110)",
+     "AXL (115)"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"1)로고 긴팔티 블랙 IM7295\",\"AXL (110)\"]",
+    "naver_variant_id": "60087110793",
+    "options_ko": [
+     "로고 긴팔티 블랙 IM7295",
+     "AXL (110)"
+    ],
+    "price_krw": 59900,
+    "price_usd": "59.90",
+    "sku": "FW-e526c338f557341c39794e98",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"3)유니크 하프집업 네이비화이트 IX2009\",\"AL (105)\"]",
+    "naver_variant_id": "51484132998",
+    "options_ko": [
+     "유니크 하프집업 네이비화이트 IX2009",
+     "AL (105)"
+    ],
+    "price_krw": 56900,
+    "price_usd": "56.90",
+    "sku": "FW-1fef448d8e1603324570fbbe",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"3)유니크 하프집업 네이비화이트 IX2009\",\"AXL (110)\"]",
+    "naver_variant_id": "51484132999",
+    "options_ko": [
+     "유니크 하프집업 네이비화이트 IX2009",
+     "AXL (110)"
+    ],
+    "price_krw": 56900,
+    "price_usd": "56.90",
+    "sku": "FW-9392d441d2e3bebce7108ef5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"3)유니크 하프집업 카본블랙IX4323\",\"AM (100)\"]",
+    "naver_variant_id": "51484133004",
+    "options_ko": [
+     "유니크 하프집업 카본블랙IX4323",
+     "AM (100)"
+    ],
+    "price_krw": 56900,
+    "price_usd": "56.90",
+    "sku": "FW-cc77632ce6a996d71fbbecb8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"3)유니크 하프집업 카본블랙IX4323\",\"AL (105)\"]",
+    "naver_variant_id": "51484133005",
+    "options_ko": [
+     "유니크 하프집업 카본블랙IX4323",
+     "AL (105)"
+    ],
+    "price_krw": 56900,
+    "price_usd": "56.90",
+    "sku": "FW-c8403b9b0a6018719e32dec3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"3)유니크 하프집업 카본블랙IX4323\",\"AXL (110)\"]",
+    "naver_variant_id": "51484133006",
+    "options_ko": [
+     "유니크 하프집업 카본블랙IX4323",
+     "AXL (110)"
+    ],
+    "price_krw": 56900,
+    "price_usd": "56.90",
+    "sku": "FW-14fe7859b8b75019bf452d62",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"4)스탠다드핏 긴팔티 네이비 IT7211\",\"AM (105)\"]",
+    "naver_variant_id": "55242354076",
+    "options_ko": [
+     "스탠다드핏 긴팔티 네이비 IT7211",
+     "AM (105)"
+    ],
+    "price_krw": 69900,
+    "price_usd": "69.90",
+    "sku": "FW-be98d1f473631fcec342c834",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"4)스탠다드핏 긴팔티 네이비 IT7211\",\"AL (110)\"]",
+    "naver_variant_id": "51545065870",
+    "options_ko": [
+     "스탠다드핏 긴팔티 네이비 IT7211",
+     "AL (110)"
+    ],
+    "price_krw": 69900,
+    "price_usd": "69.90",
+    "sku": "FW-80d7c53885dc503fdabfe161",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"4)스탠다드핏 긴팔티 네이비 IT7211\",\"AXL (115)\"]",
+    "naver_variant_id": "51545065871",
+    "options_ko": [
+     "스탠다드핏 긴팔티 네이비 IT7211",
+     "AXL (115)"
+    ],
+    "price_krw": 69900,
+    "price_usd": "69.90",
+    "sku": "FW-36862ba84c8b75453f3309b7",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"4)스탠다드핏 긴팔티 연카키 IT7212\",\"AM (105)\"]",
+    "naver_variant_id": "51545065873",
+    "options_ko": [
+     "스탠다드핏 긴팔티 연카키 IT7212",
+     "AM (105)"
+    ],
+    "price_krw": 69900,
+    "price_usd": "69.90",
+    "sku": "FW-53b9c367bec2fad19074cd47",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"4)스탠다드핏 긴팔티 연카키 IT7212\",\"AL (110)\"]",
+    "naver_variant_id": "51545065874",
+    "options_ko": [
+     "스탠다드핏 긴팔티 연카키 IT7212",
+     "AL (110)"
+    ],
+    "price_krw": 69900,
+    "price_usd": "69.90",
+    "sku": "FW-a26219b6beac3c8ce87bc912",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"4)스탠다드핏 긴팔티 연카키 IT7212\",\"AXL (115)\"]",
+    "naver_variant_id": "51545065875",
+    "options_ko": [
+     "스탠다드핏 긴팔티 연카키 IT7212",
+     "AXL (115)"
+    ],
+    "price_krw": 69900,
+    "price_usd": "69.90",
+    "sku": "FW-7341ce535c9414a6729dd60f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"4)스탠다드핏 긴팔티 화이트 IT7213\",\"AM (105)\"]",
+    "naver_variant_id": "51545065877",
+    "options_ko": [
+     "스탠다드핏 긴팔티 화이트 IT7213",
+     "AM (105)"
+    ],
+    "price_krw": 69900,
+    "price_usd": "69.90",
+    "sku": "FW-1dd560f468e91f934d3909c2",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"4)스탠다드핏 긴팔티 화이트 IT7213\",\"AL (110)\"]",
+    "naver_variant_id": "51545065878",
+    "options_ko": [
+     "스탠다드핏 긴팔티 화이트 IT7213",
+     "AL (110)"
+    ],
+    "price_krw": 69900,
+    "price_usd": "69.90",
+    "sku": "FW-65815bde2e4f3f9d4f227130",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"4)스탠다드핏 긴팔티 화이트 IT7213\",\"AXL (115)\"]",
+    "naver_variant_id": "51545065879",
+    "options_ko": [
+     "스탠다드핏 긴팔티 화이트 IT7213",
+     "AXL (115)"
+    ],
+    "price_krw": 69900,
+    "price_usd": "69.90",
+    "sku": "FW-f6be47f4e43c7ec7354e81f3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"5)삼선 하프집업 블랙 IS7132\",\"AL (105)\"]",
+    "naver_variant_id": "51484133021",
+    "options_ko": [
+     "삼선 하프집업 블랙 IS7132",
+     "AL (105)"
+    ],
+    "price_krw": 69900,
+    "price_usd": "69.90",
+    "sku": "FW-67ff7748e1abde0a05c6732a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 59900,
+   "original_krw": 93000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "아디다스"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "아디다스"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "아디다스 골프티셔츠"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "베트남"
+   },
+   {
+    "label_ko": "네크라인",
+    "value_ko": "칼라넥"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "신축성, 기모안감"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 기모"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "봄, 가을, 겨울"
+   },
+   {
+    "label_ko": "소매기장",
+    "value_ko": "긴팔"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2024년형"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "티셔츠"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.79,
+   "count": 2240
+  },
+  "reviews": [
+   {
+    "id": "5082992547",
+    "score": 5,
+    "text_ko": "재질이 너무 좋습니다. 간절기에 이거 하나면 충분 할 거 같애요. 제품 설명 그대로 약간 기호가 있어서 가을에 라고 음악이 적합한 옷인것 같습니다. 선택 색상이 블랙이라서 날렵해 보이는 감도 있습니다.",
+    "created_at": "2026-10-13T12:11:58Z",
+    "writer": "jk****",
+    "photos": [
+     "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-image-fa9dc3f6e0901365.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-avatar-d99117f81b6404be.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 95,
+    "text_original_ko": "재질이 너무 좋습니다. 간절기에 이거 하나면 충분 할 거 같애요. 제품 설명 그대로 약간 기호가 있어서 가을에 라고 음악이 적합한 옷인것 같습니다. 선택 색상이 블랙이라서 날렵해 보이는 감도 있습니다. 가격도 만족스럽네요~",
+    "text_cut": [
+     "price"
+    ]
+   },
+   {
+    "id": "4861029469",
+    "score": 5,
+    "text_ko": "약기모가 살짝 들어 있어서 늦가을과 겨울에 입기에 좋을거 같구요 블랙이 세련되고 질이 좋아보여서 옷이 고급져보입니다. 남편은 오버핏을 안좋아하는데 이거는 딱 핏하게 맞아서 상당히 좋아합니다. 카라밑에 단추가 있어서 단정하게 고정이 되는 점도 마음에 듭니다.",
+    "created_at": "2025-12-12T05:56:38Z",
+    "writer": "wjh4***",
+    "photos": [
+     "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-image-2ea8ea89e3505638.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-avatar-fcf6b9b26151d724.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 100
+   },
+   {
+    "id": "4828327650",
+    "score": 5,
+    "text_ko": "아빠 생일 선물로 샀는데\n너무 마음에 들어하셔서 저도 기분이 좋네요.\n옷도 이쁘고 재질도 좋고, 핏도 정말 좋아요\n일상복으로 입어도 될 정도입니다\n후회없어요",
+    "created_at": "2025-10-25T11:20:47Z",
+    "writer": "ekgn***",
+    "photos": [
+     "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-image-06f9852b7bbeb98a.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-avatar-5df658f04c34c868.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 91,
+    "text_original_ko": "아빠 생일 선물로 샀는데 \n너무 마음에 들어하셔서 저도 기분이 좋네요 ㅎㅎ\n옷도 이쁘고 재질도 좋고, 핏도 정말 좋아요 \n일상복으로 입어도 될 정도입니다 \n후회없어요 ㅎㅎ"
+   },
+   {
+    "id": "4814807404",
+    "score": 5,
+    "text_ko": "옷감 재질 매우 부드럽고 고급지며 안감에 살짝 기모재질이 아주 약간 있으며 지금 입어도 덥지 않을 정도 입니다. 까실한 느낌은 전혀 없으며. 그냥 얇은 두께는 아니오니 참고 바랍니다. 선선한 가을에 딱이네요",
+    "created_at": "2025-10-01T11:55:39Z",
+    "writer": "gncu******",
+    "photos": [
+     "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-image-18e1b0f76ae0f192.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-avatar-28f23721761a3e42.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 95
+   },
+   {
+    "id": "4694654042",
+    "score": 5,
+    "text_ko": "핏 굿! 소재는 시원시원하고 라인은 기본핏. 컬러는 세련됨. 진짜 다크그레이 강추! 진짜 이쁜 컬러네요. 편하고 핏이 이뻐 자주 입겠네요.",
+    "created_at": "2025-04-02T11:29:23Z",
+    "writer": "mio7***",
+    "photos": [
+     "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-image-d3fa79b44be45e95.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-avatar-5e43aba7526b8868.webp",
+    "tier": "primary",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 88,
+    "text_original_ko": "핏 굿!~~~소재는 시원시원하고 라인은 기본핏.컬러는 세련됨.진짜 다크그레이 강추!진짜 이쁜 컬러네요.편하고 핏이 이뻐 자주 입겠네요.^^"
+   },
+   {
+    "id": "4686010880",
+    "score": 5,
+    "text_ko": "역시 믿고 사는 아디다스입니다. 원단이나 핏 모두 좋네요. 기모는 없지만 얇지않은 원단이네요. 한여름을 제외하고 입기에 적당합니다",
+    "created_at": "2025-03-21T01:30:44Z",
+    "writer": "jusi*****",
+    "photos": [
+     "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-image-e4c0b9c9599f23c8.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-avatar-3a9bbe4f1a3a5593.webp",
+    "tier": "primary",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 88,
+    "text_original_ko": "역시 믿고 사는 아디다스입니다. 원단이나 핏 모두 좋네요.  기모는 없지만 얇지않은 원단이네요. 한여름을 제외하고 입기에 적당합니다"
+   },
+   {
+    "id": "4653966265",
+    "score": 5,
+    "text_ko": "처음으로 필드 준비하면서 진짜 마니 왕마니 셔치했어요. 남푠 의견보다는 제 의견이. 더 많이 첨가 되었네요. 신축성 좋고 필드에서 화이트가 너무 예쁘게 보여지더라고요 약간의 기모가 있습니다",
+    "created_at": "2025-02-03T12:27:17Z",
+    "writer": "shum*****",
+    "photos": [
+     "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-image-8c820aa47f2c0f28.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-avatar-4d6051d81a5301fc.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 94,
+    "text_original_ko": "처음으로 필드 준비하면서 진짜 마니 왕마니 셔치했어요. 남푠 의견보다는 제 의견이.더 많이 첨가 되었네요. 신축성 좋고 필드에서 화이트가 너무 예쁘게 보여지더라고요 약간의 기모가 있습니다"
+   },
+   {
+    "id": "5081570037",
+    "score": 5,
+    "text_ko": "디자인\n전체적으로 깔끔하면서도 고급스러운 느낌이 잘 살아있는 디자인입니다. 블랙 컬러라 기본적으로 무난하면서도 어떤 스타일에도 잘 어울리고, 과하게 화려하지 않아서 부담 없이 사용할 수 있습니다.\n색상\n블랙 컬러가 전체적으로 차분하고 세련된 느낌을 줍니다. 단순한 검정색처럼 보이지만 소재의 결에 따라 은은하게 명암이 달라져서 생각보다 고급스러운 분위기가 납니다.\n소재\n소재의 질감이 상당히 괜찮습니다. 가까이에서 보면 원단의 결이 촘촘하게 느껴지고, 너무 번들거리거나 저렴해 보이는 느낌이 아니라 차분하고 고급스러운 느낌입니다. 사진으로 보는 것보다 실제로 봤을 때 소재감이 더 만족스럽습니다.\n디테일\n블랙 컬러에 들어간 포인트 장식이 전체적인 디자인을 심심하지 않게 만들어줍니다. 크기가 너무 크거나 튀지 않으면서 은은하게 포인트가 되어 있어서 개인적으로 가장 마음에 드는 부분입니다.\n마감\n전체적인 마감도 깔끔한 편입니다. 박음질이나 원단 연결 부분도 크게 거슬리는 부분이 없고, 전체적으로 균형이 잘 잡혀 있습니다. 작은 부분까지 신경 쓴 느낌이 들어 제품의 완성도가 높아 보입니다.\n사용감\n직접 사용했을 때 전체적인 느낌이 편안하고 부담스럽지 않습니다. 디자인 자체가 과하지 않아서 일상적으로 사용하기 좋고, 다양한 스타일과도 무난하게 잘 어울릴 것 같습니다.\n총평\n전체적으로 디자인, 색상, 소재감, 마감 모두 만족스러운 제품입니다. 특히 블랙 특유의 깔끔하고 세련된 느낌이 잘 살아 있고, 은은한 포인트 장식 덕분에 고급스러운 분위기도 느껴집니다.\n너무 튀지 않으면서도 적당히 포인트가 있는 제품을 찾는 분들에게 추천하고 싶습니다. 사진으로 봤을 때보다 실제로 봤을 때 소재감과 디테일이 더 괜찮게 느껴졌고, 데일리하게 사용하기에도 부담이 없는 제품입니다.\n개인적으로 심플하면서도 고급스러운 스타일을 좋아하는 분이라면 만족도가 높을 것 같습니다. 전체적인 완성도도 괜찮고 오래 사용해도 질리지 않을 디자인이라 만족스럽습니다.",
+    "created_at": "2026-10-11T10:17:48Z",
+    "writer": "jong*******",
+    "photos": [
+     "collected/50002788-fixtures/images/5176506757/fairwardgolf-review-image-abde359007b99370.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "디자인\n\n전체적으로 깔끔하면서도 고급스러운 느낌이 잘 살아있는 디자인입니다. 블랙 컬러라 기본적으로 무난하면서도 어떤 스타일에도 잘 어울리고, 과하게 화려하지 않아서 부담 없이 사용할 수 있습니다.\n\n색상\n\n블랙 컬러가 전체적으로 차분하고 세련된 느낌을 줍니다. 단순한 검정색처럼 보이지만 소재의 결에 따라 은은하게 명암이 달라져서 생각보다 고급스러운 분위기가 납니다.\n\n소재\n\n소재의 질감이 상당히 괜찮습니다. 가까이에서 보면 원단의 결이 촘촘하게 느껴지고, 너무 번들거리거나 저렴해 보이는 느낌이 아니라 차분하고 고급스러운 느낌입니다. 사진으로 보는 것보다 실제로 봤을 때 소재감이 더 만족스럽습니다.\n\n디테일\n\n블랙 컬러에 들어간 포인트 장식이 전체적인 디자인을 심심하지 않게 만들어줍니다. 크기가 너무 크거나 튀지 않으면서 은은하게 포인트가 되어 있어서 개인적으로 가장 마음에 드는 부분입니다.\n\n마감\n\n전체적인 마감도 깔끔한 편입니다. 박음질이나 원단 연결 부분도 크게 거슬리는 부분이 없고, 전체적으로 균형이 잘 잡혀 있습니다. 작은 부분까지 신경 쓴 느낌이 들어 제품의 완성도가 높아 보입니다.\n\n사용감\n\n직접 사용했을 때 전체적인 느낌이 편안하고 부담스럽지 않습니다. 디자인 자체가 과하지 않아서 일상적으로 사용하기 좋고, 다양한 스타일과도 무난하게 잘 어울릴 것 같습니다.\n\n총평\n\n전체적으로 디자인, 색상, 소재감, 마감 모두 만족스러운 제품입니다. 특히 블랙 특유의 깔끔하고 세련된 느낌이 잘 살아 있고, 은은한 포인트 장식 덕분에 고급스러운 분위기도 느껴집니다.\n\n너무 튀지 않으면서도 적당히 포인트가 있는 제품을 찾는 분들에게 추천하고 싶습니다. 사진으로 봤을 때보다 실제로 봤을 때 소재감과 디테일이 더 괜찮게 느껴졌고, 데일리하게 사용하기에도 부담이 없는 제품입니다.\n\n개인적으로 심플하면서도 고급스러운 스타일을 좋아하는 분이라면 만족도가 높을 것 같습니다. 전체적인 완성도도 괜찮고 오래 사용해도 질리지 않을 디자인이라 만족스럽습니다."
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/5176506757/fairwardgolf-5176506757-001-07f98e5a033af127.webp",
+    "sha256": "07f98e5a033af12767e307862cfc16c11d30d075b55d5f328beb1dee0379efc9",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/5176506757/fairwardgolf-5176506757-002-21039204b34d5819.webp",
+    "sha256": "21039204b34d5819f164a68b676f78a95bce4f412bb6d353b11176adadb96520",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/5176506757/fairwardgolf-5176506757-003-ca674c5be7dfb4f8.webp",
+    "sha256": "ca674c5be7dfb4f8e1247ce97f8c935c3db09224e6f6473ea2851529e3b74626",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/5176506757/fairwardgolf-5176506757-004-29f9a0a977163d23.webp",
+    "sha256": "29f9a0a977163d232d96a2c57e0161197db7f14658a240f9cdf1bf1dfaa282a6",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/5176506757/fairwardgolf-5176506757-005-de9bf78c98afca89.webp",
+    "sha256": "de9bf78c98afca89c7eee9e3e02b7bb7ceb7b0f63147a66e9659de1e5d5bb381",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/5176506757/fairwardgolf-5176506757-006-6e799018861bb188.webp",
+    "sha256": "6e799018861bb1886076f4b0d962a0a99e2754172699b2341c92bf80aef85fba",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/5176506757/fairwardgolf-5176506757-007-299cdbaeb0e3df88.webp",
+    "sha256": "299cdbaeb0e3df8814c7b522c7d4d6c24177678cffc91842b720e3263ef71707",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/5176506757/fairwardgolf-5176506757-008-69f89e0bceccb5b8.webp",
+    "sha256": "69f89e0bceccb5b8de894822af49a75ae925f69c47facf4d79b5a39d9e178331",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.2600439,
+    "product_average_days": 1.5897436,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.25.(수)",
+    "arrival_probability": 96,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "🚨사이즈 확인\n\n📢 이미지를 클릭하면 상세 페이지로 연결됩니다.\n모바일에 최적화된 이미지로 PC 버전에서는 상세 페이지를 한 번 더 클릭해 주세요.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20261023_92/1792739575739ySy34_JPEG/5176506757.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260917_158/17896300996997Kp2b_JPEG/%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%B0%B0%EB%84%88(%EC%98%B5%EC%85%98%EA%B0%80)_01_(6).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250703_11/1751505749692IdbHc_JPEG/%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%B0%B0%EB%84%88(%EC%98%B5%EC%85%98%EA%B0%80)_02.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250703_218/1751505753853YPChK_JPEG/%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%B0%B0%EB%84%88(%EC%98%B5%EC%85%98%EA%B0%80)_03.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260415_233/1776239289148qqHzC_JPEG/%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%B0%B0%EB%84%88(%EC%98%B5%EC%85%98%EA%B0%80)_04.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250703_165/1751505760586iyxsg_JPEG/%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%B0%B0%EB%84%88(%EC%98%B5%EC%85%98%EA%B0%80)_05.jpg?type=w848",
+   "https://majorworld.godohosting.com/product/adidas/adidas_info.jpg",
+   "https://majorworld.hgodo.com/product/info/product_count_list_20_info_1.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_fw_longsleeved_tshirt_m_24/adidas_fw_longsleeved_tshirt_m_24_03.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_fw_longsleeved_tshirt_m_24/adidas_fw_longsleeved_tshirt_m_24_01.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_fw_longsleeved_tshirt_m_24.jpg",
+   "https://majorworld.hgodo.com/product/info/product_count_list_20_info_2.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__01.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__02.jpg",
+   "https://media.giphy.com/media/hDYVwJb1OhZ3ZWnERE/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__04.jpg",
+   "https://media.giphy.com/media/0mN8QHHyP3XmAQ34zJ/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__06.jpg",
+   "https://media.giphy.com/media/xaqU8aJcDEqcJ3JPX8/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__08.jpg",
+   "https://media.giphy.com/media/GfmniTiv5ihh1ExlFX/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__10.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__11.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__12.jpg",
+   "https://media.giphy.com/media/4BVEQaJOc4ufXjBT1h/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__14.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__15.jpg",
+   "https://media.giphy.com/media/ZXxDGHOao5lrAXEbIK/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__17.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__18.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__19.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__20.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__21.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_fw_core_polo_t_23/__22.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_fw_core_polo_t_23.jpg",
+   "https://majorworld.hgodo.com/product/info/product_count_list_20_info_3.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_13.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_14.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_15.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_01.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_02.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_03.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_04.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_05.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_06.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_07.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_08.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_09.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_10.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_11.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_core_print%20quarter_zip_up_24/adidas_core_print-quarter_zip_up_24_12.jpg",
+   "https://majorworld.hgodo.com/product/info/product_count_list_20_info_4.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_core_polo_m_long_sleeve_t_24/__01.jpg",
+   "https://media.giphy.com/media/M5dKKHWmkOCa1SUODP/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_core_polo_m_long_sleeve_t_24/__03.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_core_polo_m_long_sleeve_t_24/__04.jpg",
+   "https://media.giphy.com/media/M0ZzaiKmwbUAuxh6r0/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_core_polo_m_long_sleeve_t_24/__06.jpg",
+   "https://media.giphy.com/media/vEzYsNQoytsZ4mNWdr/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_core_polo_m_long_sleeve_t_24/__08.jpg",
+   "https://media.giphy.com/media/SCXOcThIENbCoRLIHw/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_core_polo_m_long_sleeve_t_24/__10.jpg",
+   "https://media.giphy.com/media/6tc9bwQjZ5WGYK3I0M/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_core_polo_m_long_sleeve_t_24/__12.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_core_polo_m_long_sleeve_t_24/__13.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_core_polo_m_long_sleeve_t_24/__14.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_core_polo_m_long_sleeve_t_24/__15.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_core_polo_m_long_sleeve_t_24/__16.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_core_polo_m_long_sleeve_t_24/__17.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_core_polo_m_long_sleeve_t_24/__18.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_ss_core_polo_m_long_sleeve_t_24.jpg",
+   "https://majorworld.hgodo.com/product/info/product_count_list_20_info_5.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__01.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__03.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__04.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__05.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__06.jpg",
+   "https://media.giphy.com/media/RKJSh1PIsyp7gRUSKe/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__08.jpg",
+   "https://media.giphy.com/media/8LFM4CTQmgL600P4Td/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__10.jpg",
+   "https://media.giphy.com/media/DKm4cyvC7jIpl45Kz3/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__12.jpg",
+   "https://media.giphy.com/media/n4PC7sYYj7UTaq3JzB/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__14.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__15.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__16.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24.jpg",
+   "https://majorworld.hgodo.com/product/event/add_product_860_24.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20250310_263/1741590300890OYPM4_JPEG/%EC%83%81%EB%8B%A8%EB%B0%B0%EB%84%88_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4-%EA%B8%B4%ED%8C%94%ED%8B%B0_(2).jpg?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://majorworld.godohosting.com/main/maincopyright.jpg"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://majorgolf.cafe24.com/CSinfo_Majorgolf.jpg"
+   }
+  ],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 기모",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_tops",
+   "option": 1,
+   "values": [
+    {
+     "ko": "AM (100)",
+     "us": "M",
+     "letter": "M",
+     "chest_cm": 100,
+     "basis": "brand_asian:adidas",
+     "chart_label": "(100)"
+    },
+    {
+     "ko": "AM (105)",
+     "us": "M",
+     "letter": "M",
+     "chest_cm": 100,
+     "basis": "brand_asian:adidas",
+     "chart_label": "(100)"
+    },
+    {
+     "ko": "AL (105)",
+     "us": "L",
+     "letter": "L",
+     "chest_cm": 105,
+     "basis": "brand_asian:adidas",
+     "chart_label": "(105)"
+    },
+    {
+     "ko": "AL (110)",
+     "us": "L",
+     "letter": "L",
+     "chest_cm": 105,
+     "basis": "brand_asian:adidas",
+     "chart_label": "(105)"
+    },
+    {
+     "ko": "AXL (110)",
+     "us": "XL",
+     "letter": "XL",
+     "chest_cm": 110,
+     "basis": "brand_asian:adidas",
+     "chart_label": "(110)"
+    },
+    {
+     "ko": "AXL (115)",
+     "us": "XL",
+     "letter": "XL",
+     "chest_cm": 110,
+     "basis": "brand_asian:adidas",
+     "chart_label": "(110)"
+    }
+   ],
+   "merged": {},
+   "brand_row": "adidas",
+   "chart": null,
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:cfcad23d8fe3c8df",
+   "kind": "title",
+   "ko": "아디다스 남성 FW 겨울 로고 긴팔 티셔츠 남자 상의 골프복 카라티 기모 골프 웨어"
+  },
+  {
+   "id": "brand:8201e93c449b38b1",
+   "kind": "brand",
+   "ko": "아디다스"
+  },
+  {
+   "id": "option_name:19e98d99afd90321",
+   "kind": "option_name",
+   "ko": "선택1"
+  },
+  {
+   "id": "option_value:f2806878ee0b4f4b",
+   "kind": "option_value",
+   "ko": "로고 긴팔티 블랙 IM7295"
+  },
+  {
+   "id": "option_value:026d012024682cea",
+   "kind": "option_value",
+   "ko": "유니크 하프집업 네이비화이트 IX2009"
+  },
+  {
+   "id": "option_value:2f57405b10c7dcea",
+   "kind": "option_value",
+   "ko": "유니크 하프집업 카본블랙IX4323"
+  },
+  {
+   "id": "option_value:ef58d2fe091b309c",
+   "kind": "option_value",
+   "ko": "스탠다드핏 긴팔티 네이비 IT7211"
+  },
+  {
+   "id": "option_value:d8316850e76bf1e0",
+   "kind": "option_value",
+   "ko": "스탠다드핏 긴팔티 연카키 IT7212"
+  },
+  {
+   "id": "option_value:c6049ad2a4cdf0ab",
+   "kind": "option_value",
+   "ko": "스탠다드핏 긴팔티 화이트 IT7213"
+  },
+  {
+   "id": "option_value:ad2fb284526ef4b0",
+   "kind": "option_value",
+   "ko": "삼선 하프집업 블랙 IS7132"
+  },
+  {
+   "id": "option_name:e5d161b785bc817b",
+   "kind": "option_name",
+   "ko": "선택2"
+  },
+  {
+   "id": "option_value:49675790fa2acbac",
+   "kind": "option_value",
+   "ko": "AM (100)"
+  },
+  {
+   "id": "option_value:2024dd53d1fce47f",
+   "kind": "option_value",
+   "ko": "AM (105)"
+  },
+  {
+   "id": "option_value:2f251a42395e2b51",
+   "kind": "option_value",
+   "ko": "AL (105)"
+  },
+  {
+   "id": "option_value:2c450139cd2e83ae",
+   "kind": "option_value",
+   "ko": "AL (110)"
+  },
+  {
+   "id": "option_value:eaad68c7730a07b4",
+   "kind": "option_value",
+   "ko": "AXL (110)"
+  },
+  {
+   "id": "option_value:01b6eca0e786e8a0",
+   "kind": "option_value",
+   "ko": "AXL (115)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:8201e93c449b38b1",
+   "kind": "spec_value",
+   "ko": "아디다스"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:2a1ec75f4d0425da",
+   "kind": "spec_value",
+   "ko": "아디다스 골프티셔츠"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:7828e86d4b195798",
+   "kind": "spec_value",
+   "ko": "베트남"
+  },
+  {
+   "id": "spec_label:521009f503e491a5",
+   "kind": "spec_label",
+   "ko": "네크라인"
+  },
+  {
+   "id": "spec_value:fee81e32c77a25d6",
+   "kind": "spec_value",
+   "ko": "칼라넥"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:ca8bbcd06b8c0ace",
+   "kind": "spec_value",
+   "ko": "신축성, 기모안감"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:5e22cc1580c03e27",
+   "kind": "spec_value",
+   "ko": "폴리에스테르, 기모"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:b9a7f0a8ab860d75",
+   "kind": "spec_value",
+   "ko": "봄, 가을, 겨울"
+  },
+  {
+   "id": "spec_label:c595482b55571d6a",
+   "kind": "spec_label",
+   "ko": "소매기장"
+  },
+  {
+   "id": "spec_value:2fa60fab30cad430",
+   "kind": "spec_value",
+   "ko": "긴팔"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:8040f01b1433a292",
+   "kind": "spec_value",
+   "ko": "2024년형"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:f977ac4486c2b67c",
+   "kind": "spec_value",
+   "ko": "티셔츠"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "review:da0807866098e139",
+   "kind": "review",
+   "ko": "재질이 너무 좋습니다. 간절기에 이거 하나면 충분 할 거 같애요. 제품 설명 그대로 약간 기호가 있어서 가을에 라고 음악이 적합한 옷인것 같습니다. 선택 색상이 블랙이라서 날렵해 보이는 감도 있습니다."
+  },
+  {
+   "id": "review:516b589b8d4fd935",
+   "kind": "review",
+   "ko": "약기모가 살짝 들어 있어서 늦가을과 겨울에 입기에 좋을거 같구요 블랙이 세련되고 질이 좋아보여서 옷이 고급져보입니다. 남편은 오버핏을 안좋아하는데 이거는 딱 핏하게 맞아서 상당히 좋아합니다. 카라밑에 단추가 있어서 단정하게 고정이 되는 점도 마음에 듭니다."
+  },
+  {
+   "id": "review:943be1a11a8ed0d5",
+   "kind": "review",
+   "ko": "아빠 생일 선물로 샀는데\n너무 마음에 들어하셔서 저도 기분이 좋네요.\n옷도 이쁘고 재질도 좋고, 핏도 정말 좋아요\n일상복으로 입어도 될 정도입니다\n후회없어요"
+  },
+  {
+   "id": "review:0dc78713c362584d",
+   "kind": "review",
+   "ko": "옷감 재질 매우 부드럽고 고급지며 안감에 살짝 기모재질이 아주 약간 있으며 지금 입어도 덥지 않을 정도 입니다. 까실한 느낌은 전혀 없으며. 그냥 얇은 두께는 아니오니 참고 바랍니다. 선선한 가을에 딱이네요"
+  },
+  {
+   "id": "review:81a66e0d387216e5",
+   "kind": "review",
+   "ko": "핏 굿! 소재는 시원시원하고 라인은 기본핏. 컬러는 세련됨. 진짜 다크그레이 강추! 진짜 이쁜 컬러네요. 편하고 핏이 이뻐 자주 입겠네요."
+  },
+  {
+   "id": "review:1ec53aacae33b3b4",
+   "kind": "review",
+   "ko": "역시 믿고 사는 아디다스입니다. 원단이나 핏 모두 좋네요. 기모는 없지만 얇지않은 원단이네요. 한여름을 제외하고 입기에 적당합니다"
+  },
+  {
+   "id": "review:9e2b830fd0580ddb",
+   "kind": "review",
+   "ko": "처음으로 필드 준비하면서 진짜 마니 왕마니 셔치했어요. 남푠 의견보다는 제 의견이. 더 많이 첨가 되었네요. 신축성 좋고 필드에서 화이트가 너무 예쁘게 보여지더라고요 약간의 기모가 있습니다"
+  },
+  {
+   "id": "review:cde1c45e24e42373",
+   "kind": "review",
+   "ko": "디자인\n전체적으로 깔끔하면서도 고급스러운 느낌이 잘 살아있는 디자인입니다. 블랙 컬러라 기본적으로 무난하면서도 어떤 스타일에도 잘 어울리고, 과하게 화려하지 않아서 부담 없이 사용할 수 있습니다.\n색상\n블랙 컬러가 전체적으로 차분하고 세련된 느낌을 줍니다. 단순한 검정색처럼 보이지만 소재의 결에 따라 은은하게 명암이 달라져서 생각보다 고급스러운 분위기가 납니다.\n소재\n소재의 질감이 상당히 괜찮습니다. 가까이에서 보면 원단의 결이 촘촘하게 느껴지고, 너무 번들거리거나 저렴해 보이는 느낌이 아니라 차분하고 고급스러운 느낌입니다. 사진으로 보는 것보다 실제로 봤을 때 소재감이 더 만족스럽습니다.\n디테일\n블랙 컬러에 들어간 포인트 장식이 전체적인 디자인을 심심하지 않게 만들어줍니다. 크기가 너무 크거나 튀지 않으면서 은은하게 포인트가 되어 있어서 개인적으로 가장 마음에 드는 부분입니다.\n마감\n전체적인 마감도 깔끔한 편입니다. 박음질이나 원단 연결 부분도 크게 거슬리는 부분이 없고, 전체적으로 균형이 잘 잡혀 있습니다. 작은 부분까지 신경 쓴 느낌이 들어 제품의 완성도가 높아 보입니다.\n사용감\n직접 사용했을 때 전체적인 느낌이 편안하고 부담스럽지 않습니다. 디자인 자체가 과하지 않아서 일상적으로 사용하기 좋고, 다양한 스타일과도 무난하게 잘 어울릴 것 같습니다.\n총평\n전체적으로 디자인, 색상, 소재감, 마감 모두 만족스러운 제품입니다. 특히 블랙 특유의 깔끔하고 세련된 느낌이 잘 살아 있고, 은은한 포인트 장식 덕분에 고급스러운 분위기도 느껴집니다.\n너무 튀지 않으면서도 적당히 포인트가 있는 제품을 찾는 분들에게 추천하고 싶습니다. 사진으로 봤을 때보다 실제로 봤을 때 소재감과 디테일이 더 괜찮게 느껴졌고, 데일리하게 사용하기에도 부담이 없는 제품입니다.\n개인적으로 심플하면서도 고급스러운 스타일을 좋아하는 분이라면 만족도가 높을 것 같습니다. 전체적인 완성도도 괜찮고 오래 사용해도 질리지 않을 디자인이라 만족스럽습니다."
+  }
+ ]
+}

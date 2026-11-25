@@ -1,0 +1,993 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 172171,
+   "height": 1636,
+   "host": "seller",
+   "link": "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/golf_wear_guide_25.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.993,
+       "text": "OPTION상품옵션",
+       "y": 46
+      },
+      {
+       "conf": 0.927,
+       "text": "IS7132 / 1U4504",
+       "y": 541
+      },
+      {
+       "conf": 0.994,
+       "text": "블랙 / 네이비",
+       "y": 578
+      },
+      {
+       "conf": 0.997,
+       "text": "GUIDE가이드",
+       "y": 657
+      },
+      {
+       "conf": 0.957,
+       "text": "핏 / 슬림 / 보통 / 오버",
+       "y": 738
+      },
+      {
+       "conf": 0.98,
+       "text": "신축성 / 좋음 / 적당함 / 없음",
+       "y": 788
+      },
+      {
+       "conf": 0.998,
+       "text": "비침 / 없음 / 밝은색약간있음 / 전색상약간있음 / 있음",
+       "y": 836
+      },
+      {
+       "conf": 0.751,
+       "text": "두께 / 앓음 / 적당함 / 도톰함",
+       "y": 891
+      },
+      {
+       "conf": 0.984,
+       "text": "계절 / 봄/가을 / 여름 / 겨울",
+       "y": 939
+      },
+      {
+       "conf": 0.965,
+       "text": "※ 대략적인 가이드로 개인차가 있을 수 있으며,이로인한 반품 및 교환이 어려움을",
+       "y": 999
+      },
+      {
+       "conf": 0.998,
+       "text": "안내드립니다",
+       "y": 1031
+      },
+      {
+       "conf": 0.586,
+       "text": "주문사이즈 / s / M / L",
+       "y": 1095
+      },
+      {
+       "conf": 0.917,
+       "text": "(100) / (105) / (110) / (115)",
+       "y": 1117
+      },
+      {
+       "conf": 0.937,
+       "text": "어깨넓이(cm) / 43 / 45 / 46 / 47",
+       "y": 1169
+      },
+      {
+       "conf": 0.989,
+       "text": "가슴단면(cm) / 51 / 53 / 56 / 58",
+       "y": 1219
+      },
+      {
+       "conf": 0.988,
+       "text": "팔길이(cm) / 62 / 63 / 64 / 64",
+       "y": 1272
+      },
+      {
+       "conf": 0.955,
+       "text": "밑단단면(cm) / 46 / 49 / 52 / 55",
+       "y": 1324
+      },
+      {
+       "conf": 0.997,
+       "text": "총기장(cm) / 69 / 70 / 72 / 74",
+       "y": 1376
+      },
+      {
+       "conf": 0.958,
+       "text": "!제품택/케어라벨에 기재된 사이즈는 실제 정보와 상이할 수 있으며,",
+       "y": 1440
+      },
+      {
+       "conf": 0.968,
+       "text": "실측사이즈를게재드리는경우케어라벨과상이하다는점으로무상반품은",
+       "y": 1469
+      },
+      {
+       "conf": 0.995,
+       "text": "어렵습니다",
+       "y": 1501
+      },
+      {
+       "conf": 0.954,
+       "text": "!사이즈체크는 반드시 위 사이즈표를 참고해주시기 바랍니다.",
+       "y": 1545
+      }
+     ],
+     "y0": 0,
+     "y1": 1636
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 116195,
+   "height": 660,
+   "host": "seller",
+   "link": "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/model_info_25.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.979,
+       "text": "MODEL INFO",
+       "y": 66
+      },
+      {
+       "conf": 0.998,
+       "text": "신장:174cm체중:70Kg|하의:33inch",
+       "y": 111
+      },
+      {
+       "conf": 0.976,
+       "text": "상의:105|신발사이즈:265mm",
+       "y": 151
+      },
+      {
+       "conf": 0.968,
+       "text": "모델이 실제 착용한 사이즈는 S(AS)입니다.",
+       "y": 204
+      },
+      {
+       "conf": 0.993,
+       "text": "사이즈에 따른 구매 유의사항",
+       "y": 301
+      },
+      {
+       "conf": 0.98,
+       "text": "[삼선 퀴터집 남성 긴팔티]는 표시 사이즈 대비 한 사이즈 작게 주문 시",
+       "y": 382
+      },
+      {
+       "conf": 0.969,
+       "text": "모델 인포 내 사이즈는 모델 평소 착용 사이즈이며,",
+       "y": 497
+      },
+      {
+       "conf": 0.991,
+       "text": "실착 사이즈를 확인하시어 의류 핏감을 참고하시길 권장드립니다.",
+       "y": 535
+      }
+     ],
+     "y0": 0,
+     "y1": 660
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 25943,
+   "height": 297,
+   "host": "seller",
+   "link": "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__01.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.942,
+       "text": "명불허전의 골프웨어 명가",
+       "y": 90
+      },
+      {
+       "conf": 1.0,
+       "text": "아디다스",
+       "y": 153
+      }
+     ],
+     "y0": 0,
+     "y1": 297
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 311563,
+   "height": 1680,
+   "host": "seller",
+   "link": "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__03.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.982,
+       "text": "언제나 스탠다드한 골프웨어를",
+       "y": 67
+      },
+      {
+       "conf": 0.971,
+       "text": "출시함으로써 그 입지를 단단히 하고 있는",
+       "y": 117
+      },
+      {
+       "conf": 0.978,
+       "text": "스포츠 1위 아디다스 골프에서",
+       "y": 168
+      },
+      {
+       "conf": 0.98,
+       "text": "신상 골프웨어가 출시되었습니다.",
+       "y": 221
+      },
+      {
+       "conf": 0.972,
+       "text": "항상 편안한 스윙을 위해",
+       "y": 1502
+      },
+      {
+       "conf": 0.984,
+       "text": "최선을 다하는 노력으로",
+       "y": 1551
+      },
+      {
+       "conf": 0.979,
+       "text": "이번에도 / 착용감을 자랑합니다.",
+       "y": 1605
+      }
+     ],
+     "y0": 0,
+     "y1": 1680
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 263062,
+   "height": 1610,
+   "host": "seller",
+   "link": "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__04.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.908,
+       "text": "아디다스 SS 삼선 쿼터집 남성 긴팔티",
+       "y": 183
+      },
+      {
+       "conf": 0.971,
+       "text": "지금입으면 딱 좋은 스타일",
+       "y": 1481
+      },
+      {
+       "conf": 0.992,
+       "text": "완벽한 골프웨어를 소개합니다!",
+       "y": 1533
+      }
+     ],
+     "y0": 0,
+     "y1": 1610
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 366051,
+   "height": 2560,
+   "host": "seller",
+   "link": "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__05.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.923,
+       "text": "완벽한 핏을 살리는 골프웨어",
+       "y": 181
+      },
+      {
+       "conf": 0.951,
+       "text": "착용하기만 해도 스타일 UP",
+       "y": 1478
+      },
+      {
+       "conf": 0.974,
+       "text": "멀리서 봐도 가득한 아디다스 브랜드 무드로",
+       "y": 1529
+      },
+      {
+       "conf": 0.974,
+       "text": "골프웨어의 정석 핏을 제공합니다.",
+       "y": 1579
+      }
+     ],
+     "y0": 0,
+     "y1": 1653
+    },
+    {
+     "rows": [],
+     "y0": 1653,
+     "y1": 2560
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 481785,
+   "height": 2800,
+   "host": "seller",
+   "link": "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__06.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.967,
+       "text": "유연한 소재로 스윙시에도",
+       "y": 61
+      },
+      {
+       "conf": 0.952,
+       "text": "핏이 흐트러지지 않고,",
+       "y": 114
+      },
+      {
+       "conf": 0.997,
+       "text": "어깨와 등이 넓어보이는 듬직함을 유지합니다.",
+       "y": 168
+      },
+      {
+       "conf": 0.561,
+       "text": "-",
+       "y": 351
+      },
+      {
+       "conf": 0.973,
+       "text": "지퍼를 올리면 신비한 느낌을 주는",
+       "y": 1447
+      },
+      {
+       "conf": 0.938,
+       "text": "시크한 골퍼",
+       "y": 1499
+      }
+     ],
+     "y0": 0,
+     "y1": 1573
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.968,
+       "text": "지퍼를 열면 좀더 편안한 느낌의",
+       "y": 971
+      },
+      {
+       "conf": 0.976,
+       "text": "스타일리쉬함이 살아나",
+       "y": 1022
+      },
+      {
+       "conf": 0.968,
+       "text": "옷 한벌로 여러 스타일을 연출가능하여",
+       "y": 1070
+      },
+      {
+       "conf": 0.954,
+       "text": "만족도를 극대화 시컵니다.",
+       "y": 1125
+      }
+     ],
+     "y0": 1573,
+     "y1": 2800
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 37837,
+   "height": 500,
+   "host": "seller",
+   "link": "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__08.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.973,
+       "text": "늘 모델같은 핏으로",
+       "y": 69
+      },
+      {
+       "conf": 0.989,
+       "text": "입어본 골퍼들 모두가 만족했습니다.",
+       "y": 119
+      },
+      {
+       "conf": 0.939,
+       "text": "스윙에도 문제 없는 스포츠 소재",
+       "y": 378
+      }
+     ],
+     "y0": 0,
+     "y1": 500
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 42464,
+   "height": 333,
+   "host": "seller",
+   "link": "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__10.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.993,
+       "text": "폴리에스터와 폴리우레탄이 섞인",
+       "y": 70
+      },
+      {
+       "conf": 0.972,
+       "text": "기능성 소재를 사용하여",
+       "y": 120
+      },
+      {
+       "conf": 0.985,
+       "text": "스포츠 활동에 가장 적합한 신축성의",
+       "y": 171
+      },
+      {
+       "conf": 0.978,
+       "text": "원단이 탄생했습니다.",
+       "y": 225
+      }
+     ],
+     "y0": 0,
+     "y1": 333
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 11279,
+   "height": 180,
+   "host": "seller",
+   "link": "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__12.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.958,
+       "text": "격한 티샷을 칠때에도",
+       "y": 69
+      }
+     ],
+     "y0": 0,
+     "y1": 180
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 236151,
+   "height": 1620,
+   "host": "seller",
+   "link": "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__14.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.994,
+       "text": "라운딩 전 스트레칭에도 문제없이,",
+       "y": 62
+      },
+      {
+       "conf": 0.962,
+       "text": "언제나 편안한 착용감을 선사하는",
+       "y": 115
+      },
+      {
+       "conf": 0.985,
+       "text": "신상 골프웨어!",
+       "y": 168
+      },
+      {
+       "conf": 0.739,
+       "text": "4",
+       "y": 696
+      },
+      {
+       "conf": 0.983,
+       "text": "인생샷을 책임지는",
+       "y": 1446
+      },
+      {
+       "conf": 0.982,
+       "text": "올라운더 골프웨어",
+       "y": 1502
+      },
+      {
+       "conf": 0.987,
+       "text": "이번에는 / 욕심내셔도 됩니다.",
+       "y": 1553
+      }
+     ],
+     "y0": 0,
+     "y1": 1620
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 265934,
+   "height": 2230,
+   "host": "seller",
+   "link": "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__15.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "색상을확인하세요",
+       "y": 188
+      },
+      {
+       "conf": 0.989,
+       "text": "네이비/블랙",
+       "y": 944
+      },
+      {
+       "conf": 0.972,
+       "text": "사이즈를 확인해주세요",
+       "y": 1219
+      }
+     ],
+     "y0": 0,
+     "y1": 1880
+    },
+    {
+     "rows": [],
+     "y0": 1720,
+     "y1": 2230
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 948144,
+   "height": 9345,
+   "host": "seller",
+   "link": "https://majorworld.hgodo.com/product/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.97,
+       "text": "adidas",
+       "y": 156
+      },
+      {
+       "conf": 0.959,
+       "text": "아디다스 SS 삼선",
+       "y": 262
+      },
+      {
+       "conf": 0.968,
+       "text": "쿼터집 남성 긴팔티",
+       "y": 362
+      },
+      {
+       "conf": 0.977,
+       "text": "제조국:중국/소재:폴리에스터 85%,폴리우레탄 15%",
+       "y": 486
+      },
+      {
+       "conf": 0.99,
+       "text": "제조사(수입여부):아디다스(아디다스 코리아)",
+       "y": 530
+      },
+      {
+       "conf": 0.999,
+       "text": "IS7132",
+       "y": 722
+      },
+      {
+       "conf": 0.998,
+       "text": "블랙",
+       "y": 775
+      }
+     ],
+     "y0": 0,
+     "y1": 1452
+    },
+    {
+     "rows": [],
+     "y0": 1452,
+     "y1": 3332
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.905,
+       "text": "IU4504",
+       "y": 1325
+      },
+      {
+       "conf": 0.997,
+       "text": "네이비",
+       "y": 1384
+      }
+     ],
+     "y0": 3172,
+     "y1": 5233
+    },
+    {
+     "rows": [],
+     "y0": 5233,
+     "y1": 7113
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.978,
+       "text": "SIZE IN FO",
+       "y": 1251
+      },
+      {
+       "conf": 0.964,
+       "text": "CLOTHING SIZE GUIDANCE",
+       "y": 1320
+      },
+      {
+       "conf": 1.0,
+       "text": "총기장",
+       "y": 1399
+      },
+      {
+       "conf": 0.938,
+       "text": "•측정위치,방법에따라단면1~2cm,",
+       "y": 1424
+      },
+      {
+       "conf": 0.994,
+       "text": "어깨넓이",
+       "y": 1444
+      },
+      {
+       "conf": 0.957,
+       "text": "둘레 2~4cm의 오차가있을 수있습니다.",
+       "y": 1466
+      },
+      {
+       "conf": 0.996,
+       "text": "가슴단면",
+       "y": 1508
+      },
+      {
+       "conf": 0.995,
+       "text": "·사용자의 모니터에 따라 실제 색상과",
+       "y": 1546
+      },
+      {
+       "conf": 0.971,
+       "text": "차이가있을수있으니참고바랍니다.",
+       "y": 1578
+      },
+      {
+       "conf": 0.971,
+       "text": "·평평한 바닥에 상품을 펼쳐놓고 측정하",
+       "y": 1665
+      },
+      {
+       "conf": 0.949,
+       "text": "팔길이 / 였으며,사이즈 체크시 참고 바랍니다.",
+       "y": 1694
+      },
+      {
+       "conf": 0.89,
+       "text": "밑단단면",
+       "y": 1717
+      }
+     ],
+     "y0": 6953,
+     "y1": 8733
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.597,
+       "text": "주문사이즈 / S / M / L / XL",
+       "y": 46
+      },
+      {
+       "conf": 0.99,
+       "text": "어깨넓이(cm) / 43 / 45 / 46 / 47",
+       "y": 110
+      },
+      {
+       "conf": 0.95,
+       "text": "가슴단면(cm) / 51 / 53 / 56 / 58",
+       "y": 178
+      },
+      {
+       "conf": 0.981,
+       "text": "팔길이(cm) / 62 / 63 / 64 / 64",
+       "y": 238
+      },
+      {
+       "conf": 0.877,
+       "text": "믿단단면(cm) / 46 / 49 / 52 / 55",
+       "y": 304
+      },
+      {
+       "conf": 0.751,
+       "text": "총기장(cm) / 69 / 70 / 72 / 74",
+       "y": 364
+      },
+      {
+       "conf": 0.98,
+       "text": "!제품택/케어라벨에 기재된 사이즈는 실제 정보와 상이할 수 있습니다.",
+       "y": 442
+      },
+      {
+       "conf": 0.984,
+       "text": "사이즈체크는 반드시 위에 사이즈표를 참고해주시기 바랍니다.",
+       "y": 480
+      }
+     ],
+     "y0": 8733,
+     "y1": 9345
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 248754,
+   "height": 2450,
+   "host": "seller",
+   "link": "https://majorworld.hgodo.com/product/event/add_product_860_24.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.987,
+       "text": "메이저골프 추천!",
+       "y": 71
+      },
+      {
+       "conf": 0.956,
+       "text": "함께 구매하면 좋은 상품",
+       "y": 200
+      },
+      {
+       "conf": 0.996,
+       "text": "1-1 / 1-2 / 2-1",
+       "y": 334
+      },
+      {
+       "conf": 0.918,
+       "text": "남성합피 골프장갑왼손 4장 / 여성합피골프장갑 양손2세트 / 남성 이중덧덤 올양피 골프장갑",
+       "y": 607
+      },
+      {
+       "conf": 0.89,
+       "text": "-사이즈:22-25호 / -사이즈:18호-21호 / 왼손3장",
+       "y": 632
+      },
+      {
+       "conf": 0.914,
+       "text": "-사이즈:22-25호",
+       "y": 665
+      },
+      {
+       "conf": 1.0,
+       "text": "14,900원 / 14,900원 / 19,900원",
+       "y": 736
+      },
+      {
+       "conf": 0.999,
+       "text": "4-1",
+       "y": 856
+      },
+      {
+       "conf": 0.866,
+       "text": "여성 이중덧염올양피 / 혼마 기능성 여성 골프장갑3장 / 미즈노하프백",
+       "y": 1124
+      },
+      {
+       "conf": 0.99,
+       "text": "골프장갑3장 / -사이즈:",
+       "y": 1148
+      },
+      {
+       "conf": 0.931,
+       "text": "-컬러:그레이,블랙",
+       "y": 1165
+      },
+      {
+       "conf": 0.921,
+       "text": "-사이즈:18-21호 / 2XS (16CM), XS (17-18CM), / -길이: 약10X7X126(CM)",
+       "y": 1179
+      },
+      {
+       "conf": 0.973,
+       "text": "-구성:왼손2장+오른쪽1장 / S(19-20CM), M(21-22CM)",
+       "y": 1203
+      },
+      {
+       "conf": 0.97,
+       "text": "-구성:왼손2장+오른손1장",
+       "y": 1223
+      },
+      {
+       "conf": 1.0,
+       "text": "19,900원 / 19,900원 / 39,900원",
+       "y": 1258
+      },
+      {
+       "conf": 0.997,
+       "text": "4-2 / 4-3 / 5-1",
+       "y": 1377
+      },
+      {
+       "conf": 0.942,
+       "text": "럭셔리신발가방 / 에나멜골프파우치 / 아디다스로고볼캡",
+       "y": 1676
+      },
+      {
+       "conf": 0.926,
+       "text": "-사이즈:32X32X12(CM) / -컬러:블랙,화이트 / -컬러:블랙,화이트,네이비",
+       "y": 1705
+      },
+      {
+       "conf": 0.934,
+       "text": "-사피아노가죽 / -생활방수가능 / -사이즈:FREE(55-60CM)",
+       "y": 1724
+      },
+      {
+       "conf": 0.999,
+       "text": "9,900원 / 12,900원 / 17,900원",
+       "y": 1780
+      }
+     ],
+     "y0": 0,
+     "y1": 1871
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "5-2 / 5-3",
+       "y": 28
+      },
+      {
+       "conf": 0.532,
+       "text": "MMAKB",
+       "y": 159
+      },
+      {
+       "conf": 0.661,
+       "text": "1",
+       "y": 185
+      },
+      {
+       "conf": 0.963,
+       "text": "브리지스톤 2피스골프공 12구 / 단목골프양말3컬레 / 쇼핑백",
+       "y": 327
+      },
+      {
+       "conf": 0.942,
+       "text": "-2피스,12구 / -컬러:블랙,화이트 / -소형사이즈:20X25(CM)",
+       "y": 356
+      },
+      {
+       "conf": 0.949,
+       "text": "-화이트볼 / -대형사이즈: 31X42(CM)",
+       "y": 375
+      },
+      {
+       "conf": 1.0,
+       "text": "17,900원 / 6,900원 / 500원/1,000원",
+       "y": 431
+      }
+     ],
+     "y0": 1871,
+     "y1": 2450
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:500000592:9998916822",
+ "links_sha256": "a88febf375b4926e86333297ed5f8b01f39dba4147834fff4eb836e29c976d8a",
+ "product_id": "9998916822",
+ "seconds": 14.0,
+ "skipped": [
+  {
+   "link": "https://majorgolf.cafe24.com/shose/sangse_main/image/event/event_main.jpg",
+   "rule": "boilerplate_name"
+  },
+  {
+   "link": "https://majorworld.godohosting.com/main/maincopyright.jpg",
+   "rule": "boilerplate_name"
+  },
+  {
+   "link": "https://majorgolf.cafe24.com/CSinfo_Majorgolf.jpg",
+   "rule": "boilerplate_name"
+  },
+  {
+   "link": "https://majorworld.godohosting.com/product/adidas/adidas_info.jpg",
+   "rule": "first_header"
+  },
+  {
+   "link": "https://media.giphy.com/media/M5dKKHWmkOCa1SUODP/giphy.gif",
+   "rule": "gif_animated"
+  },
+  {
+   "link": "https://media.giphy.com/media/RKJSh1PIsyp7gRUSKe/giphy.gif",
+   "rule": "gif_animated"
+  },
+  {
+   "link": "https://media.giphy.com/media/8LFM4CTQmgL600P4Td/giphy.gif",
+   "rule": "gif_animated"
+  },
+  {
+   "link": "https://media.giphy.com/media/DKm4cyvC7jIpl45Kz3/giphy.gif",
+   "rule": "gif_animated"
+  },
+  {
+   "link": "https://media.giphy.com/media/n4PC7sYYj7UTaq3JzB/giphy.gif",
+   "rule": "gif_animated"
+  }
+ ]
+}

@@ -483,7 +483,8 @@ def _options(product: dict[str, Any], en: English) -> tuple[list[dict[str, Any]]
     for n, o in enumerate(options):
         if n == sizes.get("option") and us:          # apparel: the US sizes, never the Korean (apparel_sizes.py)
             names = [us[v] for v in o["values_ko"]]
-            out.append({"name": "Size", "values": [{"name": v} for v in names]})
+            # one US size for two models' spellings ("82" and "M(32)": W32, 10076109143, 2026-11-25): one value
+            out.append({"name": "Size", "values": [{"name": v} for v in dict.fromkeys(names)]})
             values_en.append(names)
             continue
         name = _OPTION_NAME_RE.sub("/", en("option_name", o["name_ko"])).strip()
@@ -561,7 +562,8 @@ def _variants(prepared: dict[str, Any], options: list[dict[str, Any]], values_en
             "inventoryPolicy": "CONTINUE", "inventoryItem": item,
             "metafields": [{"namespace": "fairwardgolf", "key": "source", "type": "json", "value": _json({
                 "schemaVersion": "fairwardgolf-variant-source/1", "naverVariantId": v.get("naver_variant_id"),
-                "sourceId": v.get("source_id"), "optionsKo": v.get("options_ko") or [], "priceKrw": krw,
+                "sourceId": v.get("source_id"), "optionsKo": v.get("naver_options_ko") or v.get("options_ko") or [],
+                "priceKrw": krw,
                 "costUsd": float(cost) if cost != int(cost) else int(cost), "priceUsd": price,
                 "available": available})}],
         }
@@ -575,7 +577,8 @@ def _variants(prepared: dict[str, Any], options: list[dict[str, Any]], values_en
             us = next((x["us"] for x in sizes["values"] if x["ko"] == ko), None)
             if us is None:
                 raise PayloadError(f"variant {v.get('sku')}: size {ko!r} has no US size")
-            size_pair = (ko, us)
+            own = v.get("naver_options_ko") or picked_ko   # the Naver value this variant sells (2026-11-25)
+            size_pair = (own[sizes["option"]] if len(own) > sizes["option"] else ko, us)
         elif sizes.get("fact"):
             size_pair = (sizes["fact"]["ko"], sizes["fact"]["us"])
         if size_pair:

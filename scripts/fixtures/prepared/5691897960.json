@@ -1,0 +1,730 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:500054439:5691897960",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "both_genders_variant_left_out",
+   "detail": "1 variants: 남성용 XXL (여성용 88)"
+  },
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 8); 1 trimmed"
+  },
+  {
+   "code": "paid_addons_left_out",
+   "detail": "4 paid add-ons"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "CONDITIONAL_FREE 3000 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/pinkpang-market/products/5691897960",
+  "channel_no": "500054439",
+  "product_id": "5691897960",
+  "category_id": "50002816"
+ },
+ "product": {
+  "title_ko": "4사이즈 체크 레인코트 여성용 골프우비 핑크팡의마켓",
+  "brand_ko": "핑크팡의마켓",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "womens",
+      "text": "여성용"
+     },
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "4사이즈 체크 레인코트 여성용 골프우비 핑크팡의마켓"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 레인코트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "종류",
+    "values_ko": [
+     "체크 A라인"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "M (55)",
+     "L (66)",
+     "XL (77)"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"체크 A라인 M (55)\"]",
+    "naver_variant_id": "35127491760",
+    "options_ko": [
+     "체크 A라인",
+     "M (55)"
+    ],
+    "price_krw": 32340,
+    "price_usd": "32.34",
+    "sku": "FW-e446a5ebd603d704fb669583",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"체크 A라인 L (66)\"]",
+    "naver_variant_id": "35127491761",
+    "options_ko": [
+     "체크 A라인",
+     "L (66)"
+    ],
+    "price_krw": 32340,
+    "price_usd": "32.34",
+    "sku": "FW-c29c8685f3127d1a3a2ba00e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"체크 A라인 XL (77)\"]",
+    "naver_variant_id": "33190864813",
+    "options_ko": [
+     "체크 A라인",
+     "XL (77)"
+    ],
+    "price_krw": 32340,
+    "price_usd": "32.34",
+    "sku": "FW-4b24f0b3d133a4cb94f7f5da",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 32340,
+   "original_krw": 49000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "핑크팡협력업체"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "핑크팡의마켓"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "CHINA"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "여성용"
+   },
+   {
+    "label_ko": "총기장",
+    "value_ko": "미디엄"
+   },
+   {
+    "label_ko": "형태",
+    "value_ko": "코트형"
+   },
+   {
+    "label_ko": "주요소재",
+    "value_ko": "폴리에스테르"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.69,
+   "count": 637
+  },
+  "reviews": [
+   {
+    "id": "4582036546",
+    "score": 4,
+    "text_ko": "라운딩때 비가 온다해서 부랴부랴 샀는데 생각보다 이쁘고 괜츈합니다! 비는 안와서 못입었지만 골프백에 넣어뒀어요. 비올때 요긴하게 입어볼께요",
+    "created_at": "2024-10-21T08:01:09Z",
+    "writer": "love******",
+    "photos": [
+     "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-image-9cf7e7521686fd51.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-avatar-0a24b478869e2d34.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 90,
+    "text_original_ko": "라운딩때 비가 온다해서 부랴부랴 샀는데 생각보다 이쁘고 괜츈합니다!!! 비는 안와서 못입었지만  골프백에 넣어뒀어요~ 비올때 요긴하게 입어볼께요~"
+   },
+   {
+    "id": "4334867186",
+    "score": 5,
+    "text_ko": "아주 잘 산거 같습니다.\n사이즈도 좋고 방수도 잘되고.\n무엇보다 굳이 비오는데 비싼 브랜드를 살 필요가 뭐있겠나 하고 구입했어요.\n아주 현명한 판단이었다 생각하고 동반자들도 완전 공감을 했다는.",
+    "created_at": "2023-09-18T07:50:16Z",
+    "writer": "so****",
+    "photos": [
+     "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-image-dbe7bc9349aaf39d.webp",
+     "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-image-7a54c4934c028c05.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-avatar-d6badefdf5c2475d.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 94,
+    "text_original_ko": "아주 잘 산거 같습니다~\n사이즈도 좋고 방수도 잘되고.\n무엇보다 굳이 비오는데 비싼 브랜드를 살 필요가 뭐있겠나 하고 구입했어요~\n아주 현명한 판단이었다 생각하고 동반자들도 완전 공감을 했다는...ㅋ"
+   },
+   {
+    "id": "4309302968",
+    "score": 5,
+    "text_ko": "태풍 온다는데 비옷 시험차 강변에 나갔지요.\n얇지만 든든하네요 모델이 입은 길이감이 길었는데 종아리 정도에요. 지퍼와 이중 똑딱이 여밈이 있어 비에 젖을 일은 없겠어요 크기는 그리 여유있지는 않아서 한사이즈 업해도 좋겠어요.",
+    "created_at": "2023-08-10T07:30:41Z",
+    "writer": "bnmz******",
+    "photos": [
+     "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-image-074b8d217a0804f0.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-avatar-845d3cf60c88bd80.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 98
+   },
+   {
+    "id": "4290790542",
+    "score": 5,
+    "text_ko": "저(여자)구입한거 보고 남푠이 구매해달래서 XL로 구입했어요 앞 지퍼가 있어서 입고 벗기 편하고 며칠전 폭우가 쏟아졌는데 우비입고 우산쓰니 참 좋았어요\n저는 골프치러가는 용도로 구매한건 아니구요\n전 일할때 입을려고 구매했어요",
+    "created_at": "2023-07-12T07:33:40Z",
+    "writer": "dlwh******",
+    "photos": [
+     "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-image-6ecb1670b5a63ad8.webp",
+     "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-image-08d7efa2e32f1ad1.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-avatar-a5dda5784b094f65.webp",
+    "tier": "primary",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 79
+   },
+   {
+    "id": "4280309600",
+    "score": 5,
+    "text_ko": "재입고 많은 이유가 다있었네요\n좋아하는 색깔이고 품질도 좋네요!\n주말에 일본골프여행으로\n급하게 주문했는데 만족합니다.\n66사이즈 m으로 적당하게 잘맞아요",
+    "created_at": "2023-06-26T01:17:36Z",
+    "writer": "nami****",
+    "photos": [
+     "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-image-537df9e122d57885.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-avatar-737074e97b3fdbfa.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 91
+   },
+   {
+    "id": "4137348879",
+    "score": 5,
+    "text_ko": "레인코트 넘 마음에 들어요!\n165에 키에 XL 사이즈 구매했는데 길이도 넉넉하고 품도 넉넉합니다.\n그리고 양말도 이쁩니다. 지인들과 나누어 신을려고 깔마춤으로 4장 구매했습니다.",
+    "created_at": "2022-12-01T10:47:23Z",
+    "writer": "jjmk****",
+    "photos": [
+     "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-image-4949e687d92d7df7.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-avatar-a1915b842fbe8a11.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 92,
+    "text_original_ko": "레인코트 넘 마음에 들어요!\n165에  키에 XL 사이즈 구매했는데 길이도 넉넉하고 품도 넉넉합니다.\n그리고 양말도 이쁩니다. 지인들과 나누어 신을려고 깔마춤으로 4장 구매했습니다."
+   },
+   {
+    "id": "4104152310",
+    "score": 5,
+    "text_ko": "77사이즈 잘 맞고 이쁩니다.\n바람막이로 입어도 될 듯 하네요.\n선택할 때\n지퍼와 단추 잠근 앞모습 사진이 없더라구요\n상세 사진 올리면 더 잘 팔릴 듯 싶어요.\n어쩌다 비오면 입을거라\n골프백안에 넣어둡니다.\n완전 갓성비입니다.",
+    "created_at": "2022-10-15T06:24:39Z",
+    "writer": "jaet***",
+    "photos": [
+     "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-image-703317a89391b1f9.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-avatar-0f96dc17488cc4c6.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 97,
+    "text_original_ko": "77사이즈 잘 맞고 이쁩니다.\n바람막이로 입어도 될 듯 하네요.\n선택할 때\n지퍼와 단추 잠근 앞모습 사진이 없더라구요\n상세 사진 올리면 더 잘 팔릴 듯 싶어요.\n\n어쩌다 비오면 입을거라\n골프백안에 넣어둡니다.\n완전 갓성비입니다.^^"
+   },
+   {
+    "id": "4031352679",
+    "score": 5,
+    "text_ko": "사은품(?)도 주셨는데 뭔진 아직 모르겠어요. 용도를 확인하여 잘 쓰겠습니다. 비가 안오면 좋겠지만 비올때 꼭 입어보고 싶네요. 생각보다 꽤 가벼운데 사이즈도 적당하고 타이트한 디자인이 아니라 스윙도 괜찮을 것 같습니다.",
+    "created_at": "2022-06-29T02:07:31Z",
+    "writer": "mon7***",
+    "photos": [
+     "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-image-0f629fefa251efab.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5691897960/fairwardgolf-review-avatar-b64eb6448b55cd2f.webp",
+    "tier": "primary",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 97,
+    "text_original_ko": "빠르게 배송 잘 받았고. 사은품(?)도 주셨는데 뭔진 아직 모르겠어요. 용도를 확인하여 잘 쓰겠습니다. 비가 안오면 좋겠지만 비올때 꼭 입어보고 싶네요. 생각보다 꽤 가벼운데 사이즈도 적당하고 타이트한 디자인이 아니라 스윙도 괜찮을 것 같습니다.",
+    "text_cut": [
+     "shipping"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/5691897960/fairwardgolf-5691897960-001-e65df08162c536d9.webp",
+    "sha256": "e65df08162c536d93b765b6f956e054e5ca3c4fa8a31c32493ab7c370507e08e",
+    "width": 1080,
+    "height": 1440
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/5691897960/fairwardgolf-5691897960-002-068b1b6aec9dca7b.webp",
+    "sha256": "068b1b6aec9dca7b2b6d8cb1b009f0fc71cca4d96fe8ee11a99a56230a7b3122",
+    "width": 1080,
+    "height": 1440
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/5691897960/fairwardgolf-5691897960-003-8953a69a3b7358ca.webp",
+    "sha256": "8953a69a3b7358ca74e415b36eddb9fd6564c31f849d6f1ff8ac8bc75117425e",
+    "width": 1080,
+    "height": 1440
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": null,
+   "policy_text": "50,000원 이상 구매 시 무료 / 제주,도서지역 추가 4,000원",
+   "lead_time": {
+    "seller_average_days": 1.5272727,
+    "product_average_days": 1.2666667,
+    "today_cutoff": "10:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": "11.26.(목)"
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "레인코트 체크 A라인\n여성용3size (55,66,77)\n남성용 XXL 사이즈\n\n브랜드 비옷이 기능적으론 좋긴 하지만,\n가격적인면에서 너무 부담스러워요.\n자주 입는 옷이라면 모르겠지만,\n그렇다고 준비를 안할 순 없는 골프 우비입니다.\n핑크팡이 가성비 좋은 우비를 준비했어요.\n저도 타 브랜드 레인코트를 입어봤지만.\n우비라는게 또 입고 벗기 좋아야 하잖아요.\n너무 타잇하면 안되요.\n스윙도 편해야 하고 여름철 소나기 대비 입고 벗기도 편해야 하고.\n추운날 바람막이 대신 입을 수도 있어야해요.\n그래서 준비한 A라인 체크 레인코트입니다.\n사이즈는 3가지 입니다.\n지퍼 + 단추 이중여밈 입니다.\n55사이즈 기준으로 M\n66사이즈 L\n77사이즈 XL\n남성용 XXL\n추천사이즈입니다.\n◆ 체크 A라인 사이즈 참고 ◆\nM사이즈 : 반품 55CM 기장 86CM\nL사이즈 : 반품 57CM 기장 90CM\nXL 사이즈 : 반품59CM, 기장 95CM\nXXL사이즈 : 반품 67.5 총장 115CM\n\n간편하게 골프백에 넣어다니세요.\n\n비오는날 니삭스 대신 투톤스타킹과 함께 하시면 비에 젖어도 깔끔한 라운딩 가능합니다.\n\nXXL 사이즈 키 174 평소 100사이즈 착용\n\n여성 77반사이즈 착용 컷\n팔이 좀 길어요.\n\n▼ 코디된 스컬 삭스",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20250415_74/1744694848079gIo4W_JPEG/%EB%A6%AC%EB%B7%B0%EC%83%81%ED%8E%98.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220309_138/1646830425463wILrc_JPEG/%EB%A1%9C%EA%B3%A0%ED%95%91%ED%81%AC%ED%8C%A1.JPG?type=w848",
+   "https://shop-phinf.pstatic.net/20210704_251/16253245887449zxRW_JPEG/SE-b68ae66a-52c3-4178-8121-98ae94545913.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210704_81/16253245901868QwB0_JPEG/SE-005f919d-7ded-485b-a6b5-a4cd5719acea.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210704_17/1625324592646lf0Rb_JPEG/SE-a3a2f2a5-2888-4c37-9681-253fac25860e.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210704_174/1625324593950NIzXa_JPEG/SE-9e50b5ca-954b-44f3-8d6d-0522bb702ec6.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210704_100/1625324595367t65Gf_JPEG/SE-17e7f0c5-e73c-4601-9385-b9f609ea76ad.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210704_140/16253245968464EjVk_JPEG/SE-ab866953-3019-46fa-add3-972112926e5c.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210704_54/1625324598196KaF5T_JPEG/SE-29ee4287-aaab-4e89-a8f6-cd8a634853a7.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210704_262/1625324599522iYKby_JPEG/SE-c875bb3a-d0f7-49d3-8a07-e00c29412247.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210704_149/1625324601000ff5Ud_JPEG/SE-24c0de8f-8d8d-43f1-bce5-2574145a1f07.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210704_129/16253246024351PUbt_JPEG/SE-ccd9aef3-fd2d-4b7e-86b7-a863fa1ed920.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220630_263/1656565132396eeNOK_JPEG/KakaoTalk_20220630_135057192.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220630_80/1656565132403Adcy0_JPEG/KakaoTalk_20220630_135057192_01.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220630_212/1656565132690ggTrA_JPEG/KakaoTalk_20220630_135057192_03.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230922_154/1695361043384mWVXk_JPEG/SE-243dd1af-055b-4f63-adf8-f4334ac08058.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230922_25/16953610125145w3pC_JPEG/KakaoTalk_20230921_215105940_07.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230922_293/1695361093712FlzCr_JPEG/SE-6a059761-a95a-4609-a5f2-3807b24b5f1c.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210704_134/1625324606246XVigy_JPEG/SE-e27d7668-8316-4ce5-ac79-5cb5366d2bd5.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210704_153/1625324607375sehhN_JPEG/SE-72dd472e-5eb2-481f-9261-bc77de2888ee.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230205_119/1675584689246maLxT_JPEG/KakaoTalk_20230130_141448066.jpg?type=w848"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "주요소재",
+    "value_ko": "폴리에스테르",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_tops",
+   "option": 1,
+   "values": [
+    {
+     "ko": "M (55)",
+     "us": "S (US 4-6)",
+     "letter": "S",
+     "chest_cm": 90,
+     "basis": "label",
+     "chart_label": null
+    },
+    {
+     "ko": "L (66)",
+     "us": "M (US 8-10)",
+     "letter": "M",
+     "chest_cm": 95,
+     "basis": "label",
+     "chart_label": null
+    },
+    {
+     "ko": "XL (77)",
+     "us": "L (US 12-14)",
+     "letter": "L",
+     "chest_cm": 100,
+     "basis": "label",
+     "chart_label": null
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": null,
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:b55c3cd42661fb86",
+   "kind": "title",
+   "ko": "4사이즈 체크 레인코트 여성용 골프우비 핑크팡의마켓"
+  },
+  {
+   "id": "brand:24727abb6ec682cb",
+   "kind": "brand",
+   "ko": "핑크팡의마켓"
+  },
+  {
+   "id": "option_name:2e6adf4ec98d6823",
+   "kind": "option_name",
+   "ko": "종류"
+  },
+  {
+   "id": "option_value:50595a13421424af",
+   "kind": "option_value",
+   "ko": "체크 A라인"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:3d5b0bb43222b99f",
+   "kind": "option_value",
+   "ko": "M (55)"
+  },
+  {
+   "id": "option_value:e3e981216b03a685",
+   "kind": "option_value",
+   "ko": "L (66)"
+  },
+  {
+   "id": "option_value:51714124de8b626f",
+   "kind": "option_value",
+   "ko": "XL (77)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:db954a6fa0cbae1c",
+   "kind": "spec_value",
+   "ko": "핑크팡협력업체"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:24727abb6ec682cb",
+   "kind": "spec_value",
+   "ko": "핑크팡의마켓"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:0400e940efce4871",
+   "kind": "spec_value",
+   "ko": "CHINA"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:ff90d7cd3c519c1f",
+   "kind": "spec_value",
+   "ko": "여성용"
+  },
+  {
+   "id": "spec_label:26336d857e5ea726",
+   "kind": "spec_label",
+   "ko": "총기장"
+  },
+  {
+   "id": "spec_value:914c153c9a8f58e1",
+   "kind": "spec_value",
+   "ko": "미디엄"
+  },
+  {
+   "id": "spec_label:e1b56dd677111a7f",
+   "kind": "spec_label",
+   "ko": "형태"
+  },
+  {
+   "id": "spec_value:cad1728117ad01f4",
+   "kind": "spec_value",
+   "ko": "코트형"
+  },
+  {
+   "id": "spec_label:4ca8beff763d4b7f",
+   "kind": "spec_label",
+   "ko": "주요소재"
+  },
+  {
+   "id": "spec_value:6e2d175cb134fc18",
+   "kind": "spec_value",
+   "ko": "폴리에스테르"
+  },
+  {
+   "id": "review:2f0380fd8faaa6b8",
+   "kind": "review",
+   "ko": "라운딩때 비가 온다해서 부랴부랴 샀는데 생각보다 이쁘고 괜츈합니다! 비는 안와서 못입었지만 골프백에 넣어뒀어요. 비올때 요긴하게 입어볼께요"
+  },
+  {
+   "id": "review:88d7929e89ebca5d",
+   "kind": "review",
+   "ko": "아주 잘 산거 같습니다.\n사이즈도 좋고 방수도 잘되고.\n무엇보다 굳이 비오는데 비싼 브랜드를 살 필요가 뭐있겠나 하고 구입했어요.\n아주 현명한 판단이었다 생각하고 동반자들도 완전 공감을 했다는."
+  },
+  {
+   "id": "review:65ff55572a0969bd",
+   "kind": "review",
+   "ko": "태풍 온다는데 비옷 시험차 강변에 나갔지요.\n얇지만 든든하네요 모델이 입은 길이감이 길었는데 종아리 정도에요. 지퍼와 이중 똑딱이 여밈이 있어 비에 젖을 일은 없겠어요 크기는 그리 여유있지는 않아서 한사이즈 업해도 좋겠어요."
+  },
+  {
+   "id": "review:2bf60237eb731e25",
+   "kind": "review",
+   "ko": "저(여자)구입한거 보고 남푠이 구매해달래서 XL로 구입했어요 앞 지퍼가 있어서 입고 벗기 편하고 며칠전 폭우가 쏟아졌는데 우비입고 우산쓰니 참 좋았어요\n저는 골프치러가는 용도로 구매한건 아니구요\n전 일할때 입을려고 구매했어요"
+  },
+  {
+   "id": "review:fe1d9e09d558a26a",
+   "kind": "review",
+   "ko": "재입고 많은 이유가 다있었네요\n좋아하는 색깔이고 품질도 좋네요!\n주말에 일본골프여행으로\n급하게 주문했는데 만족합니다.\n66사이즈 m으로 적당하게 잘맞아요"
+  },
+  {
+   "id": "review:cb9a157713e54fc1",
+   "kind": "review",
+   "ko": "레인코트 넘 마음에 들어요!\n165에 키에 XL 사이즈 구매했는데 길이도 넉넉하고 품도 넉넉합니다.\n그리고 양말도 이쁩니다. 지인들과 나누어 신을려고 깔마춤으로 4장 구매했습니다."
+  },
+  {
+   "id": "review:f17291d180aaac8f",
+   "kind": "review",
+   "ko": "77사이즈 잘 맞고 이쁩니다.\n바람막이로 입어도 될 듯 하네요.\n선택할 때\n지퍼와 단추 잠근 앞모습 사진이 없더라구요\n상세 사진 올리면 더 잘 팔릴 듯 싶어요.\n어쩌다 비오면 입을거라\n골프백안에 넣어둡니다.\n완전 갓성비입니다."
+  },
+  {
+   "id": "review:d2c958911a257c76",
+   "kind": "review",
+   "ko": "사은품(?)도 주셨는데 뭔진 아직 모르겠어요. 용도를 확인하여 잘 쓰겠습니다. 비가 안오면 좋겠지만 비올때 꼭 입어보고 싶네요. 생각보다 꽤 가벼운데 사이즈도 적당하고 타이트한 디자인이 아니라 스윙도 괜찮을 것 같습니다."
+  }
+ ]
+}

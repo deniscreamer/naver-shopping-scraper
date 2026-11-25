@@ -1,0 +1,486 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:500000592:9998916822",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "2 of 2 kept (full 1, short 1); 0 trimmed"
+  },
+  {
+   "code": "paid_addons_left_out",
+   "detail": "19 paid add-ons"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/majorgolf/products/9998916822",
+  "channel_no": "500000592",
+  "product_id": "9998916822",
+  "category_id": "50002796"
+ },
+ "product": {
+  "title_ko": "아디다스 FW 가을 간절기 삼선 쿼터집 남성 긴팔 집업 골프 티셔츠 남자 골프웨어 상의",
+  "brand_ko": "아디다스",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "아디다스 FW 가을 간절기 삼선 쿼터집 남성 긴팔 집업 골프 티셔츠 남자 골프웨어 상의"
+     },
+     {
+      "source": "listing",
+      "value": "mens",
+      "text": "남성 골프 가을 긴팔 티셔츠"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [],
+  "facts": [
+   {
+    "label_ko": "",
+    "value_ko": "IS7132 블랙 AL (110)"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"IS7132 블랙 AL (110)\"]",
+    "naver_variant_id": "42557074147",
+    "options_ko": [],
+    "price_krw": 93900,
+    "price_usd": "93.90",
+    "sku": "FW-131f3e1492503d279885005a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 93900,
+   "original_krw": 135000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "아디다스"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "아디다스"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "IS7132 IU4504"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "네크라인",
+    "value_ko": "반목"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "신축성"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 폴리우레탄"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "가을, 봄"
+   },
+   {
+    "label_ko": "소매기장",
+    "value_ko": "긴팔"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2024년형"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "티셔츠"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.79,
+   "count": 71
+  },
+  "reviews": [
+   {
+    "id": "5086514557",
+    "score": 5,
+    "text_ko": "엄마 요청으로 아빠께 선물해드렸어요. 엄마가 보는 눈이 까다로우신데 이 옷은 좋다고하시네요. 편해서 매일 입고 계신대요!",
+    "created_at": "2026-10-18T11:33:54Z",
+    "writer": "0104*******",
+    "photos": [
+     "collected/50002788-fixtures/images/9998916822/fairwardgolf-review-image-632eec0fe9943f0f.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 1,
+    "text_grade": "short",
+    "text_quality": 27
+   },
+   {
+    "id": "4851286578",
+    "score": 5,
+    "text_ko": "아디다스두벌째입니다!\n라지지만 110사이즈 숫자로 보시면 될것같습니다\n이전에 산 녹색아디다스 사이즈실패가 있었지만 이제는 110이 딱맞네요! 다른브랜드xl로보시면될듯",
+    "created_at": "2025-11-28T10:43:04Z",
+    "writer": "pome***",
+    "photos": [
+     "collected/50002788-fixtures/images/9998916822/fairwardgolf-review-image-2a08cc454ee11a62.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 52,
+    "text_original_ko": "아디다스두벌째입니다!!\n라지지만 110사이즈 숫자로 보시면 될것같습니다\n이전에 산 녹색아디다스 사이즈실패가 있었지만 이제는 110이 딱맞네요!다른브랜드xl로보시면될듯"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/9998916822/fairwardgolf-9998916822-001-e2fd1532cab1b6e4.webp",
+    "sha256": "e2fd1532cab1b6e453b58d7b610ce565dd252d01841993454790b636c72c1490",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/9998916822/fairwardgolf-9998916822-002-f864b70db59ba811.webp",
+    "sha256": "f864b70db59ba811ad4cdfb156ef76e9c44ff228dd5c8d95bf5c0135a8d6db0e",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/9998916822/fairwardgolf-9998916822-003-2274fe0847662b6e.webp",
+    "sha256": "2274fe0847662b6e9352e580a35309f27e2c6e801026d3549100e4eb9e61c121",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/9998916822/fairwardgolf-9998916822-004-e2fd1532cab1b6e4.webp",
+    "sha256": "e2fd1532cab1b6e453b58d7b610ce565dd252d01841993454790b636c72c1490",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/9998916822/fairwardgolf-9998916822-005-8e8cbbf884fe3de0.webp",
+    "sha256": "8e8cbbf884fe3de0a093566cf0025da0374541ff8816e868be0a87e4ea05a5d0",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.2600439,
+    "product_average_days": 2.0,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.25.(수)",
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://majorworld.godohosting.com/product/adidas/adidas_info.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/golf_wear_guide_25.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/model_info_25.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__01.jpg",
+   "https://media.giphy.com/media/M5dKKHWmkOCa1SUODP/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__03.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__04.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__05.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__06.jpg",
+   "https://media.giphy.com/media/RKJSh1PIsyp7gRUSKe/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__08.jpg",
+   "https://media.giphy.com/media/8LFM4CTQmgL600P4Td/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__10.jpg",
+   "https://media.giphy.com/media/DKm4cyvC7jIpl45Kz3/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__12.jpg",
+   "https://media.giphy.com/media/n4PC7sYYj7UTaq3JzB/giphy.gif",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__14.jpg",
+   "https://majorworld.hgodo.com/golfland/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24/__15.jpg",
+   "https://majorworld.hgodo.com/product/adidas/adidas_ss_3line_quarterly_m_long_sleeve_t_24.jpg",
+   "https://majorworld.hgodo.com/product/event/add_product_860_24.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "banner_image",
+    "text": "https://majorgolf.cafe24.com/shose/sangse_main/image/event/event_main.jpg"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://majorworld.godohosting.com/main/maincopyright.jpg"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://majorgolf.cafe24.com/CSinfo_Majorgolf.jpg"
+   }
+  ],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 폴리우레탄",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_tops",
+   "option": null,
+   "values": [],
+   "merged": {},
+   "brand_row": "adidas",
+   "chart": null,
+   "held": null,
+   "fact": {
+    "label_ko": "",
+    "ko": "AL (110)",
+    "us": "L"
+   }
+  }
+ },
+ "texts": [
+  {
+   "id": "title:3cd57b66f66bfae5",
+   "kind": "title",
+   "ko": "아디다스 FW 가을 간절기 삼선 쿼터집 남성 긴팔 집업 골프 티셔츠 남자 골프웨어 상의"
+  },
+  {
+   "id": "brand:8201e93c449b38b1",
+   "kind": "brand",
+   "ko": "아디다스"
+  },
+  {
+   "id": "fact_value:a9ba733abf3c2d34",
+   "kind": "fact_value",
+   "ko": "IS7132 블랙 AL (110)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:8201e93c449b38b1",
+   "kind": "spec_value",
+   "ko": "아디다스"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:07b932b57c2578a4",
+   "kind": "spec_value",
+   "ko": "IS7132 IU4504"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:521009f503e491a5",
+   "kind": "spec_label",
+   "ko": "네크라인"
+  },
+  {
+   "id": "spec_value:8d3513546a49b769",
+   "kind": "spec_value",
+   "ko": "반목"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:6fa36796eea775e0",
+   "kind": "spec_value",
+   "ko": "신축성"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:0136c94aa10dbfb4",
+   "kind": "spec_value",
+   "ko": "폴리에스테르, 폴리우레탄"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:fc7a3c96b4ce53ab",
+   "kind": "spec_value",
+   "ko": "가을, 봄"
+  },
+  {
+   "id": "spec_label:c595482b55571d6a",
+   "kind": "spec_label",
+   "ko": "소매기장"
+  },
+  {
+   "id": "spec_value:2fa60fab30cad430",
+   "kind": "spec_value",
+   "ko": "긴팔"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:8040f01b1433a292",
+   "kind": "spec_value",
+   "ko": "2024년형"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:f977ac4486c2b67c",
+   "kind": "spec_value",
+   "ko": "티셔츠"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "review:bfae7a5f0aa4952c",
+   "kind": "review",
+   "ko": "엄마 요청으로 아빠께 선물해드렸어요. 엄마가 보는 눈이 까다로우신데 이 옷은 좋다고하시네요. 편해서 매일 입고 계신대요!"
+  },
+  {
+   "id": "review:f909b21f981be9fa",
+   "kind": "review",
+   "ko": "아디다스두벌째입니다!\n라지지만 110사이즈 숫자로 보시면 될것같습니다\n이전에 산 녹색아디다스 사이즈실패가 있었지만 이제는 110이 딱맞네요! 다른브랜드xl로보시면될듯"
+  }
+ ]
+}

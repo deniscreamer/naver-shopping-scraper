@@ -18,7 +18,8 @@
   "2XL": 110,
   "3L": 110,
   "XXXL": 115,
-  "3XL": 115
+  "3XL": 115,
+  "4XL": 120
  },
  "grid": [
   {
@@ -86,5 +87,24 @@
    ]
   }
  ],
- "brands": {}
+ "brands": {
+  "adidas": {
+   "aliases": [
+    "아디다스",
+    "아디다스골프",
+    "adidas",
+    "adidas golf",
+    "아디다스 골프"
+   ],
+   "asian_letters": {
+    "AS": 95,
+    "AM": 100,
+    "AL": 105,
+    "AXL": 110,
+    "A2XL": 115
+   },
+   "basis": "owner 2026-11-25",
+   "evidence": "The owner, 2026-11-25: adidas' Asian letters on the men's tops are AS = 95, AM = 100, AL = 105, AXL = 110 (A2XL = 115), the letter winning over the number a listing writes in brackets. The majorgolf charts disagree by model: 13740514016 (KG2154..KG2156, JE8325) '주문사이즈 / AS / AM / AL / AXL / A2XL' over '(95) / (100) / (105) / (110) / (110)', staff fitting 'AM100'; 5176506757 IM7295 S(95) .. 2XL(115), IT7211..IT7213 and IX4323 S(100) .. XL(115); 9998916822 (IS7132) '주문사이즈' S(100) M(105) L(110) XL(115). Only the A-letters (AS, AM ...) take it; a bare S / M / L of adidas keeps the profile's letters."
+  }
+ }
 }

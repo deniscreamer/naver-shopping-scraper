@@ -1,0 +1,3459 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:100267303:5460564989",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 8); 2 trimmed"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/klattermusen/products/5460564989",
+  "channel_no": "100267303",
+  "product_id": "5460564989",
+  "category_id": "50002816"
+ },
+ "product": {
+  "title_ko": "[클라터뮤젠] 아신야 자켓 우먼(Asynja Jacket W)",
+  "brand_ko": "클라터뮤젠(Klattermusen)",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "womens",
+      "text": "여성용"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 레인코트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "색상을 선택해주세요",
+    "values_ko": [
+     "레이븐(Raven)",
+     "더스티옐로우(D Yellow)",
+     "미드나잇블루(M Blue)",
+     "퍼플도브(Purple Dove)",
+     "로즈레드(Rose Red)",
+     "더스티로즈(D Rose)",
+     "NEW COLOR_실버크렘(S.Crème)",
+     "NEW COLOR_에쉬레드(Ash Red)"
+    ]
+   },
+   {
+    "name_ko": "사이즈를 선택해주세요",
+    "values_ko": [
+     "XXS사이즈(약80)",
+     "XS사이즈(약85)",
+     "S사이즈(약90)",
+     "M사이즈(약95)",
+     "L사이즈(약100)"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"레이븐(Raven)\",\"XXS사이즈(약80)\"]",
+    "naver_variant_id": "17137381579",
+    "options_ko": [
+     "레이븐(Raven)",
+     "XXS사이즈(약80)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-1bb598cdeb917fcea706679f",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"레이븐(Raven)\",\"XS사이즈(약85)\"]",
+    "naver_variant_id": "17137381580",
+    "options_ko": [
+     "레이븐(Raven)",
+     "XS사이즈(약85)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-8139336abd8957c1bad4079b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"레이븐(Raven)\",\"S사이즈(약90)\"]",
+    "naver_variant_id": "17137381581",
+    "options_ko": [
+     "레이븐(Raven)",
+     "S사이즈(약90)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-261090cd7b5ffc56cdb8dd8a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"레이븐(Raven)\",\"M사이즈(약95)\"]",
+    "naver_variant_id": "17137381582",
+    "options_ko": [
+     "레이븐(Raven)",
+     "M사이즈(약95)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-c281b8390c75bb94f5c2f8e4",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"레이븐(Raven)\",\"L사이즈(약100)\"]",
+    "naver_variant_id": "40780988658",
+    "options_ko": [
+     "레이븐(Raven)",
+     "L사이즈(약100)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-5fc2427f9de567422de2d56f",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"더스티옐로우(D Yellow)\",\"XXS사이즈(약80)\"]",
+    "naver_variant_id": "39013917246",
+    "options_ko": [
+     "더스티옐로우(D Yellow)",
+     "XXS사이즈(약80)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-799f9f12d8a56233f162db0f",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"더스티옐로우(D Yellow)\",\"XS사이즈(약85)\"]",
+    "naver_variant_id": "39013917247",
+    "options_ko": [
+     "더스티옐로우(D Yellow)",
+     "XS사이즈(약85)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-e62d3869492fa1e60591d32a",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"더스티옐로우(D Yellow)\",\"S사이즈(약90)\"]",
+    "naver_variant_id": "39013917249",
+    "options_ko": [
+     "더스티옐로우(D Yellow)",
+     "S사이즈(약90)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-1223b5936ed7b8c0d081707e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"더스티옐로우(D Yellow)\",\"M사이즈(약95)\"]",
+    "naver_variant_id": "39013917252",
+    "options_ko": [
+     "더스티옐로우(D Yellow)",
+     "M사이즈(약95)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-6e1f4e04db238c7e09c0e1d7",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"더스티옐로우(D Yellow)\",\"L사이즈(약100)\"]",
+    "naver_variant_id": "40780988663",
+    "options_ko": [
+     "더스티옐로우(D Yellow)",
+     "L사이즈(약100)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-48557d55288ebe33b57f9679",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"미드나잇블루(M Blue)\",\"XXS사이즈(약80)\"]",
+    "naver_variant_id": "39013917255",
+    "options_ko": [
+     "미드나잇블루(M Blue)",
+     "XXS사이즈(약80)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-1184e4b354854abf21df92fa",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"미드나잇블루(M Blue)\",\"XS사이즈(약85)\"]",
+    "naver_variant_id": "39013917258",
+    "options_ko": [
+     "미드나잇블루(M Blue)",
+     "XS사이즈(약85)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-75d5588ae9fbb1b90cb3bae2",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"미드나잇블루(M Blue)\",\"S사이즈(약90)\"]",
+    "naver_variant_id": "39013917260",
+    "options_ko": [
+     "미드나잇블루(M Blue)",
+     "S사이즈(약90)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-780760cb16902ccd153c1169",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"미드나잇블루(M Blue)\",\"M사이즈(약95)\"]",
+    "naver_variant_id": "39013917263",
+    "options_ko": [
+     "미드나잇블루(M Blue)",
+     "M사이즈(약95)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-9457487ad706fe529d71f4a5",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"미드나잇블루(M Blue)\",\"L사이즈(약100)\"]",
+    "naver_variant_id": "40780988664",
+    "options_ko": [
+     "미드나잇블루(M Blue)",
+     "L사이즈(약100)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-335fe596c7c85dcd2bba92bc",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"퍼플도브(Purple Dove)\",\"XXS사이즈(약80)\"]",
+    "naver_variant_id": "47078513884",
+    "options_ko": [
+     "퍼플도브(Purple Dove)",
+     "XXS사이즈(약80)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-e8f92dfb7bf56574438dc8b9",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"퍼플도브(Purple Dove)\",\"XS사이즈(약85)\"]",
+    "naver_variant_id": "47078513885",
+    "options_ko": [
+     "퍼플도브(Purple Dove)",
+     "XS사이즈(약85)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-281c23ee6c6821b13694bdec",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"퍼플도브(Purple Dove)\",\"S사이즈(약90)\"]",
+    "naver_variant_id": "47078513886",
+    "options_ko": [
+     "퍼플도브(Purple Dove)",
+     "S사이즈(약90)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-83d28ba1d572f683822fc9b8",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"퍼플도브(Purple Dove)\",\"M사이즈(약95)\"]",
+    "naver_variant_id": "47078513887",
+    "options_ko": [
+     "퍼플도브(Purple Dove)",
+     "M사이즈(약95)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-04e6b627894625e458da3cb4",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"퍼플도브(Purple Dove)\",\"L사이즈(약100)\"]",
+    "naver_variant_id": "47078513888",
+    "options_ko": [
+     "퍼플도브(Purple Dove)",
+     "L사이즈(약100)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-b7bcf400d72031d8f6193843",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"로즈레드(Rose Red)\",\"XXS사이즈(약80)\"]",
+    "naver_variant_id": "50738509536",
+    "options_ko": [
+     "로즈레드(Rose Red)",
+     "XXS사이즈(약80)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-6922444f2087bb05dc397b83",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"로즈레드(Rose Red)\",\"XS사이즈(약85)\"]",
+    "naver_variant_id": "50738509537",
+    "options_ko": [
+     "로즈레드(Rose Red)",
+     "XS사이즈(약85)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-5360e419b9e0b5e25df055ae",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"로즈레드(Rose Red)\",\"S사이즈(약90)\"]",
+    "naver_variant_id": "50738509538",
+    "options_ko": [
+     "로즈레드(Rose Red)",
+     "S사이즈(약90)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-6a93b82d8fcbff38b2c72949",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"로즈레드(Rose Red)\",\"M사이즈(약95)\"]",
+    "naver_variant_id": "50738509539",
+    "options_ko": [
+     "로즈레드(Rose Red)",
+     "M사이즈(약95)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-e480245824dd4a1b1dea36a1",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"로즈레드(Rose Red)\",\"L사이즈(약100)\"]",
+    "naver_variant_id": "50738509540",
+    "options_ko": [
+     "로즈레드(Rose Red)",
+     "L사이즈(약100)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-5f6e37dbec326d2116a9b743",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"더스티로즈(D Rose)\",\"XXS사이즈(약80)\"]",
+    "naver_variant_id": "55775085523",
+    "options_ko": [
+     "더스티로즈(D Rose)",
+     "XXS사이즈(약80)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-29e78a82d9a70b39d6406688",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"더스티로즈(D Rose)\",\"XS사이즈(약85)\"]",
+    "naver_variant_id": "55775085526",
+    "options_ko": [
+     "더스티로즈(D Rose)",
+     "XS사이즈(약85)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-2b62809bf8e0441d09fa6306",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"더스티로즈(D Rose)\",\"S사이즈(약90)\"]",
+    "naver_variant_id": "55775085528",
+    "options_ko": [
+     "더스티로즈(D Rose)",
+     "S사이즈(약90)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-935c242dc1c3b57ca427b70f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"더스티로즈(D Rose)\",\"M사이즈(약95)\"]",
+    "naver_variant_id": "55775085530",
+    "options_ko": [
+     "더스티로즈(D Rose)",
+     "M사이즈(약95)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-807ca9701d0b451c24a5a0ef",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"더스티로즈(D Rose)\",\"L사이즈(약100)\"]",
+    "naver_variant_id": "55775085533",
+    "options_ko": [
+     "더스티로즈(D Rose)",
+     "L사이즈(약100)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-420650c5f4e88d5d4f22c196",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"NEW COLOR_실버크렘(S.Crème)\",\"XXS사이즈(약80)\"]",
+    "naver_variant_id": "59363778658",
+    "options_ko": [
+     "NEW COLOR_실버크렘(S.Crème)",
+     "XXS사이즈(약80)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-21cdc5b1838e837877b73292",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"NEW COLOR_실버크렘(S.Crème)\",\"XS사이즈(약85)\"]",
+    "naver_variant_id": "59363778659",
+    "options_ko": [
+     "NEW COLOR_실버크렘(S.Crème)",
+     "XS사이즈(약85)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-4e05a3d25544eff3fc103534",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"NEW COLOR_실버크렘(S.Crème)\",\"S사이즈(약90)\"]",
+    "naver_variant_id": "59363778660",
+    "options_ko": [
+     "NEW COLOR_실버크렘(S.Crème)",
+     "S사이즈(약90)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-1446f3702b40fbee11dfd0c3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"NEW COLOR_실버크렘(S.Crème)\",\"M사이즈(약95)\"]",
+    "naver_variant_id": "59363778661",
+    "options_ko": [
+     "NEW COLOR_실버크렘(S.Crème)",
+     "M사이즈(약95)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-1f5d9bf8a3881c7986935fb3",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"NEW COLOR_실버크렘(S.Crème)\",\"L사이즈(약100)\"]",
+    "naver_variant_id": "59363778662",
+    "options_ko": [
+     "NEW COLOR_실버크렘(S.Crème)",
+     "L사이즈(약100)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-623a716de4f890575524f537",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"NEW COLOR_에쉬레드(Ash Red)\",\"XXS사이즈(약80)\"]",
+    "naver_variant_id": "59363778663",
+    "options_ko": [
+     "NEW COLOR_에쉬레드(Ash Red)",
+     "XXS사이즈(약80)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-265965148843000fd3300002",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"NEW COLOR_에쉬레드(Ash Red)\",\"XS사이즈(약85)\"]",
+    "naver_variant_id": "59363778664",
+    "options_ko": [
+     "NEW COLOR_에쉬레드(Ash Red)",
+     "XS사이즈(약85)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-e39c7e45e8d8b0a61f75a3f3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"NEW COLOR_에쉬레드(Ash Red)\",\"S사이즈(약90)\"]",
+    "naver_variant_id": "59363778665",
+    "options_ko": [
+     "NEW COLOR_에쉬레드(Ash Red)",
+     "S사이즈(약90)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-b18454438af414d744230557",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"NEW COLOR_에쉬레드(Ash Red)\",\"M사이즈(약95)\"]",
+    "naver_variant_id": "59363778666",
+    "options_ko": [
+     "NEW COLOR_에쉬레드(Ash Red)",
+     "M사이즈(약95)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-720ba7ce1de8284b370a465c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"NEW COLOR_에쉬레드(Ash Red)\",\"L사이즈(약100)\"]",
+    "naver_variant_id": "59363778667",
+    "options_ko": [
+     "NEW COLOR_에쉬레드(Ash Red)",
+     "L사이즈(약100)"
+    ],
+    "price_krw": 545100,
+    "price_usd": "545.10",
+    "sku": "FW-ef1997eb8f020226b4dc7c97",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 18,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 545100,
+   "original_krw": 690000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "클라터뮤젠(Klattermusen)"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "클라터뮤젠(Klattermusen)"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "[클라터뮤젠] 아신야 자켓 우먼(Asynja Jakcet W)"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "여성용"
+   },
+   {
+    "label_ko": "총기장",
+    "value_ko": "롱"
+   },
+   {
+    "label_ko": "형태",
+    "value_ko": "코트형"
+   },
+   {
+    "label_ko": "주요소재",
+    "value_ko": "기타"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.85,
+   "count": 72
+  },
+  "reviews": [
+   {
+    "id": "4433582774",
+    "score": 3,
+    "text_ko": "착용감 편해요. 원단 터치는 좀 소프트하여 얇게 느껴지나 방풍 기능이 있다하니 겨울에 입어도 될듯해요. 파타고니아 토렌쉘 3L M 입는데 이건 팔길이가 조뮤길고 겨울복장 착용시에도약간 큰듯한 느낌인데 이건 같은 겨울복장 착용해도 착용감 사이즈감도 괜찮아요 색상도 은은하여 예뻐요",
+    "created_at": "2024-02-27T12:56:58Z",
+    "writer": "jiny***",
+    "photos": [
+     "collected/50002788-fixtures/images/5460564989/fairwardgolf-review-image-908373959ede9138.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5460564989/fairwardgolf-review-avatar-0b0186da6904bd90.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "착용감 편해요. 원단 터치는 좀 소프트하여 얇게 느껴지나 방풍 기능이 있다하니 겨울에 입어도 될듯해요. 파타고니아 토렌쉘 3L M 입는데 이건 팔길이가 조뮤길고 겨울복장 착용시에도ㅠ약간 큰듯한 느낌인데 이건 같은 겨울복장 착용해도 착용감 사이즈감도 괜찮아요 색상도 은은하여 예뻐요"
+   },
+   {
+    "id": "3275281435",
+    "score": 4,
+    "text_ko": "안쪽이 맨살에도 안붙고 모자도 똥머리하고도 푹덥히고 좋음. 단점유일한건 모자 엄청쪼으고. 복구할때 좌우 맞춰서 펴야한다는것 그외 모두장점 사이즈는 95시켰는데 뭔가 98이 온느낌. 색은 톤다운 차분",
+    "created_at": "2021-10-06T07:31:12Z",
+    "writer": "poiu****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/5460564989/fairwardgolf-review-avatar-080a4314c13f143a.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 80
+   },
+   {
+    "id": "4415568353",
+    "score": 5,
+    "text_ko": "가볍고 색깔도 밝은 그린이라 이쁘고\n아쉽다면 좀 얇아서 쬐금 아쉽습니다\n평상시 55사이즈이고\n안에 엷은 패딩까지 입어도 잘맞습니다",
+    "created_at": "2024-01-27T13:49:16Z",
+    "writer": "sm97****",
+    "photos": [],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 73
+   },
+   {
+    "id": "4319730862",
+    "score": 5,
+    "text_ko": "저는 어깨가 넓어서 보통 한국사이즈 L 나 XL 를 입는 편인데 클라터뮤젠은 유럽제품이라 그런지 한사이즈 작게 사면 딱 맞아요! M 사이즈 샀고, 팔길이 어깨 딱 떨어지게 잘 맞아요. 너무 튀지 않는 차분한 노란색이라 맘에 드네요! 선물로 스카프도 받았어요",
+    "created_at": "2023-08-26T03:54:43Z",
+    "writer": "spar****",
+    "photos": [
+     "collected/50002788-fixtures/images/5460564989/fairwardgolf-review-image-e2c7f94da439971d.webp",
+     "collected/50002788-fixtures/images/5460564989/fairwardgolf-review-image-c6537bb79781bda7.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "저는 어깨가 넓어서 보통 한국사이즈 L 나 XL 를 입는 편인데 클라터뮤젠은 유럽제품이라 그런지 한사이즈 작게 사면 딱 맞아요! M 사이즈 샀고, 팔길이 어깨 딱 떨어지게 잘 맞아요. 너무 튀지 않는 차분한 노란색이라 맘에 드네요! 선물로 스카프도 받았어요 ^^ 많이 파세요!",
+    "text_cut": [
+     "seller"
+    ]
+   },
+   {
+    "id": "4214688067",
+    "score": 5,
+    "text_ko": "핏이랑 컬러감이 오묘하게 이쁘네요. 평소 상의S사이즈를 구매했었는데 겨울철에 다운이너 입는거 감안해서 m사이즈로 구매했는데 여유가 많지는 않네요. 뒷쪽엉덩이는 완전다 가려줘서 레깅스 입는분들은 편하게 착용가능할듯해요",
+    "created_at": "2023-03-21T04:39:29Z",
+    "writer": "cozm***",
+    "photos": [
+     "collected/50002788-fixtures/images/5460564989/fairwardgolf-review-image-d197d128e38c8c04.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 98,
+    "text_original_ko": "핏이랑 컬러감이 오묘하게 이쁘네요~평소 상의S사이즈를 구매했었는데 겨울철에  다운이너 입는거 감안해서 m사이즈로 구매했는데 여유가 많지는 않네요~뒷쪽엉덩이는 완전다 가려줘서 레깅스 입는분들은 편하게 착용가능할듯해요~"
+   },
+   {
+    "id": "4206528985",
+    "score": 5,
+    "text_ko": "클뮤는 사랑입니다! 로즈 레드 색이 너무 마음에 들어서 사이즈가 m 박에 없는데 여유 있게 입으려고 구매했는데 가볍고 부드럽고 신축성이 좋아 착용감도 너무 좋아요 4계절 가능한 방수/방풍 자켓 디자인 색상도 다 너무 예쁘네요",
+    "created_at": "2023-03-09T10:25:12Z",
+    "writer": "miso****",
+    "photos": [
+     "collected/50002788-fixtures/images/5460564989/fairwardgolf-review-image-6edfb83c41f01469.webp",
+     "collected/50002788-fixtures/images/5460564989/fairwardgolf-review-image-60fa5e6daf6ab599.webp",
+     "collected/50002788-fixtures/images/5460564989/fairwardgolf-review-image-91be3dd85f9774cb.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 97,
+    "text_original_ko": "클뮤는 사랑입니다!! 로즈 레드 색이 너무 마음에 들어서 사이즈가 m 박에 없는데 여유 있게 입으려고 구매했는데 가볍고 부드럽고 신축성이 좋아 착용감도 너무 좋아요 4계절 가능한 방수/방풍 자켓 디자인 색상도 다 너무 예쁘네요~~  사은품도 감사합니다.^^😊",
+    "text_cut": [
+     "gift"
+    ]
+   },
+   {
+    "id": "4096319876",
+    "score": 5,
+    "text_ko": "85레드로 구매후 겨울 경량자켓 위에 입을 생각에 한사이즈 업해서 미드나잇블루90으로 교환했어요. 엉덩이 아래까지 길게 내려오고 사이즈 많이 여유있어요.\n블루색상 사진도 잘받고 예쁩니다.\n봄가을겨울 활용도 굿!\n요건 클뮤 장바구니에 꼭 넣고 사세요",
+    "created_at": "2022-10-04T00:43:35Z",
+    "writer": "djaa********",
+    "photos": [
+     "collected/50002788-fixtures/images/5460564989/fairwardgolf-review-image-33abca0d73e37610.webp",
+     "collected/50002788-fixtures/images/5460564989/fairwardgolf-review-image-b9bcd011ecae3e44.webp",
+     "collected/50002788-fixtures/images/5460564989/fairwardgolf-review-image-a5cd9aa2f757920a.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "85레드로 구매후 겨울 경량자켓 위에 입을 생각에 한사이즈 업해서 미드나잇블루90으로 교환했어요. 엉덩이 아래까지 길게 내려오고 사이즈 많이 여유있어요.\n블루색상 사진도 잘받고 예쁩니다.\n봄가을겨울 활용도 굿!!!\n요건 클뮤 장바구니에 꼭 넣고 사세요~~^^"
+   },
+   {
+    "id": "3255964171",
+    "score": 5,
+    "text_ko": "알그론자켓을 xxs착용하고 있는데 사이즈땜에 고민했습니다. Xs을 주문했고, 전체적 사이즈는 xxs이 더 예쁠 것같지만 교환할까하다 소매 길이가 xs이 맞습니다. 교환했음 딸름할 것같아요.\n소재는 가볍고 맘에 듭니다.\n비가 올시 얼마나 도움을 줄지?! 아직 종주때 입어보질 않은지라 \\ 옐로우 재입고 계획이 없어 더스트그린\n바니다스캡이랑 함께 착용하면 예쁠 것같네요.",
+    "created_at": "2021-09-06T00:02:17Z",
+    "writer": "hkso***",
+    "photos": [
+     "collected/50002788-fixtures/images/5460564989/fairwardgolf-review-image-66420a9fcaacb059.webp",
+     "collected/50002788-fixtures/images/5460564989/fairwardgolf-review-image-2beed3cdae2829e3.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "알그론자켓을 xxs착용하고 있는데 사이즈땜에 고민했습니다. Xs을 주문했고, 전체적 사이즈는 xxs이 더 예쁠 것같지만 교환할까하다 소매 길이가 xs이 맞습니다. 교환했음 딸름할 것같아요.\n소재는 가볍고 맘에 듭니다.\n비가 올시 얼마나 도움을 줄지?!  아직 종주때 입어보질 않은지라~\\ 옐로우 재입고 계획이 없어 더스트그린,\n바니다스캡이랑 함께 착용하면 예쁠 것같네요."
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/5460564989/fairwardgolf-5460564989-001-63df04b6bb7ab8c3.webp",
+    "sha256": "63df04b6bb7ab8c34bc28d4ef8714787d35fb38eb33a80bdb11105d7a2b09ac7",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/5460564989/fairwardgolf-5460564989-002-945693e228a56f2b.webp",
+    "sha256": "945693e228a56f2bfff2ef3875986cdae5927942ccb9feb8a70ac667c9c9e343",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/5460564989/fairwardgolf-5460564989-003-a0787ec343c72d85.webp",
+    "sha256": "a0787ec343c72d8580f5150dc814f34f7feaff61cb8a12af45f505d723594186",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/5460564989/fairwardgolf-5460564989-004-72786a555a2af589.webp",
+    "sha256": "72786a555a2af589baafad3403653688ee207c22fe6c3af087fed68fbb70e1a0",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/5460564989/fairwardgolf-5460564989-005-ca9c7c03673295a4.webp",
+    "sha256": "ca9c7c03673295a4815597053d3080ceabee16ce06ad3d0b2146938c61577cfd",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/5460564989/fairwardgolf-5460564989-006-cfd6876c8eeba4a7.webp",
+    "sha256": "cfd6876c8eeba4a7a07f9826c7c52b34eb33f2f2ab16f4d5b72724b47d51bff3",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/5460564989/fairwardgolf-5460564989-007-f3fed2f61d1a0e82.webp",
+    "sha256": "f3fed2f61d1a0e82a9b02f717d9c522e0f77a6ab4ad7839866e8b4f9f00a2eee",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/5460564989/fairwardgolf-5460564989-008-0a6ae06b4a04b85f.webp",
+    "sha256": "0a6ae06b4a04b85faad288596a8842210ba014580a8af24cd77bf9c3e73f5428",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/5460564989/fairwardgolf-5460564989-009-dcd0265fb7134deb.webp",
+    "sha256": "dcd0265fb7134debc20c1816b2a67c372fdfbd6ff6ce8ad6cf0ebb4a6e70e45e",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/5460564989/fairwardgolf-5460564989-010-710b8f2914062908.webp",
+    "sha256": "710b8f2914062908c41f9b5f44c064bb0f96f10ed0f97208d42bcffbac102dfe",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 3000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 3,000원",
+   "lead_time": {
+    "seller_average_days": 1.5714285,
+    "product_average_days": 2.0,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "아신야 자켓은 3레이어 큐탄(3L Cutan®) 소재를 사용해 가볍고 패킹이 용이한 4계절 방수 자켓입니다.\n투웨이 지퍼가 적용되어 아웃도어 활동 시 하단 지퍼를 열어 내부의 땀과 열을 빠르게 배출할 수 있습니다.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260205_169/1770273691050nMOKf_JPEG/%EB%B8%94%EB%A3%A8%EC%82%AC%EC%9D%B8_%EC%86%8C%EC%9E%AC-%EC%84%A4%EB%AA%85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260205_2/17702736961072pCie_JPEG/GRS_%EC%86%8C%EC%9E%AC-%EC%84%A4%EB%AA%85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260724_173/17848496102822EXHm_JPEG/02.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260724_297/1784849610259cMHi5_JPEG/03.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260724_182/17848496103264i13a_JPEG/04.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260724_69/1784849610586VsoYO_JPEG/05.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260724_112/1784849610304UsmJs_JPEG/06.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260724_268/1784849610658eS6Vw_JPEG/06_01.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260724_241/1784849610282EbwP1_JPEG/07.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260724_254/1784849610829bsfKm_JPEG/07_01.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260724_254/1784849610759c1k3H_JPEG/08.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260724_228/1784849611021r7bSs_JPEG/08_01.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260724_233/1784849610264lEunI_JPEG/09.jpg?type=w848"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "주요소재",
+    "value_ko": "기타",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_tops",
+   "option": 1,
+   "values": [
+    {
+     "ko": "XXS사이즈(약80)",
+     "us": "XXS (US 00)",
+     "letter": "XXS",
+     "chest_cm": 80,
+     "basis": "label",
+     "chart_label": null
+    },
+    {
+     "ko": "XS사이즈(약85)",
+     "us": "XS (US 0-2)",
+     "letter": "XS",
+     "chest_cm": 85,
+     "basis": "label",
+     "chart_label": "XS"
+    },
+    {
+     "ko": "S사이즈(약90)",
+     "us": "S (US 4-6)",
+     "letter": "S",
+     "chest_cm": 90,
+     "basis": "label",
+     "chart_label": "S"
+    },
+    {
+     "ko": "M사이즈(약95)",
+     "us": "M (US 8-10)",
+     "letter": "M",
+     "chest_cm": 95,
+     "basis": "label",
+     "chart_label": "M"
+    },
+    {
+     "ko": "L사이즈(약100)",
+     "us": "L (US 12-14)",
+     "letter": "L",
+     "chest_cm": 100,
+     "basis": "label",
+     "chart_label": null
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "chest": "flat",
+     "sleeve": null,
+     "length": null
+    },
+    "rows": [
+     {
+      "us": "XS (US 0-2)",
+      "cm": {
+       "chest": 46.5,
+       "sleeve": 69.0,
+       "length": 69.0
+      }
+     },
+     {
+      "us": "S (US 4-6)",
+      "cm": {
+       "chest": 49.0,
+       "sleeve": 70.0,
+       "length": 71.0
+      }
+     },
+     {
+      "us": "M (US 8-10)",
+      "cm": {
+       "chest": 51.0,
+       "sleeve": 71.5,
+       "length": 73.0
+      }
+     }
+    ]
+   },
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:9829db1775d30a66",
+   "kind": "title",
+   "ko": "[클라터뮤젠] 아신야 자켓 우먼(Asynja Jacket W)"
+  },
+  {
+   "id": "brand:23d0ad1fb8ccef9a",
+   "kind": "brand",
+   "ko": "클라터뮤젠(Klattermusen)"
+  },
+  {
+   "id": "option_name:0baf07d118793364",
+   "kind": "option_name",
+   "ko": "색상을 선택해주세요"
+  },
+  {
+   "id": "option_value:da39830a48328189",
+   "kind": "option_value",
+   "ko": "레이븐(Raven)"
+  },
+  {
+   "id": "option_value:4af5e0c2da272f93",
+   "kind": "option_value",
+   "ko": "더스티옐로우(D Yellow)"
+  },
+  {
+   "id": "option_value:440581bc36262496",
+   "kind": "option_value",
+   "ko": "미드나잇블루(M Blue)"
+  },
+  {
+   "id": "option_value:804b717252038d0a",
+   "kind": "option_value",
+   "ko": "퍼플도브(Purple Dove)"
+  },
+  {
+   "id": "option_value:1dc0679d851457df",
+   "kind": "option_value",
+   "ko": "로즈레드(Rose Red)"
+  },
+  {
+   "id": "option_value:6a2913bcb75e4132",
+   "kind": "option_value",
+   "ko": "더스티로즈(D Rose)"
+  },
+  {
+   "id": "option_value:c803637011ca2c15",
+   "kind": "option_value",
+   "ko": "NEW COLOR_실버크렘(S.Crème)"
+  },
+  {
+   "id": "option_value:6237637b219e836c",
+   "kind": "option_value",
+   "ko": "NEW COLOR_에쉬레드(Ash Red)"
+  },
+  {
+   "id": "option_name:152e1aea950f57a1",
+   "kind": "option_name",
+   "ko": "사이즈를 선택해주세요"
+  },
+  {
+   "id": "option_value:30e8dc19bb180424",
+   "kind": "option_value",
+   "ko": "XXS사이즈(약80)"
+  },
+  {
+   "id": "option_value:05c10f3af783af84",
+   "kind": "option_value",
+   "ko": "XS사이즈(약85)"
+  },
+  {
+   "id": "option_value:c89eac8dff025135",
+   "kind": "option_value",
+   "ko": "S사이즈(약90)"
+  },
+  {
+   "id": "option_value:2bb97cade161985e",
+   "kind": "option_value",
+   "ko": "M사이즈(약95)"
+  },
+  {
+   "id": "option_value:b6885af45ff4bdbe",
+   "kind": "option_value",
+   "ko": "L사이즈(약100)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:23d0ad1fb8ccef9a",
+   "kind": "spec_value",
+   "ko": "클라터뮤젠(Klattermusen)"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:709a732dd46fb0d1",
+   "kind": "spec_value",
+   "ko": "[클라터뮤젠] 아신야 자켓 우먼(Asynja Jakcet W)"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:ff90d7cd3c519c1f",
+   "kind": "spec_value",
+   "ko": "여성용"
+  },
+  {
+   "id": "spec_label:26336d857e5ea726",
+   "kind": "spec_label",
+   "ko": "총기장"
+  },
+  {
+   "id": "spec_value:60229b8f2a957b58",
+   "kind": "spec_value",
+   "ko": "롱"
+  },
+  {
+   "id": "spec_label:e1b56dd677111a7f",
+   "kind": "spec_label",
+   "ko": "형태"
+  },
+  {
+   "id": "spec_value:cad1728117ad01f4",
+   "kind": "spec_value",
+   "ko": "코트형"
+  },
+  {
+   "id": "spec_label:4ca8beff763d4b7f",
+   "kind": "spec_label",
+   "ko": "주요소재"
+  },
+  {
+   "id": "spec_value:2991f61ced07a61e",
+   "kind": "spec_value",
+   "ko": "기타"
+  },
+  {
+   "id": "review:df2b5985f21507ae",
+   "kind": "review",
+   "ko": "착용감 편해요. 원단 터치는 좀 소프트하여 얇게 느껴지나 방풍 기능이 있다하니 겨울에 입어도 될듯해요. 파타고니아 토렌쉘 3L M 입는데 이건 팔길이가 조뮤길고 겨울복장 착용시에도약간 큰듯한 느낌인데 이건 같은 겨울복장 착용해도 착용감 사이즈감도 괜찮아요 색상도 은은하여 예뻐요"
+  },
+  {
+   "id": "review:5b057ae7b9e67534",
+   "kind": "review",
+   "ko": "안쪽이 맨살에도 안붙고 모자도 똥머리하고도 푹덥히고 좋음. 단점유일한건 모자 엄청쪼으고. 복구할때 좌우 맞춰서 펴야한다는것 그외 모두장점 사이즈는 95시켰는데 뭔가 98이 온느낌. 색은 톤다운 차분"
+  },
+  {
+   "id": "review:f5c81ca16f6a4d93",
+   "kind": "review",
+   "ko": "가볍고 색깔도 밝은 그린이라 이쁘고\n아쉽다면 좀 얇아서 쬐금 아쉽습니다\n평상시 55사이즈이고\n안에 엷은 패딩까지 입어도 잘맞습니다"
+  },
+  {
+   "id": "review:8f27308b19fb3e82",
+   "kind": "review",
+   "ko": "저는 어깨가 넓어서 보통 한국사이즈 L 나 XL 를 입는 편인데 클라터뮤젠은 유럽제품이라 그런지 한사이즈 작게 사면 딱 맞아요! M 사이즈 샀고, 팔길이 어깨 딱 떨어지게 잘 맞아요. 너무 튀지 않는 차분한 노란색이라 맘에 드네요! 선물로 스카프도 받았어요"
+  },
+  {
+   "id": "review:77c5a61ed335fb8a",
+   "kind": "review",
+   "ko": "핏이랑 컬러감이 오묘하게 이쁘네요. 평소 상의S사이즈를 구매했었는데 겨울철에 다운이너 입는거 감안해서 m사이즈로 구매했는데 여유가 많지는 않네요. 뒷쪽엉덩이는 완전다 가려줘서 레깅스 입는분들은 편하게 착용가능할듯해요"
+  },
+  {
+   "id": "review:309c8d4382deb31e",
+   "kind": "review",
+   "ko": "클뮤는 사랑입니다! 로즈 레드 색이 너무 마음에 들어서 사이즈가 m 박에 없는데 여유 있게 입으려고 구매했는데 가볍고 부드럽고 신축성이 좋아 착용감도 너무 좋아요 4계절 가능한 방수/방풍 자켓 디자인 색상도 다 너무 예쁘네요"
+  },
+  {
+   "id": "review:d595e542f3bc9c38",
+   "kind": "review",
+   "ko": "85레드로 구매후 겨울 경량자켓 위에 입을 생각에 한사이즈 업해서 미드나잇블루90으로 교환했어요. 엉덩이 아래까지 길게 내려오고 사이즈 많이 여유있어요.\n블루색상 사진도 잘받고 예쁩니다.\n봄가을겨울 활용도 굿!\n요건 클뮤 장바구니에 꼭 넣고 사세요"
+  },
+  {
+   "id": "review:32bab422fe884f1e",
+   "kind": "review",
+   "ko": "알그론자켓을 xxs착용하고 있는데 사이즈땜에 고민했습니다. Xs을 주문했고, 전체적 사이즈는 xxs이 더 예쁠 것같지만 교환할까하다 소매 길이가 xs이 맞습니다. 교환했음 딸름할 것같아요.\n소재는 가볍고 맘에 듭니다.\n비가 올시 얼마나 도움을 줄지?! 아직 종주때 입어보질 않은지라 \\ 옐로우 재입고 계획이 없어 더스트그린\n바니다스캡이랑 함께 착용하면 예쁠 것같네요."
+  }
+ ]
+}

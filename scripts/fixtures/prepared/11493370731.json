@@ -1,0 +1,1820 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:500000592:11493370731",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 8); 2 trimmed"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "선택"
+  },
+  {
+   "code": "paid_addons_left_out",
+   "detail": "19 paid add-ons"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "event_main.jpg, maincopyright.jpg, CSinfo_Majorgolf.jpg"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/majorgolf/products/11493370731",
+  "channel_no": "500000592",
+  "product_id": "11493370731",
+  "category_id": "50002801"
+ },
+ "product": {
+  "title_ko": "아디다스 가을 간절기 써밋 남성 골프 슬랙스 바지 일자핏 남자 스판 신축성 경량 팬츠 웨어",
+  "brand_ko": "아디다스",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "아디다스 가을 간절기 써밋 남성 골프 슬랙스 바지 일자핏 남자 스판 신축성 경량 팬츠 웨어"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "가을 스트레치 골프 바지"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "선택",
+    "values_ko": [
+     "IQ2921 블랙",
+     "IS0541 그레이",
+     "IU2823 베이지",
+     "IU2824 네이비"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "A76 (31인치)",
+     "A79",
+     "A82 (33인치)",
+     "A85",
+     "A88 (35인치)",
+     "A92 (36인치)"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"IQ2921 블랙 A76 (31인치)\"]",
+    "naver_variant_id": "56976837155",
+    "options_ko": [
+     "IQ2921 블랙",
+     "A76 (31인치)"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-f245318952278266a6b783be",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"IQ2921 블랙 A79\"]",
+    "naver_variant_id": "57073682219",
+    "options_ko": [
+     "IQ2921 블랙",
+     "A79"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-ec02240042d9a8159a059630",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"IQ2921 블랙 A82 (33인치)\"]",
+    "naver_variant_id": "60230815750",
+    "options_ko": [
+     "IQ2921 블랙",
+     "A82 (33인치)"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-2f38cc1bfd09f7c19acc64c1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"IQ2921 블랙 A85\"]",
+    "naver_variant_id": "60439337608",
+    "options_ko": [
+     "IQ2921 블랙",
+     "A85"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-1ccc61e70340d6b380258176",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"IS0541 그레이 A79\"]",
+    "naver_variant_id": "57073682217",
+    "options_ko": [
+     "IS0541 그레이",
+     "A79"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-0d5ed1f26fe098bc8861e191",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"IS0541 그레이 A82 (33인치)\"]",
+    "naver_variant_id": "60787928310",
+    "options_ko": [
+     "IS0541 그레이",
+     "A82 (33인치)"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-058feeaa12732b0bc2c704f8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"IS0541 그레이 A85\"]",
+    "naver_variant_id": "60229633198",
+    "options_ko": [
+     "IS0541 그레이",
+     "A85"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-a9c9b7445602e9172b3d7bf5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"IS0541 그레이 A92 (36인치)\"]",
+    "naver_variant_id": "60215539746",
+    "options_ko": [
+     "IS0541 그레이",
+     "A92 (36인치)"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-71a05f3d6178913afe96029f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"IU2823 베이지 A79\"]",
+    "naver_variant_id": "57073682221",
+    "options_ko": [
+     "IU2823 베이지",
+     "A79"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-0d0f9a30a03cb1db4922dcb2",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"IU2823 베이지 A82 (33인치)\"]",
+    "naver_variant_id": "60801287206",
+    "options_ko": [
+     "IU2823 베이지",
+     "A82 (33인치)"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-9b9d5711721ab1d48f4f68da",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"IU2823 베이지 A85\"]",
+    "naver_variant_id": "60474195097",
+    "options_ko": [
+     "IU2823 베이지",
+     "A85"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-148736c0b3e6840aafcdb6db",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"IU2823 베이지 A88 (35인치)\"]",
+    "naver_variant_id": "47125653427",
+    "options_ko": [
+     "IU2823 베이지",
+     "A88 (35인치)"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-8e4cb7d9c86959b4ba1de2f3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"IU2824 네이비 A76 (31인치)\"]",
+    "naver_variant_id": "56976837170",
+    "options_ko": [
+     "IU2824 네이비",
+     "A76 (31인치)"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-3590c78627c2abb1c43e7b57",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"IU2824 네이비 A79\"]",
+    "naver_variant_id": "57073682223",
+    "options_ko": [
+     "IU2824 네이비",
+     "A79"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-3b46f3d9a2960dffb55bbb42",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"IU2824 네이비 A85\"]",
+    "naver_variant_id": "60215539750",
+    "options_ko": [
+     "IU2824 네이비",
+     "A85"
+    ],
+    "price_krw": 80070,
+    "price_usd": "80.07",
+    "sku": "FW-e013699d8b0ed1691653fd44",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 350,
+      "central": 480,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 300,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 80070,
+   "original_krw": 125000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "아디다스"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "아디다스"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "IQ2921 IS0541 IU2823 IU2824"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "인도네시아"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "신축성"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "스판, 폴리에스테르"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "봄, 여름, 가을"
+   },
+   {
+    "label_ko": "충전재",
+    "value_ko": "없음"
+   },
+   {
+    "label_ko": "하의기장",
+    "value_ko": "긴바지"
+   },
+   {
+    "label_ko": "하의핏",
+    "value_ko": "슬림핏, 일자핏"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2024년형"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.73,
+   "count": 156
+  },
+  "reviews": [
+   {
+    "id": "5026780641",
+    "score": 5,
+    "text_ko": "비슷한걸 샀던적이 있어 허리가 밴딩일줄 알았더니 아니였네요. 한치수 크게 사길 잘했네요.\n적당히 잘 맞네요. 길이는 좀 길어서 수선하려구요.",
+    "created_at": "2026-07-22T08:17:24Z",
+    "writer": "yun3***",
+    "photos": [
+     "collected/50002788-fixtures/images/11493370731/fairwardgolf-review-image-18ca7b4381fcde6b.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/11493370731/fairwardgolf-review-avatar-7e22e88a780d338a.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 89,
+    "text_original_ko": "비슷한걸 샀던적이 있어 허리가 밴딩일줄 알았더니 아니였네요..한치수 크게 사길 잘했네요.\n적당히 잘 맞네요..길이는 좀 길어서 수선하려구요."
+   },
+   {
+    "id": "5104331943",
+    "score": 5,
+    "text_ko": "허리 34남편 정사이즈로 딱 맞네요\n슬림핏이고 핏이 이쁩니다\n허리 기장 딱 맞았고 적당히 편하고 시원합니다\n핏이 예뻐 재구매의사 있습니다.",
+    "created_at": "2026-11-11T13:58:15Z",
+    "writer": "tnql*****",
+    "photos": [
+     "collected/50002788-fixtures/images/11493370731/fairwardgolf-review-image-31d20e4f516d59c3.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 89
+   },
+   {
+    "id": "5062794492",
+    "score": 5,
+    "text_ko": "기존에 입던 제품이 시원하코 좋아 구입했습니다.\n다만 입던 제품에 비해 5센치 정도 깁니다.\n바지 수선해 입기는 처음이네요",
+    "created_at": "2026-09-11T13:56:42Z",
+    "writer": "angl****",
+    "photos": [
+     "collected/50002788-fixtures/images/11493370731/fairwardgolf-review-image-d50ef3cfc9d62807.webp",
+     "collected/50002788-fixtures/images/11493370731/fairwardgolf-review-image-b2b3e0cb0552d98e.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 67,
+    "text_original_ko": "기존에 입던 제품이 시원하코 좋아 구입했습니다.\n다만 입던 제품에 비해 5센치 정도 깁니다.\n바지 수선해 입기는 처음이네요 ㅎㅎ"
+   },
+   {
+    "id": "5017750106",
+    "score": 5,
+    "text_ko": "남편 골프복 네이비 컬러가 없어서 구매했어요.\n얇고 후들후들하고 시원한 원단이네요. 네이비 컬러도 너무 블랙끼 도는게 아닌 여름에 입기 딱 예쁜 네이비에요. 남편 키가 작지 않은데 기장은 좀 수선해야 될 정도이구요, 아디다스 공홈 세일 중이라 반팔 셔츠를 구매했는데 어울릴만한 바지가 없어서 구매한건데 아주 마음에 듭니다! 착용컷 대신 코디컷으로 사진 올려볼게요!",
+    "created_at": "2026-07-09T08:51:51Z",
+    "writer": "dahy*****",
+    "photos": [
+     "collected/50002788-fixtures/images/11493370731/fairwardgolf-review-image-a08d72a8b3707317.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "남편 골프복 네이비 컬러가 없어서 구매했어요. \n배송은 결제하자마자 거의 바로 출발했고 다음날 받았습니다. 살에 달라붙는거 절대 못 입는 남편이라 걱정했는데 얇고 후들후들하고 시원한 원단이네요. 네이비 컬러도 너무 블랙끼 도는게 아닌 여름에 입기 딱 예쁜 네이비에요. 남편 키가 작지 않은데 기장은 좀 수선해야 될 정도이구요, 아디다스 공홈 세일 중이라 반팔 셔츠를 구매했는데 어울릴만한 바지가 없어서 네이버에 검색해서 구매한건데 아주 마음에 듭니다!! 착용컷 대신 코디컷으로 사진 올려볼게요!",
+    "text_cut": [
+     "platform",
+     "shipping"
+    ]
+   },
+   {
+    "id": "5009319196",
+    "score": 5,
+    "text_ko": "약간 슬림핏입니다. 덕분에 다리가 길어보이는 착시가. 길이는 살짝 긴 감이 있는데 개인적으로 짧은것보다는 좋습니다. 스판끼가 있어 슬림핏인데도 입었을 때 편합니다. 문제없이 오래 입을 수 있었으면 좋겠네요. 참고로 골프는 안칩니다. 평상복으로 좋아요.",
+    "created_at": "2026-06-29T01:06:44Z",
+    "writer": "kiki*****",
+    "photos": [
+     "collected/50002788-fixtures/images/11493370731/fairwardgolf-review-image-effd4b56698f6793.webp",
+     "collected/50002788-fixtures/images/11493370731/fairwardgolf-review-image-61b597c29a6d5e19.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "약간 슬림핏입니다. 덕분에 다리가 길어보이는 착시가… 길이는 살짝 긴 감이 있는데 개인적으로 짧은것보다는 좋습니다. 스판끼가 있어 슬림핏인데도 입었을 때 편합니다. 문제없이 오래 입을 수 있었으면 좋겠네요. 참고로 골프는 안칩니다. 평상복으로 좋아요."
+   },
+   {
+    "id": "4792055571",
+    "score": 5,
+    "text_ko": "재질 색상 디자인 길이감 만듦새 모두 훌륭합니다\n키에 비해 허리가 굵지않아 대부분의 바지가 허리에 맞추면 다리가 짧아서 기장 맞는 바지를 찾기 어려웠는데 이 바지는 맞춤 옷처럼 너무 잘맞습니다\n특히 아디다스는 사이즈 또한 홀수로 생산해 주시니 세밀하게 맞출 수 있어 너무 감사합니다\n잘 입고 네이비 색상 재고 나오면",
+    "created_at": "2025-08-27T11:34:28Z",
+    "writer": "hiju***",
+    "photos": [
+     "collected/50002788-fixtures/images/11493370731/fairwardgolf-review-image-6c485a1abc0645c0.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "재질 색상 디자인 길이감 만듦새 모두 훌륭합니다\n 키에 비해 허리가 굵지않아 대부분의 바지가 허리에 맞추면 다리가 짧아서 기장 맞는 바지를 찾기 어려웠는데 이 바지는 맞춤 옷처럼 너무 잘맞습니다\n특히 아디다스는 사이즈 또한 홀수로 생산해 주시니 세밀하게 맞출 수 있어 너무 감사합니다\n잘 입고 네이비 색상 재고 나오면 또 주문하겠습니다!!",
+    "text_cut": [
+     "seller"
+    ]
+   },
+   {
+    "id": "5024662009",
+    "score": 5,
+    "text_ko": "디자인 깔끔하고 소재도 신축성 있지만 단단합니다.\n다만 기장이 길어서 수선을 하고 입어야 했어요. 제가 4-5센티미터 정도 잘랐습니다. 180이상이신 분은 약간 길게 그대로 입으실 수 있을 것 같아요",
+    "created_at": "2026-07-19T10:26:12Z",
+    "writer": "dear******",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 79,
+    "text_original_ko": "디자인 깔끔하고 소재도 신축성 있지만 단단합니다. \n다만 기장이 길어서 수선을 하고 입어야 했어요. 제가 4-5센티미터 정도 잘랐습니다. 180이상이신 분은 약간 길게 그대로 입으실 수 있을 것 같아요"
+   },
+   {
+    "id": "5015595098",
+    "score": 5,
+    "text_ko": "편해요. 허리사이즈는 한치수 큰 사이즈 선택하시는게 좋을것 같습니다. 리뷰에 허리치수가 작다는 리뷰가 많아서 한치수 큰거 주문했어요. 디자인 이쁩니다",
+    "created_at": "2026-07-07T01:01:46Z",
+    "writer": "kcj1***",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 75,
+    "text_original_ko": "편해요..허리사이즈는 한치수 큰 사이즈 선택하시는게 좋을것 같습니다. 리뷰에 허리치수가 작다는 리뷰가 많아서 한치수 큰거 주문했어요. . 디자인 이쁩니다~~~"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/11493370731/fairwardgolf-11493370731-001-050336df83f863d9.webp",
+    "sha256": "050336df83f863d9de01908b51fd5d4ad6a28d223edde982daaa351741d9d7c2",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/11493370731/fairwardgolf-11493370731-002-71083bbad4687fe3.webp",
+    "sha256": "71083bbad4687fe3924253ccf2b5987e77f981c51aa23466a7def7ed7b37d34d",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/11493370731/fairwardgolf-11493370731-003-a42f97e10a3a1ca0.webp",
+    "sha256": "a42f97e10a3a1ca0774e339d88d9573b754f5f6cb46659f320b9b938779dd296",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/11493370731/fairwardgolf-11493370731-004-6cea13775e8bb70f.webp",
+    "sha256": "6cea13775e8bb70fdbceaafd14b54da34ceec0fd561e07ce348b566ab5dad9ce",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/11493370731/fairwardgolf-11493370731-005-fb362cf556dc0138.webp",
+    "sha256": "fb362cf556dc01387656e5e1ad3ce0ad3dd045c433d03b8f5f45378da1b07fa6",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/11493370731/fairwardgolf-11493370731-006-cceea88d58d1cd8f.webp",
+    "sha256": "cceea88d58d1cd8f205cb4b86af8bd8d44c992a04530faaab769460fe8c16ee6",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/11493370731/fairwardgolf-11493370731-007-f7cf5fed11ab2e83.webp",
+    "sha256": "f7cf5fed11ab2e8329c82810a04536ee647c59e48cfdc9b48affc66186d5918c",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/11493370731/fairwardgolf-11493370731-008-b05b529b39bea420.webp",
+    "sha256": "b05b529b39bea420642cda0f6bef5b16a2e394a90703994f5ae3749800a456f1",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/11493370731/fairwardgolf-11493370731-009-59ed42bea1d687df.webp",
+    "sha256": "59ed42bea1d687dfa9fff7f0519b140d6612777907db3c1c519f99cd1e0a0372",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/11493370731/fairwardgolf-11493370731-010-1d0f557a4a34f867.webp",
+    "sha256": "1d0f557a4a34f86768a4ae12c9256eb936dced5f0eeb0eb41d768781f6025351",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.2593011,
+    "product_average_days": 1.25,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 96,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20261029_142/1793230728201QCXGI_JPEG/p-11439757948-s-5-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20261029_74/1793230728213DXsEr_JPEG/p-11439757948-s-5-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20261029_17/17932307282025OI2g_JPEG/p-11439757948-s-5-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20261029_82/1793230728204sQk1T_JPEG/p-11439757948-s-5-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20261029_9/1793230728205sKBlJ_JPEG/p-11439757948-s-5-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20261029_229/1793230728206h9DFA_JPEG/p-11439757948-s-5-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20261029_107/1793230728201PH7Ts_JPEG/p-11439757948-s-5-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20261029_127/1793230728205LW1Rd_JPEG/p-11439757948-s-5-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20261029_167/1793230728199UrsgU_JPEG/p-11439757948-s-5-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20261029_58/17932307282050hU0a_JPEG/p-11439757948-s-5-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20261029_78/1793230728283OEeOr_JPEG/p-11439757948-s-5-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20261029_132/1793230728291zQ5Y2_JPEG/p-11439757948-s-5-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20261029_147/1793230728298kiW7g_JPEG/p-11439757948-s-5-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20261029_68/1793230728305ivv9X_JPEG/p-11439757948-s-5-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20261029_134/17932307283115JmYN_JPEG/p-11439757948-s-5-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20261029_144/1793230728302WfFxT_JPEG/p-11439757948-s-5-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20261029_263/1793230728304S5VdJ_JPEG/p-11439757948-s-5-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20261029_196/1793230728309UHNu0_JPEG/p-11439757948-s-5-A-17.jpg",
+   "https://shop-phinf.pstatic.net/20261029_2/1793230728325ypKCh_JPEG/p-11439757948-s-5-A-18.jpg",
+   "https://shop-phinf.pstatic.net/20261029_165/1793230728383K6rjK_JPEG/p-11439757948-s-5-A-19.jpg",
+   "https://shop-phinf.pstatic.net/20261029_226/1793230728388KzGw7_JPEG/p-11439757948-s-5-A-20.jpg",
+   "https://shop-phinf.pstatic.net/20261029_179/1793230728390EmdAd_JPEG/p-11439757948-s-5-A-21.jpg",
+   "https://shop-phinf.pstatic.net/20261029_181/1793230728394n1B6e_JPEG/p-11439757948-s-5-A-22.jpg",
+   "https://shop-phinf.pstatic.net/20261029_33/1793230728406Ka13m_JPEG/p-11439757948-s-5-A-23.jpg",
+   "https://shop-phinf.pstatic.net/20261029_204/1793230728399Q95t5_JPEG/p-11439757948-s-5-A-24.jpg",
+   "https://shop-phinf.pstatic.net/20261029_91/1793230728404mmPgI_JPEG/p-11439757948-s-5-A-25.jpg",
+   "https://shop-phinf.pstatic.net/20261029_41/1793230728406muw4k_JPEG/p-11439757948-s-5-A-26.jpg",
+   "https://shop-phinf.pstatic.net/20261029_294/1793230728409MuiJ1_JPEG/p-11439757948-s-5-A-27.jpg",
+   "https://shop-phinf.pstatic.net/20261029_293/1793230728426uqPE8_JPEG/p-11439757948-s-5-A-28.jpg",
+   "https://shop-phinf.pstatic.net/20261029_168/17932307284824OTUK_JPEG/p-11439757948-s-5-A-29.jpg",
+   "https://shop-phinf.pstatic.net/20261029_121/1793230728484fA0cw_JPEG/p-11439757948-s-5-A-30.jpg",
+   "https://shop-phinf.pstatic.net/20261029_88/1793230728489BrNov_JPEG/p-11439757948-s-5-A-31.jpg"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "스판, 폴리에스테르",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_bottoms",
+   "option": 1,
+   "values": [
+    {
+     "ko": "A76 (31인치)",
+     "us": "W31",
+     "letter": "M",
+     "chest_cm": 76.2,
+     "basis": "waist",
+     "chart_label": "(31)"
+    },
+    {
+     "ko": "A79",
+     "us": "W32",
+     "letter": "L",
+     "chest_cm": 81.3,
+     "basis": "chart_inch",
+     "chart_label": "(32)"
+    },
+    {
+     "ko": "A82 (33인치)",
+     "us": "W33",
+     "letter": "L",
+     "chest_cm": 81.3,
+     "basis": "waist",
+     "chart_label": "(33)"
+    },
+    {
+     "ko": "A85",
+     "us": "W34",
+     "letter": "XL",
+     "chest_cm": 86.4,
+     "basis": "chart_inch",
+     "chart_label": "(34)"
+    },
+    {
+     "ko": "A88 (35인치)",
+     "us": "W35",
+     "letter": "XL",
+     "chest_cm": 86.4,
+     "basis": "waist",
+     "chart_label": "(35)"
+    },
+    {
+     "ko": "A92 (36인치)",
+     "us": "W36",
+     "letter": "XXL",
+     "chest_cm": 91.4,
+     "basis": "waist",
+     "chart_label": "(36)"
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "waist": "flat",
+     "thigh": "flat",
+     "hem": "flat",
+     "length": null
+    },
+    "rows": [
+     {
+      "us": "W31",
+      "cm": {
+       "waist": 40.0,
+       "thigh": 28.5,
+       "hem": 19.5,
+       "length": 109.0
+      }
+     },
+     {
+      "us": "W32",
+      "cm": {
+       "waist": 41.5,
+       "thigh": 29.0,
+       "hem": 19.5,
+       "length": 109.0
+      }
+     },
+     {
+      "us": "W33",
+      "cm": {
+       "waist": 42.5,
+       "thigh": 29.5,
+       "hem": 20.0,
+       "length": 109.0
+      }
+     },
+     {
+      "us": "W34",
+      "cm": {
+       "waist": 44.0,
+       "thigh": 30.0,
+       "hem": 20.0,
+       "length": 109.0
+      }
+     },
+     {
+      "us": "W35",
+      "cm": {
+       "waist": 45.0,
+       "thigh": 31.0,
+       "hem": 20.5,
+       "length": 109.0
+      }
+     },
+     {
+      "us": "W36",
+      "cm": {
+       "waist": 46.0,
+       "thigh": 31.5,
+       "hem": 21.0,
+       "length": 110.0
+      }
+     }
+    ]
+   },
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:4179b2baa7601ebe",
+   "kind": "title",
+   "ko": "아디다스 가을 간절기 써밋 남성 골프 슬랙스 바지 일자핏 남자 스판 신축성 경량 팬츠 웨어"
+  },
+  {
+   "id": "brand:8201e93c449b38b1",
+   "kind": "brand",
+   "ko": "아디다스"
+  },
+  {
+   "id": "option_name:8d1a750c9351d1b8",
+   "kind": "option_name",
+   "ko": "선택"
+  },
+  {
+   "id": "option_value:d3c0e9d928a73aef",
+   "kind": "option_value",
+   "ko": "IQ2921 블랙"
+  },
+  {
+   "id": "option_value:92f8a9881cb70797",
+   "kind": "option_value",
+   "ko": "IS0541 그레이"
+  },
+  {
+   "id": "option_value:a3fac9d605d9713a",
+   "kind": "option_value",
+   "ko": "IU2823 베이지"
+  },
+  {
+   "id": "option_value:910e925bd668b9b9",
+   "kind": "option_value",
+   "ko": "IU2824 네이비"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:32a199f826eb60c0",
+   "kind": "option_value",
+   "ko": "A76 (31인치)"
+  },
+  {
+   "id": "option_value:0970c9327369322a",
+   "kind": "option_value",
+   "ko": "A79"
+  },
+  {
+   "id": "option_value:de6244749f519ca5",
+   "kind": "option_value",
+   "ko": "A82 (33인치)"
+  },
+  {
+   "id": "option_value:6ea642e7f1d81f9b",
+   "kind": "option_value",
+   "ko": "A85"
+  },
+  {
+   "id": "option_value:e90f76ed76b4f128",
+   "kind": "option_value",
+   "ko": "A88 (35인치)"
+  },
+  {
+   "id": "option_value:0082c1fe0f7f5a7c",
+   "kind": "option_value",
+   "ko": "A92 (36인치)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:8201e93c449b38b1",
+   "kind": "spec_value",
+   "ko": "아디다스"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:59ceb0affe7814c1",
+   "kind": "spec_value",
+   "ko": "IQ2921 IS0541 IU2823 IU2824"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:5b327576fae8b359",
+   "kind": "spec_value",
+   "ko": "인도네시아"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:6fa36796eea775e0",
+   "kind": "spec_value",
+   "ko": "신축성"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:307caff7a1a8f46c",
+   "kind": "spec_value",
+   "ko": "스판, 폴리에스테르"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:01e55370d47cf104",
+   "kind": "spec_value",
+   "ko": "봄, 여름, 가을"
+  },
+  {
+   "id": "spec_label:ea32a6046e98fd76",
+   "kind": "spec_label",
+   "ko": "충전재"
+  },
+  {
+   "id": "spec_value:72ea3d64ace5bc94",
+   "kind": "spec_value",
+   "ko": "없음"
+  },
+  {
+   "id": "spec_label:777511e7e585c6f2",
+   "kind": "spec_label",
+   "ko": "하의기장"
+  },
+  {
+   "id": "spec_value:e51b009720d94497",
+   "kind": "spec_value",
+   "ko": "긴바지"
+  },
+  {
+   "id": "spec_label:35e8af68e7a1b980",
+   "kind": "spec_label",
+   "ko": "하의핏"
+  },
+  {
+   "id": "spec_value:340ed540b53cd7a5",
+   "kind": "spec_value",
+   "ko": "슬림핏, 일자핏"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:8040f01b1433a292",
+   "kind": "spec_value",
+   "ko": "2024년형"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "review:1e6a8a2b5ff97553",
+   "kind": "review",
+   "ko": "비슷한걸 샀던적이 있어 허리가 밴딩일줄 알았더니 아니였네요. 한치수 크게 사길 잘했네요.\n적당히 잘 맞네요. 길이는 좀 길어서 수선하려구요."
+  },
+  {
+   "id": "review:95b9bb626e49e942",
+   "kind": "review",
+   "ko": "허리 34남편 정사이즈로 딱 맞네요\n슬림핏이고 핏이 이쁩니다\n허리 기장 딱 맞았고 적당히 편하고 시원합니다\n핏이 예뻐 재구매의사 있습니다."
+  },
+  {
+   "id": "review:cd0f6d67f0da07f7",
+   "kind": "review",
+   "ko": "기존에 입던 제품이 시원하코 좋아 구입했습니다.\n다만 입던 제품에 비해 5센치 정도 깁니다.\n바지 수선해 입기는 처음이네요"
+  },
+  {
+   "id": "review:6ee8d95a15a41d28",
+   "kind": "review",
+   "ko": "남편 골프복 네이비 컬러가 없어서 구매했어요.\n얇고 후들후들하고 시원한 원단이네요. 네이비 컬러도 너무 블랙끼 도는게 아닌 여름에 입기 딱 예쁜 네이비에요. 남편 키가 작지 않은데 기장은 좀 수선해야 될 정도이구요, 아디다스 공홈 세일 중이라 반팔 셔츠를 구매했는데 어울릴만한 바지가 없어서 구매한건데 아주 마음에 듭니다! 착용컷 대신 코디컷으로 사진 올려볼게요!"
+  },
+  {
+   "id": "review:159ac1755afd2caa",
+   "kind": "review",
+   "ko": "약간 슬림핏입니다. 덕분에 다리가 길어보이는 착시가. 길이는 살짝 긴 감이 있는데 개인적으로 짧은것보다는 좋습니다. 스판끼가 있어 슬림핏인데도 입었을 때 편합니다. 문제없이 오래 입을 수 있었으면 좋겠네요. 참고로 골프는 안칩니다. 평상복으로 좋아요."
+  },
+  {
+   "id": "review:e28e795129c71b7d",
+   "kind": "review",
+   "ko": "재질 색상 디자인 길이감 만듦새 모두 훌륭합니다\n키에 비해 허리가 굵지않아 대부분의 바지가 허리에 맞추면 다리가 짧아서 기장 맞는 바지를 찾기 어려웠는데 이 바지는 맞춤 옷처럼 너무 잘맞습니다\n특히 아디다스는 사이즈 또한 홀수로 생산해 주시니 세밀하게 맞출 수 있어 너무 감사합니다\n잘 입고 네이비 색상 재고 나오면"
+  },
+  {
+   "id": "review:569ff6c49782b8ce",
+   "kind": "review",
+   "ko": "디자인 깔끔하고 소재도 신축성 있지만 단단합니다.\n다만 기장이 길어서 수선을 하고 입어야 했어요. 제가 4-5센티미터 정도 잘랐습니다. 180이상이신 분은 약간 길게 그대로 입으실 수 있을 것 같아요"
+  },
+  {
+   "id": "review:30cf542822b2fdda",
+   "kind": "review",
+   "ko": "편해요. 허리사이즈는 한치수 큰 사이즈 선택하시는게 좋을것 같습니다. 리뷰에 허리치수가 작다는 리뷰가 많아서 한치수 큰거 주문했어요. 디자인 이쁩니다"
+  }
+ ]
+}

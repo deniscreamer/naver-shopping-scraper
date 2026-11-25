@@ -1,0 +1,5284 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:100267387:5815131892",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "off_section_variants_left_out",
+   "detail": "36 variants: 아디다스 골프 티셔츠_긴팔, 아디다스 골프 티셔츠_(여름용)반팔, [볼빅] 골프 스판 (반바지)"
+  },
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 8); 1 trimmed"
+  },
+  {
+   "code": "title_names_one_variant",
+   "detail": "바지, 가을"
+  },
+  {
+   "code": "specs_name_one_variant",
+   "detail": "사용계절 가을, 겨울, 봄, 여름: 가을, 겨울"
+  },
+  {
+   "code": "measures_from_images",
+   "detail": "package_height_mm 48/48, package_length_mm 48/48, package_weight_g 48/48, package_width_mm 48/48"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/enjoy_panda/products/5815131892",
+  "channel_no": "100267387",
+  "product_id": "5815131892",
+  "category_id": "50002801"
+ },
+ "product": {
+  "title_ko": "아디다스 골프 바지 남성 여름 골프웨어 봄 가을 남자 슬림핏 스판 긴바지 기능성",
+  "brand_ko": "아디다스",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "아디다스 골프 바지 남성 여름 골프웨어 봄 가을 남자 슬림핏 스판 긴바지 기능성"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "가을 스트레치 골프 바지"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "상품 선택",
+    "values_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "아디다스[가을/겨울] 골프 바지_긴바지",
+     "아디다스[겨울 본딩기모] 골프 바지_긴바지",
+     "아디다스 골프 긴바지_CLIMACOOL 여름용"
+    ]
+   },
+   {
+    "name_ko": "컬러 선택",
+    "values_ko": [
+     "네이비",
+     "스카이",
+     "그레이",
+     "블랙",
+     "그레이포멜란지",
+     "라이트 그레이"
+    ]
+   },
+   {
+    "name_ko": "사이즈 선택",
+    "values_ko": [
+     "82(32)",
+     "85(33)",
+     "85(35)",
+     "88(34)",
+     "88(35)",
+     "92(36)"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"네이비\",\"82(32)\"]",
+    "naver_variant_id": "47276789498",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "네이비",
+     "82(32)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-55302ef151aa6e37970e9820",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"네이비\",\"85(33)\"]",
+    "naver_variant_id": "47276789500",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "네이비",
+     "85(33)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-8b42694c6af966d38c69d7dd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"네이비\",\"88(34)\"]",
+    "naver_variant_id": "47276789502",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "네이비",
+     "88(34)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-6e4aaa962d2fd56f8f375916",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"네이비\",\"92(36)\"]",
+    "naver_variant_id": "47276789504",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "네이비",
+     "92(36)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-c461c08896f47aaa649882bd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"스카이\",\"82(32)\"]",
+    "naver_variant_id": "47276789506",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "스카이",
+     "82(32)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-ddbf51cf12c21932e5541904",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"스카이\",\"85(33)\"]",
+    "naver_variant_id": "47276789508",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "스카이",
+     "85(33)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-58aaa81ab23ecabe6271ac1c",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"스카이\",\"88(34)\"]",
+    "naver_variant_id": "47276789510",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "스카이",
+     "88(34)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-032c6e02ffa35cc88c9f78ba",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"스카이\",\"92(36)\"]",
+    "naver_variant_id": "47276789512",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "스카이",
+     "92(36)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-19b4eadb0ac9791a6a0bc351",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"그레이\",\"82(32)\"]",
+    "naver_variant_id": "47276789514",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "그레이",
+     "82(32)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-535d3476b82e3847331fd8ec",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"그레이\",\"85(33)\"]",
+    "naver_variant_id": "47276789516",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "그레이",
+     "85(33)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-05b64669d7a86dc4b770157c",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"그레이\",\"88(34)\"]",
+    "naver_variant_id": "47276789518",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "그레이",
+     "88(34)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-bbe22ed72feaa9e42de0b3a3",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"그레이\",\"92(36)\"]",
+    "naver_variant_id": "47276789520",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "그레이",
+     "92(36)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-2a0e0483c21a62ea395e5dd7",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"블랙\",\"82(32)\"]",
+    "naver_variant_id": "47276789522",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "블랙",
+     "82(32)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-200a133f7b843e619b8f4102",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"블랙\",\"85(33)\"]",
+    "naver_variant_id": "47276789524",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "블랙",
+     "85(33)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-83a24365de98af2163036269",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"블랙\",\"88(34)\"]",
+    "naver_variant_id": "47276789526",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "블랙",
+     "88(34)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-652cd33b77336fc4f1bb55c1",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 바지_긴바지(SS_26년형)\",\"블랙\",\"92(36)\"]",
+    "naver_variant_id": "47276789528",
+    "options_ko": [
+     "아디다스 골프 바지_긴바지(SS_26년형)",
+     "블랙",
+     "92(36)"
+    ],
+    "price_krw": 54980,
+    "price_usd": "54.98",
+    "sku": "FW-0022644284026d65808a4f02",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[가을/겨울] 골프 바지_긴바지\",\"네이비\",\"82(32)\"]",
+    "naver_variant_id": "47276789530",
+    "options_ko": [
+     "아디다스[가을/겨울] 골프 바지_긴바지",
+     "네이비",
+     "82(32)"
+    ],
+    "price_krw": 74970,
+    "price_usd": "74.97",
+    "sku": "FW-e7c2de5eed6d5015d3c5d2d7",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[가을/겨울] 골프 바지_긴바지\",\"네이비\",\"85(33)\"]",
+    "naver_variant_id": "47276789533",
+    "options_ko": [
+     "아디다스[가을/겨울] 골프 바지_긴바지",
+     "네이비",
+     "85(33)"
+    ],
+    "price_krw": 74970,
+    "price_usd": "74.97",
+    "sku": "FW-be30d66ccd718c8aec076ff8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[가을/겨울] 골프 바지_긴바지\",\"네이비\",\"88(34)\"]",
+    "naver_variant_id": "47276789535",
+    "options_ko": [
+     "아디다스[가을/겨울] 골프 바지_긴바지",
+     "네이비",
+     "88(34)"
+    ],
+    "price_krw": 74970,
+    "price_usd": "74.97",
+    "sku": "FW-82041e6b615d53f62586f9a2",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[가을/겨울] 골프 바지_긴바지\",\"네이비\",\"92(36)\"]",
+    "naver_variant_id": "47276789537",
+    "options_ko": [
+     "아디다스[가을/겨울] 골프 바지_긴바지",
+     "네이비",
+     "92(36)"
+    ],
+    "price_krw": 74970,
+    "price_usd": "74.97",
+    "sku": "FW-ce498fb8d6b72b55cb164607",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[가을/겨울] 골프 바지_긴바지\",\"블랙\",\"82(32)\"]",
+    "naver_variant_id": "47276789538",
+    "options_ko": [
+     "아디다스[가을/겨울] 골프 바지_긴바지",
+     "블랙",
+     "82(32)"
+    ],
+    "price_krw": 74970,
+    "price_usd": "74.97",
+    "sku": "FW-3cbe59e0136d5eab75224d02",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[가을/겨울] 골프 바지_긴바지\",\"블랙\",\"85(33)\"]",
+    "naver_variant_id": "47276789539",
+    "options_ko": [
+     "아디다스[가을/겨울] 골프 바지_긴바지",
+     "블랙",
+     "85(33)"
+    ],
+    "price_krw": 74970,
+    "price_usd": "74.97",
+    "sku": "FW-b3f95fc46638e587bdb8e540",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[가을/겨울] 골프 바지_긴바지\",\"블랙\",\"88(34)\"]",
+    "naver_variant_id": "47276789540",
+    "options_ko": [
+     "아디다스[가을/겨울] 골프 바지_긴바지",
+     "블랙",
+     "88(34)"
+    ],
+    "price_krw": 74970,
+    "price_usd": "74.97",
+    "sku": "FW-8f9c1b5d3ba273700578da10",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[가을/겨울] 골프 바지_긴바지\",\"블랙\",\"92(36)\"]",
+    "naver_variant_id": "47276789541",
+    "options_ko": [
+     "아디다스[가을/겨울] 골프 바지_긴바지",
+     "블랙",
+     "92(36)"
+    ],
+    "price_krw": 74970,
+    "price_usd": "74.97",
+    "sku": "FW-cec7a5f4ce641eaf6c801ae7",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[겨울 본딩기모] 골프 바지_긴바지\",\"그레이\",\"82(32)\"]",
+    "naver_variant_id": "51491879701",
+    "options_ko": [
+     "아디다스[겨울 본딩기모] 골프 바지_긴바지",
+     "그레이",
+     "82(32)"
+    ],
+    "price_krw": 89970,
+    "price_usd": "89.97",
+    "sku": "FW-68a5973107a292bcb8e74774",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 700,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 60,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[겨울 본딩기모] 골프 바지_긴바지\",\"그레이\",\"85(33)\"]",
+    "naver_variant_id": "51491879702",
+    "options_ko": [
+     "아디다스[겨울 본딩기모] 골프 바지_긴바지",
+     "그레이",
+     "85(33)"
+    ],
+    "price_krw": 89970,
+    "price_usd": "89.97",
+    "sku": "FW-043a185584b427fbb46531ad",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 700,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 60,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[겨울 본딩기모] 골프 바지_긴바지\",\"그레이\",\"88(35)\"]",
+    "naver_variant_id": "51491879703",
+    "options_ko": [
+     "아디다스[겨울 본딩기모] 골프 바지_긴바지",
+     "그레이",
+     "88(35)"
+    ],
+    "price_krw": 89970,
+    "price_usd": "89.97",
+    "sku": "FW-c2eac4ab93257475b81d31ea",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 700,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 60,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[겨울 본딩기모] 골프 바지_긴바지\",\"그레이\",\"92(36)\"]",
+    "naver_variant_id": "51491879704",
+    "options_ko": [
+     "아디다스[겨울 본딩기모] 골프 바지_긴바지",
+     "그레이",
+     "92(36)"
+    ],
+    "price_krw": 89970,
+    "price_usd": "89.97",
+    "sku": "FW-5ef8c95947bd2e92c1dd71ee",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 700,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 60,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[겨울 본딩기모] 골프 바지_긴바지\",\"블랙\",\"82(32)\"]",
+    "naver_variant_id": "52973793592",
+    "options_ko": [
+     "아디다스[겨울 본딩기모] 골프 바지_긴바지",
+     "블랙",
+     "82(32)"
+    ],
+    "price_krw": 89970,
+    "price_usd": "89.97",
+    "sku": "FW-e82a8984919f0a4daee6d0d9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 700,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 60,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[겨울 본딩기모] 골프 바지_긴바지\",\"블랙\",\"85(35)\"]",
+    "naver_variant_id": "52973793593",
+    "options_ko": [
+     "아디다스[겨울 본딩기모] 골프 바지_긴바지",
+     "블랙",
+     "85(35)"
+    ],
+    "price_krw": 89970,
+    "price_usd": "89.97",
+    "sku": "FW-4531a6ea03cb80177560654b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 700,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 60,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[겨울 본딩기모] 골프 바지_긴바지\",\"블랙\",\"88(35)\"]",
+    "naver_variant_id": "52973793594",
+    "options_ko": [
+     "아디다스[겨울 본딩기모] 골프 바지_긴바지",
+     "블랙",
+     "88(35)"
+    ],
+    "price_krw": 89970,
+    "price_usd": "89.97",
+    "sku": "FW-c330cc78b74cfb24a3ca221e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 700,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 60,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[겨울 본딩기모] 골프 바지_긴바지\",\"블랙\",\"92(36)\"]",
+    "naver_variant_id": "52973793595",
+    "options_ko": [
+     "아디다스[겨울 본딩기모] 골프 바지_긴바지",
+     "블랙",
+     "92(36)"
+    ],
+    "price_krw": 89970,
+    "price_usd": "89.97",
+    "sku": "FW-b2f73af31abf4eed65df8623",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 700,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 60,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 긴바지_CLIMACOOL 여름용\",\"그레이포멜란지\",\"82(32)\"]",
+    "naver_variant_id": "56900085066",
+    "options_ko": [
+     "아디다스 골프 긴바지_CLIMACOOL 여름용",
+     "그레이포멜란지",
+     "82(32)"
+    ],
+    "price_krw": 60970,
+    "price_usd": "60.97",
+    "sku": "FW-e1a35ee2c3227358f2e9a209",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 긴바지_CLIMACOOL 여름용\",\"그레이포멜란지\",\"85(33)\"]",
+    "naver_variant_id": "56900085067",
+    "options_ko": [
+     "아디다스 골프 긴바지_CLIMACOOL 여름용",
+     "그레이포멜란지",
+     "85(33)"
+    ],
+    "price_krw": 60970,
+    "price_usd": "60.97",
+    "sku": "FW-96e8e2231503922abd4c4610",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 긴바지_CLIMACOOL 여름용\",\"그레이포멜란지\",\"88(34)\"]",
+    "naver_variant_id": "56900085068",
+    "options_ko": [
+     "아디다스 골프 긴바지_CLIMACOOL 여름용",
+     "그레이포멜란지",
+     "88(34)"
+    ],
+    "price_krw": 60970,
+    "price_usd": "60.97",
+    "sku": "FW-82b4672b0b37ac27106a5be4",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 긴바지_CLIMACOOL 여름용\",\"그레이포멜란지\",\"92(36)\"]",
+    "naver_variant_id": "56900085069",
+    "options_ko": [
+     "아디다스 골프 긴바지_CLIMACOOL 여름용",
+     "그레이포멜란지",
+     "92(36)"
+    ],
+    "price_krw": 60970,
+    "price_usd": "60.97",
+    "sku": "FW-a5658237bb4b030f8a9d1f19",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 긴바지_CLIMACOOL 여름용\",\"블랙\",\"82(32)\"]",
+    "naver_variant_id": "56900085070",
+    "options_ko": [
+     "아디다스 골프 긴바지_CLIMACOOL 여름용",
+     "블랙",
+     "82(32)"
+    ],
+    "price_krw": 60970,
+    "price_usd": "60.97",
+    "sku": "FW-ff496b0ec975da7fc1901682",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 긴바지_CLIMACOOL 여름용\",\"블랙\",\"85(33)\"]",
+    "naver_variant_id": "56900085071",
+    "options_ko": [
+     "아디다스 골프 긴바지_CLIMACOOL 여름용",
+     "블랙",
+     "85(33)"
+    ],
+    "price_krw": 60970,
+    "price_usd": "60.97",
+    "sku": "FW-131b597845ef9c41c312efc8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 긴바지_CLIMACOOL 여름용\",\"블랙\",\"88(34)\"]",
+    "naver_variant_id": "56900085072",
+    "options_ko": [
+     "아디다스 골프 긴바지_CLIMACOOL 여름용",
+     "블랙",
+     "88(34)"
+    ],
+    "price_krw": 60970,
+    "price_usd": "60.97",
+    "sku": "FW-85efde4f9f7e8f235a373475",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 긴바지_CLIMACOOL 여름용\",\"블랙\",\"92(36)\"]",
+    "naver_variant_id": "56900085073",
+    "options_ko": [
+     "아디다스 골프 긴바지_CLIMACOOL 여름용",
+     "블랙",
+     "92(36)"
+    ],
+    "price_krw": 60970,
+    "price_usd": "60.97",
+    "sku": "FW-937a4923a6e9691d1b34d63b",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 긴바지_CLIMACOOL 여름용\",\"라이트 그레이\",\"82(32)\"]",
+    "naver_variant_id": "56900085074",
+    "options_ko": [
+     "아디다스 골프 긴바지_CLIMACOOL 여름용",
+     "라이트 그레이",
+     "82(32)"
+    ],
+    "price_krw": 60970,
+    "price_usd": "60.97",
+    "sku": "FW-36b3a39643b0294d598dd96f",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 긴바지_CLIMACOOL 여름용\",\"라이트 그레이\",\"85(33)\"]",
+    "naver_variant_id": "56900085075",
+    "options_ko": [
+     "아디다스 골프 긴바지_CLIMACOOL 여름용",
+     "라이트 그레이",
+     "85(33)"
+    ],
+    "price_krw": 60970,
+    "price_usd": "60.97",
+    "sku": "FW-1e8ff97c92eed6ffcb6716a9",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 긴바지_CLIMACOOL 여름용\",\"라이트 그레이\",\"88(34)\"]",
+    "naver_variant_id": "56900085076",
+    "options_ko": [
+     "아디다스 골프 긴바지_CLIMACOOL 여름용",
+     "라이트 그레이",
+     "88(34)"
+    ],
+    "price_krw": 60970,
+    "price_usd": "60.97",
+    "sku": "FW-066f1e3249841863b77d60d6",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스 골프 긴바지_CLIMACOOL 여름용\",\"라이트 그레이\",\"92(36)\"]",
+    "naver_variant_id": "56900085077",
+    "options_ko": [
+     "아디다스 골프 긴바지_CLIMACOOL 여름용",
+     "라이트 그레이",
+     "92(36)"
+    ],
+    "price_krw": 60970,
+    "price_usd": "60.97",
+    "sku": "FW-ea4b7c8780d7a28fc9854d95",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 250,
+      "central": 380,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 480,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 50,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[겨울 본딩기모] 골프 바지_긴바지\",\"네이비\",\"82(32)\"]",
+    "naver_variant_id": "60310548617",
+    "options_ko": [
+     "아디다스[겨울 본딩기모] 골프 바지_긴바지",
+     "네이비",
+     "82(32)"
+    ],
+    "price_krw": 89970,
+    "price_usd": "89.97",
+    "sku": "FW-4ec695009640f3c8f6876771",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 700,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 60,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[겨울 본딩기모] 골프 바지_긴바지\",\"네이비\",\"85(33)\"]",
+    "naver_variant_id": "60310548618",
+    "options_ko": [
+     "아디다스[겨울 본딩기모] 골프 바지_긴바지",
+     "네이비",
+     "85(33)"
+    ],
+    "price_krw": 89970,
+    "price_usd": "89.97",
+    "sku": "FW-65b7796ffb7a4fbb92be8624",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 700,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 60,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[겨울 본딩기모] 골프 바지_긴바지\",\"네이비\",\"88(34)\"]",
+    "naver_variant_id": "60310548619",
+    "options_ko": [
+     "아디다스[겨울 본딩기모] 골프 바지_긴바지",
+     "네이비",
+     "88(34)"
+    ],
+    "price_krw": 89970,
+    "price_usd": "89.97",
+    "sku": "FW-21e07986332e1440b100d499",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 700,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 60,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"아디다스[겨울 본딩기모] 골프 바지_긴바지\",\"네이비\",\"92(36)\"]",
+    "naver_variant_id": "60310548620",
+    "options_ko": [
+     "아디다스[겨울 본딩기모] 골프 바지_긴바지",
+     "네이비",
+     "92(36)"
+    ],
+    "price_krw": 89970,
+    "price_usd": "89.97",
+    "sku": "FW-68c3c707ca4ec331cb688914",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 1400,
+       "max": 1400
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 700,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 210,
+       "max": 210
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 300,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 150,
+       "max": 150
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 240,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 100,
+       "max": 100
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "크기: 패키지: W21 x L15 x H10cm, 1.4kg",
+      "from": "description_text",
+      "compared": {
+       "value": 60,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 54980,
+   "original_krw": 89990,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "BOWKER(VIETNAM) GARMENT FTY"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "아디다스"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "베트남산"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "자외선차단, 신축성, 방수"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 스판덱스"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "가을, 겨울, 봄, 여름"
+   },
+   {
+    "label_ko": "충전재",
+    "value_ko": "없음"
+   },
+   {
+    "label_ko": "하의기장",
+    "value_ko": "긴바지"
+   },
+   {
+    "label_ko": "하의핏",
+    "value_ko": "슬림핏, 일자핏"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2024년형"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.69,
+   "count": 818
+  },
+  "reviews": [
+   {
+    "id": "5004813545",
+    "score": 5,
+    "text_ko": "요즘 잦은 술로 배불뚝 유부남인데요 키가작아서 길이는 수선해야하고 천두께는 아주얇아서 좋고 핏도 좋아요 근데 골반바지가 아니라서 배많이나온분은 한치수크게입는게좋습니다",
+    "created_at": "2026-06-23T03:51:19Z",
+    "writer": "juni****",
+    "photos": [
+     "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-image-405d791fdded65e4.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-avatar-2389cf9a0a415364.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 93
+   },
+   {
+    "id": "4729478564",
+    "score": 4,
+    "text_ko": "남편 구매해 줫습니다 사이즈가 약간 슬림하게 나왔다는 평을 보고 한치수 크게 주문했는데 배나온 남편한테 좀 여유있고 좋네요 길이가 길어 수선갑니다",
+    "created_at": "2025-05-24T02:04:48Z",
+    "writer": "khj6***",
+    "photos": [
+     "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-image-264e3724c698cfe7.webp",
+     "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-image-9ffc81efad0795bc.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-avatar-0c9563de89660a66.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 90
+   },
+   {
+    "id": "4220966205",
+    "score": 4,
+    "text_ko": "일단 봄 옷이 너무 얇아 6월이후나 여름에 입어야겠어요. 내키도 작지안 기장이 너무길어 종아니까지 잘라서 있어야하는데 기장수선비도 만민않아요",
+    "created_at": "2023-03-30T00:17:16Z",
+    "writer": "kmy4***",
+    "photos": [
+     "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-image-981f0220f5600cd5.webp",
+     "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-image-d675f03db8a6234e.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-avatar-fc5c9863db904857.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 90,
+    "text_original_ko": "일단 봄 옷이 너무 얇아 6월이후나 여름에 입어야겠어요.내키도 작지안 기장이 너무길어 종아니까지 잘라서 있어야하는데 기장수선비도 만민않아요"
+   },
+   {
+    "id": "3284296862",
+    "score": 5,
+    "text_ko": "재질이 도톰해서 간절기에 입기 딱 좋은것 같아요 신랑이 라운딩 간다고 사줬는데 핏도 딱 깔끔하게 떨어져서 이쁘네요 사이즈가 재질이 도톰하다보니 한사이즈 여유있게 사는것도 괜찮을 것 같습니다.",
+    "created_at": "2021-10-19T03:17:32Z",
+    "writer": "whs1***",
+    "photos": [
+     "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-image-e8b4631ea3288a35.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-avatar-c4cc0e0de70f63ed.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 95
+   },
+   {
+    "id": "3278928806",
+    "score": 5,
+    "text_ko": "소재가 도톰해서 가을 초겨울까지 입을 수 있을 것 같아요! 받았을 때 생각했던 것 보다 색상이 조금 연했는데 블랙이랑 같이 입으니 너무 잘 어울리네요. 아디다스 아래 위 세트로 구매했는데 사이즈도 딱이에요 신랑이 좋아하네요!",
+    "created_at": "2021-10-12T01:58:04Z",
+    "writer": "whs1***",
+    "photos": [
+     "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-image-58d4ccc7a3272da1.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-avatar-c4cc0e0de70f63ed.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 97
+   },
+   {
+    "id": "4457195829",
+    "score": 4,
+    "text_ko": "전체적으로는 편한데 허벅지부분과 골반쪽은 타이트하고 허리는 오히려 좀 크네요 서구형 디자인?\n판매상품하고 로고도 다르고 위치도 다르고 기분이 좋지 않네요\n제 체형에는 별로지만 신축은 좋아서 걍 반품 안하기로.",
+    "created_at": "2024-04-06T04:57:14Z",
+    "writer": "kk****",
+    "photos": [
+     "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-image-a20a52c0b7812152.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 3,
+    "text_grade": "full",
+    "text_quality": 97,
+    "text_original_ko": "전체적으로는 편한데 허벅지부분과 골반쪽은 타이트하고 허리는 오히려 좀 크네요 서구형 디자인..?\n판매상품하고 배송온거하고는 좀 다르네요 로고도 다르고 위치도 다르고 기분이 좋지 않네요\n제 체형에는 별로지만 신축은 좋아서 걍 반품 안하기로..",
+    "text_cut": [
+     "shipping"
+    ]
+   },
+   {
+    "id": "4455077939",
+    "score": 4,
+    "text_ko": "허리가 넉넉하네요 길이는 잘라입어야할 정도로 깁니다 한치수 작게 사도 될 것 같아요\n착용감이 좋고 편해서 골프칠 때 아주 좋을 것 같아요",
+    "created_at": "2024-04-03T00:33:31Z",
+    "writer": "tops******",
+    "photos": [
+     "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-image-131cafb87b909845.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 89,
+    "text_original_ko": "허리가 넉넉하네요 길이는 잘라입어야할 정도로 깁니다 한치수 작게 사도 될 것 같아요 \n착용감이 좋고 편해서 골프칠 때 아주 좋을 것 같아요"
+   },
+   {
+    "id": "3339013117",
+    "score": 5,
+    "text_ko": "11월 끝무렵 라운딩을 위해 구입하였습니다.\n바지가 상당히 따뜻하고 편안했습니다.\n기모가 불편한 수준은 아닙니다.\n슬림한 통크기로 저는 상당히 만족하였습니다.\n웬만하면 바지 길이는 무조건 수선을 해야할 정도입니다. 미리 주문하셔서 수선하시길 바랍니다.",
+    "created_at": "2022-01-04T12:37:33Z",
+    "writer": "kell***",
+    "photos": [
+     "collected/50002788-fixtures/images/5815131892/fairwardgolf-review-image-4c6303df85f03a3f.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 2,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "11월 끝무렵 라운딩을 위해 구입하였습니다.\n바지가 상당히 따뜻하고 편안했습니다.\n기모가 불편한 수준은 아닙니다.\n슬림한 통크기로 저는 상당히 만족하였습니다.\n\n웬만하면 바지 길이는 무조건 수선을 해야할 정도입니다. 미리 주문하셔서 수선하시길 바랍니다."
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/5815131892/fairwardgolf-5815131892-001-b0b16e6c565d7e88.webp",
+    "sha256": "b0b16e6c565d7e88d27056c61c7fdada78e3cea615916a91344f48b3ef44074f",
+    "width": 1280,
+    "height": 1280
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/5815131892/fairwardgolf-5815131892-002-6134893b5b5cb5e8.webp",
+    "sha256": "6134893b5b5cb5e80edbb1c9dc9c5a5bf7db58be245c11517bd39f3785c1c268",
+    "width": 1200,
+    "height": 1200
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/5815131892/fairwardgolf-5815131892-003-0eeea55c1c34c5f3.webp",
+    "sha256": "0eeea55c1c34c5f3406b15a180cb17fbddc1f48b64cb244b47c15a44768e607c",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/5815131892/fairwardgolf-5815131892-004-e2de6c3e12dae34b.webp",
+    "sha256": "e2de6c3e12dae34bcdafccc0487c3c294828659902588be31fb04858187e816b",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/5815131892/fairwardgolf-5815131892-005-ac45f7b6f8cf9095.webp",
+    "sha256": "ac45f7b6f8cf90953605e8972ad15085f55bf3f3a680834654795e1cff714e0a",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/5815131892/fairwardgolf-5815131892-006-0cf44262095d5b0c.webp",
+    "sha256": "0cf44262095d5b0c4b26079d0dcb9ddd8dbee44c96d7145e55b23999b743967d",
+    "width": 750,
+    "height": 750
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/5815131892/fairwardgolf-5815131892-007-6f6ef2c7ae6cb49b.webp",
+    "sha256": "6f6ef2c7ae6cb49b6eb9d6a5d6bcffb74b644b5f4ddd95b327fd84b709c91bdd",
+    "width": 750,
+    "height": 750
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/5815131892/fairwardgolf-5815131892-008-9b1de86b980a340f.webp",
+    "sha256": "9b1de86b980a340fa155905dec63267e3b9eadb34b88ee417bb711c8b8fc1c9c",
+    "width": 750,
+    "height": 705
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/5815131892/fairwardgolf-5815131892-009-eaee4c8d2bcaaa83.webp",
+    "sha256": "eaee4c8d2bcaaa83794e1ef972db1fcd027e35b39b42a5ce939e77884d0ddb45",
+    "width": 750,
+    "height": 750
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/5815131892/fairwardgolf-5815131892-010-f706af05190b3c8d.webp",
+    "sha256": "f706af05190b3c8d66e27f6e39c6143503d34bb9fbfd0091b40ab945feeec4d3",
+    "width": 1500,
+    "height": 1500
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.8993288,
+    "product_average_days": null,
+    "today_cutoff": "13:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.26.(목)",
+    "arrival_probability": 98,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "고객님들께 조금이라도 더\n빠른배송을 위해서\n위 상품은 오늘출발 시간에 관계없이\n재고여부에 따라서\n평일 오후3시까지 주문시\n최대한 당일 출고 하겠습니다.\n\nNEW 26년형 여름용소재\nCLIMACOOL 제품 입고\n골프 긴바지 신축성 甲 출시\n(아디다스 골프 긴바지_CLIMACOOL 여름용\n옵션 상품에 한함)\n\n아디다스 남성 골프 긴바지\nCLIMACOOL 여름용 스판 긴바지\n쾌적하고 시원한 착용감\n\n아디다스 남성 골프 긴바지\nCLIMACOOL\n블랙\n\n아디다스 남성 골프 긴바지\nCLIMACOOL\n그레이포멜란지\n\n아디다스 남성 골프 긴바지\nCLIMACOOL\n라이트 그레이\n\n제품 특징\n더 얇아지고 시원해진 소재로 길어진 여름 쾌적하게 착용 가능\nCLIMACOOL 제품으로 빠른 건조, 빠른 흡수, 쾌적한 통기성이 특징으로 시원한 착용감 유지\n제품 사양\n브랜드 : 아디다스 골프 (Adidas Golf)\n색상 : 그레이포멜란지, 라이트그레이, 블랙\n사이즈 : 82(32), 85(33), 88(34), 92(36)\n소재 : 폴리에스터 86%, 엘라스틴 14%\n\n품명 | 아디다스 골프 남성 바지\n색상 | 그레이포멜란지, 라이트 그레이, 블랙\n크기 | 82(32) - 허리둘레 81cm, 힙 100cm, 인심 83cm; 85(33) - 허리둘레 84cm, 힙 103cm, 인심 83cm; 88(34) - 허리둘레 87cm, 힙 106cm, 인심 83cm; 92(36) - 허리둘레 91cm, 힙 110cm, 인심 83cm; 제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n주요소재 (제품 소재) | 폴리에스터 86%, 엘라스틴 14%\n제조자/수입자 | BOWKER (VIET NAM) GARMENT FTY / 아디다스코리아(유)\n제조국 또는 원산지 | 베트남\n세탁방법 및 취급시 주의사항 | 본 제품은 섬유유연제를 사용하지 마십시오.; 본 제품은 세탁 시 유사한 색상끼리 세탁하십시오.; 본 제품은 세탁 후 즉시 꺼내 주십시오.; 본 제품의 나염이나 자수(문양) 부분은 다림질하지 마십시오.; 본 제품은 세탁망에 넣어서 세탁하십시오.; 심한 마찰로 인해 보풀이 발생할 수 있습니다.; 본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고, 부착된 장신구 등은 강한 충격에 의해 파손될 수 있으니 유의하십시오.; 제품 소재에 따라 피부가 민감하신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.; 강한 마찰에 의한 화상 위험이 있으니 유의하십시오.; 건조 시에는 강한 햇볕을 피하고 통풍이 잘되는 그늘에서 건조하십시오.; 나염 부위는 절대로 다림질이나 열 건조를 하지 마십시오.; 나염 부위가 장시간 다른 물건 등에 밀착되어 있는 경우, 나염이 손상되거나 다른 물건에 묻어날 수 있습니다.; 나염된 로고 등은 착용일로부터 1년이 지나면 일부 또는 전부가 떨어질 수 있습니다.; 금속 부자재는 물세탁 시 녹이 발생할 수 있습니다.; 금속 부자재는 착용자의 체질에 따라 피부 알레르기를 유발할 수 있습니다.; 의류에 부착된 액세서리는 반드시 제거하신 후 세탁하시기 바랍니다.; 폴리에스터 등 특정 원단이 사용된 제품의 경우, 외부 자극에 의해 올 트임이나 올 나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.; 주머니가 깊지 않은 제품의 경우, 보행이나 운동 시 주머니 속의 물건이 밖으로 빠질 수 있으니 유의하시기 바랍니다.\n제조연월 | 2026년 1월\n품질보증기준 | 관련 법령 및 공정거래위원회의 소비자분쟁해결 기준에 따름\n\n아디다스 골프바지 긴바지\n봄/ 가을용\n\n제품 특징\n신축성이 우수한 레귤러 핏의 기본 바지\n허리 안쪽 밴드로 편안한 착용감 제공\n오른쪽 뒷 포켓 위 톤온톤 마운틴 로고 포인트\n제품 사양\n브랜드 : 아디다스 골프 (Adidas Golf)\n색상 : 블랙, 네이비, 그레이\n사이즈 : 82(M),85(L),88(XL),92(XXL)\n소재 : 재생 폴리에스터 88%, 스판덱스 12%\n제품 치수\n82(M) - 허리둘레 82.0cm, 힙 95.8cm, 인심 85.0cm\n85(L) - 허리둘레 85.0cm, 힙 98.8cm, 인심 85.0cm\n88(XL) - 허리둘레 88.0cm, 힙 101.8cm, 인심 85.0cm\n92(XXL) - 허리둘레 92.0cm, 힙 105.8cm, 인심 85.0cm\n제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n\n2025 아디다스 골프 남성 바지\n\n2025 NEW\n아디다스 남성 골프바지 긴바지\n\n2025 NEW\n아디다스 남성 골프바지 긴바지\n\n2025 NEW\n아디다스 남성 골프바지 긴바지-블랙\n\n2025 NEW\n아디다스 남성 골프바지 긴바지-블랙\n\n2025 NEW\n아디다스 남성 골프바지 긴바지-블랙\n\n2025 NEW\n아디다스 남성 골프바지 긴바지-블랙\n\n2025 NEW\n아디다스 남성 골프바지 긴바지-네이비\n\n2025 NEW\n아디다스 남성 골프바지 긴바지-네이비\n\n2025 NEW\n아디다스 남성 골프바지 긴바지-네이비\n\n2025 NEW\n아디다스 남성 골프바지 긴바지-스카이 화이트\n\n2025 NEW\n아디다스 남성 골프바지 긴바지-스카이 화이트\n\n2025 NEW\n아디다스 남성 골프바지 긴바지-스카이 화이트\n\n2025 NEW\n아디다스 남성 골프바지 긴바지-\n\n품명 | 아디다스 골프 남성 바지\n색상 | 블랙, 네이비, 그레이\n크기 | 82(M) - 허리둘레 82.0cm, 힙 95.8cm, 인심 85.0cm; 85(L) - 허리둘레 85.0cm, 힙 98.8cm, 인심 85.0cm; 88(XL) - 허리둘레 88.0cm, 힙 101.8cm, 인심 85.0cm; 92(XXL) - 허리둘레 92.0cm, 힙 105.8cm, 인심 85.0cm; 제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n주요소재 (제품 소재) | 재생 폴리에스터 88%, 스판덱스 12%\n제조자/수입자 | BOWKER ( VIET NAM) GARMENT FTY / 아디다스코리아(유)\n제조국 또는 원산지 | 베트남\n세탁방법 및 취급시 주의사항 | 본 제품은 섬유유연제를 사용하지 마세요.; 본 제품은 세탁시 유사한 색상끼리 세탁 하세요.; 본 제품은 세탁 후 즉시 꺼내 주세요.; 본 제품의 나염이나 자수(문양) 부분은 다림질을 하지 마세요.; 본 제품은 세탁망에 넣어서 세탁하세요.; 심한 마찰은 보풀이 발생할 수 있습니다.; 본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고 부착된 장신구 등은 강한 충격에 의하여 파손될 수 있으니 유의하십시오.; 제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.; 강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.; 건조시에는 강한 햇볕을 피하고 통풍이 잘되는 그늘에서 건조하십시오.; 나염부위는 절대로 다림질이나 열건조를 하지 마십시오.; 나염부위가 장시간 다른 물건 등에 밀착되어 있는 경우, 나염에 손상이 가거나 다른 물건에 묻어날 수 있습니다.; 나염된 제품의 로고 등은 착용일로부터 1년 후에는 로고가 일부 또는 전부가 탈락할 수 있습니다.; 금속 부자재는 물세탁 시 녹이 발생할 수 있습니다.; 금속 부자재는 구입자의 체질에 따라 피부 알러지를 발생케 할 수 있습니다.; 의류에 부착한 악세서리는 반드시 제거하신 후 세탁하시기 바랍니다.; 폴리에스터 등 특정 원단이 사용된 제품의 경우, 외부의 자극에 의하여 올트임이나 올나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.; 주머니가 깊지 않은 제품의 경우, 주머니 속의 물건 등이 보행, 운동 등에 의하여 주머니 밖으로 빠질 수 있으니 유의하시기 바랍니다.\n제조연월 | 2025년 11월\n품질보증기준 | 관련 법령 및 공정거래위원회의 소비자분쟁해결 기준에 따름\n\nNEW 26년형 여름용소재\nCLIMACOOL 제품 입고\n골프 긴바지 신축성 甲 출시\n\n아디다스 남성 골프 긴바지\nCLIMACOOL 여름용 스판 긴바지\n쾌적하고 시원한 착용감\n\n제품 특징\n더 얇아지고 시원해진 소재로 길어진 여름 쾌적하게 착용 가능\nCLIMACOOL 제품으로 빠른 건조, 빠른 흡수, 쾌적한 통기성이 특징으로 시원한 착용감 유지\n제품 사양\n브랜드 : 아디다스 골프 (Adidas Golf)\n색상 : 그레이포멜란지, 라이트그레이, 블랙\n사이즈 : 82(32), 85(33), 88(34), 92(36)\n소재 : 폴리에스터 86%, 엘라스틴 14%\n\n품명 | 아디다스 골프 남성 바지\n색상 | 그레이포멜란지, 라이트 그레이, 블랙\n크기 | 82(32) - 허리둘레 81cm, 힙 100cm, 인심 83cm; 85(33) - 허리둘레 84cm, 힙 103cm, 인심 83cm; 88(34) - 허리둘레 87cm, 힙 106cm, 인심 83cm; 92(36) - 허리둘레 91cm, 힙 110cm, 인심 83cm; 제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n주요소재 (제품 소재) | 폴리에스터 86%, 엘라스틴 14%\n제조자/수입자 | BOWKER (VIET NAM) GARMENT FTY / 아디다스코리아(유)\n제조국 또는 원산지 | 베트남\n세탁방법 및 취급시 주의사항 | 본 제품은 섬유유연제를 사용하지 마십시오.; 본 제품은 세탁 시 유사한 색상끼리 세탁하십시오.; 본 제품은 세탁 후 즉시 꺼내 주십시오.; 본 제품의 나염이나 자수(문양) 부분은 다림질하지 마십시오.; 본 제품은 세탁망에 넣어서 세탁하십시오.; 심한 마찰로 인해 보풀이 발생할 수 있습니다.; 본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고, 부착된 장신구 등은 강한 충격에 의해 파손될 수 있으니 유의하십시오.; 제품 소재에 따라 피부가 민감하신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.; 강한 마찰에 의한 화상 위험이 있으니 유의하십시오.; 건조 시에는 강한 햇볕을 피하고 통풍이 잘되는 그늘에서 건조하십시오.; 나염 부위는 절대로 다림질이나 열 건조를 하지 마십시오.; 나염 부위가 장시간 다른 물건 등에 밀착되어 있는 경우, 나염이 손상되거나 다른 물건에 묻어날 수 있습니다.; 나염된 로고 등은 착용일로부터 1년이 지나면 일부 또는 전부가 떨어질 수 있습니다.; 금속 부자재는 물세탁 시 녹이 발생할 수 있습니다.; 금속 부자재는 착용자의 체질에 따라 피부 알레르기를 유발할 수 있습니다.; 의류에 부착된 액세서리는 반드시 제거하신 후 세탁하시기 바랍니다.; 폴리에스터 등 특정 원단이 사용된 제품의 경우, 외부 자극에 의해 올 트임이나 올 나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.; 주머니가 깊지 않은 제품의 경우, 보행이나 운동 시 주머니 속의 물건이 밖으로 빠질 수 있으니 유의하시기 바랍니다.\n제조연월 | 2026년 1월\n품질보증기준 | 관련 법령 및 공정거래위원회의 소비자분쟁해결 기준에 따름\n\n아디다스 골프 바지\n남성 골프웨어 슬림핏 긴바지\n아디다스 골프웨어\n\nADIDAS GOLF\n\n제품 특징\n\n세련된 색감\n\n뒷면 허리 부분에 3선 포인트\n\n신축성, 통기성이 뛰어난 골프 팬츠\n\n아디다스 고로가 새겨진 허리 밴딩\n\n기본 스타일의 슬림라인 골프 팬츠\n\n3가지 색상 중 선택하세요!\n\n아디다스 골프바지_화이트\n\n아디다스 골프바지_네이비\n\n아디다스 골프바지_블랙\n\n제품 특징\n재생 폴리에스터 88%와 스판덱스 12%의 사용으로 편안한 착용감 제공\nDWR(Durable Water Repellent) 초발수 가공처리로 오염 및 발수 탁월\n우측 백 포켓 위 삼선 디테일을 디자인 포인트로 온&오프 가능한 레귤러 핏 팬츠\n제품 사양\n브랜드: 아디다스 골프 (Adidas Golf)\n색상: 화이트, 블랙, 네이비, 블루\n사이즈: 82, 85, 88, 92\n소재: 폴리에스터(재생) 88%, 스판덱스 12%\n제품 치수\n82 - 허리둘레 82.0cm, 힙 96.0cm, 인심 85.0cm, 밑단 37.0cm\n85 - 허리둘레 85.0cm, 힙 99.0cm, 인심 85.0cm, 밑단 37.0cm\n88 - 허리둘레 88.0cm, 힙 102.0cm, 인심 85.0cm, 밑단 38.0cm\n92 - 허리둘레 92.0cm, 힙 106.0cm, 인심 85.0cm, 밑단 39.0cm\n제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n세탁 방법 및 취급 시 주의사항\n본 제품은 섬유유연제를 사용하지 마세요.\n본 제품은 세탁시 유사한 색상끼리 세탁 하세요.\n본 제품은 세탁 후 즉시 꺼내 주세요.\n본 제품의 나염이나 자수(문양) 부분은 다림질을 하지 마세요.\n본 제품은 세탁망에 넣어서 세탁하세요.\n심한 마찰은 보풀이 발생할 수 있습니다.\n본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고 부착된 장신구 등은 강한 충격에 의하여 파손될 수 있으니 유의하십시오.\n제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.\n강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.\n건조시에는 강한 햇볕을 피하고 통풍이 잘되는 그늘에서 건조하십시오.\n나염부위는 절대로 다림질이나 열건조를 하지 마십시오.\n나염부위가 장시간 다른 물건 등에 밀착되어 있는 경우, 나염에 손상이 가거나 다른 물건에 묻어날 수 있습니다.\n나염된 제품의 로고 등은 착용일로부터 1년 후에는 로고가 일부 또는 전부가 탈락할 수 있습니다.\n금속 부자재는 물세탁 시 녹이 발생할 수 있습니다.\n금속 부자재는 구입자의 체질에 따라 피부 알러지를 발생케 할 수 있습니다.\n의류에 부착한 악세서리는 반드시 제거하신 후 세탁하시기 바랍니다.\n폴리에스터 등 특정 원단이 사용된 제품의 경우, 외부의 자극에 의하여 올트임이나 올나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.\n주머니가 깊지 않은 제품의 경우, 주머니 속의 물건 등이 보행, 운동 등에 의하여 주머니 밖으로 빠질 수 있으니 유의하시기 바랍니다.\n\n아디다스 골프 티셔츠 3S 반팔 반소매\n\n제품 특징\n아디다스 골프 삼선 코어 남성 반팔 폴로 셔츠\n우수한 통기성 및 흡한속건의 경량 에어로-레디(Aero-Ready) 원단 / 재생 폴리에스터 100%\n왼쪽 가슴 로고 와 양쪽 어깨부분 삼선 디테일의 스포티한 레귤러핏 디자인\n제품 사양\n브랜드 : 아디다스 (Adidas)\n색상 : 블랙, 화이트, 네이비\n사이즈 : M, L, XL, 2XL\n소재 : 재생폴리에스터 100%\n제품 치수\nM - 가슴둘레 105.0cm, 밑단 103.0cm, 소매 22.0cm, 총장 69.0cm\nL - 가슴둘레 110.0cm, 밑단 108.0cm, 소매 22.0cm, 총장 70.0cm\nXL - 가슴둘레 116.0cm, 밑단 114.0cm, 소매 23.0cm, 총장 72.0cm\n2XL - 가슴둘레 123.0cm, 밑단 121.0cm, 소매 25.0cm, 총장 73.0cm\n제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n세탁방법 및 취급시 주의사항\n본 제품은 섬유유연제를 사용하지 마세요.\n본 제품은 세탁시 유사한 색상끼리 세탁 하세요.\n본 제품은 세탁 후 즉시 꺼내 주세요.\n본 제품의 나염이나 자수(문양) 부분은 다림질을 하지 마세요.\n본 제품은 세탁망에 넣어서 세탁하세요.\n심한 마찰은 보풀이 발생할 수 있습니다.\n본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고\n부착된 장신구 등은 강한 충격에 의하여 파손될 수 있으니 유의하십시오.\n제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.\n강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.\n건조시에는 강한 햇볕을 피하고 통풍이 잘되는 그늘에서 건조하십시오.\n나염부위는 절대로 다림질이나 열건조를 하지 마십시오.\n나염부위가 장시간 다른 물건 등에 밀착되어 있는 경우, 나염에 손상이 가거나 다른 물건에 묻어날 수 있습니다.\n나염된 제품의 로고 등은 착용일로부터 1년 후에는 로고가 일부 또는 전부가 탈락할 수 있습니다.\n금속 부자재는 물세탁 시 녹이 발생할 수 있습니다.\n금속 부자재는 구입자의 체질에 따라 피부 알러지를 발생케 할 수 있습니다.\n의류에 부착한 악세서리는 반드시 제거하신 후 세탁하시기 바랍니다.\n폴리에스터 등 특정 원단이 사용된 제품의 경우, 외부의 자극에 의하여 올트임이나 올나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.\n주머니가 깊지 않은 제품의 경우, 주머니 속의 물건 등이 보행, 운동 등에 의하여 주머니 밖으로 빠질 수 있으니 유의하시기 바랍니다.\n\n아디다스 베이스 레이어 (긴팔)\n이너 냉감 티셔츠\n\n제품 특징\nAEROREADY (에어로레디) 원단을 사용하여 땀을 흘려도 건조하고 신선한 착용감을 유지할 수 있으며, 신축성이 우수합니다.\n제품 사양\n브랜드: 아디다스 골프 (Adidas Golf)\n색상: 화이트, 블랙\n사이즈 : M(95), L(100), XL(105), XXL(110)\n소재: 재생 폴리에스터 88%, 스판덱스 12%\n제품 치수\nM(95) - 가슴둘레 105.0cm, 밑단 103.0cm, 소매 22cm, 총장 69.0cm\nL(100) - 가슴둘레 110.0cm, 밑단 108.0cm, 소매 22cm, 총장 70.0cm\nXL(105) - 가슴둘레 116.0cm, 밑단 114.0cm, 소매 23cm, 총장 72cm\n2XL(110) - 가슴둘레 123.0cm, 밑단 121.0cm, 소매 26cm, 총장 73cm\n제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n세탁방법 및 취급시 주의사항\n본 제품은 섬유유연제를 사용하지 마세요.\n본 제품은 세탁시 유사한 색상끼리 세탁 하세요.\n본 제품은 세탁 후 즉시 꺼내 주세요.\n본 제품의 나염이나 자수(문양) 부분은 다림질을 하지 마세요.\n본 제품은 세탁망에 넣어서 세탁하세요.\n심한 마찰은 보풀이 발생할 수 있습니다.\n본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고, 부착된 장신구 등은 강한 충격에 의하여 파손될 수 있으니 유의하십시오.\n제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.\n강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.\n건조 시에는 강한 햇볕을 피하고 통풍이 잘되는 그늘에서 건조하십시오.\n나염부위는 절대로 다림질이나 열건조를 하지 마십시오.\n나염부위가 장시간 다른 물건 등에 밀착되어 있는 경우, 나염에 손상이 가거나 다른 물건에 묻어날 수 있습니다.\n나염된 제품의 로고 등은 착용일로부터 1년 후에는 로고가 일부 또는 전부가 탈락할 수 있습니다.\n의류에 부착한 악세서리는 반드시 제거하신 후 세탁하시기 바랍니다.\n폴리에스터 등 특정 원단이 사용된 제품의 경우, 외부의 자극에 의하여 올트임이나 올나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.\n\n주요소재 (제품 소재) | 100% 재생 폴리에스터\n제조자/수입자 | Grand Twins Intl / 아디다스코리아(유)\n제조국 | 캄보디아\n세탁방법 및 취급시 주의사항 | 본 제품은 섬유 유연제를 사용하지 마세요.; 본 제품은 세탁 시 유사한 색상끼리 세탁하세요.; 본 제품은 세탁 후 즉시 꺼내 주세요.; 본 제품의 날염이나 자수(문양) 부분은 다림질을 하지 마세요.; 본 제품은 세탁망에 넣어서 세탁하세요.; 심한 마찰은 보풀이 발생할 수 있습니다.; 본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고 부착된 장신구 등은 강한 충격에 의하여 파손될 수 있으니 유의하십시오.; 제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.; 강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.; 건조 시에는 강한 햇볕을 피하고 통풍이 잘 되는 그늘에서 건조하십시오.; 날염 부위는 절대로 다림질이나 열건조를 하지 마십시오.; 날염 부위가 장시간 다른 물건 등에 밀착되어 있는 경우, 날염에 손상이 가거나 다른 물건에 묻어날 수 있습니다.; 날염된 제품의 로고 등은 착용 일로부터 1년 후에는 로고가 일부 또는 전부가 탈락할 수 있습니다.; 금속 부자재는 물세탁 시 녹이 발생할 수 있습니다.; 금속 부자재는 구입자의 체질에 따라 피부 알레르기를 발생케 할 수 있습니다.; 의류에 부착한 액세서리는 반드시 제거하신 후 세탁하시기 바랍니다.; 폴리에스터 등 특정 원단이 사용된 제품의 경우, 외부의 자극에 의하여 올트임이나 올나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.; 주머니가 깊지 않은 제품의 경우, 주머니 속의 물건 등이 보행, 운동 등에 의하여 주머니 밖으로 빠질 수 있으니 유의하시기 바랍니다.\n제조연월 | 2020년 11월\n품질보증기준 | 관련 법령 및 공정거래위원회의 소비자분쟁해결기준에 따름\n\n푸마 남성 베이스레이어 2매\n\n품명 | 푸마 남성 베이스레이어 2매\n종류 | 남성 내의\n색상 | A팩 : 화이트, 화이트; B팩 : 화이트, 블랙\n크기 | M(95) : 앞기장 59cm, 가슴폭 46.6cm 소매길이 58.5cm; L(100) : 앞기장 60.5cm, 가슴폭 49cm 소매길이 59.5cm; XL(105) : 앞기장 62cm, 가슴폭 51.6cm 소매길이 60.5cm\n주요소재 (제품 소재) | 나일론 85%, 폴리우레탄 15%\n제조자/수입자 | IVORY VIETNAM THANH HOA CO.,LTD / 폰드그룹 주식회사\n제조국 또는 원산지 | 베트남\n세탁방법 및 취급시 주의사항 | 일반세제는 변색 될 우려가 있으므로, 중성제세를 사용하시고, 진한 색상은 세탁시 물빠짐이나 이염발생 가능성이 있으므로 단독 손세탁하여 주십시오.; 염소표백 금지; 건조기 사용금지\n제조연월 | 2025년 12월\n품질보증기준 | 관련 법령 및 공정거래위원회의 소비자분쟁해결 기준에 따름\n\n합배송이 가능한 추가 구매 상품\n\n※ 합배송이 가능한 추가 구매 옵션에서 구매시\n주문하신 상품과 함께 발송됩니다!\n\n커클랜드 시그니춰 3피스 골프공 24개입\n\n가성비 최고 코스트코 자사 브랜드 커클랜드 시그니춰 골프공 24개입\n\n제품 특징\n\n제품사양\n\n지름: 4cm\n재질: 폴리우레탄 외\n색상: 화이트\n구성: 3피스 골프공 2더즌\n\n제품특징\n\n커클랜드 시그니처 3피스 골프공\n강한 내구성의 우레탄 커버가 부드러운 타구감을 제공하고, 정확한 컨트롤로 그린 공략 가능\n저 압축 고탄성 소프트 코어로 빠른 볼 스피드와 비거리 실현\n338개 딤플 패턴을 적용해 공기 저항을 최소화하여 비거리 향상\n\nD E T A I L\n\n품명: 커클랜드 시그니춰 3PC 골프공 24개입\n종류: 3피스 골프공\nKC 인증필 유무: 해당사항 없음\n구성품: 골프공 24개\n주요소재: 폴리우레탄 외\n크기: 패키지: W21 x L15 x H10cm, 1.4kg\n주요사양: 상품상세정보 참조\n제조자/수입자: (주)코스트코 코리아\n제조국: 중국\n취급시 주의사항\n1. 사용 후 물기 없는 부드러운 면 수건으로 오염을 제거해주십시오.\n2. 보관 시 습기 있는 곳을 피하고, 서늘하고 건조한 곳에 보관하십시오.\n제조연월: 2019년 1월\n품질보증기준: 관련 법령 및 공정거래위원회의 소비자분쟁해결 기준에 따름\n\n볼빅 3피스 [플라이온] 골프공 24개입\n\n볼빅 3피스 [토끼] 골프공 24개입\n\n볼빅 2피스 [형광] 골프공 24개입\n\n합배송이 가능한 추가 구매 상품\n\n기모바지는 현재 품절중입니다!!\n23/24년 겨울에 다시 만나요~!\n\n아디다스 골프 바지\n남성 골프웨어 슬림핏 긴바지\n아디다스 골프웨어\n\nADIDAS GOLF\n\n남성 골프웨어 슬림핏 긴바지\n본딩 기모 긴바지\n\n본딩기모 바지는 바지 속면이\n플리스면으로 되어있고,\n겉면도 기본바지보다 두껍습니다.\n\n아디다스 골프바지_[본딩 기모]-네이비\n\n아디다스 골프바지_[본딩 기모]-그레이\n\n아디다스 골프바지_[본딩 기모]-블랙\n\nADIDAS GOLF\n\n남성 골프웨어 슬림핏 긴바지\n본딩 기모 긴바지\n\n제품 특징\n왼쪽 포켓의 3선 디자인 포인트\n신축성과 착용감이 우수한 팬츠\n본딩 기모로 보온성이 좋음\n\n제품 사양\n소재: 100% 재생 폴리에스터\n색상: 블랙, 네이비, 그레이\n사이즈: A82, A85, A88, A92\n\n제품 치수\n82 - 허리둘레 84cm, 총기장 (바깥 측면 기준) 109cm\n85 - 허리둘레 87cm, 총기장 (바깥 측면 기준) 110cm\n88 - 허리둘레 90cm, 총기장 (바깥 측면 기준) 110cm\n92 - 허리둘레 94cm, 총기장 (바깥 측면 기준) 110cm\n* 사이즈의 경우 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n\n주요 소재(제품 소재): 100% 재생 폴리에스터\n제조자/수입자 : Grand Twins Intl / 아디다스코리아(유)\n제조국 : 캄보디아\n\n제조연월: 2020년 11월\n품질보증기준: 관련 법령 및 공정거래위원회의 소비자분쟁해결기준에 따름\n\n세탁 방법 및 취급 시 주의사항\n본 제품은 섬유 유연제를 사용하지 마세요.\n본 제품은 세탁 시 유사한 색상끼리 세탁하세요.\n본 제품은 세탁 후 즉시 꺼내 주세요.\n본 제품의 날염이나 자수(문양) 부분은 다림질을 하지 마세요.\n본 제품은 세탁망에 넣어서 세탁하세요.\n심한 마찰은 보풀이 발생할 수 있습니다.\n본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고 부착된 장신구 등은 강한 충격에 의하여 파손될 수 있으니 유의하십시오.\n제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.\n강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.\n건조 시에는 강한 햇볕을 피하고 통풍이 잘 되는 그늘에서 건조하십시오.\n날염 부위는 절대로 다림질이나 열건조를 하지 마십시오.\n날염 부위가 장시간 다른 물건 등에 밀착되어 있는 경우, 날염에 손상이 가거나 다른 물건에 묻어날 수 있습니다.\n날염된 제품의 로고 등은 착용 일로부터 1년 후에는 로고가 일부 또는 전부가 탈락할 수 있습니다.\n금속 부자재는 물세탁 시 녹이 발생할 수 있습니다.\n금속 부자재는 구입자의 체질에 따라 피부 알레르기를 발생케 할 수 있습니다.\n의류에 부착한 액세서리는 반드시 제거하신 후 세탁하시기 바랍니다.\n폴리에스터 등 특정 원단이 사용된 제품의 경우, 외부의 자극에 의하여 올트임이나 올나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.\n주머니가 깊지 않은 제품의 경우, 주머니 속의 물건 등이 보행, 운동 등에 의하여 주머니 밖으로 빠질 수 있으니 유의하시기 바랍니다.\n\n아디다스 골프 긴팔 티셔츠\n남성 폴로 카라넥\n\n신축성 및 착용감이 우수한\n피케 폴로 티셔츠\n아디다스 골프\n긴팔 골프 티셔츠\n\n목 뒷 칼라넥 아래로\n볼드한 3선으로 디자인 포인트\n\n도톰하고 신축성 좋은\n기능성 원단으로\n골프 스윙에 편안함을 줍니다.\n\n아디다스 골프웨어\n아디다스 골프\n아디다스 골프 긴팔 티셔츠\n남성 피케 티셔츠 폴로 티셔츠\n골프 티셔츠\n3가지 색상 중 선택하세요!\n\n1. 아디다스 남성 골프 폴로 티셔츠_화이트\n\n2. 아디다스 남성 골프 폴로 티셔츠__블랙\n\n3. 아디다스 남성 골프 폴로 티셔츠__네이비\n\nD E T A I L\n\n제품 특징\n뒷면에 3선 포인트가 있는 기본 스타일의 아디다스 골프 긴팔 폴로셔츠\n제품 사양\n소재 : 93% 재생 폴리에스터,7% 스판덱스\n색상 : 블랙, 네이비, 화이트\n사이즈 : M, L, XL, 2XL Asian size\n제품 치수\nM - 가슴너비 100.0cm, 팔 길이 60.0cm, 총장 69.0cm\nL - 가슴너비 105.0cm, 팔 길이 61.0cm, 총장 70.0cm\nXL- 가슴너비 110.0cm, 팔 길이 62.0cm, 총장 72.0cm\n2XL- 가슴너비 115.0cm, 팔 길이 63.0cm, 총장 75.0cm\n* 사이즈의 경우 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n*가슴너비의 경우 암홀로부터 2cm 아래 기준, 총장은 등판 길이를 측정\n세탁 방법 및 취급 시 주의사항\n본 제품은 섬유 유연제를 사용하지 마세요.\n본 제품은 세탁 시 유사한 색상끼리 세탁하세요.\n본 제품은 세탁 후 즉시 꺼내 주세요.\n본 제품의 날염이나 자수(문양) 부분은 다림질을 하지 마세요.\n본 제품은 세탁망에 넣어서 세탁하세요.\n심한 마찰은 보풀이 발생할 수 있습니다.\n본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고\n부착된 장신구 등은 강한 충격에 의하여 파손될 수 있으니 유의하십시오.\n제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.\n강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.\n건조 시에는 강한 햇볕을 피하고 통풍이 잘 되는 그늘에서 건조하십시오.\n날염 부위는 절대로 다림질이나 열건조를 하지 마십시오.\n날염 부위가 장시간 다른 물건 등에 밀착되어 있는 경우,\n날염에 손상이 가거나 다른 물건에 묻어날 수 있습니다.\n날염된 제품의 로고 등은 착용 일로부터 1년 후에는 로고가 일부 또는 전부가 탈락할 수 있습니다.\n금속 부자재는 물세탁 시 녹이 발생할 수 있습니다.\n금속 부자재는 구입자의 체질에 따라 피부 알레르기를 발생케 할 수 있습니다.\n의류에 부착한 액세서리는 반드시 제거하신 후 세탁하시기 바랍니다.\n폴리에스터 등 특정 원단이 사용된 제품의 경우,\n외부의 자극에 의하여 올트임이나 올나감 현상이 쉽게 발생할 수 있으므로 유의하시기 바랍니다.\n주머니가 깊지 않은 제품의 경우, 주머니 속의 물건 등이 보행,\n운동 등에 의하여 주머니 밖으로 빠질 수 있으니 유의하시기 바랍니다.\n\n지금 보고계신 상품이 마음에 든다면\n상품에 [찜하기♥]를 눌러주세요~\n다음에 같은 상품을 찾을 때 편하게 찾으실 수 있습니다!\n\n구매시 꼭 확인하세요!!!!!\n\n가장 최신 제조된 상품과 유통기한이 넉넉한 상품만을 배송해 드립니다.\n\n배송은 결제일 다음날부터 3일이내에 발송됩니다. (단, 토요일, 일요일, 공휴일은 배송일에서 제외)\n구매대행의 특성상 공급사의 재고 사정에 따라 품절이 발생할 수 있습니다.\n재고의 한정으로 품절 취소 요청을 드릴 수 있으니, 고객님의 양해 부탁드립니다.\n★★★★★구매 대행의 특성 상 <상품 준비중>의 상태에서는 주문 취소가 어렵습니다.★★★★★\n주문 취소 희망 시 꼭 판매자에게 유선 연락을 부탁드립니다.\n연락 없이 취소 요청시 출고가 되어 고객에게 물품이 발송 될 수 있습니다.\n이 경우, 반품 택배비는 고객님의 부담이 되니, 반드시 유선 연락 후 취소 진행 바랍니다.\n\n주간 인기상품 함께 보기",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260513_171/17786761781222VEvB_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EC%97%AC%EB%A6%84_%EA%B8%B4%EB%B0%94%EC%A7%80_CLIMACOOL-7..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260508_56/1778232885950kgHpB_JPEG/3.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_CLIMACOOL_%EC%97%AC%EB%A6%84_%EA%B8%B4%EB%B0%94%EC%A7%80-1..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260508_293/1778232885983XLBKr_JPEG/3.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_CLIMACOOL_%EC%97%AC%EB%A6%84_%EA%B8%B4%EB%B0%94%EC%A7%80-2..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260513_146/1778675847796VVPSJ_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EC%97%AC%EB%A6%84_%EA%B8%B4%EB%B0%94%EC%A7%80_CLIMACOOL-1..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260513_89/1778675847815o8FHr_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EC%97%AC%EB%A6%84_%EA%B8%B4%EB%B0%94%EC%A7%80_CLIMACOOL-4..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260513_179/1778675847827UFYPw_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EC%97%AC%EB%A6%84_%EA%B8%B4%EB%B0%94%EC%A7%80_CLIMACOOL-5..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260513_161/1778675847803C2iDf_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EC%97%AC%EB%A6%84_%EA%B8%B4%EB%B0%94%EC%A7%80_CLIMACOOL-6..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250311_212/1741661238074aR6Dx_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80_%EB%A9%94%EC%9D%B8_%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250311_206/1741661299643731e0_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80_7..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250311_64/17416612996442dsFD_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80_8..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250311_163/17416612996493cAMr_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80_9..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250311_244/1741661299658HwW6E_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80_10..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250311_99/1741661324575tfMjh_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80_4..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250311_246/1741661324591akr1W_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80_5..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250311_168/1741661324622Cx5Fh_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80_6..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250311_120/1741661342964oMtXB_JPEG/2025_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%B4%84_%EA%B0%80%EC%9D%84_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250311_176/1741661342965bKzzb_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80_2..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250311_201/17416613429831I91X_JPEG/2025.%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80_3..jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250222_157/1740211102032zqGli_PNG/tmp300121695322986649.png?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_1/1629884838289Fv4nv_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%94%EC%A7%80_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%B9%98_%EB%B0%94%EC%A7%80_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_main_final_%EC%B5%9C%EC%A2%85_%EB%B3%B5%EC%82%AC.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_282/1714440879705Qpawc_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_main.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230313_144/1678688405789VAri8_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_%EB%B0%98%ED%8C%94_%EB%B0%98%EC%86%8C%EB%A7%A4_ENJOY_PANDA_FINAL.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210420_272/1618891518514GAgzK_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%98%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_(7).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210420_22/16188915184846yI3g_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%98%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_(4).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_279/1714440897185Ofcb1_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_main.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_138/17144409288942gkSH_JPEG/SE-b631073d-13e4-4713-bdd7-d3cf03875d8f.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_205/1629884962730iszFU_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B8%B4%EB%B0%94%EC%A7%80_%EB%B0%98%EB%B0%94%EC%A7%80_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EB%B0%98%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EB%9D%BC%EC%9A%B4%EB%94%A9_(6).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_37/1629885008772DJ2X0_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(8).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_182/1629885008791PLRWm_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B8%B4%EB%B0%94%EC%A7%80_%EB%B0%98%EB%B0%94%EC%A7%80_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EB%B0%98%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EB%9D%BC%EC%9A%B4%EB%94%A9_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_297/1629885008808cJElM_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B8%B4%EB%B0%94%EC%A7%80_%EB%B0%98%EB%B0%94%EC%A7%80_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EB%B0%98%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EB%9D%BC%EC%9A%B4%EB%94%A9_(3).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_132/1629885008807hBpPT_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B8%B4%EB%B0%94%EC%A7%80_%EB%B0%98%EB%B0%94%EC%A7%80_%EA%B8%B4%ED%8C%94%ED%8B%B0_%EB%B0%98%ED%8C%94%ED%8B%B0_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EB%9D%BC%EC%9A%B4%EB%94%A9_(4).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_105/1714440961135Eq6vE_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_66/1714440968645wmBuE_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_(6).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_177/1714440961140t3cEz_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_(5).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_13/1714440984978wR7Rs_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_(7).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_76/1714440990067UDB8J_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_(5).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230216_203/1676520504625jWbrN_JPEG/25152.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230216_90/1676520600341N9yRT_JPEG/25158.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230216_154/1676520600355Ooqy9_JPEG/25159.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230216_96/1676520600353LG7LL_JPEG/25160.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_56/16298850918023wIvQ_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_118/17144410154078A2II_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_(6).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230216_232/1676520538161m6amI_JPEG/25171.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230216_265/1676520538202JOnQk_JPEG/25172.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210825_300/1629885091815hPv9h_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_(3).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_47/1714441036098GyJGC_JPEG/2024_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_22/1714441056877j6uHG_JPEG/SE-acb8c746-652b-4f77-a13b-dd12d32cf0bb.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230216_73/167652056040870zE3_JPEG/25167.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230313_221/1678688520285EUYAa_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_3S_%EB%B0%98%ED%8C%94_%EB%B0%98%EC%86%8C%EB%A7%A4_ENJOY_PANDA_2.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230313_193/16786885202987VwRn_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_3S_%EB%B0%98%ED%8C%94_%EB%B0%98%EC%86%8C%EB%A7%A4_ENJOY_PANDA_3.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230313_155/1678688520318FzMcN_JPEG/2023_%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%ED%8B%B0%EC%85%94%EC%B8%A0_3S_%EB%B0%98%ED%8C%94_%EB%B0%98%EC%86%8C%EB%A7%A4_ENJOY_PANDA.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210420_227/1618891518476VRgOM_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%98%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_(3).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210420_60/1618891518520Vh5OW_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%98%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_(5).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240421_47/1713708192724T0OQD_JPEG/28838_0.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240421_106/1713708192722dHs1x_JPEG/28839_0.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240421_45/1713708192722DIIPR_JPEG/28840_0.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240421_195/1713708192723HoQMt_JPEG/28841_0.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260318_114/1773834709587qbfVA_JPEG/tmp8072806195500656971.JPEG?type=w848",
+   "https://shop-phinf.pstatic.net/20260318_166/1773834709600HvPqx_JPEG/tmp3007592226906672183.JPEG?type=w848",
+   "https://shop-phinf.pstatic.net/20260318_55/1773834883156FtUpj_JPEG/tmp2004051774070518383.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260318_158/1773834882858RnJTa_JPEG/tmp8960318341304328094.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260318_155/1773834882857InROh_JPEG/tmp7820821958515488974.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260318_186/1773834883009TYdhs_JPEG/tmp4772503630334223117.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260318_164/1773834883456icQwV_JPEG/tmp3139984657260829360.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260318_180/1773834709577IsCiI_JPEG/tmp5035547653794588854.JPEG?type=w848",
+   "https://shop-phinf.pstatic.net/20260318_286/1773834709605V6NTy_JPEG/tmp8666997691875025406.JPEG?type=w848",
+   "https://shop-phinf.pstatic.net/20260318_202/1773834709601aC0ow_JPEG/tmp6216351799392635177.JPEG?type=w848",
+   "https://shop-phinf.pstatic.net/20260318_188/1773834844184jCt0t_JPEG/tmp9150424291704356364.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260318_123/17738348441341g0Ke_JPEG/tmp132371084136389315.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230125_63/1674629731493fm8TJ_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20230125_36/1674629750466jSD7l_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20190612_282/101327672_1560347789779XMMaO_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D46.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20190612_64/101327672_1560347796497hQTID_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D43.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20190612_191/101327672_1560347825707mJppt_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D44.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20190612_190/101327672_1560347825707QeCXl_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D45.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20190612_9/101327672_1560347825708VKOHy_JPEG/%C4%BF%C5%AC%B7%A3%B5%E5_%BD%C3%B1%D7%B4%CF%C3%E7_3PC_%B0%F1%C7%C1%B0%F8_24%B0%B3%C0%D47.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230125_215/1674629805796kuSY3_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20230125_180/1674629855260rwMc2_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20230125_89/1674629893802lLpfA_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20211108_71/1636351359211BHjwP_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-3%EC%83%89_%EB%A9%94%EC%9D%B8.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211117_97/1637122231027kXdYO_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%B3%B8%EB%94%A9%EA%B8%B0%EB%AA%A8_%EB%B0%94%EC%A7%80_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211117_290/1637122231069txME0_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%B3%B8%EB%94%A9%EA%B8%B0%EB%AA%A8_%EB%B0%94%EC%A7%80_(2).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211117_231/1637122231006TvWkg_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%B3%B8%EB%94%A9%EA%B8%B0%EB%AA%A8_%EB%B0%94%EC%A7%80_(3).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211117_81/1637122231041GoWXV_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84%EB%B0%94%EC%A7%80_%EB%B3%B8%EB%94%A9%EA%B8%B0%EB%AA%A8_%EB%B0%94%EC%A7%80_(4).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211108_135/1636351125759bc9Xc_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EB%84%A4%EC%9D%B4%EB%B9%84_%EC%95%9E%EB%A9%B4.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211108_252/1636351174333i9izj_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EB%84%A4%EC%9D%B4%EB%B9%84_%EB%92%B7%EB%A9%B4.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211108_33/1636351283027CNc3f_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EA%B7%B8%EB%A0%88%EC%9D%B4_%EC%95%9E%EB%A9%B4.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211108_212/1636351291644Llmia_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%92%B7%EB%A9%B4.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211108_8/1636351324395Kg4RI_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EB%B8%94%EB%9E%99_%EC%95%9E.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20211108_189/1636351332467FYzbV_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EB%82%A8%EC%84%B1_%EB%B3%B8%EB%94%A9_%EA%B3%A8%ED%94%84_%EB%B0%94%EC%A7%80-%EB%B8%94%EB%9E%99_%EB%92%B7%EB%A9%B4.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_216/1628846083338J3Xdt_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_main.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_284/1628846093259AiAAa_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A910.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_212/1628846125560xfTcT_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A911.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_167/1628846125577p6Cbg_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A98.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_234/1628846645076fIxbe_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_258/16288466006079IDaa_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(2).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_80/1628846600620NrCJV_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(4).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_23/1628846600632qImXY_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(5).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_141/1628846137148JD8S7_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A93.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_29/1628846144296iTTEy_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A94.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_182/1628846653006VCp1F_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(3).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_146/1628846161669skMAS_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A95.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_209/1628846167172u1xUS_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A96.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_70/1628846177393j6sCG_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A9.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_91/1628846182513qy3TC_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_%EA%B3%A8%ED%94%84%EC%85%94%EC%B8%A0_%EB%9D%BC%EC%9A%B4%EB%94%A92.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210813_153/16288466716234T62s_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EA%B8%B4%EC%86%8C%EB%A7%A4_%EA%B8%B4%ED%8C%94_%ED%8F%B4%EB%A1%9C%ED%8B%B0%EC%85%94%EC%B8%A0_%EC%B9%B4%EB%9D%BC%EB%84%A5_(6).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20210420_53/1618891608326RtOOu_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%98%ED%8C%94_%ED%8F%B4%EB%A1%9C_%ED%8B%B0%EC%85%94%EC%B8%A0_%ED%99%94%EC%9D%B4%ED%8A%B8_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B7%B8%EB%A0%88%EC%9D%B4_%EB%B8%94%EB%9E%99_(4).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20191219_30/15767645031168C74Y_JPEG/%B9%E8%BC%DB_%B1%B3%C8%AF_%B9%DD%C7%B0_%BE%C8%B3%BB_%BA%B9%BB%E7.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "thanks",
+    "text": "감사합니다."
+   },
+   {
+    "rule": "phone",
+    "text": "A/S 책임자와 전화번호 또는 소비자상담 관련 전화번호 | 아디다스코리아 고객센터 1588-8241"
+   },
+   {
+    "rule": "phone",
+    "text": "A/S 책임자와 전화번호 또는 소비자상담 관련 전화번호 | 아디다스코리아 고객센터 1588-8241"
+   },
+   {
+    "rule": "phone",
+    "text": "A/S 책임자와 전화번호 또는 소비자상담 관련 전화번호 | 아디다스코리아 고객센터 1588-8241"
+   },
+   {
+    "rule": "promo",
+    "text": "정품으로 안심하고 구매하세요~!"
+   },
+   {
+    "rule": "phone",
+    "text": "A/S 책임자와 전화번호 | 아디다스코리아 고객센터 1588-8241"
+   },
+   {
+    "rule": "phone",
+    "text": "A/S 책임자와 전화번호 또는 소비자상담 관련 전화번호 | 폰드그룹주식회사 02-6390-8000"
+   },
+   {
+    "rule": "contact",
+    "text": "A/S 책임자와 전화번호: 코스트코 고객센터 1899-9900"
+   },
+   {
+    "rule": "phone",
+    "text": "A/S 책임자와 전화번호: 아디다스코리아 고객센터 1588-8241"
+   },
+   {
+    "rule": "policy",
+    "text": "[배송안내]\n본 상품은 코스트코 온라인몰 또는 납품업체에서 직접배송될 수 있습니다.\n주문시 고객님의 배송정보가 해당업체로 전달되어 배송이 진행될 수 있습니다.\n제공받는 자: 코스트코 온라인몰, 납품업체\n제공목적: 주문상품의 배송 및 고객응대\n제공항목: 이름, 주소, 연락처, 주문정보\n보유 및 이용기간: 배송 완료 후 3개월"
+   }
+  ],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 스판덱스",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_bottoms",
+   "option": 2,
+   "values": [
+    {
+     "ko": "82(32)",
+     "us": "W32",
+     "letter": "L",
+     "chest_cm": 81.3,
+     "basis": "waist",
+     "chart_label": "82(32)"
+    },
+    {
+     "ko": "85(33)",
+     "us": "W33",
+     "letter": "L",
+     "chest_cm": 81.3,
+     "basis": "waist",
+     "chart_label": "85(33)"
+    },
+    {
+     "ko": "85(35)",
+     "us": "W33",
+     "letter": "L",
+     "chest_cm": 81.3,
+     "basis": "cm_round",
+     "chart_label": null
+    },
+    {
+     "ko": "88(34)",
+     "us": "W34",
+     "letter": "XL",
+     "chest_cm": 86.4,
+     "basis": "waist",
+     "chart_label": "88(34)"
+    },
+    {
+     "ko": "88(35)",
+     "us": "W34",
+     "letter": "XL",
+     "chest_cm": 86.4,
+     "basis": "cm_round",
+     "chart_label": null
+    },
+    {
+     "ko": "92(36)",
+     "us": "W36",
+     "letter": "XXL",
+     "chest_cm": 91.4,
+     "basis": "waist",
+     "chart_label": "92(36)"
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "waist": "circ",
+     "hip": null,
+     "inseam": null,
+     "hem": null,
+     "length": null
+    },
+    "rows": [
+     {
+      "us": "W32",
+      "cm": {
+       "waist": 81.0,
+       "hip": 100.0,
+       "inseam": 83.0
+      }
+     },
+     {
+      "us": "W33",
+      "cm": {
+       "waist": 84.0,
+       "hip": 103.0,
+       "inseam": 83.0
+      }
+     },
+     {
+      "us": "W34",
+      "cm": {
+       "waist": 87.0,
+       "hip": 106.0,
+       "inseam": 83.0
+      }
+     },
+     {
+      "us": "W36",
+      "cm": {
+       "waist": 91.0,
+       "hip": 110.0,
+       "inseam": 83.0
+      }
+     }
+    ]
+   },
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:148703d8c5730b8a",
+   "kind": "title",
+   "ko": "아디다스 골프 바지 남성 여름 골프웨어 봄 가을 남자 슬림핏 스판 긴바지 기능성"
+  },
+  {
+   "id": "brand:8201e93c449b38b1",
+   "kind": "brand",
+   "ko": "아디다스"
+  },
+  {
+   "id": "option_name:79ba8181863088dc",
+   "kind": "option_name",
+   "ko": "상품 선택"
+  },
+  {
+   "id": "option_value:316213200baf0684",
+   "kind": "option_value",
+   "ko": "아디다스 골프 바지_긴바지(SS_26년형)"
+  },
+  {
+   "id": "option_value:7feb4f53d3a7ffd8",
+   "kind": "option_value",
+   "ko": "아디다스[가을/겨울] 골프 바지_긴바지"
+  },
+  {
+   "id": "option_value:ab245ea7696ffc7d",
+   "kind": "option_value",
+   "ko": "아디다스[겨울 본딩기모] 골프 바지_긴바지"
+  },
+  {
+   "id": "option_value:5184c788ef089340",
+   "kind": "option_value",
+   "ko": "아디다스 골프 긴바지_CLIMACOOL 여름용"
+  },
+  {
+   "id": "option_name:6c36e427904fab57",
+   "kind": "option_name",
+   "ko": "컬러 선택"
+  },
+  {
+   "id": "option_value:efa51b9f23b93146",
+   "kind": "option_value",
+   "ko": "네이비"
+  },
+  {
+   "id": "option_value:8907cabacb671ee8",
+   "kind": "option_value",
+   "ko": "스카이"
+  },
+  {
+   "id": "option_value:bd53a7367d81c004",
+   "kind": "option_value",
+   "ko": "그레이"
+  },
+  {
+   "id": "option_value:91f171f68356ec23",
+   "kind": "option_value",
+   "ko": "블랙"
+  },
+  {
+   "id": "option_value:d1108e26567d519a",
+   "kind": "option_value",
+   "ko": "그레이포멜란지"
+  },
+  {
+   "id": "option_value:c2a06d470ee6f826",
+   "kind": "option_value",
+   "ko": "라이트 그레이"
+  },
+  {
+   "id": "option_name:dec10a63e8beb488",
+   "kind": "option_name",
+   "ko": "사이즈 선택"
+  },
+  {
+   "id": "option_value:6c5d796a071e6608",
+   "kind": "option_value",
+   "ko": "82(32)"
+  },
+  {
+   "id": "option_value:d199c67335c5354f",
+   "kind": "option_value",
+   "ko": "85(33)"
+  },
+  {
+   "id": "option_value:6dbaf5316440b3b8",
+   "kind": "option_value",
+   "ko": "85(35)"
+  },
+  {
+   "id": "option_value:53870923025f2e2e",
+   "kind": "option_value",
+   "ko": "88(34)"
+  },
+  {
+   "id": "option_value:cfb96a00a94afae4",
+   "kind": "option_value",
+   "ko": "88(35)"
+  },
+  {
+   "id": "option_value:d3d807ba2fe82dc2",
+   "kind": "option_value",
+   "ko": "92(36)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:642899dca37f6dd1",
+   "kind": "spec_value",
+   "ko": "BOWKER(VIETNAM) GARMENT FTY"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:8201e93c449b38b1",
+   "kind": "spec_value",
+   "ko": "아디다스"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:7cd6ad9c85830004",
+   "kind": "spec_value",
+   "ko": "베트남산"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:aec0a316a16c6da8",
+   "kind": "spec_value",
+   "ko": "자외선차단, 신축성, 방수"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:b76c60bc57321112",
+   "kind": "spec_value",
+   "ko": "폴리에스테르, 스판덱스"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:cf77728ee5e35e6b",
+   "kind": "spec_value",
+   "ko": "가을, 겨울, 봄, 여름"
+  },
+  {
+   "id": "spec_label:ea32a6046e98fd76",
+   "kind": "spec_label",
+   "ko": "충전재"
+  },
+  {
+   "id": "spec_value:72ea3d64ace5bc94",
+   "kind": "spec_value",
+   "ko": "없음"
+  },
+  {
+   "id": "spec_label:777511e7e585c6f2",
+   "kind": "spec_label",
+   "ko": "하의기장"
+  },
+  {
+   "id": "spec_value:e51b009720d94497",
+   "kind": "spec_value",
+   "ko": "긴바지"
+  },
+  {
+   "id": "spec_label:35e8af68e7a1b980",
+   "kind": "spec_label",
+   "ko": "하의핏"
+  },
+  {
+   "id": "spec_value:340ed540b53cd7a5",
+   "kind": "spec_value",
+   "ko": "슬림핏, 일자핏"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:8040f01b1433a292",
+   "kind": "spec_value",
+   "ko": "2024년형"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "review:1845bbf74224514a",
+   "kind": "review",
+   "ko": "요즘 잦은 술로 배불뚝 유부남인데요 키가작아서 길이는 수선해야하고 천두께는 아주얇아서 좋고 핏도 좋아요 근데 골반바지가 아니라서 배많이나온분은 한치수크게입는게좋습니다"
+  },
+  {
+   "id": "review:ba73a79fab017c91",
+   "kind": "review",
+   "ko": "남편 구매해 줫습니다 사이즈가 약간 슬림하게 나왔다는 평을 보고 한치수 크게 주문했는데 배나온 남편한테 좀 여유있고 좋네요 길이가 길어 수선갑니다"
+  },
+  {
+   "id": "review:c379046db5cc15e1",
+   "kind": "review",
+   "ko": "일단 봄 옷이 너무 얇아 6월이후나 여름에 입어야겠어요. 내키도 작지안 기장이 너무길어 종아니까지 잘라서 있어야하는데 기장수선비도 만민않아요"
+  },
+  {
+   "id": "review:f6b87fe0fc9f2c34",
+   "kind": "review",
+   "ko": "재질이 도톰해서 간절기에 입기 딱 좋은것 같아요 신랑이 라운딩 간다고 사줬는데 핏도 딱 깔끔하게 떨어져서 이쁘네요 사이즈가 재질이 도톰하다보니 한사이즈 여유있게 사는것도 괜찮을 것 같습니다."
+  },
+  {
+   "id": "review:a6323ebaccf82222",
+   "kind": "review",
+   "ko": "소재가 도톰해서 가을 초겨울까지 입을 수 있을 것 같아요! 받았을 때 생각했던 것 보다 색상이 조금 연했는데 블랙이랑 같이 입으니 너무 잘 어울리네요. 아디다스 아래 위 세트로 구매했는데 사이즈도 딱이에요 신랑이 좋아하네요!"
+  },
+  {
+   "id": "review:1f6428ea188a83b9",
+   "kind": "review",
+   "ko": "전체적으로는 편한데 허벅지부분과 골반쪽은 타이트하고 허리는 오히려 좀 크네요 서구형 디자인?\n판매상품하고 로고도 다르고 위치도 다르고 기분이 좋지 않네요\n제 체형에는 별로지만 신축은 좋아서 걍 반품 안하기로."
+  },
+  {
+   "id": "review:1bb58f4358f30d64",
+   "kind": "review",
+   "ko": "허리가 넉넉하네요 길이는 잘라입어야할 정도로 깁니다 한치수 작게 사도 될 것 같아요\n착용감이 좋고 편해서 골프칠 때 아주 좋을 것 같아요"
+  },
+  {
+   "id": "review:95a210acea40ba87",
+   "kind": "review",
+   "ko": "11월 끝무렵 라운딩을 위해 구입하였습니다.\n바지가 상당히 따뜻하고 편안했습니다.\n기모가 불편한 수준은 아닙니다.\n슬림한 통크기로 저는 상당히 만족하였습니다.\n웬만하면 바지 길이는 무조건 수선을 해야할 정도입니다. 미리 주문하셔서 수선하시길 바랍니다."
+  }
+ ]
+}

@@ -57,7 +57,12 @@ class PreparedFact(TypedDict):
     value_ko: str
 
 
-class PreparedVariant(TypedDict):
+class _PreparedVariantNative(TypedDict, total=False):
+    naver_options_ko: list[str]        # the variant's own Naver values when a size merge changed options_ko (2026-11-25):
+                                       # the owner orders these (shopify_payload sizeKo / optionsKo)
+
+
+class PreparedVariant(_PreparedVariantNative):
     """product.variants[] (transform._variant)."""
     source_id: str                     # "observed:" + the Korean option tuple, or the product id
     naver_variant_id: str | None

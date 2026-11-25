@@ -1,0 +1,2241 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101010206:10076109143",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "7 of 7 kept (full 6, short 1); 1 trimmed"
+  },
+  {
+   "code": "title_names_one_variant",
+   "detail": "골프바지, 기모"
+  },
+  {
+   "code": "specs_name_one_variant",
+   "detail": "소재 폴리에스테르, 기모: 기모"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  },
+  {
+   "code": "size_chart_left_out",
+   "detail": "two models' sizes on one US size: 82 / M(32); 85 / L(33); 92 / XXL(36)"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/soneva/products/10076109143",
+  "channel_no": "101010206",
+  "product_id": "10076109143",
+  "category_id": "50002801"
+ },
+ "product": {
+  "title_ko": "아디다스 남성 골프바지 기모 골프웨어 간절기 가을 겨울",
+  "brand_ko": "아디다스골프",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {
+     "FW-cb09d76b9f4cc9011baa436c": "mens",
+     "FW-fa351e49e04e44d20992bdbc": "mens",
+     "FW-b9f58fb04924295e660ecbce": "mens",
+     "FW-e013dd03e51f708b54b6fd23": "mens",
+     "FW-d5b9356fdfe883594351f0d4": "mens",
+     "FW-8a47e670e60569a1ad63e7a5": "mens",
+     "FW-c04ee1d4b09f6cfbb2208cad": "mens",
+     "FW-bd829b236dc67e0e33e36015": "mens",
+     "FW-e321e9e101bc5eb5bd6e8211": "mens",
+     "FW-1da154f275b6f46cdb2e7b51": "mens",
+     "FW-b7e4da0bd4896f8f215a621f": "mens",
+     "FW-9a0b72e36d124efc6fbff0bb": "mens",
+     "FW-49a476f8ee7ab8442e1d0a23": "mens",
+     "FW-18344bac58e6e8a2d455c613": "mens",
+     "FW-f4243b7b3d45d7c60f672393": "mens",
+     "FW-a5d8661a66c90a518a3ba5eb": "mens",
+     "FW-26c09cfea655b5692bae8de1": "mens",
+     "FW-1ab560a92e78c0356897c749": "mens",
+     "FW-dc8b1a643ecff0171b920ca9": "mens",
+     "FW-99dff9eb115ecb443fd66325": "mens"
+    },
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "아디다스 남성 골프바지 기모 골프웨어 간절기 가을 겨울"
+     },
+     {
+      "source": "variants",
+      "value": "mens",
+      "text": "20 of 20 variants"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "가을 스트레치 골프 바지"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "모델명",
+    "values_ko": [
+     "아디다스 남성 골프 바지 기모",
+     "아디다스 남성 골프바지"
+    ]
+   },
+   {
+    "name_ko": "컬러",
+    "values_ko": [
+     "네이비",
+     "블랙",
+     "카본"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "82",
+     "M(32)",
+     "85",
+     "L(33)",
+     "88",
+     "XL(35)",
+     "92",
+     "XXL(36)"
+    ]
+   }
+  ],
+  "facts": [
+   {
+    "label_ko": "개인정보제공 동의",
+    "value_ko": "배송을 위한 제3자(코스트코)제공에 동의합니다"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프 바지 기모\",\"네이비82\"]",
+    "naver_variant_id": "60529822967",
+    "options_ko": [
+     "아디다스 남성 골프 바지 기모",
+     "네이비",
+     "82"
+    ],
+    "price_krw": 79970,
+    "price_usd": "79.97",
+    "sku": "FW-cb09d76b9f4cc9011baa436c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프 바지 기모\",\"네이비 85\"]",
+    "naver_variant_id": "60529822968",
+    "options_ko": [
+     "아디다스 남성 골프 바지 기모",
+     "네이비",
+     "85"
+    ],
+    "price_krw": 79970,
+    "price_usd": "79.97",
+    "sku": "FW-fa351e49e04e44d20992bdbc",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프 바지 기모\",\"네이비 88\"]",
+    "naver_variant_id": "60340540052",
+    "options_ko": [
+     "아디다스 남성 골프 바지 기모",
+     "네이비",
+     "88"
+    ],
+    "price_krw": 79970,
+    "price_usd": "79.97",
+    "sku": "FW-b9f58fb04924295e660ecbce",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프 바지 기모\",\"네이비 92\"]",
+    "naver_variant_id": "60340540053",
+    "options_ko": [
+     "아디다스 남성 골프 바지 기모",
+     "네이비",
+     "92"
+    ],
+    "price_krw": 79970,
+    "price_usd": "79.97",
+    "sku": "FW-e013dd03e51f708b54b6fd23",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프 바지 기모\",\"블랙 82\"]",
+    "naver_variant_id": "60340540054",
+    "options_ko": [
+     "아디다스 남성 골프 바지 기모",
+     "블랙",
+     "82"
+    ],
+    "price_krw": 79970,
+    "price_usd": "79.97",
+    "sku": "FW-d5b9356fdfe883594351f0d4",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프 바지 기모\",\"블랙 85\"]",
+    "naver_variant_id": "60340540055",
+    "options_ko": [
+     "아디다스 남성 골프 바지 기모",
+     "블랙",
+     "85"
+    ],
+    "price_krw": 79970,
+    "price_usd": "79.97",
+    "sku": "FW-8a47e670e60569a1ad63e7a5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프 바지 기모\",\"블랙 88\"]",
+    "naver_variant_id": "60340540056",
+    "options_ko": [
+     "아디다스 남성 골프 바지 기모",
+     "블랙",
+     "88"
+    ],
+    "price_krw": 79970,
+    "price_usd": "79.97",
+    "sku": "FW-c04ee1d4b09f6cfbb2208cad",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프 바지 기모\",\"블랙 92\"]",
+    "naver_variant_id": "60340540057",
+    "options_ko": [
+     "아디다스 남성 골프 바지 기모",
+     "블랙",
+     "92"
+    ],
+    "price_krw": 79970,
+    "price_usd": "79.97",
+    "sku": "FW-bd829b236dc67e0e33e36015",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프 바지 기모\",\"카본 82\"]",
+    "naver_variant_id": "60340540058",
+    "options_ko": [
+     "아디다스 남성 골프 바지 기모",
+     "카본",
+     "82"
+    ],
+    "price_krw": 79970,
+    "price_usd": "79.97",
+    "sku": "FW-e321e9e101bc5eb5bd6e8211",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프 바지 기모\",\"카본 85\"]",
+    "naver_variant_id": "60340540059",
+    "options_ko": [
+     "아디다스 남성 골프 바지 기모",
+     "카본",
+     "85"
+    ],
+    "price_krw": 79970,
+    "price_usd": "79.97",
+    "sku": "FW-1da154f275b6f46cdb2e7b51",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프 바지 기모\",\"카본 88\"]",
+    "naver_variant_id": "60340540060",
+    "options_ko": [
+     "아디다스 남성 골프 바지 기모",
+     "카본",
+     "88"
+    ],
+    "price_krw": 79970,
+    "price_usd": "79.97",
+    "sku": "FW-b7e4da0bd4896f8f215a621f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프 바지 기모\",\"카본 92\"]",
+    "naver_variant_id": "60340540061",
+    "options_ko": [
+     "아디다스 남성 골프 바지 기모",
+     "카본",
+     "92"
+    ],
+    "price_krw": 79970,
+    "price_usd": "79.97",
+    "sku": "FW-9a0b72e36d124efc6fbff0bb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프바지\",\"블랙 M(32)\"]",
+    "naver_variant_id": "56679103640",
+    "options_ko": [
+     "아디다스 남성 골프바지",
+     "블랙",
+     "M(32)"
+    ],
+    "price_krw": 54970,
+    "price_usd": "54.97",
+    "sku": "FW-49a476f8ee7ab8442e1d0a23",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프바지\",\"블랙 L(33)\"]",
+    "naver_variant_id": "56679103641",
+    "options_ko": [
+     "아디다스 남성 골프바지",
+     "블랙",
+     "L(33)"
+    ],
+    "price_krw": 54970,
+    "price_usd": "54.97",
+    "sku": "FW-18344bac58e6e8a2d455c613",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프바지\",\"블랙 XL(35)\"]",
+    "naver_variant_id": "56679103642",
+    "options_ko": [
+     "아디다스 남성 골프바지",
+     "블랙",
+     "XL(35)"
+    ],
+    "price_krw": 54970,
+    "price_usd": "54.97",
+    "sku": "FW-f4243b7b3d45d7c60f672393",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프바지\",\"블랙 XXL(36)\"]",
+    "naver_variant_id": "56679103643",
+    "options_ko": [
+     "아디다스 남성 골프바지",
+     "블랙",
+     "XXL(36)"
+    ],
+    "price_krw": 54970,
+    "price_usd": "54.97",
+    "sku": "FW-a5d8661a66c90a518a3ba5eb",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프바지\",\"네이비 M(32)\"]",
+    "naver_variant_id": "56679103644",
+    "options_ko": [
+     "아디다스 남성 골프바지",
+     "네이비",
+     "M(32)"
+    ],
+    "price_krw": 54970,
+    "price_usd": "54.97",
+    "sku": "FW-26c09cfea655b5692bae8de1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프바지\",\"네이비 L(33)\"]",
+    "naver_variant_id": "56679103645",
+    "options_ko": [
+     "아디다스 남성 골프바지",
+     "네이비",
+     "L(33)"
+    ],
+    "price_krw": 54970,
+    "price_usd": "54.97",
+    "sku": "FW-1ab560a92e78c0356897c749",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프바지\",\"네이비 XL(35)\"]",
+    "naver_variant_id": "56679103646",
+    "options_ko": [
+     "아디다스 남성 골프바지",
+     "네이비",
+     "XL(35)"
+    ],
+    "price_krw": 54970,
+    "price_usd": "54.97",
+    "sku": "FW-dc8b1a643ecff0171b920ca9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자(코스트코)제공에 동의합니다\",\"아디다스 남성 골프바지\",\"네이비 XXL(36)\"]",
+    "naver_variant_id": "56679103647",
+    "options_ko": [
+     "아디다스 남성 골프바지",
+     "네이비",
+     "XXL(36)"
+    ],
+    "price_krw": 54970,
+    "price_usd": "54.97",
+    "sku": "FW-99dff9eb115ecb443fd66325",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 600,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 700,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 300,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     },
+     "package_height_mm": {
+      "low": 40,
+      "central": 60,
+      "high": 100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "insulated",
+      "reliability": "estimated_average",
+      "table_version": 17,
+      "approved_by": "owner",
+      "approved_at": "2026-11-23"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 79970,
+   "original_krw": 83970,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "BOWKER (VIET NAM) GARMENT FTY"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "아디다스골프"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "아디다스골프바지"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "베트남산"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 기모"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "봄, 가을, 겨울"
+   },
+   {
+    "label_ko": "하의기장",
+    "value_ko": "긴바지"
+   },
+   {
+    "label_ko": "하의핏",
+    "value_ko": "일자핏"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2025년형"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.69,
+   "count": 136
+  },
+  "reviews": [
+   {
+    "id": "4583981282",
+    "score": 1,
+    "text_ko": "사이즈가 많이 작아요.\n평소 32를 편안하게 입는데 이건 아얘 입을 수 없는 사이즈입니다.\n34로 교환해서 입었는데 허리는 여유없이 빡빡하게 맞고 무엇보다 허벅지가 많이 작아요.\n제가 굵은 허벅지가 아님에도 많이 낍니다.\n한사이즈 더 큰걸로 교환하고 싶지만\n교환을 하면 왕복배송비에 시간소요까지.\n평소 32입으시는 분들이면 무조건 34이상으로 하셔야 맞으실거에요.\n신축성이 아얘 없지는 않지만 적은편이라 더 불편한것 같아요.",
+    "created_at": "2024-10-24T00:36:50Z",
+    "writer": "succ********",
+    "photos": [
+     "collected/50002788-fixtures/images/10076109143/fairwardgolf-review-image-26d7a038a51c7cd2.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/10076109143/fairwardgolf-review-avatar-6202dc818ea6eed2.webp",
+    "tier": "primary",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 100,
+    "text_original_ko": "사이즈가 많이 작아요…\n평소 32를 편안하게 입는데 이건 아얘 입을 수 없는 사이즈입니다.\n34로 교환해서 입었는데 허리는 여유없이 빡빡하게 맞고 무엇보다 허벅지가 많이 작아요..\n제가 굵은 허벅지가 아님에도 많이 낍니다.\n한사이즈 더 큰걸로 교환하고 싶지만\n교환을 하면 왕복배송비에 시간소요까지…\n평소 32입으시는 분들이면 무조건 34이상으로 하셔야 맞으실거에요~\n신축성이 아얘 없지는 않지만 적은편이라 더 불편한것 같아요.."
+   },
+   {
+    "id": "4576974305",
+    "score": 5,
+    "text_ko": "스판성이 좀 없어서 불편하다는 리뷰가 있던데 그래 불편하지않고요. 일단 핏이 예술입니다. 색상도 이쁘고 뒤에 마크도 이쁘고 동행분들이 다 바지 이쁘다고 난리네요",
+    "created_at": "2024-10-14T05:54:27Z",
+    "writer": "ysb3***",
+    "photos": [
+     "collected/50002788-fixtures/images/10076109143/fairwardgolf-review-image-3879dfb047ad14ad.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 91,
+    "text_original_ko": "스판성이 좀 없어서 불편하다는 리뷰가 있던데 그래 불편하지않고요~일단 핏이 예술입니다~~~색상도 이쁘고 뒤에 마크도 이쁘고~ 동행분들이 다 바지 이쁘다고 난리네요~"
+   },
+   {
+    "id": "5098967294",
+    "score": 3,
+    "text_ko": "오버핏. 기존 M(95)입으신분들은 S(90)추천. 충전재가 너무 빵빵해서 스윙에 안좋음. 비추. 가격도 다른것에 비해 두배 비쌈.",
+    "created_at": "2026-11-05T00:14:11Z",
+    "writer": "kjhc****",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 11,
+    "text_original_ko": "오버핏. 기존 M(95)입으신분들은 S(90)추천. 충전재가 너무 빵빵해서 스윙에 안좋음. 비추.가격도 다른것에 비해 두배 비쌈."
+   },
+   {
+    "id": "4847183900",
+    "score": 5,
+    "text_ko": "딱 제가 원하는 스타일의 바지입니다.\n기모인데도 착용감이 너무 편합니다.\n기장도 알자핏처럼 딱 떨이지고 좀 길어서 너무 맘에 들어요. 적극 추천합니다",
+    "created_at": "2025-11-22T08:35:06Z",
+    "writer": "kwan********",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/10076109143/fairwardgolf-review-avatar-bd16fb22781a4e35.webp",
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 75,
+    "text_original_ko": "딱 제가 원하는 스타일의 바지입니다.\n기모인데도 착용감이 너무 편합니다.\n기장도 알자핏처럼 딱 떨이지고~ 좀 길어서 너무 맘에 들어요~ 적극 추천합니다~"
+   },
+   {
+    "id": "4820433534",
+    "score": 4,
+    "text_ko": "사이즈는 한치수 크게 하였고 옷감 스판기능은 거의 없네요 바지밑단은 평소엔 거의 그대로 입는데 이옷은 줄여야 할만큼 여유가 있어요",
+    "created_at": "2025-10-14T03:49:28Z",
+    "writer": "kkyt****",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 73
+   },
+   {
+    "id": "4697595953",
+    "score": 5,
+    "text_ko": "색도 예쁜 남색이고 핏도 완전 좋아요. 사이즈 안맞을까봐 걱정 많이 했는데 다행이 잘 맞았습니다 신축성은 조금 떨어지네요. 그래도 예쁜걸로 다 커버.",
+    "created_at": "2025-04-07T01:26:34Z",
+    "writer": "ba****",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 75,
+    "text_original_ko": "색도 예쁜 남색이고 핏도 완전 좋아요.. 사이즈 안맞을까봐 걱정 많이 했는데 다행이 잘 맞았습니다 신축성은 조금 떨어지네요.. 그래도 예쁜걸로 다 커버.."
+   },
+   {
+    "id": "4688571826",
+    "score": 5,
+    "text_ko": "구매했습니다. 허리 사이즈는 평소 보다 한단계 더 큰걸로 주문했습니다. 엉덩이와 허벅지 쪽이 생각 보다 많이 슬림합니다. 그래도 옷은 이쁘네요.",
+    "created_at": "2025-03-25T01:29:34Z",
+    "writer": "sjas****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/10076109143/fairwardgolf-review-avatar-ee46ff3c54a3e917.webp",
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 74,
+    "text_original_ko": "가성비가 좋아서 구매했습니다. 허리 사이즈는 평소 보다 한단계 더 큰걸로 주문했습니다. 엉덩이와 허벅지 쪽이 생각 보다 많이 슬림합니다. 그래도 옷은 이쁘네요.",
+    "text_cut": [
+     "price"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/10076109143/fairwardgolf-10076109143-001-e43563cda9e44517.webp",
+    "sha256": "e43563cda9e44517e142a4a05839d2f380c9da9d2c01ac72e6a7289bb67273a0",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/10076109143/fairwardgolf-10076109143-003-875a1dfc299d4da0.webp",
+    "sha256": "875a1dfc299d4da084c74c553c75a503bb5f63565018f30b0a37a05023d2529f",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/10076109143/fairwardgolf-10076109143-004-662dd291e50d3607.webp",
+    "sha256": "662dd291e50d36075e121454e790657be7a86020d7839c17888d596c1987a2d7",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/10076109143/fairwardgolf-10076109143-005-5b9aa13abc79a83e.webp",
+    "sha256": "5b9aa13abc79a83ee782039fea80bff13ae84885a71a0d468e2d3e4e96ad0014",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/10076109143/fairwardgolf-10076109143-006-32694af7dcc2cdc2.webp",
+    "sha256": "32694af7dcc2cdc2da08055d0f0d696a9bb0fa6ba14a10d8b44bf8f2a224c738",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/10076109143/fairwardgolf-10076109143-007-b1a586cf19a8e1a8.webp",
+    "sha256": "b1a586cf19a8e1a8d09e28ed3f6cd3f9ad59e836bff89a4218a707eed4067c4d",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/10076109143/fairwardgolf-10076109143-008-0b61ef1096269ce2.webp",
+    "sha256": "0b61ef1096269ce232db5ccc345d8b0a27856dcc7ac494b81b796f5d4c722d19",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/10076109143/fairwardgolf-10076109143-009-d9bfd7e0273da35c.webp",
+    "sha256": "d9bfd7e0273da35c0b3eff0c7a24421ece9fda869660d1564708e974c9cd63bd",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 2.115942,
+    "product_average_days": 2.6666667,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 3,
+    "arrival_date_text": null,
+    "arrival_probability": 75,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "◆배송전 안내사항◆\n결제일로부터 익일에서 3영업일 사이에 발송되며, 결재 후 30분 이내 취소시 즉시 환불 가능하오나\n발주서가 해당 업체에 전달된 이후에는\n발송전이라도 주문취소는 절대 불가하며,\n이후 취소시 단순변심반품으로만 환불되어\n왕복택배비 차감 후 환불 되오니\n구매시 신중히 결재 부탁드립니다.\n\n약기모 소재로 가을/초겨울에\n입기 적합한 상품 입니다.\n1~2월 같은 한겨울에 입기에는\n약간 추우실수 있습니다.\n두툼한 기모소재가 아닌\n약기모 제품이니 참고 부탁드려요.\n사이즈 치수 꼭 확인 하셔서\n주문 부탁드립니다.\n평소 입던 사이즈보다\n한사이즈 업 해서\n입으시는걸 추천드려요.\n\n아디다스 남성 골프 바지 기모\nADIDAS GOLF BRUSHED PANTS\n\n▶ 제품 특징\n가을, 겨울용 남성 골프 팬츠로 추운 날씨에 보온성과 편안함을 제공\n▶ 제품 사양\n브랜드 : 아디다스 골프 (Adidas Golf)\n색상 : 블랙, 네이비, 카본\n소재 : 폴리에스터 100%\n사이즈: 82, 85, 88, 92\n▶ 사이즈\n82 - 허리둘레 81cm, 엉덩이둘레 100cm, 인심 83cm\n85 - 허리둘레 84cm, 엉덩이둘레 103cm, 인심 83cm\n88 - 허리둘레 87cm, 엉덩이둘레 106cm, 인심 83cm\n92 - 허리둘레 91cm, 엉덩이둘레 110cm, 인심 83cm\n제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n허리 사이즈가 작게 나왔으니\n한사이즈 업 해서 입으시는걸 추천드려요.\n\n-옵션 01-\n아디다스 남성 골프 바지 기모\n네이비\n\n▶ 사이즈\n82 - 허리둘레 81cm, 엉덩이둘레 100cm, 인심 83cm\n85 - 허리둘레 84cm, 엉덩이둘레 103cm, 인심 83cm\n88 - 허리둘레 87cm, 엉덩이둘레 106cm, 인심 83cm\n92 - 허리둘레 91cm, 엉덩이둘레 110cm, 인심 83cm\n제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n허리 사이즈가 작게 나왔으니\n한사이즈 업 해서 입으시는걸 추천드려요.\n\n-옵션 02-\n아디다스 남성 골프 바지 기모\n블랙\n\n▶ 사이즈\n82 - 허리둘레 81cm, 엉덩이둘레 100cm, 인심 83cm\n85 - 허리둘레 84cm, 엉덩이둘레 103cm, 인심 83cm\n88 - 허리둘레 87cm, 엉덩이둘레 106cm, 인심 83cm\n92 - 허리둘레 91cm, 엉덩이둘레 110cm, 인심 83cm\n제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n허리 사이즈가 작게 나왔으니\n한사이즈 업 해서 입으시는걸 추천드려요.\n\n-옵션 03-\n아디다스 남성 골프 바지 기모\n카본\n\n▶ 사이즈\n82 - 허리둘레 81cm, 엉덩이둘레 100cm, 인심 83cm\n85 - 허리둘레 84cm, 엉덩이둘레 103cm, 인심 83cm\n88 - 허리둘레 87cm, 엉덩이둘레 106cm, 인심 83cm\n92 - 허리둘레 91cm, 엉덩이둘레 110cm, 인심 83cm\n제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n허리 사이즈가 작게 나왔으니\n한사이즈 업 해서 입으시는걸 추천드려요.\n\n2026년 신상 아디다스 골프바지가\n입고 되었습니다.\n얇은 소재로\n봄에서 초가을까지\n착용 가능하며\n신축성이 우수하여 편안하며\n자외선 차단/ 발수/방풍\n기능성소재를 사용하여\n야외활동시 용이합니다.\n\n아디다스 골프 남성 바지\nAdidas Golf Men's Pants\n\n▶ 제품 특징\n신축성이 우수하며, UPF 50+, 발수 가공 및 방풍 기능 원단을 사용하여 기능성을 한층 강화히였습니다.\n▶ 제품 사양\n브랜드 : 아디다스 골프 (Adidas Golf)\n색상 : 블랙, 네이비, 블루\n사이즈 : M(32),L(33),XL(35),XXL(36)\n소재 : 재생 폴리에스터 88%, 스판덱스 12%\n▶ 사이즈\nM(32) - 허리둘레 81.0cm, 힙 100cm, 인심 83.0cm\nL(33) - 허리둘레 84.0cm, 힙 103cm, 인심 83.0cm\nXL(35) - 허리둘레 87.0cm, 힙 106cm, 인심 83.0cm\nXXL(36) - 허리둘레 91.0cm, 힙 110cm, 인심 83.0cm\n제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n\n-옵션 01-\n아디다스 골프 남성 바지\n블랙\n\n▶ 사이즈\nM(32) - 허리둘레 81.0cm, 힙 100cm, 인심 83.0cm\nL(33) - 허리둘레 84.0cm, 힙 103cm, 인심 83.0cm\nXL(35) - 허리둘레 87.0cm, 힙 106cm, 인심 83.0cm\nXXL(36) - 허리둘레 91.0cm, 힙 110cm, 인심 83.0cm\n제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.\n\n-옵션 02-\n아디다스 골프 남성 바지\n네이비\n\n▶ 사이즈\nM(32) - 허리둘레 81.0cm, 힙 100cm, 인심 83.0cm\nL(33) - 허리둘레 84.0cm, 힙 103cm, 인심 83.0cm\nXL(35) - 허리둘레 87.0cm, 힙 106cm, 인심 83.0cm\nXXL(36) - 허리둘레 91.0cm, 힙 110cm, 인심 83.0cm\n제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20261028_30/1793118996558iCamP_JPEG/%EB%84%A4%EC%9D%B4%EB%B9%84_%EC%83%81%EC%9D%98%EC%99%80_%EA%B3%A8%ED%94%84_%EC%8A%AC%EB%9E%99%EC%8A%A4_%EC%8A%A4%ED%83%80%EC%9D%BC%EC%B4%AC%EC%98%81.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261028_288/17931189973829FOFa_JPEG/%ED%99%94%EC%9D%B4%ED%8A%B8_%EC%85%94%EC%B8%A0%EC%99%80_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B3%A8%ED%94%84_%ED%8C%AC%EC%B8%A0.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261028_143/1793118998814nxCXu_JPEG/%ED%99%94%EC%9D%B4%ED%8A%B8_%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EC%B9%B4%ED%83%88%EB%A1%9C%EA%B7%B8_%EC%83%B7.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261028_299/1793119039449YJuLS_JPEG/%ED%99%94%EC%9D%B4%ED%8A%B8_%EC%85%94%EC%B8%A0%EC%99%80_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B3%A8%ED%94%84_%ED%8C%AC%EC%B8%A0.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261010_203/1791606015991tIfMO_JPEG/%EC%A0%95%EA%B0%88%ED%95%9C_%EB%84%A4%EC%9D%B4%EB%B9%84_%EA%B3%A8%ED%94%84_%ED%8C%AC%EC%B8%A0_%EC%A0%9C%ED%92%88_%EC%82%AC%EC%A7%84.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261010_136/1791606023128neMD8_JPEG/%EB%94%A5_%EB%84%A4%EC%9D%B4%EB%B9%84_%ED%9B%84%EB%A9%B4_%ED%8C%AC%EC%B8%A0_%EC%A0%9C%ED%92%88_%EC%82%AC%EC%A7%84.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261028_199/1793119032901mc669_JPEG/%EB%84%A4%EC%9D%B4%EB%B9%84_%EC%83%81%EC%9D%98%EC%99%80_%EA%B3%A8%ED%94%84_%EC%8A%AC%EB%9E%99%EC%8A%A4_%EC%8A%A4%ED%83%80%EC%9D%BC%EC%B4%AC%EC%98%81.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261010_156/1791605958906BrL4O_JPEG/%EA%B9%94%EB%81%94%ED%95%9C_%EB%B8%94%EB%9E%99_%ED%8D%BC%ED%8F%AC%EB%A8%BC%EC%8A%A4_%ED%8C%AC%EC%B8%A0_%EC%A0%9C%ED%92%88_%EC%82%AC%EC%A7%84.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261010_223/17916059651043H88u_JPEG/%EB%B8%94%EB%9E%99_%EA%B3%A8%ED%94%84_%ED%8C%AC%EC%B8%A0_%ED%9B%84%EB%A9%B4_%EC%A0%9C%ED%92%88_%EC%82%AC%EC%A7%84.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261028_90/1793119044040oDwWK_JPEG/%ED%99%94%EC%9D%B4%ED%8A%B8_%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4_%EA%B3%A8%ED%94%84%EC%9B%A8%EC%96%B4_%EC%B9%B4%ED%83%88%EB%A1%9C%EA%B7%B8_%EC%83%B7.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261010_143/1791606035136pzXQL_JPEG/%EB%8B%A4%ED%81%AC_%EC%B0%A8%EC%BD%9C_%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%93%9C_%ED%8C%AC%EC%B8%A0_%EC%A0%9C%ED%92%88%EC%83%B7.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261010_82/1791606044330UFhos_JPEG/%EC%B0%A8%EC%BD%9C_%EA%B7%B8%EB%A0%88%EC%9D%B4_%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%93%9C_%ED%8C%AC%EC%B8%A0_%EC%A0%9C%ED%92%88_%EC%82%AC%EC%A7%84.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261026_231/1792996755806HBqfR_PNG/tmp2094858732058136676.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261026_171/1792996755808u2MK2_PNG/tmp8946521743253791550.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261026_152/1792996014725CEIrL_PNG/tmp1003047171263111770.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260309_1/17729862148267MvlP_JPEG/%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4_%EA%B3%A8%ED%94%84_%EB%82%A8%EC%84%B1_%EB%B0%94%EC%A7%80_-_%EB%B8%94%EB%9E%99.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260309_252/1772986222499HaJVc_JPEG/Gemini_Generated_Image_rhk881rhk881rhk8.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20261026_242/1792996040330b3SGq_PNG/tmp8219473528518465427.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260309_41/1772986232378l0aPT_JPEG/Gemini_Generated_Image_5ce9jb5ce9jb5ce9.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260309_277/1772986237472qKgfs_JPEG/Gemini_Generated_Image_ospf2cospf2cospf.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231113_244/1699855573834svQE4_JPEG/860001.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231113_124/1699855576247i8fIi_JPEG/860004.jpg?type=w848"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르, 기모",
+    "source": "spec"
+   },
+   {
+    "label_ko": "제품소재",
+    "value_ko": "재생 폴리에스터 82%, 폴리에스터 18%",
+    "source": "notice"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_bottoms",
+   "option": 2,
+   "values": [
+    {
+     "ko": "82",
+     "us": "W32",
+     "letter": "L",
+     "chest_cm": 81.3,
+     "basis": "waist",
+     "chart_label": "82"
+    },
+    {
+     "ko": "M(32)",
+     "us": "W32",
+     "letter": "L",
+     "chest_cm": 81.3,
+     "basis": "waist",
+     "chart_label": "M(32)"
+    },
+    {
+     "ko": "85",
+     "us": "W33",
+     "letter": "L",
+     "chest_cm": 81.3,
+     "basis": "waist",
+     "chart_label": "85"
+    },
+    {
+     "ko": "L(33)",
+     "us": "W33",
+     "letter": "L",
+     "chest_cm": 81.3,
+     "basis": "waist",
+     "chart_label": "L(33)"
+    },
+    {
+     "ko": "88",
+     "us": "W34",
+     "letter": "XL",
+     "chest_cm": 86.4,
+     "basis": "waist",
+     "chart_label": "88"
+    },
+    {
+     "ko": "XL(35)",
+     "us": "W35",
+     "letter": "XL",
+     "chest_cm": 86.4,
+     "basis": "waist",
+     "chart_label": "XL(35)"
+    },
+    {
+     "ko": "92",
+     "us": "W36",
+     "letter": "XXL",
+     "chest_cm": 91.4,
+     "basis": "waist",
+     "chart_label": "92"
+    },
+    {
+     "ko": "XXL(36)",
+     "us": "W36",
+     "letter": "XXL",
+     "chest_cm": 91.4,
+     "basis": "waist",
+     "chart_label": "XXL(36)"
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": null,
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:26d1aec7f96c9754",
+   "kind": "title",
+   "ko": "아디다스 남성 골프바지 기모 골프웨어 간절기 가을 겨울"
+  },
+  {
+   "id": "brand:293da7ca44f1a0a6",
+   "kind": "brand",
+   "ko": "아디다스골프"
+  },
+  {
+   "id": "option_name:45ecef3c70c3d0be",
+   "kind": "option_name",
+   "ko": "모델명"
+  },
+  {
+   "id": "option_value:e50aef3176ec3739",
+   "kind": "option_value",
+   "ko": "아디다스 남성 골프 바지 기모"
+  },
+  {
+   "id": "option_value:7ce0faad5c50a71e",
+   "kind": "option_value",
+   "ko": "아디다스 남성 골프바지"
+  },
+  {
+   "id": "option_name:5a2fdefe4a62f26a",
+   "kind": "option_name",
+   "ko": "컬러"
+  },
+  {
+   "id": "option_value:efa51b9f23b93146",
+   "kind": "option_value",
+   "ko": "네이비"
+  },
+  {
+   "id": "option_value:91f171f68356ec23",
+   "kind": "option_value",
+   "ko": "블랙"
+  },
+  {
+   "id": "option_value:6a04590fe72b8696",
+   "kind": "option_value",
+   "ko": "카본"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:a46e37632fa6ca51",
+   "kind": "option_value",
+   "ko": "82"
+  },
+  {
+   "id": "option_value:c2d0d9d0a0293dd3",
+   "kind": "option_value",
+   "ko": "M(32)"
+  },
+  {
+   "id": "option_value:b4944c6ff08dc6f4",
+   "kind": "option_value",
+   "ko": "85"
+  },
+  {
+   "id": "option_value:d4536b7f9946b280",
+   "kind": "option_value",
+   "ko": "L(33)"
+  },
+  {
+   "id": "option_value:8b940be7fb78aaa6",
+   "kind": "option_value",
+   "ko": "88"
+  },
+  {
+   "id": "option_value:ff7cfee3c95a701a",
+   "kind": "option_value",
+   "ko": "XL(35)"
+  },
+  {
+   "id": "option_value:8241649609f88ccd",
+   "kind": "option_value",
+   "ko": "92"
+  },
+  {
+   "id": "option_value:ec368eb6454b2532",
+   "kind": "option_value",
+   "ko": "XXL(36)"
+  },
+  {
+   "id": "fact_label:f760b3afbc6b1484",
+   "kind": "fact_label",
+   "ko": "개인정보제공 동의"
+  },
+  {
+   "id": "fact_value:3bf2d4c9c8f39ad7",
+   "kind": "fact_value",
+   "ko": "배송을 위한 제3자(코스트코)제공에 동의합니다"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:e8bf2349c632e968",
+   "kind": "spec_value",
+   "ko": "BOWKER (VIET NAM) GARMENT FTY"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:293da7ca44f1a0a6",
+   "kind": "spec_value",
+   "ko": "아디다스골프"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:55821bf6b0f3f3de",
+   "kind": "spec_value",
+   "ko": "아디다스골프바지"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:7cd6ad9c85830004",
+   "kind": "spec_value",
+   "ko": "베트남산"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:5e22cc1580c03e27",
+   "kind": "spec_value",
+   "ko": "폴리에스테르, 기모"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:b9a7f0a8ab860d75",
+   "kind": "spec_value",
+   "ko": "봄, 가을, 겨울"
+  },
+  {
+   "id": "spec_label:777511e7e585c6f2",
+   "kind": "spec_label",
+   "ko": "하의기장"
+  },
+  {
+   "id": "spec_value:e51b009720d94497",
+   "kind": "spec_value",
+   "ko": "긴바지"
+  },
+  {
+   "id": "spec_label:35e8af68e7a1b980",
+   "kind": "spec_label",
+   "ko": "하의핏"
+  },
+  {
+   "id": "spec_value:02dbde1214ae74e1",
+   "kind": "spec_value",
+   "ko": "일자핏"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:6aea4c4b3fb65e70",
+   "kind": "spec_value",
+   "ko": "2025년형"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "review:8881d4001d1ca137",
+   "kind": "review",
+   "ko": "사이즈가 많이 작아요.\n평소 32를 편안하게 입는데 이건 아얘 입을 수 없는 사이즈입니다.\n34로 교환해서 입었는데 허리는 여유없이 빡빡하게 맞고 무엇보다 허벅지가 많이 작아요.\n제가 굵은 허벅지가 아님에도 많이 낍니다.\n한사이즈 더 큰걸로 교환하고 싶지만\n교환을 하면 왕복배송비에 시간소요까지.\n평소 32입으시는 분들이면 무조건 34이상으로 하셔야 맞으실거에요.\n신축성이 아얘 없지는 않지만 적은편이라 더 불편한것 같아요."
+  },
+  {
+   "id": "review:d853ec28e89460fd",
+   "kind": "review",
+   "ko": "스판성이 좀 없어서 불편하다는 리뷰가 있던데 그래 불편하지않고요. 일단 핏이 예술입니다. 색상도 이쁘고 뒤에 마크도 이쁘고 동행분들이 다 바지 이쁘다고 난리네요"
+  },
+  {
+   "id": "review:5afd7a1a45f7960b",
+   "kind": "review",
+   "ko": "오버핏. 기존 M(95)입으신분들은 S(90)추천. 충전재가 너무 빵빵해서 스윙에 안좋음. 비추. 가격도 다른것에 비해 두배 비쌈."
+  },
+  {
+   "id": "review:91201f3894ffcca3",
+   "kind": "review",
+   "ko": "딱 제가 원하는 스타일의 바지입니다.\n기모인데도 착용감이 너무 편합니다.\n기장도 알자핏처럼 딱 떨이지고 좀 길어서 너무 맘에 들어요. 적극 추천합니다"
+  },
+  {
+   "id": "review:4e9991b507143e6b",
+   "kind": "review",
+   "ko": "사이즈는 한치수 크게 하였고 옷감 스판기능은 거의 없네요 바지밑단은 평소엔 거의 그대로 입는데 이옷은 줄여야 할만큼 여유가 있어요"
+  },
+  {
+   "id": "review:85a8f54e7b36f224",
+   "kind": "review",
+   "ko": "색도 예쁜 남색이고 핏도 완전 좋아요. 사이즈 안맞을까봐 걱정 많이 했는데 다행이 잘 맞았습니다 신축성은 조금 떨어지네요. 그래도 예쁜걸로 다 커버."
+  },
+  {
+   "id": "review:fa82556e9fba5900",
+   "kind": "review",
+   "ko": "구매했습니다. 허리 사이즈는 평소 보다 한단계 더 큰걸로 주문했습니다. 엉덩이와 허벅지 쪽이 생각 보다 많이 슬림합니다. 그래도 옷은 이쁘네요."
+  }
+ ]
+}
