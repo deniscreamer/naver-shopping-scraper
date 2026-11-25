@@ -1108,3 +1108,94 @@ def test_spacing_merge_drops_a_repeat_in_either_order():
     rows = [{"options": ["슬림일자블랙", "55"]}, {"options": ["슬림일자 블랙", "55"]}, {"options": ["슬림일자 블랙", "66"]}]
     out = transform._spacing_merged(rows, [0, 1])
     assert [r["options"] for r in out] == [["슬림일자 블랙", "55"], ["슬림일자 블랙", "66"]]
+
+
+# ---- the owner's sizes block (variants_by_owner.json "sizes", 2026-11-25) -----------------------------------------
+
+def _owned(pid, sizes, rules=RULES_ON):
+    sidecar = os.path.join(os.path.dirname(FX), "description_images", pid + ".json")
+    with open(sidecar, encoding="utf-8") as f:
+        images_text = json.load(f)
+    return prepare(_fixture(pid), rules, "r", 1, images_text, None, sizes)
+
+
+def test_the_owners_gender_sizes_on_that_profile():
+    """adidas 9069946345 states no gender (Golf Pants hold such a product): the owner says men's, so its cm waists
+    are sized on mens_bottoms (the women's grid made 85 and 88 one US size); "women" takes the women's profile, a
+    word that is neither is unused, and nothing else of the product moves."""
+    plain = _owned("9069946345", None)
+    assert plain["held"][0]["code"] == "size_unmapped" and plain["product"]["sizes"]["profile"] == "womens_pants"
+    men = _owned("9069946345", {"gender": "men"})
+    assert men["status"] == "ready" and men["product"]["sizes"]["profile"] == "mens_bottoms"
+    assert [(v["ko"], v["us"]) for v in men["product"]["sizes"]["values"]] == [
+        ("76", "W30"), ("79", "W31"), ("82", "W32"), ("85", "W33"), ("88", "W34"), ("92", "W36")]
+    assert {"code": "sizes_by_owner", "detail": "gender men"} in men["notes"]
+    assert men["product"]["attributes"] == plain["product"]["attributes"]           # the sizes only
+    assert men["product"]["variants"] == plain["product"]["variants"]
+    women = _owned("9069946345", {"gender": "women"})
+    assert women["product"]["sizes"]["profile"] == "womens_pants" and women["held"]   # still two sizes on one
+    odd = _owned("9069946345", {"gender": "unisex"})
+    assert {"code": "sizes_by_owner_unused", "detail": "gender unisex: men or women"} in odd["notes"]
+    # a category without a men's profile (windbreakers): unused, the women's profile kept
+    wind = _owned("11814351207", {"gender": "men", "read_as": {"2": "S(90)", "3": "M(95)", "4": "L(100)"}})
+    assert wind["product"]["sizes"]["profile"] == "womens_tops"
+    assert {"code": "sizes_by_owner_unused", "detail": "gender men: the category has no men's size profile"} \
+        in wind["notes"]
+
+
+def test_the_owners_size_yields_the_title_guard():
+    """12994831966's title ends "핑크, 110" and its 모델명 "... 95": title_size leaves it unread (held). The owner's
+    size 110 is the one sold: 사이즈 110 and 색상 핑크 facts, XXL (US 18); a size beside a size option is unused."""
+    assert _owned("12994831966", None)["held"][0]["code"] == "size_unmapped"
+    p = _owned("12994831966", {"size": "110"})
+    assert p["status"] == "ready" and p["product"]["sizes"]["fact"] == {"label_ko": "사이즈", "ko": "110",
+                                                                       "us": "XXL (US 18)"}
+    assert {"label_ko": "색상", "value_ko": "핑크"} in p["product"]["facts"]
+    other = _owned("12994831966", {"size": "105"})     # not the title's size: the size fact alone, no colour taken
+    assert other["product"]["sizes"]["fact"]["ko"] == "105" and not any(
+        f["label_ko"] == "색상" for f in other["product"]["facts"])
+    sized = _owned("11814351207", {"size": "2"})
+    assert {"code": "sizes_by_owner_unused", "detail": "size 2: the product has a size option, a size fact or "
+            "several variants"} in sized["notes"] and sized["held"]
+
+
+def test_the_owners_read_as_keeps_the_value_ordered():
+    """WAAC 11814351207 sells 2 / 3 / 4, read by no rule: the owner's S(90) / M(95) / L(100) size them, the variants
+    keep 2 / 3 / 4 (the value ordered on Naver, sizeKo); Nike 13660201494's title S read as XS (US 0-2), its fact S."""
+    p = _owned("11814351207", {"read_as": {"2": "S(90)", "3": "M(95)", "4": "L(100)", "9": "XL"}})
+    assert p["status"] == "ready"
+    assert [(v["ko"], v["us"], v["read_as"]) for v in p["product"]["sizes"]["values"]] == [
+        ("2", "S (US 4-6)", "S(90)"), ("3", "M (US 8-10)", "M(95)"), ("4", "L (US 12-14)", "L(100)")]
+    assert [v["options_ko"] for v in p["product"]["variants"]] == [["2"], ["3"], ["4"]]
+    assert not any("naver_options_ko" in v for v in p["product"]["variants"])
+    assert p["product"]["options"] == [{"name_ko": "사이즈", "values_ko": ["2", "3", "4"]}]
+    assert {"code": "sizes_by_owner_unused", "detail": "read_as 9: not a size value of the product"} in p["notes"]
+    nike = _owned("13660201494", {"size": "S", "read_as": {"S": "XS"}})
+    assert nike["status"] == "ready" and nike["product"]["sizes"]["fact"] == {
+        "label_ko": "사이즈", "ko": "S", "us": "XS (US 0-2)", "read_as": "XS"}
+    assert {"code": "sizes_by_owner", "detail": "size S; read_as S = XS"} in nike["notes"]
+    alone = _owned("13660201494", {"size": "S"})       # the letter as written: the profile's S
+    assert alone["product"]["sizes"]["fact"]["us"] == "S (US 4-6)"
+
+
+def test_the_owners_same_as_accepts_one_collision():
+    """아크나인 7496732129: the winter type's bare S..XL and the 간절기 type's S(25~26인치)..XXL(33~34인치) land on
+    one US size each (held). The owner's option A: the bare letters are the inch letters' sizes, merged into them,
+    each variant keeping its own Naver value; the variants and their count unchanged."""
+    plain = _owned("7496732129", None)
+    assert plain["held"][0]["detail"].startswith("two Korean sizes on one US size")
+    same = {"S": "S(25~26인치)", "M": "M(27~28인치)", "L": "L(29~30인치)", "XL": "XL(31~32인치)"}
+    p = _owned("7496732129", {"same_as": same})
+    assert p["status"] == "ready" and p["product"]["sizes"]["merged"] == same
+    assert p["product"]["options"][2]["values_ko"] == ["S(25~26인치)", "M(27~28인치)", "L(29~30인치)", "XL(31~32인치)",
+                                                       "XXL(33~34인치)"]
+    assert len(p["product"]["variants"]) == len(plain["product"]["variants"])
+    winter = [v for v in p["product"]["variants"] if v["options_ko"][0].startswith("A타입")]
+    assert winter and all(v["naver_options_ko"][2] in same and same[v["naver_options_ko"][2]] == v["options_ko"][2]
+                          for v in winter)
+    assert all("naver_options_ko" not in v for v in p["product"]["variants"] if v not in winter)
+    half = _owned("7496732129", {"same_as": {"S": "S(25~26인치)"}})      # one pair only: the others still collide
+    assert half["held"][0]["code"] == "size_unmapped"
+    odd = _owned("7496732129", {"same_as": {"S": "XS"}})
+    assert {"code": "sizes_by_owner_unused", "detail": "same_as S: XS (not two size values of the product)"} \
+        in odd["notes"]

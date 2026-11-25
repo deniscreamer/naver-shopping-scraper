@@ -12,6 +12,7 @@ import pytest
 import attributes as A
 import placement as PL
 from placement_rules import CategoryPlacement, Leaf, PlacementProfile, profile_for
+from run_transform import read_owner_variants
 from shop_stores import StoreId
 from transform import prepare
 from transform_shops import rules_for
@@ -89,6 +90,9 @@ EXPECTED = {
     "5460564989": ("rainwear-midlayers",), "11859489664": ("rainwear-midlayers",), "9435597606": (TOPS_W,),
     "6485458095": (TOPS_M, TOPS_W), "13740514016": (TOPS_M,), "5176506757": (TOPS_M,),
     "754260851": (), "4509557063": (), "10332996284": (),
+    # the owner's answers on five held products (2026-11-25, fixtures/owner/variants_by_owner.json "sizes")
+    "9069946345": (PANTS,), "11814351207": (WIND,), "13660201494": (TOPS_W,), "12994831966": (TOPS_W,),
+    "7496732129": (PANTS,),
 }
 APPAREL = {KNITS, TOPS_W, TOPS_M, WIND, PANTS, "rainwear-midlayers", "womens-skirts-culottes"}
 UNRESOLVED = {"12497168529": "gender conflict"}           # ready, placement holds it: the reason
@@ -99,12 +103,17 @@ SPLIT = {"13369469193": ("unisex", {M: 3, W: 3}),        # 성별 남녀공용: 
          "6485458095": ("mixed", {TOPS_M: 8, TOPS_W: 6})}
 
 
+OWNER_DROPS, OWNER_SIZES = read_owner_variants(os.path.join(FX, "owner", "variants_by_owner.json"))
+
+
 def prepared(name):
+    """The fixture prepared as run_transform does: its sidecar and the owner's entry (fixtures/owner, 2026-11-25)."""
     with open(os.path.join(FX, "collected", name + ".json"), encoding="utf-8") as f:
         line = json.load(f)
     sidecar = os.path.join(FX, "description_images", name + ".json")
     images = json.load(open(sidecar, encoding="utf-8")) if os.path.isfile(sidecar) else None
-    return prepare(line, rules_for("fairwardgolf"), "50002788-fixtures", 1, images)
+    return prepare(line, rules_for("fairwardgolf"), "50002788-fixtures", 1, images, OWNER_DROPS.get(line["key"]),
+                   OWNER_SIZES.get(line["key"]))
 
 
 @pytest.mark.parametrize("name", sorted(EXPECTED))

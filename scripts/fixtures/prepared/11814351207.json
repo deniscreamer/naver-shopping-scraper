@@ -1,0 +1,473 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:100104671:11814351207",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (short 1); 1 trimmed"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "PAID 3500 KRW"
+  },
+  {
+   "code": "sizes_by_owner",
+   "detail": "read_as 2 = S(90); read_as 3 = M(95); read_as 4 = L(100)"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/activeactivemall/products/11814351207",
+  "channel_no": "100104671",
+  "product_id": "11814351207",
+  "category_id": "50002798"
+ },
+ "product": {
+  "title_ko": "WAAC 여성 에어홀 트리코트 점퍼 바람막이",
+  "brand_ko": "코오롱인더스트리",
+  "brand_source": "manufacturer:notice:제조자(사)",
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "WAAC 여성 에어홀 트리코트 점퍼 바람막이"
+     },
+     {
+      "source": "listing",
+      "value": "womens",
+      "text": "여성 골프 바람막이 점퍼"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "2",
+     "3",
+     "4"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"2\"]",
+    "naver_variant_id": "48773283878",
+    "options_ko": [
+     "2"
+    ],
+    "price_krw": 69000,
+    "price_usd": "69.00",
+    "sku": "FW-e3566b15622d0215779c3af5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 150,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"3\"]",
+    "naver_variant_id": "48773283879",
+    "options_ko": [
+     "3"
+    ],
+    "price_krw": 69000,
+    "price_usd": "69.00",
+    "sku": "FW-674092d23e02f879903120d1",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 150,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"4\"]",
+    "naver_variant_id": "48773283880",
+    "options_ko": [
+     "4"
+    ],
+    "price_krw": 69000,
+    "price_usd": "69.00",
+    "sku": "FW-4d534ae8f7523c06152a7ee0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 150,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 400,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 13,
+      "approved_by": "owner",
+      "approved_at": "2026-11-20"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 69000,
+   "original_krw": 69000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "원산지",
+    "value_ko": "국산"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "5050050888",
+    "score": 5,
+    "text_ko": "잘착용하고운동열심히할것같아요",
+    "created_at": "2026-08-25T04:02:28Z",
+    "writer": "suhj******",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 3,
+    "text_original_ko": "배송빠르고.\n잘착용하고운동열심히할것같아요",
+    "text_cut": [
+     "shipping"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/11814351207/fairwardgolf-11814351207-001-7218e26831a7c870.webp",
+    "sha256": "7218e26831a7c870fe9ed59a85f13cf55737e866c59a64ff93c2b3cd1841dd8f",
+    "width": 550,
+    "height": 550
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/11814351207/fairwardgolf-11814351207-002-f2aad920a4949fa2.webp",
+    "sha256": "f2aad920a4949fa24734b2f7cec1cac635ec65d023fda72df36021a5f24c51ac",
+    "width": 550,
+    "height": 550
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/11814351207/fairwardgolf-11814351207-003-de4a5d0447e2d963.webp",
+    "sha256": "de4a5d0447e2d96313ca44f092d895c1356bde7a5053c0da321ad3b6d8eb5087",
+    "width": 550,
+    "height": 550
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/11814351207/fairwardgolf-11814351207-004-b862e3c4448e8232.webp",
+    "sha256": "b862e3c4448e823220056fec9619c36ffb01e7f3e3261e2e36d9efbb5e7dfbca",
+    "width": 550,
+    "height": 550
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/11814351207/fairwardgolf-11814351207-005-55e8375be2670679.webp",
+    "sha256": "55e8375be26706791cfac5a06cb3e63f8752f85388cac3ed97e464adf4c67d41",
+    "width": 550,
+    "height": 550
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/11814351207/fairwardgolf-11814351207-006-095b7c496c3f8ce1.webp",
+    "sha256": "095b7c496c3f8ce1e32d78ecf7c666ba8886f6a194c736ea4e9f0edb642dfd3e",
+    "width": 550,
+    "height": 550
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "PAID",
+   "base_fee": 3500,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 3000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 3,000원",
+   "lead_time": {
+    "seller_average_days": 1.5043478,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 96,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "WAAC 여성 에어홀 트리코트 바람막이 점퍼\n정품 새제품입니다\n정가 29만원\n- 전판 펀칭 디테일로 VENTILATION 효과를 주며, 즉시 냉각효과로 두잉이 적합한 여성 점퍼.\n- 이태리 수입 냉감소재를 사용하여 시원하며,\n신축성이 우수한 소재로 착장감이 편안함.\n- 스탠드 칼라 디자인에 풀집업 여밈으로 깔끔함.\n- 가슴판의 와키 패치 디테일로 포인트를 전해줌.\n- 양 사이드의 포켓을 적용하여 수납성을 보여줌.\n- 등판의 플랩 디테일과 센터의 로고 테이핑으로\n완성도를 높였음.\n- 다양한 아이템과 레이어드 코디 연출이 용이함.\n* 소재:나일론 85% 폴리우레탄 15%\n* 색상:오렌지\n* 판매원: 코오롱인더스트리(주)FnC부문",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20250508_230/1746676288384rECPi_JPEG/1746675848829.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250508_209/1746676288390BzbeY_JPEG/1746675847015.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250508_60/1746676288386nxF8P_JPEG/1746675845190.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250508_295/1746676288393hhs84_JPEG/1746675843338.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250508_51/17466762883787bT4P_JPEG/1746675841452.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250508_76/1746676288383SroRq_JPEG/1746675839227.jpg?type=w848"
+  ],
+  "description_dropped": [],
+  "composition_ko": [],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_tops",
+   "option": 0,
+   "values": [
+    {
+     "ko": "2",
+     "us": "S (US 4-6)",
+     "letter": "S",
+     "chest_cm": 90,
+     "basis": "label",
+     "chart_label": null,
+     "read_as": "S(90)"
+    },
+    {
+     "ko": "3",
+     "us": "M (US 8-10)",
+     "letter": "M",
+     "chest_cm": 95,
+     "basis": "label",
+     "chart_label": null,
+     "read_as": "M(95)"
+    },
+    {
+     "ko": "4",
+     "us": "L (US 12-14)",
+     "letter": "L",
+     "chest_cm": 100,
+     "basis": "label",
+     "chart_label": null,
+     "read_as": "L(100)"
+    }
+   ],
+   "merged": {},
+   "brand_row": "WAAC",
+   "chart": null,
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:6d48c610e320b148",
+   "kind": "title",
+   "ko": "WAAC 여성 에어홀 트리코트 점퍼 바람막이"
+  },
+  {
+   "id": "brand:2528ad2c30240a18",
+   "kind": "brand",
+   "ko": "코오롱인더스트리"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:d4735e3a265e16ee",
+   "kind": "option_value",
+   "ko": "2"
+  },
+  {
+   "id": "option_value:4e07408562bedb8b",
+   "kind": "option_value",
+   "ko": "3"
+  },
+  {
+   "id": "option_value:4b227777d4dd1fc6",
+   "kind": "option_value",
+   "ko": "4"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2c9897140d6cbb96",
+   "kind": "spec_value",
+   "ko": "국산"
+  },
+  {
+   "id": "review:58109a850c1cae40",
+   "kind": "review",
+   "ko": "잘착용하고운동열심히할것같아요"
+  }
+ ]
+}

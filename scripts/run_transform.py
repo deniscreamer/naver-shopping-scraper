@@ -6,8 +6,8 @@ description_dropped (shared_images.py); the images' Korean text is written for t
 with no brand stated gets one from the shop's own brands in its title, 원산지's importer, the images' text, or
 노브랜드 (brand_fallback.py); the owner's spec rows of one product replace or drop a row the photo contradicts
 (<shop>/specs_by_owner.json: apply_specs_by_owner, notes specs_by_owner / specs_by_owner_unused); the owner's
-variants left out of one product are read before (<shop>/variants_by_owner.json: variants_by_owner, passed to prepare,
-in the cache signature; 2026-11-25). The shop's
+variants left out of one product and his word on how one product is sized are read before (<shop>/variants_by_owner.json:
+variants_by_owner, sizes_by_owner, passed to prepare, in the cache signature; 2026-11-25). The shop's
 sections are not here: placement.py reads prepared/ afterwards. The output is rebuilt each time from the kept runs and the
 rules (same input + same rules = the same bytes: sorted by key, no time inside):
 
@@ -22,7 +22,8 @@ The prepare cache (run(cache=True), 2026-11-16): each product's prepare() output
 off / not_read / the blocks) are kept in <shop>/prepare_cache/<product id>.json (line 1 its signature, then the JSON record; derived data, not backed up) and
 reused while the signature holds: the code (the bytes of every non-test scripts/*.py, taken at import), the base
 rules and the measures table as loaded, the shop, the run id and line number, the bytes of the collected line and of
-the images' sidecar, the rules variant of the product's paid choice and its variants_by_owner entry (2026-11-25).
+the images' sidecar, the rules variant of the product's paid choice and its variants_by_owner entry (its "drop" and
+its "sizes", 2026-11-25).
 prepare() and image_read() read no other
 file (test_prepared_golden pins it). Never from the cache: the choice of the newest line, paid_choices, the
 store-wide banners, the .ko files and the flag (shared blocks, en.json), the brand fallback, the owner's spec rows,
@@ -151,13 +152,16 @@ def _base_sig(rules: Any) -> str:
 
 
 def _records(shop: str, shops_root: str, latest: dict[str, tuple], variant: Any, base: Any,
-             owner: dict[str, dict[str, list[str]]] | None = None) -> Any:
+             owner: dict[str, dict[str, list[str]]] | None = None,
+             owner_sizes: dict[str, dict[str, Any]] | None = None) -> Any:
     """For each latest line: (key, record path, signature, the stored record or None, a function computing the
     record's text afresh). The signature: _base_sig + shop, run id, line number, the line's bytes, the sidecar's
-    bytes, repr() of the rules variant the product gets (its paid choice) and the owner's variants to leave out of it
-    (variants_by_owner, 2026-11-25); image_read takes the base rules. The sidecar is read once, for the hash and for
-    the record (each part its own json.loads)."""
+    bytes, repr() of the rules variant the product gets (its paid choice), the owner's variants to leave out of it
+    (variants_by_owner, 2026-11-25) and the owner's sizes block (sizes_by_owner, 2026-11-25; each only when the
+    product has one); image_read takes the base rules. The sidecar is read once, for the hash and for the record
+    (each part its own json.loads)."""
     owner = owner or {}
+    owner_sizes = owner_sizes or {}
     base_sig = _base_sig(base)
     folder = os.path.join(shops_root, shop, CACHE)
     reprs: dict[int, str] = {}
@@ -174,21 +178,24 @@ def _records(shop: str, shops_root: str, latest: dict[str, tuple], variant: Any,
             "absent" if side_raw is None else hashlib.sha256(side_raw).hexdigest(),
             reprs.setdefault(id(rules), repr(rules))]
             + ([json.dumps(owner[key], ensure_ascii=False, sort_keys=True)] if key in owner else [])
+            + (["sizes", json.dumps(owner_sizes[key], ensure_ascii=False, sort_keys=True)] if key in owner_sizes else [])
         ).encode()).hexdigest()
         path = os.path.join(folder, f"{pid}.json")
 
         def fresh(line: Any = line, rules: Any = rules, run_id: str = run_id, n: int = n,   # a CollectedLine
-                  side_raw: bytes | None = side_raw, drop: Any = owner.get(key)) -> str:
+                  side_raw: bytes | None = side_raw, drop: Any = owner.get(key),
+                  sized: Any = owner_sizes.get(key)) -> str:
             def sidecar() -> Any:
                 return None if side_raw is None else json.loads(side_raw)
-            return json.dumps({"prepared": prepare(line, rules, run_id, n, sidecar(), drop),
+            return json.dumps({"prepared": prepare(line, rules, run_id, n, sidecar(), drop, sized),
                                "image_read": image_read(line, base, sidecar())},
                               ensure_ascii=False)                       # no sort_keys: .ko.json keeps this order
         yield key, path, sig, _read_record(path, sig), fresh
 
 
 def _prepared_cached(shop: str, shops_root: str, latest: dict[str, tuple], variant: Any, base: Any,
-                     owner: dict[str, dict[str, list[str]]] | None = None
+                     owner: dict[str, dict[str, list[str]]] | None = None,
+                     owner_sizes: dict[str, dict[str, Any]] | None = None
                      ) -> tuple[list[Any], dict[str, Any], dict[str, int]]:
     """prepare() and image_read() of each latest line through its record in <shop>/prepare_cache/ (_records)
     -> (prepared, {key: image read}, {hit, miss}). A miss writes the record (write_atomic); a hit and a miss both
@@ -197,7 +204,7 @@ def _prepared_cached(shop: str, shops_root: str, latest: dict[str, tuple], varia
     out: list[Any] = []
     reads: dict[str, Any] = {}
     count = {"hit": 0, "miss": 0}
-    for key, path, sig, record, fresh in _records(shop, shops_root, latest, variant, base, owner):
+    for key, path, sig, record, fresh in _records(shop, shops_root, latest, variant, base, owner, owner_sizes):
         if record is None:
             text = fresh()
             write_atomic(path, f"{sig}\n{text}\n")
@@ -230,7 +237,8 @@ def verify(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROO
     latest = _latest(shop, runs, shops_root, True)
     same, absent, differ = 0, 0, []
     for key, _, _, record, fresh in _records(shop, shops_root, latest, variant, rules,
-                                             variants_by_owner(shop, shops_root)):
+                                             *read_owner_variants(os.path.join(shops_root, shop,
+                                                                               "variants_by_owner.json"))):
         if record is None:
             absent += 1
             continue
@@ -398,19 +406,42 @@ def specs_by_owner(shop: str, shops_root: str = SHOPS_ROOT) -> dict[str, dict[st
         return {k: dict(v["rows"]) for k, v in json.load(f).get("entries", {}).items() if v.get("rows")}
 
 
+def read_owner_variants(path: str) -> tuple[dict[str, dict[str, list[str]]], dict[str, dict[str, Any]]]:
+    """The owner's per-product file (<shop>/variants_by_owner.json; the golden fixtures' fixtures/owner/variants_by_owner.json)
+    -> ({key: drop}, {key: sizes}); ({}, {}) when the file is absent. An entry may carry "drop", "sizes" or both
+    (2026-11-25); an entry with neither is skipped. sizes: {"gender": "men" | "women", "read_as": {value: label},
+    "same_as": {value: value}, "size": value} (transform.prepare's owner_sizes), the maps' keys and values as text."""
+    if not os.path.exists(path):
+        return {}, {}
+    with open(path, encoding="utf-8") as f:
+        entries = json.load(f).get("entries", {})
+    drops = {k: {str(o): [str(x) for x in vals] for o, vals in v["drop"].items()}
+             for k, v in entries.items() if v.get("drop")}
+    sizes = {k: {f: ({str(a): str(b) for a, b in x.items()} if isinstance(x, dict) else str(x))
+                 for f, x in v["sizes"].items()}
+             for k, v in entries.items() if v.get("sizes")}
+    return drops, sizes
+
+
 def variants_by_owner(shop: str, shops_root: str = SHOPS_ROOT) -> dict[str, dict[str, list[str]]]:
     """{key: {option name or index: [values]}} the owner leaves out of one product, a style whose sizes the seller
-    writes inconsistently (<shop>/variants_by_owner.json: {"entries": {key: {"drop": {option: [values]}, "why": ...,
-    "at": ...}}}; none when the file is absent; an entry without drop is skipped). Applied in prepare before the
-    options and the sizes (transform.options_and_variants: notes variants_left_out_by_owner /
+    writes inconsistently (<shop>/variants_by_owner.json: {"entries": {key: {"drop": {option: [values]}, "sizes":
+    {...}, "why": ..., "at": ...}}}; none when the file is absent; an entry without drop is skipped here). Applied in
+    prepare before the options and the sizes (transform.options_and_variants: notes variants_left_out_by_owner /
     variants_by_owner_unused), so in the prepare cache's signature. The owner, 2026-11-25: 8191027841's basic joggers,
     7455950253's 사선포켓 and 밀리터리 styles, 6033600342's fleece fabrics."""
-    path = os.path.join(shops_root, shop, "variants_by_owner.json")
-    if not os.path.exists(path):
-        return {}
-    with open(path, encoding="utf-8") as f:
-        return {k: {str(o): [str(x) for x in vals] for o, vals in v["drop"].items()}
-                for k, v in json.load(f).get("entries", {}).items() if v.get("drop")}
+    return read_owner_variants(os.path.join(shops_root, shop, "variants_by_owner.json"))[0]
+
+
+def sizes_by_owner(shop: str, shops_root: str = SHOPS_ROOT) -> dict[str, dict[str, Any]]:
+    """{key: the entry's "sizes" block}: the owner's word on how one product is sized, from the same file
+    (read_owner_variants; 2026-11-25, the owner's answers on five products held size_unmapped): "gender" (the
+    category's profile of that gender: adidas 9069946345 men's), "read_as" (a value sized as the owner's label, the
+    seller's value still ordered: WAAC 11814351207 2 = S(90), Nike 13660201494 S = XS), "size" (the one size sold
+    where the page's fields disagree: 12994831966 110), "same_as" (one size written two ways, merged: 아크나인
+    7496732129's winter S..XL under the 간절기 S(25~26인치)..XL(31~32인치)). Passed to prepare (owner_sizes: notes
+    sizes_by_owner / sizes_by_owner_unused), so in the prepare cache's signature."""
+    return read_owner_variants(os.path.join(shops_root, shop, "variants_by_owner.json"))[1]
 
 
 def apply_specs_by_owner(prepared: list[Any], by_owner: dict[str, dict[str, str | None]],
@@ -523,12 +554,15 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
     chosen = runs or kept_runs(shop, shops_root)
     latest = _latest(shop, runs, shops_root, cache)
     counts = None
-    owner_variants = variants_by_owner(shop, shops_root)     # in prepare: before the options and sizes (2026-11-25)
+    # in prepare: the owner's variants left out before the options and sizes, his sizes block (2026-11-25)
+    owner_variants, owner_sizes = read_owner_variants(os.path.join(shops_root, shop, "variants_by_owner.json"))
     if cache:
-        prepared, reads, counts = _prepared_cached(shop, shops_root, latest, variant, rules, owner_variants)
+        prepared, reads, counts = _prepared_cached(shop, shops_root, latest, variant, rules, owner_variants,
+                                                   owner_sizes)
     else:
         prepared = [prepare(line, variant(line["key"].split(":")[3]), run_id, n,
-                            load_sidecar(shop, line["key"].split(":")[3], shops_root), owner_variants.get(line["key"]))
+                            load_sidecar(shop, line["key"].split(":")[3], shops_root), owner_variants.get(line["key"]),
+                            owner_sizes.get(line["key"]))
                     for run_id, n, line, _ in latest.values()]
         reads = {key: image_read(line, rules, load_sidecar(shop, key.split(":")[3], shops_root))
                  for key, (_, _, line, _) in latest.items()}
@@ -580,6 +614,12 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
         unused = sum(1 for p in prepared if any(n["code"] == "variants_by_owner_unused" for n in p["notes"]))
         lines.append(f"  variants_by_owner: {len(owner_variants)} entries, {used} applied, {unused} with a value unused, "
                      f"{sum(1 for k in owner_variants if k not in latest)} keys not prepared")
+    if owner_sizes:                                 # the owner's sizes blocks (2026-11-25)
+        used = sum(1 for p in prepared if p["key"] in owner_sizes and any(n["code"] == "sizes_by_owner"
+                                                                          for n in p["notes"]))
+        unused = sum(1 for p in prepared if any(n["code"] == "sizes_by_owner_unused" for n in p["notes"]))
+        lines.append(f"  sizes_by_owner: {len(owner_sizes)} entries, {used} applied, {unused} with a field unused, "
+                     f"{sum(1 for k in owner_sizes if k not in latest)} keys not prepared")
     if owner_specs["entries"]:
         lines.append(f"  specs_by_owner: {owner_specs['entries']} entries, {owner_specs['applied']} applied, "
                      f"{owner_specs['unused']} unused, {owner_specs['not_prepared']} keys not prepared")

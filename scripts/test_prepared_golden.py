@@ -16,13 +16,19 @@ and 치퍼 as the 브랜드 / 제조사 rows (9991649397, 11158899277), 치퍼 a
 
 fixtures/description_images/<product id>.json: the description images' OCR sidecars of the same products
 (description_images.py with RapidOCR on the images downloaded 2026-11-07), read by the transform as
-run_transform passes them (the size / weight guess of description_measures.py)."""
+run_transform passes them (the size / weight guess of description_measures.py).
+
+fixtures/owner/variants_by_owner.json (2026-11-25): the owner's per-product entries of fixtures, in the shop file's format,
+read by run_transform.read_owner_variants and passed to prepare as run_transform passes them (its "drop" and its
+"sizes"): the five products held size_unmapped the owner answered (9069946345 men's, 11814351207 and 13660201494
+read_as, 12994831966 size, 7496732129 same_as)."""
 import json
 import os
 
 import pytest
 
 import apparel_sizes
+from run_transform import read_owner_variants
 from transform import prepare
 from transform_shops import rules_for
 
@@ -32,6 +38,7 @@ PREPARED = os.path.join(HERE, "fixtures", "prepared")
 SIDECARS = os.path.join(HERE, "fixtures", "description_images")
 NAMES = sorted(n[:-5] for n in os.listdir(COLLECTED) if n.endswith(".json")) if os.path.isdir(COLLECTED) else []
 RULES = rules_for("fairwardgolf")
+OWNER_DROPS, OWNER_SIZES = read_owner_variants(os.path.join(HERE, "fixtures", "owner", "variants_by_owner.json"))
 
 
 @pytest.mark.parametrize("name", NAMES)
@@ -42,8 +49,10 @@ def test_prepared_as_expected(name):
         with open(sidecar, encoding="utf-8") as f:
             images_text = json.load(f)
     with open(os.path.join(COLLECTED, name + ".json"), encoding="utf-8") as f:
-        got = json.loads(json.dumps(prepare(json.load(f), RULES, "50002788-fixtures", 1, images_text),
-                                    ensure_ascii=False))
+        line = json.load(f)
+    got = json.loads(json.dumps(prepare(line, RULES, "50002788-fixtures", 1, images_text,
+                                        OWNER_DROPS.get(line["key"]), OWNER_SIZES.get(line["key"])),
+                                ensure_ascii=False))
     path = os.path.join(PREPARED, name + ".json")
     if os.environ.get("UPDATE_GOLDEN"):
         os.makedirs(PREPARED, exist_ok=True)
@@ -86,7 +95,8 @@ def test_prepare_is_json_native_and_reads_only_the_measures_table(monkeypatch):
     monkeypatch.setattr(io, "open", spy)
     for rules in (RULES, without_paid(RULES), without_paid_addons(RULES)):
         for name, (line, images_text) in fixtures.items():
-            got = prepare(line, rules, "50002788-fixtures", 1, images_text)
+            got = prepare(line, rules, "50002788-fixtures", 1, images_text, OWNER_DROPS.get(line["key"]),
+                          OWNER_SIZES.get(line["key"]))
             assert json.loads(json.dumps(got, ensure_ascii=False)) == got, name
     for name, (line, images_text) in fixtures.items():                  # the record's other half
         got = image_read(line, RULES, images_text)

@@ -1,0 +1,500 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:500085914:13660201494",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (full 1); 0 trimmed"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "PAID 3000 KRW"
+  },
+  {
+   "code": "gift_hidden",
+   "detail": "무료교환/무료반품(1회한정)"
+  },
+  {
+   "code": "sizes_by_owner",
+   "detail": "size S; read_as S = XS"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/soholeeshop/products/13660201494",
+  "channel_no": "500085914",
+  "product_id": "13660201494",
+  "category_id": "50002796"
+ },
+ "product": {
+  "title_ko": "나이키 골프 드라이핏 빅토리 여성 롱슬리브 폴로 티셔츠 코랄핑크, S",
+  "brand_ko": "나이키골프",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "womens",
+      "text": "여성용"
+     },
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "나이키 골프 드라이핏 빅토리 여성 롱슬리브 폴로 티셔츠 코랄핑크, S"
+     },
+     {
+      "source": "listing",
+      "value": "womens",
+      "text": "여성 골프 가을 긴팔 티셔츠"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [],
+  "facts": [
+   {
+    "label_ko": "색상",
+    "value_ko": "코랄핑크"
+   },
+   {
+    "label_ko": "사이즈",
+    "value_ko": "S"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "13660201494",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 79000,
+    "price_usd": "79.00",
+    "sku": "FW-c6f56d6a71491c66c0a35318",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 79000,
+   "original_krw": 109000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "나이키재팬"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "나이키골프"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "베트남산"
+   },
+   {
+    "label_ko": "네크라인",
+    "value_ko": "칼라넥"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "Dri-Fit"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "봄, 가을"
+   },
+   {
+    "label_ko": "소매기장",
+    "value_ko": "긴팔"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "티셔츠"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "여성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "5076073761",
+    "score": 4,
+    "text_ko": "핏이 좋고 활동하기 편안합니다",
+    "created_at": "2026-10-02T11:10:20Z",
+    "writer": "ardo****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 23
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13660201494/fairwardgolf-13660201494-001-8bcec61b6e92e24a.webp",
+    "sha256": "8bcec61b6e92e24a050901774dbe04bddeb86b3e5601d0e6d473a07500be1429",
+    "width": 860,
+    "height": 860
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13660201494/fairwardgolf-13660201494-002-aa339554c265be88.webp",
+    "sha256": "aa339554c265be88432aa73134248a54d2f99361e0ead46750b79631fdc1b798",
+    "width": 860,
+    "height": 860
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13660201494/fairwardgolf-13660201494-003-cc02ae5c492b5698.webp",
+    "sha256": "cc02ae5c492b569800e9248478702d58582acc82a3dbe62ed1404565bf209f6a",
+    "width": 860,
+    "height": 860
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13660201494/fairwardgolf-13660201494-004-68048ae6f8be1fef.webp",
+    "sha256": "68048ae6f8be1fefcc358c69bd31feeaccd230ec59df435cd13346792b1f5519",
+    "width": 860,
+    "height": 860
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13660201494/fairwardgolf-13660201494-005-9be0201284373b9a.webp",
+    "sha256": "9be0201284373b9a3b55f50dd242725d4d3aa0c2f196cf1637eb2fb6137882ce",
+    "width": 860,
+    "height": 860
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/13660201494/fairwardgolf-13660201494-006-eae5ee47530fe2b1.webp",
+    "sha256": "eae5ee47530fe2b1d4a3311cd6773803edd0b2ee0a117487e6fafb575b284ebc",
+    "width": 860,
+    "height": 860
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/13660201494/fairwardgolf-13660201494-007-2db89d7ba44a63df.webp",
+    "sha256": "2db89d7ba44a63dfb2495848e0fc8e9ff9f13805411a1b886198c2c7b180af5b",
+    "width": 860,
+    "height": 860
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/13660201494/fairwardgolf-13660201494-008-7bf15c3d6e52dac2.webp",
+    "sha256": "7bf15c3d6e52dac2c80391ba7358da159003d0e4bf73021fd48d88f0c21ab1e5",
+    "width": 860,
+    "height": 860
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/13660201494/fairwardgolf-13660201494-009-d132a2b66b771b2f.webp",
+    "sha256": "d132a2b66b771b2f67838b07f1398ffdb446f8c8c76bd1c96a86bcd39e474d44",
+    "width": 860,
+    "height": 860
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/13660201494/fairwardgolf-13660201494-010-9fca423798b97923.webp",
+    "sha256": "9fca423798b979236529315b4c8d6ea5dca1ab3166c907680cc2503d53515839",
+    "width": 860,
+    "height": 860
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "PAID",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": null,
+   "lead_time": {
+    "seller_average_days": 1.6190476,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": true,
+    "arrival_days": null,
+    "arrival_date_text": "11.25.(수)",
+    "arrival_probability": 98,
+    "ship_date_text": "11.23.(월)"
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "나이키 골프 드라이핏 빅토리 여성 롱슬리브 폴로 티셔츠\nDH2317-691\n\n어울리는 나이키 여성 골프 반바지 보러가기",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260602_252/1780340266231tUgOM_PNG/7792880561048348_1744795510.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260602_48/1780340266255Yd0ME_GIF/7792880666527829_2014661003.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20260602_254/1780340280149dTfjI_PNG/47124491373164824_1855203740.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260602_115/17803402662672iKa9_PNG/7792880953632529_359042575.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250103_167/1735886219747EA85i_GIF/11608181316490238_2140786141.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20250103_104/1735886219029gK9EC_PNG/11262648119884722_1277758584.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260602_81/1780340292065EPL7x_PNG/114466010768583002_995720851.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260602_208/1780340306706dpAdE_GIF/80365149165180023_2102845053.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20260602_223/17803403067309XJbD_GIF/112552000449464381_119657192.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20260602_101/1780340306696bhvon_GIF/25569625460035527_372397055.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20260602_105/1780340306643RGnRH_PNG/27462414548019448_1096846487.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260713_75/1783876988821rbC7J_JPEG/dh2317_691_00.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260713_20/1783877022556FBwpR_PNG/P_INFO.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250724_86/1753356387465SqBP9_PNG/s_info.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250724_169/1753356393325xieMw_PNG/10492730529761439_1111593595.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240201_13/1706728258362hkltF_PNG/107863783038928901_927310924.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260602_85/1780340334601INQLS_PNG/4582339006161809_27115666.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250302_178/1740854680959VkLC6_PNG/108380569500936687_1793571414.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250302_61/1740854680990fAWSP_GIF/108431639127408437_1910230777.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20260602_145/1780340349113WGw8C_PNG/4582339154733603_1896661056.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260602_277/178034034922615zyX_GIF/112552820232166249_1943774518.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20260602_217/1780340349175lJ5En_GIF/29845928253011181_1961041808.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240201_15/1706728277621MKCoA_PNG/11264847917531066_1676695968.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240201_45/1706728277488HPx1O_PNG/11264847965454480_433388421.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240201_22/1706728277454QsGGU_PNG/11264848026967751_481334466.png?type=w848"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르",
+    "source": "spec"
+   },
+   {
+    "label_ko": "제품소재",
+    "value_ko": "폴리에스테르",
+    "source": "notice"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_tops",
+   "option": null,
+   "values": [],
+   "merged": {},
+   "brand_row": null,
+   "chart": null,
+   "held": null,
+   "fact": {
+    "label_ko": "사이즈",
+    "ko": "S",
+    "us": "XS (US 0-2)",
+    "read_as": "XS"
+   }
+  }
+ },
+ "texts": [
+  {
+   "id": "title:3bbbdf86b5607afe",
+   "kind": "title",
+   "ko": "나이키 골프 드라이핏 빅토리 여성 롱슬리브 폴로 티셔츠 코랄핑크, S"
+  },
+  {
+   "id": "brand:bd6b745ddc845fe6",
+   "kind": "brand",
+   "ko": "나이키골프"
+  },
+  {
+   "id": "fact_label:d1b87acb2d2239e7",
+   "kind": "fact_label",
+   "ko": "색상"
+  },
+  {
+   "id": "fact_value:1e94d4b4ab1c3f6c",
+   "kind": "fact_value",
+   "ko": "코랄핑크"
+  },
+  {
+   "id": "fact_label:e0511ad24076321c",
+   "kind": "fact_label",
+   "ko": "사이즈"
+  },
+  {
+   "id": "fact_value:8de0b3c47f112c59",
+   "kind": "fact_value",
+   "ko": "S"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:e1dfec353d38bd4e",
+   "kind": "spec_value",
+   "ko": "나이키재팬"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:bd6b745ddc845fe6",
+   "kind": "spec_value",
+   "ko": "나이키골프"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:7cd6ad9c85830004",
+   "kind": "spec_value",
+   "ko": "베트남산"
+  },
+  {
+   "id": "spec_label:521009f503e491a5",
+   "kind": "spec_label",
+   "ko": "네크라인"
+  },
+  {
+   "id": "spec_value:fee81e32c77a25d6",
+   "kind": "spec_value",
+   "ko": "칼라넥"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:856530359fca7806",
+   "kind": "spec_value",
+   "ko": "Dri-Fit"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:6e2d175cb134fc18",
+   "kind": "spec_value",
+   "ko": "폴리에스테르"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:df5d175f4b7d3fb9",
+   "kind": "spec_value",
+   "ko": "봄, 가을"
+  },
+  {
+   "id": "spec_label:c595482b55571d6a",
+   "kind": "spec_label",
+   "ko": "소매기장"
+  },
+  {
+   "id": "spec_value:2fa60fab30cad430",
+   "kind": "spec_value",
+   "ko": "긴팔"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:f977ac4486c2b67c",
+   "kind": "spec_value",
+   "ko": "티셔츠"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:ff90d7cd3c519c1f",
+   "kind": "spec_value",
+   "ko": "여성용"
+  },
+  {
+   "id": "review:f35c26095e836193",
+   "kind": "review",
+   "ko": "핏이 좋고 활동하기 편안합니다"
+  }
+ ]
+}

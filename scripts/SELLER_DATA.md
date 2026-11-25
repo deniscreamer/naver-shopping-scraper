@@ -247,6 +247,11 @@ Code: `transform.options_and_variants`.
   whose sizes the seller writes inconsistently is left out on the owner's word (`<shop>/variants_by_owner.json`).
   Fixtures (collected, OCR sidecar, golden): 11017948766, 10076109143, 5282622633, 5460564989, 11859489664,
   9435597606, 6485458095, 13740514016.
+  The owner's answers on five held products (2026-11-25, a `sizes` block of the same file, per product, never a rule):
+  adidas 9069946345 states no gender (men's); WAAC 11814351207 sells 2 / 3 / 4 (S(90) / M(95) / L(100)); Nike
+  13660201494 sizes the Japanese way, S in its title (sold as XS); 베러투데이 12994831966's title ends 110, its 모델명 95
+  (110 sold); 아크나인 7496732129 sells its winter type in bare S..XL beside the 간절기 type's inch letters (the same
+  waists). Fixtures (collected, OCR sidecar, golden with the entries of `fixtures/owner/variants_by_owner.json`): the five.
 - Sellers' size charts (2026-11-20, the same review; [SIZE_CHARTS.md](SIZE_CHARTS.md)): a model block's "Bust : 83cm"
   (10940191023) and "마른66사이즈" (11573884405) are no chart; "53/53" is one cell (11377634969); "CM" is a corner
   (13021502381); an OCR value that breaks its column's run is dropped (13338110183) (`size_chart.py`).

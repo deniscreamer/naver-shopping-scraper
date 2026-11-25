@@ -1,0 +1,477 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102167425:12994831966",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "sizes_by_owner",
+   "detail": "size 110"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/onh1/products/12994831966",
+  "channel_no": "102167425",
+  "product_id": "12994831966",
+  "category_id": "50002796"
+ },
+ "product": {
+  "title_ko": "베러투데이 여성 파크골프 가을 우븐 블루종 긴팔 카라 티셔츠 핑크, 110",
+  "brand_ko": "베러투데이",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "womens",
+      "text": "여성용"
+     },
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "베러투데이 여성 파크골프 가을 우븐 블루종 긴팔 카라 티셔츠 핑크, 110"
+     },
+     {
+      "source": "listing",
+      "value": "womens",
+      "text": "여성 골프 가을 긴팔 티셔츠"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [],
+  "facts": [
+   {
+    "label_ko": "색상",
+    "value_ko": "핑크"
+   },
+   {
+    "label_ko": "사이즈",
+    "value_ko": "110"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "12994831966",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 64000,
+    "price_usd": "64.00",
+    "sku": "FW-2e484222d3838c6652f0ba73",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 120,
+      "central": 250,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 350,
+      "high": 800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_length_mm": {
+      "low": 250,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 220,
+      "high": 250,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 40,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 15,
+      "approved_by": "owner",
+      "approved_at": "2026-11-21"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 64000,
+   "original_krw": 117000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "온에이치"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "베러투데이"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "베러투데이 여성 골프웨어 파크골프 블루종 우픈 카라 긴팔 티셔츠 95"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "국산"
+   },
+   {
+    "label_ko": "네크라인",
+    "value_ko": "칼라넥"
+   },
+   {
+    "label_ko": "특징",
+    "value_ko": "방풍"
+   },
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르"
+   },
+   {
+    "label_ko": "사용계절",
+    "value_ko": "봄, 가을, 겨울"
+   },
+   {
+    "label_ko": "소매기장",
+    "value_ko": "긴팔"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2025년형"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "티셔츠"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "여성용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/12994831966/fairwardgolf-12994831966-001-f160d047acf51dd9.webp",
+    "sha256": "f160d047acf51dd9507f67552979c908af3b642b4d968987fc151e60ea203341",
+    "width": 1500,
+    "height": 1500
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.4,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.23.(월)",
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20261007_46/1791368144936j0vNy_PNG/4.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_28/1791368145016yPc0v_PNG/5.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_225/1791368144959g8Q9N_PNG/6.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_79/17913681449955mSYx_PNG/7.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_13/17913681450059TQr2_PNG/8.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_163/1791368145026dzE8r_PNG/9.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_294/179136814504865T7I_PNG/10.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_114/1791368208201TBWyL_PNG/11.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_289/1791368208241yvSoG_PNG/12.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_219/1791368208075caUb0_PNG/13.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_222/1791368208231NS8xH_PNG/14.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_6/17913682082526zzaE_PNG/24.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_3/1791373192483hKp3y_PNG/25.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_192/1791373192443bUONq_PNG/26.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_119/1791373192468bUDJ5_PNG/27.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_142/17913731924620Ggpy_PNG/28.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_121/1791373192380HzAQe_PNG/29.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_290/17913731924446VumP_PNG/30.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_193/1791373192529KS8tc_PNG/31.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_127/1791373192614PMiOe_PNG/32.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_183/17913731926444duzu_PNG/33.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_233/1791373192648bT3Ie_PNG/34.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_56/1791373192719GGALJ_PNG/35.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_158/1791373192690usVfj_PNG/36.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_273/1791373192718w1VtN_PNG/37.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_137/1791368208830aPpSv_PNG/39.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_268/1791368208910Hozoc_PNG/40.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_277/1791368209131IKdKM_PNG/41.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_70/1791368209092C6vXb_PNG/42.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_83/1791368209035Fiovm_PNG/43.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_292/1791368209237oUlc4_PNG/44.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_184/1791368209128AlwXT_PNG/45.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_246/1791368209181SgO4i_PNG/46.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_12/1791368209233UmN1I_PNG/47.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_4/1791368209267xxQA0_PNG/48.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_139/17913682093455ugcb_PNG/49.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_119/1791368209317h9AMw_PNG/50.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_135/1791368209578LsBhL_PNG/51.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_279/1791368209435Lv1NI_PNG/52.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_237/1791368209526wBFBo_PNG/53.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_95/1791368209536BhM0X_PNG/54.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_270/17913682095720WmRD_PNG/55.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_55/17913682096154TRYp_PNG/56.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_106/1791368209713mzIkC_PNG/57.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_214/1791368209644qdeYB_PNG/58.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_176/1791368210000ERaEu_PNG/59.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_202/179136820975198pMO_PNG/60.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_262/1791368210122dY2sK_PNG/61.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_3/1791368209927Vr1bJ_PNG/62.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_157/1791368209988IrLCS_PNG/63.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_230/1791368210080KTOul_PNG/64.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_98/1791368210015x7Y6O_PNG/65.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_150/17913727316586zEO7_PNG/60.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261007_139/17913727394067V2rR_PNG/61.png?type=w848"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "소재",
+    "value_ko": "폴리에스테르",
+    "source": "spec"
+   },
+   {
+    "label_ko": "제품소재",
+    "value_ko": "상세페이지에 기재",
+    "source": "notice"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_tops",
+   "option": null,
+   "values": [],
+   "merged": {},
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "chest": "flat",
+     "shoulder": "flat",
+     "sleeve": null,
+     "length": null
+    },
+    "rows": [
+     {
+      "us": "XXL (US 18)",
+      "cm": {
+       "chest": 58.5,
+       "shoulder": 48.7,
+       "sleeve": 60.5,
+       "length": 66.0
+      }
+     }
+    ]
+   },
+   "held": null,
+   "fact": {
+    "label_ko": "사이즈",
+    "ko": "110",
+    "us": "XXL (US 18)"
+   }
+  }
+ },
+ "texts": [
+  {
+   "id": "title:2185eb5e9ecdde18",
+   "kind": "title",
+   "ko": "베러투데이 여성 파크골프 가을 우븐 블루종 긴팔 카라 티셔츠 핑크, 110"
+  },
+  {
+   "id": "brand:446f0efa51255a27",
+   "kind": "brand",
+   "ko": "베러투데이"
+  },
+  {
+   "id": "fact_label:d1b87acb2d2239e7",
+   "kind": "fact_label",
+   "ko": "색상"
+  },
+  {
+   "id": "fact_value:5c94888b2e8d96b6",
+   "kind": "fact_value",
+   "ko": "핑크"
+  },
+  {
+   "id": "fact_label:e0511ad24076321c",
+   "kind": "fact_label",
+   "ko": "사이즈"
+  },
+  {
+   "id": "fact_value:9bdb2af6799204a2",
+   "kind": "fact_value",
+   "ko": "110"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:d78c029a8c184bd1",
+   "kind": "spec_value",
+   "ko": "온에이치"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:446f0efa51255a27",
+   "kind": "spec_value",
+   "ko": "베러투데이"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:a6ccf3bef430f88f",
+   "kind": "spec_value",
+   "ko": "베러투데이 여성 골프웨어 파크골프 블루종 우픈 카라 긴팔 티셔츠 95"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2c9897140d6cbb96",
+   "kind": "spec_value",
+   "ko": "국산"
+  },
+  {
+   "id": "spec_label:521009f503e491a5",
+   "kind": "spec_label",
+   "ko": "네크라인"
+  },
+  {
+   "id": "spec_value:fee81e32c77a25d6",
+   "kind": "spec_value",
+   "ko": "칼라넥"
+  },
+  {
+   "id": "spec_label:7c8a380619385d87",
+   "kind": "spec_label",
+   "ko": "특징"
+  },
+  {
+   "id": "spec_value:b794e3312c6bb63f",
+   "kind": "spec_value",
+   "ko": "방풍"
+  },
+  {
+   "id": "spec_label:a795d57b8b9f311a",
+   "kind": "spec_label",
+   "ko": "소재"
+  },
+  {
+   "id": "spec_value:6e2d175cb134fc18",
+   "kind": "spec_value",
+   "ko": "폴리에스테르"
+  },
+  {
+   "id": "spec_label:889d3e9dc5c756ef",
+   "kind": "spec_label",
+   "ko": "사용계절"
+  },
+  {
+   "id": "spec_value:b9a7f0a8ab860d75",
+   "kind": "spec_value",
+   "ko": "봄, 가을, 겨울"
+  },
+  {
+   "id": "spec_label:c595482b55571d6a",
+   "kind": "spec_label",
+   "ko": "소매기장"
+  },
+  {
+   "id": "spec_value:2fa60fab30cad430",
+   "kind": "spec_value",
+   "ko": "긴팔"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:6aea4c4b3fb65e70",
+   "kind": "spec_value",
+   "ko": "2025년형"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:f977ac4486c2b67c",
+   "kind": "spec_value",
+   "ko": "티셔츠"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:ff90d7cd3c519c1f",
+   "kind": "spec_value",
+   "ko": "여성용"
+  }
+ ]
+}

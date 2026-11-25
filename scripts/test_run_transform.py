@@ -534,3 +534,41 @@ def test_the_owners_variants_are_left_out_through_the_cache(tmp_path):
     assert count == {"hit": len(ls) - 1, "miss": 1}
     assert not any(n["code"].startswith("variants_") and "owner" in n["code"] for p in got["prepared"] for n in p["notes"])
     assert run_transform.verify("fairwardgolf", None, shops, {})[0] == 0
+
+
+def test_the_owners_sizes_block_through_the_cache(tmp_path):
+    """The owner's answers on products held size_unmapped (2026-11-25): an entry's "sizes" block (beside or instead of
+    "drop") reaches prepare and is in the record's signature: the product is prepared afresh when its block comes,
+    changes or goes, an entry with only "drop" keeps reading as before. 12994831966 (50002796): the title's 110 sold."""
+    with open(os.path.join(FX, "12994831966.json"), encoding="utf-8") as f:
+        ls = [json.load(f)]
+    shops = _cached_shop(tmp_path, ls)
+    key = ls[0]["key"]
+    assert run_transform.sizes_by_owner("fairwardgolf", shops) == {}
+    got, count = _cached_vs_full(shops)
+    assert got["prepared"][0]["status"] == "held"
+    path = os.path.join(shops, "fairwardgolf", "variants_by_owner.json")
+
+    def write(entries):
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump({"entries": entries}, f, ensure_ascii=False)
+    write({key: {"sizes": {"size": 110}, "why": "test", "at": "2026-11-25"}, "k-drop": {"drop": {"0": ["x"]}},
+           "k-both": {"drop": {"0": ["y"]}, "sizes": {"read_as": {"2": "S(90)"}}}, "k-none": {"why": "nothing"}})
+    assert run_transform.sizes_by_owner("fairwardgolf", shops) == {key: {"size": "110"},
+                                                                   "k-both": {"read_as": {"2": "S(90)"}}}
+    assert run_transform.variants_by_owner("fairwardgolf", shops) == {"k-drop": {"0": ["x"]}, "k-both": {"0": ["y"]}}
+    got, count = _cached_vs_full(shops)
+    assert count == {"hit": 0, "miss": 1}
+    p = got["prepared"][0]
+    assert p["status"] == "ready" and {"code": "sizes_by_owner", "detail": "size 110"} in p["notes"]
+    assert "  sizes_by_owner: 2 entries, 1 applied, 0 with a field unused, 1 keys not prepared" in got["report"]
+    got, count = _cached_vs_full(shops)                                 # unchanged: a hit
+    assert count == {"hit": 1, "miss": 0}
+    write({key: {"sizes": {"size": "110", "colour": "핑크"}}})          # changed: afresh; a field no rule reads
+    got, count = _cached_vs_full(shops)
+    assert count == {"hit": 0, "miss": 1}
+    assert {"code": "sizes_by_owner_unused", "detail": "colour: not a field"} in got["prepared"][0]["notes"]
+    os.remove(path)                                                     # gone: afresh, held as before
+    got, count = _cached_vs_full(shops)
+    assert count == {"hit": 0, "miss": 1} and got["prepared"][0]["status"] == "held"
+    assert run_transform.verify("fairwardgolf", None, shops, {})[0] == 0

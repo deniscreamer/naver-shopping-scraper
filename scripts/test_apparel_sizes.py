@@ -2166,3 +2166,61 @@ def test_the_owners_variants_are_left_out_before_the_sizes():
     # every row named: none left out (prepare holds the product variants_by_owner)
     kept, said = T._owner_dropped(names, rows, {"사이즈": ["M", "30"]})
     assert kept == rows and said and said["all"]
+
+
+def test_the_owners_reading_of_a_products_values():
+    """variants_by_owner.json "sizes" (2026-11-25): read_as sizes a value as the owner's label and keeps the seller's
+    value (the Naver value ordered); same_as merges a value into another of the size option, never where one choice
+    of the other options sells both; a key the product does not show, a label written twice or already a value:
+    unused."""
+    ov = {"options": [{"name_ko": "사이즈", "values_ko": ["2", "3", "4"]}], "facts": [],
+          "variants": [{"sku": f"s{v}", "options_ko": [v], "price_krw": 1000, "available": True} for v in "234"]}
+    said, unused = [], []
+    out = T._sizes(ov, "womens_tops", "", [], None, "WAAC 여성 바람막이",
+                   {"read_as": {"2": "S(90)", "3": "M(95)", "4": "L(100)"}}, said, unused)
+    assert not out["held"] and [(v["ko"], v["us"], v["read_as"]) for v in out["values"]] == [
+        ("2", "S (US 4-6)", "S(90)"), ("3", "M (US 8-10)", "M(95)"), ("4", "L (US 12-14)", "L(100)")]
+    assert [v["options_ko"] for v in ov["variants"]] == [["2"], ["3"], ["4"]] and not unused
+    assert said == ["read_as 2 = S(90)", "read_as 3 = M(95)", "read_as 4 = L(100)"]
+    plain = {**ov, "variants": [dict(v) for v in ov["variants"]]}
+    assert "'2'" in T._sizes(plain, "womens_tops", "", [], None, "WAAC")["held"]     # no word: held as before
+    said, unused = [], []
+    T._owner_reading(ov, [], {"read_as": {"2": "M", "3": "M", "4": "2"}}, "womens_tops", said, unused)
+    assert not said and unused == ["read_as 2: M twice", "read_as 3: M twice", "read_as 4: 2 is a value already"]
+
+    def pants(rows):
+        return {"options": [{"name_ko": "원단", "values_ko": ["A", "B"]},
+                            {"name_ko": "사이즈", "values_ko": ["S", "M", "S(25~26인치)", "M(27~28인치)"]}],
+                "facts": [], "variants": [{"sku": f"{a}{s}", "options_ko": [a, s], "price_krw": 1000, "available": True}
+                                          for a, s in rows]}
+    ov = pants([("A", "S"), ("A", "M"), ("B", "S(25~26인치)"), ("B", "M(27~28인치)")])
+    said, unused = [], []
+    out = T._sizes(ov, "womens_pants", "", [], None, "여성 골프바지",
+                   {"same_as": {"S": "S(25~26인치)", "M": "M(27~28인치)"}}, said, unused)
+    assert not out["held"] and out["merged"] == {"S": "S(25~26인치)", "M": "M(27~28인치)"}
+    assert ov["options"][1]["values_ko"] == ["S(25~26인치)", "M(27~28인치)"]
+    assert [(v["options_ko"], v.get("naver_options_ko")) for v in ov["variants"]] == [
+        (["A", "S(25~26인치)"], ["A", "S"]), (["A", "M(27~28인치)"], ["A", "M"]),
+        (["B", "S(25~26인치)"], None), (["B", "M(27~28인치)"], None)]
+    both = pants([("A", "S"), ("A", "S(25~26인치)"), ("B", "M"), ("B", "M(27~28인치)")])   # one choice sells both
+    said, unused = [], []
+    T._owner_reading(both, [], {"same_as": {"S": "S(25~26인치)", "M": "XL"}}, "womens_pants", said, unused)
+    assert not said and unused == ["same_as S: sold beside S(25~26인치) under one choice of the other options",
+                                   "same_as M: XL (not two size values of the product)"]
+
+
+def test_the_owners_size_sold():
+    """owner_size_facts (2026-11-25): the owner's one size of a one-variant product, the title's colour beside it when
+    the title is the listing's name plus "colour, <that size>"; a letter (Nike 13660201494's S) as much as a number;
+    never beside a size option or a size fact."""
+    one = {"options": [], "facts": [], "variants": [{"sku": "x"}]}
+    base = "베러투데이 여성 파크골프 가을 우븐 블루종 긴팔 카라 티셔츠"
+    assert T.owner_size_facts(one, "110", f"{base} 핑크, 110", base) == [
+        {"label_ko": "색상", "value_ko": "핑크"}, {"label_ko": "사이즈", "value_ko": "110"}]
+    assert T.owner_size_facts(one, "S", "나이키 폴로 코랄핑크, S", "나이키 폴로") == [
+        {"label_ko": "색상", "value_ko": "코랄핑크"}, {"label_ko": "사이즈", "value_ko": "S"}]
+    assert T.owner_size_facts(one, "95", f"{base} 핑크, 110", base) == [{"label_ko": "사이즈", "value_ko": "95"}]
+    assert T.owner_size_facts(one, "110", f"{base} 핑크, 110", None) == [{"label_ko": "사이즈", "value_ko": "110"}]
+    assert T.owner_size_facts({**one, "options": [{"name_ko": "사이즈", "values_ko": ["95"]}]}, "95", base, base) is None
+    assert T.owner_size_facts({**one, "facts": [{"label_ko": "사이즈", "value_ko": "95"}]}, "95", base, base) is None
+    assert T.owner_size_facts({**one, "variants": [{"sku": "x"}, {"sku": "y"}]}, "95", base, base) is None

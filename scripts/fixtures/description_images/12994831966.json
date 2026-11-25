@@ -1,0 +1,1873 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 204573,
+   "height": 1540,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_46/1791368144936j0vNy_PNG/4.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.997,
+       "text": "기다리셨던",
+       "y": 81
+      },
+      {
+       "conf": 0.999,
+       "text": "바로그핏!",
+       "y": 143
+      },
+      {
+       "conf": 0.995,
+       "text": "BEST",
+       "y": 278
+      },
+      {
+       "conf": 0.95,
+       "text": "-SELLER-",
+       "y": 314
+      },
+      {
+       "conf": 0.71,
+       "text": "*",
+       "y": 343
+      },
+      {
+       "conf": 0.999,
+       "text": "4.5",
+       "y": 417
+      },
+      {
+       "conf": 0.995,
+       "text": "상품평 263개",
+       "y": 456
+      },
+      {
+       "conf": 0.98,
+       "text": "좋아하는 소재의 옷",
+       "y": 586
+      },
+      {
+       "conf": 0.984,
+       "text": "2025.11.10구매자 블랙,95",
+       "y": 618
+      },
+      {
+       "conf": 0.971,
+       "text": "제가 좋아하는 소재의 옷이에요.제가 기대했던 대로여서 좋아요.",
+       "y": 655
+      },
+      {
+       "conf": 0.983,
+       "text": "원단 퀄리티 좋고 마음에 듭니다.",
+       "y": 689
+      },
+      {
+       "conf": 0.985,
+       "text": "퀄리티와 마감이 완벽해요!",
+       "y": 788
+      },
+      {
+       "conf": 0.984,
+       "text": "2025.11.10구매자 블랙,95",
+       "y": 820
+      },
+      {
+       "conf": 0.979,
+       "text": "정말 편하고 자주 입게 되네요.다른 아이템도 더 사고 싶어요.!",
+       "y": 859
+      },
+      {
+       "conf": 0.988,
+       "text": "퀄리티와 마감이 완벽해요.",
+       "y": 892
+      },
+      {
+       "conf": 0.953,
+       "text": "”",
+       "y": 1001
+      },
+      {
+       "conf": 0.953,
+       "text": "\"재구매 해야겠어요'",
+       "y": 994
+      },
+      {
+       "conf": 0.967,
+       "text": "2025.11.10구매자 블랙,95",
+       "y": 1022
+      },
+      {
+       "conf": 0.961,
+       "text": "77사이즈 입는데 잘 맞아요.퀄리티 좋고 핏도 좋아서",
+       "y": 1063
+      },
+      {
+       "conf": 0.967,
+       "text": "재구매 의향 있어요. 계속 번창하세요.",
+       "y": 1093
+      },
+      {
+       "conf": 0.942,
+       "text": "\"추가 구매했어요”",
+       "y": 1196
+      },
+      {
+       "conf": 0.984,
+       "text": "2025.11.10구매자블랙,95",
+       "y": 1223
+      },
+      {
+       "conf": 0.979,
+       "text": "처음엔 블랙 샀는데 너무 예뼈서 핑크랑 화이트도 샀어요.",
+       "y": 1264
+      },
+      {
+       "conf": 0.972,
+       "text": "방수도 되고 빨리 마르네요.",
+       "y": 1294
+      },
+      {
+       "conf": 0.945,
+       "text": "'베러투데이 우븐 블루종 반팔'시리즈",
+       "y": 1415
+      },
+      {
+       "conf": 0.989,
+       "text": "실제 고객 리뷰",
+       "y": 1461
+      }
+     ],
+     "y0": 0,
+     "y1": 1540
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 854681,
+   "height": 1500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_28/1791368145016yPc0v_PNG/5.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.988,
+       "text": "긴팔 버전 출시",
+       "y": 192
+      },
+      {
+       "conf": 0.948,
+       "text": "우븐의 탄탄함에",
+       "y": 300
+      },
+      {
+       "conf": 0.99,
+       "text": "블루종의 우아함을 더하다",
+       "y": 364
+      }
+     ],
+     "y0": 0,
+     "y1": 1500
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 121678,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_225/1791368144959g8Q9N_PNG/6.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.983,
+       "text": "“반팔의 전설이 긴팔로 돌아왔습니다.\"",
+       "y": 111
+      },
+      {
+       "conf": 0.979,
+       "text": "베러투데이 우븐 블루종 반팔의 인기를 이어,",
+       "y": 278
+      },
+      {
+       "conf": 0.992,
+       "text": "프리미엄 3D 로고와 소매 시보리 디테일로",
+       "y": 317
+      },
+      {
+       "conf": 0.995,
+       "text": "한층 더 우아해진 긴팔 에디션을 선보입니다.",
+       "y": 358
+      },
+      {
+       "conf": 0.962,
+       "text": "강력한 방수 기능의 탄탄한 우븐 소재가",
+       "y": 450
+      },
+      {
+       "conf": 0.994,
+       "text": "야외 활동 중에도 쾌적함을 선사하며,",
+       "y": 490
+      },
+      {
+       "conf": 0.978,
+       "text": "구김 없는 소재감으로 하루 종일 격식 있는 실루엣을 유지합니다.",
+       "y": 532
+      },
+      {
+       "conf": 0.977,
+       "text": "허리를 매끈하게 잡아주는 블루종 핏이 체형 고민을 덜어주어,",
+       "y": 623
+      },
+      {
+       "conf": 0.989,
+       "text": "골프부터 출근룩까지 어떤 자리에서도 완벽한 핏을 완성해 드립니다.",
+       "y": 663
+      },
+      {
+       "conf": 0.98,
+       "text": "이미 검증된 독보적인 디자인에 실용성까지 꽉 채운‘26SS 시리즈로,",
+       "y": 754
+      },
+      {
+       "conf": 0.989,
+       "text": "당신의 일상을 더욱 세련되고 특별하게 변화시켜 보세요.",
+       "y": 798
+      },
+      {
+       "conf": 1.0,
+       "text": "Bettertoday",
+       "y": 966
+      },
+      {
+       "conf": 0.998,
+       "text": "GOLF",
+       "y": 1025
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 463684,
+   "height": 1700,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_79/17913681449955mSYx_PNG/7.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.995,
+       "text": "COLOR CHOICE",
+       "y": 169
+      },
+      {
+       "conf": 0.988,
+       "text": "6가지 베스트 컬러",
+       "y": 341
+      },
+      {
+       "conf": 0.912,
+       "text": "필드위에서 가장 돋보이는 / 차분하고 고급스러운 / 얼굴을 화사하게 밝혀주는",
+       "y": 592
+      },
+      {
+       "conf": 0.899,
+       "text": "화이트(White) / 베이지 (Beige) / 핑크(Pink)",
+       "y": 623
+      },
+      {
+       "conf": 0.928,
+       "text": "우아한 무드를 완성하는 / 청량감으로 활력을 넣어 주는 / 일상복으로 활용도가 높은",
+       "y": 1112
+      },
+      {
+       "conf": 0.907,
+       "text": "퍼플(Purple) / 스카이블루(Blue) / 블랙(Back)",
+       "y": 1146
+      },
+      {
+       "conf": 0.995,
+       "text": "지금 바로 당신의 스타일을 선택하세요!",
+       "y": 1589
+      }
+     ],
+     "y0": 0,
+     "y1": 1700
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 464623,
+   "height": 1500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_13/17913681450059TQr2_PNG/8.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.968,
+       "text": "POINT CHECK",
+       "y": 185
+      },
+      {
+       "conf": 0.996,
+       "text": "톤온톤",
+       "y": 697
+      },
+      {
+       "conf": 0.956,
+       "text": "3D 입체로고",
+       "y": 731
+      },
+      {
+       "conf": 0.953,
+       "text": "가볍고 쾌적한",
+       "y": 888
+      },
+      {
+       "conf": 0.909,
+       "text": "우븐 소재",
+       "y": 921
+      },
+      {
+       "conf": 0.963,
+       "text": "허리 라인을 잡아주는",
+       "y": 1217
+      },
+      {
+       "conf": 0.996,
+       "text": "블루종 스타일",
+       "y": 1251
+      }
+     ],
+     "y0": 0,
+     "y1": 1500
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 707276,
+   "height": 2500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_163/1791368145026dzE8r_PNG/9.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.971,
+       "text": "DETAIL INFO",
+       "y": 159
+      },
+      {
+       "conf": 0.999,
+       "text": "Structured Collar",
+       "y": 337
+      },
+      {
+       "conf": 0.757,
+       "text": "1.S시그니처핏카라",
+       "y": 327
+      },
+      {
+       "conf": 0.958,
+       "text": "탄탄한 특수 심지를 더해 격렬한 스윙이나 잦은 세탁 후",
+       "y": 1209
+      },
+      {
+       "conf": 0.98,
+       "text": "에도 처음처럼 반듯한 형태를 유지합니다.",
+       "y": 1264
+      }
+     ],
+     "y0": 0,
+     "y1": 1432
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.973,
+       "text": "3D Embossed Logo",
+       "y": 26
+      },
+      {
+       "conf": 0.962,
+       "text": "2. / 하이엔드 3D 입체 엠보싱 로고",
+       "y": 27
+      },
+      {
+       "conf": 0.977,
+       "text": "갈라지는 저가 나염과 다릅니다.원단과 하나 된 3D 입체",
+       "y": 898
+      },
+      {
+       "conf": 0.988,
+       "text": "로고로 프리미엄의 품격을 완성했습니다.",
+       "y": 952
+      }
+     ],
+     "y0": 1432,
+     "y1": 2500
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 447158,
+   "height": 1150,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_294/179136814504865T7I_PNG/10.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.981,
+       "text": "Blouson Fit",
+       "y": 89
+      },
+      {
+       "conf": 0.877,
+       "text": "3.브리미엄 블루종 실루옛",
+       "y": 79
+      },
+      {
+       "conf": 0.979,
+       "text": "몇 번 세탁하면 늘어나는 저가 밴딩과 다릅니다.탄탄한 시보리가",
+       "y": 955
+      },
+      {
+       "conf": 0.995,
+       "text": "손목과 허리를 안정적으로 잡아주어 우아한 핏을 완성합니다",
+       "y": 1012
+      }
+     ],
+     "y0": 0,
+     "y1": 1150
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 688064,
+   "height": 2150,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_114/1791368208201TBWyL_PNG/11.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.995,
+       "text": "FABRIC INFO",
+       "y": 175
+      },
+      {
+       "conf": 0.996,
+       "text": "하이퍼포먼스 / 우븐!",
+       "y": 304
+      },
+      {
+       "conf": 0.987,
+       "text": "High-Performance / Woven",
+       "y": 382
+      },
+      {
+       "conf": 0.931,
+       "text": "무너지지 / 않는 절대 핏",
+       "y": 1164
+      },
+      {
+       "conf": 0.955,
+       "text": "얇게 들러붙지 않는 탄탄한 우븐 소재가 미운 백살과",
+       "y": 1211
+      },
+      {
+       "conf": 0.962,
+       "text": "등살을 완벽하게 감춰줍니다.",
+       "y": 1248
+      },
+      {
+       "conf": 0.995,
+       "text": "날씨를 이기는 / 프로텍션",
+       "y": 1354
+      },
+      {
+       "conf": 0.953,
+       "text": "갑작스러운 비와 새벽의 찬 바람을 거뜬히 막아",
+       "y": 1400
+      },
+      {
+       "conf": 0.944,
+       "text": "주어 18홀 / 내내 최상의 / 컨디션을 유지합니다.",
+       "y": 1434
+      }
+     ],
+     "y0": 0,
+     "y1": 1509
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.986,
+       "text": "끈적임 없는 완벽한 쾌적함",
+       "y": 38
+      },
+      {
+       "conf": 0.984,
+       "text": "아무리 땀을 흘려도 몸에 감기지 않아,라운딩이",
+       "y": 85
+      },
+      {
+       "conf": 0.978,
+       "text": "끝날 때까지 기분 좋은 보송함을 선사합니다.",
+       "y": 118
+      },
+      {
+       "conf": 0.986,
+       "text": "다림질이 필요 없는 이지케어",
+       "y": 227
+      },
+      {
+       "conf": 0.985,
+       "text": "세탁 후 툭툭 털어 널기만 해도 구김 없이",
+       "y": 277
+      },
+      {
+       "conf": 0.978,
+       "text": "새 옷처럼 반듯한 고급스러움을 유지합니다.",
+       "y": 311
+      },
+      {
+       "conf": 0.927,
+       "text": "얇고 몸에 찰싹 달라붙는 / 저가형 티셔츠와는 / 태생부터 다릅니다.",
+       "y": 422
+      },
+      {
+       "conf": 0.973,
+       "text": "베러투데의만의 / 독보적인 하이엔드 / 우븐으로",
+       "y": 465
+      },
+      {
+       "conf": 0.999,
+       "text": "라운딩의 품격을 완성하세요.",
+       "y": 509
+      }
+     ],
+     "y0": 1509,
+     "y1": 2150
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1321769,
+   "height": 1500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_289/1791368208241yvSoG_PNG/12.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.956,
+       "text": "안심의 마법 KOTITI 인증",
+       "y": 121
+      },
+      {
+       "conf": 0.977,
+       "text": "몸에 가장 가까운 옷이니까,안심을 입으세요.",
+       "y": 219
+      },
+      {
+       "conf": 0.965,
+       "text": "82251001122795 / PAGE 2 OF 11",
+       "y": 360
+      },
+      {
+       "conf": 0.995,
+       "text": "KOTITI",
+       "y": 404
+      },
+      {
+       "conf": 0.999,
+       "text": "합격",
+       "y": 465
+      },
+      {
+       "conf": 0.767,
+       "text": "아릴아민",
+       "y": 499
+      },
+      {
+       "conf": 0.662,
+       "text": "PH",
+       "y": 520
+      },
+      {
+       "conf": 0.699,
+       "text": "포름았데",
+       "y": 541
+      },
+      {
+       "conf": 0.625,
+       "text": "연경성 / pH level/",
+       "y": 561
+      },
+      {
+       "conf": 0.999,
+       "text": "포름알데히드/",
+       "y": 594
+      },
+      {
+       "conf": 0.704,
+       "text": "시약 / 아릴아민등",
+       "y": 645
+      },
+      {
+       "conf": 0.766,
+       "text": "서이",
+       "y": 664
+      },
+      {
+       "conf": 0.616,
+       "text": "이필은",
+       "y": 686
+      },
+      {
+       "conf": 0.944,
+       "text": "불검출 및합격",
+       "y": 689
+      },
+      {
+       "conf": 0.569,
+       "text": "포얼에티",
+       "y": 728
+      },
+      {
+       "conf": 0.558,
+       "text": "품알해드",
+       "y": 748
+      },
+      {
+       "conf": 0.736,
+       "text": "손허산히도",
+       "y": 769
+      },
+      {
+       "conf": 0.814,
+       "text": "제닥자수신성품",
+       "y": 812
+      },
+      {
+       "conf": 0.635,
+       "text": "디이지엄이 타릴하수언천를",
+       "y": 833
+      },
+      {
+       "conf": 0.976,
+       "text": "3대 유해물질 불검출,",
+       "y": 964
+      },
+      {
+       "conf": 0.944,
+       "text": "유해물질 ZERO",
+       "y": 1042
+      },
+      {
+       "conf": 0.961,
+       "text": "[저자극] / [무독성 인증] / [우수한 염색성]",
+       "y": 1294
+      },
+      {
+       "conf": 0.926,
+       "text": "하루 종일 / 유해물질 / 땀을 흘려도",
+       "y": 1343
+      },
+      {
+       "conf": 0.997,
+       "text": "부드럽게! / ZERO! / 안전하게!",
+       "y": 1381
+      }
+     ],
+     "y0": 0,
+     "y1": 1500
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 191932,
+   "height": 1800,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_219/1791368208075caUb0_PNG/13.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.983,
+       "text": "SIZE INFO",
+       "y": 180
+      },
+      {
+       "conf": 0.983,
+       "text": "90부터 115까지,",
+       "y": 323
+      },
+      {
+       "conf": 0.967,
+       "text": "정밀한 6단계 사이즈",
+       "y": 395
+      },
+      {
+       "conf": 0.979,
+       "text": "탄탄하게 품격을 잡아주는 프리미엄 우븐 소재,",
+       "y": 529
+      },
+      {
+       "conf": 0.981,
+       "text": "고객님의 플레이 스타일에 맞춰 핏을 선택해 보세요.",
+       "y": 582
+      },
+      {
+       "conf": 0.904,
+       "text": "츠 베러투데이 추천 *",
+       "y": 743
+      },
+      {
+       "conf": 0.975,
+       "text": "정사이즈 선택 시 / 한사이즈 UP 선택시",
+       "y": 818
+      },
+      {
+       "conf": 0.987,
+       "text": "클래식 정핏 / 우아한 체형 커버 핏",
+       "y": 903
+      },
+      {
+       "conf": 0.941,
+       "text": "몸에적당히 / 몸보다 넉넉한 품으로",
+       "y": 1301
+      },
+      {
+       "conf": 0.911,
+       "text": "여유 있는 기본 핏 / 뱃살,군살커버핏",
+       "y": 1339
+      },
+      {
+       "conf": 0.962,
+       "text": "슬림한 라인과 단정함을 / 여유로운 편안함을",
+       "y": 1406
+      },
+      {
+       "conf": 0.997,
+       "text": "선호하시는 분께 추천 / 선호하시는 분께 추천",
+       "y": 1453
+      },
+      {
+       "conf": 0.978,
+       "text": "90.95.100.105.110.115 / 95→100/100→105/105→110/ 110→115",
+       "y": 1502
+      },
+      {
+       "conf": 0.99,
+       "text": "라운딩 중 스윙의 구속 없는",
+       "y": 1592
+      },
+      {
+       "conf": 0.957,
+       "text": "'편안한 착용감'과'여유로운 핏'을 원하시면",
+       "y": 1643
+      },
+      {
+       "conf": 0.99,
+       "text": "한 사이즈 큰 사이즈를 추천합니다.",
+       "y": 1697
+      }
+     ],
+     "y0": 0,
+     "y1": 1800
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 222900,
+   "height": 1150,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_222/1791368208231NS8xH_PNG/14.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "어깨너비",
+       "y": 134
+      },
+      {
+       "conf": 0.999,
+       "text": "소매길이 / 가슴너비 / 총기장",
+       "y": 248
+      },
+      {
+       "conf": 0.996,
+       "text": "(단위:CM/단면)",
+       "y": 524
+      },
+      {
+       "conf": 0.95,
+       "text": "구 분 / 가슴너비 / 어깨너비 / 소매기장 / 총기장",
+       "y": 579
+      },
+      {
+       "conf": 0.999,
+       "text": "90 / 47 / 42 / 56.5 / 60",
+       "y": 652
+      },
+      {
+       "conf": 0.999,
+       "text": "95 / 49.5 / 43.5 / 57.5 / 61",
+       "y": 721
+      },
+      {
+       "conf": 0.998,
+       "text": "100 / 52 / 45 / 58.5 / 62",
+       "y": 791
+      },
+      {
+       "conf": 0.998,
+       "text": "105 / 55 / 46.7 / 59.5 / 64",
+       "y": 859
+      },
+      {
+       "conf": 0.998,
+       "text": "110 / 58.5 / 48.7 / 60.5 / 66",
+       "y": 927
+      },
+      {
+       "conf": 0.907,
+       "text": "115 / 62 / 50.7 / 60.5 / 66",
+       "y": 998
+      },
+      {
+       "conf": 0.967,
+       "text": "제품 사이즈 측정 방법 및 색상 별 원단 수축률에 따라 1~3cm 오차가 발생할 수 있습니다.",
+       "y": 1065
+      }
+     ],
+     "y0": 0,
+     "y1": 1150
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 10991,
+   "height": 400,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_6/17913682082526zzaE_PNG/24.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.992,
+       "text": "MODEL CUT",
+       "y": 205
+      },
+      {
+       "conf": 0.996,
+       "text": "착용사이즈:95|키:169cm|몸무게:49kg",
+       "y": 284
+      }
+     ],
+     "y0": 0,
+     "y1": 400
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 980190,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_3/1791373192483hKp3y_PNG/25.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "WHITE",
+       "y": 980
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1341271,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_192/1791373192443bUONq_PNG/26.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1279833,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_119/1791373192468bUDJ5_PNG/27.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.742,
+       "text": "|",
+       "y": 372
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1197754,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_142/17913731924620Ggpy_PNG/28.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 507985,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_121/1791373192380HzAQe_PNG/29.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 776328,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_290/17913731924446VumP_PNG/30.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.862,
+       "text": "7",
+       "y": 631
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 687100,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_193/1791373192529KS8tc_PNG/31.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.986,
+       "text": "BEIGE",
+       "y": 975
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 839607,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_127/1791373192614PMiOe_PNG/32.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 720547,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_183/17913731926444duzu_PNG/33.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 736751,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_233/1791373192648bT3Ie_PNG/34.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 530360,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_56/1791373192719GGALJ_PNG/35.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.507,
+       "text": "-",
+       "y": 611
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 604392,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_158/1791373192690usVfj_PNG/36.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 531866,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_273/1791373192718w1VtN_PNG/37.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1402109,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_137/1791368208830aPpSv_PNG/39.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "PINK",
+       "y": 959
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1379539,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_268/1791368208910Hozoc_PNG/40.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1337210,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_277/1791368209131IKdKM_PNG/41.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1265236,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_70/1791368209092C6vXb_PNG/42.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.624,
+       "text": "W",
+       "y": 783
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1402087,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_83/1791368209035Fiovm_PNG/43.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.595,
+       "text": "T",
+       "y": 213
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 785976,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_292/1791368209237oUlc4_PNG/44.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "PURPLE",
+       "y": 979
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 774654,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_184/1791368209128AlwXT_PNG/45.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 765429,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_246/1791368209181SgO4i_PNG/46.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 746352,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_12/1791368209233UmN1I_PNG/47.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.67,
+       "text": "C",
+       "y": 153
+      },
+      {
+       "conf": 0.594,
+       "text": "VOI",
+       "y": 573
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 565357,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_4/1791368209267xxQA0_PNG/48.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 525916,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_139/17913682093455ugcb_PNG/49.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 524589,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_119/1791368209317h9AMw_PNG/50.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 764434,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_135/1791368209578LsBhL_PNG/51.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.991,
+       "text": "SKY BLUE",
+       "y": 982
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 815917,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_279/1791368209435Lv1NI_PNG/52.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 759590,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_237/1791368209526wBFBo_PNG/53.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 800759,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_95/1791368209536BhM0X_PNG/54.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 512980,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_270/17913682095720WmRD_PNG/55.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.751,
+       "text": "[",
+       "y": 566
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 531920,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_55/17913682096154TRYp_PNG/56.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.522,
+       "text": "C",
+       "y": 351
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 529034,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_106/1791368209713mzIkC_PNG/57.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 505956,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_214/1791368209644qdeYB_PNG/58.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1329719,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_176/1791368210000ERaEu_PNG/59.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.997,
+       "text": "BLACK",
+       "y": 976
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1143680,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_202/179136820975198pMO_PNG/60.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1196540,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_262/1791368210122dY2sK_PNG/61.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.576,
+       "text": "0",
+       "y": 176
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1154777,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_3/1791368209927Vr1bJ_PNG/62.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1260197,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_157/1791368209988IrLCS_PNG/63.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.805,
+       "text": "]",
+       "y": 564
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1359307,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_230/1791368210080KTOul_PNG/64.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 248110,
+   "height": 1700,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_98/1791368210015x7Y6O_PNG/65.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "색상/사이즈",
+       "y": 75
+      },
+      {
+       "conf": 0.981,
+       "text": "화이트 / 베이지 / 핑크",
+       "y": 302
+      },
+      {
+       "conf": 0.977,
+       "text": "퍼플 / 스카이블루 / 블랙",
+       "y": 503
+      },
+      {
+       "conf": 0.999,
+       "text": "90/95/100/105/110/115",
+       "y": 551
+      },
+      {
+       "conf": 1.0,
+       "text": "소재/생산지",
+       "y": 658
+      },
+      {
+       "conf": 0.981,
+       "text": "베러투데이의 모든 제품은",
+       "y": 712
+      },
+      {
+       "conf": 0.976,
+       "text": "자랑스러운 대한민국에서",
+       "y": 754
+      },
+      {
+       "conf": 0.963,
+       "text": "폴리에스테르 / 100% / 직접 생산됩니다.",
+       "y": 781
+      },
+      {
+       "conf": 0.967,
+       "text": "MADE IN KOREA",
+       "y": 839
+      },
+      {
+       "conf": 1.0,
+       "text": "추가정보",
+       "y": 939
+      },
+      {
+       "conf": 0.991,
+       "text": "계절감 / 봄 / 여름 / 가을 / 겨울",
+       "y": 1001
+      },
+      {
+       "conf": 0.999,
+       "text": "신축성 / 없음 / 약간 / 좋음 / 부분",
+       "y": 1063
+      },
+      {
+       "conf": 0.791,
+       "text": "두께감 / 얇음 / 적당 / 도톰 / 두꺼움",
+       "y": 1121
+      },
+      {
+       "conf": 0.971,
+       "text": "터치감 / 가벼움 / 매끄러움 / 부드러움 / 폭닥함",
+       "y": 1182
+      },
+      {
+       "conf": 0.879,
+       "text": "비 침 / 없음 / 약간 / 부분 / 있음",
+       "y": 1242
+      },
+      {
+       "conf": 1.0,
+       "text": "세탁정보",
+       "y": 1384
+      },
+      {
+       "conf": 0.962,
+       "text": "기계세탁이 가능합니다.",
+       "y": 1474
+      },
+      {
+       "conf": 0.937,
+       "text": "자연 건조 권장",
+       "y": 1539
+      },
+      {
+       "conf": 0.997,
+       "text": "건조기는 사용을 자제해 주세요.",
+       "y": 1576
+      }
+     ],
+     "y0": 0,
+     "y1": 1700
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1071579,
+   "height": 2000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_150/17913727316586zEO7_PNG/60.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.994,
+       "text": "BETTER TODAY SERVICE / 함께할수록빛나는순간",
+       "y": 87
+      },
+      {
+       "conf": 1.0,
+       "text": "베러투데이",
+       "y": 111
+      },
+      {
+       "conf": 0.973,
+       "text": "지금 보고 계신 제품,",
+       "y": 211
+      },
+      {
+       "conf": 0.986,
+       "text": "누군가와 함께 단체복으로 입고 싶으신가요?",
+       "y": 260
+      },
+      {
+       "conf": 0.998,
+       "text": "단체복 주문 및",
+       "y": 376
+      },
+      {
+       "conf": 0.998,
+       "text": "로고 맞춤 제작 서비스",
+       "y": 432
+      },
+      {
+       "conf": 0.911,
+       "text": "동호회,골프 등 각종 단체 행사",
+       "y": 513
+      },
+      {
+       "conf": 0.96,
+       "text": "베러투데이와함께하세요※",
+       "y": 552
+      },
+      {
+       "conf": 0.946,
+       "text": "단체복 구매 단체 사진",
+       "y": 686
+      },
+      {
+       "conf": 0.998,
+       "text": "2025년마을계획단발대식",
+       "y": 845
+      },
+      {
+       "conf": 0.963,
+       "text": "단체복 제작 주문 안내",
+       "y": 1391
+      },
+      {
+       "conf": 0.961,
+       "text": "전상품 / 희망 단체 로고 / 소량부터 대량",
+       "y": 1576
+      },
+      {
+       "conf": 0.931,
+       "text": "주문 가능 / 제작 및 부착 / 주문가능",
+       "y": 1619
+      },
+      {
+       "conf": 0.981,
+       "text": "단체 주문 문의 방법",
+       "y": 1798
+      },
+      {
+       "conf": 0.995,
+       "text": "페이지 내 상품문의를 통해 문의사항을 남겨주시면",
+       "y": 1863
+      },
+      {
+       "conf": 0.983,
+       "text": "친절하게 상담해 드립니다.",
+       "y": 1903
+      }
+     ],
+     "y0": 0,
+     "y1": 2000
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 455958,
+   "height": 1050,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261007_139/17913727394067V2rR_PNG/61.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.965,
+       "text": "COMFORT FIT",
+       "y": 310
+      },
+      {
+       "conf": 0.952,
+       "text": "100% / 한국인 체형에",
+       "y": 350
+      },
+      {
+       "conf": 0.988,
+       "text": "국내생산 / 맞는 편안함",
+       "y": 390
+      },
+      {
+       "conf": 0.821,
+       "text": "1년",
+       "y": 546
+      },
+      {
+       "conf": 0.93,
+       "text": "피부 건강까지 / 구매 후 1년",
+       "y": 672
+      },
+      {
+       "conf": 0.936,
+       "text": "생각한 안심 소재 / 무상 A/S 제공",
+       "y": 715
+      },
+      {
+       "conf": 0.991,
+       "text": "오래 입을 수 있는 좋은 옷을 찾는 당신께,",
+       "y": 877
+      },
+      {
+       "conf": 0.998,
+       "text": "베러투데이가 약속합니다.",
+       "y": 916
+      }
+     ],
+     "y0": 0,
+     "y1": 1050
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:102167425:12994831966",
+ "links_sha256": "96a2d3fb11c32b10410b316166aa8a970a26eda778131175f8adb72be8f06636",
+ "product_id": "12994831966",
+ "seconds": 68.1,
+ "skipped": []
+}

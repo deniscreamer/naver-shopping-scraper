@@ -1,0 +1,110 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 69171,
+   "height": 550,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250508_230/1746676288384rECPi_JPEG/1746675848829.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 550
+    }
+   ],
+   "status": "read",
+   "width": 550
+  },
+  {
+   "bytes": 84324,
+   "height": 550,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250508_209/1746676288390BzbeY_JPEG/1746675847015.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 550
+    }
+   ],
+   "status": "read",
+   "width": 550
+  },
+  {
+   "bytes": 86635,
+   "height": 550,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250508_60/1746676288386nxF8P_JPEG/1746675845190.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 550
+    }
+   ],
+   "status": "read",
+   "width": 550
+  },
+  {
+   "bytes": 88990,
+   "height": 550,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250508_295/1746676288393hhs84_JPEG/1746675843338.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 550
+    }
+   ],
+   "status": "read",
+   "width": 550
+  },
+  {
+   "bytes": 56052,
+   "height": 550,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250508_51/17466762883787bT4P_JPEG/1746675841452.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 550
+    }
+   ],
+   "status": "read",
+   "width": 550
+  },
+  {
+   "bytes": 52648,
+   "height": 550,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250508_76/1746676288383SroRq_JPEG/1746675839227.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 550
+    }
+   ],
+   "status": "read",
+   "width": 550
+  }
+ ],
+ "key": "fairwardgolf:naver:100104671:11814351207",
+ "links_sha256": "ea458256810a841824c2af19ce82cf2e7726a7d4dc7eabe56f184be60de9928e",
+ "product_id": "11814351207",
+ "seconds": 8.0,
+ "skipped": []
+}

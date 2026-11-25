@@ -47,6 +47,8 @@ naver-harvester published, and its 60 published products):
     product from <shop>/specs_by_owner.json, 2026-11-18),
     variants_left_out_by_owner / variants_by_owner_unused (prepare's owner_variants: the owner's variants left out of
     one product from <shop>/variants_by_owner.json, 2026-11-25),
+    sizes_by_owner / sizes_by_owner_unused (prepare's owner_sizes: the same entry's "sizes" block, the owner's word on
+    how one product is sized: gender, read_as, same_as, size; 2026-11-25),
     photos_incomplete, reviews_none_chosen, reviews_cleaned (review_clean.py: kept, by grade, trimmed), measures_from_images / description_images_missing / _stale / _failed / _partial (the category's
     description_images switch: the package fields the description states or its parts compose, in place of the
     category default; description_measures.py).
@@ -1808,6 +1810,77 @@ def title_size(ov: dict[str, Any], title: str, listing_name: str | None, model_n
     return m.group("colour").strip(), m.group("size")
 
 
+OWNER_GENDERS = {"men": "mens", "women": "womens"}
+OWNER_SIZE_FIELDS = ("gender", "read_as", "same_as", "size")
+
+
+def owner_size_facts(ov: dict[str, Any], size: str, title: str, listing_name: str | None) \
+        -> list[dict[str, str]] | None:
+    """The facts of the one size the owner says a product sells, where the page's fields disagree (<shop>/
+    variants_by_owner.json "sizes": {"size": ...}, the owner 2026-11-25: 베러투데이 12994831966 sells the title's 110,
+    its 모델명 ends 95; Nike 13660201494 the title's S, a letter title_size never takes): 사이즈 = the owner's size,
+    and 색상 = the title's colour when the title is the listing's name plus "colour, size" with that size (title_size's
+    shape, its guards yielding to the owner). None (unused) unless no option, one variant and no size fact."""
+    if ov.get("options") or len(ov.get("variants") or []) != 1 \
+            or any(apparel_sizes.is_size_name(f.get("label_ko")) for f in ov.get("facts") or []):
+        return None
+    facts = []
+    m = _TITLE_SIZE_RE.match(str(title or "").strip())
+    if m and listing_name and m.group("base").strip() == str(listing_name).strip() \
+            and _tidy(m.group("size")) == _tidy(size) and not apparel_sizes.parse_label(m.group("colour")):
+        facts.append({"label_ko": "색상", "value_ko": m.group("colour").strip()})
+    return facts + [{"label_ko": "사이즈", "value_ko": size}]
+
+
+def _owner_reading(ov: dict[str, Any], facts: list[dict[str, Any]], owner: Mapping[str, Any], profile: str,
+                   said: list[str], unused: list[str]) -> tuple[dict[str, str], dict[str, str], list[dict[str, Any]]]:
+    """The owner's word on how one product's size values read (<shop>/variants_by_owner.json "sizes", 2026-11-25):
+    read_as {seller value: label}: the US size computed as if the seller had written the label, the seller's value kept
+    as the Naver value the owner orders (WAAC 11814351207: 2 / 3 / 4 = S(90) / M(95) / L(100); Nike 13660201494's S
+    sold as XS); same_as {value: another value of the size option}: one size written two ways, merged into the other,
+    each variant keeping its own Naver value (아크나인 7496732129: the winter type's bare S..XL under the 간절기 type's
+    S(25~26인치)..XL(31~32인치), the owner's option A), never where one choice of the other options sells both. A key
+    the product does not show, a label another value already is: unused. -> (read_as, same_as applied, the options
+    resolve reads)."""
+    if not owner.get("read_as") and not owner.get("same_as"):
+        return {}, {}, ov["options"]
+    with apparel_sizes.waist_labels(apparel_sizes.waist_read(apparel_sizes.grids()["profiles"][profile])):
+        i = apparel_sizes.size_option(ov["options"])      # as resolve finds it ("S(25~26인치)" a waist label)
+    values = [str(v) for v in ov["options"][i]["values_ko"]] if i is not None else []
+    shown = values + [str(f.get("value_ko")) for f in facts]
+    labels = [str(x) for x in (owner.get("read_as") or {}).values()]
+    read_as: dict[str, str] = {}
+    for k, label in (owner.get("read_as") or {}).items():
+        k, label = str(k), str(label)
+        if k not in shown:
+            unused.append(f"read_as {k}: not a size value of the product")
+        elif label in shown or labels.count(label) > 1:
+            unused.append(f"read_as {k}: {label} {'is a value already' if label in shown else 'twice'}")
+        else:
+            read_as[k] = label
+            said.append(f"read_as {k} = {label}")
+    same_as: dict[str, str] = {}
+    for k, kept in (owner.get("same_as") or {}).items():
+        k, kept = str(k), str(kept)
+        groups: dict[tuple[str, ...], set[str]] = {}       # the size values sold under one choice of the others
+        for v in ov["variants"]:
+            picked = [str(x) for x in v.get("options_ko") or []]
+            if i is not None and len(picked) > i:
+                groups.setdefault(tuple(picked[:i] + picked[i + 1:]), set()).add(picked[i])
+        if k not in values or kept not in values or k == kept or kept in (owner.get("same_as") or {}):
+            unused.append(f"same_as {k}: {kept} (not two size values of the product)")
+        elif any({k, kept} <= g for g in groups.values()):
+            unused.append(f"same_as {k}: sold beside {kept} under one choice of the other options")
+        else:
+            same_as[k] = kept
+            said.append(f"same_as {k} = {kept}")
+    options = ov["options"]
+    if i is not None and (read_as or same_as):
+        options = [dict(o) for o in ov["options"]]
+        options[i] = {**options[i], "values_ko": [read_as.get(v, v) for v in values if v not in same_as]}
+    return read_as, same_as, options
+
+
 def size_profile(cat: CategoryRules, gender: str | None) -> str:
     """The size profile of a product by the gender it states: men's tops (2026-11-21), unisex or mixed trousers sized
     as men's (Golf Pants, 2026-11-23), else the category's."""
@@ -1819,11 +1892,15 @@ def size_profile(cat: CategoryRules, gender: str | None) -> str:
 
 
 def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[str]], brand: str | None,
-           title: str) -> dict[str, Any]:
+           title: str, owner: Mapping[str, Any] | None = None, owner_said: list[str] | None = None,
+           owner_unused: list[str] | None = None) -> dict[str, Any]:
     """apparel_sizes.resolve on the product; the size option rewritten in place: one Korean size written twice
     ("M (66)", "M(66)": 11107936517) made one value (its rows merged: the buyable row kept; two prices hold the
     product), the values in size order. A size the transform kept as a fact (one value, "사이즈: FREE(44-66반)",
-    5891366586) is resolved too: product.sizes.fact {ko, us} (2026-11-19 review: it reached the store in Korean)."""
+    5891366586) is resolved too: product.sizes.fact {ko, us} (2026-11-19 review: it reached the store in Korean).
+    `owner`: the owner's read_as / same_as of this product (_owner_reading, 2026-11-25; what was applied appended to
+    `owner_said`, what the product does not show to `owner_unused`): a value read as the owner's label keeps its own ko and
+    carries "read_as"."""
     texts = (text or "").splitlines() + [r for rows in ocr for r in rows]
     with apparel_sizes.waist_labels(apparel_sizes.waist_read(apparel_sizes.grids()["profiles"][profile])):
         lettered = apparel_sizes.number_letter_split(ov["options"])
@@ -1834,10 +1911,24 @@ def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[st
     # states its size: the chart's several sizes are then no unknown size (below)
     split = apparel_sizes.single_joined(joined[0].get("value_ko"), apparel_sizes.order_pairs(texts)) \
         if len(joined) == 1 and len(ov["variants"]) == 1 and not facts else None
-    out = apparel_sizes.resolve(ov["options"], texts, brand, title, profile, has_fact=bool(facts or split),
-                                combos=[list(v.get("options_ko") or []) for v in ov["variants"]])
+    # the owner's reading of this product's values (variants_by_owner.json "sizes", 2026-11-25)
+    read_as, same_as, options = _owner_reading(ov, facts, owner or {}, profile,
+                                               owner_said if owner_said is not None else [],
+                                               owner_unused if owner_unused is not None else [])
+    seen_as = {**read_as, **same_as}
+    out = apparel_sizes.resolve(options, texts, brand, title, profile, has_fact=bool(facts or split),
+                                combos=[[seen_as.get(str(x), x) for x in v.get("options_ko") or []]
+                                        for v in ov["variants"]])
+    back = {label: k for k, label in read_as.items()}
+    for v in out["values"]:                         # the seller's value again, the owner's label beside it
+        if v["ko"] in back:
+            v["read_as"], v["ko"] = v["ko"], back[v["ko"]]
+    out["merged"] = {back.get(a, a): back.get(b, b) for a, b in out["merged"].items()}
     if out["held"]:
         return out
+    if same_as and out["option"] is not None:      # the owner's one size written two ways: merged into the other
+        for k, mate in same_as.items():
+            out["merged"][k] = out["merged"].get(mate, mate)
     if lettered:
         # "오프화이트 85 XS": the number sizes it, the seller's letter must agree (10940191023, 2026-11-24)
         said = {num: letter for _, num, letter in lettered[1]}
@@ -1878,12 +1969,14 @@ def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[st
         # one size fact of a colour and the free word in brackets, "컬러/사이즈: 블랙(free)" (11492588480, 2026-11-24):
         # the free word is the size, the fact keeps the seller's value
         free = re.match(r"^[가-힣]+\s*[(（]\s*(FREE|F|프리)\s*[)）]$", value, re.I)
-        one = apparel_sizes.resolve([{"name_ko": facts[0]["label_ko"], "values_ko": [free.group(1) if free else value]}],
-                                    texts, brand, title, profile)
+        one = apparel_sizes.resolve([{"name_ko": facts[0]["label_ko"], "values_ko": [
+            read_as.get(value) or (free.group(1) if free else value)]}], texts, brand, title, profile)
         if one["held"] or not one["values"]:
             out["held"] = one["held"] or f"{facts[0]['value_ko']!r}: not read as a size"
             return out
         out["fact"] = {"label_ko": facts[0]["label_ko"], "ko": facts[0]["value_ko"], "us": one["values"][0]["us"]}
+        if value in read_as:                        # the owner's label (13660201494's S read as XS, 2026-11-25)
+            out["fact"]["read_as"] = read_as[value]
         out["chart"] = out["chart"] or one["chart"]
         return out
     i = out["option"]
@@ -2087,10 +2180,13 @@ def _sizes_by_gender(ov: dict[str, Any], cat: CategoryRules, variant_gender: Map
 
 def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             images_text: dict[str, Any] | None = None,
-            owner_variants: Mapping[str, list[str]] | None = None) -> Prepared:
+            owner_variants: Mapping[str, list[str]] | None = None,
+            owner_sizes: Mapping[str, Any] | None = None) -> Prepared:
     """One collected line -> a prepared product (ready or held). `owner_variants`: the owner's variants to leave out
     of this product ({option name or index: [values]}, <shop>/variants_by_owner.json read by run_transform, 2026-11-25;
-    in the prepare cache's signature): notes variants_left_out_by_owner / variants_by_owner_unused."""
+    in the prepare cache's signature): notes variants_left_out_by_owner / variants_by_owner_unused. `owner_sizes`: the
+    same entry's "sizes" block, the owner's word on how this one product is sized (gender, read_as, same_as, size;
+    2026-11-25, in the signature too): notes sizes_by_owner (what was applied) / sizes_by_owner_unused."""
     key = collected["key"]
     line = decode_line(collected)                  # "u2013" written out by the seller: the character (2026-11-15)
     details, specs = line.get("details"), line.get("specs")
@@ -2325,12 +2421,32 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     if not (line.get("photos") or {}).get("is_complete", True):
         notes.append({"code": "photos_incomplete", "detail": f"{len(imgs)} of {line['photos'].get('total')}"})
     sizes = None
+    owner = dict(owner_sizes or {})
+    said: list[str] = []
+    unused = [f"{k}: not a field" for k in owner if k not in OWNER_SIZE_FIELDS]
+    if owner and not cat.sizes:
+        unused.append("the category has no sizes")
     if cat.sizes:                                   # apparel: US sizes from the product's own labels and chart
         gender = (stated.get("gender") or {}).get("value")
+        if "gender" in owner:                       # the owner's word on whose sizes they are (2026-11-25: adidas
+            by_owner = OWNER_GENDERS.get(str(owner["gender"]))   # 9069946345 states none, men's)
+            if by_owner and (by_owner == "womens" or cat.sizes_mens):
+                gender = by_owner
+                said.append(f"gender {owner['gender']}")
+            else:
+                why = "the category has no men's size profile" if by_owner else "men or women"
+                unused.append(f"gender {owner['gender']}: {why}")
         profile = size_profile(cat, gender)
         ocr = image_rows(images_text if current(images_text, line) else None)
-        if titled := title_size(ov, details["name"], (line.get("listing") or {}).get("name"),
-                                ((specs.get("facts") or {}).get("model_name") or {}).get("value")):
+        if "size" in owner:                         # the owner's one size sold (2026-11-25, 12994831966: 110)
+            if (own_facts := owner_size_facts(ov, str(owner["size"]), details["name"],
+                                              (line.get("listing") or {}).get("name"))) is not None:
+                ov["facts"] = list(ov.get("facts") or []) + own_facts
+                said.append(f"size {owner['size']}")
+            else:
+                unused.append(f"size {owner['size']}: the product has a size option, a size fact or several variants")
+        elif titled := title_size(ov, details["name"], (line.get("listing") or {}).get("name"),
+                                  ((specs.get("facts") or {}).get("model_name") or {}).get("value")):
             ov["facts"] = list(ov.get("facts") or []) + [{"label_ko": "색상", "value_ko": titled[0]},
                                                          {"label_ko": "사이즈", "value_ko": titled[1]}]
         by_gender = _sizes_by_gender(ov, cat, (stated.get("gender") or {}).get("variants") or {}, cleaned["text"],
@@ -2339,7 +2455,10 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             by_gender = None                        # mixed trousers sized as men's (the owner, 2026-11-23), as before
         # else a mixed product per gender held stays held: never sized on the women's profile alone (2026-11-25, the
         # Fable review: Dennis 11287527628's men's 110 sold as a women's XXL, Malbon 12375182812 unisex on womens_tops)
-        sizes = by_gender or _sizes(ov, profile, cleaned["text"], ocr, brand.get("value"), details["name"])
+        if by_gender is not None:                   # the owner's reading is not per gender: name one first
+            unused += [f"{k}: a mixed product sized per gender" for k in ("read_as", "same_as") if owner.get(k)]
+        sizes = by_gender or _sizes(ov, profile, cleaned["text"], ocr, brand.get("value"), details["name"],
+                                    owner, said, unused)
         if (left_out := sizes.pop("chart_left_out", None)) and not sizes["held"]:
             notes.append({"code": "size_chart_left_out", "detail": str(left_out)[:200]})
         if cat.sizes_unisex and not gender and not sizes["held"] \
@@ -2361,6 +2480,10 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
         elif sizes["merged"]:
             notes.append({"code": "size_values_merged", "detail": ", ".join(f"{k} = {v}"
                                                                             for k, v in sizes["merged"].items())})
+    if said:                                        # the owner's sizes block (variants_by_owner.json, 2026-11-25)
+        notes.append({"code": "sizes_by_owner", "detail": "; ".join(said)[:300]})
+    if unused:
+        notes.append({"code": "sizes_by_owner_unused", "detail": "; ".join(unused)[:300]})
     product: PreparedProduct = {
         "title_ko": details["name"], "brand_ko": brand.get("value"), "brand_source": brand.get("source"),
         "attributes": stated, "options": ov["options"], "facts": ov["facts"], "variants": ov["variants"],
