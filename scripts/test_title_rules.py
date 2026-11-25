@@ -386,6 +386,9 @@ def test_a_model_codes_tail_is_no_size():
     assert [m.group(0) for m in T.TITLE_MODEL_YEAR.finditer("레인웨어 상하세트 2024년 모델 / 2025년형 / 2023 모델")] == [
         "2024년 모델", "2025년형", "2023 모델"]
     assert not list(T.TITLE_MODEL_YEAR.finditer("TSMR2024 레인슈트 C25989100 2024"))
+    # a bare season word (2026-11-25: "아디다스 FW 겨울 ..."); never inside a code ("FW123", "SSG")
+    assert T.TITLE_SEASON_WORD.findall("아디다스 FW 겨울 / SS 여름 / F/W") == ["FW", "SS", "F/W"]
+    assert T.TITLE_SEASON_WORD.findall("FW123 SSG 26FW") == []
     assert sizes.findall("WWW24K90 여성 가디건 C100 55 66 77 90 울 100%") == ["55", "66", "77", "90"]
 
 

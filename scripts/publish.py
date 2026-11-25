@@ -664,6 +664,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--activate", action="append", default=[], nargs="?", const="",
                     help="a draft's key (a category not marked reviewed): ACTIVE, on the owner's word after the lens "
                     "review (repeat for several)")
+    ap.add_argument("--draft", action="store_true", help="create the products sent now as DRAFT in any category (as "
+                    "job.py --draft; 2026-11-25: products freed by a rule change go to the lens review first)")
     ap.add_argument("--reason", help="why a product is withdrawn or restored (kept in the ledger)")
     ap.add_argument("--rehandle", action="store_true", help="give a product already in the shop the handle its "
                     "title makes now (the old one redirects)")
@@ -767,7 +769,7 @@ def _publish(args: argparse.Namespace, shop: Shop) -> int:
     for key in keys:
         try:
             row = publish_one(shop, key, products, files, ids, force=args.force, dry_run=args.dry_run,
-                              rehandle=args.rehandle)
+                              rehandle=args.rehandle, draft=args.draft)
         except (sp.Untranslated, sp.PayloadError) as e:
             row = {"key": key, "status": "held", "reason": f"{type(e).__name__}: {e}"}
         except CatalogError as e:                       # Shopify refused (userErrors, a file not ready ...)

@@ -132,6 +132,9 @@ TITLE_SIZE_LETTERS = re.compile(r"(?<![A-Za-z\d])(XXS|2XS|XS|XL|XXL|2XL|XXXL|3XL
 TITLE_SEASON = re.compile(r"(?<![A-Za-z\d])(\d{2}|\d{4})\s?(?:년\s?)?(?:FW|SS|F/W|S/S|AW)(?:\s?시즌)?(?![A-Za-z])", re.I)
 # ... and a garment's model year ("2024년 모델", "2025년형", "2024 모델": 2026-11-24, the rainwear pilot, Titleist
 # 10311872120 "... 상하세트 2024년 모델" failed "numbers changed: missing 2024" while the brief leaves the year out)
+# ... and a bare season word with no year ("아디다스 FW 겨울 ...", "아디다스 SS 여름 ...": 2026-11-25, six adidas titles
+# failed "codes lost: missing FW" while the brief leaves the season out)
+TITLE_SEASON_WORD = re.compile(r"(?<![A-Za-z\d/])(FW|SS|F/W|S/S)(?![A-Za-z\d/])", re.I)
 TITLE_MODEL_YEAR = re.compile(r"(?<![A-Za-z\d])20\d{2}\s?(?:년\s?(?:형|모델|식)?|모델)(?![A-Za-z\d])")
 # a seller's promotion word in a garment title (2026-11-24, 5489884876: "마스터베어 인기 BEST 골프팬츠" went out as
 # "MASTER BEAR BEST Golf Pants"): left out, and its English taken out of the answer
@@ -625,6 +628,9 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
             # windbreaker pilot 2026-11-21, 7114115147, 11092759396) while only its digits were freed
             season_codes = [m.group(0) for m in TITLE_SEASON.finditer(item["source"])]
             seasons = list(season_codes) + [m.group(0) for m in TITLE_MODEL_YEAR.finditer(item["source"])]
+            bare = [m.group(1).upper() for m in TITLE_SEASON_WORD.finditer(item["source"])]
+            if bare:
+                item["free_codes"] = [*(item.get("free_codes") or []), *bare, *(b.replace("/", "") for b in bare)]
             # "1+1" (a 2-Pack) and a choice count ("3종 택1", "6컬러"): the brief says them otherwise or leaves them out
             # (2026-11-21, the tops pilot: "... 1+1", "Choose 1 of 3 pcs" kept to keep their digits)
             seasons += [m.group(0) for m in TITLE_PICK.finditer(item["source"])]

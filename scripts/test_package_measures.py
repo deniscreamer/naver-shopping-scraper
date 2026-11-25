@@ -212,7 +212,7 @@ def test_baselines_block_is_optional_and_the_operators():
     table = load_table()
     block = table["rows"][0]["baselines"]
     assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
-    assert table["version"] == 18 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    assert table["version"] == 19 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
     check_row(ROW)                                                    # a row without the block: no composition
     check_row({**ROW, "baselines": BASE})
 
@@ -316,9 +316,9 @@ def test_a_restamped_default_carries_its_rows_version_not_the_tables():
     own defaults_version 11; no other row moved. 2026-11-20: the row of 50002798 (windbreakers) raised it to 13;
     2026-11-21 the row of 50002799 (재킷, the same section) to 14."""
     table = load_table()
-    assert table["version"] == 18 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
+    assert table["version"] == 19 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
         "50002788": 7, "50002787": 7, "50002670": 7, "50002783": 7, "50002784": 9, "50002797": 12, "50002798": 13,
-        "50002799": 14, "50002796": 15, "50002802": 16, "50002801": 17, "50002816": 18}
+        "50002799": 14, "50002796": 15, "50002802": 16, "50002801": 17, "50002816": 19}
     assert row_version(table, JUNIOR) == 7 and row_version({"version": 9}, {k: v for k, v in JUNIOR.items()
                                                                             if k != "defaults_version"}) == 9
     for bad in (0, "7", 7.0, True):
@@ -712,14 +712,14 @@ def test_the_pants_row_is_the_skirts_box_with_a_heavier_pair():
 def test_the_rainwear_row_and_its_suit_and_light_kinds():
     """50002816 (2026-11-24, Rainwear & Midlayers; reviewed on the 30 pilot drafts 2026-11-25): one rain coat 200 / 350 /
     700 g in a 28 x 22 x 5 cm mailer, a rain suit the heavier box, a poncho, cape or rain skirt the lighter one; its own
-    defaults_version 18, appended last."""
+    defaults_version 19 (the 2026-11-25 review restamps its drafts), appended last."""
     row = {r["category_id"]: r for r in load_table()["rows"]}["50002816"]
     check_row(row)
     assert row["fields"]["product_weight_g"] == {"low": 200, "central": 350, "high": 700}
     assert row["fields"]["package_weight_g"] == {"low": 300, "central": 450, "high": 900}
     assert [row["fields"][f]["central"] for f in ("package_length_mm", "package_width_mm", "package_height_mm")] == [
         280, 220, 50]
-    assert (row["approved_at"], row["defaults_version"]) == ("2026-11-25", 18)
+    assert (row["approved_at"], row["defaults_version"]) == ("2026-11-25", 19)
     assert (default_kind(row, "남성 골프 비옷 우의 상하세트 레인슈트", "블랙 / L") or {}).get("kind") == "suit"
     assert (default_kind(row, "골프비옷 여성골프우비 판초 캐디우비", "카키 / FREE") or {}).get("kind") == "light"
     assert (default_kind(row, "레인스커트 비치마 방수", None) or {}).get("kind") == "light"

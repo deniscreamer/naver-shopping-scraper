@@ -11,7 +11,7 @@ What waits for the owner (re-sending a published product, a whole-shop run, ever
 procedure for store actions: skill `store-actions`. Commands from the repo root:
 
 ```sh
-.venv/bin/python scripts/publish.py fairwardgolf [--only <key>] [--force] [--dry-run] [--rehandle] [--shops-root DIR]
+.venv/bin/python scripts/publish.py fairwardgolf [--only <key>] [--force] [--dry-run] [--rehandle] [--draft] [--shops-root DIR]
 .venv/bin/python scripts/publish.py fairwardgolf --withdraw <key> | --restore <key> --reason "..."   # also --activate <key>
 .venv/bin/python scripts/store_diff.py fairwardgolf [--only <key>] [--category <id>]                 # read only
 .venv/bin/python scripts/publish.py fairwardgolf --withdraw <ref> --reason "..." --dry-run          # the key, nothing sent
@@ -116,6 +116,7 @@ still `not ready` and skipped (exit 0), as before.
 - `--activate <key>` (repeatable): a draft live, nothing sent again; `not a draft here` for a key that is not a
   published draft (a withdrawn or held one included). `job.py activate --job <id> [--dry-run]`: every remaining
   draft of a job, withdrawn ones skipped; it prints the `--withdraw` lines of the old copies a draft did not replace.
+- `--draft`: the products created by this run go DRAFT in any category (as `job.py --draft`; 2026-11-25: products a rule change freed go to the lens review first, then `--activate`).
 - `--rehandle --only <key>`: the handle its title makes now (the old one redirects); `--force --only <key>`: send
   even when nothing changed. Both re-send a published product: rule 1 of OWNER_RULES.md.
 - `store_diff.py <shop> [--only <key>] [--category <id>]`: read only, what a publication would change, field by

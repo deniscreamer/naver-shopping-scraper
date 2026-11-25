@@ -879,6 +879,14 @@ def test_an_unreviewed_category_is_created_draft_on_every_channel_with_the_same_
     assert PB.publish_one(shop, KEY, products, FakeFiles(), IDS)["status"] == "skipped"
 
 
+def test_the_draft_flag_creates_a_reviewed_categorys_product_draft(tmp_path):
+    """publish.py --draft (2026-11-25): products a rule change freed go DRAFT in a reviewed category too."""
+    shop = _shop(tmp_path)
+    products = FakeProducts()
+    row = PB.publish_one(shop, KEY, products, FakeFiles(), IDS, draft=True)
+    assert products.sent[0][0]["status"] == "DRAFT" and row["store_status"] == "DRAFT"
+
+
 def test_an_update_of_a_draft_sends_no_status_and_follows_the_stores(tmp_path, monkeypatch):
     """A draft activated by hand in the admin must not go back to DRAFT on the next re-send."""
     _unreviewed(monkeypatch)
