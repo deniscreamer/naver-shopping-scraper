@@ -144,6 +144,27 @@ def test_variant_price_cost_weight_and_metafields():
     assert package["fields"]["package_weight_g"]["confidence"] == 1
 
 
+def test_a_split_value_orders_the_sellers_whole_value():
+    """Kasco 505840359 (2026-11-25): "남성용-그레이L(100)" split into 컬러 그레이 and 사이즈 "남성 L(100)"
+    (transform._gender_colour_split); the owner orders the seller's value on Naver, so sizeKo and optionsKo are
+    "남성용-그레이L(100)", never the split "남성 L(100)" Naver has not (the fixer's finding: sizeKo fell back to it)."""
+    prepared, translated, placement = _product()
+    p = prepared["product"]
+    with open(os.path.join(os.path.dirname(__file__), "fixtures", "prepared", "505840359.json"), encoding="utf-8") as f:
+        p["sizes"] = json.load(f)["product"]["sizes"]                 # the golden's: 여성 M(66), 여성 L(77), 남성 L(100)
+    p["options"] = [{"name_ko": "색상", "values_ko": ["빨강"]},
+                    {"name_ko": "사이즈", "values_ko": ["여성 M(66)", "남성 L(100)"]}]
+    p["variants"][0].update(options_ko=["빨강", "남성 L(100)"], naver_options_ko=["남성용-빨강L(100)"],
+                            naver_size_ko="남성용-빨강L(100)")
+    p["variants"][1].update(options_ko=["빨강", "여성 M(66)"])                                 # one not split
+    translated["en"].update(_en([("option_name", "사이즈", "Size"), ("option_value", "남성 L(100)", "Men's L(100)"),
+                                 ("option_value", "여성 M(66)", "Women's M(66)")]))
+    out = _build(prepared, translated, placement)
+    first, second = (json.loads(_mf(v["metafields"], "fairwardgolf", "source")["value"]) for v in out["variants"])
+    assert (first["optionsKo"], first["sizeKo"], first["sizeUs"]) == (["남성용-빨강L(100)"], "남성용-빨강L(100)", "Men's M")
+    assert (second["optionsKo"], second["sizeKo"]) == (["빨강", "여성 M(66)"], "여성 M(66)")
+
+
 def test_no_options_get_the_universal_fallback():
     out = _build(*_product(options=False, available=(True,)))
     assert out["productOptions"] == [{"name": "Option", "values": [{"name": "Standard"}]}]

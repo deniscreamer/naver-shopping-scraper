@@ -1,0 +1,354 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101213359:9595746260",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "5 of 5 kept (full 3, short 2); 0 trimmed"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "CONDITIONAL_FREE 3000 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/irontshot/products/9595746260",
+  "channel_no": "101213359",
+  "product_id": "9595746260",
+  "category_id": "50002816"
+ },
+ "product": {
+  "title_ko": "골프 비치마 1개 남녀공용 레인스커트 골프선물세트 골프악세사리",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {
+   "gender": {
+    "value": "unisex",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "unisex",
+      "text": "골프 비치마 1개 남녀공용 레인스커트 골프선물세트 골프악세사리"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 레인코트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "9595746260",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 14500,
+    "price_usd": "14.50",
+    "sku": "FW-3fa20cacf452b143c0fad0cd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 100,
+      "central": 200,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "light",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 150,
+      "central": 280,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "light",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "light",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 160,
+      "central": 200,
+      "high": 240,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "light",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 20,
+      "central": 40,
+      "high": 60,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "light",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 14500,
+   "original_krw": 14500,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "모델명",
+    "value_ko": "골프 비치마"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 5
+  },
+  "reviews": [
+   {
+    "id": "4861331824",
+    "score": 5,
+    "text_ko": "좋아요 좋아요 좋아요",
+    "created_at": "2025-12-12T12:17:41Z",
+    "writer": "naya****",
+    "photos": [
+     "collected/50002788-fixtures/images/9595746260/fairwardgolf-review-image-47f49940c15c6d6e.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 17
+   },
+   {
+    "id": "4530873455",
+    "score": 5,
+    "text_ko": "선물용으로 사쪄요. 조금 얇은 느낌이 나지만 방수만 잘되면 되용",
+    "created_at": "2024-08-05T01:52:06Z",
+    "writer": "tlsd********",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 26,
+    "text_original_ko": "선물용으로 사쪄요. 조금 얇은 느낌이 나지만 방수만 잘되면 되용~"
+   },
+   {
+    "id": "4529860797",
+    "score": 5,
+    "text_ko": "방수천이두껍네요 기장 적당하고좋아요",
+    "created_at": "2024-08-03T01:14:55Z",
+    "writer": "phj9***",
+    "photos": [
+     "collected/50002788-fixtures/images/9595746260/fairwardgolf-review-image-6dfe4796485d3f81.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 59
+   },
+   {
+    "id": "4498467459",
+    "score": 5,
+    "text_ko": "최고. 최고!\n좋아요 좋아요\n믿고 구매하세요",
+    "created_at": "2024-06-13T05:22:37Z",
+    "writer": "pmo2***",
+    "photos": [
+     "collected/50002788-fixtures/images/9595746260/fairwardgolf-review-image-0bc4cd56c1411ce0.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 19,
+    "text_original_ko": "최고..최고.!\n좋아요 좋아요 \n믿고  구매하세요"
+   },
+   {
+    "id": "4485543943",
+    "score": 5,
+    "text_ko": "비오는 날도 이제 문제 없네요",
+    "created_at": "2024-05-23T04:37:05Z",
+    "writer": "roej******",
+    "photos": [
+     "collected/50002788-fixtures/images/9595746260/fairwardgolf-review-image-c3199eed8471271b.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 38
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/9595746260/fairwardgolf-9595746260-001-a3e8b9f4d9a36e5b.webp",
+    "sha256": "a3e8b9f4d9a36e5b0786a907556da50a357d5e5ef91e1bd2f086fa2765553e3b",
+    "width": 2000,
+    "height": 1500
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/9595746260/fairwardgolf-9595746260-002-c7154b980c1269e1.webp",
+    "sha256": "c7154b980c1269e11069d8483617eda9ef15a8a042104cc20e54709b35f453d5",
+    "width": 1500,
+    "height": 2000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/9595746260/fairwardgolf-9595746260-003-708caaf11d4bc91c.webp",
+    "sha256": "708caaf11d4bc91c702f6a3004f6bc524def1920950cc9fe7057832bb6c4a7f5",
+    "width": 2000,
+    "height": 1500
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/9595746260/fairwardgolf-9595746260-004-ee0a69cd5488a428.webp",
+    "sha256": "ee0a69cd5488a428c937fa9b57b781749fb033bbdf1de8d188dbe2b014ba01d6",
+    "width": 2000,
+    "height": 1500
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/9595746260/fairwardgolf-9595746260-005-b10e435cf3e70437.webp",
+    "sha256": "b10e435cf3e7043753d8c2a0dc49c47f48891e3dff34ddf702e23e1c9ab83505",
+    "width": 1500,
+    "height": 2000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": null,
+   "policy_text": "30,000원 이상 구매 시 무료 / 제주,도서지역 추가 3,000원",
+   "lead_time": {
+    "seller_average_days": 1.5,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": "제주/도서산간 3,000원 추가"
+  },
+  "description_ko": "골프 비치마 1개 남녀공용 레인스커트 골프선물세트 골프악세사리",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20220808_28/1659926524191Utnio_JPEG/1.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20231128_187/1701147468305KwGfV_JPEG/%EB%B9%84%EC%B9%98%EB%A7%88_01.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220808_115/1659926633847xg19N_JPEG/2.jpg?type=w848"
+  ],
+  "description_dropped": [],
+  "composition_ko": [],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_tops",
+   "option": null,
+   "values": [],
+   "merged": {},
+   "brand_row": null,
+   "chart": null,
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:ca321329e390ebb4",
+   "kind": "title",
+   "ko": "골프 비치마 1개 남녀공용 레인스커트 골프선물세트 골프악세사리"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:7f17de270b397e2a",
+   "kind": "spec_value",
+   "ko": "골프 비치마"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:3b31f8d5a1176ab7",
+   "kind": "spec_value",
+   "ko": "중국"
+  },
+  {
+   "id": "review:3caa50de897cdf70",
+   "kind": "review",
+   "ko": "좋아요 좋아요 좋아요"
+  },
+  {
+   "id": "review:c603c534359bb591",
+   "kind": "review",
+   "ko": "선물용으로 사쪄요. 조금 얇은 느낌이 나지만 방수만 잘되면 되용"
+  },
+  {
+   "id": "review:b3d9b17092b054bd",
+   "kind": "review",
+   "ko": "방수천이두껍네요 기장 적당하고좋아요"
+  },
+  {
+   "id": "review:d7106a5178674b32",
+   "kind": "review",
+   "ko": "최고. 최고!\n좋아요 좋아요\n믿고 구매하세요"
+  },
+  {
+   "id": "review:ce0dedfb182b72e6",
+   "kind": "review",
+   "ko": "비오는 날도 이제 문제 없네요"
+  }
+ ]
+}

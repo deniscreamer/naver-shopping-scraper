@@ -212,7 +212,7 @@ def test_baselines_block_is_optional_and_the_operators():
     table = load_table()
     block = table["rows"][0]["baselines"]
     assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
-    assert table["version"] == 19 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    assert table["version"] == 20 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
     check_row(ROW)                                                    # a row without the block: no composition
     check_row({**ROW, "baselines": BASE})
 
@@ -314,9 +314,11 @@ def test_a_restamped_default_carries_its_rows_version_not_the_tables():
     day the chipper row was measured (version 9): only its own defaults_version rose; its bands of version 10 kept
     defaults_version 9 (a band moves no default). 2026-11-19: the row of 50002797 (knit cardigans) raised it to 11, its
     own defaults_version 11; no other row moved. 2026-11-20: the row of 50002798 (windbreakers) raised it to 13;
-    2026-11-21 the row of 50002799 (재킷, the same section) to 14."""
+    2026-11-21 the row of 50002799 (재킷, the same section) to 14. 2026-11-25 (the owner): 50002816's suit kind read
+    narrower, the table 20; a kind's words only, no number moved, so its defaults_version stays 19 (as version 10's
+    bands): no product is restamped for the version alone."""
     table = load_table()
-    assert table["version"] == 19 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
+    assert table["version"] == 20 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
         "50002788": 7, "50002787": 7, "50002670": 7, "50002783": 7, "50002784": 9, "50002797": 12, "50002798": 13,
         "50002799": 14, "50002796": 15, "50002802": 16, "50002801": 17, "50002816": 19}
     assert row_version(table, JUNIOR) == 7 and row_version({"version": 9}, {k: v for k, v in JUNIOR.items()
@@ -712,7 +714,8 @@ def test_the_pants_row_is_the_skirts_box_with_a_heavier_pair():
 def test_the_rainwear_row_and_its_suit_and_light_kinds():
     """50002816 (2026-11-24, Rainwear & Midlayers; reviewed on the 30 pilot drafts 2026-11-25): one rain coat 200 / 350 /
     700 g in a 28 x 22 x 5 cm mailer, a rain suit the heavier box, a poncho, cape or rain skirt the lighter one; its own
-    defaults_version 19 (the 2026-11-25 review restamps its drafts), appended last."""
+    defaults_version 19 (the 2026-11-25 review restamps its drafts; the suit kind's words narrowed the same day, table
+    version 20, moved no number), appended last."""
     row = {r["category_id"]: r for r in load_table()["rows"]}["50002816"]
     check_row(row)
     assert row["fields"]["product_weight_g"] == {"low": 200, "central": 350, "high": 700}
@@ -725,3 +728,41 @@ def test_the_rainwear_row_and_its_suit_and_light_kinds():
     assert (default_kind(row, "레인스커트 비치마 방수", None) or {}).get("kind") == "light"
     assert default_kind(row, "여성 골프 레인코트 롱 후드", "네이비 / M") is None
     assert load_table()["rows"][-1]["category_id"] == "50002816"
+
+
+@pytest.mark.parametrize("title, variant, kind", [
+    # 2026-11-25 (the owner: "Все рекомендации"): a seller's search keyword is no suit
+    ("골프 비치마 1개 남녀공용 레인스커트 골프선물세트 골프악세사리", None, "light"),             # 9595746260: a gift set
+    ("골프레인슈트 여성골프우비 레인코트 판초우의 케이프 필드가", "핑크 / 선택안함", "light"),      # 10603405721: a cape
+    ("골프레인슈트 여성골프우비 레인코트 판초우의 케이프 필드가", "네이비 / 치마선택", "light"),    # its cape + skirt
+    ("남성 골프우비 골프비옷 레인슈트 레인코트", "블랙", None),                                   # 13415919469: a long coat
+    ("골프레인스커트 골프비치마 방수 우비치마 골프비옷 남녀 빅사이즈 필드가", "레인슈트 미선택+비치마", "light"),  # 10608961987
+    ("남성 골프 레인 자켓 우비 빅사이즈 방수 방풍 바람막이 웨이스트백 세트 라이트베이지, XL", None, None),  # 11428436186
+    ("남녀공용 골프 필드 비옷 우비 레인코트 레인슈트 세트 스포츠 라운딩 캐디 바람막이", "2.우비 레인코트 / 블랙 / L",
+     None),                                                                                    # 8785829126's coat
+    # unmoved: a suit + skirt, a real suit, a two-piece of light shells
+    ("골프레인스커트 골프비치마 방수 우비치마 골프비옷 남녀 빅사이즈 필드가", "핑크 레인슈트+비치마", "suit"),
+    ("남녀공용 골프 필드 비옷 우비 레인코트 레인슈트 세트 스포츠 라운딩 캐디 바람막이", "1.우비 상하의세트 / 블랙 / L",
+     "suit"),
+    ("남성 골프 우비 골프비옷 우의 레인슈트 레인코트 상하세트", "H18비옷세트(화이트) XL", "suit"),       # 11892432250
+    ("레인슈트 고급 골프비옷 우의 상하세트 우비 바지 휴대용 남자 남성 공용 판초방수배달사계절", None, "suit"),  # 11224910780
+    ("스컬독 남녀공용 판초우의 비치마 투피스 세트 초경량 레인코트 우비 비옷 레인슈트 바람막이", "CC 판초상의 + 비치마 블랙",
+     "suit"),                                                                                  # 12182231084
+    ("여름 골프비옷 세트 판초형 레인후드 스커트 남녀공용 방수 우비 핑크팡", "베이지셋트", "suit"),     # 10436091287
+    ("타이틀리스트 남성 골프 2WAY 기능성 레인웨어 비옷상하의세트 전용수납백포함 화이트/블랙", None, "suit"),  # 13017338819
+    ("선덜랜드 남성 필드 골프 비옷 레인코트/비옷세트 9종 택1", "01_16151RC41_차콜 / 95", "suit"),     # 5505177592
+    # the variant's own two garments win over a title naming one coat or poncho (the fixer, 2026-11-25)
+    ("골프 우비 레인코트 남녀공용", "상하세트 / 블랙 / L", "suit"),
+    ("골프 레인코트 우의", "레인슈트(상하) / L", "suit"),
+    ("골프 레인 판초", "판초+바지 세트", "suit"),
+    ("레인 코트 상하세트", "코트", None),                                     # the variant names the coat alone
+    ("골프 레인코트", "상하 미선택", None),                                    # the suit deselected
+])
+def test_a_rainwear_search_keyword_is_no_suit(title, variant, kind):
+    """2026-11-25 (the owner: "Все рекомендации"): 레인슈트 and 세트 are search keywords on rain skirts, capes, coats and
+    a coat with a waist bag; they took the suit's 850 g box and a higher price. A 세트 after 선물 / a bag / 파우치 is no
+    suit word; the suit is not taken where the text names one coat, poncho, cape or cloak and no second garment, or
+    where the suit is deselected (레인슈트 미선택). A real suit, a suit + skirt and a two-piece set stay suit; a variant
+    naming the two garments ("상하세트", "판초+바지") is the suit whatever its title names (`always`)."""
+    row = {r["category_id"]: r for r in load_table()["rows"]}["50002816"]
+    assert (default_kind(row, title, variant) or {}).get("kind") == kind

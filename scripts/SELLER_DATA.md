@@ -183,6 +183,12 @@ Code: `server/naver_shopping/measures.py`, `scripts/package_measures.py`.
   330g"), 13492844017's "Item Weight | 0.64 kg" a shipping weight; rockible 13261416672's "Item Package Dimensions 13.77
   x 5.9 x 2.75 inches" / "Package Weight 0.3 Pounds" no box a 90 cm club fits. -> the 50002784 bands (table version
   10: product 350-600 g, package from 350 g, length from 850 mm); PACKAGE.md "Table version 10".
+- Rainwear search keywords (2026-11-25, the owner, 50002816): 레인슈트 and 세트 typed into titles of things that are
+  no suit: a rain skirt's "골프선물세트" (9595746260), a cape's "골프레인슈트" (10603405721: the seller 필드가 calls its
+  cape 레인슈트), a long coat's "레인슈트 레인코트" (13415919469, 총기장 106), a coat's "웨이스트백 세트" (11428436186),
+  a skirt-only option "레인슈트 미선택+비치마" (10608961987), a coat option "2.우비 레인코트" of a suit-or-coat listing
+  (8785829126). -> the 50002816 suit kind's `match` and `unless` (category_measures.json, table version 20);
+  PACKAGE.md "Table version 20".
 
 ## Transform (scripts)
 
@@ -252,6 +258,13 @@ Code: `transform.options_and_variants`.
   13660201494 sizes the Japanese way, S in its title (sold as XS); 베러투데이 12994831966's title ends 110, its 모델명 95
   (110 sold); 아크나인 7496732129 sells its winter type in bare S..XL beside the 간절기 type's inch letters (the same
   waists). Fixtures (collected, OCR sidecar, golden with the entries of `fixtures/owner/variants_by_owner.json`): the five.
+- Rainwear sizes (2026-11-25, the owner: "Все рекомендации"; [SIZES.md](SIZES.md) "How to use"): Japanese makers'
+  letters, O / XO beside S / M / L (TaylorMade TL439 11859686166, 11534592689, women's UN003 12166562599: "O, LL = 한국
+  표기 XL / XO, 3L = 한국 표기 2XL"; its body chart gives XO the chest of O, a typo) and SS under S in a ladder to LL /
+  3L (Callaway C25989100 11616404746); the Hangul ㅡ typed as a dash, "형광 옐로우ㅡL" (5706906040, 6672050974); a gender,
+  a colour and a size in one value, "남성용-그레이L(100)" (Kasco 505840359); an EVA coat's L / XL / XXL that are heights
+  with one chest, "가슴:62" / 62 / 63 (6672050974, 5029519026: held). Fixtures (collected, OCR sidecar, golden): the
+  seven of the owner's list.
 - Sellers' size charts (2026-11-20, the same review; [SIZE_CHARTS.md](SIZE_CHARTS.md)): a model block's "Bust : 83cm"
   (10940191023) and "마른66사이즈" (11573884405) are no chart; "53/53" is one cell (11377634969); "CM" is a corner
   (13021502381); an OCR value that breaks its column's run is dropped (13338110183) (`size_chart.py`).

@@ -58,6 +58,37 @@ def waist_reading() -> tuple[float, float, float, float, bool] | None:
     return _WAIST.get()
 
 
+# Japanese makers' letters (2026-11-25, the owner: "Все рекомендации"; the size_unmapped review of rainwear 50002816):
+# O = LL = XL and XO = 3L = XXL (TaylorMade TL439 11859686166, its seller: "O, LL = 한국 표기 XL / XO, 3L = 한국 표기
+# 2XL"; 11534592689; the women's UN003 12166562599), SS the size below S (Callaway C25989100 11616404746: SS, S, M, L,
+# LL, 3L, its "SS / 신장160-168, 가슴 82-92" one step under S's 86-96). Read only inside a japanese_letters block that
+# resolve opens for an option holding the ladder (japanese_ladder): a bare "O" or "SS" anywhere else stays unread
+_JAPANESE: contextvars.ContextVar[dict[str, str]] = contextvars.ContextVar("japanese", default={})
+
+
+def japanese_ladder(values: list[str]) -> dict[str, str]:
+    """{Japanese letter: the letter it is} for one option's values: "O" -> XL and "XO" -> XXL when the option holds two
+    or more of S / M / L and no XL / LL / XXL / 3L of its own; "SS" -> XS when it holds S and LL or 3L, no XS.
+    {} otherwise (a bare "O" beside XL would be two spellings of one size)."""
+    bare = {re.sub(r"\s+", "", str(v)).upper() for v in values}
+    out: dict[str, str] = {}
+    if bare & {"O", "XO"} and len(bare & {"S", "M", "L"}) >= 2 and not bare & {"XL", "LL", "XXL", "2XL", "3L"}:
+        out.update({k: v for k, v in (("O", "XL"), ("XO", "XXL")) if k in bare})
+    if "SS" in bare and "S" in bare and bare & {"LL", "3L"} and not bare & {"XS", "XXS", "2XS"}:
+        out["SS"] = "XS"
+    return out
+
+
+@contextlib.contextmanager
+def japanese_letters(letters: dict[str, str] | None) -> Iterator[None]:
+    """Read the Japanese letters of `letters` (japanese_ladder) as their letters inside the block, the chart's too."""
+    token = _JAPANESE.set(dict(letters or {}))
+    try:
+        yield
+    finally:
+        _JAPANESE.reset(token)
+
+
 def _num(text: str) -> float:
     return float(text.replace("반", "")) + (0.5 if text.endswith("반") else 0)
 
@@ -126,6 +157,7 @@ def parse_label(text: str) -> Label | None:
     """A size label, or None when the text is not one (a colour, a type)."""
     t = re.sub(r"\s+", "", str(text or "")).upper().replace("（", "(").replace("）", ")")
     t = t.replace("[", "(").replace("]", ")")       # "FREE[55~66]" (5932679597, 2026-11-20) is "FREE(55~66)"
+    t = _JAPANESE.get().get(t, t)                   # "O" -> XL inside a japanese_letters block (2026-11-25)
     # a shipping note after the size, its bracket sometimes lost: "30(당일발송)", "30당일발송)" (2026-11-24, Callaway
     # 6486608544: held "not read as a size"); the size itself, one with the bare "30" beside it (merged)
     t = re.sub(r"\(?(?:당일|오늘|즉시)(?:발송|출고|출발)\)?$|\(빠른배송\)$", "", t)

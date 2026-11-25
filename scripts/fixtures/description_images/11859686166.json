@@ -1,0 +1,197 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 132771,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250519_239/1747640592559MQDcz_JPEG/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A9%94%EC%9D%B4%EB%93%9C.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.952,
+       "text": "TaylorMade",
+       "y": 2
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 67449,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250228_240/1740732780002atzKi_JPEG/41wkC8D-5EL._AC_SX466.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.513,
+       "text": "2V",
+       "y": 5
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 59425,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250228_271/1740732780214CcQrO_JPEG/410vCmIiY0L._AC_SX466.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.97,
+       "text": "/",
+       "y": 88
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 53946,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250228_188/1740732780144kh5Os_JPEG/51APCWvdOpL._AC_SX466.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 87389,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250228_13/1740732780185BwWOa_JPEG/51b9iFlqMmL._AC_SX466.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.908,
+       "text": "TRYLORMROE",
+       "y": 48
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 77470,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250228_89/17407327803467PnE2_JPEG/51mtIs7-OaL._AC_SX466.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.926,
+       "text": "Dermizax.",
+       "y": 283
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 43751,
+   "height": 492,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250228_107/1740732780222CBC0N_JPEG/416wFA-_ggL._AC_SX466.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 492
+    }
+   ],
+   "status": "read",
+   "width": 492
+  },
+  {
+   "bytes": 46580,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250228_239/1740732797065v7xKh_JPEG/51IxSNgUe0L._AC_SX466.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.782,
+       "text": "TRYLORN",
+       "y": 139
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 54789,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250228_217/1740732801642Dgk5I_JPEG/51zY6ZGO7UL._AC_SX466.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.915,
+       "text": "TAYLORMROC",
+       "y": 135
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  }
+ ],
+ "key": "fairwardgolf:naver:100767349:11859686166",
+ "links_sha256": "a83ebb736a0d498a5cc725b0f7eac9ee2f2a5be65102d7b22cc1e515843a1656",
+ "product_id": "11859686166",
+ "seconds": 9.8,
+ "skipped": []
+}

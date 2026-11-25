@@ -1,0 +1,1062 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 1945587,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_182/1721276646998qvxru_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88009.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.991,
+       "text": "필드와 골프라운딩에",
+       "y": 15
+      },
+      {
+       "conf": 1.0,
+       "text": "최적화된 / 골프레인 / 치마",
+       "y": 134
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 282253,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_291/17212766466625CPwx_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88010.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.901,
+       "text": "ironTshot",
+       "y": 399
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1088415,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_27/1721276646852j8xvJ_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88011.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.995,
+       "text": "우중에 남녀 골퍼 돋보이게",
+       "y": 43
+      },
+      {
+       "conf": 0.836,
+       "text": "ironTshot",
+       "y": 604
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1985958,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_50/1721276647036C5NJl_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88012.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "답답하고 / 땀차는 / 우비는 / 그만",
+       "y": 30
+      },
+      {
+       "conf": 0.882,
+       "text": "랩 스커트로 / 입고벗기 표 / 편리",
+       "y": 120
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1985958,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_273/1721276771566vcnGV_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88012.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "답답하고 / 땀차는 / 우비는 / 그만",
+       "y": 30
+      },
+      {
+       "conf": 0.882,
+       "text": "랩 스커트로 / 입고벗기 표 / 편리",
+       "y": 120
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1460463,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_102/1721276770299RyxPO_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88013.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "사이즈 / 구애없이 / 남녀 / 모두가능",
+       "y": 34
+      },
+      {
+       "conf": 0.987,
+       "text": "랩 / 스타일로 / 편안함 / 장착",
+       "y": 130
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1307702,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_295/1721276770500C7OWG_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88014.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "매우긴벨크로",
+       "y": 967
+      },
+      {
+       "conf": 1.0,
+       "text": "바람에 / 날라 / 가거나",
+       "y": 1063
+      },
+      {
+       "conf": 1.0,
+       "text": "뒤집어 / 지지 / 않아요",
+       "y": 1155
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1347709,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_160/1721276771547q3yDW_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88015.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "골프패션 / 꾸안꾸스타일",
+       "y": 0
+      },
+      {
+       "conf": 0.999,
+       "text": "데일리패션 / 품격있는",
+       "y": 74
+      },
+      {
+       "conf": 1.0,
+       "text": "여성패션 / 골프웨어",
+       "y": 155
+      },
+      {
+       "conf": 0.999,
+       "text": "필드가 / 골프레인치마",
+       "y": 233
+      },
+      {
+       "conf": 0.561,
+       "text": "na",
+       "y": 1022
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1535934,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_270/1721276771379StA59_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88016.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.997,
+       "text": "입는 / 순간 반해버리는",
+       "y": 1
+      },
+      {
+       "conf": 0.999,
+       "text": "예쁜 / 스타일과 / 편안함",
+       "y": 122
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1463092,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_211/1721276771001IJNvG_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88017.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "필드의 / 화사한 / 여신",
+       "y": 8
+      },
+      {
+       "conf": 0.999,
+       "text": "비오는 / 날에도 / 엣지있게",
+       "y": 128
+      },
+      {
+       "conf": 0.522,
+       "text": "대나",
+       "y": 1079
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1469782,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_258/17212767715786nXdV_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88018.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.871,
+       "text": "충분한 / 사이즈의 / 리 스커트",
+       "y": 1045
+      },
+      {
+       "conf": 0.979,
+       "text": "비바람을 / 완벽하게 / 막아줘요",
+       "y": 1134
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1201838,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_31/1721276771434Os51F_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88019.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.682,
+       "text": "대나",
+       "y": 845
+      },
+      {
+       "conf": 0.953,
+       "text": "골프스윙시 극강의",
+       "y": 902
+      },
+      {
+       "conf": 1.0,
+       "text": "퍼포먼스를 / 표현해 / 주는",
+       "y": 1027
+      },
+      {
+       "conf": 0.999,
+       "text": "장타력 / 상승 / 골프우비",
+       "y": 1136
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1402415,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_289/1721276770546zu9sw_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88020.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.609,
+       "text": "나2",
+       "y": 810
+      },
+      {
+       "conf": 0.997,
+       "text": "깔끔한 / 뒷테",
+       "y": 1031
+      },
+      {
+       "conf": 0.996,
+       "text": "뒷밴딩으로 / 짱짱하게 / 잡아줌",
+       "y": 1138
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1505928,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_75/1721276771571rayqE_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88021.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.793,
+       "text": "sonTshot",
+       "y": 397
+      },
+      {
+       "conf": 0.997,
+       "text": "필드가는 / 4050 / 언니들",
+       "y": 1030
+      },
+      {
+       "conf": 0.964,
+       "text": "빅사이즈 / 골프웨어 / 맛집",
+       "y": 1137
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1532498,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_29/1721276770280WogAx_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88023.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.731,
+       "text": "ironTshot",
+       "y": 371
+      },
+      {
+       "conf": 0.999,
+       "text": "레인슈트와 / 함께 / 착용하면",
+       "y": 1024
+      },
+      {
+       "conf": 0.998,
+       "text": "효과 만점",
+       "y": 1122
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1449779,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_136/17212767702712tIDe_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88025.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.831,
+       "text": "ironTshot",
+       "y": 441
+      },
+      {
+       "conf": 0.923,
+       "text": "꼼꼼한 / 공정으로",
+       "y": 998
+      },
+      {
+       "conf": 0.964,
+       "text": "제대로 / 만든 골프웨어",
+       "y": 1120
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1739492,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_233/1721276772084seiJk_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88026.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.986,
+       "text": "나일론100%의 / 소재",
+       "y": 1037
+      },
+      {
+       "conf": 0.999,
+       "text": "방수코딩으로 / 완벽한 / 2중방수",
+       "y": 1143
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1500394,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_27/1721276772456f0s2z_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88027.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.519,
+       "text": "대나",
+       "y": 814
+      },
+      {
+       "conf": 1.0,
+       "text": "명품골프웨어 / 제작 / 공장에서",
+       "y": 1035
+      },
+      {
+       "conf": 0.933,
+       "text": "봉제하는 / 하이퀄리티 제품",
+       "y": 1122
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1435365,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_54/1721276772901XQOSe_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88028.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.803,
+       "text": "ironTswot",
+       "y": 405
+      },
+      {
+       "conf": 0.998,
+       "text": "하이넥로 / 비옷 / 최적화",
+       "y": 1037
+      },
+      {
+       "conf": 0.963,
+       "text": "테이핑 / 마무리 (고급화)",
+       "y": 1132
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1941005,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_262/17212767725397GNRF_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88029.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "긴벨크로 / 적용",
+       "y": 1026
+      },
+      {
+       "conf": 0.999,
+       "text": "모든 / 골퍼들 / 착용가능",
+       "y": 1132
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1552104,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_138/1721276772415e1EEL_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88030.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.806,
+       "text": "ironTshaot",
+       "y": 263
+      },
+      {
+       "conf": 0.992,
+       "text": "빅포켓으로 / 골프장갑",
+       "y": 1029
+      },
+      {
+       "conf": 0.996,
+       "text": "골프공, / 골프티, / 볼마커등 / 수납가능",
+       "y": 1128
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1663365,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_37/1721276772084tKPli_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88031.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "뒷밴딩 / 처리",
+       "y": 1050
+      },
+      {
+       "conf": 0.999,
+       "text": "사이즈조절과 / 탄력있는 / 착용감",
+       "y": 1146
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1412415,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_17/1721276772525Y72Gs_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88032.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.841,
+       "text": "ironTsho",
+       "y": 441
+      },
+      {
+       "conf": 0.984,
+       "text": "카트에 / 앉을때 / 특히 더 좋은",
+       "y": 1036
+      },
+      {
+       "conf": 1.0,
+       "text": "골프 / 레인 / 스커트",
+       "y": 1135
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 1407852,
+   "height": 1260,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_283/1721276772772OcPJz_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88033.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.75,
+       "text": "ionTshot",
+       "y": 436
+      },
+      {
+       "conf": 0.998,
+       "text": "비오는 / 날 / 뿐만 / 아니라",
+       "y": 1038
+      },
+      {
+       "conf": 0.999,
+       "text": "갑자기 / 추워진 / 날씨에 / 방한용",
+       "y": 1132
+      }
+     ],
+     "y0": 0,
+     "y1": 1260
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 334332,
+   "height": 750,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_85/1721276789204pwEHM_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88008.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.971,
+       "text": "남녀 공용",
+       "y": 86
+      },
+      {
+       "conf": 0.637,
+       "text": "90Y",
+       "y": 223
+      },
+      {
+       "conf": 0.999,
+       "text": "65cm",
+       "y": 357
+      },
+      {
+       "conf": 0.999,
+       "text": "145cm",
+       "y": 564
+      }
+     ],
+     "y0": 0,
+     "y1": 750
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 108926,
+   "height": 781,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_200/1721276772678mFizc_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88043.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.94,
+       "text": "온라인 쇼핑 후",
+       "y": 33
+      },
+      {
+       "conf": 0.999,
+       "text": "물건받고 난감하신적",
+       "y": 104
+      },
+      {
+       "conf": 1.0,
+       "text": "많으시죠~",
+       "y": 176
+      },
+      {
+       "conf": 1.0,
+       "text": "정사이즈라 / 했는데",
+       "y": 250
+      },
+      {
+       "conf": 0.998,
+       "text": "왜이리 / 짧고, / 끼고,",
+       "y": 322
+      },
+      {
+       "conf": 0.994,
+       "text": "몸에 잘 안맞는지?",
+       "y": 393
+      },
+      {
+       "conf": 0.911,
+       "text": "20대의를 / 몸과 / 4050의 / 몸은 / 달라요",
+       "y": 485
+      },
+      {
+       "conf": 0.996,
+       "text": "그래서 중년이 입고, / 신고, / 사용후",
+       "y": 569
+      },
+      {
+       "conf": 0.989,
+       "text": "테스트한 제품을 / 선택하셔야합니다.",
+       "y": 662
+      }
+     ],
+     "y0": 0,
+     "y1": 781
+    }
+   ],
+   "status": "read",
+   "width": 910
+  },
+  {
+   "bytes": 180919,
+   "height": 674,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_100/17212767728446MAfF_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88044.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.958,
+       "text": "AA 0000000 A",
+       "y": 6
+      },
+      {
+       "conf": 0.999,
+       "text": "한국은행",
+       "y": 13
+      },
+      {
+       "conf": 0.997,
+       "text": "천원 / 1000",
+       "y": 17
+      },
+      {
+       "conf": 0.987,
+       "text": "한국은행 총재법",
+       "y": 155
+      },
+      {
+       "conf": 1.0,
+       "text": "1000",
+       "y": 188
+      },
+      {
+       "conf": 0.864,
+       "text": "O000 A",
+       "y": 228
+      },
+      {
+       "conf": 0.998,
+       "text": "리뷰만 / 써도",
+       "y": 323
+      },
+      {
+       "conf": 0.998,
+       "text": "네이버페이 / 1,000원",
+       "y": 444
+      },
+      {
+       "conf": 1.0,
+       "text": "포토리뷰500원,한달사용리뷰500원",
+       "y": 597
+      }
+     ],
+     "y0": 0,
+     "y1": 674
+    }
+   ],
+   "status": "read",
+   "width": 998
+  },
+  {
+   "bytes": 742610,
+   "height": 574,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_70/1721276773045zkIQs_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88045.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "샤로테",
+       "y": 23
+      },
+      {
+       "conf": 0.966,
+       "text": "키: / 170cm",
+       "y": 189
+      },
+      {
+       "conf": 0.517,
+       "text": "sonltee",
+       "y": 230
+      },
+      {
+       "conf": 0.997,
+       "text": "사이즈: / 66반~77",
+       "y": 260
+      },
+      {
+       "conf": 0.999,
+       "text": "허리:28",
+       "y": 325
+      },
+      {
+       "conf": 0.991,
+       "text": "발사이즈:245~250",
+       "y": 387
+      },
+      {
+       "conf": 0.952,
+       "text": "*뱃살부자",
+       "y": 491
+      }
+     ],
+     "y0": 0,
+     "y1": 574
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 210431,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_168/1721276780904buyDP_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88001.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.553,
+       "text": "ronTslodt",
+       "y": 421
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 196545,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_249/172127678090404cWS_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88002.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.702,
+       "text": "ionTsot",
+       "y": 430
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 203812,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_1/1721276780910gNCaR_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88003.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.63,
+       "text": "ironTset",
+       "y": 394
+      },
+      {
+       "conf": 0.726,
+       "text": "대나",
+       "y": 816
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 198594,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_53/1721276780903xuO5B_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88004.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 189522,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_58/1721276780910VdFYB_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88005.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 195264,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_214/1721276789226nrwRJ_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88006.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.567,
+       "text": "42",
+       "y": 786
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 198658,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240718_25/1721276789191BC8BX_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88007.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  }
+ ],
+ "key": "fairwardgolf:naver:100448099:10608961987",
+ "links_sha256": "b44e514b34036893c13383b20374b8f9bfa2d3742014e457befde8b24291bc67",
+ "product_id": "10608961987",
+ "seconds": 60.8,
+ "skipped": []
+}

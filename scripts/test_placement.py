@@ -93,6 +93,16 @@ EXPECTED = {
     # the owner's answers on five held products (2026-11-25, fixtures/owner/variants_by_owner.json "sizes")
     "9069946345": (PANTS,), "11814351207": (WIND,), "13660201494": (TOPS_W,), "12994831966": (TOPS_W,),
     "7496732129": (PANTS,),
+    # rainwear's package kind (2026-11-25, the owner: a seller's search keyword 레인슈트 / 세트 is no suit)
+    "9595746260": ("rainwear-midlayers",), "10603405721": ("rainwear-midlayers",),
+    "13415919469": ("rainwear-midlayers",), "10608961987": ("rainwear-midlayers",),
+    "11428436186": ("rainwear-midlayers",), "8785829126": ("rainwear-midlayers",),
+    "12182231084": ("rainwear-midlayers",),
+    # rainwear's sizes (2026-11-25, the owner: "Все рекомендации"): Japanese O / XO and SS, the jamo dash ㅡ (5706906040
+    # not golf, the store review's), a gender, colour and size in one value; 6672050974 held (one chest every size)
+    "11859686166": ("rainwear-midlayers",), "11534592689": ("rainwear-midlayers",),
+    "12166562599": ("rainwear-midlayers",), "11616404746": ("rainwear-midlayers",),
+    "5706906040": ("rainwear-midlayers",), "6672050974": (), "505840359": ("rainwear-midlayers",),
 }
 APPAREL = {KNITS, TOPS_W, TOPS_M, WIND, PANTS, "rainwear-midlayers", "womens-skirts-culottes"}
 UNRESOLVED = {"12497168529": "gender conflict"}           # ready, placement holds it: the reason

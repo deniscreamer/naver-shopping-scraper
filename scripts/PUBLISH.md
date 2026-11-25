@@ -173,7 +173,7 @@ The owner's rules (`shopify_payload.py`):
 - **Apparel sizes** (a category with `CategoryRules.sizes`, knit cardigans 50002797; the owner 2026-11-19): the size
   option is named `Size` and holds the US sizes only ("S (US 4-6)", "One Size"), never the Korean; the Korean value of
   each is kept for the owner's orders on Naver in the variant's `fairwardgolf.source` (`optionsKo` as always, plus
-  `sizeKo` / `sizeUs`) and the product's `fairwardgolf.sizes` (`fairwardgolf-sizes/1`: the map US -> Korean with the
+  `sizeKo` / `sizeUs`; `sizeKo` the seller's own Naver value, `naver_size_ko` when a value was split, 2026-11-25) and the product's `fairwardgolf.sizes` (`fairwardgolf-sizes/1`: the map US -> Korean with the
   chest in cm and how it was read, the merged spellings, the seller's chart in cm). The description ends with the
   size chart block (`apparel_sizes.chart_html`, inches), built here, not by the model. [SIZES.md](SIZES.md).
   Its other options lose a seller's colour code ("C5: Gray" -> Gray) and a photo note ("(Worn by Model)"), and an

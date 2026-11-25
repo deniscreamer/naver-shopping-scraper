@@ -1,0 +1,591 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101362433:12182231084",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 7, short 1); 5 trimmed"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "선택"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/skdgolf/products/12182231084",
+  "channel_no": "101362433",
+  "product_id": "12182231084",
+  "category_id": "50002816"
+ },
+ "product": {
+  "title_ko": "스컬독 남녀공용 판초우의 비치마 투피스 세트 초경량 레인코트 우비 비옷 레인슈트 바람막이",
+  "brand_ko": "스컬독",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "unisex",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "unisex",
+      "text": "남녀공용"
+     },
+     {
+      "source": "title",
+      "value": "unisex",
+      "text": "스컬독 남녀공용 판초우의 비치마 투피스 세트 초경량 레인코트 우비 비옷 레인슈트 바람막이"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 레인코트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "선택",
+    "values_ko": [
+     "CC 판초상의 + 비치마 블랙",
+     "CC 판초상의 + 비치마 화이트+블루"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"CC 판초상의 + 비치마 블랙\"]",
+    "naver_variant_id": "55020479986",
+    "options_ko": [
+     "CC 판초상의 + 비치마 블랙"
+    ],
+    "price_krw": 32000,
+    "price_usd": "32.00",
+    "sku": "FW-e85bc340b0a279fe996ebcae",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"CC 판초상의 + 비치마 화이트+블루\"]",
+    "naver_variant_id": "55020479987",
+    "options_ko": [
+     "CC 판초상의 + 비치마 화이트+블루"
+    ],
+    "price_krw": 32000,
+    "price_usd": "32.00",
+    "sku": "FW-a453d0006a5d0e622f6ac6de",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 32000,
+   "original_krw": 32000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "스컬독"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "스컬독"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남녀공용"
+   },
+   {
+    "label_ko": "형태",
+    "value_ko": "투피스형"
+   },
+   {
+    "label_ko": "주요소재",
+    "value_ko": "폴리에스테르, 나일론"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.75,
+   "count": 68
+  },
+  "reviews": [
+   {
+    "id": "5044985576",
+    "score": 5,
+    "text_ko": "검정은 등산용으로 흰색은 골프 라운딩용으로 주문했는데 가볍고 부피 작아서 좋은 거 깉아요.\n먼저 써 보고 주위에 선물로도 좋을 거 같아요.",
+    "created_at": "2026-08-18T03:43:18Z",
+    "writer": "janl******",
+    "photos": [
+     "collected/50002788-fixtures/images/12182231084/fairwardgolf-review-image-4397bc7288f5e3db.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/12182231084/fairwardgolf-review-avatar-bc884fb2d327e56f.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 89,
+    "text_original_ko": "검정은 등산용으로 흰색은 골프 라운딩용으로 주문했는데 가볍고 부피 작아서 좋은 거 깉아요.\n먼저 써 보고 주위에 선물로도 좋을 거 같아요.\n보내 주신 키링 감사히 잘 쓸게요~",
+    "text_cut": [
+     "gift"
+    ]
+   },
+   {
+    "id": "5019038921",
+    "score": 5,
+    "text_ko": "만족합니다 일반 입는 우의도 갖고있는데 여름에는 너무 더운느낌이라 하절기용으로 하나 더 구매해요. 맘에듭니다",
+    "created_at": "2026-07-11T04:08:03Z",
+    "writer": "fprm****",
+    "photos": [
+     "collected/50002788-fixtures/images/12182231084/fairwardgolf-review-image-6460b1b9c5857adc.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/12182231084/fairwardgolf-review-avatar-98d59cc78323b99a.webp",
+    "tier": "primary",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 46,
+    "text_original_ko": "만족합니다 일반 입는 우의도 갖고있는데 여름에는 너무 더운느낌이라 하절기용으로 하나 더 구매해요~가격도 착하고 맘에듭니다 번창하세요~",
+    "text_cut": [
+     "price",
+     "seller"
+    ]
+   },
+   {
+    "id": "5022158487",
+    "score": 5,
+    "text_ko": "비올때 골프는 안치지만 우비는 있어야되서 구매해봤어용! 평상시 비올때 입으셔도 예뻐요. 지인들 선물도 드렸는데 좋아하셨어요!",
+    "created_at": "2026-07-15T10:45:24Z",
+    "writer": "east***",
+    "photos": [
+     "collected/50002788-fixtures/images/12182231084/fairwardgolf-review-image-cf1ecd1df8a33c2a.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 88,
+    "text_original_ko": "비올때 골프는 안치지만 우비는 있어야되서 구매해봤어용!! 평상시 비올때 입으셔도 예뻐요♡ 지인들 선물도 드렸는데 좋아하셨어요!!"
+   },
+   {
+    "id": "4858850764",
+    "score": 5,
+    "text_ko": "이렇게싼게. 어딧어 가방에 매일넣어다니는템 찍찍이가 넘 멀리잇어서 간신히 붙히고 남는 천이많은데 끝에. 걸이라도 있거나 모 바라는건아니고",
+    "created_at": "2025-12-09T11:21:54Z",
+    "writer": "fn****",
+    "photos": [
+     "collected/50002788-fixtures/images/12182231084/fairwardgolf-review-image-a179528b2b8dfeb4.webp"
+    ],
+    "avatar": null,
+    "tier": "photo",
+    "likes": 3,
+    "text_grade": "short",
+    "text_quality": 29,
+    "text_original_ko": "가성비좋음 이렇게싼게.어딧어 가방에 매일넣어다니는템 찍찍이가 넘 멀리잇어서 간신히 붙히고 남는 천이많은데 끝에.걸이라도 있거나 모 바라는건아니고 이가격에 ㅎ",
+    "text_cut": [
+     "price"
+    ]
+   },
+   {
+    "id": "5055095604",
+    "score": 4,
+    "text_ko": "판초 스타일이라 스윙하기 편했고 방수도 잘됐어요\n하의는 남녀공용이라 그런가 허리가 커서 찍찍이가 붙지 않는 부분이 있었고요\n상의는 꼬리꼬리한 냄새가 나서 신경이 좀 쓰였습니다.\n물에 세척을해도 냄새가 그대로라 별 하나 뺍니다.",
+    "created_at": "2026-09-01T08:12:01Z",
+    "writer": "comf*******",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 63
+   },
+   {
+    "id": "5055004978",
+    "score": 5,
+    "text_ko": "1박2일 라운딩인데 비소식 때문에 망설일 때 좋은 것 같아요.\n여름라운딩에는 딱이였고 가을 겨울이 와도 바람막이로 좋을 것 같아요.\n저녁에 캐디님께서 잘 말리고 접어 놓으라고 하셔서 클럽에 잘 보관하고 있어요.\n단체사진 찍을 때 돋보이고 너무 좋네요",
+    "created_at": "2026-09-01T06:32:48Z",
+    "writer": "ch****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/12182231084/fairwardgolf-review-avatar-7c540f877e378413.webp",
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 65,
+    "text_original_ko": "1박2일 라운딩인데 비소식 때문에 망설일 때 가성비 좋은 것 같아요. \n여름라운딩에는 딱이였고 가을 겨울이 와도 바람막이로 좋을 것 같아요. \n저녁에 캐디님께서 잘 말리고 접어 놓으라고 하셔서 클럽에 잘 보관하고 있어요. \n\n단체사진 찍을 때 돋보이고 너무 좋네요~",
+    "text_cut": [
+     "price"
+    ]
+   },
+   {
+    "id": "5048402137",
+    "score": 5,
+    "text_ko": "캐디님께서 사용하신것 보고 주문했어요. 저는 아직 비가 오지 않아 사용하지 않았지만 너무나 편리하게 착용할것같아요.\n편리성에 최고라고 얘기해주셔서 구입하게되었답니다.",
+    "created_at": "2026-08-22T10:04:47Z",
+    "writer": "dnla*******",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 38,
+    "text_original_ko": "캐디님께서  사용하신것 보고 주문했어요~저는 아직 비가 오지 않아 사용하지 않았지만  너무나 편리하게 착용할것같아요.\n가격도 저렴하고 편리성에 최고라고 얘기해주셔서 구입하게되었답니다. 잘 사용할게요~",
+    "text_cut": [
+     "filler",
+     "price"
+    ]
+   },
+   {
+    "id": "5007002142",
+    "score": 4,
+    "text_ko": "현직 캐디입니다. 우비를 입기엔 덥고 안입고 비맞기 싫은 그런 여름날 많아요. 그런 날 딱 좋아요. 단점은 완전 오픈형이 아니라서 근무모자 위에 쓰기에 좀 불편한데 그냥저냥 쑤셔넣으면 들어가요.",
+    "created_at": "2026-06-25T12:53:18Z",
+    "writer": "fung****",
+    "photos": [],
+    "avatar": null,
+    "tier": "text",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 79
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/12182231084/fairwardgolf-12182231084-001-5402dbbea5071e3c.webp",
+    "sha256": "5402dbbea5071e3c5282ca83ce195c80fce017f95000ec226c902aecf2f23874",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/12182231084/fairwardgolf-12182231084-002-7931ae686dd2d83e.webp",
+    "sha256": "7931ae686dd2d83ebccb8b6a92cb4bf7acd86d00c99b8c4e63863e1422270477",
+    "width": 800,
+    "height": 800
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 3,000원",
+   "lead_time": {
+    "seller_average_days": 1.4137931,
+    "product_average_days": 1.0,
+    "today_cutoff": "16:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.26.(목)",
+    "arrival_probability": 91,
+    "ship_date_text": "11.25.(수)"
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "💧☔ CC-Rain 💧☔\n판초우의만 보러가기\n\n비치마만 보러가기",
+  "description_images": [
+   "https://ai.esmplus.com/skdgolf/001_fashion/BB/CC_01.jpg",
+   "https://ai.esmplus.com/skdgolf/001_fashion/BB/CC_02.gif",
+   "https://ai.esmplus.com/skdgolf/001_fashion/BB/CC_03.jpg",
+   "https://ai.esmplus.com/skdgolf/001_fashion/BB/CC_04.gif",
+   "https://ai.esmplus.com/skdgolf/001_fashion/BB/CC_05.gif",
+   "https://ai.esmplus.com/skdgolf/001_fashion/BB/CC_06.jpg",
+   "https://ai.esmplus.com/skdgolf/001_fashion/BB/CC_07.jpg",
+   "https://ai.esmplus.com/skdgolf/store/information.jpg"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "주요소재",
+    "value_ko": "폴리에스테르, 나일론",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_tops",
+   "option": null,
+   "values": [],
+   "merged": {},
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "shoulder": null
+    },
+    "rows": [
+     {
+      "us": "One Size",
+      "cm": {
+       "shoulder": 31.0
+      }
+     }
+    ]
+   },
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:7fe4e7a5ff65431e",
+   "kind": "title",
+   "ko": "스컬독 남녀공용 판초우의 비치마 투피스 세트 초경량 레인코트 우비 비옷 레인슈트 바람막이"
+  },
+  {
+   "id": "brand:6361b53faa646ca7",
+   "kind": "brand",
+   "ko": "스컬독"
+  },
+  {
+   "id": "option_name:8d1a750c9351d1b8",
+   "kind": "option_name",
+   "ko": "선택"
+  },
+  {
+   "id": "option_value:9f6ec5a935571e0a",
+   "kind": "option_value",
+   "ko": "CC 판초상의 + 비치마 블랙"
+  },
+  {
+   "id": "option_value:83ccfbfc4046bbc6",
+   "kind": "option_value",
+   "ko": "CC 판초상의 + 비치마 화이트+블루"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:6361b53faa646ca7",
+   "kind": "spec_value",
+   "ko": "스컬독"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:e012efbcc2aa417e",
+   "kind": "spec_value",
+   "ko": "남녀공용"
+  },
+  {
+   "id": "spec_label:e1b56dd677111a7f",
+   "kind": "spec_label",
+   "ko": "형태"
+  },
+  {
+   "id": "spec_value:2587aa84faab798d",
+   "kind": "spec_value",
+   "ko": "투피스형"
+  },
+  {
+   "id": "spec_label:4ca8beff763d4b7f",
+   "kind": "spec_label",
+   "ko": "주요소재"
+  },
+  {
+   "id": "spec_value:d7177ed7efd20cb4",
+   "kind": "spec_value",
+   "ko": "폴리에스테르, 나일론"
+  },
+  {
+   "id": "review:4c4251f4e922bdf4",
+   "kind": "review",
+   "ko": "검정은 등산용으로 흰색은 골프 라운딩용으로 주문했는데 가볍고 부피 작아서 좋은 거 깉아요.\n먼저 써 보고 주위에 선물로도 좋을 거 같아요."
+  },
+  {
+   "id": "review:c099c6448b61d230",
+   "kind": "review",
+   "ko": "만족합니다 일반 입는 우의도 갖고있는데 여름에는 너무 더운느낌이라 하절기용으로 하나 더 구매해요. 맘에듭니다"
+  },
+  {
+   "id": "review:b07e839ae7d66f41",
+   "kind": "review",
+   "ko": "비올때 골프는 안치지만 우비는 있어야되서 구매해봤어용! 평상시 비올때 입으셔도 예뻐요. 지인들 선물도 드렸는데 좋아하셨어요!"
+  },
+  {
+   "id": "review:116f745084dd5a27",
+   "kind": "review",
+   "ko": "이렇게싼게. 어딧어 가방에 매일넣어다니는템 찍찍이가 넘 멀리잇어서 간신히 붙히고 남는 천이많은데 끝에. 걸이라도 있거나 모 바라는건아니고"
+  },
+  {
+   "id": "review:5d9c649fcdd21052",
+   "kind": "review",
+   "ko": "판초 스타일이라 스윙하기 편했고 방수도 잘됐어요\n하의는 남녀공용이라 그런가 허리가 커서 찍찍이가 붙지 않는 부분이 있었고요\n상의는 꼬리꼬리한 냄새가 나서 신경이 좀 쓰였습니다.\n물에 세척을해도 냄새가 그대로라 별 하나 뺍니다."
+  },
+  {
+   "id": "review:d5d7b92f8f36037c",
+   "kind": "review",
+   "ko": "1박2일 라운딩인데 비소식 때문에 망설일 때 좋은 것 같아요.\n여름라운딩에는 딱이였고 가을 겨울이 와도 바람막이로 좋을 것 같아요.\n저녁에 캐디님께서 잘 말리고 접어 놓으라고 하셔서 클럽에 잘 보관하고 있어요.\n단체사진 찍을 때 돋보이고 너무 좋네요"
+  },
+  {
+   "id": "review:f4a4aa5fec99c890",
+   "kind": "review",
+   "ko": "캐디님께서 사용하신것 보고 주문했어요. 저는 아직 비가 오지 않아 사용하지 않았지만 너무나 편리하게 착용할것같아요.\n편리성에 최고라고 얘기해주셔서 구입하게되었답니다."
+  },
+  {
+   "id": "review:2f84acb3ffd44270",
+   "kind": "review",
+   "ko": "현직 캐디입니다. 우비를 입기엔 덥고 안입고 비맞기 싫은 그런 여름날 많아요. 그런 날 딱 좋아요. 단점은 완전 오픈형이 아니라서 근무모자 위에 쓰기에 좀 불편한데 그냥저냥 쑤셔넣으면 들어가요."
+  }
+ ]
+}

@@ -59,7 +59,10 @@ class PreparedFact(TypedDict):
 
 class _PreparedVariantNative(TypedDict, total=False):
     naver_options_ko: list[str]        # the variant's own Naver values when a size merge changed options_ko (2026-11-25):
-                                       # the owner orders these (shopify_payload sizeKo / optionsKo)
+                                       # the owner orders these (shopify_payload sizeKo / optionsKo); the seller's one
+                                       # value when transform._gender_colour_split split it (2026-11-25, 505840359)
+    naver_size_ko: str                 # ... and then the seller's value that held the size ("남성용-그레이L(100)"):
+                                       # shopify_payload sizeKo, never the split "남성 L(100)" (2026-11-25)
 
 
 class PreparedVariant(_PreparedVariantNative):

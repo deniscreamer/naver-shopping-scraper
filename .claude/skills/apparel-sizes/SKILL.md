@@ -14,6 +14,7 @@ product's own label and chart first, the default grid only as the fallback; neve
 | Task | SIZES.md section |
 |---|---|
 | A held `size_unmapped`, a merged note, the owner's "which Naver size" | "How to use" |
+| A Japanese letter (O, XO, SS), a "ㅡ" dash, a gender + colour + size value, one chest for every size (2026-11-25) | "How to use": the rows of 2026-11-25 |
 | The owner answered how one held product is sized (gender, read as, the size sold, two spellings one size) | "How to use": the `sizes` block of `variants_by_owner.json` (2026-11-25) |
 | What a product gives the converter | "The inputs" |
 | Why a value got its US size (`basis`) | "The order"; the grid: `size_profiles/<profile>.md` |

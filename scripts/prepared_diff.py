@@ -15,7 +15,8 @@ A product is compared by a few summary fields (FIELDS), each a short text:
     title     title_ko
     price     the variants' price_krw, min-max (pricing.base_krw with no variant)
     variants  each variant's options ("a / b", "[sold out]" when not available)
-    package   per package field (package.package_weight_g ...): the variants' values, "min-max (source cN)"
+    package   per package field (package.package_weight_g ...): the variants' values, "min-max (source cN)"; a
+              category default "central of low-high (category_default kind cN)" (2026-11-25)
     images    the count and a digest of the photos' sha256 in order
     other     every other part of the record (source, texts, product.reviews, ...): the names of those that differ,
               once, in the new column (old "-"; a part on one side only: "(old only)" / "(new only)")
@@ -75,11 +76,16 @@ def _span(values: Iterable[Any]) -> str:
 
 
 def _package_value(field: Any) -> str:
+    """"min-max (source cN)"; a category default (no "value") "central of low-high (category_default kind cN)": its
+    numbers and kind move with a table row or a kind's words (2026-11-25, 50002816's suit kind: --diff showed 6 moved
+    products as the same)."""
     if not isinstance(field, dict):
         return _clean(field)
     v = field.get("value")
     value = _span([v.get("min"), v.get("max")]) if isinstance(v, dict) else _clean(v)
-    how = " ".join(x for x in (_clean(field.get("source")),
+    if "value" not in field and field.get("central") is not None:
+        value = f"{_clean(field['central'])} of {_span([field.get('low'), field.get('high')]) or '-'}"
+    how = " ".join(x for x in (_clean(field.get("source")), _clean(field.get("kind")),
                               f"c{field['confidence']}" if field.get("confidence") is not None else "") if x)
     return f"{value or '-'} ({how})" if how else value or "-"
 

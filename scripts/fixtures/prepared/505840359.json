@@ -1,0 +1,835 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:500071911:505840359",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 4, short 4); 3 trimmed"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/k-golf/products/505840359",
+  "channel_no": "500071911",
+  "product_id": "505840359",
+  "category_id": "50002816"
+ },
+ "product": {
+  "title_ko": "[네이버아이디로 구매가능][한국카스코골프정품 KSRWL-002] 카스코 바람막이 우의 비옷세트",
+  "brand_ko": "카스코",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mixed",
+    "variants": {
+     "FW-6c2bbb16bd40da92c2beef4a": "mens",
+     "FW-4416b31571411b0c5ff3ed2f": "mens",
+     "FW-064f88436ee3fdb55d50be19": "mens",
+     "FW-562179c3d106bbaef72fe301": "womens",
+     "FW-03b5dda1dffbcb2da75ac794": "womens"
+    },
+    "evidence": [
+     {
+      "source": "variants",
+      "value": "mens,womens",
+      "text": "5 of 5 variants"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 레인코트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "컬러",
+    "values_ko": [
+     "그레이",
+     "옐로우",
+     "블랙",
+     "핑크"
+    ]
+   },
+   {
+    "name_ko": "사이즈",
+    "values_ko": [
+     "여성 M(66)",
+     "여성 L(77)",
+     "남성 L(100)"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"남성용-그레이L(100)\"]",
+    "naver_variant_id": "3463509274",
+    "options_ko": [
+     "그레이",
+     "남성 L(100)"
+    ],
+    "price_krw": 55000,
+    "price_usd": "55.00",
+    "sku": "FW-6c2bbb16bd40da92c2beef4a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null,
+    "naver_options_ko": [
+     "남성용-그레이L(100)"
+    ],
+    "naver_size_ko": "남성용-그레이L(100)"
+   },
+   {
+    "source_id": "observed:[\"남성용-옐로우L(100)\"]",
+    "naver_variant_id": "3463509280",
+    "options_ko": [
+     "옐로우",
+     "남성 L(100)"
+    ],
+    "price_krw": 55000,
+    "price_usd": "55.00",
+    "sku": "FW-4416b31571411b0c5ff3ed2f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null,
+    "naver_options_ko": [
+     "남성용-옐로우L(100)"
+    ],
+    "naver_size_ko": "남성용-옐로우L(100)"
+   },
+   {
+    "source_id": "observed:[\"남성용-블랙L(100)\"]",
+    "naver_variant_id": "3463509283",
+    "options_ko": [
+     "블랙",
+     "남성 L(100)"
+    ],
+    "price_krw": 55000,
+    "price_usd": "55.00",
+    "sku": "FW-064f88436ee3fdb55d50be19",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null,
+    "naver_options_ko": [
+     "남성용-블랙L(100)"
+    ],
+    "naver_size_ko": "남성용-블랙L(100)"
+   },
+   {
+    "source_id": "observed:[\"여성용-핑크M(66)\"]",
+    "naver_variant_id": "3463509286",
+    "options_ko": [
+     "핑크",
+     "여성 M(66)"
+    ],
+    "price_krw": 55000,
+    "price_usd": "55.00",
+    "sku": "FW-562179c3d106bbaef72fe301",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null,
+    "naver_options_ko": [
+     "여성용-핑크M(66)"
+    ],
+    "naver_size_ko": "여성용-핑크M(66)"
+   },
+   {
+    "source_id": "observed:[\"여성용-핑크L(77)\"]",
+    "naver_variant_id": "3463509287",
+    "options_ko": [
+     "핑크",
+     "여성 L(77)"
+    ],
+    "price_krw": 55000,
+    "price_usd": "55.00",
+    "sku": "FW-03b5dda1dffbcb2da75ac794",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null,
+    "naver_options_ko": [
+     "여성용-핑크L(77)"
+    ],
+    "naver_size_ko": "여성용-핑크L(77)"
+   }
+  ],
+  "pricing": {
+   "base_krw": 55000,
+   "original_krw": 55000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "카스코"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "카스코"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "베트남산"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.42,
+   "count": 12
+  },
+  "reviews": [
+   {
+    "id": "4801255973",
+    "score": 2,
+    "text_ko": "생각보다 작아서 안입으셨데요.",
+    "created_at": "2025-09-10T15:09:51Z",
+    "writer": "kens****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/505840359/fairwardgolf-review-avatar-1d5a30e02b875cb3.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 3
+   },
+   {
+    "id": "4760586586",
+    "score": 4,
+    "text_ko": "부모님께서 필요하시다고 해서 주문 했네요",
+    "created_at": "2025-07-09T14:21:01Z",
+    "writer": "kens****",
+    "photos": [
+     "collected/50002788-fixtures/images/505840359/fairwardgolf-review-image-a031b91221b7df1e.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/505840359/fairwardgolf-review-avatar-1d5a30e02b875cb3.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 19
+   },
+   {
+    "id": "4278508668",
+    "score": 5,
+    "text_ko": "우선 얇아서 좋아요",
+    "created_at": "2023-06-22T17:09:33Z",
+    "writer": "lsk0***",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 2
+   },
+   {
+    "id": "4266957091",
+    "score": 5,
+    "text_ko": "사이즈 재질 다 만족입니다.\n모자가 없는게 단점이지만 모자붙어있어도 스윙시 불편하니 전 없는게 더 좋네요",
+    "created_at": "2023-06-06T03:28:00Z",
+    "writer": "lsk0***",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 71
+   },
+   {
+    "id": "3215382855",
+    "score": 5,
+    "text_ko": "와 완전 좋아요\n사이즈가M만있어 비옷이라 그냥 주문했는데\n여유있게 잘 맞아요\n다른분 리뷰에 모자가 없어 아쉽다했는데\n저도 역시\n하지만",
+    "created_at": "2021-07-10T05:04:56Z",
+    "writer": "shee****",
+    "photos": [
+     "collected/50002788-fixtures/images/505840359/fairwardgolf-review-image-5460b0a1492ae1ab.webp",
+     "collected/50002788-fixtures/images/505840359/fairwardgolf-review-image-d36eb56779c91e8d.webp",
+     "collected/50002788-fixtures/images/505840359/fairwardgolf-review-image-598ba039badd58a2.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 89,
+    "text_original_ko": "와 완전 좋아요\n사이즈가M만있어 비옷이라 그냥 주문했는데 \n여유있게 잘 맞아요\n다른분 리뷰에 모자가 없어 아쉽다했는데\n저도 역시~~\n하지만 가성비 갑입니다",
+    "text_cut": [
+     "price"
+    ]
+   },
+   {
+    "id": "322818698",
+    "score": 5,
+    "text_ko": "배송빠르고좋네여",
+    "created_at": "2017-11-06T05:49:37Z",
+    "writer": "skyj******",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 2,
+    "text_original_ko": "배송빠르고좋네여~"
+   },
+   {
+    "id": "317595822",
+    "score": 5,
+    "text_ko": "신랑이랑 커플로 구매했읍니다 너무 좋아요 신랑도 좋아하네요\n평소 95사이즈 입는데 아무래도 옷 겉에 입어야 해서 100구매 했음요\n잘 맞네요",
+    "created_at": "2017-10-24T14:59:57Z",
+    "writer": "winy********",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/505840359/fairwardgolf-review-avatar-391de7e40bbdd3f2.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 33,
+    "text_original_ko": "신랑이랑 커플로 구매했읍니다 가격대비 너무 좋아요  신랑도 좋아하네요 \n평소 95사이즈 입는데  아무래도  옷 겉에 입어야 해서 100구매 했음요\n잘 맞네요  ^^",
+    "text_cut": [
+     "price"
+    ]
+   },
+   {
+    "id": "317595864",
+    "score": 5,
+    "text_ko": "아직사용은 안했지만 색상도 예쁘고 부파감도 작아서\n넘 좋아요 잘 사용할께요 다만 모자가 없어서 좀 아쉽네요\n평소 55반 사이즈인데 넉넉하게 잘맞아요",
+    "created_at": "2017-10-24T14:59:57Z",
+    "writer": "winy********",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/505840359/fairwardgolf-review-avatar-391de7e40bbdd3f2.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 75,
+    "text_original_ko": "아직사용은 안했지만 배송도 빠르고  색상도 예쁘고  부파감도 작아서 \n넘 좋아요  잘 사용할께요  다만  모자가 없어서 좀 아쉽네요  \n평소 55반 사이즈인데 넉넉하게 잘맞아요",
+    "text_cut": [
+     "shipping"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/505840359/fairwardgolf-505840359-001-f094276e3921af60.webp",
+    "sha256": "f094276e3921af60ee4330c530508e478e7d5108992856ae46bdeeaede6efe60",
+    "width": 720,
+    "height": 960
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3500,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 3,500원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20160928_275/1475073239598LmcKq_JPEG/p-505840359-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20160928_272/14750732395994FYFa_JPEG/p-505840359-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20160928_198/1475073239598K8Rqi_JPEG/p-505840359-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20160928_235/1475073239599tdYA0_JPEG/p-505840359-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20160928_208/1475073239605aLqEy_JPEG/p-505840359-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20160928_295/1475073239593il18q_JPEG/p-505840359-s-1-A-5.jpg"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "재질",
+    "value_ko": "상세설명페이지 참고",
+    "source": "notice"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "womens_tops",
+   "option": 1,
+   "values": [
+    {
+     "ko": "여성 M(66)",
+     "us": "Women's M (US 8-10)",
+     "letter": "M",
+     "chest_cm": 95,
+     "basis": "label",
+     "chart_label": null,
+     "gender": "womens",
+     "profile": "womens_tops"
+    },
+    {
+     "ko": "여성 L(77)",
+     "us": "Women's L (US 12-14)",
+     "letter": "L",
+     "chest_cm": 100,
+     "basis": "label",
+     "chart_label": null,
+     "gender": "womens",
+     "profile": "womens_tops"
+    },
+    {
+     "ko": "남성 L(100)",
+     "us": "Men's M",
+     "letter": "M",
+     "chest_cm": 100,
+     "basis": "label",
+     "chart_label": null,
+     "gender": "mens",
+     "profile": "mens_tops"
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": null,
+   "held": null,
+   "profiles": {
+    "womens": "womens_tops",
+    "mens": "mens_tops"
+   }
+  }
+ },
+ "texts": [
+  {
+   "id": "title:01cb83d3a5501a60",
+   "kind": "title",
+   "ko": "[네이버아이디로 구매가능][한국카스코골프정품 KSRWL-002] 카스코 바람막이 우의 비옷세트"
+  },
+  {
+   "id": "brand:ea36cbeb351c3bba",
+   "kind": "brand",
+   "ko": "카스코"
+  },
+  {
+   "id": "option_name:5a2fdefe4a62f26a",
+   "kind": "option_name",
+   "ko": "컬러"
+  },
+  {
+   "id": "option_value:bd53a7367d81c004",
+   "kind": "option_value",
+   "ko": "그레이"
+  },
+  {
+   "id": "option_value:a485712576c231e1",
+   "kind": "option_value",
+   "ko": "옐로우"
+  },
+  {
+   "id": "option_value:91f171f68356ec23",
+   "kind": "option_value",
+   "ko": "블랙"
+  },
+  {
+   "id": "option_value:5c94888b2e8d96b6",
+   "kind": "option_value",
+   "ko": "핑크"
+  },
+  {
+   "id": "option_name:e0511ad24076321c",
+   "kind": "option_name",
+   "ko": "사이즈"
+  },
+  {
+   "id": "option_value:3c4ab7965f8d9510",
+   "kind": "option_value",
+   "ko": "여성 M(66)"
+  },
+  {
+   "id": "option_value:77a8de53ef0b8a02",
+   "kind": "option_value",
+   "ko": "여성 L(77)"
+  },
+  {
+   "id": "option_value:edeff99ea97da7a0",
+   "kind": "option_value",
+   "ko": "남성 L(100)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:ea36cbeb351c3bba",
+   "kind": "spec_value",
+   "ko": "카스코"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:7cd6ad9c85830004",
+   "kind": "spec_value",
+   "ko": "베트남산"
+  },
+  {
+   "id": "review:ea52e5194ccaad9d",
+   "kind": "review",
+   "ko": "생각보다 작아서 안입으셨데요."
+  },
+  {
+   "id": "review:fc97566e924604aa",
+   "kind": "review",
+   "ko": "부모님께서 필요하시다고 해서 주문 했네요"
+  },
+  {
+   "id": "review:02577236a1841b1f",
+   "kind": "review",
+   "ko": "우선 얇아서 좋아요"
+  },
+  {
+   "id": "review:776719a8534e6e49",
+   "kind": "review",
+   "ko": "사이즈 재질 다 만족입니다.\n모자가 없는게 단점이지만 모자붙어있어도 스윙시 불편하니 전 없는게 더 좋네요"
+  },
+  {
+   "id": "review:867757c1242eb691",
+   "kind": "review",
+   "ko": "와 완전 좋아요\n사이즈가M만있어 비옷이라 그냥 주문했는데\n여유있게 잘 맞아요\n다른분 리뷰에 모자가 없어 아쉽다했는데\n저도 역시\n하지만"
+  },
+  {
+   "id": "review:aca56d6711c07e4a",
+   "kind": "review",
+   "ko": "배송빠르고좋네여"
+  },
+  {
+   "id": "review:5a688bb92ef9cf5a",
+   "kind": "review",
+   "ko": "신랑이랑 커플로 구매했읍니다 너무 좋아요 신랑도 좋아하네요\n평소 95사이즈 입는데 아무래도 옷 겉에 입어야 해서 100구매 했음요\n잘 맞네요"
+  },
+  {
+   "id": "review:759b0ba5e44bdf16",
+   "kind": "review",
+   "ko": "아직사용은 안했지만 색상도 예쁘고 부파감도 작아서\n넘 좋아요 잘 사용할께요 다만 모자가 없어서 좀 아쉽네요\n평소 55반 사이즈인데 넉넉하게 잘맞아요"
+  }
+ ]
+}

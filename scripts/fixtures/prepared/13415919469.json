@@ -1,0 +1,504 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101124456:13415919469",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 8); 2 trimmed"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/ltolgolf/products/13415919469",
+  "channel_no": "101124456",
+  "product_id": "13415919469",
+  "category_id": "50002816"
+ },
+ "product": {
+  "title_ko": "남성 골프우비 골프비옷 레인슈트 레인코트",
+  "brand_ko": "엘투엘골프",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "남성 골프우비 골프비옷 레인슈트 레인코트"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 레인코트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [],
+  "facts": [
+   {
+    "label_ko": "컬러（뉴레인）",
+    "value_ko": "블랙"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"블랙\"]",
+    "naver_variant_id": "57755928987",
+    "options_ko": [],
+    "price_krw": 39500,
+    "price_usd": "39.50",
+    "sku": "FW-0b98eaae59d9f27a35ed0ad8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 39500,
+   "original_krw": 39500,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "엘투엘골프"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "엘투엘골프"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "형태",
+    "value_ko": "코트형"
+   },
+   {
+    "label_ko": "주요소재",
+    "value_ko": "폴리에스테르"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.78,
+   "count": 18
+  },
+  "reviews": [
+   {
+    "id": "5104965434",
+    "score": 5,
+    "text_ko": "원래 팔이 좀 긴편입니다\n손목 시보레 부분은 약간 타이트 하고\n브랜드 우의 처럼 팔꿈치 부분이 따로 분리가 되면\n더 좋을꺼 같습니다\n안감은 없는 타입이고. 길이감은 괜찮습니다",
+    "created_at": "2026-11-12T10:23:26Z",
+    "writer": "cudd****",
+    "photos": [
+     "collected/50002788-fixtures/images/13415919469/fairwardgolf-review-image-d0bd74450f0c9f22.webp",
+     "collected/50002788-fixtures/images/13415919469/fairwardgolf-review-image-778926ad75de9091.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 92,
+    "text_original_ko": "원래 팔이 좀 긴편입니다\n\n손목 시보레 부분은 약간 타이트 하고\n브랜드 우의 처럼 팔꿈치 부분이 따로 분리가 되면\n더 좋을꺼 같습니다\n안감은 없는 타입이고. 길이감은 괜찮습니다"
+   },
+   {
+    "id": "5103592182",
+    "score": 5,
+    "text_ko": "아주 탄탄하고 비가 올 때 골프를 잘 칠 수 있을 것 같습니다.",
+    "created_at": "2026-11-10T22:42:56Z",
+    "writer": "yoyo****",
+    "photos": [
+     "collected/50002788-fixtures/images/13415919469/fairwardgolf-review-image-6b1a480b4808382f.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 40
+   },
+   {
+    "id": "5056803658",
+    "score": 5,
+    "text_ko": "가볍고 편합니다 코트타입이라 착용하기쉽고 디자인도 이뻐요",
+    "created_at": "2026-09-03T09:45:06Z",
+    "writer": "my****",
+    "photos": [
+     "collected/50002788-fixtures/images/13415919469/fairwardgolf-review-image-72bb758b3aca2829.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 81,
+    "text_original_ko": "가볍고 편합니다  코트타입이라 착용하기쉽고 디자인도 이뻐요"
+   },
+   {
+    "id": "5047824462",
+    "score": 5,
+    "text_ko": "몇년전에 사서 골프때마다 잘입어요 비올때 추울때 요긴하게 잘 입고 스윙시 편해서 더욱 돟아요 친구가 하나 주문해달래서 잘 입겠습니다",
+    "created_at": "2026-08-21T13:36:22Z",
+    "writer": "sumi******",
+    "photos": [
+     "collected/50002788-fixtures/images/13415919469/fairwardgolf-review-image-1e3ad37bbb847940.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 49,
+    "text_original_ko": "몇년전에 사서 골프때마다 잘입어요  비올때 추울때 요긴하게 잘 입고 스윙시 편해서 더욱 돟아요  친구가 하나 주문해달래서 또 주문했어요 잘 입겠습니다",
+    "text_cut": [
+     "seller"
+    ]
+   },
+   {
+    "id": "5022955430",
+    "score": 5,
+    "text_ko": "키 172cm 몸무게 74kg 남자 사이즈 잘 맞아요.\n길이도 넉넉해서 바지 안입어도 될거 같아 좋고 앞여밈이 이중으로 되어있어 방수도 기대해 봅니다.\n당장 내일 필요했는데",
+    "created_at": "2026-07-16T12:14:05Z",
+    "writer": "tlsl******",
+    "photos": [
+     "collected/50002788-fixtures/images/13415919469/fairwardgolf-review-image-b7b8e8a76d1ae99a.webp",
+     "collected/50002788-fixtures/images/13415919469/fairwardgolf-review-image-727b9185574ccf67.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 91,
+    "text_original_ko": "키 172cm 몸무게 74kg 남자 사이즈 잘 맞아요.\n길이도 넉넉해서 바지 안입어도 될거 같아 좋고 앞여밈이 이중으로 되어있어 방수도 기대해 봅니다.\n당장 내일 필요했는데 당일배송 너무 좋아요!!",
+    "text_cut": [
+     "shipping"
+    ]
+   },
+   {
+    "id": "5021023918",
+    "score": 5,
+    "text_ko": "키가큰데길이감도딱좋네요. 잘입을게요",
+    "created_at": "2026-07-14T05:28:27Z",
+    "writer": "99es****",
+    "photos": [
+     "collected/50002788-fixtures/images/13415919469/fairwardgolf-review-image-cb75d01bb414636c.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 39,
+    "text_original_ko": "키가큰데길이감도딱좋네요~잘입을게요^^"
+   },
+   {
+    "id": "5016004521",
+    "score": 5,
+    "text_ko": "사이즈가 딱 맞습니다",
+    "created_at": "2026-07-07T08:39:53Z",
+    "writer": "bigr******",
+    "photos": [
+     "collected/50002788-fixtures/images/13415919469/fairwardgolf-review-image-53f6e5d44c302892.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 37
+   },
+   {
+    "id": "5010231387",
+    "score": 5,
+    "text_ko": "상하분리된거 사용하다\n하나로 된거라 편해요",
+    "created_at": "2026-06-30T06:05:22Z",
+    "writer": "dong******",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 24
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13415919469/fairwardgolf-13415919469-001-9e7a7fa55302211a.webp",
+    "sha256": "9e7a7fa55302211ab09147be796f653f7f1da5542692f6c146782a9f4a92fd01",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13415919469/fairwardgolf-13415919469-002-804622b0a53a7658.webp",
+    "sha256": "804622b0a53a7658107482702697047602aa8791cda3ed2ced4271877e46d15c",
+    "width": 1500,
+    "height": 1500
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13415919469/fairwardgolf-13415919469-003-c4d1cf00d5800224.webp",
+    "sha256": "c4d1cf00d5800224f7900440dd6d41be2ef6d4396c7cb8ad2dd472368170cf90",
+    "width": 1500,
+    "height": 1500
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13415919469/fairwardgolf-13415919469-004-958ac896579dd883.webp",
+    "sha256": "958ac896579dd883ff04dba42968573f72e6486a2ca2293e4ab57edeac3e4e8b",
+    "width": 1500,
+    "height": 1500
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13415919469/fairwardgolf-13415919469-005-b828a16c49bc59bc.webp",
+    "sha256": "b828a16c49bc59bc2266ab9e412edac22a23d36107c31e75cb44615c6e2cdd57",
+    "width": 1500,
+    "height": 1500
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 6000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 6,000원",
+   "lead_time": {
+    "seller_average_days": 1.5692772,
+    "product_average_days": 1.2727273,
+    "today_cutoff": "16:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "같은디자인\n여성골프우비",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260716_98/1784180702344KhSQ6_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_001.jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20260716_164/1784180725988SOhlv_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_002.jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20260716_4/1784180742156qIpev_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_003.jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20260716_129/1784180758878gLASx_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_004.jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20260417_4/177641648782949bbL_JPEG/%EB%82%A8%EC%9E%90%EC%82%AC%EC%9D%B4%EC%A6%88_01.jpg?type=w848"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "주요소재",
+    "value_ko": "폴리에스테르",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_tops",
+   "option": null,
+   "values": [],
+   "merged": {},
+   "brand_row": null,
+   "chart": {
+    "kinds": {
+     "length": null,
+     "shoulder": null,
+     "chest": null,
+     "sleeve": null
+    },
+    "rows": [
+     {
+      "us": "One Size",
+      "cm": {
+       "length": 106.0,
+       "shoulder": 59.0,
+       "chest": 60.0,
+       "sleeve": 64.0
+      }
+     }
+    ]
+   },
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:41b6677db49a332b",
+   "kind": "title",
+   "ko": "남성 골프우비 골프비옷 레인슈트 레인코트"
+  },
+  {
+   "id": "brand:4713cc2474fc1ca5",
+   "kind": "brand",
+   "ko": "엘투엘골프"
+  },
+  {
+   "id": "fact_label:c799236ae8b3ce49",
+   "kind": "fact_label",
+   "ko": "컬러（뉴레인）"
+  },
+  {
+   "id": "fact_value:91f171f68356ec23",
+   "kind": "fact_value",
+   "ko": "블랙"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:4713cc2474fc1ca5",
+   "kind": "spec_value",
+   "ko": "엘투엘골프"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:e1b56dd677111a7f",
+   "kind": "spec_label",
+   "ko": "형태"
+  },
+  {
+   "id": "spec_value:cad1728117ad01f4",
+   "kind": "spec_value",
+   "ko": "코트형"
+  },
+  {
+   "id": "spec_label:4ca8beff763d4b7f",
+   "kind": "spec_label",
+   "ko": "주요소재"
+  },
+  {
+   "id": "spec_value:6e2d175cb134fc18",
+   "kind": "spec_value",
+   "ko": "폴리에스테르"
+  },
+  {
+   "id": "review:ef5f6c126f52bcd2",
+   "kind": "review",
+   "ko": "원래 팔이 좀 긴편입니다\n손목 시보레 부분은 약간 타이트 하고\n브랜드 우의 처럼 팔꿈치 부분이 따로 분리가 되면\n더 좋을꺼 같습니다\n안감은 없는 타입이고. 길이감은 괜찮습니다"
+  },
+  {
+   "id": "review:b488a36548d8db89",
+   "kind": "review",
+   "ko": "아주 탄탄하고 비가 올 때 골프를 잘 칠 수 있을 것 같습니다."
+  },
+  {
+   "id": "review:376da18dcfe5ea13",
+   "kind": "review",
+   "ko": "가볍고 편합니다 코트타입이라 착용하기쉽고 디자인도 이뻐요"
+  },
+  {
+   "id": "review:b9b589278ab7d470",
+   "kind": "review",
+   "ko": "몇년전에 사서 골프때마다 잘입어요 비올때 추울때 요긴하게 잘 입고 스윙시 편해서 더욱 돟아요 친구가 하나 주문해달래서 잘 입겠습니다"
+  },
+  {
+   "id": "review:44ed356953aa7643",
+   "kind": "review",
+   "ko": "키 172cm 몸무게 74kg 남자 사이즈 잘 맞아요.\n길이도 넉넉해서 바지 안입어도 될거 같아 좋고 앞여밈이 이중으로 되어있어 방수도 기대해 봅니다.\n당장 내일 필요했는데"
+  },
+  {
+   "id": "review:faab8c3beb37de8f",
+   "kind": "review",
+   "ko": "키가큰데길이감도딱좋네요. 잘입을게요"
+  },
+  {
+   "id": "review:2f60b31cdf9a5685",
+   "kind": "review",
+   "ko": "사이즈가 딱 맞습니다"
+  },
+  {
+   "id": "review:1dfc1ae11eaba162",
+   "kind": "review",
+   "ko": "상하분리된거 사용하다\n하나로 된거라 편해요"
+  }
+ ]
+}

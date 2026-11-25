@@ -1,0 +1,1459 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102233361:11616404746",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "6 of 6 kept (full 4, rating_only 1, short 1); 1 trimmed"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "UNIT_QUANTITY_PAID 39900 KRW"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "NOT_APPLICABLE"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/burning_b/products/11616404746",
+  "channel_no": "102233361",
+  "product_id": "11616404746",
+  "category_id": "50002816"
+ },
+ "product": {
+  "title_ko": "캘러웨이 25SS 남성 골프 고기능성 투웨이 레인웨어 상하의세트 투피스비옷 우비 3L까지",
+  "brand_ko": "캘러웨이",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "캘러웨이 25SS 남성 골프 고기능성 투웨이 레인웨어 상하의세트 투피스비옷 우비 3L까지"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 레인코트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "색상",
+    "values_ko": [
+     "블랙",
+     "화이트"
+    ]
+   },
+   {
+    "name_ko": "사이즈(JP)",
+    "values_ko": [
+     "SS",
+     "S",
+     "M",
+     "L",
+     "LL",
+     "3L"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"블랙\",\"SS\"]",
+    "naver_variant_id": "47803833608",
+    "options_ko": [
+     "블랙",
+     "SS"
+    ],
+    "price_krw": 134900,
+    "price_usd": "134.90",
+    "sku": "FW-640f9bb125bd90ef4f482523",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"S\"]",
+    "naver_variant_id": "47803833609",
+    "options_ko": [
+     "블랙",
+     "S"
+    ],
+    "price_krw": 134900,
+    "price_usd": "134.90",
+    "sku": "FW-2d2f0c00ae7e3c35ff97a26e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"M\"]",
+    "naver_variant_id": "47803833610",
+    "options_ko": [
+     "블랙",
+     "M"
+    ],
+    "price_krw": 95000,
+    "price_usd": "95.00",
+    "sku": "FW-6d674a8c67fe4baebbc0ebe9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"L\"]",
+    "naver_variant_id": "47803833611",
+    "options_ko": [
+     "블랙",
+     "L"
+    ],
+    "price_krw": 95000,
+    "price_usd": "95.00",
+    "sku": "FW-6d46073387d910b979ff3508",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"LL\"]",
+    "naver_variant_id": "47803833612",
+    "options_ko": [
+     "블랙",
+     "LL"
+    ],
+    "price_krw": 95000,
+    "price_usd": "95.00",
+    "sku": "FW-322547758e578af280ce29eb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙\",\"3L\"]",
+    "naver_variant_id": "47803833613",
+    "options_ko": [
+     "블랙",
+     "3L"
+    ],
+    "price_krw": 95000,
+    "price_usd": "95.00",
+    "sku": "FW-0624370f60719c6ed1980adc",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"화이트\",\"SS\"]",
+    "naver_variant_id": "47803833614",
+    "options_ko": [
+     "화이트",
+     "SS"
+    ],
+    "price_krw": 134900,
+    "price_usd": "134.90",
+    "sku": "FW-945eb0cdfec45cd1de97e409",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"화이트\",\"S\"]",
+    "naver_variant_id": "47803833615",
+    "options_ko": [
+     "화이트",
+     "S"
+    ],
+    "price_krw": 134900,
+    "price_usd": "134.90",
+    "sku": "FW-2303508eb418953ed2a51c17",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"화이트\",\"M\"]",
+    "naver_variant_id": "47803833616",
+    "options_ko": [
+     "화이트",
+     "M"
+    ],
+    "price_krw": 95000,
+    "price_usd": "95.00",
+    "sku": "FW-e0973f915d94bc2fc02962fd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"화이트\",\"L\"]",
+    "naver_variant_id": "47803833617",
+    "options_ko": [
+     "화이트",
+     "L"
+    ],
+    "price_krw": 95000,
+    "price_usd": "95.00",
+    "sku": "FW-b5cf7d5d1576bd0351cb3396",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"화이트\",\"LL\"]",
+    "naver_variant_id": "47803833618",
+    "options_ko": [
+     "화이트",
+     "LL"
+    ],
+    "price_krw": 95000,
+    "price_usd": "95.00",
+    "sku": "FW-a744a42fd36ab01dcede3180",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"화이트\",\"3L\"]",
+    "naver_variant_id": "47803833619",
+    "options_ko": [
+     "화이트",
+     "3L"
+    ],
+    "price_krw": 95000,
+    "price_usd": "95.00",
+    "sku": "FW-e465bdc3fcf07227d5d1b550",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 95000,
+   "original_krw": 145300,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "총기장",
+    "value_ko": "기본"
+   },
+   {
+    "label_ko": "형태",
+    "value_ko": "투피스형"
+   },
+   {
+    "label_ko": "주요소재",
+    "value_ko": "폴리에스테르"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 6
+  },
+  "reviews": [
+   {
+    "id": "5096414196",
+    "score": 5,
+    "text_ko": "비옷이라 한치수 크게 샀는데\n잘한거 같아요",
+    "created_at": "2026-11-01T23:53:33Z",
+    "writer": "ab****",
+    "photos": [
+     "collected/50002788-fixtures/images/11616404746/fairwardgolf-review-image-ee8844c79a06774c.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 59
+   },
+   {
+    "id": "5025523602",
+    "score": 5,
+    "text_ko": "좋은 물건 감시드립니다. 사업",
+    "created_at": "2026-07-21T00:28:46Z",
+    "writer": "vivi*******",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 3,
+    "text_original_ko": "좋은 물건 빠른배송 감시드립니다. 사업 번창하세요!!",
+    "text_cut": [
+     "seller",
+     "shipping"
+    ]
+   },
+   {
+    "id": "5022538552",
+    "score": 5,
+    "text_ko": "파우치도 있고 옷도 예쁘네요 추천드립니다.",
+    "created_at": "2026-07-16T02:09:08Z",
+    "writer": "fg****",
+    "photos": [
+     "collected/50002788-fixtures/images/11616404746/fairwardgolf-review-image-0279ceff65ac8096.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 59
+   },
+   {
+    "id": "5007329999",
+    "score": 5,
+    "text_ko": "방수도잘되고 이쁘네요",
+    "created_at": "2026-06-26T03:02:11Z",
+    "writer": "thdr*****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/11616404746/fairwardgolf-review-avatar-ce73332a63006875.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 42
+   },
+   {
+    "id": "4894128047",
+    "score": 5,
+    "text_ko": "",
+    "created_at": "2026-01-26T02:30:26Z",
+    "writer": "nama***",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "rating_only",
+    "text_quality": 0,
+    "text_original_ko": "배송도빠르고  가성비좋아요",
+    "text_cut": [
+     "price",
+     "shipping"
+    ]
+   },
+   {
+    "id": "4848979918",
+    "score": 5,
+    "text_ko": "방수기능좋아요\n디자인만족",
+    "created_at": "2025-11-25T07:53:44Z",
+    "writer": "nama***",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 43
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/11616404746/fairwardgolf-11616404746-001-080835f7c528c035.webp",
+    "sha256": "080835f7c528c03516513f5452894b7b52c0508c2355e28591020afaedee83d4",
+    "width": 1080,
+    "height": 1080
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/11616404746/fairwardgolf-11616404746-002-99d49193ad0a9c61.webp",
+    "sha256": "99d49193ad0a9c617770f5bf90cd58565b3484e582899e0543f5aae943145ffd",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/11616404746/fairwardgolf-11616404746-003-83f7d4f0fc5ed1e6.webp",
+    "sha256": "83f7d4f0fc5ed1e6275a4a22db22e3a9a7895459b53f0eb8911bc59104fb6de9",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/11616404746/fairwardgolf-11616404746-004-d2355e487811943a.webp",
+    "sha256": "d2355e487811943ad0284737650ec9454db4650e73dd863765d84fed60ac8a33",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/11616404746/fairwardgolf-11616404746-005-6b8252adc5b75de6.webp",
+    "sha256": "6b8252adc5b75de607d8229572503a026f234c9ace3ceb71040b5d3b5520c4fa",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/11616404746/fairwardgolf-11616404746-006-9feca233cc73b88e.webp",
+    "sha256": "9feca233cc73b88e9ba772e0d9afc69f6f305dd8bc07c1bc6de1b4fe846e5394",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/11616404746/fairwardgolf-11616404746-007-10757416ac1ec145.webp",
+    "sha256": "10757416ac1ec145871094b0d72cb330db1e59b746c307fe582c5a760635873c",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/11616404746/fairwardgolf-11616404746-008-605ec092d091628a.webp",
+    "sha256": "605ec092d091628ae6c7a4d97196d1f693163bed9cf166311860c9629d08d400",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/11616404746/fairwardgolf-11616404746-009-08d6ec20578ac3ec.webp",
+    "sha256": "08d6ec20578ac3ec78ffd2475ed0d4835d6c89cedf4d8e272917129bc1817352",
+    "width": 1080,
+    "height": 1080
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/11616404746/fairwardgolf-11616404746-010-4dde4eaab70af3a2.webp",
+    "sha256": "4dde4eaab70af3a224e9696a71e90dec73ffc0cc8e357631fc1f3396b7ced976",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "UNIT_QUANTITY_PAID",
+   "base_fee": 39900,
+   "is_overseas": true,
+   "customs_tax_type": "NOT_APPLICABLE",
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": 5000,
+   "policy_text": "1개마다 부과 / 제주 추가 4,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 4.591837,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "[ 미국/유럽/일본 현지\n백화점/공홈/브랜드아울렛\n/정품공식판매처에서만\n바잉하여 보내드리는 100%정품제품이며,\n정품이 아닐 시 환불과 더불어\n모든 민형사상의 책임을 약속드립니다.]\n※브랜드 인기 특가 할인 상품의 경우\n주문후에도 품절로 인한 주문취소,\n할인 종료에 의한 가격변동이 있을 수 있습니다. ※\n\n캘러웨이 25SS 남성 골프 고기능성\n투웨이 레인웨어 상하의세트\n\n골프 레인웨어에서는 어떤 브랜드보다\n인기 많은 캘러웨이 25년 신상\n레인웨어 상하의 세트가 출시되었어요.\n소매 탈부착\n내수압 15,000mm/스트레치소재\n상의 허리부분과 하의 밑단에 벨크로가 배치되어\n완벽한 핏완성!\n장마철되서 구매하면 사이즈 다 빠져요ㅠ\n빠르게 선점해가세요^^\n\n내수압 15000mm의 기능성 소재를 사용,\n스트레치성이 있어 움직임 중에서도\n착용이 용이합니다.\n비가 직접 닿기 쉬운 「목회전」 「어깨선」 「암홀」\n「가랑이」의 솔기에는 심 테이프가\n베풀어져 있어 비의 침입을 막습니다.\n상의의는 뒷면의 환기로 의복내의 들뜸을 방지,\n허리폭을 조절할 수 있는 테이프로\n핏감까지 완벽!\n하의는 이너 팬츠의 프런트 포켓에 직접\n액세스 할 수 있는 스루 포켓이 붙어,\n옷자락에는 밑단 폭을 조정할 수 있는 테이프로\n완벽한 스타일 완성!\n[수납주머니 포함]\n\nCOLOR\n블랙, 화이트\n\nSIZE\nJP사이즈[일본]\nSS,S,M,L,LL,3L\n※하단 상세사이즈 참고※\nDISPLAY\n\n모델: L사이즈 착용\n180cm/69kg\n가슴(누드치수)95cm\n허리 30.5\"\n\n▼블랙▼\n\n▼화이트▼\n\n공통 하의\n[허리 밴딩/조절끈타입]\n\nSIZE GUIDE\nJP사이즈[일본]\nSS,S,M,L,LL,3L\n\n브랜드: CALLAWAY JP.\n제품 코드: C25989100\n소재：폴리에스텔 100%\n내수압 : 15000mm\n2 way( 소매탈부착 ) 타입\n\n캘러웨이 25SS 남성 골프 고기능성\n투웨이 레인웨어 상하의세트",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20240131_171/1706691214285raJkI_PNG/SE-809c94b5-ca08-4a37-b5f0-c9f2a84de356.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240517_85/1715922202672zmtkF_JPEG/SE-a39a7ac5-758d-4155-ae77-477e28911042.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250305_197/1741173115469z3vJG_PNG/20250305_201116.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_174/1742476095370gcHxH_PNG/%EC%BA%98%EB%9F%AC%EC%9B%A8%EC%9D%B4_25SS_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B3%A0%EA%B8%B0%EB%8A%A5%EC%84%B1_%ED%88%AC%EC%9B%A8%EC%9D%B4_%EB%A0%88%EC%9D%B8%EC%9B%A8%EC%96%B4_%EC%83%81%ED%95%98%EC%9D%98%EC%84%B8%ED%8A%B8_%EB%B9%84%EC%98%B7_%EC%9A%B0%EB%B9%84_3L%EA%B9%8C%EC%A7%80d.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_8/1742476617770i3UWm_PNG/SE-6683fd9f-c6f0-41ae-b9a4-dce1a5e5ae1f.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_86/1742476617403uV0Om_PNG/SE-ea31eb37-9917-4c92-8c8e-9c9f66a90875.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_216/1742476821955p966s_PNG/20250320_181541.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_108/1742476821956REe8v_PNG/20250320_181556.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_2/1742476821958iVQW0_PNG/20250320_181611.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_73/1742476822018keBuk_PNG/20250320_181626.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_74/1742476822024fN1p9_PNG/20250320_181629.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_271/1742476871510qpiHy_PNG/20250320_181637.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_87/1742476871526uuIme_PNG/20250320_181647.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_133/1742476871518vzkyI_PNG/20250320_181652.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_43/1742476871610Qxh5B_PNG/20250320_181704.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_259/1742476871625E5o8u_PNG/20250320_181746.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_265/1742476871517OWfFc_PNG/20250320_181713.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_298/1742476871521fx4j0_PNG/20250320_181723.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_181/1742476871663G97b5_PNG/20250320_181734.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_275/1742476871646cPzIK_PNG/20250320_181741.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_274/1742476783140He7B0_PNG/20250320_181854.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_171/1742476783138IQ3e9_PNG/20250320_181906.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_91/1742476783122K5Hca_PNG/20250320_181921.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_3/1742477048372lYlnP_PNG/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94_-001_(40).png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_114/1742477075971iaKBc_PNG/20250320_181751.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_91/1742477076032IVTuT_PNG/20250320_181759.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_221/1742477076046fMpkm_PNG/20250320_181803.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_24/1742477076056iB1vU_PNG/20250320_181808.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_239/1742477076066Xsc8y_PNG/20250320_181822.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_121/1742477076047O3hht_PNG/20250320_181828.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_70/1742477076085xsfjR_PNG/20250320_181835.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_251/1742477174002rVb8g_PNG/20250320_182344.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_254/174247721096385SLl_PNG/SE-53cdf8e9-1dd0-46a3-8870-e23d8926b059.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250320_202/1742477400581G53O5_PNG/%EC%BA%98%EB%9F%AC%EC%9B%A8%EC%9D%B4_25SS_%EB%82%A8%EC%84%B1_%EA%B3%A8%ED%94%84_%EA%B3%A0%EA%B8%B0%EB%8A%A5%EC%84%B1_%ED%88%AC%EC%9B%A8%EC%9D%B4_%EB%A0%88%EC%9D%B8%EC%9B%A8%EC%96%B4_%EC%83%81%ED%95%98%EC%9D%98%EC%84%B8%ED%8A%B8_%EB%B9%84%EC%98%B7_%EC%9A%B0%EB%B9%84_3L%EA%B9%8C%EC%A7%80.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240131_25/1706691102638K0bzj_JPEG/%EC%B5%9C%EC%8B%A0%EB%89%B4.jpg?type=w848"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "주요소재",
+    "value_ko": "폴리에스테르",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_tops",
+   "option": 1,
+   "values": [
+    {
+     "ko": "SS",
+     "us": "XXS",
+     "letter": "XXS",
+     "chest_cm": 85,
+     "basis": "fallback_letters",
+     "chart_label": null
+    },
+    {
+     "ko": "S",
+     "us": "XS",
+     "letter": "XS",
+     "chest_cm": 90,
+     "basis": "fallback_letters",
+     "chart_label": null
+    },
+    {
+     "ko": "M",
+     "us": "S",
+     "letter": "S",
+     "chest_cm": 95,
+     "basis": "fallback_letters",
+     "chart_label": null
+    },
+    {
+     "ko": "L",
+     "us": "M",
+     "letter": "M",
+     "chest_cm": 100,
+     "basis": "fallback_letters",
+     "chart_label": null
+    },
+    {
+     "ko": "LL",
+     "us": "L",
+     "letter": "L",
+     "chest_cm": 105,
+     "basis": "fallback_letters",
+     "chart_label": null
+    },
+    {
+     "ko": "3L",
+     "us": "XL",
+     "letter": "XL",
+     "chest_cm": 110,
+     "basis": "fallback_letters",
+     "chart_label": null
+    }
+   ],
+   "merged": {},
+   "brand_row": null,
+   "chart": null,
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:d0c1a9fbd681c46b",
+   "kind": "title",
+   "ko": "캘러웨이 25SS 남성 골프 고기능성 투웨이 레인웨어 상하의세트 투피스비옷 우비 3L까지"
+  },
+  {
+   "id": "brand:752b9a8b36b892c4",
+   "kind": "brand",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "option_name:d1b87acb2d2239e7",
+   "kind": "option_name",
+   "ko": "색상"
+  },
+  {
+   "id": "option_value:91f171f68356ec23",
+   "kind": "option_value",
+   "ko": "블랙"
+  },
+  {
+   "id": "option_value:4b6304d7eb9d5185",
+   "kind": "option_value",
+   "ko": "화이트"
+  },
+  {
+   "id": "option_name:5a152f5bd6f84e1b",
+   "kind": "option_name",
+   "ko": "사이즈(JP)"
+  },
+  {
+   "id": "option_value:0e6fac6a3ad129a6",
+   "kind": "option_value",
+   "ko": "SS"
+  },
+  {
+   "id": "option_value:8de0b3c47f112c59",
+   "kind": "option_value",
+   "ko": "S"
+  },
+  {
+   "id": "option_value:08f271887ce94707",
+   "kind": "option_value",
+   "ko": "M"
+  },
+  {
+   "id": "option_value:72dfcfb0c470ac25",
+   "kind": "option_value",
+   "ko": "L"
+  },
+  {
+   "id": "option_value:97cc252894654d52",
+   "kind": "option_value",
+   "ko": "LL"
+  },
+  {
+   "id": "option_value:9e4f612e5ba19568",
+   "kind": "option_value",
+   "ko": "3L"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:752b9a8b36b892c4",
+   "kind": "spec_value",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:26336d857e5ea726",
+   "kind": "spec_label",
+   "ko": "총기장"
+  },
+  {
+   "id": "spec_value:3603b4581160941a",
+   "kind": "spec_value",
+   "ko": "기본"
+  },
+  {
+   "id": "spec_label:e1b56dd677111a7f",
+   "kind": "spec_label",
+   "ko": "형태"
+  },
+  {
+   "id": "spec_value:2587aa84faab798d",
+   "kind": "spec_value",
+   "ko": "투피스형"
+  },
+  {
+   "id": "spec_label:4ca8beff763d4b7f",
+   "kind": "spec_label",
+   "ko": "주요소재"
+  },
+  {
+   "id": "spec_value:6e2d175cb134fc18",
+   "kind": "spec_value",
+   "ko": "폴리에스테르"
+  },
+  {
+   "id": "review:c9cd812a0e4ff6e0",
+   "kind": "review",
+   "ko": "비옷이라 한치수 크게 샀는데\n잘한거 같아요"
+  },
+  {
+   "id": "review:262ec272359f2b09",
+   "kind": "review",
+   "ko": "좋은 물건 감시드립니다. 사업"
+  },
+  {
+   "id": "review:07d6fc29ed27dea4",
+   "kind": "review",
+   "ko": "파우치도 있고 옷도 예쁘네요 추천드립니다."
+  },
+  {
+   "id": "review:ba75fae15b330bd2",
+   "kind": "review",
+   "ko": "방수도잘되고 이쁘네요"
+  },
+  {
+   "id": "review:5c0d295f1cd1494b",
+   "kind": "review",
+   "ko": "방수기능좋아요\n디자인만족"
+  }
+ ]
+}

@@ -146,6 +146,22 @@ Known limit: a listing whose title states a count ("웨지세트(4종)") and who
 wedge; seen on 394381329 (held, no live effect).
 The row's `compose_by_count` block (C17, 2026-11-17): a set's `product_weight_g` the seller does not state, from its
 clubs' labelled weights, see [The clubs' weights of a wedge set](#the-clubs-weights-of-a-wedge-set).
+50002816 레인코트 (golf rainwear, 2026-11-24, reviewed 2026-11-25): one rain coat in a 28 x 22 x 5 cm mailer, a kind
+`suit` (a jacket with its trousers: 상하 / 세트 / 레인슈트 / 레인수트 / 투피스 / 우의바지 / 비옷바지, 32 x 26 x 8 cm,
+850 g) and a kind `light` (a poncho, cape or rain skirt: 판초 / 케이프 / 스커트 / 치마 / 앞치마 / 망토, 24 x 20 x 4 cm,
+280 g), the suit read first. Sellers type 레인슈트 and 세트 as search keywords on things that are no suit (the owner,
+2026-11-25, "Все рекомендации"), so: a 세트 after 선물 (a gift set), a bag (웨이스트백) or 파우치 is no suit word; the
+suit's `unless`, read on the title and on the variant apart, refuses the suit where the text names one coat, poncho,
+cape or cloak (코트 / 판초 / 케이프 / 망토) and no second garment (상하 / 상의 / 하의 / 세트 / 셋트 / 투피스 / 바지 /
+팬츠 / 스커트 / 치마 / "+"), and where the suit is deselected ("레인슈트 미선택+비치마", "상의 선택안함"); a variant
+whose own words name the two garments ("상하세트", "레인슈트(상하)", "판초+바지 세트": the suit's `always`) is the suit
+whatever its title names, so a coat's or a poncho's title never moves a suit variant. Then the light
+kind or the row's coat: the rain skirt 9595746260 "골프선물세트" and the cape 10603405721 "골프레인슈트 ... 판초우의
+케이프" light, the long coat 13415919469 "레인슈트 레인코트" and the coat with a waist bag 11428436186 "웨이스트백 세트"
+the row's, 10608961987's skirt-only variant light (its "레인슈트+비치마" stay suit), 8785829126's "2.우비 레인코트"
+variants the row's (its "1.우비 상하의세트" stay suit). A real suit, a suit + skirt and a two-piece of a poncho and a
+skirt (12182231084 "판초우의 비치마 투피스 세트", 10436091287) stay suit. Table version 20, the row's
+`defaults_version` 19 (no number moved).
 Product sizes (not the package: kind product or unknown) are kept apart, optional.
 
 ## Confidence
@@ -626,6 +642,18 @@ lines (`package` is computed at collection), prepared records of `format: prepar
 published from them; `prepared/5` is on the new scale. The transform puts a collected line's seller values on
 today's scale from their own evidence (`package_measures.on_scale`: the old 3 is 5, the old 2 is 4), so one prepared
 record never mixes the two.
+
+**Table version 20 (2026-11-25, the owner: "Все рекомендации").** 50002816's kind `suit` read narrower (a seller's
+search keyword 레인슈트 / 세트 is no suit; see the 50002816 paragraph under the category defaults): the words of a
+kind only, no number moved, so the row's `defaults_version` stays 19, as version 10's bands kept 9 (a raise would
+have restamped 37 rainwear products' defaults 19 -> 20 with no number changed, and the stamp travels in the package
+metafield). Measured on a copy of the shop: 6 products move, 9595746260 and 10603405721 (3 variants) to light,
+10608961987's skirt-only variant to light, 13415919469, 11428436186 and 8785829126's 45 coat variants to the row's
+coat; nothing else.
+
+**Table versions 18 and 19 (2026-11-24 / 25).** The row of 50002816 레인코트 (golf rainwear) with its kinds `suit`
+and `light`, its `defaults_version` 18; reviewed on the 30 pilot drafts (a coat 350 g in a 28 x 22 x 5 cm mailer, a
+poncho or rain skirt 200 g in 24 x 20 x 4 cm, a suit kept), its `defaults_version` 19.
 
 **Table version 13 (2026-11-20).** The row of 50002798 점퍼 (women's golf windbreakers): the knit's values on the
 owner's delegation (a shell packs as small as a knit): product 150 / 350 / 800 g, package 300 / 400 / 900 g (plausible

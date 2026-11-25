@@ -1,0 +1,1524 @@
+{
+ "key": "fairwardgolf:naver:101227470:5706906040",
+ "listing": {
+  "product_id": "5706906040",
+  "nv_mid": "83251404249",
+  "link": "https://smartstore.naver.com/jninestar/products/5706906040",
+  "name": "남성골프우의 골프용 스포츠우비 여성골프 레인자켓",
+  "store": {
+   "name": "제이나인스타",
+   "slug": "jninestar",
+   "link": "https://smartstore.naver.com/jninestar",
+   "channel_no": "101227470",
+   "grade": "POWER",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 73760,
+   "discounted_price": 59000,
+   "discount_ratio": 20,
+   "currency": "KRW"
+  },
+  "category_id": "50002816",
+  "reviews": {
+   "count": 5,
+   "average_score": 4.4
+  },
+  "stock_quantity": 4996,
+  "image": "https://shopping-phinf.pstatic.net/main_8325140/83251404249.1.jpg",
+  "is_ad": false,
+  "query": "골프 레인코트",
+  "batch": 3,
+  "seen_at": "2026-11-25T10:39:55+00:00",
+  "key": "fairwardgolf:naver:101227470:5706906040"
+ },
+ "details": {
+  "id": "5706906040",
+  "origin_product_id": "5681557166",
+  "name": "남성골프우의 골프용 스포츠우비 여성골프 레인자켓",
+  "link": "https://smartstore.naver.com/jninestar/products/5706906040",
+  "catalog_id": "83251404249",
+  "catalog_link": "https://search.shopping.naver.com/catalog/83251404249",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 73760,
+   "discounted_price": 59000,
+   "discount_ratio": 20,
+   "seller_discount": 14760,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 1180,
+    "text_review": 0,
+    "photo_video_review": 0,
+    "after_use_text_review": 0,
+    "after_use_photo_video_review": 0,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 4996,
+  "has_options": true,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20220319_83/1647621214126yRE7U_JPEG/20220319013222_resize.jpg"
+  ],
+  "category": {
+   "id": "50002816",
+   "name": "레인코트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프필드용품",
+    "레인코트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001107",
+    "50002816"
+   ]
+  },
+  "brand": "상세설명참조",
+  "brand_id": null,
+  "manufacturer": "상세설명참조",
+  "model_name": "상세설명참조",
+  "tags": null,
+  "page_title": null,
+  "reviews": {
+   "count": 5,
+   "average_score": 4.4,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 1,
+    "4": 1,
+    "5": 3
+   },
+   "text_count": 5,
+   "photo_count": 0,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": null,
+   "evaluations": null,
+   "representative_reviews": [
+    {
+     "id": "4256429574",
+     "score": 5,
+     "text": "방수 잘됩니다~ㅎㅎ",
+     "image": null
+    },
+    {
+     "id": "3396680409",
+     "score": 4,
+     "text": "싸이즈가 조금 애매하네요.\n평소 95호 착용하는 98정도 되는것 같네요.\n제품은 좋은듯 합니다.\n배송은 빠릅니다.",
+     "image": null
+    },
+    {
+     "id": "3406801138",
+     "score": 5,
+     "text": "빠른배송 착한가격 좋아요",
+     "image": null
+    },
+    {
+     "id": "3261838644",
+     "score": 5,
+     "text": "정말 비오는 날도 이제 걱정이 없을둣 합니다",
+     "image": null
+    }
+   ]
+  },
+  "delivery": {
+   "fee_type": "PAID",
+   "base_fee": 2500,
+   "is_free": false,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": null,
+   "company": "기타택배",
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": false,
+  "is_today_delivery": false,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": [
+   {
+    "id": "5326444835",
+    "name": "색상ㅡ사이즈",
+    "type": "COMBINATION"
+   }
+  ],
+  "variants": [
+   {
+    "id": "56593529544",
+    "name": "형광 옐로우ㅡL",
+    "options": [
+     "형광 옐로우ㅡL"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 999,
+    "is_available": true,
+    "is_today_dispatch": null,
+    "registered_at": "2026-03-05"
+   },
+   {
+    "id": "56593529546",
+    "name": "형광 옐로우ㅡXL",
+    "options": [
+     "형광 옐로우ㅡXL"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 999,
+    "is_available": true,
+    "is_today_dispatch": null,
+    "registered_at": "2026-03-05"
+   },
+   {
+    "id": "56593529549",
+    "name": "형광 옐로우ㅡXXL",
+    "options": [
+     "형광 옐로우ㅡXXL"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 999,
+    "is_available": true,
+    "is_today_dispatch": null,
+    "registered_at": "2026-03-05"
+   },
+   {
+    "id": "56593529550",
+    "name": "형광 옐로우ㅡXXXL",
+    "options": [
+     "형광 옐로우ㅡXXXL"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 999,
+    "is_available": true,
+    "is_today_dispatch": null,
+    "registered_at": "2026-03-05"
+   },
+   {
+    "id": "56593529536",
+    "name": "블랙ㅡL",
+    "options": [
+     "블랙ㅡL"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 0,
+    "is_available": false,
+    "is_today_dispatch": null,
+    "registered_at": "2026-03-05"
+   },
+   {
+    "id": "56593529538",
+    "name": "블랙ㅡXL",
+    "options": [
+     "블랙ㅡXL"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 1,
+    "is_available": true,
+    "is_today_dispatch": null,
+    "registered_at": "2026-03-05"
+   },
+   {
+    "id": "56593529540",
+    "name": "블랙ㅡXXL",
+    "options": [
+     "블랙ㅡXXL"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 0,
+    "is_available": false,
+    "is_today_dispatch": null,
+    "registered_at": "2026-03-05"
+   },
+   {
+    "id": "56593529542",
+    "name": "블랙ㅡXXXL",
+    "options": [
+     "블랙ㅡXXXL"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 999,
+    "is_available": true,
+    "is_today_dispatch": null,
+    "registered_at": "2026-03-05"
+   }
+  ],
+  "supplements": [],
+  "description": {
+   "html": "<div class=\"se-viewer se-theme-default\" lang=\"ko-KR\">\n    <!-- SE_DOC_HEADER_START -->\n    <!--@CONTENTS_HEADER-->\n    <!-- SE_DOC_HEADER_END -->\n    <div class=\"se-main-container\">\n                <div class=\"se-component se-image se-l-default\" id=\"SE-37804025-1878-11f1-9721-93d742ae4422\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-37804025-1878-11f1-9721-93d742ae4422&quot;,&quot;src&quot;:&quot;https://gi.esmplus.com/jungsem6/intro1.png&quot;,&quot;originalWidth&quot;:&quot;&quot;,&quot;originalHeight&quot;:&quot;&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;0&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://gi.esmplus.com/jungsem6/intro1.png\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-37804025-1878-11f1-9721-93d742ae4422&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;fileSize&quot;: &quot;0&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-37804027-1878-11f1-9721-a5be124952ae\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-37804027-1878-11f1-9721-a5be124952ae&quot;,&quot;src&quot;:&quot;https://gi.esmplus.com/jungsem6/intro3.png&quot;,&quot;originalWidth&quot;:&quot;&quot;,&quot;originalHeight&quot;:&quot;&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;0&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://gi.esmplus.com/jungsem6/intro3.png\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-37804027-1878-11f1-9721-a5be124952ae&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;fileSize&quot;: &quot;0&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-37804029-1878-11f1-9721-f7f036ba19c4\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-37804029-1878-11f1-9721-f7f036ba19c4&quot;,&quot;src&quot;:&quot;https://gi.esmplus.com/jungsem6/j9intro2.jpg&quot;,&quot;originalWidth&quot;:&quot;&quot;,&quot;originalHeight&quot;:&quot;&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;0&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://gi.esmplus.com/jungsem6/j9intro2.jpg\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-37804029-1878-11f1-9721-f7f036ba19c4&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;fileSize&quot;: &quot;0&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-3780403c-1878-11f1-9721-2397a0d22a99\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"\" id=\"SE-3780402c-1878-11f1-9721-f5977c0ee315\"><span style=\"\" class=\"se-fs- se-ff-   \" id=\"SE-3780402b-1878-11f1-9721-4f887d27457e\">​</span></p><!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"\" id=\"SE-3780402f-1878-11f1-9721-ef96127f140d\"><span class=\"se-ff- se-fs- se-inline-image\">\n<a class=\"se-module se-module-image __se_image_link __se_link\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-3780402d-1878-11f1-9721-33bd48698ca4&quot;,&quot;src&quot;:&quot;https://haisai.ownerclan.com/lfsync/ownerclan/105/02/2226.jpg&quot;,&quot;originalWidth&quot;:&quot;0&quot;,&quot;originalHeight&quot;:&quot;0&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n  <img class=\"se-inline-image-resource\" src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://haisai.ownerclan.com/lfsync/ownerclan/105/02/2226.jpg\"  alt=\"\">\n</a>\n</span><span style=\"\" class=\"se-fs- se-ff-   \" id=\"SE-3780402e-1878-11f1-9721-5b6a76074c26\">&nbsp;</span></p><!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"\" id=\"SE-37804031-1878-11f1-9721-1d204f67f620\"><span style=\"\" class=\"se-fs- se-ff-   \" id=\"SE-37804030-1878-11f1-9721-bd71a98617bf\">​</span></p><!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"\" id=\"SE-37804033-1878-11f1-9721-45e9bc8c1728\"><span style=\"color:#777777;\" class=\"se-fs-fs11 se-ff-   \" id=\"SE-37804032-1878-11f1-9721-e926c8ed9313\">본 제품을 구매하시면 원활한 배송을 위해 꼭 필요한 고객님의 개인정보를 (성함, 주소, 전화번호 등) 택배사 및 제 3업체에서 이용하는 것에 동의하시는 것으로 간주됩니다.</span></p><!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"\" id=\"SE-37804035-1878-11f1-9721-d55f969bd577\"><span style=\"color:#777777;\" class=\"se-fs-fs11 se-ff-   \" id=\"SE-37804034-1878-11f1-9721-5185baa28fc0\">개인정보는 배송 외의 용도로는 절대 사용되지 않으니 안심하시기 바랍니다. 안전하게 배송해 드리겠습니다.</span></p><!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"\" id=\"SE-37804037-1878-11f1-9721-35c711622eee\"><span style=\"\" class=\"se-fs- se-ff-   \" id=\"SE-37804036-1878-11f1-9721-b7ab0a71134c\">​</span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-3780403c-1878-11f1-9721-2397a0d22a99&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot; , &quot;value&quot;: [ {&quot;ctype&quot;: &quot;paragraph&quot;, &quot;id&quot;: &quot;SE-3780402f-1878-11f1-9721-ef96127f140d&quot;, &quot;nodes&quot;: [ {&quot;ctype&quot;: &quot;imageNode&quot;, &quot;id&quot;: &quot;SE-3780402d-1878-11f1-9721-33bd48698ca4&quot; }  ]} ] }}\"></script>\n                </div>                <div class=\"se-component se-image se-l-default\" id=\"SE-37804038-1878-11f1-9721-fbda5158a70b\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-37804038-1878-11f1-9721-fbda5158a70b&quot;,&quot;src&quot;:&quot;https://gi.esmplus.com/jungsem6/j9end2.jpg&quot;,&quot;originalWidth&quot;:&quot;&quot;,&quot;originalHeight&quot;:&quot;&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;0&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://gi.esmplus.com/jungsem6/j9end2.jpg\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-37804038-1878-11f1-9721-fbda5158a70b&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;fileSize&quot;: &quot;0&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-3780403a-1878-11f1-9721-83cd244c0291\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-3780403a-1878-11f1-9721-83cd244c0291&quot;,&quot;src&quot;:&quot;https://gi.esmplus.com/jungsem6/end1.png&quot;,&quot;originalWidth&quot;:&quot;&quot;,&quot;originalHeight&quot;:&quot;&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;0&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://gi.esmplus.com/jungsem6/end1.png\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-3780403a-1878-11f1-9721-83cd244c0291&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;fileSize&quot;: &quot;0&quot; }}\"></script>\n                </div>\n    </div>\n</div>\n",
+   "text": "본 제품을 구매하시면 원활한 배송을 위해 꼭 필요한 고객님의 개인정보를 (성함, 주소, 전화번호 등) 택배사 및 제 3업체에서 이용하는 것에 동의하시는 것으로 간주됩니다.\n개인정보는 배송 외의 용도로는 절대 사용되지 않으니 안심하시기 바랍니다. 안전하게 배송해 드리겠습니다.",
+   "editor_type": "SEONE",
+   "images": [
+    "https://gi.esmplus.com/jungsem6/intro1.png",
+    "https://gi.esmplus.com/jungsem6/intro3.png",
+    "https://gi.esmplus.com/jungsem6/j9intro2.jpg",
+    "https://haisai.ownerclan.com/lfsync/ownerclan/105/02/2226.jpg",
+    "https://gi.esmplus.com/jungsem6/j9end2.jpg",
+    "https://gi.esmplus.com/jungsem6/end1.png"
+   ]
+  },
+  "notice": {
+   "type": "WEAR",
+   "items": [
+    {
+     "label": "제품소재",
+     "value": "상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "색상",
+     "value": "상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "치수",
+     "value": "상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조자(사)",
+     "value": "상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조국",
+     "value": "해외|아시아|중국",
+     "is_see_description": false
+    },
+    {
+     "label": "세탁방법 및 취급시 주의사항",
+     "value": "상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조연월",
+     "value": "상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "품질보증기준",
+     "value": "상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "A/S 책임자와 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 2500원 (최초 배송비 무료인 경우 5000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": null,
+   "manufacturer": null,
+   "model_name": null,
+   "origin": {
+    "value": "해외|아시아|중국",
+    "source": "notice:제조국"
+   }
+  },
+  "store": {
+   "id": "101227470",
+   "uid": "2sWE0QSPfDG1fXxJXOd5z",
+   "name": "제이나인스타",
+   "slug": "jninestar",
+   "link": "https://smartstore.naver.com/jninestar",
+   "type": "smart_store",
+   "grade": "THIRD",
+   "sale_count": 394,
+   "merchant_id": "511160410",
+   "business": {
+    "legal_name": "제이나인",
+    "representative": "이창훈",
+    "type": "PRIVATE",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "5706906040",
+  "name": "남성골프우의 골프용 스포츠우비 여성골프 레인자켓",
+  "link": "https://smartstore.naver.com/jninestar/products/5706906040",
+  "query": "골프 레인코트",
+  "category": {
+   "id": "50002816",
+   "name": "레인코트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프필드용품",
+    "레인코트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001107",
+    "50002816"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "5706906040"
+   },
+   {
+    "label": "제조사",
+    "value": "상세설명참조"
+   },
+   {
+    "label": "브랜드",
+    "value": "상세설명참조"
+   },
+   {
+    "label": "모델명",
+    "value": "상세설명참조"
+   },
+   {
+    "label": "원산지",
+    "value": "해외|아시아|중국"
+   },
+   {
+    "label": "성별",
+    "value": "남성용"
+   },
+   {
+    "label": "총기장",
+    "value": "롱"
+   },
+   {
+    "label": "형태",
+    "value": "투피스형"
+   },
+   {
+    "label": "주요소재",
+    "value": "나일론, 폴리에스테르"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": null,
+   "manufacturer": null,
+   "model_name": null,
+   "origin": {
+    "value": "해외|아시아|중국",
+    "source": "specs:원산지"
+   }
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 4996,
+   "option_groups": [
+    {
+     "id": "5326444835",
+     "name": "색상ㅡ사이즈",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "56593529544",
+     "name": "형광 옐로우ㅡL",
+     "options": [
+      "형광 옐로우ㅡL"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-03-05"
+    },
+    {
+     "id": "56593529546",
+     "name": "형광 옐로우ㅡXL",
+     "options": [
+      "형광 옐로우ㅡXL"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-03-05"
+    },
+    {
+     "id": "56593529549",
+     "name": "형광 옐로우ㅡXXL",
+     "options": [
+      "형광 옐로우ㅡXXL"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-03-05"
+    },
+    {
+     "id": "56593529550",
+     "name": "형광 옐로우ㅡXXXL",
+     "options": [
+      "형광 옐로우ㅡXXXL"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-03-05"
+    },
+    {
+     "id": "56593529536",
+     "name": "블랙ㅡL",
+     "options": [
+      "블랙ㅡL"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 0,
+     "is_available": false,
+     "is_today_dispatch": null,
+     "registered_at": "2026-03-05"
+    },
+    {
+     "id": "56593529538",
+     "name": "블랙ㅡXL",
+     "options": [
+      "블랙ㅡXL"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 1,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-03-05"
+    },
+    {
+     "id": "56593529540",
+     "name": "블랙ㅡXXL",
+     "options": [
+      "블랙ㅡXXL"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 0,
+     "is_available": false,
+     "is_today_dispatch": null,
+     "registered_at": "2026-03-05"
+    },
+    {
+     "id": "56593529542",
+     "name": "블랙ㅡXXXL",
+     "options": [
+      "블랙ㅡXXXL"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-03-05"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "PAID",
+   "base_fee": 2500,
+   "is_free": false,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": false,
+   "company": "기타택배",
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 0.888,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 1,
+    "arrival_date_text": null,
+    "arrival_probability": 89,
+    "ship_date_text": null
+   }
+  },
+  "catalog": {
+   "id": null,
+   "nsin": null
+  },
+  "measures": {
+   "is_set": false,
+   "weights": [],
+   "dimensions": [],
+   "references": [
+    {
+     "quote": "치수: 상세설명 참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 2
+     },
+     "measure": "size",
+     "reason": "description_reference"
+    }
+   ],
+   "review": []
+  },
+  "read_at": "2026-11-25T12:05:10Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 59000,
+  "variants": [
+   {
+    "id": "56593529544",
+    "name": "형광 옐로우ㅡL",
+    "options": [
+     "형광 옐로우ㅡL"
+    ],
+    "extra_price": 0,
+    "price": 59000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "56593529546",
+    "name": "형광 옐로우ㅡXL",
+    "options": [
+     "형광 옐로우ㅡXL"
+    ],
+    "extra_price": 0,
+    "price": 59000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "56593529549",
+    "name": "형광 옐로우ㅡXXL",
+    "options": [
+     "형광 옐로우ㅡXXL"
+    ],
+    "extra_price": 0,
+    "price": 59000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "56593529550",
+    "name": "형광 옐로우ㅡXXXL",
+    "options": [
+     "형광 옐로우ㅡXXXL"
+    ],
+    "extra_price": 0,
+    "price": 59000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "56593529536",
+    "name": "블랙ㅡL",
+    "options": [
+     "블랙ㅡL"
+    ],
+    "extra_price": 0,
+    "price": 59000,
+    "price_in_name": null,
+    "stock_quantity": 0,
+    "is_available": false
+   },
+   {
+    "id": "56593529538",
+    "name": "블랙ㅡXL",
+    "options": [
+     "블랙ㅡXL"
+    ],
+    "extra_price": 0,
+    "price": 59000,
+    "price_in_name": null,
+    "stock_quantity": 1,
+    "is_available": true
+   },
+   {
+    "id": "56593529540",
+    "name": "블랙ㅡXXL",
+    "options": [
+     "블랙ㅡXXL"
+    ],
+    "extra_price": 0,
+    "price": 59000,
+    "price_in_name": null,
+    "stock_quantity": 0,
+    "is_available": false
+   },
+   {
+    "id": "56593529542",
+    "name": "블랙ㅡXXXL",
+    "options": [
+     "블랙ㅡXXXL"
+    ],
+    "extra_price": 0,
+    "price": 59000,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   }
+  ],
+  "available": 6,
+  "sold_out": 2,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": "56593529544",
+   "fields": {
+    "product_weight_g": {
+     "low": 200,
+     "central": 350,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 450,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_length_mm": {
+     "low": 240,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_width_mm": {
+     "low": 180,
+     "central": 220,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "56593529546",
+   "fields": {
+    "product_weight_g": {
+     "low": 200,
+     "central": 350,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 450,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_length_mm": {
+     "low": 240,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_width_mm": {
+     "low": 180,
+     "central": 220,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "56593529549",
+   "fields": {
+    "product_weight_g": {
+     "low": 200,
+     "central": 350,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 450,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_length_mm": {
+     "low": 240,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_width_mm": {
+     "low": 180,
+     "central": 220,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "56593529550",
+   "fields": {
+    "product_weight_g": {
+     "low": 200,
+     "central": 350,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 450,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_length_mm": {
+     "low": 240,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_width_mm": {
+     "low": 180,
+     "central": 220,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "56593529536",
+   "fields": {
+    "product_weight_g": {
+     "low": 200,
+     "central": 350,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 450,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_length_mm": {
+     "low": 240,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_width_mm": {
+     "low": 180,
+     "central": 220,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "56593529538",
+   "fields": {
+    "product_weight_g": {
+     "low": 200,
+     "central": 350,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 450,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_length_mm": {
+     "low": 240,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_width_mm": {
+     "low": 180,
+     "central": 220,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "56593529540",
+   "fields": {
+    "product_weight_g": {
+     "low": 200,
+     "central": 350,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 450,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_length_mm": {
+     "low": 240,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_width_mm": {
+     "low": 180,
+     "central": 220,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "56593529542",
+   "fields": {
+    "product_weight_g": {
+     "low": 200,
+     "central": 350,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 450,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_length_mm": {
+     "low": 240,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_width_mm": {
+     "low": 180,
+     "central": 220,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "5706906040",
+   "name": "남성골프우의 골프용 스포츠우비 여성골프 레인자켓",
+   "link": "https://smartstore.naver.com/jninestar/products/5706906040"
+  },
+  "summary": {
+   "count": 5,
+   "average_score": 4.4,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 1,
+    "4": 1,
+    "5": 3
+   },
+   "text_count": 5,
+   "photo_count": 0,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": null,
+   "evaluations": null,
+   "representative_reviews": [
+    {
+     "id": "4256429574",
+     "score": 5,
+     "text": "방수 잘됩니다~ㅎㅎ",
+     "image": null
+    },
+    {
+     "id": "3396680409",
+     "score": 4,
+     "text": "싸이즈가 조금 애매하네요.\n평소 95호 착용하는 98정도 되는것 같네요.\n제품은 좋은듯 합니다.\n배송은 빠릅니다.",
+     "image": null
+    },
+    {
+     "id": "3406801138",
+     "score": 5,
+     "text": "빠른배송 착한가격 좋아요",
+     "image": null
+    },
+    {
+     "id": "3261838644",
+     "score": 5,
+     "text": "정말 비오는 날도 이제 걱정이 없을둣 합니다",
+     "image": null
+    }
+   ]
+  },
+  "mode": "small_source",
+  "count": 5,
+  "scanned": 5,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 5,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "4256429574",
+    "score": 5,
+    "text": "방수 잘됩니다~ㅎㅎ",
+    "created_at": "2023-05-20T10:15:17Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "색상ㅡ사이즈: 블랙ㅡL",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "14****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "5706906040",
+     "origin_product_id": "5681557166",
+     "name": "남성골프우의 골프용 스포츠우비 여성골프 레인자켓"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "3406801138",
+    "score": 5,
+    "text": "빠른배송 착한가격 좋아요",
+    "created_at": "2022-04-09T05:13:15Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "색상ㅡ사이즈: 형광 옐로우ㅡXXXL",
+    "is_repurchase": false,
+    "is_free_trial": null,
+    "event_title": null,
+    "writer": {
+     "masked_id": "dmsd******",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "5706906040",
+     "origin_product_id": "5681557166",
+     "name": "남성골프우의 골프용 상의 하의 세트 스포츠우비 여성골프우비 캐디 레인자켓 슈트용품"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "3396680409",
+    "score": 4,
+    "text": "싸이즈가 조금 애매하네요.\n평소 95호 착용하는 98정도 되는것 같네요.\n제품은 좋은듯 합니다.\n배송은 빠릅니다.",
+    "created_at": "2022-03-26T02:16:16Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "색상ㅡ사이즈: 형광 옐로우ㅡL",
+    "is_repurchase": false,
+    "is_free_trial": null,
+    "event_title": null,
+    "writer": {
+     "masked_id": "tjdw******",
+     "profile_image": "https://phinf.pstatic.net/contact/20230110_230/1673334635961Cx5dq_JPEG/image.jpg"
+    },
+    "attachments": [],
+    "product": {
+     "id": "5706906040",
+     "origin_product_id": "5681557166",
+     "name": "남성골프우의 골프용 상의 하의 세트 스포츠우비 여성골프우비 캐디 레인자켓 슈트용품"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "3261838644",
+    "score": 5,
+    "text": "정말 비오는 날도 이제 걱정이 없을둣 합니다",
+    "created_at": "2021-09-14T04:47:21Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "색상ㅡ사이즈: 형광 옐로우ㅡXL",
+    "is_repurchase": false,
+    "is_free_trial": null,
+    "event_title": null,
+    "writer": {
+     "masked_id": "jyju*****",
+     "profile_image": "https://phinf.pstatic.net/contact/20170903_77/1504401919877MmrR5_JPEG/image.jpg"
+    },
+    "attachments": [],
+    "product": {
+     "id": "5706906040",
+     "origin_product_id": "5681557166",
+     "name": "남성골프우의 골프용 상의 하의 세트 스포츠우비 여성골프우비 캐디 레인자켓 슈트용품"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "3248830183",
+    "score": 3,
+    "text": "더워서 땀차요\n냄새도 나구요",
+    "created_at": "2021-08-26T16:25:42Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "색상ㅡ사이즈: 블랙ㅡL",
+    "is_repurchase": false,
+    "is_free_trial": null,
+    "event_title": null,
+    "writer": {
+     "masked_id": "nich***",
+     "profile_image": "https://phinf.pstatic.net/contact/20200922_38/1600736277963ExcQ3_JPEG/KakaoTalk_20190626_132034753.jpg"
+    },
+    "attachments": [],
+    "product": {
+     "id": "5706906040",
+     "origin_product_id": "5681557166",
+     "name": "남성골프우의 골프용 상의 하의 세트 스포츠우비 여성골프우비 캐디 레인자켓 슈트용품"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 1,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20220319_83/1647621214126yRE7U_JPEG/20220319013222_resize.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20220319_83/1647621214126yRE7U_JPEG/20220319013222_resize.jpg",
+    "source_sha256": "65ef049869f158bc878c88ef8f5a85c82856b96fff36e18c63374eceb573fd85",
+    "source_bytes": 27117,
+    "source_format": "JPEG",
+    "source_width": 600,
+    "source_height": 600,
+    "first_frame_of": null,
+    "file": "images/5706906040/fairwardgolf-5706906040-001-f0b081f83e83615d.webp",
+    "sha256": "f0b081f83e83615d695f180f444e407ab6e28876ad52eaa4931352b1bdc2b36f",
+    "bytes": 18020,
+    "width": 600,
+    "height": 600,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 1
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [
+   {
+    "review_id": "3396680409",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20230110_230/1673334635961Cx5dq_JPEG/image.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20230110_230/1673334635961Cx5dq_JPEG/image.jpg",
+    "source_sha256": "19df442f04473cbc629c0cfc8ab5b040f767dc182c69bb89ab7913f64929873b",
+    "source_bytes": 1934701,
+    "source_format": "JPEG",
+    "source_width": 1920,
+    "source_height": 1920,
+    "first_frame_of": null,
+    "file": "images/5706906040/fairwardgolf-review-avatar-3f1acfcca3741c3f.webp",
+    "sha256": "3f1acfcca3741c3fb90f1a5673baa5832d0e714380be514fbee7091394a6b2e2",
+    "bytes": 190990,
+    "width": 1024,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "3261838644",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20170903_77/1504401919877MmrR5_JPEG/image.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20170903_77/1504401919877MmrR5_JPEG/image.jpg",
+    "source_sha256": "1fd514bf7048c5634c9884b00ce7104c4da708377cc6f0954462c598b1b8d880",
+    "source_bytes": 4436150,
+    "source_format": "JPEG",
+    "source_width": 3024,
+    "source_height": 4032,
+    "first_frame_of": null,
+    "file": "images/5706906040/fairwardgolf-review-avatar-6379ca982e02ffb1.webp",
+    "sha256": "6379ca982e02ffb189f58dd74a8a91d028fd633cafb0e2b56ca6bcd0228100b1",
+    "bytes": 178438,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "3248830183",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20200922_38/1600736277963ExcQ3_JPEG/KakaoTalk_20190626_132034753.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20200922_38/1600736277963ExcQ3_JPEG/KakaoTalk_20190626_132034753.jpg",
+    "source_sha256": "7d2779ec92b942c37a8871ee24ecc387d2d44ec1f116d1aeb91ed840535da61b",
+    "source_bytes": 99240,
+    "source_format": "JPEG",
+    "source_width": 722,
+    "source_height": 961,
+    "first_frame_of": null,
+    "file": "images/5706906040/fairwardgolf-review-avatar-2e3201c6d80ce661.webp",
+    "sha256": "2e3201c6d80ce661c8abcb1c1fd4315495ac5e71c2e9973d7dd5956090058b08",
+    "bytes": 65816,
+    "width": 722,
+    "height": 961,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

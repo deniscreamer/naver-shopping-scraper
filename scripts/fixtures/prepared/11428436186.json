@@ -1,0 +1,481 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101553001:11428436186",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 8); 0 trimmed"
+  },
+  {
+   "code": "paid_addons_left_out",
+   "detail": "1 paid add-ons"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/basichills/products/11428436186",
+  "channel_no": "101553001",
+  "product_id": "11428436186",
+  "category_id": "50002816"
+ },
+ "product": {
+  "title_ko": "남성 골프 레인 자켓 우비 빅사이즈 방수 방풍 바람막이 웨이스트백 세트 라이트베이지, XL",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "남성 골프 레인 자켓 우비 빅사이즈 방수 방풍 바람막이 웨이스트백 세트 라이트베이지, XL"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 레인코트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "11428436186",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 89000,
+    "price_usd": "89.00",
+    "sku": "FW-4eeadce2f78afb92efa1fda1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 700,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 300,
+      "central": 450,
+      "high": 900,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 240,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 180,
+      "central": 220,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 30,
+      "central": 50,
+      "high": 80,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 89000,
+   "original_krw": 129000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "모델명",
+    "value_ko": "남성 골프 레인 자켓 우비 방수 방풍 바람막이 웨이스트백 세트"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "총기장",
+    "value_ko": "롱"
+   },
+   {
+    "label_ko": "형태",
+    "value_ko": "코트형"
+   },
+   {
+    "label_ko": "주요소재",
+    "value_ko": "폴리에스테르"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 10
+  },
+  "reviews": [
+   {
+    "id": "4790896589",
+    "score": 5,
+    "text_ko": "비오는날 한번입고 낚시해봤는데 만족합니다",
+    "created_at": "2025-08-26T02:16:08Z",
+    "writer": "akir*****",
+    "photos": [
+     "collected/50002788-fixtures/images/11428436186/fairwardgolf-review-image-1d339aa808a53ae8.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/11428436186/fairwardgolf-review-avatar-52c5250117da85b5.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 39
+   },
+   {
+    "id": "4753813614",
+    "score": 5,
+    "text_ko": "비가오면 테스트 해보고 다시 리뷰 올려드릴께요 만듬새도 좋고 특히 이쁩니다",
+    "created_at": "2025-06-30T01:47:07Z",
+    "writer": "akir*****",
+    "photos": [
+     "collected/50002788-fixtures/images/11428436186/fairwardgolf-review-image-0f38e48b78170ba1.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/11428436186/fairwardgolf-review-avatar-52c5250117da85b5.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 43,
+    "text_original_ko": "비가오면 테스트 해보고 다시 리뷰 올려드릴께요 만듬새도 좋고 특히 이쁩니다 ^^"
+   },
+   {
+    "id": "4750006777",
+    "score": 5,
+    "text_ko": "남자들도 긴 비옷이 필요했는데 색도 핏도 마음에 들어요. 남편이 잘 입을 것 같아요.",
+    "created_at": "2025-06-24T07:05:45Z",
+    "writer": "pc****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 48
+   },
+   {
+    "id": "4749494148",
+    "score": 5,
+    "text_ko": "색상. 디자인 좋습니다",
+    "created_at": "2025-06-23T10:07:12Z",
+    "writer": "to****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/11428436186/fairwardgolf-review-avatar-e6ab09285a517e23.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 42
+   },
+   {
+    "id": "4740815950",
+    "score": 5,
+    "text_ko": "조금 무거운거 빼고 질은 좋은것 같아요",
+    "created_at": "2025-06-10T23:40:34Z",
+    "writer": "y126****",
+    "photos": [
+     "collected/50002788-fixtures/images/11428436186/fairwardgolf-review-image-cd7d3ec9d30c84ce.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 39
+   },
+   {
+    "id": "4736365557",
+    "score": 5,
+    "text_ko": "질감, 사이즈, 착용시 편의성 좋습니다. 일반 우의에 비할바는 아니고요. 그만큼 가격이 일반 우의에 비해 높으니 확실히 차별화된 제품을 원하시는 분들에게 맞을 것 같아요.",
+    "created_at": "2025-06-04T03:38:12Z",
+    "writer": "dise***",
+    "photos": [
+     "collected/50002788-fixtures/images/11428436186/fairwardgolf-review-image-0cfabe439d2afb47.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/11428436186/fairwardgolf-review-avatar-75daee84ab3efc76.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 72
+   },
+   {
+    "id": "4726890563",
+    "score": 5,
+    "text_ko": "우의 검색하다가 발견했는데 가격이 비싸지만\n비올때 입으면 좋을것 같네요.\n우의넣는 가방이 있는데 끈이 좀 비실용적이네요.\n비올때 잘 입을게요",
+    "created_at": "2025-05-20T09:55:59Z",
+    "writer": "to****",
+    "photos": [
+     "collected/50002788-fixtures/images/11428436186/fairwardgolf-review-image-7c66376ecc5f8bec.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/11428436186/fairwardgolf-review-avatar-e6ab09285a517e23.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 69,
+    "text_original_ko": "우의 검색하다가 발견했는데 가격이 비싸지만\n비올때 입으면 좋을것 같네요. \n우의넣는 가방이 있는데 끈이 좀 비실용적이네요.\n\n비올때 잘 입을게요"
+   },
+   {
+    "id": "4724857783",
+    "score": 5,
+    "text_ko": "남편에게 선물했어요. 남자들도 이런 긴 우의로 엉덩이 젖을 걱정없이 편하게 우중 라운딩 하겠네요.",
+    "created_at": "2025-05-17T04:24:08Z",
+    "writer": "pc****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 50,
+    "text_original_ko": "남편에게 선물했어요. 남자들도 이런 긴 우의로  엉덩이 젖을 걱정없이 편하게 우중 라운딩 하겠네요."
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/11428436186/fairwardgolf-11428436186-001-0355e94446e3684e.webp",
+    "sha256": "0355e94446e3684e6da49db3603441e574b7e1a0e59792a546fe9eeb2d324af1",
+    "width": 1194,
+    "height": 1317
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/11428436186/fairwardgolf-11428436186-002-c4aaffd95b342cb1.webp",
+    "sha256": "c4aaffd95b342cb1476892cabb9de56fc7138f1a02eb4aae6dc408d5c1f7583c",
+    "width": 1080,
+    "height": 1080
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/11428436186/fairwardgolf-11428436186-003-0c818ff1d0f561df.webp",
+    "sha256": "0c818ff1d0f561df492e4e151b8738e7535a402c421925b3fc76d3bdf19ca73a",
+    "width": 1080,
+    "height": 1080
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/11428436186/fairwardgolf-11428436186-004-c0bcaf64333a141b.webp",
+    "sha256": "c0bcaf64333a141bc35d251225c3e2fd23d22258be0f9cadf3bd0c0bb7b08be7",
+    "width": 1080,
+    "height": 1080
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/11428436186/fairwardgolf-11428436186-005-f041069b0ba99e2b.webp",
+    "sha256": "f041069b0ba99e2bead420d8c8d8988086ba7aa17bdd1b67356d34d5ec901140",
+    "width": 1080,
+    "height": 1080
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/11428436186/fairwardgolf-11428436186-006-7289e0633259aacb.webp",
+    "sha256": "7289e0633259aacb7fb830570dd1016b14561602d63062a28c8cc78d94e8743e",
+    "width": 1080,
+    "height": 1080
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": null,
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": "12:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "<추가상품>\n특대형 2L 골프 얼음주머니 넓은입구 7.5cm 초대용량 찜질팩",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260413_23/1776049250663ufArB_PNG/7270e527-6207-4a87-8a1b-0d12b7d11aac.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260413_276/17760492671031aYnB_JPEG/KakaoTalk_20250729_172106648_03.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260413_108/1776049351321JtnVU_PNG/a807b99c-f74b-4d7d-a679-361645946e71_(1).png?type=w848",
+   "https://shop-phinf.pstatic.net/20250204_147/1738645977314O8aHf_PNG/%EA%B3%A8%ED%94%84%EC%9A%B0%EB%B9%84_(2).png?type=w848"
+  ],
+  "description_dropped": [],
+  "composition_ko": [
+   {
+    "label_ko": "주요소재",
+    "value_ko": "폴리에스테르",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_tops",
+   "option": null,
+   "values": [],
+   "merged": {},
+   "brand_row": null,
+   "chart": null,
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:f1a765d3b3e9f0e3",
+   "kind": "title",
+   "ko": "남성 골프 레인 자켓 우비 빅사이즈 방수 방풍 바람막이 웨이스트백 세트 라이트베이지, XL"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:bf9e602c8b3a5d36",
+   "kind": "spec_value",
+   "ko": "남성 골프 레인 자켓 우비 방수 방풍 바람막이 웨이스트백 세트"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:26336d857e5ea726",
+   "kind": "spec_label",
+   "ko": "총기장"
+  },
+  {
+   "id": "spec_value:60229b8f2a957b58",
+   "kind": "spec_value",
+   "ko": "롱"
+  },
+  {
+   "id": "spec_label:e1b56dd677111a7f",
+   "kind": "spec_label",
+   "ko": "형태"
+  },
+  {
+   "id": "spec_value:cad1728117ad01f4",
+   "kind": "spec_value",
+   "ko": "코트형"
+  },
+  {
+   "id": "spec_label:4ca8beff763d4b7f",
+   "kind": "spec_label",
+   "ko": "주요소재"
+  },
+  {
+   "id": "spec_value:6e2d175cb134fc18",
+   "kind": "spec_value",
+   "ko": "폴리에스테르"
+  },
+  {
+   "id": "review:641d255b9329a8e1",
+   "kind": "review",
+   "ko": "비오는날 한번입고 낚시해봤는데 만족합니다"
+  },
+  {
+   "id": "review:41bb652cb566314e",
+   "kind": "review",
+   "ko": "비가오면 테스트 해보고 다시 리뷰 올려드릴께요 만듬새도 좋고 특히 이쁩니다"
+  },
+  {
+   "id": "review:f64c86765dec2b8d",
+   "kind": "review",
+   "ko": "남자들도 긴 비옷이 필요했는데 색도 핏도 마음에 들어요. 남편이 잘 입을 것 같아요."
+  },
+  {
+   "id": "review:0b971db26eda7e98",
+   "kind": "review",
+   "ko": "색상. 디자인 좋습니다"
+  },
+  {
+   "id": "review:074b53362235986d",
+   "kind": "review",
+   "ko": "조금 무거운거 빼고 질은 좋은것 같아요"
+  },
+  {
+   "id": "review:5205722f7bc7fd7b",
+   "kind": "review",
+   "ko": "질감, 사이즈, 착용시 편의성 좋습니다. 일반 우의에 비할바는 아니고요. 그만큼 가격이 일반 우의에 비해 높으니 확실히 차별화된 제품을 원하시는 분들에게 맞을 것 같아요."
+  },
+  {
+   "id": "review:d0c78eb4dd6689c2",
+   "kind": "review",
+   "ko": "우의 검색하다가 발견했는데 가격이 비싸지만\n비올때 입으면 좋을것 같네요.\n우의넣는 가방이 있는데 끈이 좀 비실용적이네요.\n비올때 잘 입을게요"
+  },
+  {
+   "id": "review:49cbc8928d47a52d",
+   "kind": "review",
+   "ko": "남편에게 선물했어요. 남자들도 이런 긴 우의로 엉덩이 젖을 걱정없이 편하게 우중 라운딩 하겠네요."
+  }
+ ]
+}

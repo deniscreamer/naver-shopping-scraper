@@ -1,0 +1,1288 @@
+{
+ "key": "fairwardgolf:naver:101124456:13415919469",
+ "listing": {
+  "product_id": "13415919469",
+  "nv_mid": "90960429805",
+  "link": "https://smartstore.naver.com/ltolgolf/products/13415919469",
+  "name": "남성 골프우비 골프비옷 레인슈트 레인코트",
+  "store": {
+   "name": "엘투엘골프",
+   "slug": "ltolgolf",
+   "link": "https://smartstore.naver.com/ltolgolf",
+   "channel_no": "101124456",
+   "grade": "BIG_POWER",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 39500,
+   "discounted_price": 39500,
+   "discount_ratio": 0,
+   "currency": "KRW"
+  },
+  "category_id": "50002816",
+  "reviews": {
+   "count": 18,
+   "average_score": 4.78
+  },
+  "stock_quantity": 9900,
+  "image": "https://shopping-phinf.pstatic.net/main_9096042/90960429805.1.jpg",
+  "is_ad": false,
+  "query": "골프 레인코트",
+  "batch": 2,
+  "seen_at": "2026-11-25T08:24:01+00:00",
+  "key": "fairwardgolf:naver:101124456:13415919469"
+ },
+ "details": {
+  "id": "13415919469",
+  "origin_product_id": "13356971003",
+  "name": "남성 골프우비 골프비옷 레인슈트 레인코트",
+  "link": "https://smartstore.naver.com/ltolgolf/products/13415919469",
+  "catalog_id": "90960429805",
+  "catalog_link": "https://search.shopping.naver.com/catalog/90960429805",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 39500,
+   "discounted_price": 39500,
+   "discount_ratio": 0,
+   "seller_discount": 0,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 395,
+    "text_review": 100,
+    "photo_video_review": 100,
+    "after_use_text_review": 0,
+    "after_use_photo_video_review": 0,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 9900,
+  "has_options": true,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20260716_43/1784180575158vJirW_JPEG/69365540921123877_1710882440.jpeg",
+   "https://shop-phinf.pstatic.net/20260417_271/1776416369286OG0KG_JPEG/123747243727506176_1255302627.jpg",
+   "https://shop-phinf.pstatic.net/20260417_92/17764163761980Vg1T_JPEG/244355333461052_1869663411.jpg",
+   "https://shop-phinf.pstatic.net/20260417_230/1776416376959fvuOd_JPEG/244356094416669_1211187138.jpg",
+   "https://shop-phinf.pstatic.net/20260417_197/1776416377267ts79m_JPEG/244356400537274_2092640930.jpg"
+  ],
+  "category": {
+   "id": "50002816",
+   "name": "레인코트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프필드용품",
+    "레인코트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001107",
+    "50002816"
+   ]
+  },
+  "brand": "엘투엘골프",
+  "brand_id": null,
+  "manufacturer": "엘투엘골프",
+  "model_name": null,
+  "tags": [
+   "골프우비",
+   "골프비옷"
+  ],
+  "page_title": null,
+  "reviews": {
+   "count": 18,
+   "average_score": 4.78,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 4,
+    "5": 14
+   },
+   "text_count": 10,
+   "photo_count": 8,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": {
+    "count": 17,
+    "average_score": 4.76
+   },
+   "evaluations": null,
+   "representative_reviews": [
+    {
+     "id": "5104965434",
+     "score": 5,
+     "text": "원래 팔이 좀 긴편입니다\n\n손목 시보레 부분은 약간 타이트 하고\n브랜드 우의 처럼 팔꿈치 부분이 따로 분리가 되면\n더 좋을꺼 같습니다\n안감은 없는 타입이고. 길이감은 괜찮습니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261112_245/1794479000596RGpgi_JPEG/IMG_8148.jpeg"
+    },
+    {
+     "id": "5103592182",
+     "score": 5,
+     "text": "아주 탄탄하고 비가 올 때 골프를 잘 칠 수 있을 것 같습니다.",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261111_143/1794350570619VlQd9_JPEG/1000025487.jpg"
+    },
+    {
+     "id": "5022955430",
+     "score": 5,
+     "text": "키 172cm 몸무게 74kg 남자 사이즈 잘 맞아요.\n길이도 넉넉해서 바지 안입어도 될거 같아 좋고 앞여밈이 이중으로 되어있어 방수도 기대해 봅니다.\n당장 내일 필요했는데 당일배송 너무 좋아요!!",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260716_140/1784204008045PoWsV_JPEG/13990.jpg"
+    },
+    {
+     "id": "5047824462",
+     "score": 5,
+     "text": "몇년전에 사서 골프때마다 잘입어요  비올때 추울때 요긴하게 잘 입고 스윙시 편해서 더욱 돟아요  친구가 하나 주문해달래서 또 주문했어요 잘 입겠습니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260821_286/1787319378517ETJ0A_JPEG/31651.jpg"
+    },
+    {
+     "id": "5056803658",
+     "score": 5,
+     "text": "가볍고 편합니다  코트타입이라 착용하기쉽고 디자인도 이뻐요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260903_257/17884287000816MeWx_JPEG/22692.jpg"
+    },
+    {
+     "id": "5025863163",
+     "score": 5,
+     "text": "아직 입어보기 전이지만 골프칠때 입으라고 구매요. 맘에 들었으면 좋겠네요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260721_68/178462061819206KvO_JPEG/20260721_165535.jpg"
+    },
+    {
+     "id": "5021023918",
+     "score": 5,
+     "text": "키가큰데길이감도딱좋네요~잘입을게요^^",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260714_199/1784006901849kfgvI_JPEG/1000041654.jpg"
+    },
+    {
+     "id": "5016004521",
+     "score": 5,
+     "text": "사이즈가 딱 맞습니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260707_239/1783413586599mHnoS_JPEG/IMG_1891.jpeg"
+    },
+    {
+     "id": "5082663484",
+     "score": 4,
+     "text": "배송도 빠르고 제품도 좋아요",
+     "image": null
+    },
+    {
+     "id": "5070364937",
+     "score": 5,
+     "text": "괜찮네요 싸게 잘삿어요 잘쓸께유",
+     "image": null
+    },
+    {
+     "id": "5063739770",
+     "score": 5,
+     "text": "배송빠르고 옷도 정사이즈에요",
+     "image": null
+    },
+    {
+     "id": "5044415993",
+     "score": 5,
+     "text": "품질이 좋네요. 만족합니다.",
+     "image": null
+    }
+   ]
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "TODAY",
+   "is_today_delivery": null,
+   "company": "한진택배",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": true,
+  "is_today_delivery": true,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": "<div class=\"se-viewer se-theme-default\" lang=\"ko-KR\">\n    <!-- SE_DOC_HEADER_START -->\n    <!--@CONTENTS_HEADER-->\n    <!-- SE_DOC_HEADER_END -->\n    <div class=\"se-main-container\">\n                <div class=\"se-component se-quotation se-l-default\" id=\"SE-1a1e4487-fde3-4e3a-b0a9-b493deed1164\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-quotation se-l-default\">\n                            <blockquote class=\"se-quotation-container\">\n                                <div class=\"se-module se-module-text se-quote\"><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align- \" style=\"\" id=\"SE-73cd38e6-cf73-48b0-bea7-d7c8d9032d09\"><span style=\"\" class=\"se-fs-fs28 se-ff-   \" id=\"SE-cc01f4a5-0b41-4f99-9514-89faeab0660b\"><b>같은디자인 </b></span></p>\n<!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align- \" style=\"\" id=\"SE-efd8e35b-30ad-4c95-a526-148ac945c485\"><span style=\"\" class=\"se-fs-fs28 se-ff-   \" id=\"SE-2c291adb-b6af-43fe-bcb7-bd2987d140ba\"><b>여성골프우비</b></span></p>\n<!-- } SE-TEXT --></div>\n                            </blockquote>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"se-component se-material se-l-material_basic\" id=\"SE-a7d37c34-8e73-4648-bf6b-7d2eac336f23\">\n                    <div class=\"se-component-content\">\n                      <div class=\"se-section se-section-material se-section-align-center se-l-material_basic\">                        <a href=\"https://smartstore.naver.com/main/products/8731658115\" target=\"_blank\" class=\"se-module se-module-material se-material-shopping __se_link\" data-linktype=\"material\" data-linkdata=\"{&quot;id&quot; : &quot;SE-a7d37c34-8e73-4648-bf6b-7d2eac336f23&quot;, &quot;type&quot; : &quot;shopping&quot;, &quot;title&quot; : &quot;골프비옷 여성골프우비 판초 캐디우비 홀인원딥카키 L&quot;, &quot;link&quot; : &quot;https://smartstore.naver.com/main/products/8731658115&quot;, &quot;dataId&quot; : &quot;86276158438&quot;, &quot;thumbnail&quot; : &quot;https://shopping-phinf.pstatic.net/main_8627615/86276158438.9.jpg&quot;}\">\n                          <div class=\"se-material-background-container\">\n                            <div class=\"se-material-background-blur\" style=\"background-image: url('https://shopping-phinf.pstatic.net/main_8627615/86276158438.9.jpg');\"></div>\n                          </div>\n                          <div class=\"se-material-content\">\n                              <div class=\"se-material-poster\">\n                                <div class=\"se-material-poster-inner\">\n                                      <img class=\"se-material-poster-resource\" src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shopping-phinf.pstatic.net/main_8627615/86276158438.9.jpg\"  alt=\"\">\n                                 </div>\n                              </div>\n                              <div class=\"se-material-text\">\n                                <div class=\"se-material-title\">골프비옷 여성골프우비 판초 캐디우비 홀인원딥카키 L</div>\n                                  <div class=\"se-material-store\">\n                                    <span class=\"se-material-store-text\">엘투엘골프</span>\n                                    <span class=\"se-material-store-icon\">\n                                      <em class=\"se-material-npay\">\n                                        <span class=\"se-blind\">네이버페이</span>\n                                      </em>\n                                    </span>\n                                  </div>\n                                  <div class=\"se-material-price\">\n                                    <span class=\"se-material-price-text\">39,500</span>\n                                  </div>\n                                <div>\n                                  <!--@MATERIAL_MORE|SE-a7d37c34-8e73-4648-bf6b-7d2eac336f23-->\n                                </div>\n                              </div>\n                          </div>\n                          <div class=\"se-material-frame\"></div>\n                        </a>\n</div>\n                    </div>                  <script type=\"text/data\" class=\"__se_module_data\" data-module=\"{&quot;type&quot;:&quot;v2_material_shopping&quot;, &quot;id&quot; :&quot;SE-a7d37c34-8e73-4648-bf6b-7d2eac336f23&quot; , &quot;data&quot; : { &quot;layout&quot; : &quot;material_basic&quot;, &quot;materialId&quot; : &quot;86276158438&quot;, &quot;subId&quot; : &quot;&quot;, &quot;shoppingInfo&quot; : {&quot;mallName&quot;:&quot;엘투엘골프&quot;,&quot;nPayPcType&quot;:&quot;2&quot;,&quot;price&quot;:&quot;39,500&quot;,&quot;isMatchSale&quot;:false,&quot;nPayMblType&quot;:&quot;2&quot;} }}\" data-module-v2=\"{&quot;type&quot;:&quot;v2_material_shopping&quot;, &quot;id&quot; :&quot;SE-a7d37c34-8e73-4648-bf6b-7d2eac336f23&quot; , &quot;data&quot; : { &quot;layout&quot; : &quot;material_basic&quot;, &quot;materialId&quot; : &quot;86276158438&quot;, &quot;subId&quot; : &quot;&quot;, &quot;shoppingInfo&quot; : {&quot;mallName&quot;:&quot;엘투엘골프&quot;,&quot;nPayPcType&quot;:&quot;2&quot;,&quot;price&quot;:&quot;39,500&quot;,&quot;isMatchSale&quot;:false,&quot;nPayMblType&quot;:&quot;2&quot;} }}\"></script>\n                </div>                <div class=\"se-component se-text se-l-default\" id=\"SE-1fec4dd6-869d-46e4-8736-6103e68e8981\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"\" id=\"SE-ccf0a88b-dfa7-4a0b-977a-a184557b3a58\"><span style=\"\" class=\"se-fs- se-ff-   \" id=\"SE-70287eda-ae91-4052-8bac-cbfe2700c32f\">​</span></p>\n<!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"\" id=\"SE-561c67ad-cd96-4d84-871c-9a4236977988\"><span style=\"\" class=\"se-fs- se-ff-   \" id=\"SE-81bb7830-dc5d-4d2b-9f56-328e1a2edb27\">​</span></p>\n<!-- } SE-TEXT --><!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align-center \" style=\"\" id=\"SE-1ad62e17-e758-4c32-8679-95cd846a978d\"><span style=\"\" class=\"se-fs- se-ff-   \" id=\"SE-b1d4bf15-ecc3-4a8d-93ed-ef1c4b9418eb\">​</span></p>\n<!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-1fec4dd6-869d-46e4-8736-6103e68e8981&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>                <div class=\"se-component se-image se-l-default\" id=\"SE-16cc1517-0bbb-4106-a5db-f873bec296f1\">\n                    <div class=\"se-component-content se-component-content-extend\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-16cc1517-0bbb-4106-a5db-f873bec296f1&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20260716_98/1784180702344KhSQ6_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_001.jpeg&quot;,&quot;originalWidth&quot;:&quot;860&quot;,&quot;originalHeight&quot;:&quot;6879&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;2926704&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20260716_98/1784180702344KhSQ6_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_001.jpeg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-16cc1517-0bbb-4106-a5db-f873bec296f1&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;2926704&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-3936a474-6647-498a-aba9-473bc9110288\">\n                    <div class=\"se-component-content se-component-content-extend\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-3936a474-6647-498a-aba9-473bc9110288&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20260716_164/1784180725988SOhlv_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_002.jpeg&quot;,&quot;originalWidth&quot;:&quot;860&quot;,&quot;originalHeight&quot;:&quot;6869&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;2654648&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20260716_164/1784180725988SOhlv_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_002.jpeg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-3936a474-6647-498a-aba9-473bc9110288&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;2654648&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-18e06c67-23f6-45d1-b9b5-44547097aa8a\">\n                    <div class=\"se-component-content se-component-content-extend\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-18e06c67-23f6-45d1-b9b5-44547097aa8a&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20260716_4/1784180742156qIpev_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_003.jpeg&quot;,&quot;originalWidth&quot;:&quot;860&quot;,&quot;originalHeight&quot;:&quot;5626&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;2486686&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20260716_4/1784180742156qIpev_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_003.jpeg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-18e06c67-23f6-45d1-b9b5-44547097aa8a&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;2486686&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-fd5b5328-4daa-4c5f-9691-a1fce32dd8d0\">\n                    <div class=\"se-component-content se-component-content-extend\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-fd5b5328-4daa-4c5f-9691-a1fce32dd8d0&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20260716_129/1784180758878gLASx_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_004.jpeg&quot;,&quot;originalWidth&quot;:&quot;860&quot;,&quot;originalHeight&quot;:&quot;4850&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;2366583&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20260716_129/1784180758878gLASx_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_004.jpeg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-fd5b5328-4daa-4c5f-9691-a1fce32dd8d0&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;2366583&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-8d4b67ce-bd32-4950-a6bc-1099d7940a53\">\n                    <div class=\"se-component-content se-component-content-extend\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-8d4b67ce-bd32-4950-a6bc-1099d7940a53&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20260417_4/177641648782949bbL_JPEG/%EB%82%A8%EC%9E%90%EC%82%AC%EC%9D%B4%EC%A6%88_01.jpg&quot;,&quot;originalWidth&quot;:&quot;860&quot;,&quot;originalHeight&quot;:&quot;2483&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;415158&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20260417_4/177641648782949bbL_JPEG/%EB%82%A8%EC%9E%90%EC%82%AC%EC%9D%B4%EC%A6%88_01.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-8d4b67ce-bd32-4950-a6bc-1099d7940a53&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;415158&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-bd57af5b-39ae-49c3-b5a1-43d8493f46ea\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align- \" style=\"\" id=\"SE-b531a487-3a40-41a3-b9f6-16c5b3794eb5\"><span style=\"\" class=\"se-fs- se-ff-   \" id=\"SE-57eac46f-1a5f-45d2-a4a4-ccdaefc57b9e\">​</span></p>\n<!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-bd57af5b-39ae-49c3-b5a1-43d8493f46ea&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>    </div>\n</div>\n",
+   "text": "같은디자인\n여성골프우비",
+   "editor_type": "SEONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20260716_98/1784180702344KhSQ6_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_001.jpeg?type=w848",
+    "https://shop-phinf.pstatic.net/20260716_164/1784180725988SOhlv_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_002.jpeg?type=w848",
+    "https://shop-phinf.pstatic.net/20260716_4/1784180742156qIpev_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_003.jpeg?type=w848",
+    "https://shop-phinf.pstatic.net/20260716_129/1784180758878gLASx_JPEG/KakaoTalk_Photo_2026-07-16-12-26-05_004.jpeg?type=w848",
+    "https://shop-phinf.pstatic.net/20260417_4/177641648782949bbL_JPEG/%EB%82%A8%EC%9E%90%EC%82%AC%EC%9D%B4%EC%A6%88_01.jpg?type=w848"
+   ]
+  },
+  "notice": {
+   "type": "WEAR",
+   "items": [
+    {
+     "label": "제품소재",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "색상",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "치수",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조자(사)",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조국",
+     "value": "상세설명에 표시",
+     "is_see_description": true
+    },
+    {
+     "label": "세탁방법 및 취급시 주의사항",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조연월",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "품질보증기준",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "A/S 책임자와 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "상품 상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 3500원 (최초 배송비 무료인 경우 7000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "상품 상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "상품 상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "상품 상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "상품 상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": {
+    "value": "엘투엘골프",
+    "source": "search_info.brandName"
+   },
+   "manufacturer": {
+    "value": "엘투엘골프",
+    "source": "search_info.manufacturerName"
+   },
+   "model_name": null,
+   "origin": null
+  },
+  "store": {
+   "id": "101124456",
+   "uid": "2sWE07Clu5WCmhbAEtXoy",
+   "name": "엘투엘골프",
+   "slug": "ltolgolf",
+   "link": "https://smartstore.naver.com/ltolgolf",
+   "type": "smart_store",
+   "grade": "SECOND",
+   "sale_count": 980,
+   "merchant_id": "511061895",
+   "business": {
+    "legal_name": "엘투엘골프",
+    "representative": "이강수",
+    "type": "PRIVATE",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "13415919469",
+  "name": "남성 골프우비 골프비옷 레인슈트 레인코트",
+  "link": "https://smartstore.naver.com/ltolgolf/products/13415919469",
+  "query": "골프 레인코트",
+  "category": {
+   "id": "50002816",
+   "name": "레인코트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프필드용품",
+    "레인코트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001107",
+    "50002816"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "13415919469"
+   },
+   {
+    "label": "제조사",
+    "value": "엘투엘골프"
+   },
+   {
+    "label": "브랜드",
+    "value": "엘투엘골프"
+   },
+   {
+    "label": "원산지",
+    "value": "상세설명에 표시"
+   },
+   {
+    "label": "성별",
+    "value": "남성용"
+   },
+   {
+    "label": "형태",
+    "value": "코트형"
+   },
+   {
+    "label": "주요소재",
+    "value": "폴리에스테르"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": {
+    "value": "엘투엘골프",
+    "source": "specs:브랜드"
+   },
+   "manufacturer": {
+    "value": "엘투엘골프",
+    "source": "specs:제조사"
+   },
+   "model_name": null,
+   "origin": null
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 9900,
+   "option_groups": [
+    {
+     "id": "11810669297",
+     "name": "컬러（뉴레인）",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "57755928987",
+     "name": "블랙",
+     "options": [
+      "블랙"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 9900,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-04-17"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": "제주,도서지역 추가 6,000원",
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "TODAY",
+   "is_today_delivery": true,
+   "company": "한진택배",
+   "extra_fee_area2": 6000,
+   "extra_fee_area3": null,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 1.5692772,
+    "product_average_days": 1.2727273,
+    "today_cutoff": "16:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   }
+  },
+  "catalog": {
+   "id": null,
+   "nsin": null
+  },
+  "measures": {
+   "is_set": false,
+   "weights": [],
+   "dimensions": [],
+   "references": [
+    {
+     "quote": "치수: 상품상세참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 2
+     },
+     "measure": "size",
+     "reason": "description_reference"
+    }
+   ],
+   "review": []
+  },
+  "read_at": "2026-11-25T09:48:15Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 39500,
+  "variants": [
+   {
+    "id": "57755928987",
+    "name": "블랙",
+    "options": [
+     "블랙"
+    ],
+    "extra_price": 0,
+    "price": 39500,
+    "price_in_name": null,
+    "stock_quantity": 9900,
+    "is_available": true
+   }
+  ],
+  "available": 1,
+  "sold_out": 0,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": "57755928987",
+   "fields": {
+    "product_weight_g": {
+     "low": 200,
+     "central": 350,
+     "high": 700,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 450,
+     "high": 900,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_length_mm": {
+     "low": 240,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_width_mm": {
+     "low": 180,
+     "central": 220,
+     "high": 280,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 50,
+     "high": 80,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 19,
+     "approved_by": "owner",
+     "approved_at": "2026-11-25"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "13415919469",
+   "name": "남성 골프우비 골프비옷 레인슈트 레인코트",
+   "link": "https://smartstore.naver.com/ltolgolf/products/13415919469"
+  },
+  "summary": {
+   "count": 18,
+   "average_score": 4.78,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 4,
+    "5": 14
+   },
+   "text_count": 10,
+   "photo_count": 8,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": {
+    "count": 17,
+    "average_score": 4.76
+   },
+   "evaluations": null,
+   "representative_reviews": [
+    {
+     "id": "5104965434",
+     "score": 5,
+     "text": "원래 팔이 좀 긴편입니다\n\n손목 시보레 부분은 약간 타이트 하고\n브랜드 우의 처럼 팔꿈치 부분이 따로 분리가 되면\n더 좋을꺼 같습니다\n안감은 없는 타입이고. 길이감은 괜찮습니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261112_245/1794479000596RGpgi_JPEG/IMG_8148.jpeg"
+    },
+    {
+     "id": "5103592182",
+     "score": 5,
+     "text": "아주 탄탄하고 비가 올 때 골프를 잘 칠 수 있을 것 같습니다.",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261111_143/1794350570619VlQd9_JPEG/1000025487.jpg"
+    },
+    {
+     "id": "5022955430",
+     "score": 5,
+     "text": "키 172cm 몸무게 74kg 남자 사이즈 잘 맞아요.\n길이도 넉넉해서 바지 안입어도 될거 같아 좋고 앞여밈이 이중으로 되어있어 방수도 기대해 봅니다.\n당장 내일 필요했는데 당일배송 너무 좋아요!!",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260716_140/1784204008045PoWsV_JPEG/13990.jpg"
+    },
+    {
+     "id": "5047824462",
+     "score": 5,
+     "text": "몇년전에 사서 골프때마다 잘입어요  비올때 추울때 요긴하게 잘 입고 스윙시 편해서 더욱 돟아요  친구가 하나 주문해달래서 또 주문했어요 잘 입겠습니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260821_286/1787319378517ETJ0A_JPEG/31651.jpg"
+    },
+    {
+     "id": "5056803658",
+     "score": 5,
+     "text": "가볍고 편합니다  코트타입이라 착용하기쉽고 디자인도 이뻐요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260903_257/17884287000816MeWx_JPEG/22692.jpg"
+    },
+    {
+     "id": "5025863163",
+     "score": 5,
+     "text": "아직 입어보기 전이지만 골프칠때 입으라고 구매요. 맘에 들었으면 좋겠네요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260721_68/178462061819206KvO_JPEG/20260721_165535.jpg"
+    },
+    {
+     "id": "5021023918",
+     "score": 5,
+     "text": "키가큰데길이감도딱좋네요~잘입을게요^^",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260714_199/1784006901849kfgvI_JPEG/1000041654.jpg"
+    },
+    {
+     "id": "5016004521",
+     "score": 5,
+     "text": "사이즈가 딱 맞습니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260707_239/1783413586599mHnoS_JPEG/IMG_1891.jpeg"
+    },
+    {
+     "id": "5082663484",
+     "score": 4,
+     "text": "배송도 빠르고 제품도 좋아요",
+     "image": null
+    },
+    {
+     "id": "5070364937",
+     "score": 5,
+     "text": "괜찮네요 싸게 잘삿어요 잘쓸께유",
+     "image": null
+    },
+    {
+     "id": "5063739770",
+     "score": 5,
+     "text": "배송빠르고 옷도 정사이즈에요",
+     "image": null
+    },
+    {
+     "id": "5044415993",
+     "score": 5,
+     "text": "품질이 좋네요. 만족합니다.",
+     "image": null
+    }
+   ]
+  },
+  "mode": "small_source",
+  "count": 8,
+  "scanned": 18,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 18,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "5104965434",
+    "score": 5,
+    "text": "원래 팔이 좀 긴편입니다\n\n손목 시보레 부분은 약간 타이트 하고\n브랜드 우의 처럼 팔꿈치 부분이 따로 분리가 되면\n더 좋을꺼 같습니다\n안감은 없는 타입이고. 길이감은 괜찮습니다",
+    "created_at": "2026-11-12T10:23:26Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "컬러（뉴레인）: 블랙",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "cudd****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20261112_245/1794479000596RGpgi_JPEG/IMG_8148.jpeg",
+      "width": 3672,
+      "height": 4896
+     },
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20261112_279/17944790006869Oz0B_JPEG/IMG_8149.jpeg",
+      "width": 4284,
+      "height": 5712
+     }
+    ],
+    "product": {
+     "id": "13415919469",
+     "origin_product_id": "13356971003",
+     "name": "남성 골프우비 골프비옷 레인슈트 레인코트"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "5103592182",
+    "score": 5,
+    "text": "아주 탄탄하고 비가 올 때 골프를 잘 칠 수 있을 것 같습니다.",
+    "created_at": "2026-11-10T22:42:56Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "컬러（뉴레인）: 블랙",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "yoyo****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20261111_143/1794350570619VlQd9_JPEG/1000025487.jpg",
+      "width": 3000,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "13415919469",
+     "origin_product_id": "13356971003",
+     "name": "남성 골프우비 골프비옷 레인슈트 레인코트"
+    },
+    "likes": 1,
+    "tier": "small"
+   },
+   {
+    "id": "5056803658",
+    "score": 5,
+    "text": "가볍고 편합니다  코트타입이라 착용하기쉽고 디자인도 이뻐요",
+    "created_at": "2026-09-03T09:45:06Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "컬러（뉴레인）: 블랙",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "my****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260903_257/17884287000816MeWx_JPEG/22692.jpg",
+      "width": 3000,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "13415919469",
+     "origin_product_id": "13356971003",
+     "name": "남성 골프우비 골프비옷 레인슈트 레인코트"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "5047824462",
+    "score": 5,
+    "text": "몇년전에 사서 골프때마다 잘입어요  비올때 추울때 요긴하게 잘 입고 스윙시 편해서 더욱 돟아요  친구가 하나 주문해달래서 또 주문했어요 잘 입겠습니다",
+    "created_at": "2026-08-21T13:36:22Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "컬러（뉴레인）: 블랙",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "sumi******",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260821_286/1787319378517ETJ0A_JPEG/31651.jpg",
+      "width": 806,
+      "height": 960
+     }
+    ],
+    "product": {
+     "id": "13415919469",
+     "origin_product_id": "13356971003",
+     "name": "남성 골프우비 골프비옷 레인슈트 레인코트"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "5022955430",
+    "score": 5,
+    "text": "키 172cm 몸무게 74kg 남자 사이즈 잘 맞아요.\n길이도 넉넉해서 바지 안입어도 될거 같아 좋고 앞여밈이 이중으로 되어있어 방수도 기대해 봅니다.\n당장 내일 필요했는데 당일배송 너무 좋아요!!",
+    "created_at": "2026-07-16T12:14:05Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "컬러（뉴레인）: 블랙",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "tlsl******",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260716_152/1784204007764hCUeg_JPEG/13991.jpg",
+      "width": 2252,
+      "height": 4000
+     },
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260716_140/1784204008045PoWsV_JPEG/13990.jpg",
+      "width": 2252,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "13415919469",
+     "origin_product_id": "13356971003",
+     "name": "남성 골프우비 골프비옷 레인슈트 레인코트"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "5021023918",
+    "score": 5,
+    "text": "키가큰데길이감도딱좋네요~잘입을게요^^",
+    "created_at": "2026-07-14T05:28:27Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "컬러（뉴레인）: 블랙",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "99es****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260714_199/1784006901849kfgvI_JPEG/1000041654.jpg",
+      "width": 3000,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "13415919469",
+     "origin_product_id": "13356971003",
+     "name": "남성 골프우비 골프비옷 레인슈트 레인코트"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "5016004521",
+    "score": 5,
+    "text": "사이즈가 딱 맞습니다",
+    "created_at": "2026-07-07T08:39:53Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "컬러(뉴레인): 블랙",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "bigr******",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260707_239/1783413586599mHnoS_JPEG/IMG_1891.jpeg",
+      "width": 3024,
+      "height": 4032
+     }
+    ],
+    "product": {
+     "id": "13415919469",
+     "origin_product_id": "13356971003",
+     "name": "남성 골프우비 골프비옷 레인슈트 레인코트"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "5010231387",
+    "score": 5,
+    "text": "상하분리된거 사용하다\n하나로 된거라 편해요",
+    "created_at": "2026-06-30T06:05:22Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "컬러(뉴레인): 블랙",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "dong******",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "13415919469",
+     "origin_product_id": "13356971003",
+     "name": "남성 골프우비 골프비옷 레인슈트 레인코트"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ],
+  "picked": {
+   "rule": "review_pick/1",
+   "from": 18,
+   "kept": 8,
+   "photos_from": 10,
+   "photos_kept": 9,
+   "scores": {
+    "5104965434": 122.0,
+    "5103592182": 75.0,
+    "5082663484": -24.0,
+    "5070364937": 2.0,
+    "5063739770": 42.0,
+    "5056803658": 106.0,
+    "5047824462": 74.0,
+    "5044415993": 42.0,
+    "5025863163": 27.0,
+    "5022955430": 121.0,
+    "5021023918": 64.0,
+    "5019744382": 3.0,
+    "5016004521": 62.0,
+    "5010231387": 44.0,
+    "4996252978": 4.0,
+    "4992768422": -45.0,
+    "4991021924": 44.0,
+    "4978075697": -19.0
+   }
+  }
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 5,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20260716_43/1784180575158vJirW_JPEG/69365540921123877_1710882440.jpeg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20260716_43/1784180575158vJirW_JPEG/69365540921123877_1710882440.jpeg",
+    "source_sha256": "9f0a759625f1c9b3784521963d7bbe04e87708c8cde584e23d23da5124091b7c",
+    "source_bytes": 628495,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/13415919469/fairwardgolf-13415919469-001-9e7a7fa55302211a.webp",
+    "sha256": "9e7a7fa55302211ab09147be796f653f7f1da5542692f6c146782a9f4a92fd01",
+    "bytes": 33156,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   },
+   {
+    "position": 1,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20260417_271/1776416369286OG0KG_JPEG/123747243727506176_1255302627.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20260417_271/1776416369286OG0KG_JPEG/123747243727506176_1255302627.jpg",
+    "source_sha256": "57ea3e4adbe27c2161bb7ebbf40a94ee68de80c7757a49016d203c2a43b61022",
+    "source_bytes": 106658,
+    "source_format": "JPEG",
+    "source_width": 1792,
+    "source_height": 1792,
+    "first_frame_of": null,
+    "file": "images/13415919469/fairwardgolf-13415919469-002-804622b0a53a7658.webp",
+    "sha256": "804622b0a53a7658107482702697047602aa8791cda3ed2ced4271877e46d15c",
+    "bytes": 40632,
+    "width": 1500,
+    "height": 1500,
+    "quality": 85
+   },
+   {
+    "position": 2,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20260417_92/17764163761980Vg1T_JPEG/244355333461052_1869663411.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20260417_92/17764163761980Vg1T_JPEG/244355333461052_1869663411.jpg",
+    "source_sha256": "8eb00a67378ec5db5dba9d02951d0781e0574db4675db0b7922329d4ed084a41",
+    "source_bytes": 100146,
+    "source_format": "JPEG",
+    "source_width": 1792,
+    "source_height": 1792,
+    "first_frame_of": null,
+    "file": "images/13415919469/fairwardgolf-13415919469-003-c4d1cf00d5800224.webp",
+    "sha256": "c4d1cf00d5800224f7900440dd6d41be2ef6d4396c7cb8ad2dd472368170cf90",
+    "bytes": 37364,
+    "width": 1500,
+    "height": 1500,
+    "quality": 85
+   },
+   {
+    "position": 3,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20260417_230/1776416376959fvuOd_JPEG/244356094416669_1211187138.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20260417_230/1776416376959fvuOd_JPEG/244356094416669_1211187138.jpg",
+    "source_sha256": "c7ea8bb70f3a424c835187e46ce3f05310f500aa93ab9628b06bac962b1334c0",
+    "source_bytes": 95400,
+    "source_format": "JPEG",
+    "source_width": 1706,
+    "source_height": 1706,
+    "first_frame_of": null,
+    "file": "images/13415919469/fairwardgolf-13415919469-004-958ac896579dd883.webp",
+    "sha256": "958ac896579dd883ff04dba42968573f72e6486a2ca2293e4ab57edeac3e4e8b",
+    "bytes": 38838,
+    "width": 1500,
+    "height": 1500,
+    "quality": 85
+   },
+   {
+    "position": 4,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20260417_197/1776416377267ts79m_JPEG/244356400537274_2092640930.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20260417_197/1776416377267ts79m_JPEG/244356400537274_2092640930.jpg",
+    "source_sha256": "70cd9a25e953cde6d57ebdcae2335d41fe3004578254bb2fe053d3e5b13d0bf0",
+    "source_bytes": 79780,
+    "source_format": "JPEG",
+    "source_width": 1792,
+    "source_height": 1792,
+    "first_frame_of": null,
+    "file": "images/13415919469/fairwardgolf-13415919469-005-b828a16c49bc59bc.webp",
+    "sha256": "b828a16c49bc59bc2266ab9e412edac22a23d36107c31e75cb44615c6e2cdd57",
+    "bytes": 29408,
+    "width": 1500,
+    "height": 1500,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 5
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [
+   {
+    "review_id": "5104965434",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20261112_245/1794479000596RGpgi_JPEG/IMG_8148.jpeg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20261112_245/1794479000596RGpgi_JPEG/IMG_8148.jpeg",
+    "source_sha256": "a02b772e89822353b6260084289001d1d2290601c6cb31f75a3733b33afbd624",
+    "source_bytes": 3124258,
+    "source_format": "JPEG",
+    "source_width": 3672,
+    "source_height": 4896,
+    "first_frame_of": null,
+    "file": "images/13415919469/fairwardgolf-review-image-d0bd74450f0c9f22.webp",
+    "sha256": "d0bd74450f0c9f22a062ba1a8e3f9bcec0ec3e24715c0bf305bb7629384bfc93",
+    "bytes": 74144,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5104965434",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20261112_279/17944790006869Oz0B_JPEG/IMG_8149.jpeg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20261112_279/17944790006869Oz0B_JPEG/IMG_8149.jpeg",
+    "source_sha256": "a7ae9dc994d4d38e4d819a3357dc29ec3ec63a5dcf9ff5fd2b4c830a41364f48",
+    "source_bytes": 5116197,
+    "source_format": "JPEG",
+    "source_width": 4284,
+    "source_height": 5712,
+    "first_frame_of": null,
+    "file": "images/13415919469/fairwardgolf-review-image-778926ad75de9091.webp",
+    "sha256": "778926ad75de909193a2893539b695f5878b64e35e054a6e583d1dcd79e260f3",
+    "bytes": 127752,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5103592182",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20261111_143/1794350570619VlQd9_JPEG/1000025487.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20261111_143/1794350570619VlQd9_JPEG/1000025487.jpg",
+    "source_sha256": "9fc19fe906f7eb112e33c950d300047f8967706bc11cb9ce03c1624448e4a627",
+    "source_bytes": 4140764,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/13415919469/fairwardgolf-review-image-6b1a480b4808382f.webp",
+    "sha256": "6b1a480b4808382f0e12fb9636b3640eb5451b568e8af08e0455dfeeb5cb6aac",
+    "bytes": 42632,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5056803658",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260903_257/17884287000816MeWx_JPEG/22692.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260903_257/17884287000816MeWx_JPEG/22692.jpg",
+    "source_sha256": "b9c1cbc9a03daa1d664de83443090d08f1ab2ce98fe158cb6fc41f07073c22cc",
+    "source_bytes": 4168657,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/13415919469/fairwardgolf-review-image-72bb758b3aca2829.webp",
+    "sha256": "72bb758b3aca2829dc49a1d101e176982520428bc35786ac584823c33e7aef3e",
+    "bytes": 99346,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5047824462",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260821_286/1787319378517ETJ0A_JPEG/31651.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260821_286/1787319378517ETJ0A_JPEG/31651.jpg",
+    "source_sha256": "66a4d3d6ebcd16bbad2f59d5d7cb6d13fa93e0c77c19fbaf2b68499557c8bb8e",
+    "source_bytes": 196755,
+    "source_format": "JPEG",
+    "source_width": 806,
+    "source_height": 960,
+    "first_frame_of": null,
+    "file": "images/13415919469/fairwardgolf-review-image-1e3ad37bbb847940.webp",
+    "sha256": "1e3ad37bbb8479405da1e42ab08a2b4c67830f52b3921e86df61c6a63a7719bc",
+    "bytes": 68124,
+    "width": 806,
+    "height": 960,
+    "quality": 85
+   },
+   {
+    "review_id": "5022955430",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260716_152/1784204007764hCUeg_JPEG/13991.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260716_152/1784204007764hCUeg_JPEG/13991.jpg",
+    "source_sha256": "97a1543c67d534b138d0baee5198c8d82350ae9034bb4eaec56aae137e5c5dbf",
+    "source_bytes": 2355209,
+    "source_format": "MPO",
+    "source_width": 2252,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/13415919469/fairwardgolf-review-image-b7b8e8a76d1ae99a.webp",
+    "sha256": "b7b8e8a76d1ae99a3b984a34afd46be58d16b5ec78a45d5d33b4c5097f0611b5",
+    "bytes": 69198,
+    "width": 577,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5022955430",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260716_140/1784204008045PoWsV_JPEG/13990.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260716_140/1784204008045PoWsV_JPEG/13990.jpg",
+    "source_sha256": "ae938249577b6a1b4b1ce4f5ef2aef24a60b443aec4fc0ae6b14c4888e9286a2",
+    "source_bytes": 2726356,
+    "source_format": "JPEG",
+    "source_width": 2252,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/13415919469/fairwardgolf-review-image-727b9185574ccf67.webp",
+    "sha256": "727b9185574ccf67e3781887a5aebdc04d8591887517ea8db969925cffb1aa57",
+    "bytes": 49684,
+    "width": 577,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5021023918",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260714_199/1784006901849kfgvI_JPEG/1000041654.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260714_199/1784006901849kfgvI_JPEG/1000041654.jpg",
+    "source_sha256": "da89793bad1f2a08ebc824beb3e2097b05b0af84896c2b05f06580fb1f452aa0",
+    "source_bytes": 3997876,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/13415919469/fairwardgolf-review-image-cb75d01bb414636c.webp",
+    "sha256": "cb75d01bb414636c38c4edf063cccd3a89c3a3f9de94560070e74f48e8041e5e",
+    "bytes": 47226,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5016004521",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260707_239/1783413586599mHnoS_JPEG/IMG_1891.jpeg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260707_239/1783413586599mHnoS_JPEG/IMG_1891.jpeg",
+    "source_sha256": "a7e82aaa411b010f9eb3e5374d665964cd7e4bd7acae3f97757fb364bf00fe61",
+    "source_bytes": 3520893,
+    "source_format": "JPEG",
+    "source_width": 3024,
+    "source_height": 4032,
+    "first_frame_of": null,
+    "file": "images/13415919469/fairwardgolf-review-image-53f6e5d44c302892.webp",
+    "sha256": "53f6e5d44c3028926f5894979c7f5caffb62388f9ec9cc3de8806d63e3145797",
+    "bytes": 96478,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

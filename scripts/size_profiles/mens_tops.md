@@ -20,7 +20,10 @@ measures `tops`, fit `chest`. The storefront shows the US letter alone ("M"), no
 Why: a Korean men's label is the body chest in cm (KS K 0050); 100 cm = 39.4 in, the US M band of men's charts. A
 bare Korean letter follows the Korean convention (XS 85, S 90, M 95, L 100, XL / LL 105, XXL / 2XL / 3L 110, XXXL / 3XL
 115; 4XL 120 since 2026-11-25, a rain suit's M..4XL 11859489664, read only in this profile, `parse_label` leaves "4XL"
-unread): a Korean M is a US S, as "M(95)" is. Women's sizes (55, 66) mean nothing here: such a value holds the product.
+unread): a Korean M is a US S, as "M(95)" is. Japanese makers' O = LL (105) and XO = 3L (110) beside S / M / L, SS =
+XS (85) below S in a ladder to LL / 3L (2026-11-25, `size_labels.japanese_ladder`: TaylorMade TL439 11859686166 and
+11534592689 M..XO = US S, M, L, XL; Callaway C25989100 11616404746 SS..3L = XXS..XL). Women's sizes (55, 66) mean
+nothing here: such a value holds the product.
 A unisex top is not in the men's section (`stated_only`): it keeps the women's profile in the women's section.
 
 ## Brand rows (`brands`)

@@ -1,0 +1,692 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:100448099:10608961987",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (full 1); 0 trimmed"
+  },
+  {
+   "code": "paid_addons_left_out",
+   "detail": "31 paid add-ons"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "CONDITIONAL_FREE 3000 KRW"
+  },
+  {
+   "code": "gift_hidden",
+   "detail": "숏티"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/fieldga/products/10608961987",
+  "channel_no": "100448099",
+  "product_id": "10608961987",
+  "category_id": "50002816"
+ },
+ "product": {
+  "title_ko": "골프레인스커트 골프비치마 방수 우비치마 골프비옷 남녀 빅사이즈 필드가",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {
+   "gender": {
+    "value": "unisex",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "unisex",
+      "text": "남녀공용"
+     },
+     {
+      "source": "title",
+      "value": "unisex",
+      "text": "골프레인스커트 골프비치마 방수 우비치마 골프비옷 남녀 빅사이즈 필드가"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 레인코트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "세트 할인구매 골프레인슈트)",
+    "values_ko": [
+     "레인슈트 미선택+비치마",
+     "핑크 레인슈트+비치마",
+     "베이지 레인슈트+비치마",
+     "네이비 레인슈트+비치마"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"레인슈트 미선택+비치마\"]",
+    "naver_variant_id": "43204048968",
+    "options_ko": [
+     "레인슈트 미선택+비치마"
+    ],
+    "price_krw": 16900,
+    "price_usd": "16.90",
+    "sku": "FW-7f4ffcff6f7e9f3b8e4a8813",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 100,
+      "central": 200,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "light",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 150,
+      "central": 280,
+      "high": 500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "light",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 200,
+      "central": 240,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "light",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 160,
+      "central": 200,
+      "high": 240,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "light",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 20,
+      "central": 40,
+      "high": 60,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "light",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"핑크 레인슈트+비치마\"]",
+    "naver_variant_id": "43204048969",
+    "options_ko": [
+     "핑크 레인슈트+비치마"
+    ],
+    "price_krw": 59800,
+    "price_usd": "59.80",
+    "sku": "FW-9f08f1706bc5c62866144386",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"베이지 레인슈트+비치마\"]",
+    "naver_variant_id": "43204048970",
+    "options_ko": [
+     "베이지 레인슈트+비치마"
+    ],
+    "price_krw": 59800,
+    "price_usd": "59.80",
+    "sku": "FW-4df85972761e60cc5b792dac",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"네이비 레인슈트+비치마\"]",
+    "naver_variant_id": "43204048971",
+    "options_ko": [
+     "네이비 레인슈트+비치마"
+    ],
+    "price_krw": 59800,
+    "price_usd": "59.80",
+    "sku": "FW-2184a21d96cfe87f2c23d8c7",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 450,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_weight_g": {
+      "low": 550,
+      "central": 850,
+      "high": 1400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_length_mm": {
+      "low": 280,
+      "central": 320,
+      "high": 400,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_width_mm": {
+      "low": 220,
+      "central": 260,
+      "high": 320,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     },
+     "package_height_mm": {
+      "low": 50,
+      "central": 80,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "suit",
+      "reliability": "estimated_average",
+      "table_version": 19,
+      "approved_by": "owner",
+      "approved_at": "2026-11-25"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 16900,
+   "original_krw": 89900,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "필드가협력업체"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "필드가"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남녀공용"
+   },
+   {
+    "label_ko": "총기장",
+    "value_ko": "미디엄"
+   },
+   {
+    "label_ko": "형태",
+    "value_ko": "투피스형"
+   },
+   {
+    "label_ko": "주요소재",
+    "value_ko": "폴리에스테르, EVA"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.38,
+   "count": 21
+  },
+  "reviews": [
+   {
+    "id": "4521549475",
+    "score": 5,
+    "text_ko": "상의2개 치마1개 주문했어요 하나는 엄마드렸어요. 캐디백에 넣어놓고 있으면 비올때 좋을듯해요 필드가에사 시즌마다 옷사는데 만족해요",
+    "created_at": "2024-07-19T12:55:41Z",
+    "writer": "gm20***",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/10608961987/fairwardgolf-review-avatar-9d9fd481131aa896.webp",
+    "tier": "text",
+    "likes": 1,
+    "text_grade": "full",
+    "text_quality": 54
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/10608961987/fairwardgolf-10608961987-001-2a672eb060dbaf85.webp",
+    "sha256": "2a672eb060dbaf8593e1711fcaa25122e8b3596a16eae0bb60d14f9e5b3b753d",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/10608961987/fairwardgolf-10608961987-002-6cb527541b117b31.webp",
+    "sha256": "6cb527541b117b312af11a1e0827b3cdcf5e7a7fd4fe598ccc05ed295e7eda73",
+    "width": 1000,
+    "height": 1260
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/10608961987/fairwardgolf-10608961987-003-1a0ed8099dff636f.webp",
+    "sha256": "1a0ed8099dff636f195417dd4c9efdb6edafd1975b8449c4cc3f04b9f501c575",
+    "width": 1000,
+    "height": 1260
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/10608961987/fairwardgolf-10608961987-004-e79f7e08342b98cf.webp",
+    "sha256": "e79f7e08342b98cf2155cd4bc22c609c43ab14974c8f35054919f2d88fbcf36e",
+    "width": 1000,
+    "height": 1260
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/10608961987/fairwardgolf-10608961987-005-83b211bccc995f25.webp",
+    "sha256": "83b211bccc995f253c51f665020da2b7b7cdfcadcb8c60f973bd0eb2c614435d",
+    "width": 1000,
+    "height": 1260
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/10608961987/fairwardgolf-10608961987-006-568dd2d671cadf24.webp",
+    "sha256": "568dd2d671cadf246cc3d16b633766f388feaa24aa32ad5ff923cce6d75b8e17",
+    "width": 1000,
+    "height": 1260
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/10608961987/fairwardgolf-10608961987-007-c2658437a6405847.webp",
+    "sha256": "c2658437a64058478fb32b9a51a6478163082d1b8b01b3f57ce5c3e3da03fe6a",
+    "width": 1000,
+    "height": 1260
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/10608961987/fairwardgolf-10608961987-008-a1aee65f69a3cdc6.webp",
+    "sha256": "a1aee65f69a3cdc6846df0bc5f44123d52562f88e4ad41f403dcff96a37e4f9e",
+    "width": 1000,
+    "height": 1260
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/10608961987/fairwardgolf-10608961987-009-810096ffa286029e.webp",
+    "sha256": "810096ffa286029e3da851cc132c3c445ea06c01d7a6f3e01e960718a492ce49",
+    "width": 1000,
+    "height": 1260
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/10608961987/fairwardgolf-10608961987-010-1add579d3adce29d.webp",
+    "sha256": "1add579d3adce29dee542ad9ce8ddcfaf12b4e72745d3bdaf2ae7f7a333d8005",
+    "width": 1000,
+    "height": 1260
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": null,
+   "policy_text": "100,000원 이상 구매 시 무료 / 제주,도서지역 추가 3,000원",
+   "lead_time": {
+    "seller_average_days": 1.9583334,
+    "product_average_days": null,
+    "today_cutoff": "13:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "골프비치마 오픈합니다.\n남녀공용 모든 분들이 대부분\n맞으실 사이즈로 제작했습니다.\n레인슈트와 함께 구매하시면\n할인폭이 커져요\n비치마 14,900원(오픈특가)\n레인슈트 39,900원(공구가)\n비치마 +레인슈트 = 54,800\n52,800원\n\n레인슈트와 착용한 모습\n\n레인슈트 바로가기\n\n변화무쌍한 필드\n갑자기 발생하는 소나기나 비바람에\n늘 준비하셔야합니다.\n캐디백에 넣어 놓으면\n언제나 필드에서 유용하게\n사용할 핫템입니다.\n\n필드가 레인 제품들",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20240718_182/1721276646998qvxru_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88009.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_291/17212766466625CPwx_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88010.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_27/1721276646852j8xvJ_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88011.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_50/1721276647036C5NJl_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88012.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_273/1721276771566vcnGV_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88012.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_102/1721276770299RyxPO_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88013.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_295/1721276770500C7OWG_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88014.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_160/1721276771547q3yDW_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88015.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_270/1721276771379StA59_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88016.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_211/1721276771001IJNvG_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88017.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_258/17212767715786nXdV_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88018.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_31/1721276771434Os51F_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88019.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_289/1721276770546zu9sw_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88020.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_75/1721276771571rayqE_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88021.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_29/1721276770280WogAx_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88023.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_136/17212767702712tIDe_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88025.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_233/1721276772084seiJk_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88026.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_27/1721276772456f0s2z_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88027.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_54/1721276772901XQOSe_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88028.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_262/17212767725397GNRF_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88029.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_138/1721276772415e1EEL_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88030.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_37/1721276772084tKPli_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88031.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_17/1721276772525Y72Gs_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88032.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_283/1721276772772OcPJz_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88033.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_85/1721276789204pwEHM_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88008.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_200/1721276772678mFizc_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88043.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_100/17212767728446MAfF_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88044.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_70/1721276773045zkIQs_PNG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88045.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_168/1721276780904buyDP_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88001.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_249/172127678090404cWS_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88002.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_1/1721276780910gNCaR_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88003.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_53/1721276780903xuO5B_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88004.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_58/1721276780910VdFYB_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88005.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_214/1721276789226nrwRJ_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88006.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240718_25/1721276789191BC8BX_JPEG/%EA%B3%A8%ED%94%84%EB%B9%84%EC%B9%98%EB%A7%88007.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "price_krw",
+    "text": "세트 구매시 2,000원 할인"
+   }
+  ],
+  "composition_ko": [
+   {
+    "label_ko": "주요소재",
+    "value_ko": "폴리에스테르, EVA",
+    "source": "spec"
+   }
+  ],
+  "sizes": {
+   "version": "sizes/2",
+   "profile": "mens_tops",
+   "option": null,
+   "values": [],
+   "merged": {},
+   "brand_row": null,
+   "chart": null,
+   "held": null
+  }
+ },
+ "texts": [
+  {
+   "id": "title:2149fb997174c472",
+   "kind": "title",
+   "ko": "골프레인스커트 골프비치마 방수 우비치마 골프비옷 남녀 빅사이즈 필드가"
+  },
+  {
+   "id": "option_name:2fce40828149b596",
+   "kind": "option_name",
+   "ko": "세트 할인구매 골프레인슈트)"
+  },
+  {
+   "id": "option_value:09c9bf52822781f1",
+   "kind": "option_value",
+   "ko": "레인슈트 미선택+비치마"
+  },
+  {
+   "id": "option_value:8cc3d23cff0f577f",
+   "kind": "option_value",
+   "ko": "핑크 레인슈트+비치마"
+  },
+  {
+   "id": "option_value:b9d0d6e0d8c0ffa4",
+   "kind": "option_value",
+   "ko": "베이지 레인슈트+비치마"
+  },
+  {
+   "id": "option_value:2a87966a9248f1b9",
+   "kind": "option_value",
+   "ko": "네이비 레인슈트+비치마"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:df6c716d9431e57f",
+   "kind": "spec_value",
+   "ko": "필드가협력업체"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:d4b8ef694d08df8d",
+   "kind": "spec_value",
+   "ko": "필드가"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:e012efbcc2aa417e",
+   "kind": "spec_value",
+   "ko": "남녀공용"
+  },
+  {
+   "id": "spec_label:26336d857e5ea726",
+   "kind": "spec_label",
+   "ko": "총기장"
+  },
+  {
+   "id": "spec_value:914c153c9a8f58e1",
+   "kind": "spec_value",
+   "ko": "미디엄"
+  },
+  {
+   "id": "spec_label:e1b56dd677111a7f",
+   "kind": "spec_label",
+   "ko": "형태"
+  },
+  {
+   "id": "spec_value:2587aa84faab798d",
+   "kind": "spec_value",
+   "ko": "투피스형"
+  },
+  {
+   "id": "spec_label:4ca8beff763d4b7f",
+   "kind": "spec_label",
+   "ko": "주요소재"
+  },
+  {
+   "id": "spec_value:609160cd35718fcb",
+   "kind": "spec_value",
+   "ko": "폴리에스테르, EVA"
+  },
+  {
+   "id": "review:33c3d13080572f10",
+   "kind": "review",
+   "ko": "상의2개 치마1개 주문했어요 하나는 엄마드렸어요. 캐디백에 넣어놓고 있으면 비올때 좋을듯해요 필드가에사 시즌마다 옷사는데 만족해요"
+  }
+ ]
+}

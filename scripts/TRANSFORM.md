@@ -124,7 +124,7 @@ moved, in which field, and which of them are in the store (those wait for the ow
 - `prepared_diff.py old new [--fields f,g] [--published-only] [--keys-out F] [--json]` compares each product by a
   short summary a field: `status`, `held` and `notes` ("code: detail"), `brand` ("brand_ko (brand_source)"), `title`
   (title_ko), `price` (the variants' price_krw, min-max), `variants` (the option labels, `[sold out]`),
-  `package.<field>` ("min-max (source cN)"), `images` (count and digest), `other` (the names of other parts that
+  `package.<field>` ("min-max (source cN)"; a category default "central of low-high (category_default kind cN)", its kind and numbers since 2026-11-25), `images` (count and digest), `other` (the names of other parts that
   differ, once, in the new column; `(old only)` / `(new only)` for a part on one side). A list field shows on each
   side only what the other lacks. `--published-only`: the keys whose last ledger row is `published` (`--shop`, else
   the new file's shop), read from `--shops-root` (default the real shops: give the clone's root with a clone's files);

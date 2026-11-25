@@ -101,7 +101,9 @@ def row_version(table: Mapping[str, Any], row: Mapping[str, Any]) -> Any:
     """The version a default of this row carries (`table_version`): the row's `defaults_version`, else the table's.
     2026-11-18: a new row (50002784) raised the table to 8 and would have restamped 92 products of other rows from 7
     to 8 with no number changed (current_defaults stamps a default whose numbers moved since its collection); each row
-    now names the version of its own defaults, raised only with its own fields or kinds."""
+    now names the version of its own defaults, raised only with its own fields or kinds. 2026-11-25 (the owner): a
+    kind's words alone (50002816's suit, table version 20) move no number and keep it, as a band does: a raise would
+    have restamped 37 rainwear products 19 -> 20 for the stamp alone (it travels in the package metafield)."""
     return row.get("defaults_version") or table["version"]
 
 
@@ -246,7 +248,10 @@ def default_kind(row: Mapping[str, Any], title: str | None, variant_name: str | 
     A kind with `lofts` [min, max] counts a set (50002783 two_wedges / four_plus, 2026-11-17): the variant's own
     count first, its `match` or that many distinct lofts in its value (lofts()); a variant naming two or more lofts
     of another count is never the title's. Else the title's `match`, only when the listing has one variant or every
-    variant (`siblings`: all the variants' values; None: not known) names as many lofts. `unless` in either blocks."""
+    variant (`siblings`: all the variants' values; None: not known) names as many lofts. `unless` in either blocks.
+    2026-11-25 (the owner, 50002816 rainwear): `unless` is searched in the title and in the variant apart, so a `^`
+    look-ahead reads one whole text ("names one coat or cape and no second garment": 레인슈트 typed as a search keyword
+    on a coat is no suit), and a `match` may refuse a word by what stands before it (선물세트, 웨이스트백 세트)."""
     t, v = _measure_words(title), _measure_words(variant_name)
     own_lofts = lofts(variant_name)
 

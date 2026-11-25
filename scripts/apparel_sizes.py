@@ -29,8 +29,8 @@ from pathlib import Path
 from typing import Any, Callable
 
 from size_chart import NOT_CHART_RE, ONE, Chart, measure_names, read_chart  # noqa: F401  (re-exported: the callers' one module)
-from size_labels import (MENS_WAIST, WOMENS_WAIST, Label, is_size_name, parse_label, waist_labels,  # noqa: F401
-                         waist_reading)
+from size_labels import (MENS_WAIST, WOMENS_WAIST, Label, is_size_name, japanese_ladder,  # noqa: F401
+                         japanese_letters, parse_label, waist_labels, waist_reading)
 
 _COLOUR_NAME_RE = re.compile(r"색상|컬러|칼라|색깔|color|colour", re.I)    # not a type's section (size_chart sections)
 # a colour value under any option name ("선택: 블랙 / 네이비"): never a type's section
@@ -81,6 +81,9 @@ _WOMEN_TAIL = {"44", "55", "66", "77", "88", "99"}
 # 2026-11-24, the size_unmapped review: a letter after a Hangul colour and a dash ("화이트-S", 7124536208); never a
 # number ("블랙-95") or a size before the dash ("S-M")
 _DASH_LETTER_RE = re.compile(rf"^(.*[가-힣])-({_LETTER_ALT})$")
+# "옐로우ㅡL": the jamo ㅡ as a dash (2026-11-25), only before a letter size that ends the value: a number after it
+# ("블랙ㅡ 95") keeps its space split, read as before (the fixer, 2026-11-25)
+_JAMO_DASH_RE = re.compile(rf"(?<=[가-힣)])\s*ㅡ\s*(?=(?:{_LETTER_ALT})\s*$)")
 _A_CM_RE = re.compile(r"^A\d{2,3}$")                            # adidas' Asian waist code "A82"
 _INCH_NOTE_RE = re.compile(r"^[(（]\d{2}인치[)）]$")              # ... and its inch "(32인치)"
 _A_LETTER_RE = re.compile(r"^A(?:XS|S|M|L|XL|2XL|3XL)$")          # adidas' Asian letter "AS"
@@ -94,7 +97,10 @@ _BRACKET_SIZE_RE = re.compile(r"^[(（]\d{2,3}(?:\s*[-~]\s*\d{2,3})?[)）]$")
 def _words(value: str) -> list[str]:
     """A value's words for a colour / size split: by space, "/", "_"; in a waist profile a size glued to the end of a
     Hangul word or a closing bracket is a word of its own ("블랙34" -> 블랙, 34)."""
-    words = [w for w in _JOIN_SPLIT_RE.split(str(value or "").strip()) if w]
+    # the Hangul vowel ㅡ (U+3161) a seller types as a dash between a colour and its size, "형광 옐로우ㅡL", "블랙ㅡXXL"
+    # (5706906040, 6672050974, 2026-11-25, the owner: "Все рекомендации"): a "-" (_DASH_LETTER_RE splits it)
+    value = _JAMO_DASH_RE.sub("-", str(value or ""))
+    words = [w for w in _JOIN_SPLIT_RE.split(value.strip()) if w]
     w = waist_reading()
     # adidas' size and its bracket after a space are one word (2026-11-24): "A82 (32인치)" in the men's trousers
     # (7191019224, 10159594995), "AS (85)" outside the waist profiles (10861903381)
@@ -788,6 +794,33 @@ def single_joined(value: str | None, pairs: dict[str, set[int]] | None = None) -
     return None
 
 
+# a gender, a colour and a size in one value, "남성용-그레이L(100)", "여성용-핑크M(66)" (Kasco KSRWL-002 505840359,
+# 2026-11-25, the owner: "Все рекомендации"): the colour Hangul only, the size a letter with its number or bare
+_GENDER_COLOUR_RE = re.compile(r"^\s*(?P<g>남성용|여성용)\s*-\s*(?P<colour>[가-힣](?:[가-힣\s]*[가-힣])?)\s*"
+                               rf"(?P<size>(?:{_LETTER_ALT})(?:\s*[(（]\s*\d{{2,3}}\s*[)）])?)\s*$")
+
+
+def gender_colour_split(options: list[dict[str, Any]]) -> tuple[int, list[tuple[str, str]]] | None:
+    """The option whose every value is "<남성용|여성용>-<colour><size>" and each value's (colour, "<gender> <size>"):
+    "남성용-그레이L(100)" -> ("그레이", "남성 L(100)"); the size keeps its gender (남성 / 여성, as parse_label and
+    transform._value_genders read it: "남성 L(100)" is L(100), men's), so _sizes_by_gender sizes it on that gender's
+    profile; one spelling under both genders stays two sizes. None when no option is so (two or more values, every
+    one a size parse_label reads, no colour read as a size)."""
+    for i, o in enumerate(options):
+        values = [str(v) for v in o.get("values_ko") or []]
+        out: list[tuple[str, str]] = []
+        for v in values:
+            m = _GENDER_COLOUR_RE.match(v)
+            size = m.group("g")[:2] + " " + re.sub(r"\s+", "", m.group("size")) if m else ""   # "남성 L(100)"
+            if not m or not parse_label(size) or parse_label(m.group("colour")):
+                break
+            out.append((m.group("colour").strip(), size))
+        else:
+            if len(out) >= 2:
+                return i, out
+    return None
+
+
 def joined_value(value: str | None) -> bool:
     """One value that joins a colour and a size ("Black/090", "아이보리 M", "XL/크림"): never FREE alone."""
     return _joined_size(str(value or "")) is not None
@@ -1035,12 +1068,33 @@ def _ladder_broken(resolved: list[dict[str, Any]], relabel: dict[str, Label]) ->
     return None
 
 
+# one chest number on a line ("총길이:96,가슴:62,소매길이:76"): a body range ("가슴 82-92") or a row of cells ("가슴 / 46
+# / 48") is none
+_CHEST_ONE_RE = re.compile(r"(?:가슴|(?<![가-힣])품)(?:\s*(?:단면|너비|폭|둘레))?\s*[:：]?\s*(\d{2,3}(?:\.\d)?)\s*(?:cm)?"
+                           r"(?!\s*[-~\d.])(?!\s*[/|]\s*\d)")
+_ONE_CHEST_SPAN = 1.5                          # cm: "one chest" when every size's lies this close
+
+
+def one_chest(texts: list[str], count: int) -> list[float] | None:
+    """The chest the seller writes for each of `count` sizes when they are one chest: one number per line, as many
+    lines as sizes (two or more), all within _ONE_CHEST_SPAN cm (2026-11-25, 6672050974: an EVA coat's L / XL / XXL
+    by height "150-165cm / 165-175cm / 175-190cm", each "가슴:62" / 62 / 63, its kg lines never a chart) -> the
+    numbers, else None."""
+    found = [float(m.group(1)) for line in texts if (m := _CHEST_ONE_RE.search(str(line)))]
+    if count >= 2 and len(found) == count and max(found) - min(found) <= _ONE_CHEST_SPAN:
+        return found
+    return None
+
+
 def resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None, title: str | None,
             profile_name: str, table: dict[str, Any] | None = None, has_fact: bool = False,
             combos: list[list[str]] | None = None) -> dict[str, Any]:
-    """The sizes of a product (_resolve), waists read when the profile is keyed by the waist (size_labels)."""
+    """The sizes of a product (_resolve), waists read when the profile is keyed by the waist (size_labels); a
+    Japanese maker's ladder ("S / M / L / O / XO", "SS .. LL / 3L") read as its letters, the chart's labels too, when
+    an option holds it (size_labels.japanese_ladder, 2026-11-25)."""
     table = table or grids()
-    with waist_labels(waist_read(table["profiles"][profile_name])):
+    japanese = {k: v for o in options for k, v in japanese_ladder([str(x) for x in o.get("values_ko") or []]).items()}
+    with waist_labels(waist_read(table["profiles"][profile_name])), japanese_letters(japanese):
         return _resolve(options, texts, brand, title, profile_name, table, has_fact, combos)
 
 
@@ -1335,6 +1389,13 @@ def _resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None,
         return out
     if broken := _ladder_broken(resolved, relabel):
         out["held"] = broken
+        return out
+    if len(resolved) >= 2 and all(r["basis"] == "fallback_letters" for r in resolved) \
+            and (chests_said := one_chest(texts, len(resolved))):
+        # bare letters sized by the profile's chests while the seller gives every one the same chest: the letters
+        # are lengths or height classes of one garment (6672050974's EVA coat, 2026-11-25), never a US size each
+        out["held"] = (f"one chest for every size ({', '.join(f'{c:g}' for c in chests_said)} cm): the letters "
+                       f"{', '.join(r['ko'] for r in resolved)} are no chest sizes")
         return out
     order = {r["us"]: i for i, r in enumerate(profile["grid"])}
     resolved.sort(key=lambda r: (r["chest_cm"] is None, r["chest_cm"] or 0, order.get(r["letter"] or "", 99),

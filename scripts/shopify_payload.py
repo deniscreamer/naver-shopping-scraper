@@ -578,7 +578,9 @@ def _variants(prepared: dict[str, Any], options: list[dict[str, Any]], values_en
             if us is None:
                 raise PayloadError(f"variant {v.get('sku')}: size {ko!r} has no US size")
             own = v.get("naver_options_ko") or picked_ko   # the Naver value this variant sells (2026-11-25)
-            size_pair = (own[sizes["option"]] if len(own) > sizes["option"] else ko, us)
+            # a value split into a colour and a size (transform._gender_colour_split, Kasco 505840359, 2026-11-25):
+            # the seller's whole value that held the size, never the split "남성 L(100)" Naver has not
+            size_pair = (v.get("naver_size_ko") or (own[sizes["option"]] if len(own) == len(picked_ko) else ko), us)
         elif sizes.get("fact"):
             size_pair = (sizes["fact"]["ko"], sizes["fact"]["us"])
         if size_pair:

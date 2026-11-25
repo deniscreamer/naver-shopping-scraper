@@ -325,3 +325,21 @@ def test_a_prepare_of_a_copy_with_copy_of_equals_the_prepare_in_place(shop_fixtu
     seen.clear()
     assert prepared(clone, "--copy-of", fx.shops) == in_place
     assert seen == [fx.shops]                                       # the dictionary loaded as for the real root
+
+
+def test_a_category_defaults_kind_and_numbers_show():
+    """2026-11-25 (50002816's suit kind narrowed): 9595746260's rain skirt moved from the suit's 850 g box to the light
+    kind's 280 g at the same table_version; --diff read only value / source / confidence and called it the same."""
+    import prepared_diff as D
+
+    def rec(kind, low, central, high):
+        field = {"source": "category_default", "confidence": 1, "low": low, "central": central, "high": high,
+                 "table_version": 19, **({"kind": kind} if kind else {})}
+        return {"key": "k", "status": "ready", "product": {"variants": [{"package": {"package_weight_g": field}}]}}
+    got = D.compare(D.summary(rec("suit", 600, 850, 1200)), D.summary(rec("light", 200, 280, 450)), ["package"])
+    assert got == {"package.package_weight_g": {"old": "850 of 600-1200 (category_default suit c1)",
+                                                "new": "280 of 200-450 (category_default light c1)"}}
+    assert D.compare(D.summary(rec(None, 300, 450, 800)), D.summary(rec("suit", 300, 450, 800)), ["package"]) == {
+        "package.package_weight_g": {"old": "450 of 300-800 (category_default c1)",
+                                     "new": "450 of 300-800 (category_default suit c1)"}}
+    assert D.compare(D.summary(rec("suit", 600, 850, 1200)), D.summary(rec("suit", 600, 850, 1200)), ["package"]) == {}

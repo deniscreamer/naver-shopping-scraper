@@ -47,3 +47,7 @@ a Japanese brand's 0 / 1 / 2 with the chest "0(85)" (Pearly Gates, 1), bare lett
 the option is paired (never two systems in one option). A product with no size option whose
 chart lists 95..110 (13004790971) and a colour joined with its size in one option ("Ivory/085" 12487887784,
 "오프화이트 85 XS" 10940191023) are held `size_unmapped`.
+
+2026-11-25 (rainwear 50002816): TaylorMade's women's UN003 (12166562599) sells S / M / L / O, the Japanese O = XL
+(`size_labels.japanese_ladder`): S (US 4-6) .. XL (US 16), its chart's O column the XL row. An EVA coat whose L / XL /
+XXL are heights with one chest (6672050974: "가슴:62" / 62 / 63) is held (`apparel_sizes.one_chest`).

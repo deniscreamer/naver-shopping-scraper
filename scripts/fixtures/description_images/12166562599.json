@@ -1,0 +1,428 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 163982,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_300/1753679576741RFv0a_JPEG/8216563665132686_1060814786.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.921,
+       "text": "TaylorMade'",
+       "y": 4
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 51371,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_59/1753679633192ds3pH_JPEG/1421f17e-e89c-477b-99e3-c60daa150318.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 62469,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_254/175367963274642Sb2_JPEG/1f9559ac-27d3-4ce7-8fce-9a34b5e802cc.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.972,
+       "text": "TAYLORM",
+       "y": 219
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 71800,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_23/1753679634072pAFHb_JPEG/e110e29e-d4cb-4232-806c-1ea8cccd1ddd.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.933,
+       "text": "TRYLOA",
+       "y": 208
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 115163,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_235/17536796334368hdpq_JPEG/6840f1f0-0d94-48c9-a6ba-1ac8ae708f96.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.836,
+       "text": "Dermizax.",
+       "y": 266
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 47851,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_179/1753679632707mVQT3_JPEG/0d0c9ccf-bbd5-4275-87e2-90235b0c1adb.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 54101,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_19/1753679633156GSkrn_JPEG/304f6869-ba02-4c79-b4b1-62665125345b.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 88868,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_128/1753679633158XOR25_JPEG/31cbbd4d-850d-42fb-a538-9adb12b54074.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 112597,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_123/1753679633946iRCpW_JPEG/bf2240e7-91c0-4727-80f3-40e5c2882fb6.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.941,
+       "text": "T",
+       "y": 276
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 48649,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_205/1753679633929y0dw1_JPEG/a1f54f95-651a-46a1-a354-3df2df930063.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 69318,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_160/1753679634067uXpiJ_JPEG/dcf34abe-c633-44a5-af53-8b2b62b8ca86.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 83801,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_4/1753679633576PToh9_JPEG/7243ba19-938d-432b-8caf-3eafeda3a47c.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.895,
+       "text": "TAYLORMAOE",
+       "y": 239
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 70915,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_143/1753679633024yPuAe_JPEG/4feb3305-4960-48ed-a61b-dad2aec31ab1.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 99331,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_59/1753679633596FBT7l_JPEG/380612fc-37f6-4ec8-a522-fda67f6af11b.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 109056,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_14/1753679633691saBN2_JPEG/955209a3-f928-4cf8-9a62-8d4f63416381.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 48952,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_60/1753679632767blAcy_JPEG/3bd8a84c-f0ac-4ddf-b43e-ea8679e76c93.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 49034,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_44/17536796331357itP2_JPEG/6d677595-28a5-4bf3-b354-5da3e20e3527.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.928,
+       "text": "RMRDE",
+       "y": 360
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 49157,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_12/1753679633218H9rkL_JPEG/399e3276-01d7-4a57-b6e2-7427010980d9.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 69758,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_8/1753679633832ltuNW_JPEG/3937887e-fbd6-47e0-b424-200cc6c13167.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 80182,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_20/1753679632769oIoe2_JPEG/2e2373ee-2a62-412b-9784-fe69ddd1e945.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 59202,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_36/1753679632654wHPgc_JPEG/0af6cbb9-ce6f-400a-b144-51962141bcae.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 51065,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_30/1753679632769FvaNN_JPEG/3a06e4b6-9df7-4b16-8ea1-e16469fe6d05.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.947,
+       "text": "TRYLORMRDE",
+       "y": 339
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 97056,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_217/1753679633653CtJAh_JPEG/0829601f-01ad-4382-a35d-8f9bb279ecda.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 139536,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250728_205/175367963352216eub_JPEG/688c6c5c-2684-4d2a-9541-e2d4849eb248.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  }
+ ],
+ "key": "fairwardgolf:naver:100767349:12166562599",
+ "links_sha256": "9ef15ec170584fa4010d422f5e007139ef7e0836019b9cf80ae73af294f06bde",
+ "product_id": "12166562599",
+ "seconds": 25.1,
+ "skipped": []
+}

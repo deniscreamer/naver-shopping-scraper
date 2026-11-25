@@ -1,0 +1,2574 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 135965,
+   "height": 258,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_20/1649604185551AYiXk_JPEG/detail_1_01.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.621,
+       "text": "9 / 방A",
+       "y": 27
+      },
+      {
+       "conf": 0.917,
+       "text": "-",
+       "y": 97
+      },
+      {
+       "conf": 0.535,
+       "text": "365일 / 물샐튼이",
+       "y": 171
+      }
+     ],
+     "y0": 0,
+     "y1": 258
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 321789,
+   "height": 734,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_103/1649604185571teJdw_JPEG/detail_1_02.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 734
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 350083,
+   "height": 714,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_134/1649604185574BPsuH_JPEG/detail_1_03.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.921,
+       "text": "원단 / 연잎효과방수원단",
+       "y": 40
+      },
+      {
+       "conf": 0.864,
+       "text": "방수I내마모성| 색빠짐없음|무취",
+       "y": 84
+      }
+     ],
+     "y0": 0,
+     "y1": 714
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 86042,
+   "height": 436,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_38/1649604185546XzHKD_JPEG/detail_1_04.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.926,
+       "text": "언잎방수효과",
+       "y": 10
+      },
+      {
+       "conf": 0.896,
+       "text": "$$",
+       "y": 300
+      },
+      {
+       "conf": 0.957,
+       "text": "나노방수방풍및보온 / 통기성 / 내마모성",
+       "y": 377
+      }
+     ],
+     "y0": 0,
+     "y1": 436
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 330124,
+   "height": 674,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_243/1649604185578k22PO_JPEG/detail_1_05.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.995,
+       "text": "와일드원단",
+       "y": 130
+      },
+      {
+       "conf": 0.889,
+       "text": "분리가능이중벨크로",
+       "y": 550
+      },
+      {
+       "conf": 0.992,
+       "text": "벨크로",
+       "y": 538
+      },
+      {
+       "conf": 0.953,
+       "text": "새로운 벨크로 연결 C자인은 바람에 강합니다",
+       "y": 599
+      }
+     ],
+     "y0": 0,
+     "y1": 674
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 208399,
+   "height": 656,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_38/1649604185568VxBQl_JPEG/detail_1_06.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.989,
+       "text": "22cm",
+       "y": 84
+      },
+      {
+       "conf": 0.507,
+       "text": "—8cm / O / O / 13cm / •",
+       "y": 137
+      },
+      {
+       "conf": 0.983,
+       "text": "벨크로디자인",
+       "y": 199
+      },
+      {
+       "conf": 0.955,
+       "text": "행과레인캡의완벽조합",
+       "y": 238
+      },
+      {
+       "conf": 0.986,
+       "text": "버튼분해후단일커버로사용 / 16cm",
+       "y": 312
+      },
+      {
+       "conf": 0.932,
+       "text": "주:상품수령후벨크로가장자리의 보호필름을떼어 내십시오",
+       "y": 573
+      }
+     ],
+     "y0": 0,
+     "y1": 656
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 229095,
+   "height": 952,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_73/1649604185761SuTRN_JPEG/detail_1_07.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.974,
+       "text": "방수 / 투명커버 / 통기성 / 탈부착 / 김서림방지",
+       "y": 869
+      },
+      {
+       "conf": 0.966,
+       "text": "WATERPROOF / TRANSPARENT / BREATHABLE / DETACHABLE / ANT-FOG",
+       "y": 892
+      }
+     ],
+     "y0": 0,
+     "y1": 952
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 334055,
+   "height": 1116,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_93/164960418582884zgY_JPEG/detail_1_08.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.948,
+       "text": "숨기고 착용할 수 있습니다",
+       "y": 8
+      },
+      {
+       "conf": 0.914,
+       "text": "레인캡",
+       "y": 0
+      },
+      {
+       "conf": 0.972,
+       "text": "높이 조절이 가능합니다",
+       "y": 53
+      },
+      {
+       "conf": 0.995,
+       "text": "아래로",
+       "y": 231
+      },
+      {
+       "conf": 0.999,
+       "text": "위로",
+       "y": 362
+      },
+      {
+       "conf": 0.975,
+       "text": "모자 상단의 벨크로",
+       "y": 923
+      },
+      {
+       "conf": 0.931,
+       "text": "레인캡 행높이 조절 가능",
+       "y": 954
+      }
+     ],
+     "y0": 0,
+     "y1": 1116
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 197818,
+   "height": 532,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_242/1649604185819pvSiF_JPEG/detail_1_09.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.922,
+       "text": "레인캡은 숨길 수 있으며 칼라는 핼멧으로 착용할 수 있습니다",
+       "y": 35
+      }
+     ],
+     "y0": 0,
+     "y1": 532
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 374610,
+   "height": 796,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_156/1649604185895CLX9q_JPEG/detail_1_10.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.945,
+       "text": "레인팬츠 / 8시간 동안 물이 새지 않습니다",
+       "y": 25
+      },
+      {
+       "conf": 0.87,
+       "text": "금붕어를귀울수있는친환경원단",
+       "y": 61
+      }
+     ],
+     "y0": 0,
+     "y1": 796
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 395188,
+   "height": 1100,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_36/1649604185909mP3j4_JPEG/detail_1_11.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.714,
+       "text": "물은걸대로",
+       "y": 154
+      },
+      {
+       "conf": 0.861,
+       "text": "새지 / 않습니다",
+       "y": 229
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 219544,
+   "height": 820,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_170/1649604185882iSc4m_JPEG/detail_1_12.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.982,
+       "text": "긴 레인 팬츠 디자인",
+       "y": 12
+      },
+      {
+       "conf": 0.897,
+       "text": "발은것지않습다",
+       "y": 177
+      }
+     ],
+     "y0": 0,
+     "y1": 820
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 182639,
+   "height": 516,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_273/16496041860316KYJj_JPEG/detail_1_13.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.931,
+       "text": "바지를 단단히조일 수있습니다",
+       "y": 88
+      }
+     ],
+     "y0": 0,
+     "y1": 516
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 52435,
+   "height": 156,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_56/16496041861465ihuA_JPEG/detail_1_14.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.9,
+       "text": "전면 후면 고강도반사 스트립 디자인",
+       "y": 40
+      },
+      {
+       "conf": 0.505,
+       "text": "- / 200m떨어진 곳에서도 선명하게 보이는 밝기",
+       "y": 83
+      }
+     ],
+     "y0": 0,
+     "y1": 156
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 162563,
+   "height": 562,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_151/1649604186166UreTr_JPEG/detail_1_15.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.631,
+       "text": "8",
+       "y": 132
+      },
+      {
+       "conf": 0.882,
+       "text": "•",
+       "y": 218
+      },
+      {
+       "conf": 0.696,
+       "text": "e",
+       "y": 428
+      }
+     ],
+     "y0": 0,
+     "y1": 562
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 370345,
+   "height": 654,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_217/1649604186218KJCfR_JPEG/detail_1_16.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.95,
+       "text": "원단은 부드럽고도 강인합니다",
+       "y": 51
+      }
+     ],
+     "y0": 0,
+     "y1": 654
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 269933,
+   "height": 626,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_247/16496041862138kEmX_JPEG/detail_1_17.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.937,
+       "text": "내부 이음새를 핫프레스실란트로 봉제하였습니다",
+       "y": 27
+      }
+     ],
+     "y0": 0,
+     "y1": 626
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 252709,
+   "height": 500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_79/1649604186307hFdTu_JPEG/detail_1_18.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.926,
+       "text": "내부 방수 멤브레인",
+       "y": 342
+      },
+      {
+       "conf": 0.965,
+       "text": "주름이 잡히지 않습니다",
+       "y": 378
+      }
+     ],
+     "y0": 0,
+     "y1": 500
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 319712,
+   "height": 678,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_152/1649604186329eALRD_JPEG/detail_1_19.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.916,
+       "text": "수분축적없이 속건성으로언제나뽀송보송",
+       "y": 23
+      }
+     ],
+     "y0": 0,
+     "y1": 678
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 363142,
+   "height": 1012,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_131/1649604186416uDRIj_JPEG/detail_1_20.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.957,
+       "text": "강화된 방수 측면 포켓",
+       "y": 21
+      },
+      {
+       "conf": 0.971,
+       "text": "찢어짐을 방지하기 위한 강화된 바느질",
+       "y": 581
+      }
+     ],
+     "y0": 0,
+     "y1": 1012
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 53194,
+   "height": 146,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_124/1649604186476OqTtb_JPEG/detail_1_21.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.915,
+       "text": "뒷면의 더블벤트디자인",
+       "y": 34
+      },
+      {
+       "conf": 0.877,
+       "text": "- / - / 내부레이어는 격자로 편안하고 답답하지 않습니다",
+       "y": 71
+      }
+     ],
+     "y0": 0,
+     "y1": 146
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 326704,
+   "height": 1020,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_245/1649604186606GHnUO_JPEG/detail_1_22.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1020
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 391923,
+   "height": 844,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_230/1649604186570nL4YX_JPEG/detail_1_23.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.942,
+       "text": "내부 메쉬는 통기성이 우수하여 답답하지 않습니다",
+       "y": 25
+      }
+     ],
+     "y0": 0,
+     "y1": 844
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 255673,
+   "height": 556,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_170/1649604186629T3f3l_JPEG/detail_1_24.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.949,
+       "text": "넥라인 / 하이칼라벨크로디지인",
+       "y": 32
+      },
+      {
+       "conf": 0.942,
+       "text": "철저한 누수 방자를 위해 캡로프가 잠깁니다",
+       "y": 71
+      }
+     ],
+     "y0": 0,
+     "y1": 556
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 220371,
+   "height": 578,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_280/1649604186658qeXcq_JPEG/detail_1_25.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.959,
+       "text": "이중 소매 디자인으로 손을 이중으로 보호",
+       "y": 36
+      }
+     ],
+     "y0": 0,
+     "y1": 578
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 176484,
+   "height": 388,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_122/1649604186824CyU4X_JPEG/detail_1_26.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.954,
+       "text": "내부 신축성 있는 소매 끝 / 소매를 조여주는 외부 보강 벨크로",
+       "y": 12
+      }
+     ],
+     "y0": 0,
+     "y1": 388
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 101839,
+   "height": 482,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_71/1649604186975Wp9pN_JPEG/detail_1_28.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "제품정보",
+       "y": 13
+      },
+      {
+       "conf": 0.99,
+       "text": "PRODUCT INFORMATION",
+       "y": 54
+      },
+      {
+       "conf": 0.584,
+       "text": "×",
+       "y": 100
+      },
+      {
+       "conf": 0.934,
+       "text": "제품명: / 방수비옷레인팬츠 / 방수지수:",
+       "y": 189
+      },
+      {
+       "conf": 0.977,
+       "text": "일반 / 적절 / 양호 / 특급√",
+       "y": 204
+      },
+      {
+       "conf": 0.925,
+       "text": "모델명: / CZ-208",
+       "y": 227
+      },
+      {
+       "conf": 0.927,
+       "text": "통기지수:",
+       "y": 240
+      },
+      {
+       "conf": 0.99,
+       "text": "일반 / 적절 / 양호 / 특급√",
+       "y": 255
+      },
+      {
+       "conf": 0.976,
+       "text": "색상: / 별도페이지참조",
+       "y": 267
+      },
+      {
+       "conf": 0.932,
+       "text": "친환경지수:",
+       "y": 292
+      },
+      {
+       "conf": 0.944,
+       "text": "원단: / 나노기술명주친환경원단 / 일반 / 적절 / 양호 / 특급√",
+       "y": 308
+      },
+      {
+       "conf": 0.985,
+       "text": "내마모성지수:",
+       "y": 340
+      },
+      {
+       "conf": 0.94,
+       "text": "사이즈: / M,L,XL,2XL,3XL, 4XL / 일반 / 적절 / 양호 / 특급√",
+       "y": 357
+      },
+      {
+       "conf": 0.958,
+       "text": "야광지수:",
+       "y": 394
+      },
+      {
+       "conf": 0.933,
+       "text": "적용: / 현장근무,도로관리,라이딩 / 일반 / 적절 / 양호 / 특급√",
+       "y": 407
+      }
+     ],
+     "y0": 0,
+     "y1": 482
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 87454,
+   "height": 514,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_33/1649604186713kuviL_JPEG/detail_1_29.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.991,
+       "text": "어깨너비 / 허리둘레",
+       "y": 22
+      },
+      {
+       "conf": 0.996,
+       "text": "길이 / 바지길이",
+       "y": 254
+      },
+      {
+       "conf": 0.998,
+       "text": "소매길이",
+       "y": 281
+      },
+      {
+       "conf": 0.892,
+       "text": "--가슴둘레",
+       "y": 323
+      },
+      {
+       "conf": 0.759,
+       "text": "•",
+       "y": 372
+      }
+     ],
+     "y0": 0,
+     "y1": 514
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 179329,
+   "height": 954,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_45/1649604186889dLrwz_JPEG/detail_1_30.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.993,
+       "text": "사이즈참고표",
+       "y": 10
+      },
+      {
+       "conf": 0.953,
+       "text": "크기는수동으로측정하였으며약1~3 cm오차는정상입니다",
+       "y": 62
+      },
+      {
+       "conf": 0.954,
+       "text": "사이즈 / 어깨너비가슴둘레 / 길이 / 소매길이 / 엉덩이 / 바지길이 / 허리둘레",
+       "y": 114
+      },
+      {
+       "conf": 0.816,
+       "text": "M / 44cm / 104cm / 68cm / 56cm / 97cm / 94cm / 54-88cm",
+       "y": 168
+      },
+      {
+       "conf": 0.84,
+       "text": "L / 48cm / 112cm / 72cm / 58cm / 100cm / 101cm / 55-97cm",
+       "y": 215
+      },
+      {
+       "conf": 0.836,
+       "text": "x / 52cm / 122cm / 74cm / 59m / 107cm / 103cm / 56-105cm",
+       "y": 258
+      },
+      {
+       "conf": 0.613,
+       "text": "xL / 54cm / 128m / 77om / 62cm / 114cm / 106cm / 62-110cm",
+       "y": 304
+      },
+      {
+       "conf": 0.581,
+       "text": "xL / 58m / 133cm / 80cm / 66cm / 122m / 112cm / 68-118cm",
+       "y": 351
+      },
+      {
+       "conf": 0.507,
+       "text": "x0L / 62cm / 141cm / 84cm / 69cm / 130cm / 118cm / 76-125om",
+       "y": 396
+      },
+      {
+       "conf": 0.956,
+       "text": "신장/체중 사이즈 차트",
+       "y": 452
+      },
+      {
+       "conf": 0.984,
+       "text": "측정단위:무게/kg,신장/cm",
+       "y": 500
+      },
+      {
+       "conf": 0.998,
+       "text": "신장 / 체중 / 권장사이즈",
+       "y": 561
+      },
+      {
+       "conf": 0.958,
+       "text": "155-160 cm / 60 kg 이하 / M",
+       "y": 626
+      },
+      {
+       "conf": 0.946,
+       "text": "161-169cm / 60-66 kg / L",
+       "y": 677
+      },
+      {
+       "conf": 0.887,
+       "text": "170-174cm / 66-84 kg / XL",
+       "y": 735
+      },
+      {
+       "conf": 0.751,
+       "text": "175-180cm / 84-96 kg / XXL",
+       "y": 787
+      },
+      {
+       "conf": 0.858,
+       "text": "181-189 cm / 96-120 kg / XXXL",
+       "y": 840
+      },
+      {
+       "conf": 0.935,
+       "text": "190 cm 이상 / 120kg 이상 / XXXL",
+       "y": 895
+      }
+     ],
+     "y0": 0,
+     "y1": 954
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 59753,
+   "height": 186,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_136/16496041869131X8N6_JPEG/detail_1_31.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "키나몸무게는 / 최대값으로 / 선택하는 / 것이좋습니다",
+       "y": 32
+      },
+      {
+       "conf": 0.916,
+       "text": "신장이XL에 해당하고몸무게가L에 / 해당하는 / 경우신장에 / 따라XL을선택하는 / 것이를 / 좋습니다",
+       "y": 107
+      },
+      {
+       "conf": 0.928,
+       "text": "반대로 / 체중이 XXL에 / 해당하고신장이XL에 / 해당하는 / 경우에는 무게에 / 따라XXL을선택하십시오",
+       "y": 130
+      }
+     ],
+     "y0": 0,
+     "y1": 186
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 286981,
+   "height": 836,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_24/1649604186991Q4tVh_JPEG/detail_1_32.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "제품색상",
+       "y": 26
+      },
+      {
+       "conf": 0.993,
+       "text": "PRODUCT COLOUR",
+       "y": 75
+      },
+      {
+       "conf": 0.611,
+       "text": "×",
+       "y": 131
+      },
+      {
+       "conf": 0.989,
+       "text": "블랙 / 레드 / 네이비",
+       "y": 775
+      }
+     ],
+     "y0": 0,
+     "y1": 836
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 301178,
+   "height": 649,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_292/1649604187115jdqqt_JPEG/detail_1_33.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.951,
+       "text": "라임그린 / 스카이블루 / 옐로우",
+       "y": 593
+      }
+     ],
+     "y0": 0,
+     "y1": 649
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 322158,
+   "height": 668,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_145/1649604187121vDjWt_JPEG/detail_1_34.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.853,
+       "text": "그레이키모 / 카모플라주 / 네이비카모",
+       "y": 599
+      }
+     ],
+     "y0": 0,
+     "y1": 668
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 25394,
+   "height": 76,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_198/1649604187098IOCPd_JPEG/detail_1_35.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.997,
+       "text": "색상차이 / 설명",
+       "y": 0
+      },
+      {
+       "conf": 0.945,
+       "text": "상품 / 상세 / 페이지에 / 개제된모든사진은실물을촬영한것입니다. / 다양한요인으로인해차이가있을수",
+       "y": 30
+      },
+      {
+       "conf": 0.951,
+       "text": "있으므로 / 실제상품을 / 참고하시기 바랍니다",
+       "y": 50
+      }
+     ],
+     "y0": 0,
+     "y1": 76
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 36295,
+   "height": 194,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_274/1649610324170oxwUA_PNG/SE-6638e170-f40a-4694-8e1e-d37587ebd7f0.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.92,
+       "text": "OP / 'TION",
+       "y": 0
+      },
+      {
+       "conf": 0.746,
+       "text": "우비 / 레인로 / 코트",
+       "y": 104
+      }
+     ],
+     "y0": 0,
+     "y1": 194
+    }
+   ],
+   "status": "read",
+   "width": 865
+  },
+  {
+   "bytes": 791153,
+   "height": 1572,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_125/1649610337464YmPbt_JPEG/detail_1_01.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.991,
+       "text": "롱코트방수우의",
+       "y": 16
+      },
+      {
+       "conf": 0.993,
+       "text": "고강도 방수 퍼포먼스",
+       "y": 136
+      }
+     ],
+     "y0": 0,
+     "y1": 1572
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 47048,
+   "height": 122,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_279/1649610337368BYLdr_JPEG/detail_1_02.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.995,
+       "text": "엔트레이드코리아 방수 우의는 우수한 원단으로 제작되었습니다",
+       "y": 13
+      },
+      {
+       "conf": 0.778,
+       "text": "방수 / 모칙 / 노화방지",
+       "y": 56
+      },
+      {
+       "conf": 0.591,
+       "text": "무주",
+       "y": 69
+      }
+     ],
+     "y0": 0,
+     "y1": 122
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 72328,
+   "height": 628,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_249/1649610337383krr6o_JPEG/detail_1_03.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.976,
+       "text": "XXL",
+       "y": 77
+      },
+      {
+       "conf": 0.973,
+       "text": "길이:약125cm",
+       "y": 251
+      },
+      {
+       "conf": 0.946,
+       "text": "•",
+       "y": 358
+      }
+     ],
+     "y0": 0,
+     "y1": 628
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 63835,
+   "height": 135,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_109/1649610337373c2EB0_JPEG/detail_1_04.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.942,
+       "text": "롱코트 스타일의 레인코트",
+       "y": 26
+      },
+      {
+       "conf": 0.968,
+       "text": "무릎 아래까지 방수 기능이 뛰어난 롱스타일 우의",
+       "y": 58
+      }
+     ],
+     "y0": 0,
+     "y1": 135
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 171817,
+   "height": 750,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_105/1649610337398Uo9LQ_JPEG/detail_1_05.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.997,
+       "text": "더욱커진모자디자인",
+       "y": 633
+      },
+      {
+       "conf": 0.96,
+       "text": "큰 모자는 빗물이 얼굴에 튀는 것을 최대한 방지합니다",
+       "y": 666
+      }
+     ],
+     "y0": 0,
+     "y1": 750
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 178925,
+   "height": 249,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_161/1649610337401Boo0H_JPEG/detail_1_06.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.994,
+       "text": "The / inner / environmental",
+       "y": 92
+      },
+      {
+       "conf": 0.877,
+       "text": "protection / film / 친환경 / 경직물원단",
+       "y": 122
+      },
+      {
+       "conf": 0.974,
+       "text": "전통적인직물개념을벗어나",
+       "y": 154
+      },
+      {
+       "conf": 0.956,
+       "text": "혁신적이고 환경 친화적인 직물",
+       "y": 175
+      }
+     ],
+     "y0": 0,
+     "y1": 249
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 439413,
+   "height": 846,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_280/1649610337630L9cRY_JPEG/detail_1_07.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.918,
+       "text": "일부 저가 제품에서는 냄새가 심하게",
+       "y": 57
+      },
+      {
+       "conf": 0.939,
+       "text": "납니다.냄새를포함한가스는인체에",
+       "y": 79
+      },
+      {
+       "conf": 0.918,
+       "text": "어느정도해를끼칩니다.우리제품은",
+       "y": 103
+      },
+      {
+       "conf": 0.945,
+       "text": "신소재필름을 사용하여 환경 친화적",
+       "y": 129
+      },
+      {
+       "conf": 0.965,
+       "text": "이며안전하고 내한성,내마모성,무취",
+       "y": 153
+      },
+      {
+       "conf": 0.939,
+       "text": "의특성을 가집니다.쉽게 노화되지않",
+       "y": 177
+      },
+      {
+       "conf": 0.912,
+       "text": "고쁘쁘해지지않고쉽게부패하지않",
+       "y": 199
+      },
+      {
+       "conf": 0.974,
+       "text": "습니다",
+       "y": 224
+      },
+      {
+       "conf": 0.998,
+       "text": "Heat sealing",
+       "y": 674
+      },
+      {
+       "conf": 0.97,
+       "text": "The inner waterproof / 히트실링접착방식",
+       "y": 699
+      },
+      {
+       "conf": 0.986,
+       "text": "내부방수히트실링접착",
+       "y": 733
+      }
+     ],
+     "y0": 0,
+     "y1": 846
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 211422,
+   "height": 531,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_255/1649610337599BhDIp_JPEG/detail_1_08.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "내부원단필름",
+       "y": 31
+      },
+      {
+       "conf": 0.99,
+       "text": "주름진 부분을 최소화하여 쉽게 부패하지 않고 수명이 길며 고강도 방수 효과를 나타냅니다",
+       "y": 484
+      }
+     ],
+     "y0": 0,
+     "y1": 531
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 212527,
+   "height": 566,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_255/1649610337600o3EPU_JPEG/detail_1_09.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.955,
+       "text": "우의의 특별한 비밀은 가랑이를 십자형 실란트 특수 처리하여 흘러내림이 없습니다",
+       "y": 485
+      }
+     ],
+     "y0": 0,
+     "y1": 566
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 400735,
+   "height": 870,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_224/16496103376719rcva_JPEG/detail_1_10.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.981,
+       "text": "The strength of reflective",
+       "y": 90
+      },
+      {
+       "conf": 0.998,
+       "text": "reflective / 반사효과",
+       "y": 101
+      },
+      {
+       "conf": 0.995,
+       "text": "고강도반사스트립사용",
+       "y": 154
+      }
+     ],
+     "y0": 0,
+     "y1": 870
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 481421,
+   "height": 864,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_82/1649610337722MyMYV_JPEG/detail_1_11.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.968,
+       "text": "제품 주요특징",
+       "y": 30
+      },
+      {
+       "conf": 0.977,
+       "text": "1.높은 목카라디자인으로 누출 방지",
+       "y": 140
+      },
+      {
+       "conf": 0.962,
+       "text": "2.프로페셔널한디자인 / 6.고강도반사스트립",
+       "y": 251
+      },
+      {
+       "conf": 0.928,
+       "text": "+",
+       "y": 276
+      },
+      {
+       "conf": 0.989,
+       "text": "3.이중여임설계",
+       "y": 356
+      },
+      {
+       "conf": 0.988,
+       "text": "4.빅포켓디자인",
+       "y": 459
+      },
+      {
+       "conf": 0.953,
+       "text": "7.히든슬림소매",
+       "y": 524
+      },
+      {
+       "conf": 0.826,
+       "text": "+",
+       "y": 547
+      },
+      {
+       "conf": 0.977,
+       "text": "5.녹슬지않는 구리단추",
+       "y": 630
+      },
+      {
+       "conf": 0.987,
+       "text": "+",
+       "y": 657
+      },
+      {
+       "conf": 0.998,
+       "text": "8.정교한바느질공정",
+       "y": 750
+      },
+      {
+       "conf": 0.974,
+       "text": "+",
+       "y": 777
+      }
+     ],
+     "y0": 0,
+     "y1": 864
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 387386,
+   "height": 595,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_153/1649610337968qUDL2_JPEG/detail_1_12.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.985,
+       "text": "제품디테일 / Ntrade korea",
+       "y": 19
+      },
+      {
+       "conf": 1.0,
+       "text": "고품질지퍼",
+       "y": 147
+      },
+      {
+       "conf": 0.942,
+       "text": "고품질의 지퍼와녹슬",
+       "y": 210
+      },
+      {
+       "conf": 0.875,
+       "text": "지 않는 단추를 채택",
+       "y": 234
+      },
+      {
+       "conf": 0.934,
+       "text": "하여 우의를착용할",
+       "y": 258
+      },
+      {
+       "conf": 0.976,
+       "text": "때큰사용만족을줍",
+       "y": 282
+      },
+      {
+       "conf": 0.883,
+       "text": "니다.",
+       "y": 306
+      }
+     ],
+     "y0": 0,
+     "y1": 595
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 205754,
+   "height": 603,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_172/1649610337962aBkzf_JPEG/detail_1_13.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "견장제공",
+       "y": 100
+      },
+      {
+       "conf": 0.963,
+       "text": "롱코트형식의우의는",
+       "y": 160
+      },
+      {
+       "conf": 0.895,
+       "text": "양쪽의 어깨 위치에",
+       "y": 185
+      },
+      {
+       "conf": 0.882,
+       "text": "건장이 있습니다.필",
+       "y": 211
+      },
+      {
+       "conf": 0.917,
+       "text": "요에 따라견장을걸",
+       "y": 234
+      },
+      {
+       "conf": 0.93,
+       "text": "어 장식할수있습니",
+       "y": 258
+      },
+      {
+       "conf": 0.931,
+       "text": "다.",
+       "y": 280
+      }
+     ],
+     "y0": 0,
+     "y1": 603
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 323471,
+   "height": 605,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_33/1649610338030Lm9pA_JPEG/detail_1_14.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.958,
+       "text": "여임디자인",
+       "y": 101
+      },
+      {
+       "conf": 0.913,
+       "text": "크고작은이중여임",
+       "y": 162
+      },
+      {
+       "conf": 0.96,
+       "text": "디자인으로지퍼와버",
+       "y": 187
+      },
+      {
+       "conf": 0.937,
+       "text": "튼조합이누수방지",
+       "y": 211
+      },
+      {
+       "conf": 0.878,
+       "text": "효과를향상시컵니다.",
+       "y": 236
+      }
+     ],
+     "y0": 0,
+     "y1": 605
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 209126,
+   "height": 597,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_237/1649610338025y2Vrb_JPEG/detail_1_15.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "소매조임",
+       "y": 98
+      },
+      {
+       "conf": 0.993,
+       "text": "누출을방지하기위한",
+       "y": 158
+      },
+      {
+       "conf": 0.952,
+       "text": "내부의숨겨진탄성",
+       "y": 184
+      },
+      {
+       "conf": 0.989,
+       "text": "소매디자인",
+       "y": 208
+      }
+     ],
+     "y0": 0,
+     "y1": 597
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 219656,
+   "height": 609,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_170/16496103380824g1et_JPEG/detail_1_16.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "통풍구배치",
+       "y": 107
+      },
+      {
+       "conf": 0.9,
+       "text": "앞가슴 쪽에 통풍을",
+       "y": 165
+      },
+      {
+       "conf": 0.958,
+       "text": "위한4개의 통풍구를",
+       "y": 189
+      },
+      {
+       "conf": 0.979,
+       "text": "배치하여통풍성능이",
+       "y": 213
+      },
+      {
+       "conf": 0.919,
+       "text": "더욱뛰어납니다.",
+       "y": 239
+      }
+     ],
+     "y0": 0,
+     "y1": 609
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 264684,
+   "height": 603,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_150/1649610338098FqNos_JPEG/detail_1_17.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "내부원단",
+       "y": 101
+      },
+      {
+       "conf": 0.983,
+       "text": "편안함과함께 강력한",
+       "y": 164
+      },
+      {
+       "conf": 0.888,
+       "text": "방수 효과를 갖춘고",
+       "y": 187
+      },
+      {
+       "conf": 0.932,
+       "text": "품질의 의류안감을",
+       "y": 211
+      },
+      {
+       "conf": 0.92,
+       "text": "사용합니다.",
+       "y": 234
+      }
+     ],
+     "y0": 0,
+     "y1": 603
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 152265,
+   "height": 606,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_168/1649610338234qkxfK_JPEG/detail_1_18.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.898,
+       "text": "대형 모자 스타일",
+       "y": 163
+      },
+      {
+       "conf": 0.984,
+       "text": "넓은디자인으로안면",
+       "y": 224
+      },
+      {
+       "conf": 0.985,
+       "text": "을완전히감쌀수있",
+       "y": 249
+      },
+      {
+       "conf": 0.987,
+       "text": "도록설계된모자로",
+       "y": 274
+      },
+      {
+       "conf": 0.937,
+       "text": "끈을조여방수효과",
+       "y": 294
+      },
+      {
+       "conf": 0.941,
+       "text": "를높일 수있으며",
+       "y": 320
+      },
+      {
+       "conf": 0.912,
+       "text": "사용하지 않을 때는",
+       "y": 345
+      },
+      {
+       "conf": 0.973,
+       "text": "접어서숨길수있습",
+       "y": 369
+      },
+      {
+       "conf": 0.843,
+       "text": "니다.",
+       "y": 391
+      }
+     ],
+     "y0": 0,
+     "y1": 606
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 386634,
+   "height": 603,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_158/1649610338301wmG3d_JPEG/detail_1_19.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "정교한바느질",
+       "y": 100
+      },
+      {
+       "conf": 0.911,
+       "text": "매우홀륭하고전문적",
+       "y": 162
+      },
+      {
+       "conf": 0.899,
+       "text": "인바느질공정을통",
+       "y": 186
+      },
+      {
+       "conf": 0.992,
+       "text": "해기능성과외형의",
+       "y": 211
+      },
+      {
+       "conf": 0.982,
+       "text": "완성도를더욱높입니",
+       "y": 235
+      }
+     ],
+     "y0": 0,
+     "y1": 603
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 260432,
+   "height": 597,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_258/1649610338296DfuLV_JPEG/detail_1_20.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "완벽하게커버",
+       "y": 101
+      },
+      {
+       "conf": 0.923,
+       "text": "높은 칼라디자인+좌",
+       "y": 164
+      },
+      {
+       "conf": 0.901,
+       "text": "우여임+모자+끈조임",
+       "y": 187
+      },
+      {
+       "conf": 0.97,
+       "text": "으로안면부에도완",
+       "y": 210
+      },
+      {
+       "conf": 0.992,
+       "text": "벽하게누출을방지합",
+       "y": 234
+      },
+      {
+       "conf": 0.844,
+       "text": "니다.",
+       "y": 260
+      }
+     ],
+     "y0": 0,
+     "y1": 597
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 275204,
+   "height": 603,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_214/164961033831376XeH_JPEG/detail_1_21.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "반사스트립",
+       "y": 108
+      },
+      {
+       "conf": 0.977,
+       "text": "등판의상단에는시중",
+       "y": 166
+      },
+      {
+       "conf": 0.93,
+       "text": "에서가장높은 반사",
+       "y": 193
+      },
+      {
+       "conf": 0.938,
+       "text": "율을 자랑하는2CM",
+       "y": 217
+      },
+      {
+       "conf": 0.93,
+       "text": "폭의 고강도 반사 스",
+       "y": 241
+      },
+      {
+       "conf": 0.893,
+       "text": "트립이 있어 비오는",
+       "y": 264
+      },
+      {
+       "conf": 0.978,
+       "text": "날악천후시에도안",
+       "y": 289
+      },
+      {
+       "conf": 0.992,
+       "text": "전을보장합니다",
+       "y": 314
+      }
+     ],
+     "y0": 0,
+     "y1": 603
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 222337,
+   "height": 612,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_194/1649610338329os56Q_JPEG/detail_1_22.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "빅포켓디자인",
+       "y": 108
+      },
+      {
+       "conf": 0.989,
+       "text": "우의의좌우측면에는",
+       "y": 169
+      },
+      {
+       "conf": 0.981,
+       "text": "큰사이즈의포켓이",
+       "y": 195
+      },
+      {
+       "conf": 0.925,
+       "text": "있어 실용성이 더욱",
+       "y": 219
+      },
+      {
+       "conf": 0.992,
+       "text": "뛰어납니다",
+       "y": 241
+      }
+     ],
+     "y0": 0,
+     "y1": 612
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 364230,
+   "height": 831,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_164/1649610338352sQWtX_JPEG/detail_1_23.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "패키지사진 / Ntrade korea",
+       "y": 22
+      }
+     ],
+     "y0": 0,
+     "y1": 831
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 189184,
+   "height": 1099,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_250/1649610338537TS4KQ_JPEG/detail_1_24.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "블랙",
+       "y": 335
+      },
+      {
+       "conf": 0.966,
+       "text": "신비롭고차가운느낌의블랙컬러,",
+       "y": 379
+      },
+      {
+       "conf": 0.95,
+       "text": "숨겨진힘이느껴지는블랙은 항상",
+       "y": 404
+      },
+      {
+       "conf": 0.924,
+       "text": "패션 업계의 주류 컬러입니다.",
+       "y": 429
+      },
+      {
+       "conf": 0.964,
+       "text": "A MYSTERIOUS, COLD, HIDDEN",
+       "y": 906
+      },
+      {
+       "conf": 0.977,
+       "text": "THE POWER OF MORAL, IS BLACK",
+       "y": 930
+      },
+      {
+       "conf": 0.97,
+       "text": "THE WORLD IS ALWAYS IN THE MAINSTREAM",
+       "y": 953
+      }
+     ],
+     "y0": 0,
+     "y1": 1099
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 326593,
+   "height": 1167,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_30/1649610338577EIO9A_JPEG/detail_1_25.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "네이비",
+       "y": 383
+      },
+      {
+       "conf": 0.947,
+       "text": "엄격한 전문가의 감각을느낄수있",
+       "y": 424
+      },
+      {
+       "conf": 0.96,
+       "text": "는컬러로,유행을선도하는 컬러에",
+       "y": 447
+      },
+      {
+       "conf": 0.947,
+       "text": "서빠져서는 안될 주인공입니다.",
+       "y": 476
+      },
+      {
+       "conf": 0.986,
+       "text": "ON BEHALF OF THE CALM, WISDOM ETC.",
+       "y": 941
+      },
+      {
+       "conf": 0.959,
+       "text": "IS A CRYSTAL CLEAR BLUE,",
+       "y": 962
+      },
+      {
+       "conf": 0.968,
+       "text": "THAN WITH THE GENERAL COLOR",
+       "y": 984
+      }
+     ],
+     "y0": 0,
+     "y1": 1167
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 316261,
+   "height": 1244,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_26/1649610338579qWcjX_JPEG/detail_1_26.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "형광그린",
+       "y": 451
+      },
+      {
+       "conf": 0.961,
+       "text": "당신을 위한 고강도발광 색상",
+       "y": 497
+      },
+      {
+       "conf": 0.696,
+       "text": "C",
+       "y": 609
+      },
+      {
+       "conf": 0.997,
+       "text": "REQINGSHIHUO",
+       "y": 1068
+      },
+      {
+       "conf": 0.992,
+       "text": "THE WHOLE WORLD IS CRAZY FOR IT",
+       "y": 1090
+      },
+      {
+       "conf": 0.947,
+       "text": "SUCH A CHARMING EYE",
+       "y": 1111
+      }
+     ],
+     "y0": 0,
+     "y1": 1244
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 332989,
+   "height": 988,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_131/1649610338713jw01d_JPEG/detail_1_27.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.984,
+       "text": "블랙 / 레드 / 네이비",
+       "y": 14
+      },
+      {
+       "conf": 0.9,
+       "text": "라임그린 / 스카이블루 / 엘로우",
+       "y": 342
+      },
+      {
+       "conf": 0.869,
+       "text": "그레이카모 / 카모플라주 / 네이비카모",
+       "y": 670
+      }
+     ],
+     "y0": 0,
+     "y1": 988
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 298992,
+   "height": 764,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_265/1649614155180V7Q0J_JPEG/detail_1_28_01.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "제품기본정보",
+       "y": 46
+      },
+      {
+       "conf": 0.957,
+       "text": "모델명: Ntrade-002",
+       "y": 107
+      },
+      {
+       "conf": 0.986,
+       "text": "제품명:롱코트 디자인 방수 우의",
+       "y": 141
+      },
+      {
+       "conf": 0.921,
+       "text": "색상:블랙,네이비,레드,라임그린,스카이블루,엘로우그레이카모,카모플라주,네이비카모",
+       "y": 180
+      },
+      {
+       "conf": 0.947,
+       "text": "원단 소재:최신 나노기술24OT 친환경 원단",
+       "y": 213
+      },
+      {
+       "conf": 0.97,
+       "text": "사이즈:M,L,XL,2XL,3XL, 4XL",
+       "y": 247
+      },
+      {
+       "conf": 0.968,
+       "text": "용도:야외활동,도로 관리,근무,순찰,긴급구조등",
+       "y": 280
+      },
+      {
+       "conf": 0.924,
+       "text": "특수공정:열접착 및 압착 처리,PVC 방수 필름",
+       "y": 315
+      },
+      {
+       "conf": 0.961,
+       "text": "방수 원리:연잎형 초소수성원단채택",
+       "y": 348
+      },
+      {
+       "conf": 0.944,
+       "text": "제품 특징:높게 설계된 목부분의 디자인으로 모자를 숨길 수 있음",
+       "y": 382
+      },
+      {
+       "conf": 0.968,
+       "text": "주요 활용:비,바람,추위,항균, 안전한 라이딩,작업",
+       "y": 420
+      },
+      {
+       "conf": 0.96,
+       "text": "야광성능:매우뛰어남",
+       "y": 453
+      },
+      {
+       "conf": 0.985,
+       "text": "누출지수:매우작음",
+       "y": 488
+      },
+      {
+       "conf": 0.956,
+       "text": "통기성지수:양호한 통기성",
+       "y": 523
+      },
+      {
+       "conf": 1.0,
+       "text": "사이즈정보",
+       "y": 617
+      },
+      {
+       "conf": 0.989,
+       "text": "단위:cm",
+       "y": 667
+      },
+      {
+       "conf": 0.995,
+       "text": "옷길이 / 소매길이 / 어깨너비 / 가슴둘레",
+       "y": 716
+      }
+     ],
+     "y0": 0,
+     "y1": 764
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 51641,
+   "height": 247,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_257/1649614155141cfbfv_JPEG/detail_1_28_03.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.996,
+       "text": "L / 116 / 55 / 47 / 112",
+       "y": 3
+      },
+      {
+       "conf": 0.998,
+       "text": "XL / 120 / 58 / 50 / 122",
+       "y": 50
+      },
+      {
+       "conf": 0.999,
+       "text": "XXL / 125 / 63 / 53 / 128",
+       "y": 95
+      },
+      {
+       "conf": 0.998,
+       "text": "XXXL / 128 / 66 / 56 / 133",
+       "y": 140
+      },
+      {
+       "conf": 0.998,
+       "text": "XXXXL / 130 / 67 / 60 / 140",
+       "y": 185
+      }
+     ],
+     "y0": 0,
+     "y1": 247
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 263360,
+   "height": 766,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220411_47/1649610338704uUOr4_JPEG/detail_1_29.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.984,
+       "text": "사이즈 선택을 위한 차트로 개인의 취향에 맞게 선택에 참고하시길 바랍니다",
+       "y": 0
+      },
+      {
+       "conf": 0.981,
+       "text": "신장 / 150-155 / 155-160 / 160-165 / 165-170 / 170-175 / 175-180 / 180이상",
+       "y": 50
+      },
+      {
+       "conf": 0.971,
+       "text": "체중 / CM / CM / CM / CM / CM / CM / CM",
+       "y": 73
+      },
+      {
+       "conf": 0.965,
+       "text": "35-40KG / M / M / L / XL / 고객센터문의 / 고객센터문의 / 고객센터문의",
+       "y": 112
+      },
+      {
+       "conf": 0.93,
+       "text": "40-45KG / M / M / L / XL / 고객센터문의 / 고객센터문의 / 고객센터문의",
+       "y": 156
+      },
+      {
+       "conf": 0.935,
+       "text": "45-50KG / L / L / L / XL / XXL / 고객센터문의 / 고객센터문의",
+       "y": 209
+      },
+      {
+       "conf": 0.887,
+       "text": "50-55 KG / L / L / L / XL / XXL / 고객센터문의 / 고객센터문의",
+       "y": 255
+      },
+      {
+       "conf": 0.966,
+       "text": "55-60 KG / L / L / L / XL / XXL / XXXL / 고객센터문의",
+       "y": 301
+      },
+      {
+       "conf": 0.959,
+       "text": "55-60 KG / XL / XL / XL / XL / XXL / XXXL / 고객센터문의",
+       "y": 347
+      },
+      {
+       "conf": 0.956,
+       "text": "60-65 KG / 고객센터문의 / XL / XL / XL / XXL / XXXL / XXXXL",
+       "y": 392
+      },
+      {
+       "conf": 0.966,
+       "text": "65-70KG / 고객센터문의 / XL / XL / XL / XXL / XXXL / XXXXL",
+       "y": 438
+      },
+      {
+       "conf": 0.966,
+       "text": "70-75KG / 고객센터문의 / 고객센터문의 / XXL / XXL / XXL / XXXL / XXXXL",
+       "y": 483
+      },
+      {
+       "conf": 0.946,
+       "text": "75-80 KG / 고객센터문의 / 고객센터문의 / XXL / XXL / XXL / XXXL / XXXXL",
+       "y": 530
+      },
+      {
+       "conf": 0.904,
+       "text": "80-85 KG / 고객센터문의 / 고객센터문의 / 고객센터문의 / XXL / XXL / XXXL / XXXXL",
+       "y": 574
+      },
+      {
+       "conf": 0.98,
+       "text": "85-90KG / 고객센터문의 / 고객센터문의 / 고객센터문의 / XXXL / XXXL / XXXL / XXXXL",
+       "y": 622
+      },
+      {
+       "conf": 0.962,
+       "text": "90-100 KG / 고객센터문의 / 고객센터문의 / 고객센터문의 / 고객센터문의 / XXXL / XXXL / XXXXL",
+       "y": 666
+      },
+      {
+       "conf": 0.969,
+       "text": "100KG이상 / 고객센터문의 / 고객센터문의 / 고객센터문의 / 고객센터문의 / XXXXL / XXXXL / XXXXL",
+       "y": 712
+      }
+     ],
+     "y0": 0,
+     "y1": 766
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 258578,
+   "height": 1200,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230628_73/16879578787366vvmu_PNG/%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A8%B8%EC%84%BC%ED%84%B0.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.991,
+       "text": "Consumer Center",
+       "y": 0
+      },
+      {
+       "conf": 0.998,
+       "text": "주문 전 꼭 확인해주세요!",
+       "y": 79
+      },
+      {
+       "conf": 0.981,
+       "text": "010- 8949 - 1703",
+       "y": 177
+      },
+      {
+       "conf": 0.99,
+       "text": "·월요일~금요일까지 운영합니다.(주말/공휴일 제외)",
+       "y": 254
+      },
+      {
+       "conf": 0.978,
+       "text": "·상담시간:AM10:00~PM17:00",
+       "y": 299
+      },
+      {
+       "conf": 0.985,
+       "text": "·전화연결이 안될 시,게시판에 문의해주세요.",
+       "y": 346
+      },
+      {
+       "conf": 0.959,
+       "text": "·배송마감:월요일~금요일 오후 2시 (변동 있을 수 있음)",
+       "y": 461
+      },
+      {
+       "conf": 0.978,
+       "text": "·소요시간:발송 후 1~3일(택배사 사정에 따라 지연될 수 있음)",
+       "y": 523
+      },
+      {
+       "conf": 0.979,
+       "text": "·제주도 및 도서산간 일부 지방은 추가 배송료가 발생 할 수 있음",
+       "y": 586
+      },
+      {
+       "conf": 0.99,
+       "text": "·취소,교환,반품 시 반드시 게시판이나 전화로 연락 주셔야합니다.",
+       "y": 687
+      },
+      {
+       "conf": 0.984,
+       "text": "·고객 임의로 택배 발송 시,교환/반품이 어려우며 추가 배송비가 부과",
+       "y": 734
+      },
+      {
+       "conf": 0.945,
+       "text": "될 수 있는 점 참고 부탁드립니다.",
+       "y": 772
+      },
+      {
+       "conf": 0.963,
+       "text": "·교환/반품 불가한 경우:상품가치 상실,DIY제품 조립 시,수령 후 7일",
+       "y": 815
+      },
+      {
+       "conf": 1.0,
+       "text": "경과",
+       "y": 848
+      },
+      {
+       "conf": 0.987,
+       "text": "·고객 단순변심,수취거부,상품교환 및 반품 시 왕복 택배비는 고객부담",
+       "y": 900
+      },
+      {
+       "conf": 0.964,
+       "text": "·앳홈샴의 상품들은 위탁판매 상품이므로 교환/반품 시 네이버 자동",
+       "y": 1001
+      },
+      {
+       "conf": 0.964,
+       "text": "수거 설정 불가합니다.",
+       "y": 1032
+      },
+      {
+       "conf": 0.637,
+       "text": "! / ·교환/반품 시 저희가 직접 택배사로 회수 요청 후 기사님을 보내드리기",
+       "y": 1021
+      },
+      {
+       "conf": 0.975,
+       "text": "때문에 고객님께서 직접 반품 하실 필요가 없습니다.",
+       "y": 1123
+      }
+     ],
+     "y0": 0,
+     "y1": 1200
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  }
+ ],
+ "key": "fairwardgolf:naver:101504708:8785829126",
+ "links_sha256": "bf6a8f0416dc68b255519dc7a840824e041acf9f4f7c3684af0f6e0cdd51f678",
+ "product_id": "8785829126",
+ "seconds": 83.7,
+ "skipped": [
+  {
+   "link": "https://shop-phinf.pstatic.net/20220411_97/1649610309898V6aeK_PNG/SE-459fca21-e860-44e6-9f8d-9071c1154e36.jpg?type=w848",
+   "rule": "first_header"
+  }
+ ]
+}

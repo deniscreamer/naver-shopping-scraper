@@ -1733,6 +1733,32 @@ def _split_joined(ov: dict[str, Any], asian: bool = False) -> None:
         _fold_length(ov, i)
 
 
+def _gender_colour_split(ov: dict[str, Any]) -> None:
+    """An option of "<남성용|여성용>-<colour><size>" values (Kasco 505840359, 2026-11-25, the owner: "Все рекомендации":
+    "남성용-그레이L(100)" .. "여성용-핑크L(77)", held "not read as a size") split in place: the option 컬러 keeps the
+    colour, a new option 사이즈 holds the size with its gender ("남성 L(100)"), sized per gender by
+    _sizes_by_gender. Each variant keeps the seller's own value as naver_options_ko: the value the owner orders on
+    Naver, and the one that held its size as naver_size_ko (sizeKo: never the split "남성 L(100)", a value Naver has
+    not; the fixer, 2026-11-25). Not when another option holds sizes already."""
+    got = apparel_sizes.gender_colour_split(ov["options"])
+    if got is None:
+        return
+    i, parts = got
+    if any(apparel_sizes.is_size_name(o.get("name_ko")) for k, o in enumerate(ov["options"]) if k != i):
+        return
+    option = ov["options"][i]
+    by_value = dict(zip([str(v) for v in option["values_ko"]], parts))
+    ov["options"][i] = {**option, "name_ko": "컬러", "values_ko": list(dict.fromkeys(c for c, _ in parts))}
+    ov["options"].append({"name_ko": "사이즈", "values_ko": list(dict.fromkeys(sz for _, sz in parts))})
+    for v in ov["variants"]:
+        own = list(v.get("options_ko") or [])
+        if len(own) > i and own[i] in by_value:
+            colour, size = by_value[own[i]]
+            v["options_ko"] = own[:i] + [colour] + own[i + 1:] + [size]
+            v["naver_options_ko"] = v.get("naver_options_ko") or own
+            v["naver_size_ko"] = own[i]
+
+
 _SLEEVE_WORDS = ("긴팔", "반팔", "민소매")
 MAX_OPTIONS = 3   # Shopify's limit of options per product (productSet refused 4: 10107163054, 2026-11-24)
 
@@ -1995,7 +2021,8 @@ def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[st
         kept = rows.get(combo)
         # the variant's own Naver values stay with it (2026-11-25, the re-review: 7864006253, 9037071653, 5979440160
         # ordered a merged spelling their colour never sells): the owner orders naver_options_ko, the store shows picked
-        native = {"naver_options_ko": own} if own != picked else {}
+        # ... and a value split before (_gender_colour_split) keeps the seller's whole one
+        native = {"naver_options_ko": v.get("naver_options_ko") or own} if own != picked else {}
         if kept is None:
             rows[combo] = {**v, "options_ko": picked, **native}
             continue
@@ -2436,6 +2463,7 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             else:
                 why = "the category has no men's size profile" if by_owner else "men or women"
                 unused.append(f"gender {owner['gender']}: {why}")
+        _gender_colour_split(ov)                    # "남성용-그레이L(100)": a colour, a gender's size (2026-11-25)
         profile = size_profile(cat, gender)
         ocr = image_rows(images_text if current(images_text, line) else None)
         if "size" in owner:                         # the owner's one size sold (2026-11-25, 12994831966: 110)
