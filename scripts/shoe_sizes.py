@@ -56,6 +56,8 @@ def seconds_listing(options: list[dict[str, Any]], title: str | None) -> str | N
 
 # a spiked variant of a spikeless listing, "스파이크유무: 스파이크 / 스파이크리스" (Eagle Eyed 11574034936, 2026-11-25)
 SPIKED_VALUE_RE = re.compile(r"^\s*(?:스파이크|스파이크형|스파이크화|징|spike|spiked|cleated)\s*$", re.I)
+# a laced pair sold beside the BOA one, "2.UG슈즈(끈타입)" (Prito 6510500952, 2026-11-26): left out like a spiked one
+LACED_VALUE_RE = re.compile(r"끈\s*타입|\(끈\)|레이스\s*업|lace[\s-]?up|laced", re.I)
 
 
 def mm_span(value: Any) -> tuple[int, int] | None:

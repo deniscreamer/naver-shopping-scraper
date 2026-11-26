@@ -133,3 +133,9 @@ def test_a_bracketed_colour_before_the_size():
     """2026-11-26, the combined job's size_unmapped: FootJoy Flow 2.0 11442646718 "(화이트그레이)250"."""
     assert S.split_joined([{"name_ko": "색상", "values_ko": ["(화이트골드)225", "(화이트골드)230", "(베이지)230"]}]) == \
         (0, [("화이트골드", "225"), ("화이트골드", "230"), ("베이지", "230")])
+
+
+def test_a_laced_variant_beside_the_boa_one():
+    """2026-11-26, Prito 6510500952: "2.UG슈즈(끈타입)" beside "1.TG슈즈(다이얼)", the laced half left out."""
+    assert S.LACED_VALUE_RE.search("2.UG슈즈(끈타입)") and S.LACED_VALUE_RE.search("레이스업 화이트")
+    assert not S.LACED_VALUE_RE.search("1.TG슈즈(다이얼)") and not S.LACED_VALUE_RE.search("화이트 250")

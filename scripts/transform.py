@@ -2554,9 +2554,17 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             notes.append({"code": "seconds_left_out", "detail": seconds})
         if spiked := _drop_shoe_seconds(ov, shoe_sizes.SPIKED_VALUE_RE):
             notes.append({"code": "spiked_left_out", "detail": spiked})       # Eagle Eyed 11574034936 (2026-11-25)
+        if laced := _drop_shoe_seconds(ov, shoe_sizes.LACED_VALUE_RE):
+            notes.append({"code": "laced_left_out", "detail": laced})         # Prito 6510500952 (2026-11-26)
         _split_joined_shoes(ov)
         own = stated.get("gender") or {}
         gender, why = shoe_sizes.section_gender(own.get("value"), shoe_sizes.sizes_mm(ov["options"]))
+        # a mixed pair whose title and 성별 row name one gender and no other (Hello Birdie 9081244742, 2026-11-26: a
+        # women's listing with two men's colours went to the men's section by its 275 mm): that gender's section
+        named = {str(e.get("value")) for e in own.get("evidence") or []
+                 if e.get("source") == "title" or str(e.get("source")).startswith("row:")}
+        if own.get("value") == "mixed" and len(named) == 1 and named <= {"mens", "womens"}:
+            gender, why = next(iter(named)), f"mixed, the title and row {next(iter(named))}"
         if gender != own.get("value") or own.get("variants"):
             # one section a pair (the owner): a unisex, mixed or unstated pair by its sizes, its variants not split
             stated["gender"] = {"value": gender, "variants": {},
