@@ -139,6 +139,8 @@ def test_a_laced_variant_beside_the_boa_one():
     """2026-11-26, Prito 6510500952: "2.UG슈즈(끈타입)" beside "1.TG슈즈(다이얼)", the laced half left out."""
     assert S.LACED_VALUE_RE.search("2.UG슈즈(끈타입)") and S.LACED_VALUE_RE.search("레이스업 화이트")
     assert not S.LACED_VALUE_RE.search("1.TG슈즈(다이얼)") and not S.LACED_VALUE_RE.search("화이트 250")
+    # adidas Retrocross 13635116576 (the 100 pilot's review): "레트로크로스 슈레이스" beside "레트로크로스 BOA"
+    assert S.LACED_VALUE_RE.search("레트로크로스 슈레이스") and not S.LACED_VALUE_RE.search("레트로크로스 BOA")
 
 
 def test_centimetres_and_a_slash_pair():

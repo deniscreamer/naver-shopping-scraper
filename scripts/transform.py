@@ -2579,7 +2579,12 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             notes.append({"code": "size_from_title", "detail": titled_pair})
         _split_joined_shoes(ov)
         own = stated.get("gender") or {}
-        gender, why = shoe_sizes.section_gender(own.get("value"), shoe_sizes.sizes_mm(ov["options"]))
+        unisex_said = any(e.get("value") == "unisex" and (e.get("source") == "title" or str(e.get("source")).startswith("row:"))
+                          for e in own.get("evidence") or [])
+        # a unisex title over one gender's row ("남여" beside 성별 여성용, adidas 13439093166, the 100 pilot's review
+        # 2026-11-26: sizes 220-295 in the women's section): placed by its sizes as a unisex pair, as it is labelled
+        gender, why = shoe_sizes.section_gender("unisex" if unisex_said and own.get("value") in ("mens", "womens")
+                                                else own.get("value"), shoe_sizes.sizes_mm(ov["options"]))
         # a mixed pair whose title and 성별 row name one gender and no other (Hello Birdie 9081244742, 2026-11-26: a
         # women's listing with two men's colours went to the men's section by its 275 mm): that gender's section
         named = {str(e.get("value")) for e in own.get("evidence") or []
@@ -2599,8 +2604,6 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             if size_at is not None and len(values_ko) > size_at:
                 by_value.setdefault(str(values_ko[size_at]), set()).add(
                     str((own.get("variants") or {}).get(sold["sku"])))
-        unisex_said = any(e.get("value") == "unisex" and (e.get("source") == "title" or str(e.get("source")).startswith("row:"))
-                          for e in own.get("evidence") or [])
         sizes = shoe_sizes.resolve(ov["options"], own.get("value"), by_value, unisex_said)
         if sizes["held"]:
             held.append({"code": "size_unmapped", "detail": sizes["held"][:200]})
