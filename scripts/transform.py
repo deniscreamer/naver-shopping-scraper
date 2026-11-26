@@ -1734,6 +1734,43 @@ def _split_joined(ov: dict[str, Any], asian: bool = False) -> None:
         _fold_length(ov, i)
 
 
+def _drop_shoe_seconds(ov: dict[str, Any]) -> str | None:
+    """The variants whose option value sells a scratched, display or returned pair beside the sound ones, "스크래치 280"
+    (MNX15 5402813627, 2026-11-25: its 280 went out twice), left out; never every variant. -> "N variants: values"."""
+    off = [v for v in ov["variants"] if any(shoe_sizes.SECONDS_RE.search(str(x)) for x in v.get("options_ko") or [])]
+    if not off or len(off) == len(ov["variants"]):
+        return None
+    gone = list(dict.fromkeys(str(x) for v in off for x in v.get("options_ko") or [] if shoe_sizes.SECONDS_RE.search(str(x))))
+    ov["variants"] = [v for v in ov["variants"] if v not in off]
+    for k, o in enumerate(ov["options"]):
+        left = [x for x in o["values_ko"] if any(len(v["options_ko"]) > k and v["options_ko"][k] == x
+                                                 for v in ov["variants"])]
+        ov["options"][k] = {**o, "values_ko": left}
+    return f"{len(off)} variants: {', '.join(gone)}"[:200]
+
+
+def _split_joined_shoes(ov: dict[str, Any]) -> None:
+    """A shoe option joining a colour or code and its mm size in every value ("JQ0993 화이트실버 245", "블랙(01001)_250":
+    adidas SPW 13103847433, ECCO 9887518096, 2026-11-25, held "two Korean sizes on one US size") split in place: the
+    option 컬러 keeps the rest, a new option 사이즈 holds the size; each variant keeps the seller's whole value as
+    naver_options_ko and naver_size_ko (the value the owner orders on Naver)."""
+    got = shoe_sizes.split_joined(ov["options"])
+    if got is None or len(ov["options"]) >= MAX_OPTIONS:
+        return
+    i, parts = got
+    option = ov["options"][i]
+    by_value = dict(zip([str(v) for v in option["values_ko"]], parts))
+    ov["options"][i] = {**option, "name_ko": "컬러", "values_ko": list(dict.fromkeys(r for r, _ in parts))}
+    ov["options"].append({"name_ko": "사이즈", "values_ko": list(dict.fromkeys(sz for _, sz in parts))})
+    for v in ov["variants"]:
+        own = list(v.get("options_ko") or [])
+        if len(own) > i and own[i] in by_value:
+            rest, size = by_value[own[i]]
+            v["options_ko"] = own[:i] + [rest] + own[i + 1:] + [size]
+            v["naver_options_ko"] = v.get("naver_options_ko") or own
+            v["naver_size_ko"] = own[i]
+
+
 def _gender_colour_split(ov: dict[str, Any]) -> None:
     """An option of "<남성용|여성용>-<colour><size>" values (Kasco 505840359, 2026-11-25, the owner: "Все рекомендации":
     "남성용-그레이L(100)" .. "여성용-핑크L(77)", held "not read as a size") split in place: the option 컬러 keeps the
@@ -2510,6 +2547,9 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             notes.append({"code": "size_values_merged", "detail": ", ".join(f"{k} = {v}"
                                                                             for k, v in sizes["merged"].items())})
     if cat.shoe_sizes:                              # shoes (50001740, the owner 2026-11-25): mm -> US, the section
+        if seconds := _drop_shoe_seconds(ov):
+            notes.append({"code": "seconds_left_out", "detail": seconds})
+        _split_joined_shoes(ov)
         own = stated.get("gender") or {}
         gender, why = shoe_sizes.section_gender(own.get("value"), shoe_sizes.sizes_mm(ov["options"]))
         if gender != own.get("value") or own.get("variants"):

@@ -4512,7 +4512,7 @@
    },
    {
     "code": "spiked_model",
-    "why": "2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md): a spiked model by its name (FootJoy Tour Alpha / Premier / Pro|SL, adidas Tour360 / Codechaos spiked, ECCO Biom G, ...): sellers put 스파이크리스 into spiked titles as a search keyword, so no 'unless'.",
+    "why": "2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md): a spiked model by its name (FootJoy Tour Alpha / Premier / Pro|SL, adidas Tour360 / Codechaos spiked, ECCO Biom G, ...): sellers put 스파이크리스 into spiked titles as a search keyword, so no 'unless'. 2026-11-25, the probe sheets: Nike Air Zoom Infinity Tour NEXT% (넥스트%, cleated: 11845310209, HQ2160) and adidas' old Driver BOA (F33506, Q44842).",
     "tokens": [
      {
       "text": "투어피에프",
@@ -4643,12 +4643,27 @@
       "text": "아디스타보아",
       "notFollowedBy": [],
       "notPrecededBy": []
+     },
+     {
+      "text": "넥스트%",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "next%",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "드라이버보아",
+      "notFollowedBy": [],
+      "notPrecededBy": []
      }
     ]
    },
    {
     "code": "winter_boot",
-    "why": "2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md): a winter boot (부츠, 방한) or 보아털 (boa fleece, not the BOA dial).",
+    "why": "2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md): a winter boot (부츠, 방한) or 보아털 (boa fleece, not the BOA dial). 2026-11-25, the probe sheets of the final screen: 겨울 too (MNX15 6097805439 '겨울 보아 소가죽 여성 키높이 골프화', a fur-collared boot; every 겨울 title of the 6 queries is a winter shoe).",
     "tokens": [
      {
       "text": "부츠",
@@ -4662,6 +4677,11 @@
      },
      {
       "text": "보아털",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "겨울",
       "notFollowedBy": [],
       "notPrecededBy": []
      }
@@ -4860,10 +4880,10 @@
   ]
  },
  "default_leaf": {
-  "about": "2026-11-21: a job of a category that feeds several shop sections and names none (--leaf) is this section's (the jobs before the second section)",
+  "about": "2026-11-21: a job of a category that feeds several shop sections and names none (--leaf) is this section's (the jobs before the second section) 2026-11-25 (the owner: 'окей'): 50001740's default is no section of its own, 'boa-spikeless-shoes' (both shoe sections): a job with no --leaf takes both genders, the common rules only, and placement splits them by gender and sizes; --leaf mens-/womens-boa-spikeless-shoes adds the other gender's screen",
   "50002796": "womens-fall-long-sleeve-tops",
   "50002797": "womens-knit-cardigans",
-  "50001740": "mens-boa-spikeless-shoes"
+  "50001740": "boa-spikeless-shoes"
  },
  "together_leaf": {
   "about": "2026-11-22: a job of the key section takes these categories with its own (each row screened by its own category's rules for that section)",

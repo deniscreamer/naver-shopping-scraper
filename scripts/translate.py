@@ -110,7 +110,9 @@ TITLE_SIZES["50002796"] = TITLE_SIZES["50002797"]           # women's long-sleev
 TITLE_SIZES["50002799"] = TITLE_SIZES["50002797"]           # 재킷, the same section (2026-11-21)
 TITLE_SIZES["50002816"] = TITLE_SIZES["50002797"]           # rainwear: the garment sizes (2026-11-24)
 # golf shoes: a size in mm or a size run a title may list ("230-290", "250mm"; 2026-11-25), the brief leaves them out
-TITLE_SIZES["50001740"] = re.compile(r"(?<![\d.A-Za-z])(?:2\d[05]|3[01][05])(?![\d.%])")
+TITLE_SIZES["50001740"] = re.compile(r"(?<![\d.A-Za-z])(?:2\d[05]|3[01][05])(?:mm)?(?![\d.%A-Za-z])|(?<![\d.A-Za-z])20[12]\d(?![\d.%])",
+                                     re.I)   # "250-300mm", the model year "2025" the brief leaves out (12415931375)
+                                                                                          # (5114581014: "missing 300MM")
 # skirts: the women's sizes and the waists in inches and cm a title may list ("25 26 27 28", "64 67 70"; 2026-11-22)
 TITLE_SIZES["50002802"] = re.compile(r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|2[3-9]|3[0-4]|6[1-9]|7[0-9])(?![\d.%])")
 # golf pants: the women's sizes, the waists in inches (23-48) and in cm (61-112) a title may list ("28 30 32", "76 79
@@ -615,7 +617,10 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
         if kind == "title" and str(category) in TITLE_SIZES:
             sizes = TITLE_SIZES[str(category)].findall(item["source"])
             if sizes:
-                item["free_numbers"] = [*(item.get("free_numbers") or []), *sizes]
+                item["free_numbers"] = [*(item.get("free_numbers") or []), *sizes,
+                                        *(re.sub(r"\D", "", x) for x in sizes if not x.isdigit())]
+                # a size with its unit, "300mm" (shoes, 5114581014, 2026-11-25): its digits and its code
+                item["free_codes"] = [*(item.get("free_codes") or []), *(x.upper() for x in sizes if not x.isdigit())]
             # a size letter standing alone ("스판 주름 XL 골프치마", 5527933102, 2026-11-22: "codes lost: missing XL"): the
             # briefs leave every size out of a title, so it need not survive either
             letters = TITLE_SIZE_LETTERS.findall(item["source"])

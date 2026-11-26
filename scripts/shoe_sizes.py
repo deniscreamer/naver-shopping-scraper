@@ -37,11 +37,53 @@ _WIDTH_CODE_RE = re.compile(r"(?<![A-Za-z])(XW|W|M|N)\s*(?=(?:2\d[05]|3[01][05])
 _US_NOTE_RE = re.compile(r"[(\[]?\s*(?:US|미국)\s*\d{1,2}(?:\.5)?\s*[)\]]?", re.I)
 
 
-def mm_of(value: Any) -> int | None:
-    """The one millimetre size a value states ("250", "255mm", "265(US 8.5)", "270 와이드"), else None (none, or two)."""
+# a size range, "255~260" (ECCO 9887518096, 2026-11-25: one EU size covering two Korean sizes), 5 or 10 mm wide
+_RANGE_RE = re.compile(r"(?<![\d.A-Za-z])(2\d[05]|3[01][05])\s*(?:mm)?\s*[~-]\s*(2\d[05]|3[01][05])(?:\s*mm)?(?![\d.])", re.I)
+# a pair sold as seconds beside the sound ones, "스크래치 280" (MNX15 5402813627, 2026-11-25): never sold
+SECONDS_RE = re.compile(r"스크래치|scratch|B급|하자|리퍼|전시|반품|중고", re.I)
+
+
+def mm_span(value: Any) -> tuple[int, int] | None:
+    """(the smallest, the largest) mm size a value states: one size ("250", "255mm", "265(US 8.5)", "270 와이드") is
+    (250, 250), a range "255~260" (255, 260); None for none, two unrelated sizes or a value outside MM_MIN-MM_MAX."""
     text = _US_NOTE_RE.sub(" ", str(value or ""))
+    if (r := _RANGE_RE.search(text)) and 5 <= int(r.group(2)) - int(r.group(1)) <= 10:
+        lo, hi = int(r.group(1)), int(r.group(2))
+        if not _MM_RE.search(text[:r.start()] + " " + text[r.end():]):
+            return (lo, hi) if MM_MIN <= lo and hi <= MM_MAX else None
     found = {int(m.group(1)) for m in _MM_RE.finditer(text)}
-    return found.pop() if len(found) == 1 and MM_MIN <= next(iter(found)) <= MM_MAX else None
+    one = next(iter(found)) if len(found) == 1 else None
+    return (one, one) if one is not None and MM_MIN <= one <= MM_MAX else None
+
+
+def mm_of(value: Any) -> int | None:
+    """The millimetre size a value states (a range's smallest), else None."""
+    span = mm_span(value)
+    return span[0] if span else None
+
+
+# a colour and a size joined in one value, "JQ0993 화이트실버 245", "블랙(01001)_255~260", "여) JQ0996 화이트블랙 225"
+# (adidas SPW 13103847433 / 13335983300, ECCO 9887518096, 2026-11-25): the size at the end after a space, "_" or "/"
+_JOINED_RE = re.compile(r"^(?P<rest>.*\S)[\s_/]+(?P<size>(?:XW|W)?\s*(?:2\d[05]|3[01][05])(?:\s*mm)?"
+                        r"(?:\s*[~-]\s*(?:2\d[05]|3[01][05])(?:\s*mm)?)?)$", re.I)
+
+
+def split_joined(options: list[dict[str, Any]]) -> tuple[int, list[tuple[str, str]]] | None:
+    """(the option, [(the rest, the size)] per value) when no option is a size option and one option's every value
+    ends in a mm size after a colour or a code; else None."""
+    for i, o in enumerate(options):
+        values = [str(v) for v in o.get("values_ko") or []]
+        parts = [(m.group("rest").strip(), m.group("size").strip()) if (m := _JOINED_RE.match(v.strip())) else None
+                 for v in values]
+        if values and all(p and mm_span(p[1]) and not mm_span(p[0]) and not _WIDTH_ONLY_RE.match(p[0])
+                          and not SECONDS_RE.fullmatch(p[0]) for p in parts) \
+                and len({p[0] for p in parts if p}) < len(values) \
+                and not any(size_option([x]) is not None for k, x in enumerate(options) if k != i):
+            return i, [p for p in parts if p]
+    return None
+
+
+_WIDTH_ONLY_RE = re.compile(r"^(?:XW|W|M|N|와이드|광폭|wide|EEEE|EEE|EE|4E|3E|2E)$", re.I)
 
 
 def width(value: Any) -> str:
@@ -71,15 +113,19 @@ def _n(x: float) -> str:
     return f"{x:g}"
 
 
-def us_label(mm: int, gender: str, wide_word: str = "") -> str:
-    """"US 9 (270 mm)" men's or women's; "US M 9 / W 10 (270 mm)" for a unisex, mixed or unstated pair."""
+def us_label(mm: int, gender: str, wide_word: str = "", hi: int | None = None) -> str:
+    """"US 9 (270 mm)" men's or women's; "US M 9 / W 10 (270 mm)" for a unisex, mixed or unstated pair; a range
+    "US 7.5-8 (255-260 mm)"."""
+    def us(f: Any) -> str:
+        return _n(f(mm)) + (f"-{_n(f(hi))}" if hi and hi != mm else "")
     if gender == "mens":
-        us = f"US {_n(us_mens(mm))}"
+        label = f"US {us(us_mens)}"
     elif gender == "womens":
-        us = f"US {_n(us_womens(mm))}"
+        label = f"US {us(us_womens)}"
     else:
-        us = f"US M {_n(us_mens(mm))} / W {_n(us_womens(mm))}"
-    return f"{us}{' ' + wide_word if wide_word else ''} ({mm} mm)"
+        label = f"US M {us(us_mens)} / W {us(us_womens)}"
+    mms = f"{mm}-{hi}" if hi and hi != mm else f"{mm}"
+    return f"{label}{' ' + wide_word if wide_word else ''} ({mms} mm)"
 
 
 def size_option(options: list[dict[str, Any]]) -> int | None:
@@ -96,7 +142,8 @@ def size_option(options: list[dict[str, Any]]) -> int | None:
 
 def sizes_mm(options: list[dict[str, Any]]) -> list[int]:
     i = size_option(options)
-    return sorted({m for v in (options[i].get("values_ko") or []) if (m := mm_of(v))}) if i is not None else []
+    return sorted({m for v in (options[i].get("values_ko") or []) if (sp := mm_span(v)) for m in sp}) \
+        if i is not None else []
 
 
 def section_gender(stated: str | None, mm: list[int]) -> tuple[str, str]:
@@ -144,13 +191,14 @@ def resolve(options: list[dict[str, Any]], stated: str | None,
     split = bool(value_genders) and all(len(g := (value_genders or {}).get(str(v)) or set()) == 1
                                         and g <= {"mens", "womens"} for v in options[i].get("values_ko") or [])
     for v in options[i].get("values_ko") or []:
-        mm = mm_of(v)
-        if mm is None:
+        span = mm_span(v)
+        if span is None:
             out["held"] = f"{v!r}: not read as a size in mm"
             return out
+        mm, hi = span
         own = (value_genders or {}).get(str(v)) or set()
         one = next(iter(own)) if split and len(own) == 1 else gender
-        values.append({"ko": str(v), "us": us_label(mm, one, width(v)), "mm": mm, "wide": width(v), "letter": None,
+        values.append({"ko": str(v), "us": us_label(mm, one, width(v), hi), "mm": mm, **({"mm_hi": hi} if hi != mm else {}), "wide": width(v), "letter": None,
                        "chest_cm": None, "basis": "mm"})
     us = [x["us"] for x in values]
     if dup := sorted({u for u in us if us.count(u) > 1}):
@@ -163,7 +211,8 @@ def resolve(options: list[dict[str, Any]], stated: str | None,
 def chart_html(sizes: dict[str, Any]) -> str:
     """The size chart block at the end of the description: the US size and the foot length it fits."""
     from apparel_sizes import CHART_MARK, _el
-    rows = [[v["us"].split(" (")[0], f"{v['mm']} mm", f"{v['mm'] / 25.4:.1f} in"]
+    rows = [[v["us"].split(" (")[0], f"{v['mm']}-{v['mm_hi']} mm" if v.get("mm_hi") else f"{v['mm']} mm",
+             f"{v['mm'] / 25.4:.1f}-{v['mm_hi'] / 25.4:.1f} in" if v.get("mm_hi") else f"{v['mm'] / 25.4:.1f} in"]
             for v in sizes.get("values") or [] if v.get("mm")]
     if not rows:
         return ""

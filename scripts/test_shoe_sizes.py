@@ -87,3 +87,26 @@ def test_the_chart_block():
 def test_the_category_uses_them():
     shoes = rules_for("fairwardgolf").categories["50001740"]
     assert shoes.shoe_sizes and not shoes.sizes and not shoes.reviewed and shoes.paid_variants and not shoes.paid_addons
+
+
+def test_a_range_a_joined_value_and_seconds():
+    """2026-11-25, the men's pilot's size_unmapped: ECCO 9887518096 "블랙(01001)_255~260", adidas SPW 13103847433
+    "JQ0993 화이트실버 245", MNX15 5402813627 "스크래치 280"."""
+    assert S.mm_span("255~260") == (255, 260) and S.mm_span("250") == (250, 250) and S.mm_span("250/270") is None
+    assert S.us_label(255, "mens", "", 260) == "US 7.5-8 (255-260 mm)"
+    assert S.split_joined([{"name_ko": "컬러/사이즈", "values_ko": ["블랙(01001)_250", "블랙(01001)_255~260"]}]) == \
+        (0, [("블랙(01001)", "250"), ("블랙(01001)", "255~260")])
+    assert S.split_joined([{"name_ko": "선택", "values_ko": ["JQ0993 화이트실버 245", "JQ0993 화이트실버 250",
+                                                           "JQ0994 화이트블랙 245"]}])[1][0] == ("JQ0993 화이트실버", "245")
+    # plain sizes, FootJoy's widths, one model a value: no split
+    assert S.split_joined([{"name_ko": "사이즈", "values_ko": ["250", "255"]}]) is None
+    assert S.split_joined([{"name_ko": "사이즈", "values_ko": ["XW 240", "XW 250"]}]) is None
+    assert S.split_joined([{"name_ko": "모델", "values_ko": ["투어 270", "플로우 280"]}]) is None
+    assert S.SECONDS_RE.search("스크래치 280") and not S.SECONDS_RE.search("280")
+
+
+def test_title_sizes_free_a_mm_run():
+    import translate
+    assert translate.TITLE_SIZES["50001740"].findall("국산 남자 다이얼 골프화 250-300mm 빅사이즈") == ["250", "300mm"]
+    # a model year goes too (the brief leaves it out: 12415931375 "missing 2025"); never a model code's digits
+    assert translate.TITLE_SIZES["50001740"].findall("코드케이오스25 IG8705 2025") == ["2025"]
