@@ -167,3 +167,14 @@ def test_a_pairs_size_in_its_title():
     for title, name in (("풋조이 퀀텀 화이트, 250", "다른 이름"), ("풋조이 퀀텀 우먼 보아 골프화 화이트, 블랙", "풋조이 퀀텀 우먼 보아 골프화")):
         ov = {"options": [], "variants": [{"sku": "1", "options_ko": []}]}
         assert transform._title_size_shoes(ov, title, name) is None and ov["options"] == []
+
+
+def test_the_common_runs_review():
+    """2026-11-26, the lens review of the common run: a bare trailing 끈 a laced value (13648298581 "05.화이트실버 끈"),
+    a box-cut pair a second (Nike 13177571447), a stated men's pair with "(남성)" colours labelled without M (adidas
+    11731890594)."""
+    assert S.LACED_VALUE_RE.search("05.화이트실버 끈") and S.LACED_VALUE_RE.search("06. 블랙 끈")
+    assert not S.LACED_VALUE_RE.search("끈없는 다이얼") and not S.LACED_VALUE_RE.search("01.화이트실버")
+    assert S.SECONDS_RE.search("230 박스커팅") and S.SECONDS_RE.search("박스 커팅 상품")
+    out = S.resolve([{"name_ko": "사이즈", "values_ko": ["260", "270"]}], "mens", {"260": {"mens"}, "270": {"mens"}})
+    assert [v["us"] for v in out["values"]] == ["US 8 (260 mm)", "US 9 (270 mm)"]

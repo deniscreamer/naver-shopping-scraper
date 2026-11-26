@@ -1,9 +1,16 @@
 {
  "format": "dictionary/1",
  "kind": "fact_label",
- "backed_up": "2026-11-26T07:42:23Z",
+ "backed_up": "2026-11-26T21:06:11Z",
  "entries": {
+  "모델": "Model",
+  "바이옴C4(0913)": "BIOM C4 (0913)",
   "색상": "Color",
-  "컬러": "Color"
+  "색상 - 옵션1": "Color - Option 1",
+  "재고 확인후 연락드립니다": "We'll Contact You After Checking Stock",
+  "주문 전 확인": "Before Ordering",
+  "칼라": "Color",
+  "컬러": "Color",
+  "특가 재고 소진시 자동 취소 됩니다.": "Special Offer: Auto-Cancel if Out of Stock"
  }
 }

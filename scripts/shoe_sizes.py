@@ -46,7 +46,7 @@ _CM_RE = re.compile(r"(?<![\d.A-Za-z])(2\d|3[0-2])\.([05])\s*(?:cm|㎝|센티)?(
 # a range, only 5 mm apart ("250/260", "250/270" stay two sizes)
 _PAIR_RE = re.compile(r"(?<![\d.A-Za-z])(2\d[05]|3[01][05])\s*/\s*(2\d[05]|3[01][05])(?:\s*mm)?(?![\d.])", re.I)
 # a pair sold as seconds beside the sound ones, "스크래치 280" (MNX15 5402813627, 2026-11-25): never sold
-SECONDS_RE = re.compile(r"스크래치|scratch|B급|하자|리퍼|전시|반품|중고", re.I)
+SECONDS_RE = re.compile(r"스크래치|scratch|B급|하자|리퍼|전시|반품|중고|박스\s*커팅", re.I)   # 박스커팅: Nike 13177571447 (2026-11-26)
 
 
 def seconds_listing(options: list[dict[str, Any]], title: str | None) -> str | None:
@@ -64,7 +64,8 @@ def seconds_listing(options: list[dict[str, Any]], title: str | None) -> str | N
 SPIKED_VALUE_RE = re.compile(r"^\s*(?:스파이크|스파이크형|스파이크화|징|spike|spiked|cleated)\s*$", re.I)
 # a laced pair sold beside the BOA one, "2.UG슈즈(끈타입)" (Prito 6510500952, 2026-11-26): left out like a spiked one;
 # "레트로크로스 슈레이스" (adidas Retrocross 13635116576, the 100 pilot's review 2026-11-26)
-LACED_VALUE_RE = re.compile(r"끈\s*타입|\(끈\)|레이스\s*업|슈\s*레이스|shoe\s*lace|lace[\s-]?up|laced", re.I)
+LACED_VALUE_RE = re.compile(r"끈\s*타입|\(끈\)|\s끈\s*$|레이스\s*업|슈\s*레이스|shoe\s*lace|lace[\s-]?up|laced", re.I)
+# a bare trailing "끈" ("05.화이트실버 끈", 13648298581, the common run's review 2026-11-26)
 
 
 def mm_span(value: Any) -> tuple[int, int] | None:
@@ -225,7 +226,10 @@ def resolve(options: list[dict[str, Any]], stated: str | None,
     # per value only when every value is one gender's: a shared size list with "US 7.5 (245 mm)" women's beside "US 7.5
     # (255 mm)" men's would read as one size twice (adidas S2G 13171935653, 낫소 4822059321: both labels then)
     split = bool(value_genders) and all(len(g := (value_genders or {}).get(str(v)) or set()) == 1
-                                        and g <= {"mens", "womens"} for v in options[i].get("values_ko") or [])
+                                        and g <= {"mens", "womens"} for v in options[i].get("values_ko") or []) \
+        and len(set().union(*(value_genders or {}).values())) > 1
+    # and both genders among them: a stated men's pair with "(남성)" colours is labelled "US 9", not "US M 9" (adidas
+    # 11731890594, the common run's review 2026-11-26)
     for v in options[i].get("values_ko") or []:
         span = mm_span(v)
         if span is None:
