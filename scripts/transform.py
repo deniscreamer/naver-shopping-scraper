@@ -1734,13 +1734,14 @@ def _split_joined(ov: dict[str, Any], asian: bool = False) -> None:
         _fold_length(ov, i)
 
 
-def _drop_shoe_seconds(ov: dict[str, Any]) -> str | None:
+def _drop_shoe_seconds(ov: dict[str, Any], rx: "re.Pattern[str]" = shoe_sizes.SECONDS_RE) -> str | None:
     """The variants whose option value sells a scratched, display or returned pair beside the sound ones, "스크래치 280"
-    (MNX15 5402813627, 2026-11-25: its 280 went out twice), left out; never every variant. -> "N variants: values"."""
-    off = [v for v in ov["variants"] if any(shoe_sizes.SECONDS_RE.search(str(x)) for x in v.get("options_ko") or [])]
+    (MNX15 5402813627, 2026-11-25: its 280 went out twice), or (`rx` SPIKED_VALUE_RE) a spiked pair beside the
+    spikeless one, left out; never every variant. -> "N variants: values"."""
+    off = [v for v in ov["variants"] if any(rx.search(str(x)) for x in v.get("options_ko") or [])]
     if not off or len(off) == len(ov["variants"]):
         return None
-    gone = list(dict.fromkeys(str(x) for v in off for x in v.get("options_ko") or [] if shoe_sizes.SECONDS_RE.search(str(x))))
+    gone = list(dict.fromkeys(str(x) for v in off for x in v.get("options_ko") or [] if rx.search(str(x))))
     ov["variants"] = [v for v in ov["variants"] if v not in off]
     for k, o in enumerate(ov["options"]):
         left = [x for x in o["values_ko"] if any(len(v["options_ko"]) > k and v["options_ko"][k] == x
@@ -2547,8 +2548,12 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             notes.append({"code": "size_values_merged", "detail": ", ".join(f"{k} = {v}"
                                                                             for k, v in sizes["merged"].items())})
     if cat.shoe_sizes:                              # shoes (50001740, the owner 2026-11-25): mm -> US, the section
+        if whole := shoe_sizes.seconds_listing(ov["options"], details.get("name")):
+            held.append({"code": "seconds", "detail": f"every pair a second: {whole}"})   # 4767184925 (2026-11-25)
         if seconds := _drop_shoe_seconds(ov):
             notes.append({"code": "seconds_left_out", "detail": seconds})
+        if spiked := _drop_shoe_seconds(ov, shoe_sizes.SPIKED_VALUE_RE):
+            notes.append({"code": "spiked_left_out", "detail": spiked})       # Eagle Eyed 11574034936 (2026-11-25)
         _split_joined_shoes(ov)
         own = stated.get("gender") or {}
         gender, why = shoe_sizes.section_gender(own.get("value"), shoe_sizes.sizes_mm(ov["options"]))
@@ -2565,7 +2570,9 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             if size_at is not None and len(values_ko) > size_at:
                 by_value.setdefault(str(values_ko[size_at]), set()).add(
                     str((own.get("variants") or {}).get(sold["sku"])))
-        sizes = shoe_sizes.resolve(ov["options"], own.get("value"), by_value)
+        unisex_said = any(e.get("value") == "unisex" and (e.get("source") == "title" or str(e.get("source")).startswith("row:"))
+                          for e in own.get("evidence") or [])
+        sizes = shoe_sizes.resolve(ov["options"], own.get("value"), by_value, unisex_said)
         if sizes["held"]:
             held.append({"code": "size_unmapped", "detail": sizes["held"][:200]})
         elif gender == "conflict":

@@ -43,6 +43,21 @@ _RANGE_RE = re.compile(r"(?<![\d.A-Za-z])(2\d[05]|3[01][05])\s*(?:mm)?\s*[~-]\s*
 SECONDS_RE = re.compile(r"스크래치|scratch|B급|하자|리퍼|전시|반품|중고", re.I)
 
 
+def seconds_listing(options: list[dict[str, Any]], title: str | None) -> str | None:
+    """The whole listing sells seconds: an option named so ("스크래치상품", 4767184925, 2026-11-25: every pair B급) or
+    the title says it. -> the word's place, or None."""
+    for o in options:
+        if SECONDS_RE.search(str(o.get("name_ko") or "")):
+            return f"option {o.get('name_ko')!r}"
+    if SECONDS_RE.search(str(title or "")):
+        return "the title"
+    return None
+
+
+# a spiked variant of a spikeless listing, "스파이크유무: 스파이크 / 스파이크리스" (Eagle Eyed 11574034936, 2026-11-25)
+SPIKED_VALUE_RE = re.compile(r"^\s*(?:스파이크|스파이크형|스파이크화|징|spike|spiked|cleated)\s*$", re.I)
+
+
 def mm_span(value: Any) -> tuple[int, int] | None:
     """(the smallest, the largest) mm size a value states: one size ("250", "255mm", "265(US 8.5)", "270 와이드") is
     (250, 250), a range "255~260" (255, 260); None for none, two unrelated sizes or a value outside MM_MIN-MM_MAX."""
@@ -75,6 +90,10 @@ def split_joined(options: list[dict[str, Any]]) -> tuple[int, list[tuple[str, st
         values = [str(v) for v in o.get("values_ko") or []]
         parts = [(m.group("rest").strip(), m.group("size").strip()) if (m := _JOINED_RE.match(v.strip())) else None
                  for v in values]
+        # FootJoy's width after its style code, "51143 W 화이트실버 245" (Versafit 11886292855): the width goes with the
+        # size ("W 245": Wide), the colour keeps the code and the name
+        parts = [((m.group(1) + " " + m.group(3)).strip(), f"{m.group(2)} {p[1]}") if p and (m := _FJ_WIDTH_RE.match(p[0]))
+                 else p for p in parts]
         if values and all(p and mm_span(p[1]) and not mm_span(p[0]) and not _WIDTH_ONLY_RE.match(p[0])
                           and not SECONDS_RE.fullmatch(p[0]) for p in parts) \
                 and len({p[0] for p in parts if p}) < len(values) \
@@ -83,6 +102,7 @@ def split_joined(options: list[dict[str, Any]]) -> tuple[int, list[tuple[str, st
     return None
 
 
+_FJ_WIDTH_RE = re.compile(r"^(\d{5})\s+(XW|W|M)\s+(.+)$")
 _WIDTH_ONLY_RE = re.compile(r"^(?:XW|W|M|N|와이드|광폭|wide|EEEE|EEE|EE|4E|3E|2E)$", re.I)
 
 
@@ -113,15 +133,16 @@ def _n(x: float) -> str:
     return f"{x:g}"
 
 
-def us_label(mm: int, gender: str, wide_word: str = "", hi: int | None = None) -> str:
+def us_label(mm: int, gender: str, wide_word: str = "", hi: int | None = None, mark: bool = False) -> str:
     """"US 9 (270 mm)" men's or women's; "US M 9 / W 10 (270 mm)" for a unisex, mixed or unstated pair; a range
-    "US 7.5-8 (255-260 mm)"."""
+    "US 7.5-8 (255-260 mm)"; `mark`: a men's or a women's value of a mixed product, "US M 7 (250 mm)" / "US W 7 (240 mm)"
+    (the men's pilot review 2026-11-25: 4978188842's "230 [여성용]" and "250 [남성용]" read "US 7" twice)."""
     def us(f: Any) -> str:
         return _n(f(mm)) + (f"-{_n(f(hi))}" if hi and hi != mm else "")
     if gender == "mens":
-        label = f"US {us(us_mens)}"
+        label = f"US {'M ' if mark else ''}{us(us_mens)}"
     elif gender == "womens":
-        label = f"US {us(us_womens)}"
+        label = f"US {'W ' if mark else ''}{us(us_womens)}"
     else:
         label = f"US M {us(us_mens)} / W {us(us_womens)}"
     mms = f"{mm}-{hi}" if hi and hi != mm else f"{mm}"
@@ -168,14 +189,15 @@ def section_gender(stated: str | None, mm: list[int]) -> tuple[str, str]:
 
 
 def resolve(options: list[dict[str, Any]], stated: str | None,
-            value_genders: dict[str, set[str]] | None = None) -> dict[str, Any]:
+            value_genders: dict[str, set[str]] | None = None, unisex_said: bool = False) -> dict[str, Any]:
     """-> {"version", "kind": "shoes", "profile": shoes_mens | shoes_womens | shoes_unisex, "option": index or None,
     "values": [{ko, us, mm, wide, letter: None, chest_cm: None, basis: "mm"}] in size order, "merged": {}, "chart": None,
     "brand_row": None, "held": detail or None}. `stated`: the product's gender as stated (mens, womens, or anything
     else: both labels). `value_genders`: the genders of the variants that sell each size value (attributes' per-variant
     gender): a value only men's or only women's variants sell takes that gender's label (FootJoy 10239862675, 2026-11-25:
-    "XW 240" its men's, "W 240" its women's)."""
-    gender = stated if stated in ("mens", "womens") else "unisex"
+    "XW 240" its men's, "W 240" its women's). `unisex_said`: the title or the 성별 row says unisex beside one gender
+    (adidas 13575338957, 2026-11-25: row 남성용, title 남녀공용, sizes 220-295): both labels, never a woman's 230 as "US 5"."""
+    gender = stated if stated in ("mens", "womens") and not unisex_said else "unisex"
     out: dict[str, Any] = {"version": VERSION, "kind": "shoes", "profile": f"shoes_{gender}", "option": None,
                            "values": [], "merged": {}, "chart": None, "brand_row": None, "held": None}
     i = size_option(options)
@@ -198,7 +220,7 @@ def resolve(options: list[dict[str, Any]], stated: str | None,
         mm, hi = span
         own = (value_genders or {}).get(str(v)) or set()
         one = next(iter(own)) if split and len(own) == 1 else gender
-        values.append({"ko": str(v), "us": us_label(mm, one, width(v), hi), "mm": mm, **({"mm_hi": hi} if hi != mm else {}), "wide": width(v), "letter": None,
+        values.append({"ko": str(v), "us": us_label(mm, one, width(v), hi, mark=split), "mm": mm, **({"mm_hi": hi} if hi != mm else {}), "wide": width(v), "letter": None,
                        "chest_cm": None, "basis": "mm"})
     us = [x["us"] for x in values]
     if dup := sorted({u for u in us if us.count(u) > 1}):

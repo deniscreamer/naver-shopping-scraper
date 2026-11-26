@@ -34,7 +34,7 @@ def test_footjoys_width_letters():
     # every size value sold by one gender's variants only: that gender's label
     out = S.resolve([{"name_ko": "사이즈", "values_ko": ["XW 240", "W 240"]}], "mixed",
                     {"XW 240": {"mens"}, "W 240": {"womens"}})
-    assert [v["us"] for v in out["values"]] == ["US 7 Wide (240 mm)", "US 6 Extra Wide (240 mm)"]
+    assert [v["us"] for v in out["values"]] == ["US W 7 Wide (240 mm)", "US M 6 Extra Wide (240 mm)"]
     # one value both sell (adidas S2G 13171935653): every value both labels, never "US 7.5" twice
     out = S.resolve([{"name_ko": "사이즈", "values_ko": ["245", "250", "255"]}], "mixed",
                     {"245": {"womens"}, "250": {"mens", "womens"}, "255": {"mens"}})
@@ -110,3 +110,19 @@ def test_title_sizes_free_a_mm_run():
     assert translate.TITLE_SIZES["50001740"].findall("국산 남자 다이얼 골프화 250-300mm 빅사이즈") == ["250", "300mm"]
     # a model year goes too (the brief leaves it out: 12415931375 "missing 2025"); never a model code's digits
     assert translate.TITLE_SIZES["50001740"].findall("코드케이오스25 IG8705 2025") == ["2025"]
+
+
+def test_the_mens_pilot_review():
+    """2026-11-25, the lens review of the men's pilot: per-gender values marked, a unisex title over a men's row, a whole
+    listing of seconds, a spiked variant, FootJoy's width after its style code."""
+    out = S.resolve([{"name_ko": "사이즈", "values_ko": ["240 [여성용]", "250 [남성용]"]}], "mixed",
+                    {"240 [여성용]": {"womens"}, "250 [남성용]": {"mens"}})
+    assert [v["us"] for v in out["values"]] == ["US W 7 (240 mm)", "US M 7 (250 mm)"]
+    assert S.resolve([{"name_ko": "사이즈", "values_ko": ["230"]}], "mens", None, True)["values"][0]["us"] == \
+        "US M 5 / W 6 (230 mm)"
+    assert S.seconds_listing([{"name_ko": "스크래치상품", "values_ko": ["m011"]}], "MNX15 보아") == "option '스크래치상품'"
+    assert S.seconds_listing([{"name_ko": "색상", "values_ko": ["화이트"]}], "보아 골프화") is None
+    assert S.SPIKED_VALUE_RE.search("스파이크") and not S.SPIKED_VALUE_RE.search("스파이크리스")
+    got = S.split_joined([{"name_ko": "선택", "values_ko": ["51143 W 화이트실버 245", "51143 W 화이트실버 250"]}])
+    assert got == (0, [("51143 화이트실버", "W 245"), ("51143 화이트실버", "W 250")])
+    assert S.width("W 245") == "Wide"
