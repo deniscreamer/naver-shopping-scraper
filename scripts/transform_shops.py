@@ -257,7 +257,9 @@ RULES = {
             "50001740": CategoryRules(
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
                 no_choice_out=True, shoe_sizes=True, own_brand_wordmark=True,
-                reviewed=False),      # a new category: DRAFT until the lens review and the owner's activation
+                reviewed=True),       # reviewed 2026-11-26: pilots of men's, women's, combined and common 100 reviewed
+                                      # by lens, 67 held, 223 activated on the owner's word ("запусти пилот на 100
+                                      # чтобы финализировать категорию и активировать")
         }),
 }
 

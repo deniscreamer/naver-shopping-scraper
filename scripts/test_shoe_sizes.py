@@ -86,7 +86,7 @@ def test_the_chart_block():
 
 def test_the_category_uses_them():
     shoes = rules_for("fairwardgolf").categories["50001740"]
-    assert shoes.shoe_sizes and not shoes.sizes and not shoes.reviewed and shoes.paid_variants and not shoes.paid_addons
+    assert shoes.shoe_sizes and not shoes.sizes and shoes.reviewed and shoes.paid_variants and not shoes.paid_addons
 
 
 def test_a_range_a_joined_value_and_seconds():
