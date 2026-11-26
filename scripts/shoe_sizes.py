@@ -22,7 +22,7 @@ only from 260 mm: held, the title or the row is a keyword); a unisex, mixed or u
 import re
 from typing import Any
 
-VERSION = "shoe-sizes/1"                     # bump on a change of what resolve() returns
+VERSION = "shoe-sizes/2"                     # bump on a change of what resolve() returns
 MM_MIN, MM_MAX = 200, 320                    # a foot length a golf shoe is sold in
 MENS_FROM, WOMENS_UPTO = 270, 250            # section_gender: a largest size at or over / at or under
 MENS_FLOOR, WOMENS_CEILING = 245, 260        # a stated gender its sizes contradict (all under / all over)
@@ -39,6 +39,12 @@ _US_NOTE_RE = re.compile(r"[(\[]?\s*(?:US|미국)\s*\d{1,2}(?:\.5)?\s*[)\]]?", r
 
 # a size range, "255~260" (ECCO 9887518096, 2026-11-25: one EU size covering two Korean sizes), 5 or 10 mm wide
 _RANGE_RE = re.compile(r"(?<![\d.A-Za-z])(2\d[05]|3[01][05])\s*(?:mm)?\s*[~-]\s*(2\d[05]|3[01][05])(?:\s*mm)?(?![\d.])", re.I)
+# a size in centimetres, "24.5", "25.0cm", "22.5cm 3E" (purchase agencies, New Balance 13723837420, adidas 13559414510,
+# 2026-11-26): 20.0-32.0 with .0 or .5, read as its mm; never a US size (under 16) or a bare "25"
+_CM_RE = re.compile(r"(?<![\d.A-Za-z])(2\d|3[0-2])\.([05])\s*(?:cm|㎝|센티)?(?![\d.])", re.I)
+# two Korean sizes one EU size covers, "235/240(37)", "40호 (255/260mm)" (ECCO 9204921561 / 12089884228, 2026-11-26):
+# a range, only 5 mm apart ("250/260", "250/270" stay two sizes)
+_PAIR_RE = re.compile(r"(?<![\d.A-Za-z])(2\d[05]|3[01][05])\s*/\s*(2\d[05]|3[01][05])(?:\s*mm)?(?![\d.])", re.I)
 # a pair sold as seconds beside the sound ones, "스크래치 280" (MNX15 5402813627, 2026-11-25): never sold
 SECONDS_RE = re.compile(r"스크래치|scratch|B급|하자|리퍼|전시|반품|중고", re.I)
 
@@ -63,7 +69,9 @@ LACED_VALUE_RE = re.compile(r"끈\s*타입|\(끈\)|레이스\s*업|lace[\s-]?up|
 def mm_span(value: Any) -> tuple[int, int] | None:
     """(the smallest, the largest) mm size a value states: one size ("250", "255mm", "265(US 8.5)", "270 와이드") is
     (250, 250), a range "255~260" (255, 260); None for none, two unrelated sizes or a value outside MM_MIN-MM_MAX."""
-    text = _US_NOTE_RE.sub(" ", str(value or ""))
+    text = _CM_RE.sub(lambda m: str(int(m.group(1)) * 10 + int(m.group(2))), _US_NOTE_RE.sub(" ", str(value or "")))
+    if (p := _PAIR_RE.search(text)) and int(p.group(2)) - int(p.group(1)) == 5:
+        text = text[:p.start()] + f"{p.group(1)}~{p.group(2)}" + text[p.end():]
     if (r := _RANGE_RE.search(text)) and 5 <= int(r.group(2)) - int(r.group(1)) <= 10:
         lo, hi = int(r.group(1)), int(r.group(2))
         if not _MM_RE.search(text[:r.start()] + " " + text[r.end():]):

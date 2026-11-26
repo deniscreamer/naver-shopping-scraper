@@ -139,3 +139,29 @@ def test_a_laced_variant_beside_the_boa_one():
     """2026-11-26, Prito 6510500952: "2.UG슈즈(끈타입)" beside "1.TG슈즈(다이얼)", the laced half left out."""
     assert S.LACED_VALUE_RE.search("2.UG슈즈(끈타입)") and S.LACED_VALUE_RE.search("레이스업 화이트")
     assert not S.LACED_VALUE_RE.search("1.TG슈즈(다이얼)") and not S.LACED_VALUE_RE.search("화이트 250")
+
+
+def test_centimetres_and_a_slash_pair():
+    """2026-11-26, the 100 pilot's size_unmapped: purchase agencies' centimetres ("24.5", "25.0cm", "22.5cm 3E"), ECCO's
+    two Korean sizes on one EU size ("235/240(37)", "40호 (255/260mm)")."""
+    assert [S.mm_span(v) for v in ("24.5", "25.0cm", "22.5cm 3E", "235/240(37)", "40호 (255/260mm)", "39호 (250mm)")] == \
+        [(245, 245), (250, 250), (225, 225), (235, 240), (255, 260), (250, 250)]
+    assert [S.mm_of(v) for v in ("8.5", "25", "250/260", "250/270", "12.5", "GY8525")] == [None] * 6
+    assert S.width("22.5cm 3E") == "Wide"
+    out = S.resolve([{"name_ko": "사이즈", "values_ko": ["22.5", "23.0", "25.0"]}], "womens")
+    assert out["held"] is None and [v["us"] for v in out["values"]] == ["US 5.5 (225 mm)", "US 6 (230 mm)", "US 8 (250 mm)"]
+    out = S.resolve([{"name_ko": "사이즈", "values_ko": ["230(36)", "235/240(37)", "245(38)"]}], "womens")
+    assert [v["us"] for v in out["values"]] == ["US 6 (230 mm)", "US 6.5-7 (235-240 mm)", "US 7.5 (245 mm)"]
+
+
+def test_a_pairs_size_in_its_title():
+    """FootJoy Quantum 13262570386 (2026-11-26): no option, one variant, the title the listing's name + "colour, 250"."""
+    import transform
+    ov = {"options": [], "variants": [{"sku": "1", "options_ko": []}]}
+    got = transform._title_size_shoes(ov, "풋조이 퀀텀 우먼 보아 골프화 화이트화이트그레이 97839W, 250", "풋조이 퀀텀 우먼 보아 골프화")
+    assert got == "화이트화이트그레이 97839W, 250" and ov["variants"][0]["options_ko"] == ["화이트화이트그레이 97839W", "250"]
+    assert [o["name_ko"] for o in ov["options"]] == ["색상", "사이즈"]
+    # another listing's name, a colour-only tail, an option already: unchanged
+    for title, name in (("풋조이 퀀텀 화이트, 250", "다른 이름"), ("풋조이 퀀텀 우먼 보아 골프화 화이트, 블랙", "풋조이 퀀텀 우먼 보아 골프화")):
+        ov = {"options": [], "variants": [{"sku": "1", "options_ko": []}]}
+        assert transform._title_size_shoes(ov, title, name) is None and ov["options"] == []

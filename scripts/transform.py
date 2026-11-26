@@ -1772,6 +1772,25 @@ def _split_joined_shoes(ov: dict[str, Any]) -> None:
             v["naver_size_ko"] = own[i]
 
 
+def _title_size_shoes(ov: dict[str, Any], title: str, listing_name: str | None) -> str | None:
+    """A one-variant pair with no option whose title adds "<colour>, <mm size>" to its listing's name ("풋조이 퀀텀 우먼
+    보아 골프화 화이트화이트그레이 97839W, 250" beside "풋조이 퀀텀 우먼 보아 골프화": FootJoy 13262570386, PRO SLX
+    12071414928, adidas 11677620543, 2026-11-26, held "no size option"): the colour and the size become its options in
+    place, the way title_size gives an apparel member its facts. -> "colour, size", or None (nothing changed)."""
+    if ov.get("options") or len(ov.get("variants") or []) != 1 or not listing_name:
+        return None
+    title, name = str(title or "").strip(), str(listing_name).strip()
+    m = re.match(r"^\s(?P<colour>[^,]+),\s*(?P<size>[^,\s]+)$", title[len(name):]) if title.startswith(name) else None
+    if not m:
+        return None
+    colour, size = m.group("colour").strip(), m.group("size")
+    if shoe_sizes.mm_span(size) is None or shoe_sizes.mm_span(colour) is not None:
+        return None
+    ov["options"] = [{"name_ko": "색상", "values_ko": [colour]}, {"name_ko": "사이즈", "values_ko": [size]}]
+    ov["variants"][0]["options_ko"] = [colour, size]
+    return f"{colour}, {size}"
+
+
 def _gender_colour_split(ov: dict[str, Any]) -> None:
     """An option of "<남성용|여성용>-<colour><size>" values (Kasco 505840359, 2026-11-25, the owner: "Все рекомендации":
     "남성용-그레이L(100)" .. "여성용-핑크L(77)", held "not read as a size") split in place: the option 컬러 keeps the
@@ -2556,6 +2575,8 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             notes.append({"code": "spiked_left_out", "detail": spiked})       # Eagle Eyed 11574034936 (2026-11-25)
         if laced := _drop_shoe_seconds(ov, shoe_sizes.LACED_VALUE_RE):
             notes.append({"code": "laced_left_out", "detail": laced})         # Prito 6510500952 (2026-11-26)
+        if titled_pair := _title_size_shoes(ov, details["name"], (line.get("listing") or {}).get("name")):
+            notes.append({"code": "size_from_title", "detail": titled_pair})
         _split_joined_shoes(ov)
         own = stated.get("gender") or {}
         gender, why = shoe_sizes.section_gender(own.get("value"), shoe_sizes.sizes_mm(ov["options"]))
