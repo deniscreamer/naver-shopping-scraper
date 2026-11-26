@@ -44,10 +44,12 @@ GENDER = Attribute(
     "gender",
     words={
         "unisex": ("남녀공용", "남여공용", "남녀", "남여", "공용", "유니섹스", "UNISEX"),
-        "womens": ("여성용", "여성", "여자", "레이디스", "레이디", "WOMEN'S", "WOMENS", "WOMEN", "LADIES", "LADY"),
+        # (남), (여): 2026-11-26, the golf shoes' combined job: Hello Birdie 9081244742 "(남)보아_골프화 화이트" beside
+        # "(여)보아_골프화 ..." (row 여성용) sized every pair on the women's scale
+        "womens": ("여성용", "여성", "여자", "레이디스", "레이디", "WOMEN'S", "WOMENS", "WOMEN", "LADIES", "LADY", "(여)"),
         # (MAN), 맨즈, 멘즈: 2026-11-22, the men's pilot review: "(MAN) 비스코스 캐시 라운드니트" (2SOM 4866944169,
         # row 남녀공용) went to the women's knit cardigans; the title screen counts them men's words since 2026-11-22
-        "mens": ("남성용", "남성", "남자", "맨즈", "멘즈", "MEN'S", "MENS", "MEN", "(MAN)"),
+        "mens": ("남성용", "남성", "남자", "맨즈", "멘즈", "MEN'S", "MENS", "MEN", "(MAN)", "(남)"),
     },
     rows=("성별",),
     implies={"unisex": ("mens", "womens")},

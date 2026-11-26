@@ -1,0 +1,22 @@
+{
+ "format": "dictionary/1",
+ "kind": "spec_label",
+ "backed_up": "2026-11-26T07:42:23Z",
+ "entries": {
+  "다이얼시스템": "Dial System",
+  "디자인": "Design",
+  "모델명": "Model Name",
+  "발목높이": "Ankle Height",
+  "부가기능": "Additional Features",
+  "브랜드": "Brand",
+  "성별": "Gender",
+  "소재": "Material",
+  "스파이크 형태": "Spike Type",
+  "스파이크개수": "Number of Spikes",
+  "원산지": "Country of Origin",
+  "유효일자": "Expiration Date",
+  "제조사": "Manufacturer",
+  "출시": "Release",
+  "품번": "Style Number"
+ }
+}

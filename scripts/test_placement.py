@@ -275,6 +275,9 @@ def test_a_gendered_title_beats_a_unisex_row():
     assert man["value"] == "mens"
     assert A.values_in(A.ATTRIBUTES["gender"], "골프 맨즈 니트") == ["mens"]
     assert A.values_in(A.ATTRIBUTES["gender"], "MANSINGWEAR HUMAN 니트") == []
+    # 2026-11-26: (남) / (여) before a colour (Hello Birdie 9081244742 "(남)보아_골프화 화이트")
+    assert A.values_in(A.ATTRIBUTES["gender"], "(남)보아_골프화 화이트") == ["mens"]
+    assert A.values_in(A.ATTRIBUTES["gender"], "(여)보아_골프화 핑크") == ["womens"]
 
 
 def test_junior_clubs_go_to_their_one_section_whatever_the_gender():
