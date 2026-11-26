@@ -446,6 +446,19 @@ FAIRWARDGOLF = Delivered(
             hts="6201/6202",
             duty_flat=Decimal("0.125"),
             decided={"coefficients": "2026-11-24 (the apparel rule)", "duty": "2026-11-24 flat 12.5 % (the apparel rule)"}),
+        # 2026-11-25, BOA spikeless golf shoes (the owner: "окей" to the agent's values): the apparel rule, x1.10 at
+        # every level, the flat 12.5 % duty (a pair at W59,000 -> $189, W129,000 -> $279, W219,000 -> $399 in the
+        # 34 x 23 x 13 cm box at 1.3 kg); footwear is HTS 6402 / 6404 (rubber or textile uppers), its rates by upper
+        # not read: the by-fibre table is the flat rate, for the day a rule by upper is switched on
+        "50001740": CategoryPrice(
+            coefficients={5: Decimal("1.10"), 4: Decimal("1.10"), 3: Decimal("1.10"), 2: Decimal("1.10"),
+                          1: Decimal("1.10")},
+            duty_by_fibre={"wool": Decimal("0.125"), "cotton": Decimal("0.125"), "cashmere": Decimal("0.125"),
+                           "man-made": Decimal("0.125"), "other": Decimal("0.125"), "unknown": Decimal("0.125")},
+            hts="6402/6404",
+            duty_flat=Decimal("0.125"),
+            decided={"coefficients": "2026-11-25 (the owner: the apparel rule)",
+                     "duty": "2026-11-25 flat 12.5 % (the owner)"}),
     })
 
 POLICIES = {"fairwardgolf": Policy(delivered=FAIRWARDGOLF)}   # which shops carry delivery in the price: this map

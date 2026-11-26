@@ -166,7 +166,8 @@ class PreparedProduct(TypedDict, total=False):
     composition_ko: list[dict[str, str]]         # CategoryRules.composition only: the fibre rows {label_ko, value_ko,
                                                  # source: spec | notice} (transform.composition_rows, 2026-11-19)
     sizes: dict[str, Any]                        # CategoryRules.sizes only: apparel_sizes.resolve's answer (the US
-                                                 # values, the Korean value of each, the seller's chart), 2026-11-19
+                                                 # values, the Korean value of each, the seller's chart), 2026-11-19;
+                                                 # CategoryRules.shoe_sizes: shoe_sizes.resolve's (kind "shoes", mm)
 
 
 class PreparedSource(TypedDict):

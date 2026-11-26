@@ -278,7 +278,9 @@ cell once; since 2026-11-07, before each cell was its own line).
 (data-src over src), without the images of those cards (link-card thumbnails, shopping-card posters, the static map).
 - `notice.items[]` / `notice.terms[]`: `{label, value, is_see_description}`; `is_see_description` is true when the
   value only points elsewhere ("상품상세참조", "[상세설명참조]", "크기 항목 참조"). This is the legal 상품정보제공고시
-  notice; a store's own announcement (공지사항) is not product data and is not returned.
+  notice; a store's own announcement (공지사항) is not product data and is not returned. A row Naver nests (the
+  SHOES notice's 치수: {발길이, 굽높이}, 2026-11-25) is a row per part, labelled `치수(발길이)`; a value is a string or
+  null.
 - `facts`: `{brand, manufacturer, model_name, origin}`, each `{value, source}` or null (`parsers.product_facts`).
   Here the sources are `search_info.brandName` / `search_info.manufacturerName` / `search_info.modelName` (the
   backend's search info) and `notice:<label>` (manufacturer from 제조자(사), origin from 제조국 / 원산지). The brand

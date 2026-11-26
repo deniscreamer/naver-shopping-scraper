@@ -113,6 +113,25 @@ within 2.5 cm, gives the US letter and its US numeric range: "S (US 4-6)".
   table with line breaks and every draft read as changed); a change to that form needs `publish.py --force` for the
   products it touches (the inputs digest does not move).
 
+## Shoes (`shoe_sizes.py`, 2026-11-25)
+
+Golf shoes (50001740, `CategoryRules.shoe_sizes`) do not use the garment profiles: a Korean shoe size is the foot
+length in mm. The owner's chart (2026-11-25): men's 250 = US 7, 255 = 7.5 ... 280 = 10, 290 = 11, 300 = 12 (US =
+(mm - 180) / 10); women's 220 = US 5 ... 250 = 8, 260 = 9 (US = (mm - 170) / 10).
+
+| You see | It means | Do |
+|---|---|---|
+| `US 9 (270 mm)` / `US 8 (250 mm)` | a pair stated men's / women's (the 성별 row, the title, the variants) | nothing |
+| `US M 9 / W 10 (270 mm)` | a unisex, mixed or unstated pair; a mixed pair whose every size value is one gender's (FootJoy's "XW 240" men's, "W 220" women's, 10239862675) takes each value's own label | nothing |
+| `US 9 Wide (270 mm)`, `Extra Wide` | a width word beside the size (와이드, 광폭, 2E / 3E / EEE; FootJoy's W / XW right before the number) | nothing |
+| `held ...: size_unmapped ('free': not read as a size in mm)`, `(no size option ...)`, `(two Korean sizes on one US size ...)` | a value without a size in mm (a US size alone, a colour joined), no size option, two spellings of one size | look at the page; a new shape: a line in `shoe_sizes.mm_of` with a test; never a guessed size |
+| `held ...: gender_vs_sizes (stated men's, sold only up to 245 mm)` | the title's or the row's gender contradicts the sizes sold | look at the page; ask the owner |
+| placement flag `by_sizes`, evidence source `sizes` | the section was chosen by the sizes (`shoe_sizes.section_gender`): one section a pair; a unisex, mixed or unstated pair by its largest size, 270 mm or more men's, 250 mm or less women's, between: unisex / mixed men's, unstated unknown (placement holds it) | nothing; a pair in the wrong section: the owner's word |
+
+The store gets the same as a garment: the `Size` option in US sizes, `sizeKo` the seller's own value, the product's
+`fairwardgolf.sizes` (`kind: shoes`, `map` [{us, ko, basis: mm}]), and the description's "Size chart (US)" block:
+the US size, the foot length in mm and in inches (`shoe_sizes.chart_html`). Tests: `test_shoe_sizes.py`.
+
 ## Adding a profile (another garment)
 
 1. `size_profiles/<name>.json` (`format: size-profile/1`, `name` = the file's stem): `measures` (a

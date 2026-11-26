@@ -77,6 +77,10 @@ class CategoryRules:
     sizes_unisex: str | None = None      # the size profile of a unisex or mixed product (Golf Pants 50002801, 2026-11-23:
                                          # unisex trousers are sized as men's); set, a product that states no gender
                                          # holds size_unmapped (men's or women's sizes cannot be told)
+    shoe_sizes: bool = False             # shoes (50001740, the owner 2026-11-25): the size option's Korean mm values ->
+                                         # US men's / women's sizes (shoe_sizes.py); the product's gender, when it
+                                         # states none or both, decided by its sizes (the section); a value it cannot
+                                         # read holds the product size_unmapped
     draft_leaves: tuple[str, ...] = ()    # a section not reviewed yet in a reviewed category: a product placed there is
                                          # created DRAFT (50002796's men's section, 2026-11-21), until the owner's word
     variant_screen: tuple[str, ...] = ()  # the codes of listing_title_rules.json whose words in a variant's option
@@ -246,6 +250,14 @@ RULES = {
                 sizes_unisex="mens_tops", own_brand_wordmark=True,
                 reviewed=True),       # reviewed 2026-11-25: two pilots (30 + 100) reviewed by lens, 22 drafts held,
                                       # 117 activated on the owner's delegation ("сам реши по всем пунктам")
+            # 2026-11-25, the owner: BOA spikeless golf shoes (골프화), two sections under the new parent shoes, men's
+            # and women's, split by gender (a title stating none placed by its sizes); his answers to the agent's
+            # values: paid variants sold (a wide last, 와이드 / EEE, often costs more), paid add-ons not, the images
+            # read (the size charts); the sizes in mm turned into US men's / women's sizes (shoe_sizes.py)
+            "50001740": CategoryRules(
+                paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
+                no_choice_out=True, shoe_sizes=True, own_brand_wordmark=True,
+                reviewed=False),      # a new category: DRAFT until the lens review and the owner's activation
         }),
 }
 

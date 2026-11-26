@@ -1431,6 +1431,9 @@ def chart_html(sizes: dict[str, Any], table: dict[str, Any] | None = None,
     """The size chart block at the end of the description (US sizes, inches); "" when there is nothing to show.
     Garment chest laid flat (단면) is doubled; the body bust is the profile's band for the size. `section_en`: the
     English of a type's Korean value, for a one-size chart per type ("One Size (Front Logo)")."""
+    if sizes.get("kind") == "shoes":                 # shoes: the foot length (shoe_sizes.py, 2026-11-25)
+        import shoe_sizes
+        return shoe_sizes.chart_html(sizes)
     table = table or grids()
     profile = table["profiles"][sizes["profile"]]
     values = sizes.get("values") or []

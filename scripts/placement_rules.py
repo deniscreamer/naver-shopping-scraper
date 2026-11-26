@@ -40,6 +40,10 @@ apparel, split by gender as the knits: unisex goes there, a men's jumper and one
 (`unresolved`). Padded and down jumpers, rainwear, vests and cardigans, and titles without a women's word, are left
 out by the title screen, not here.
 
+50001740 골프화 (2026-11-25, the owner): BOA spikeless golf shoes, two sections under the new parent shoes,
+mens-boa-spikeless-shoes and womens-boa-spikeless-shoes, split by gender, one section a pair: the transform decides a
+unisex, mixed or unstated pair by its sizes (shoe_sizes.section_gender), so unisex never reaches both (stated_only).
+
     from placement_rules import profile_for
     profile = profile_for("fairwardgolf")
 """
@@ -120,6 +124,13 @@ RAINWEAR = Leaf("rainwear-midlayers", "Rainwear & Midlayers")     # 2026-11-24, 
                                                                    # fairwardgolf-rainwear-midlayers (tag fairwardgolf:
                                                                    # leaf:rainwear-midlayers) existed, empty (read
                                                                    # 2026-11-24); one section, no split
+MENS_BOA_SHOES = Leaf("mens-boa-spikeless-shoes", "Men’s BOA Spikeless Golf Shoes")   # 2026-11-25, the owner:
+                                                                   # collection fairwardgolf-mens-boa-spikeless-shoes
+                                                                   # (tag fairwardgolf:leaf:mens-boa-spikeless-shoes),
+                                                                   # parent shoes (fairwardgolf-shoes); existed, empty
+WOMENS_BOA_SHOES = Leaf("womens-boa-spikeless-shoes", "Women’s BOA Spikeless Golf Shoes")   # 2026-11-25, the
+                                                                   # owner: fairwardgolf-womens-boa-spikeless-shoes,
+                                                                   # existed, empty
 GOLF_PANTS = Leaf("golf-pants", "Golf Pants")                      # 2026-11-23, the owner: collection fairwardgolf-golf-
                                                                    # pants, tag fairwardgolf:leaf:golf-pants, men's and
                                                                    # women's trousers together
@@ -151,6 +162,12 @@ PROFILES = {
                                           # owner): one section, no split; the sizes follow the gender (CategoryRules)
             "50002816": CategoryPlacement(parent="apparel", leaves={None: RAINWEAR}),   # 레인코트 (2026-11-24, the
                                           # owner): one section, no split; a 골프필드용품 leaf filed under apparel
+            # 골프화 (2026-11-25, the owner): BOA spikeless shoes, two sections under the new parent shoes, split by
+            # gender; one section a product: the transform decides a unisex or unstated pair by its sizes
+            # (shoe_sizes.section_gender), so a unisex value never reaches both (stated_only), it stays unresolved
+            "50001740": CategoryPlacement(parent="shoes", split_by="gender",
+                                          leaves={"mens": MENS_BOA_SHOES, "womens": WOMENS_BOA_SHOES},
+                                          stated_only=("mens", "womens")),
         }),
 }
 

@@ -100,6 +100,10 @@ PROFILES: dict[str, dict[str, Any]] = {
                  "lists": (("materials", "Materials & care", 4), ("highlights", "Highlights", 4)),
                  "no_measures": True,
                  "imported": True},
+    "shoes": {"categories": ("50001740",),               # BOA spikeless golf shoes (2026-11-25, as the rainwear)
+              "lists": (("materials", "Materials & care", 4), ("highlights", "Highlights", 4)),
+              "no_measures": True,
+              "imported": True},
     "skirt": {"categories": ("50002802",),               # women's golf skirts and culottes (2026-11-22, as the tops)
               "lists": (("materials", "Materials & care", 4), ("highlights", "Highlights", 4)),
               "no_measures": True,

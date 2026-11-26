@@ -4488,6 +4488,366 @@
      }
     ]
    }
+  ],
+  "50001740": [
+   {
+    "code": "spiked",
+    "why": "2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md): a spiked shoe (스파이크 not followed by 리스, spike not followed by less): the sections sell spikeless shoes only.",
+    "tokens": [
+     {
+      "text": "스파이크",
+      "notFollowedBy": [
+       "리스"
+      ],
+      "notPrecededBy": []
+     },
+     {
+      "text": "spike",
+      "notFollowedBy": [
+       "less"
+      ],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "spiked_model",
+    "why": "2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md): a spiked model by its name (FootJoy Tour Alpha / Premier / Pro|SL, adidas Tour360 / Codechaos spiked, ECCO Biom G, ...): sellers put 스파이크리스 into spiked titles as a search keyword, so no 'unless'.",
+    "tokens": [
+     {
+      "text": "투어피에프",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "투어알파",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "dna",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "헬릭스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "하이퍼플렉스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "투어라이벌",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "울트라핏",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "빅토리투어",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "에어로스포츠",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "넥스라이트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "라이트맥스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "골프라이트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "zg23",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "투어360",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "프리미어",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "프로컴포트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "파워랩",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "eqt",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "이큅먼트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "알파모션",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "트랙션",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "밸루어",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "엑스퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "바이옴g",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아크먼트맥스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아디스타보아",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "winter_boot",
+    "why": "2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md): a winter boot (부츠, 방한) or 보아털 (boa fleece, not the BOA dial).",
+    "tokens": [
+     {
+      "text": "부츠",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "방한",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "보아털",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "kids",
+    "why": "2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md): children's shoes (키즈, 주니어, 어린이, 아동): not the men's or women's sizes.",
+    "tokens": [
+     {
+      "text": "키즈",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "주니어",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "어린이",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아동",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "used",
+    "why": "2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md): a used, display or returned pair (전시상품, 중고, 리퍼, 반품).",
+    "tokens": [
+     {
+      "text": "전시상품",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "중고",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "리퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "반품",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "park_golf",
+    "why": "2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md): 엑트온, park-golf shoes only. Not 파크: 17 golf shoes say 파크골프 겸용.",
+    "tokens": [
+     {
+      "text": "엑트온",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "womens_title",
+    "leaves": [
+     "mens-boa-spikeless-shoes"
+    ],
+    "why": "2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md); the owner 2026-11-25: the men's section takes a BOA title with a men's word or none (placed by its sizes); a title with a women's word and no men's or unisex word is the women's section's.",
+    "tokens": [
+     {
+      "text": "여성",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "여자",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "ladies",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "women",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "우먼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "woman",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "레이디",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "unless": [
+     "남성",
+     "남자",
+     "남녀",
+     "남여",
+     "공용",
+     "유니섹스",
+     "unisex",
+     "맨즈",
+     "멘즈"
+    ]
+   },
+   {
+    "code": "mens_title",
+    "leaves": [
+     "womens-boa-spikeless-shoes"
+    ],
+    "why": "2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md); the owner 2026-11-25: the women's section takes a BOA title with a women's word or none (placed by its sizes); a title with a men's word and no women's or unisex word is the men's section's. 'men' not after 'wo' (WOMENS) nor before 't'.",
+    "tokens": [
+     {
+      "text": "남성",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "남자",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "맨즈",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "멘즈",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "men",
+      "notFollowedBy": [
+       "t"
+      ],
+      "notPrecededBy": [
+       "wo"
+      ]
+     }
+    ],
+    "unless": [
+     "여성",
+     "여자",
+     "남녀",
+     "남여",
+     "공용",
+     "유니섹스",
+     "unisex",
+     "ladies",
+     "women",
+     "우먼",
+     "woman",
+     "레이디"
+    ]
+   },
+   {
+    "code": "not_boa",
+    "why": "The owner 2026-11-25: both sections sell BOA shoes: a title must say 보아 or BOA. 2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md).",
+    "requires": [
+     [
+      "보아",
+      "boa"
+     ]
+    ],
+    "tokens": []
+   }
   ]
  },
  "together": {
@@ -4502,7 +4862,8 @@
  "default_leaf": {
   "about": "2026-11-21: a job of a category that feeds several shop sections and names none (--leaf) is this section's (the jobs before the second section)",
   "50002796": "womens-fall-long-sleeve-tops",
-  "50002797": "womens-knit-cardigans"
+  "50002797": "womens-knit-cardigans",
+  "50001740": "mens-boa-spikeless-shoes"
  },
  "together_leaf": {
   "about": "2026-11-22: a job of the key section takes these categories with its own (each row screened by its own category's rules for that section)",

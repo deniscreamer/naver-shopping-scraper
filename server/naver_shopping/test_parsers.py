@@ -246,6 +246,18 @@ def test_contents_and_notice():
     assert P.parse_notice({})["items"] == []
 
 
+def test_notice_nested_row():
+    """2026-11-25, the SHOES notice (FootJoy 5496389495): "치수" holds {발길이, 굽높이}; the facts read it as text."""
+    n = P.parse_notice({"productInfoProvidedNoticeType": "SHOES", "productInfoProvidedNoticeView": {"basic": {
+        "제조국": "중국산(중국)", "치수": {"발길이": "245~275mm", "굽높이": "상세페이지참조"}, "기타": [1]}}})
+    assert n["items"] == [
+        {"label": "제조국", "value": "중국산(중국)", "is_see_description": False},
+        {"label": "치수(발길이)", "value": "245~275mm", "is_see_description": False},
+        {"label": "치수(굽높이)", "value": "상세페이지참조", "is_see_description": True},
+        {"label": "기타", "value": None, "is_see_description": False}]
+    assert P.product_facts({"name": "x"}, n)["origin"]["value"] == "중국산(중국)"
+
+
 def test_review_summary():
     s = P.parse_review_summary(fixture("box_review_summary.json"))
     assert s["count"] > 6000 and 4 < s["average_score"] <= 5

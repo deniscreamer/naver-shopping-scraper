@@ -70,6 +70,7 @@ import apparel_sizes
 import attributes
 import brand_fallback
 import listing_filter
+import shoe_sizes
 from description_clean import body_notes, clean, clean_images, decode_line, picked_switches
 from description_images import current, image_rows
 from description_measures import (COMPOSED, FIELDS, LONG_UNITS, NUMBER_CONF, SOURCE, bands, compose_by_count,
@@ -2508,6 +2509,30 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
         elif sizes["merged"]:
             notes.append({"code": "size_values_merged", "detail": ", ".join(f"{k} = {v}"
                                                                             for k, v in sizes["merged"].items())})
+    if cat.shoe_sizes:                              # shoes (50001740, the owner 2026-11-25): mm -> US, the section
+        own = stated.get("gender") or {}
+        gender, why = shoe_sizes.section_gender(own.get("value"), shoe_sizes.sizes_mm(ov["options"]))
+        if gender != own.get("value") or own.get("variants"):
+            # one section a pair (the owner): a unisex, mixed or unstated pair by its sizes, its variants not split
+            stated["gender"] = {"value": gender, "variants": {},
+                                "evidence": list(own.get("evidence") or []) + [{"source": "sizes", "value": gender,
+                                                                                 "text": why}],
+                                "flags": list(own.get("flags") or []) + ["by_sizes"]}
+        size_at = shoe_sizes.size_option(ov["options"])
+        by_value: dict[str, set[str]] = {}
+        for sold in ov["variants"] if own.get("variants") else []:
+            values_ko = list(sold.get("options_ko") or [])
+            if size_at is not None and len(values_ko) > size_at:
+                by_value.setdefault(str(values_ko[size_at]), set()).add(
+                    str((own.get("variants") or {}).get(sold["sku"])))
+        sizes = shoe_sizes.resolve(ov["options"], own.get("value"), by_value)
+        if sizes["held"]:
+            held.append({"code": "size_unmapped", "detail": sizes["held"][:200]})
+        elif gender == "conflict":
+            held.append({"code": "gender_vs_sizes", "detail": why})
+        elif sizes["option"] is not None:
+            ov["options"][sizes["option"]] = {**ov["options"][sizes["option"]],
+                                              "values_ko": [v["ko"] for v in sizes["values"]]}
     if said:                                        # the owner's sizes block (variants_by_owner.json, 2026-11-25)
         notes.append({"code": "sizes_by_owner", "detail": "; ".join(said)[:300]})
     if unused:

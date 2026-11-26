@@ -575,8 +575,17 @@ def parse_notice(n):
     view = _dict(n.get("productInfoProvidedNoticeView"))
 
     def rows(section):
-        return [{"label": _clean(k), "value": _clean(v), "is_see_description": is_see_description(v)}
-                for k, v in _dict(view.get(section)).items() if _clean(k)]
+        out = []
+        for k, v in _dict(view.get(section)).items():
+            if not _clean(k):
+                continue
+            # 2026-11-25: the SHOES notice nests one row, "치수": {"발길이": "245~275mm", "굽높이": "상세페이지참조"}
+            # (FootJoy 5496389495, majorgolf): a row per part, "치수(발길이)", so every value is a string
+            parts = [(f"{_clean(k)}({_clean(sk)})", sv) for sk, sv in v.items() if _clean(sk)] \
+                if isinstance(v, dict) else [(_clean(k), v)]
+            out += [{"label": label, "value": _clean(sv) if not isinstance(sv, (dict, list)) else None,
+                     "is_see_description": is_see_description(sv)} for label, sv in parts]
+        return out
     return {
         "type": _clean(n.get("productInfoProvidedNoticeType")),
         "items": rows("basic"),

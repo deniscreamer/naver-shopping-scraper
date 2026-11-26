@@ -421,6 +421,8 @@ surfaces.
   `parsers.product_facts` docstring.
 - Notice rows often hold a pointer instead of a value ("상품상세참조", "[상세설명참조]", "크기 항목 참조"). ->
   `parsers._SEE_DESCRIPTION_RE` comment.
+- The SHOES notice nests a row: "치수": {"발길이": "245~275mm", "굽높이": ...} (seen 2026-11-25, golf shoes). ->
+  `parsers.parse_notice` comment.
 - A seller's regional fee can be text only, `deliveryInfo.differentialFeeByArea` ("제주 도서산간 10,000", "8000"),
   with `area2ExtraFee` / `area3ExtraFee` empty (seen 2026-11-06, 3 of 40 sets). -> `parsers._delivery` comment.
 
