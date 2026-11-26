@@ -110,9 +110,10 @@ TITLE_SIZES["50002796"] = TITLE_SIZES["50002797"]           # women's long-sleev
 TITLE_SIZES["50002799"] = TITLE_SIZES["50002797"]           # 재킷, the same section (2026-11-21)
 TITLE_SIZES["50002816"] = TITLE_SIZES["50002797"]           # rainwear: the garment sizes (2026-11-24)
 # golf shoes: a size in mm or a size run a title may list ("230-290", "250mm"; 2026-11-25), the brief leaves them out
-TITLE_SIZES["50001740"] = re.compile(r"(?<![\d.A-Za-z])(?:2\d[05]|3[01][05])(?:mm)?(?![\d.%A-Za-z])|(?<![\d.A-Za-z])20[12]\d(?![\d.%])",
-                                     re.I)   # "250-300mm", the model year "2025" the brief leaves out (12415931375)
-                                                                                          # (5114581014: "missing 300MM")
+TITLE_SIZES["50001740"] = re.compile(r"(?<![\d.A-Za-z])(?:2\d[05]|3[01][05])(?:mm)?(?![\d.%A-Za-z])|(?<![\d.A-Za-z])20[12]\d(?![\d.%])"
+                                     r"|(?<![\d.A-Za-z])2\d(?=년)", re.I)   # "250-300mm", the model year "2025" the
+# brief leaves out (12415931375), its short form "26년" (adidas SPW 13103836696, 2026-11-26: "missing 26");
+# 5114581014: "missing 300MM"
 # skirts: the women's sizes and the waists in inches and cm a title may list ("25 26 27 28", "64 67 70"; 2026-11-22)
 TITLE_SIZES["50002802"] = re.compile(r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|2[3-9]|3[0-4]|6[1-9]|7[0-9])(?![\d.%])")
 # golf pants: the women's sizes, the waists in inches (23-48) and in cm (61-112) a title may list ("28 30 32", "76 79

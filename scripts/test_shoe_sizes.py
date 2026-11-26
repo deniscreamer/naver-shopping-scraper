@@ -110,6 +110,7 @@ def test_title_sizes_free_a_mm_run():
     assert translate.TITLE_SIZES["50001740"].findall("국산 남자 다이얼 골프화 250-300mm 빅사이즈") == ["250", "300mm"]
     # a model year goes too (the brief leaves it out: 12415931375 "missing 2025"); never a model code's digits
     assert translate.TITLE_SIZES["50001740"].findall("코드케이오스25 IG8705 2025") == ["2025"]
+    assert translate.TITLE_SIZES["50001740"].findall("아디다스 26년 SPW 보아") == ["26"]
 
 
 def test_the_mens_pilot_review():
@@ -126,3 +127,9 @@ def test_the_mens_pilot_review():
     got = S.split_joined([{"name_ko": "선택", "values_ko": ["51143 W 화이트실버 245", "51143 W 화이트실버 250"]}])
     assert got == (0, [("51143 화이트실버", "W 245"), ("51143 화이트실버", "W 250")])
     assert S.width("W 245") == "Wide"
+
+
+def test_a_bracketed_colour_before_the_size():
+    """2026-11-26, the combined job's size_unmapped: FootJoy Flow 2.0 11442646718 "(화이트그레이)250"."""
+    assert S.split_joined([{"name_ko": "색상", "values_ko": ["(화이트골드)225", "(화이트골드)230", "(베이지)230"]}]) == \
+        (0, [("화이트골드", "225"), ("화이트골드", "230"), ("베이지", "230")])

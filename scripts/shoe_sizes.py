@@ -78,8 +78,9 @@ def mm_of(value: Any) -> int | None:
 
 
 # a colour and a size joined in one value, "JQ0993 화이트실버 245", "블랙(01001)_255~260", "여) JQ0996 화이트블랙 225"
-# (adidas SPW 13103847433 / 13335983300, ECCO 9887518096, 2026-11-25): the size at the end after a space, "_" or "/"
-_JOINED_RE = re.compile(r"^(?P<rest>.*\S)[\s_/]+(?P<size>(?:XW|W)?\s*(?:2\d[05]|3[01][05])(?:\s*mm)?"
+# (adidas SPW 13103847433 / 13335983300, ECCO 9887518096, 2026-11-25): the size at the end after a space, "_" or "/",
+# or right after a closing bracket, "(화이트그레이)250" (2026-11-26)
+_JOINED_RE = re.compile(r"^(?P<rest>.*\S)(?:[\s_/]+|(?<=\)))(?P<size>(?:XW|W)?\s*(?:2\d[05]|3[01][05])(?:\s*mm)?"
                         r"(?:\s*[~-]\s*(?:2\d[05]|3[01][05])(?:\s*mm)?)?)$", re.I)
 
 
@@ -88,8 +89,10 @@ def split_joined(options: list[dict[str, Any]]) -> tuple[int, list[tuple[str, st
     ends in a mm size after a colour or a code; else None."""
     for i, o in enumerate(options):
         values = [str(v) for v in o.get("values_ko") or []]
-        parts = [(m.group("rest").strip(), m.group("size").strip()) if (m := _JOINED_RE.match(v.strip())) else None
-                 for v in values]
+        # "(화이트그레이)250" (FootJoy Flow 2.0 11442646718, New Balance 574B 12148138149, 2026-11-26): the colour in
+        # brackets right before the size, the brackets dropped
+        parts = [(re.sub(r"^\((.+)\)$", r"\1", m.group("rest").strip()), m.group("size").strip())
+                 if (m := _JOINED_RE.match(v.strip())) else None for v in values]
         # FootJoy's width after its style code, "51143 W 화이트실버 245" (Versafit 11886292855): the width goes with the
         # size ("W 245": Wide), the colour keeps the code and the name
         parts = [((m.group(1) + " " + m.group(3)).strip(), f"{m.group(2)} {p[1]}") if p and (m := _FJ_WIDTH_RE.match(p[0]))
