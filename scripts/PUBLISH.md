@@ -201,7 +201,8 @@ The owner's rules (`shopify_payload.py`):
   whole feed).
 - **Photos**: alt "<brand> <title> - photo N" (the brand once when the title starts with it). A product with fewer
   than 2 photos of its own gets buyers' photos after them, 5 photos in all at most (the owner 2026-11-09, a fuller
-  gallery for Google Merchant; never from the description images). `review_rank` orders the reviews rated 4-5 (a review telling of a defect, `DEFECT_RE`: 불량, 파손, 찢어, "상태가 안좋", 실밥 ..., gives no photo whatever its score, 2026-11-26, a split zipper of PXG 10556770499):
+  gallery for Google Merchant; never from the description images). `review_rank` orders the reviews rated 4-5 (a review telling of a defect, `DEFECT_RE`: 불량, 파손, 찢어, "상태가 안좋", 실밥 ..., gives no photo whatever its score, 2026-11-26, a split zipper of PXG 10556770499; `told_defect`, 2026-11-27: not the
+  ground's state, "잔디의 상태가 안좋은 계절에", nor a defect said absent, "아무 하자 없이"):
   the review's usefulness (`text_quality`, Naver's "helpful" votes `likes`, a full text over a short one), several
   photos first (the owner), lower for a review that told of the purchase (seller, packing, shipping: its photo is
   often the box); a review with one photo and no product words, or about the purchase only, is passed over.

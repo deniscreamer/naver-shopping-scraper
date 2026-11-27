@@ -1363,3 +1363,77 @@ def test_product_capped_when_the_default_is_above_the_box_too():
                                    "package_weight_g": package}, {**_DEFAULT_PRODUCT, "central": 3500}, (10, 200000))
     assert out["product_weight_g"]["value"] == {"min": 360, "max": 360}
     assert out["product_weight_g"]["flags"] == ["capped_to_package"]
+
+
+# ---- an item that is its own container: a stand bag (own_box, 2026-11-27, the 50002791 pilot of 30) ----------
+OWN = next(r for r in load_table()["rows"] if r["category_id"] == "50002791")["own_box"]
+OWN_G = tuple(OWN["weight_g"])
+
+
+@pytest.mark.parametrize("rows, grams", [
+    (["-무게3.7kg"], 3700),                                   # 7223000254
+    (["•무게:2kg / ·소재:나일론"], 2000),                          # 11012444977
+    (["본체 무게:2.3 kg"], 2300),
+    (["다양한 포켓 구성 / 무게 / 1.4 kg"], 1400),                   # 11582625387: the label not first
+    (["중량 / 2220g"], 2220),                                   # 11760236679: grams
+    (["약 2.6kg (스트랩 무게 포함)"], 2600),                          # 11962405738: the value before its label
+    (["크기 / 9.0인치/2.5kg/6구"], 2500),                          # 6817963449: one weight on a size row
+    (["치수 / 9인치/5구 (약3.1 kg)"], 3100),                        # 5433087603
+    (["H : 88cm W : 24cm D : 36cm/2.2kg"], 2200),               # 13643783678
+    (["너비 / 깊이 / 높이(후드포함) / 중량", "22cm / 33cm / 128cm / 2.4kg"], 2400),   # 6926739253: under a 중량 head
+])
+def test_an_own_items_weight_in_more_places(rows, grams):
+    facts = D.read_rows([rows], None, None, own_g=OWN_G)
+    assert [f["g"] for f in facts["product_weights"]] == [grams]
+    assert D.read_rows([rows])["product_weights"] == [] or rows == ["본체 무게:2.3 kg"]   # without the block: as before
+
+
+def test_a_typed_weight_row_with_its_unit_in_the_label():
+    facts = D.read_rows([], None, ["Weight (kg) | 2.8kg"], own_g=OWN_G)            # 12360655718
+    assert [f["g"] for f in facts["product_weights"]] == [2800]
+
+
+@pytest.mark.parametrize("rows", [
+    ["2.3kg 초경량"],                          # a bare headline: a comparison graphic beside it (4859779345)
+    ["보스턴백 무게 1.2kg"],                       # another item's
+    ["사이즈 / 2.3kg 대비 0.9kg 가벼운"],          # two weights on a size row: neither
+    ["무게 / 2.3kg", "파우치 / 무게 / 0.9kg"],      # the pouch's is not the bag's: only 2300
+])
+def test_not_an_own_items_weight(rows):
+    facts = D.read_rows([rows], None, None, own_g=OWN_G)
+    assert [f["g"] for f in facts["product_weights"]] in ([], [2300])
+    assert 900 not in [f["g"] for f in facts["product_weights"]] and 1200 not in [f["g"] for f in facts["product_weights"]]
+
+
+def test_the_box_is_the_bags_body_and_margins():
+    facts = D.read_rows([["사이즈 : 38x30x90cm", "무게 : 2.3kg"]], None, None, own_g=OWN_G)     # 4424531670
+    fields = {name: {"central": c, "source": "category_default"} for name, c in
+              zip(D.FIELDS, (2300, 3300, 950, 350, 300))}
+    out, taken = D.package_for(fields, facts, None, None, None, None, None, own=OWN)
+    got = {name: out[name]["value"]["max"] for name in D.FIELDS}
+    assert got == {"product_weight_g": 2300, "package_weight_g": 3300, "package_length_mm": 950,
+                   "package_width_mm": 400, "package_height_mm": 320}
+    assert out["package_length_mm"]["how"] == "item size + margin" and out["package_length_mm"]["confidence"] == 3
+    assert set(taken) == set(D.FIELDS)
+
+
+@pytest.mark.parametrize("rows", [
+    ["W 35 X H 127 X D 21 cm"],                       # 5433087603: the height with the hood up, not the body
+    ["사이즈 / 87 x 15.5 x 35cm"],                      # 10556770499: laid flat (a side under 20 cm)
+    ["사이즈 : 38x30x90cm", "사이즈 : 42x28x82cm"],        # two bags of one listing: none
+    ["여성용 경량 보스턴", "사이즈 / L48×W24×H30CM"],          # a Boston bag's
+])
+def test_no_box_from_a_size_that_is_not_the_bodys(rows):
+    facts = D.read_rows([rows], None, None, own_g=OWN_G)
+    assert D.own_box(facts, OWN) == {}
+
+
+def test_a_stated_bag_weight_goes_into_the_package_with_its_carton():
+    # 10738681809 "중량 / 3.45 kg": above the default 3.3 kg package, it was refused (above_package); with the
+    # carton the package is 4.45 kg and the bag's weight stands
+    facts = D.read_rows([["중량 / 3.45 kg"]], None, None, own_g=OWN_G)
+    fields = {name: {"central": c, "source": "category_default"} for name, c in
+              zip(D.FIELDS, (2300, 3300, 950, 350, 300))}
+    out, _ = D.package_for(fields, facts, None, None, None, None, None, own=OWN)
+    assert (out["product_weight_g"]["value"]["max"], out["package_weight_g"]["value"]["max"]) == (3450, 4450)
+    assert out["package_length_mm"].get("source") == "category_default"

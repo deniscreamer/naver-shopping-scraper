@@ -297,7 +297,10 @@ files or the live dictionaries. The rounds run so far: History, below.
   The judge flags it; the prompt asks to keep the buyer as the subject.
 - **Titles keep every code of the source**, so a model written twice stays ("BG-100L BG100L"). Titles translated
   before 2026-11-08 evening are the literal ones (in the texts store); they change only when translated again.
-- **Category scope.** 50002788, 50002787 (junior clubs, 2026-11-11: its own brief; the sets' glued-flex rule, review
+- **Category scope.** 50002791 (Lightweight Stand Bags, 2026-11-26: its own brief; 2026-11-27, the pilot of 30: the model
+  year freed by `TITLE_SIZES`, and `translate.garment_title` takes out of a title the Korean name again in Latin
+  ("...AGERN EDGE STANDBAG") and the divider counts of a listing of several ("7분할/14분할" -> none); the brief leaves
+  헤드커버, one colour of several and a wrong 바퀴형 tick out), 50002788, 50002787 (junior clubs, 2026-11-11: its own brief; the sets' glued-flex rule, review
   aspects with a parent's words and glossary) and 50002670 (women's iron sets, 2026-11-14: its own brief; the sets'
   rule, aspects, product words and glossary) and 50002783 (wedge sets, 2026-11-15: its own brief, the sets' rule,
   aspects, product words and glossary) and 50002784 (chippers, 2026-11-18: its own brief with the listing's makers

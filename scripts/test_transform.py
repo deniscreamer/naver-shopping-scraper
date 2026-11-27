@@ -1200,3 +1200,9 @@ def test_the_owners_same_as_accepts_one_collision():
     odd = _owned("7496732129", {"same_as": {"S": "XS"}})
     assert {"code": "sizes_by_owner_unused", "detail": "same_as S: XS (not two size values of the product)"} \
         in odd["notes"]
+
+
+def test_a_pointer_with_a_closing_period_states_nothing():
+    # 2026-11-27: Bridgestone stand bag 11962029819, 제조자(사) "상세 이미지 참조." became the vendor
+    assert transform._pointer("상세 이미지 참조.") and transform._pointer("상세페이지 참조") and transform._pointer("크기 항목 참조.")
+    assert not transform._pointer("브리지스톤.") and not transform._pointer("상세정보 참조, 중국")

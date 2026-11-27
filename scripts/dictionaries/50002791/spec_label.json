@@ -1,0 +1,18 @@
+{
+ "format": "dictionary/1",
+ "kind": "spec_label",
+ "backed_up": "2026-11-27T09:04:10Z",
+ "entries": {
+  "모델명": "Model Name",
+  "부가기능": "Additional Features",
+  "브랜드": "Brand",
+  "성별": "Gender",
+  "소재": "Material",
+  "원산지": "Country of Origin",
+  "입구분할": "Top Dividers",
+  "제조사": "Manufacturer",
+  "출시": "Release",
+  "투입구사이즈": "Top Size",
+  "품번": "Product Code"
+ }
+}

@@ -208,7 +208,7 @@ _GIFT_RE = re.compile(r"사은품|증정")
 # a value that only points to the description (server/naver_shopping/parsers.py _SEE_DESCRIPTION_RE, 2026-11-01)
 _POINTER_RE = re.compile(
     r"^[\[(]?\s*(?:상품|제품)?\s*상세\s*(?:페이지|설명|정보|이미지)?\s*(?:에|란)?\s*(?:별도\s*)?"
-    r"(?:참조|참고|표기|표시|확인)\s*[\])]?$|^\S+\s*항목\s*(?:참조|참고)$")
+    r"(?:참조|참고|표기|표시|확인)\s*[\])]?\s*\.?$|^\S+\s*항목\s*(?:참조|참고)\s*\.?$")
 _PROMO_AXIS_RE = re.compile(r"리뷰|후기|쿠폰|적립")       # 리뷰 작성 O / X: -5,000 KRW for a promised review
 
 
@@ -1602,8 +1602,10 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
     profile = profile_for(category_id)               # by the Naver leaf category id; None: the core only
     images = image_rows(sidecar, with_conf=True)
     typed_lines = [t.strip() for t in (typed or "").split("\n") if t.strip()]
-    facts = read_rows(images, profile, typed_lines, long_units=str(category_id) in LONG_UNITS)
     row = _measures_row(category_id)
+    own_box = row.get("own_box")                     # a stand bag: its own container (2026-11-27)
+    facts = read_rows(images, profile, typed_lines, long_units=str(category_id) in LONG_UNITS,
+                      own_g=tuple(own_box["weight_g"]) if own_box else None)
     band = profile.count if profile else (0, 0)
     counted = [int(pieces.group(1))] if pieces else []
     if profile and profile.count_title:              # "야마하 cs HM+ 씨즈 10개 풀세트" with a 총클럽개수 row of
@@ -1665,7 +1667,8 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
         ladies = bool(_SOFT_FLEX_RE.search(text) or _LADIES_RE.search(text)) and not _HARD_FLEX_RE.search(text)
         v["package"], names = package_for(v["package"], facts, 1 if single else max(own) if own else product_count,
                                           has if has is not None else listed,
-                                          row.get("plausible"), profile, row.get("baselines"), ladies, weight_band)
+                                          row.get("plausible"), profile, row.get("baselines"), ladies, weight_band,
+                                          own_box)
         for name in names:
             taken[name] = taken.get(name, 0) + 1
     block = row.get("compose_by_count")

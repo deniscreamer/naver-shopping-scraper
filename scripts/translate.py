@@ -114,6 +114,9 @@ TITLE_SIZES["50001740"] = re.compile(r"(?<![\d.A-Za-z])(?:2\d[05]|3[01][05])(?:m
                                      r"|(?<![\d.A-Za-z])2\d(?=년)", re.I)   # "250-300mm", the model year "2025" the
 # brief leaves out (12415931375), its short form "26년" (adidas SPW 13103836696, 2026-11-26: "missing 26");
 # 5114581014: "missing 300MM"
+# stand bags: the model year the brief leaves out ("타이틀리스트 2026 플레이어스 S4 ...", 13718353961, the pilot of 30,
+# 2026-11-27: a re-ask kept "2026", the numbers check refused every answer without it)
+TITLE_SIZES["50002791"] = re.compile(r"(?<![\d.A-Za-z])20[12]\d(?![\d.%])|(?<![\d.A-Za-z])2\d(?=년)")
 # skirts: the women's sizes and the waists in inches and cm a title may list ("25 26 27 28", "64 67 70"; 2026-11-22)
 TITLE_SIZES["50002802"] = re.compile(r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|2[3-9]|3[0-4]|6[1-9]|7[0-9])(?![\d.%])")
 # golf pants: the women's sizes, the waists in inches (23-48) and in cm (61-112) a title may list ("28 30 32", "76 79
@@ -146,6 +149,8 @@ TITLE_MODEL_YEAR = re.compile(r"(?<![A-Za-z\d])20\d{2}\s?(?:년\s?(?:형|모델|
 TITLE_PROMO = re.compile(r"(?<![A-Za-z가-힣])(?:인기|BEST|베스트)(?![A-Za-z가-힣])", re.I)
 TITLE_PROMO_EN = r"Best[- ]?Sellers?|Best|Popular"
 TITLE_NEW = re.compile(r"(?<![A-Za-z])NEW(?![A-Za-z])", re.I)      # shoes (garment_title, 2026-11-26)
+BAG_ECHO = re.compile(r"(?<![A-Za-z])STAND\s?BAG(?![A-Za-z])")       # stand bags (garment_title, 2026-11-27)
+BAG_WAYS = re.compile(r"(\d{1,2})\s?(?:분할|구)(?![가-힣])")
 # The English words a garment title's answer loses whatever the model wrote (strip, verify): the briefs leave them
 # out and the model kept them (the golf pants pilot review, 2026-11-24). A Korean word -> its English.
 # - a word of one variant (pants, 50002801): 9부 where 롱 is sold too (6384912528: "9-Length Cropped" over 8 cuts),
@@ -473,6 +478,19 @@ def garment_title(item: dict[str, Any], category: str, product: dict[str, Any], 
         drop += new
         strip.append(r"(?-i:NEW)")
         _say(item, "NEW is the seller's season word: leave it out of the title")
+    if category == "50002791":
+        # the Korean name again in Latin, "...베이지 핑크AGERN EDGE STANDBAG" (10968711888, the pilot of 30, 2026-11-27:
+        # "... Beige Pink STANDBAG" and a re-ask refused "codes lost: missing STANDBAG"); two divider counts of the
+        # variants, "케이로 PGM 경량 7분할/14분할 스탠드 골프백" (11012444977 went out "PGM 7-Way ..."): neither
+        if echo := BAG_ECHO.findall(source):
+            drop += echo
+            strip.append(r"(?-i:STAND\s?BAG)")
+            _say(item, " / ".join(echo) + " is the Korean name again in Latin: Stand Bag once")
+        ways = list(dict.fromkeys(m.group(0) for m in BAG_WAYS.finditer(source)))
+        if len({m.group(1) for m in BAG_WAYS.finditer(source)}) >= 2:
+            drop += ways
+            strip.append(r"\d{1,2}-Way")
+            _say(item, " / ".join(ways) + " are the dividers of different variants: name no divider count")
     if item.get("pick"):
         strip.append(r"\d{1,2}[- ]?(?:Styles?|Types?|Colou?rs?|Kinds?)")
     value_codes = codes(" ".join(v for o in options for v in o.get("values_ko") or []))

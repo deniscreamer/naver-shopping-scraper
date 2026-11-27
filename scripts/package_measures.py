@@ -74,6 +74,11 @@ SIDES = FIELDS[2:]
 # and with it
 BASELINES = ("item_g", "container_g", "carton_g", "longest_item_mm", "length_margin_mm")
 BASELINE_SIDES = ("sides_mm", "sides_with_container_mm")
+# a row's optional `own_box` block (description_measures.own_box, 2026-11-27, 50002791): an item that is its own
+# container (a stand bag). The box is the item's stated size + the margins, the package weight its weight + the
+# carton; the bands say which size and weight are the item's ([min, max] each)
+OWN_BOX = ("carton_g", "length_margin_mm", "side_margin_mm")
+OWN_BOX_BANDS = ("long_mm", "side_mm", "weight_g")
 
 
 class CategoryDefaultsMissing(Exception):
@@ -134,6 +139,18 @@ def check_row(row: dict[str, Any]) -> None:
             raise CategoryDefaultsInvalid(
                 f"{where}: baselines needs {', '.join(BASELINES)} (numbers > 0), {', '.join(BASELINE_SIDES)} "
                 "([width, height], width >= height > 0), approved_by, approved_at and basis, and nothing else")
+    own = row.get("own_box")
+    if own is not None:                       # the same rule as baselines: whole, approved and explained
+        try:
+            good = set(own) == {*OWN_BOX, *OWN_BOX_BANDS, "approved_by", "approved_at", "basis"} \
+                and all(type(own[k]) in (int, float) and own[k] > 0 for k in OWN_BOX) and all(own.values()) \
+                and all(len(own[k]) == 2 and 0 < own[k][0] < own[k][1] for k in OWN_BOX_BANDS)
+        except (KeyError, TypeError):
+            good = False
+        if not good or base is not None:
+            raise CategoryDefaultsInvalid(
+                f"{where}: own_box needs {', '.join(OWN_BOX)} (numbers > 0), {', '.join(OWN_BOX_BANDS)} ([min, max], "
+                "0 < min < max), approved_by, approved_at and basis, and nothing else; never beside baselines")
     _check_fields(where, row.get("fields"))
     _check_compose(where, row.get("compose_by_count"))
     for kind in row.get("kinds") or []:

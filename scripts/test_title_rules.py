@@ -563,3 +563,27 @@ def test_a_shoe_titles_new_is_taken_out(tmp_path):
     item = shoe("뉴발란스 NEW 574 보아 남성 골프화")
     assert _answer(item, "New Balance Men's 574 BOA Golf Shoes") == ("New Balance Men's 574 BOA Golf Shoes", [])
     assert "season word" not in (shoe("풋조이 퀀텀 보아 남성 골프화").get("context") or "")
+
+
+def test_a_stand_bag_titles_echo_year_and_two_divider_counts_are_taken_out(tmp_path):
+    """The stand bags' pilot of 30 (2026-11-27): 10968711888 went out "... Beige Pink STANDBAG", 11012444977 "PGM
+    7-Way ..." for a listing of 7- and 14-way bags, 13718353961 kept "2026" (a re-ask refused every answer without)."""
+    import translation_dicts as D
+
+    def bag(title_ko):
+        prepared = {"key": "fairwardgolf:naver:1:1", "source": {"category_id": "50002791"}, "notes": [],
+                    "product": {"title_ko": title_ko, "options": []},
+                    "texts": [{"id": "title:t", "kind": "title", "ko": title_ko}]}
+        dicts = D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "none"))
+        return next(i for i in T.plan(prepared, dicts, {}, TENANT)[2] if i["kind"] == "title")
+
+    item = bag("아젠 엣지 경량 스탠드백 베이지 핑크AGERN EDGE STANDBAG")
+    assert _answer(item, "Agern Edge Lightweight Stand Bag Beige Pink STANDBAG")[0] == (
+        "Agern Edge Lightweight Stand Bag Beige Pink")
+    assert _answer(item, "Agern Edge Lightweight Stand Bag Beige Pink")[1] == []
+    item = bag("케이로 PGM 경량 7분할/14분할 스탠드 골프백")
+    assert _answer(item, "PGM Lightweight Stand Bag") == ("PGM Lightweight Stand Bag", [])
+    assert _answer(item, "PGM 7-Way Lightweight Stand Bag")[0] == "PGM Lightweight Stand Bag"
+    assert "14-Way" in _answer(bag("PGM 골프 14구 초경량 스탠드백 캐디백"), "PGM 14-Way Ultra-Lightweight Stand Bag")[0]
+    item = bag("타이틀리스트 2026 플레이어스 S4 골프 스탠드 캐디백 경량 블랙")
+    assert _answer(item, "Titleist Players S4 Lightweight Stand Bag Black")[1] == []

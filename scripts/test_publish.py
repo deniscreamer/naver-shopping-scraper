@@ -1166,3 +1166,8 @@ def test_a_review_telling_of_a_defect_gives_no_gallery_photo():
     for text in ("박음질 실밥이 튀어나왔어요", "한쪽이 찢어져서 왔네요", "다리 고정부가 파손", "불량은 아니지만"):
         assert sp.review_rank({**base, "text_ko": text}) is None, text
     assert sp.review_rank({**base, "text_ko": "가볍고 튼튼해요 다리도 잘 서요"}) is not None
+    # the ground's state, not the club's (563123338, 2026-11-27)
+    assert sp.review_rank({**base, "text_ko": "잔디의 상태가 안좋은 계절에 사용하면 특히 최고입니다"}) is not None
+    assert sp.review_rank({**base, "text_ko": "배송도 아무 하자 없이 깔끔하게 왔습니다"}) is not None   # 5771181299
+    assert sp.review_rank({**base, "text_ko": "흠집 하나 없어요"}) is not None
+    assert sp.review_rank({**base, "text_ko": "그린 상태가 안좋아도 잘 굴러가요 다만 헤드 상태가 안좋네요"}) is None

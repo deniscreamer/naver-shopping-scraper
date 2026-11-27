@@ -258,7 +258,16 @@ both, `shoe_sizes.section_gender`); the probes of 6 queries (decision.md: spiked
 and boa fleece, kids', used and park-golf shoes left out); a shoe box row (34 x 23 x 13 cm, 1.3 kg, table version 21,
 to review on the pilot's pages); the apparel price rule; sizes not by a garment profile but `CategoryRules.shoe_sizes`
 (mm -> US men's / women's, the owner's chart; `shoe_sizes.py`); a `shoes` describe profile; the server's SHOES notice
-nests 치수 {발길이, 굽높이}: read as rows since 2026-11-25 (every shoe page answered 500 before)).
+nests 치수 {발길이, 굽높이}: read as rows since 2026-11-25 (every shoe page answered 500 before)), 50002791 Lightweight
+Stand Bags (2026-11-26/27, the first category of the part E cycle and of a new parent `bags`: the owner gave the
+section, the query 경량 스탠드 캐디백 and the required words (경량 and 스탠드), FedEx IP with x1.10 ("A"); the agent's duty
+(17.6 %, HTS 4202.92), paid variants, no paid add-ons, the images read; the probe of 357 titles; a carton row of 95 x 35
+x 30 cm, 3.3 kg; variants of another item left out (`variant_drop`: wheeled, half bag, Boston bag, pouch, hood cover);
+a `stand_bag` describe profile. The pilot of 5 (a review telling of a defect gives no gallery photo) and the pilot of 30
+(35 drafts, a workflow review of every phase: 54 findings, 2 refuted): the box from the bag's stated body and the bag +
+1 kg of carton (PACKAGE.md `own_box`), a closing period of a notice pointer ("상세 이미지 참조.", the server and the
+transform: it was a vendor), the year, a Latin echo and two divider counts out of a title (`translate.garment_title`),
+바퀴형 out of the feature list; held: a tour bag, a catalog of 15 bags, two brands waiting for the owner's word).
 
 ### Learned on the first new category (50002787, 2026-11-11)
 

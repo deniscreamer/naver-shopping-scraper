@@ -419,7 +419,7 @@ surfaces.
   419. -> `fetch._box_answer` docstring.
 - naverShoppingSearchInfo may carry only `manufacturerName` (no `brandName`) while the name carries the brand. ->
   `parsers.product_facts` docstring.
-- Notice rows often hold a pointer instead of a value ("상품상세참조", "[상세설명참조]", "크기 항목 참조"). ->
+- Notice rows often hold a pointer instead of a value ("상품상세참조", "[상세설명참조]", "크기 항목 참조"; with a closing period, "상세 이미지 참조.", 2026-11-27). ->
   `parsers._SEE_DESCRIPTION_RE` comment.
 - The SHOES notice nests a row: "치수": {"발길이": "245~275mm", "굽높이": ...} (seen 2026-11-25, golf shoes). ->
   `parsers.parse_notice` comment.

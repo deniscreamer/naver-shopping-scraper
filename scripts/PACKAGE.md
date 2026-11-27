@@ -167,6 +167,23 @@ skirt (12182231084 "판초우의 비치마 투피스 세트", 10436091287) stay 
 `defaults_version` 19 (no number moved).
 Product sizes (not the package: kind product or unknown) are kept apart, optional.
 
+**`own_box`** (2026-11-27, the stand bags' pilot of 30; `description_measures.own_box`, checked by `check_row`, never
+beside `baselines`): an item that is its own container, one stand bag. On the pilot 34 of 35 bags kept the default box
+and 15 the default weight though the pages state them. With the block, in this order after a stated box:
+
+| key | what | 50002791 (the agent's) |
+|---|---|---|
+| `carton_g` | the carton and filling: the package weight is the item's weight + it (`_boxed`) | 1000 g |
+| `length_margin_mm`, `side_margin_mm` | the box over the item's stated body: length, each other side | 50, 20 mm |
+| `long_mm`, `side_mm` | which size is the body: its longest side, its other two (the height with the hood up, 123-129 cm, a bag laid flat, "87 x 15.5 x 35cm", a Boston bag's 48 cm: none of them) | 800-1000, 200-450 mm |
+| `weight_g` | the band of the item's weight the reader takes in more places (`read_rows(own_g=...)`) | 800-4500 g |
+
+The reader then also takes the bag's weight written as "-무게3.7kg", "•무게:2kg", "다양한 포켓 구성 / 무게 / 1.4 kg", "중량 /
+2220g", "약 2.6kg (스트랩 무게 포함)", "Weight (kg) | 2.8kg", one weight on a size row ("크기 / 9.0인치/2.5kg/6구") or under
+a 중량 head, and the body in W / H / D cells ("H : 88cm W : 24cm D : 36cm"); never a bare headline ("2.3kg 초경량"),
+another item's row (보스턴, 파우치, 더플, 하프백 on it or 3 rows above) or two body sizes 30 mm apart (two models). The
+pilot: weights read 20 -> 31 of 35, boxes 1 -> 7; prices moved on 5 (Inparo SD-280K, 42 x 28 x 90 cm: $549 -> $729).
+
 ## Confidence
 
 Every field carries `confidence`, **1 to 5** (the owner, 2026-11-10):

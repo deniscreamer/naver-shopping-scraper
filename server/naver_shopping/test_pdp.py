@@ -78,6 +78,7 @@ def test_notice_placeholders():
     assert P.is_see_description("[상세설명참조] / 품명 항목 참조") and not P.is_see_description("베트남산(캘러웨이)")
     for pointer in ("상세페이지에 별도 표기", "상품상세페이지에 표기", "상품상세설명에 표시", "제품상세참조", "상세설명란 참조"):
         assert P.is_see_description(pointer), pointer
+    assert P.is_see_description("상세 이미지 참조.") and P.is_see_description("크기 항목 참조.")  # 2026-11-27
     assert not P.is_see_description("상세정보 참조, 중국") and not P.is_see_description("")
     assert not P.is_see_description("미국산") and not P.is_see_description(None)
 

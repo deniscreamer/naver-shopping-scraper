@@ -303,6 +303,17 @@ def photo_only_text(review: str) -> str:
 # 10556770499, "지퍼하나가 상태가 안좋네요", put its close-up of the split zipper in the gallery): its photos show it
 DEFECT_RE = re.compile(r"불량|(?<![가-힣])하자(?!마자)|파손|찢어|찢겨|뜯어|터졌|터짐|고장|깨져|깨짐|기스|흠집|스크래치"
                        r"|상태가?\s?(?:안\s?좋|별로|이상)|올\s?(?:이\s?)?나[가갔감]|실밥|마감이?\s?(?:별로|엉망|안\s?좋)")
+# not the state of the ground: "잔디의 상태가 안좋은 계절에 사용하면 특히 최고입니다" (a 5-star chipper review, 563123338,
+# 2026-11-27: the sweep showed a live product losing its photo)
+# none told: "배송도 아무 하자 없이 깔끔하게 왔습니다" (a 5-star set review, 5771181299, 2026-11-27)
+_NONE_TOLD = re.compile(r"\s?(?:[은는이가도]\s?)?(?:하나\s?)?(?:전혀\s?)?없")
+_NOT_THE_PRODUCT = re.compile(r"(?:잔디|그린|페어웨이|코스|필드|땅|날씨|라이)(?:의|가|이)?\s?$")
+
+
+def told_defect(text: str) -> bool:
+    """A review that tells of a defect of the product (DEFECT_RE), not of the course it was played on."""
+    return any(not (m.group(0).startswith("상태") and _NOT_THE_PRODUCT.search(text[max(0, m.start() - 8):m.start()]))
+               and not _NONE_TOLD.match(text, m.end()) for m in DEFECT_RE.finditer(text))
 
 
 def review_rank(review: dict[str, Any]) -> float | None:
@@ -315,7 +326,7 @@ def review_rank(review: dict[str, Any]) -> float | None:
     photos, score = review.get("photos") or [], review.get("score")
     if not photos or not isinstance(score, (int, float)) or isinstance(score, bool) or score < 4:
         return None                             # a low score's photo may show a defect
-    if DEFECT_RE.search(str(review.get("text_ko") or review.get("text_original_ko") or "")):
+    if told_defect(str(review.get("text_ko") or review.get("text_original_ko") or "")):
         return None                             # a defect told: its photo shows it (2026-11-26)
     grade = review.get("text_grade")
     purchase = bool(set(review.get("text_cut") or []) & PURCHASE_TOPICS)

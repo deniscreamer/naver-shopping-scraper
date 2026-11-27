@@ -596,11 +596,12 @@ def parse_notice(n):
 # A notice row filled with "see the description" (or "see another row")
 # instead of a value. 2026-11-01: PING G440K set, 8 of 13 basic rows
 # "상품상세참조"; Callaway XR26 set, "[상세설명참조]" and "크기 항목 참조"; the
-# usual seller boilerplate also reads "상세페이지에 별도 표기", "제품상세참조".
+# usual seller boilerplate also reads "상세페이지에 별도 표기", "제품상세참조". 2026-11-27: a closing period,
+# "상세 이미지 참조." (Bridgestone stand bag 11962029819: the maker row became the vendor).
 # Every "/"-separated part must be a pointer: "상세정보 참조, 중국" is a value.
 _SEE_DESCRIPTION_RE = re.compile(
     r"^[\[(]?\s*(?:상품|제품)?\s*상세\s*(?:페이지|설명|정보|이미지)?\s*(?:에|란)?\s*(?:별도\s*)?"
-    r"(?:참조|참고|표기|표시|확인)\s*[\])]?$|^\S+\s*항목\s*(?:참조|참고)$")
+    r"(?:참조|참고|표기|표시|확인)\s*[\])]?\s*\.?$|^\S+\s*항목\s*(?:참조|참고)\s*\.?$")
 # Values that state nothing (2026-11-01 review: "-", "해당없음" would else become a manufacturer or brand).
 _NO_VALUE_RE = re.compile(r"^(?:[-–—./x]+|없음|해당\s*(?:사항)?\s*없음|n/?a|none|null)$", re.I)
 

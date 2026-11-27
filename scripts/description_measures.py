@@ -456,6 +456,41 @@ def _kilograms(row: str, long_units: bool) -> list[float]:
     return [g for _, g in sorted(found)]
 
 
+# 2026-11-27 (Lightweight Stand Bags, 50002791, the pilot of 30: 15 of 35 bags kept the default weight though the
+# page states it). An item that is its own container (a stand bag) has one weight, written many ways; read only
+# with the row's `own_box` block and inside its band (own_g), so another category's rows read as before:
+#   "-무게3.7kg", "•무게:2kg", "본체 무게:2.3 kg", "다양한 포켓 구성 / 무게 / 1.4 kg"  the label anywhere in the row
+#   "Weight (kg) | 2.8kg" (12360655718, typed)
+#   "중량 / 2220g"                                                                       grams
+#   "약 2.6kg (스트랩 무게 포함)"                                                          the value before its label
+#   "크기 / 9.0인치/2.5kg/6구", "치수 / 9인치/5구 (약3.1 kg)", "H : 88cm ... /2.2kg"   one weight on a size row
+#   "너비 / 깊이 / 높이(후드포함) / 중량" over "22cm / 33cm / 128cm / 2.4kg"          one weight under a 중량 head
+# Not a bare headline ("2.3kg 초경량"): a comparison graphic sets the old model's weight beside it (4859779345).
+_OWN_LABELLED = re.compile(r"(?:무게|중량|weight)\s*(?:\(\s*k?g\s*\))?\s*[:：/|\-]?\s*(?:약\s*)?" + _NUM + r"\s*(kg|㎏|g)(?![a-z])", re.I)
+_OWN_BEFORE = re.compile(_NUM + r"\s*(kg|㎏|g)\s*\(?[^)]{0,12}(?:무게|중량)\s*포함", re.I)
+_OWN_SIZE_ROW = re.compile(r"크기|치수|사이즈|규격|size|\d\s*cm", re.I)
+_OWN_HEAD = re.compile(r"(?:무게|중량|weight)", re.I)
+# the size of a stand bag in W / H / D cells: "H : 88cm W : 24cm D : 36cm" (13643783678)
+_AXIS_CELLS = re.compile(r"(?<![A-Za-z])[WHDL]\s*[:：]?\s*" + _NUM + r"\s*cm", re.I)
+# another item's row (or one of the 3 above it): its size and weight are not the bag's
+_OTHER_ITEM = re.compile(r"보스턴|파우치|더플|슈즈\s*백|신발\s*가방|하프\s*백|토트|pouch|boston|duffel", re.I)
+
+
+def _own_weight(row: str, above: str, band: tuple[float, float]) -> float | None:
+    """The weight of an item that is its own container, in grams, by the forms above; None outside the band or when
+    the row names another item."""
+    if _OTHER_ITEM.search(row):
+        return None
+    def grams(m: re.Match) -> float:
+        return _num(m.group(1)) * (1 if m.group(2).lower() == "g" else 1000)
+    found = [grams(m) for m in _OWN_LABELLED.finditer(row)] + [grams(m) for m in _OWN_BEFORE.finditer(row)]
+    kgs = [g for g in _kilograms(row, False) if _in(g, band)]
+    if not found and len(kgs) == 1 and (_OWN_SIZE_ROW.search(row) or _OWN_HEAD.search(above)):
+        found = kgs
+    found = [g for g in found if _in(g, band)]
+    return max(found) if found else None
+
+
 # A typed label line with its value alone on the next line ("Item Package Dimensions L x W x H" / "38 x 4.5 x 4
 # inches", 2026-11-17: a two-cell layout flattened) is one row "label | value". Not Amazon's Item Weight / 품목 무게:
 # on a set's page it is often one club's weight (with C10 about 33 sets would take a club's weight). Only with
@@ -491,7 +526,8 @@ def joined_lines(lines: list[str]) -> list[str]:
 
 
 def read_rows(images: list[list[Any]], profile: Profile | None = None,
-              typed: list[str] | None = None, long_units: bool = False) -> dict[str, Any]:
+              typed: list[str] | None = None, long_units: bool = False,
+              own_g: tuple[float, float] | None = None) -> dict[str, Any]:
     """Facts from the OCR rows of each image (the core's, plus the profile's parts when one is given). A row is its
     text, or (text, OCR confidence): a row read below NUMBER_CONF gives no single value (a box, a set / product
     weight or size, the container's), only its words and the items' weights and lengths (an item's value is held
@@ -499,7 +535,9 @@ def read_rows(images: list[list[Any]], profile: Profile | None = None,
     typed: the lines of the seller's typed description, read as one more block of rows (no OCR doubt; its table
     cells are joined by " | ", an image's by " / "). Every value carries its row as the quote, and `image` (its
     number) or `from` TYPED. long_units: read kilograms and pounds too and join a typed label line to its value line
-    (joined_lines) (LONG_UNITS: a banded category only)."""
+    (joined_lines) (LONG_UNITS: a banded category only). own_g: the item is its own container (a row's `own_box`
+    block, 50002791): its weight is read in more places (_own_weights) inside this band, and its size in W / H / D
+    cells (_AXIS_CELLS)."""
     facts: dict[str, Any] = {k: [] for k in KEYS}
     typed = joined_lines(typed) if typed and long_units else typed
     p = profile
@@ -570,7 +608,13 @@ def read_rows(images: list[list[Any]], profile: Profile | None = None,
                 # no `continue`: a set's composition line ("골프백:1개") sits above its item table (6630856593)
             elif not about and kgs and _WEIGHT_HEAD.search(row) and not (p and p.part_label.search(head)):
                 facts["product_weights"].append({**where, "g": max(kgs)})          # "무게 / 4.2kg", "중량: 2.3kg"
-            if not about and triple and (_SIZE_WORD.search(row) or triple.group(4)):   # not an accessory's
+            elif own_g and sure and (g := _own_weight(row, rows[i - 1] if i else "", own_g)):
+                facts["product_weights"].append({**where, "g": g})
+            if own_g and sure and not triple and (cells := _AXIS_CELLS.findall(row)) and len(cells) == 3 \
+                    and not _OTHER_ITEM.search(" ".join(rows[max(0, i - 3):i + 1])):
+                facts["product_sizes"].append({**where, "mm": sorted((_num(v) * 10 for v in cells), reverse=True)})
+            if not about and triple and (_SIZE_WORD.search(row) or triple.group(4)) \
+                    and not (own_g and _OTHER_ITEM.search(" ".join(rows[max(0, i - 3):i + 1]))):   # not an accessory's
                 facts["product_sizes"].append({**where, "mm": _sides(triple)})     # "사이즈 60 x 55 x 90cm",
                                                                                     # "W53 X D38 X H62.5 cm"
             if p is None:
@@ -958,16 +1002,40 @@ def _items_total(weights: list[dict[str, Any]], count: int | None, profile: Prof
     return count * baseline_g, f"{count} {profile.item} x {BASELINE} {one} weight", [], count
 
 
+def own_box(facts: dict[str, Any], block: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    """The box of an item that is its own container (a stand bag; a row's `own_box` block, 2026-11-27): the item's
+    stated size + the operator's margins, the three sides whole or not at all. Only a size whose longest side is in
+    the block's `long_mm` and whose other two are in `side_mm` (a stand bag's body, 80-100 cm: never the height with
+    the hood up, "H / 129cm", nor a Boston bag's 48 cm); two such sizes more than 30 mm apart (two models in one
+    listing) give nothing. A stated box (packed_boxes) goes before it (merge_fields)."""
+    lo, hi = block["long_mm"]
+    s_lo, s_hi = block["side_mm"]
+    sizes = [f for f in facts["product_sizes"]
+             if lo <= f["mm"][0] <= hi and all(s_lo <= side <= s_hi for side in f["mm"][1:3])]
+    if not sizes:
+        return {}
+    first = sizes[0]["mm"]
+    if any(max(abs(a - b) for a, b in zip(f["mm"], first)) > 30 for f in sizes):
+        return {}
+    margins = (block["length_margin_mm"], block["side_margin_mm"], block["side_margin_mm"])
+    return {name: _composed("item size + margin", 3, block,
+                            [_part("item", side, "stated", sizes[0]), _part("margin", margin, BASELINE)])
+            for name, side, margin in zip(SIDES, first, margins)}
+
+
 def package_for(fields: dict[str, Any], facts: dict[str, Any], item_count: int | None, container: bool | None,
                 plausible: dict[str, dict[str, float]] | None = None, profile: Profile | None = None,
                 baselines: dict[str, Any] | None = None, ladies: bool = False,
-                counted: dict[str, tuple[float, float]] | None = None) -> tuple[dict[str, Any], list[str]]:
+                counted: dict[str, tuple[float, float]] | None = None,
+                own: dict[str, Any] | None = None) -> tuple[dict[str, Any], list[str]]:
     """One variant's five fields with the description's statements and the composition merged in -> (fields,
     names no longer today's). plausible, baselines: the blocks of the category's row in the operator's table,
     when it has them; no composition without the block or without a profile. counted: the weights plausible for
-    the variant's count of clubs (package_measures.count_band)."""
-    made = compose(facts, item_count, container, profile, baselines, ladies) if profile and baselines else {}
-    return merge_fields(fields, guess(facts, profile), plausible, profile, made, baselines, counted)
+    the variant's count of clubs (package_measures.count_band). own: the row's `own_box` block (an item that is
+    its own container): the box from its size (own_box), the package's weight its weight + the block's carton."""
+    made = compose(facts, item_count, container, profile, baselines, ladies) if profile and baselines else \
+        own_box(facts, own) if own else {}
+    return merge_fields(fields, guess(facts, profile), plausible, profile, made, baselines or own, counted)
 
 
 def bands(plausible: dict[str, dict[str, float]] | None, profile: Profile | None) -> dict[str, tuple[float, float]]:
