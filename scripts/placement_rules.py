@@ -128,6 +128,10 @@ MENS_BOA_SHOES = Leaf("mens-boa-spikeless-shoes", "Men’s BOA Spikeless Golf Sh
                                                                    # collection fairwardgolf-mens-boa-spikeless-shoes
                                                                    # (tag fairwardgolf:leaf:mens-boa-spikeless-shoes),
                                                                    # parent shoes (fairwardgolf-shoes); existed, empty
+LIGHT_STAND_BAGS = Leaf("lightweight-stand-bags", "Lightweight Stand Bags")   # 2026-11-26, the owner: collection
+                                                                   # fairwardgolf-lightweight-stand-bags (tag
+                                                                   # fairwardgolf:leaf:lightweight-stand-bags), parent
+                                                                   # bags (fairwardgolf-bags, Golf Bags); existed, empty
 WOMENS_BOA_SHOES = Leaf("womens-boa-spikeless-shoes", "Women’s BOA Spikeless Golf Shoes")   # 2026-11-25, the
                                                                    # owner: fairwardgolf-womens-boa-spikeless-shoes,
                                                                    # existed, empty
@@ -168,6 +172,8 @@ PROFILES = {
             "50001740": CategoryPlacement(parent="shoes", split_by="gender",
                                           leaves={"mens": MENS_BOA_SHOES, "womens": WOMENS_BOA_SHOES},
                                           stated_only=("mens", "womens")),
+            "50002791": CategoryPlacement(parent="bags", leaves={None: LIGHT_STAND_BAGS}),   # 캐디백 (2026-11-26, the
+                                          # owner): one section, no split; the only Bags section with its own Naver leaf
         }),
 }
 

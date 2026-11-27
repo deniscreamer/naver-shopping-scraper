@@ -1,6 +1,6 @@
 {
  "about": "Package weight and size averages per leaf category, given by the operator (never made up). A row: category_id, category_name, fields (low / central / high of product_weight_g, package_weight_g, package_length_mm, package_width_mm, package_height_mm), approved_by, approved_at (YYYY-MM-DD), reliability (estimated_average: the weakest level), basis. Optional per row: plausible ({field: {min, max}}: a value outside is not taken); baselines, the operator's amounts for the parts of a set of like items in a container, all of them or no block: item_g (one item), container_g (the container), carton_g (the box and its packing), longest_item_mm (the longest item), length_margin_mm (the box's length over the longest item), sides_mm and sides_with_container_mm (the box's [width, height] without the container and with it), approved_by, approved_at, basis (where each amount comes from). With the block a field the seller does not state is composed from the set's parts, each part from the product's own data when it is there and from the baseline when it is not (product weight = items + container; package weight = product weight + carton_g; package length = longest item + length_margin_mm; width and height = the sides), and the fields' flat averages are the last resort, used when the number of items or the container's state cannot be told; without the block a field is the seller's statement or the flat average. A new or changed row raises version. Optional too: kinds ([{kind, match, alone, always, unless, strong, lofts, fields, basis}]: a kind of product with its own low / central / high, package_measures.default_kind; lofts [min, max]: the variant's own value names that many distinct lofts); compose_by_count (50002783, 2026-11-17: a set's product weight = the clubs' labelled weights summed, or one labelled club weight x the set's count; item_g, writes, confidence, count_from, skip, approved_by, approved_at, basis; description_measures.compose_by_count). Version 7 (2026-11-17): plausible bands of 50002783 and 50002787, kinds two_wedges and four_plus and compose_by_count of 50002783. Version 8 (2026-11-18): the row of 50002784 (chippers, one club in a box), and defaults_version on every row: the version a default of the row carries (table_version, package_measures.row_version), raised only with the row's own fields or kinds; the four rows before carry 7, the version their restamped defaults had, so a new row moves no other product. Version 9 (2026-11-18, the chipper review): row 50002784 measured (product weight 380 / 470 / 560, length low 920, plausible product weight 300-650) and its defaults_version 9; the other rows keep 7. Version 10 (2026-11-18, the review of the 100-chipper scroll): bands only for 50002784 (product weight 350-600, package weight 350-5000, length 850-1500); its defaults_version stays 9, so no default is restamped. Version 11 (2026-11-19): the row of 50002797 (women's golf knit cardigans, a folded garment in a mailer; the owner's values), its defaults_version 11; the other rows keep theirs. Version 12 (2026-11-20): kind insulated of 50002797 (a windproof-lined, down or padded knit: 0.7 kg, 30 x 24 x 6 cm), its defaults_version 12; the other rows keep theirs. Version 13 (2026-11-20): the row of 50002798 (women's golf windbreakers, a folded jumper in a mailer; the knit's values on the owner's delegation) with its kind insulated, its defaults_version 13; the other rows keep theirs. Version 14 (2026-11-21): the row of 50002799 (재킷, the same section as 50002798: its values and kind insulated), its defaults_version 14; the other rows keep theirs. Version 15 (2026-11-21): the row of 50002796 (women's long-sleeve golf tops, a folded top in the knit's mailer: product 120 / 250 / 600 g, package 300 / 350 / 800 g, the windbreakers' box and kind insulated), its defaults_version 15; the other rows keep theirs. Version 16 (2026-11-22): the row of 50002802 (women's golf skirts and culottes, a folded skirt in the tops' mailer: product 120 / 200 / 500 g, the tops' package and kind insulated), its defaults_version 16; the other rows keep theirs. Version 17 (2026-11-23): the row of 50002801 (golf trousers, men's and women's, a folded pair in the tops' mailer: product 250 / 380 / 700 g, package 350 / 480 / 900 g, the skirts' kind insulated), its defaults_version 17; the other rows keep theirs. Version 18 (2026-11-24): the row of 50002816 (golf rainwear: a rain coat in a mailer, kinds suit and light), its defaults_version 18. Version 19 (2026-11-25, the pilot review): its values reviewed, defaults_version 19. Version 20 (2026-11-25, the owner: 'Все рекомендации'): 50002816's kind suit no longer taken from a seller's search keyword (레인슈트 beside one coat or cape, 선물세트, 웨이스트백 세트, a variant '레인슈트 미선택'): a kind's words only, no number moved, so its defaults_version stays 19 as version 10's bands kept 9 (a raise would restamp 37 rainwear products' defaults 19 -> 20 with no number changed, and the stamp travels in the package metafield); a variant whose kind changes carries the version-19 numbers of its new kind. The other rows keep theirs.",
- "version": 21,
+ "version": 22,
  "rows": [
   {
    "category_id": "50002788",
@@ -1097,6 +1097,48 @@
     "package_weight_g": {
      "min": 500,
      "max": 2500
+    }
+   }
+  },
+  {
+   "category_id": "50002791",
+   "category_name": "스포츠/레저 > 골프 > 골프백 > 캐디백",
+   "fields": {
+    "product_weight_g": {
+     "low": 1400,
+     "central": 2300,
+     "high": 2900
+    },
+    "package_weight_g": {
+     "low": 2400,
+     "central": 3300,
+     "high": 4200
+    },
+    "package_length_mm": {
+     "low": 900,
+     "central": 950,
+     "high": 1250
+    },
+    "package_width_mm": {
+     "low": 300,
+     "central": 350,
+     "high": 380
+    },
+    "package_height_mm": {
+     "low": 250,
+     "central": 300,
+     "high": 330
+    }
+   },
+   "reliability": "estimated_average",
+   "defaults_version": 22,
+   "basis": "2026-11-26 (Lightweight Stand Bags, the agent's, ONBOARDING.md E1; to review on the pilots of 5 and 30): one lightweight golf stand bag in a carton fitted to its body. The probe of 경량 스탠드 캐디백 / 초경량 스탠드백 (357 titles: the weights the titles state 1.3-2.9 kg) and the OCR of 7 sellers' description images (research/stand-bags/ocr: PXG x2, Titleist x2, Srixon x2, Nike): bag 1.4-2.7 kg, median 2.3 kg; body 87-88 cm tall (123-124 cm with the hood, folded for the carton), 30-36 x 26-35 cm; no seller states the carton. Carton 95 x 35 x 30 cm (90-125 cm long), 3.3 kg with the bag. FedEx IP prices it by volume (~20 kg): the owner chose it with x1.10 (2026-11-26).",
+   "approved_by": "agent",
+   "approved_at": "2026-11-26",
+   "plausible": {
+    "package_weight_g": {
+     "min": 1500,
+     "max": 6000
     }
    }
   }

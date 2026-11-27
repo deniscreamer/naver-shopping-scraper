@@ -963,7 +963,7 @@ def test_the_knit_rules_are_the_owners():
     assert not knit.sets_only and not knit.wedge_sets and not knit.agency_needs_brand
     assert not any(c.no_choice_out or c.composition for k, c in rules_for("fairwardgolf").categories.items()
                    if k not in ("50002796", "50002797", "50002798", "50002799", "50002802", "50002801", "50002816",
-                                 "50001740"))   # the clubs' stay
+                                 "50001740", "50002791"))   # the clubs' stay
 
 
 def test_the_windbreaker_rules_are_the_knits_and_it_is_reviewed():

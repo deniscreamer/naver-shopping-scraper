@@ -260,6 +260,14 @@ RULES = {
                 reviewed=True),       # reviewed 2026-11-26: pilots of men's, women's, combined and common 100 reviewed
                                       # by lens, 67 held, 223 activated on the owner's word ("запусти пилот на 100
                                       # чтобы финализировать категорию и активировать")
+            # 2026-11-26, the owner: Lightweight Stand Bags (lightweight-stand-bags under the new parent bags, one
+            # section, no split; the title must say 경량|lightweight and 스탠드|stand; FedEx IP with x1.10). The agent's
+            # proposals, taken with the owner's "A": paid variants sold (a colour or a carbon model costs more), paid
+            # add-ons not (a name tag, an engraving), the images read (the bag's weight and size: ONBOARDING.md E1)
+            "50002791": CategoryRules(
+                paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
+                no_choice_out=True, own_brand_wordmark=True,
+                reviewed=False),      # a new category: DRAFT until the pilots' review and the owner's activation
         }),
 }
 

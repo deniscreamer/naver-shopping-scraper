@@ -212,7 +212,7 @@ def test_baselines_block_is_optional_and_the_operators():
     table = load_table()
     block = table["rows"][0]["baselines"]
     assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
-    assert table["version"] == 21 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    assert table["version"] == 22 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
     check_row(ROW)                                                    # a row without the block: no composition
     check_row({**ROW, "baselines": BASE})
 
@@ -317,12 +317,12 @@ def test_a_restamped_default_carries_its_rows_version_not_the_tables():
     2026-11-21 the row of 50002799 (재킷, the same section) to 14. 2026-11-25 (the owner): 50002816's suit kind read
     narrower, the table 20; a kind's words only, no number moved, so its defaults_version stays 19 (as version 10's
     bands): no product is restamped for the version alone. 2026-11-25: the row of 50001740 (golf shoes) to 21, its own
-    defaults_version 21."""
+    defaults_version 21. 2026-11-26: the row of 50002791 (lightweight stand bags) to 22."""
     table = load_table()
-    assert table["version"] == 21 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
+    assert table["version"] == 22 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
         "50002788": 7, "50002787": 7, "50002670": 7, "50002783": 7, "50002784": 9, "50002797": 12, "50002798": 13,
         "50002799": 14, "50002796": 15, "50002802": 16, "50002801": 17, "50002816": 19,
-        "50001740": 21}
+        "50001740": 21, "50002791": 22}
     assert row_version(table, JUNIOR) == 7 and row_version({"version": 9}, {k: v for k, v in JUNIOR.items()
                                                                             if k != "defaults_version"}) == 9
     for bad in (0, "7", 7.0, True):
@@ -640,8 +640,8 @@ def test_the_windbreaker_row_is_the_knits_values():
                    "package_height_mm": (30, 40, 80)}
     assert row["plausible"] == {"package_weight_g": {"min": 300, "max": 1500}}
     assert (row["approved_by"], row["approved_at"], row["defaults_version"]) == ("owner", "2026-11-20", 13)
-    assert [r["category_id"] for r in load_table()["rows"]][-7:] == ["50002798", "50002799", "50002796", "50002802",
-                                                                     "50002801", "50002816", "50001740"]
+    assert [r["category_id"] for r in load_table()["rows"]][-8:] == ["50002798", "50002799", "50002796", "50002802",
+                                                                     "50002801", "50002816", "50001740", "50002791"]
     assert (default_kind(row, "여성 골프 기모 방한 바람막이 점퍼", "블랙 / M") or {}).get("kind") == "insulated"
     assert default_kind(row, "여성 골프 바람막이 경량 아노락", "블랙 / M") is None
 
@@ -671,7 +671,7 @@ def test_the_jacket_row_is_the_windbreakers():
     check_row(row)
     assert row["fields"] == wind["fields"] and row["plausible"] == wind["plausible"] and row["kinds"] == wind["kinds"]
     assert (row["approved_at"], row["defaults_version"]) == ("2026-11-21", 14)
-    assert load_table()["rows"][-6]["category_id"] == "50002799"
+    assert load_table()["rows"][-7]["category_id"] == "50002799"
 
 
 def test_the_long_sleeve_top_row_is_a_lighter_windbreakers():
@@ -685,7 +685,7 @@ def test_the_long_sleeve_top_row_is_a_lighter_windbreakers():
     assert {f: v for f, v in got.items() if "weight" not in f} == {
         f: (v["low"], v["central"], v["high"]) for f, v in wind["fields"].items() if "weight" not in f}
     assert row["kinds"] == wind["kinds"] and (row["approved_at"], row["defaults_version"]) == ("2026-11-21", 15)
-    assert load_table()["rows"][-5]["category_id"] == "50002796"
+    assert load_table()["rows"][-6]["category_id"] == "50002796"
 
 
 def test_the_skirt_row_is_the_tops_box_with_a_lighter_garment():
@@ -697,7 +697,7 @@ def test_the_skirt_row_is_the_tops_box_with_a_lighter_garment():
     assert {k: v for k, v in row["fields"].items() if k != "product_weight_g"} == \
         {k: v for k, v in top["fields"].items() if k != "product_weight_g"}
     assert row["kinds"][0]["fields"] == top["kinds"][0]["fields"] and row["defaults_version"] == 16
-    assert load_table()["rows"][-4]["category_id"] == "50002802"
+    assert load_table()["rows"][-5]["category_id"] == "50002802"
 
 
 def test_the_pants_row_is_the_skirts_box_with_a_heavier_pair():
@@ -710,7 +710,7 @@ def test_the_pants_row_is_the_skirts_box_with_a_heavier_pair():
     assert row["fields"]["package_weight_g"] == {"low": 350, "central": 480, "high": 900}
     assert row["kinds"][0]["fields"] == skirt["kinds"][0]["fields"] and row["defaults_version"] == 17
     assert (default_kind(row, "남성 골프 기모 바지 겨울", "블랙 / 32") or {}).get("kind") == "insulated"
-    assert load_table()["rows"][-3]["category_id"] == "50002801"
+    assert load_table()["rows"][-4]["category_id"] == "50002801"
 
 
 def test_the_rainwear_row_and_its_suit_and_light_kinds():
@@ -729,7 +729,7 @@ def test_the_rainwear_row_and_its_suit_and_light_kinds():
     assert (default_kind(row, "골프비옷 여성골프우비 판초 캐디우비", "카키 / FREE") or {}).get("kind") == "light"
     assert (default_kind(row, "레인스커트 비치마 방수", None) or {}).get("kind") == "light"
     assert default_kind(row, "여성 골프 레인코트 롱 후드", "네이비 / M") is None
-    assert load_table()["rows"][-2]["category_id"] == "50002816"
+    assert load_table()["rows"][-3]["category_id"] == "50002816"
 
 
 @pytest.mark.parametrize("title, variant, kind", [
@@ -773,7 +773,7 @@ def test_a_rainwear_search_keyword_is_no_suit(title, variant, kind):
 def test_the_golf_shoes_row():
     """50001740 (2026-11-25, BOA spikeless golf shoes; the owner: yes to the agent's box, reviewed after the pilot): one
     pair in the maker's shoe box, 34 x 23 x 13 cm, 1.3 kg with the box. Appended last (ONBOARDING A1)."""
-    row = load_table()["rows"][-1]
+    row = load_table()["rows"][-2]
     assert row["category_id"] == "50001740"
     check_row(row)
     got = {f: (v["low"], v["central"], v["high"]) for f, v in row["fields"].items()}
@@ -782,3 +782,16 @@ def test_the_golf_shoes_row():
                    "package_height_mm": (110, 130, 140)}
     assert (row["approved_by"], row["approved_at"], row["defaults_version"]) == ("owner", "2026-11-25", 21)
     assert "kinds" not in row and "baselines" not in row
+
+
+def test_the_lightweight_stand_bags_row():
+    """50002791 (2026-11-26, the agent's, ONBOARDING.md E1): one stand bag in a carton fitted to its body, 95 x 35 x 30
+    cm, 3.3 kg; the bag 2.3 kg (the OCR of 7 sellers' images: 1.4-2.7 kg, body 87-88 cm). Appended last."""
+    row = load_table()["rows"][-1]
+    assert row["category_id"] == "50002791"
+    check_row(row)
+    got = {f: (v["low"], v["central"], v["high"]) for f, v in row["fields"].items()}
+    assert got == {"product_weight_g": (1400, 2300, 2900), "package_weight_g": (2400, 3300, 4200),
+                   "package_length_mm": (900, 950, 1250), "package_width_mm": (300, 350, 380),
+                   "package_height_mm": (250, 300, 330)}
+    assert (row["approved_by"], row["approved_at"], row["defaults_version"]) == ("agent", "2026-11-26", 22)

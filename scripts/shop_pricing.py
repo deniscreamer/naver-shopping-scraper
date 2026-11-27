@@ -459,6 +459,18 @@ FAIRWARDGOLF = Delivered(
             duty_flat=Decimal("0.125"),
             decided={"coefficients": "2026-11-25 (the owner: the apparel rule)",
                      "duty": "2026-11-25 flat 12.5 % (the owner)"}),
+        # 2026-11-26, Lightweight Stand Bags (the owner: "A", FedEx IP with x1.10 at every level, though a carton of
+        # 95 x 35 x 30 cm bills ~20 kg: a W89,000 bag -> $519, W159,000 -> $609, W259,000 -> $739); the duty a flat
+        # 17.6 %, golf bags with an outer of textile (HTS 4202.92; the agent's proposal taken with the owner's "A")
+        "50002791": CategoryPrice(
+            coefficients={5: Decimal("1.10"), 4: Decimal("1.10"), 3: Decimal("1.10"), 2: Decimal("1.10"),
+                          1: Decimal("1.10")},
+            duty_by_fibre={"wool": Decimal("0.176"), "cotton": Decimal("0.176"), "cashmere": Decimal("0.176"),
+                           "man-made": Decimal("0.176"), "other": Decimal("0.176"), "unknown": Decimal("0.176")},
+            hts="4202.92",
+            duty_flat=Decimal("0.176"),
+            decided={"coefficients": "2026-11-26 (the owner: A, x1.10)",
+                     "duty": "2026-11-26 flat 17.6 %, HTS 4202.92 (the agent's proposal, the owner's A)"}),
     })
 
 POLICIES = {"fairwardgolf": Policy(delivered=FAIRWARDGOLF)}   # which shops carry delivery in the price: this map

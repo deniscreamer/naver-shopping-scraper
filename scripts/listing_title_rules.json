@@ -4883,6 +4883,170 @@
     ],
     "tokens": []
    }
+  ],
+  "50002791": [
+   {
+    "code": "not_light_stand",
+    "why": "The owner 2026-11-26: a title must say 경량 or lightweight (초경량 too) and 스탠드 or stand. 2026-11-26 (Lightweight Stand Bags, lightweight-stand-bags under bags; the probe 50002791-default-20261127T045545Z of 4 queries, 357 distinct titles classified on their sheets, research/stand-bags/cards.json, decision.md): 148 of 357 kept, 132 of them light stand bags; 19 light stand bags named 울트라 라이트 / 라이트웨이트 left out (a widening is the owner's word).",
+    "requires": [
+     [
+      "경량",
+      "lightweight"
+     ],
+     [
+      "스탠드",
+      "stand"
+     ]
+    ],
+    "tokens": []
+   },
+   {
+    "code": "hood_cover",
+    "why": "2026-11-26 (Lightweight Stand Bags, lightweight-stand-bags under bags; the probe 50002791-default-20261127T045545Z of 4 queries, 357 distinct titles classified on their sheets, research/stand-bags/cards.json, decision.md): a hood cover sold for a bag ('PXG NEW LIGHT 뉴라이트 8인치 경량 스탠드백 홀로그램 투명 커버', 93 of the 357 titles): never a bag. Not a bare 커버: '... 스탠드백 헤드커버' and '레인 후드가' are bags.",
+    "tokens": [
+     {
+      "text": "후드커버",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "투명커버",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "투명후드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "커버전용",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "전용커버",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "패브릭후드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "홀로그램커버",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "wheeled",
+    "why": "2026-11-26 (Lightweight Stand Bags, lightweight-stand-bags under bags; the probe 50002791-default-20261127T045545Z of 4 queries, 357 distinct titles classified on their sheets, research/stand-bags/cards.json, decision.md): a wheeled or cart bag ('PGM 남성 골프백 초경량 바퀴형 휠캐디백 스탠드백', 16 titles): no legs to stand. Not '휠X' (no wheel: 아이젠하임 리키(휠X)).",
+    "tokens": [
+     {
+      "text": "휠",
+      "notFollowedBy": [
+       "x"
+      ],
+      "notPrecededBy": []
+     },
+     {
+      "text": "바퀴",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "카트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "트롤리",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "캐리어",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "boston_bundle",
+    "why": "2026-11-26 (Lightweight Stand Bags, lightweight-stand-bags under bags; the probe 50002791-default-20261127T045545Z of 4 queries, 357 distinct titles classified on their sheets, research/stand-bags/cards.json, decision.md): a stand bag sold with a boston bag ('... 스탠드 가방 캐디백 보스턴백 골프백'): another product inside the price.",
+    "tokens": [
+     {
+      "text": "보스턴",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "kids",
+    "why": "2026-11-26 (Lightweight Stand Bags, lightweight-stand-bags under bags; the probe 50002791-default-20261127T045545Z of 4 queries, 357 distinct titles classified on their sheets, research/stand-bags/cards.json, decision.md): children's bags (주니어, 키즈, 어린이, 아동): not this section.",
+    "tokens": [
+     {
+      "text": "주니어",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "키즈",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "어린이",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아동",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "used",
+    "why": "2026-11-26 (Lightweight Stand Bags, lightweight-stand-bags under bags; the probe 50002791-default-20261127T045545Z of 4 queries, 357 distinct titles classified on their sheets, research/stand-bags/cards.json, decision.md): a used, display or returned bag.",
+    "tokens": [
+     {
+      "text": "중고",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "전시상품",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "리퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "반품",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "b급",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스크래치",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   }
   ]
  },
  "together": {

@@ -46,6 +46,7 @@ TRANSLATE_PROVIDERS=openai,anthropic .venv/bin/python -u scripts/job.py scroll -
 | 50002783 wedge sets | `--paid-variants` (its pilots, 2026-11-15/16) | `골프 웨지 세트` |
 | 50002784 chippers | `--paid-variants` (the owner, 2026-11-18: paid add-ons off for the category) | `골프 치퍼` |
 | 50001740 BOA spikeless golf shoes (2026-11-25, reviewed 2026-11-26) | `--paid-variants` | both sections in one job (the owner 2026-11-25): `보아 스파이크리스 골프화`, no `--leaf` (placement splits by gender and sizes); one gender's depth: `남성 보아 스파이크리스 골프화` `--leaf mens-boa-spikeless-shoes`, `여성 보아 스파이크리스 골프화` `--leaf womens-boa-spikeless-shoes` (the probes' decision.md) |
+| 50002791 Lightweight Stand Bags (2026-11-26, not reviewed: DRAFT) | `--paid-variants` | `경량 스탠드 캐디백` (the owner's; Naver gives `경량 스탠드백` the same listing), then `초경량 스탠드백` (the cheap no-name bags): two jobs (the probe's decision.md) |
 
 - N -> `--count N`; no N or "до конца" -> no `--count` (to the listing's end); "без публикации" -> no `--publish`
   and no `--describe`. `--dedupe on` is the default: no flag (the owner's yes after
