@@ -540,3 +540,26 @@ def test_a_pants_title_wide_band_cotton_and_unsold_codes(tmp_path):
     item = _pants_title(tmp_path, "아디다스 여성 골프바지 HG1712 HG1713", [("색상", ["그레이", "블랙"])])
     assert _answer(item, "Adidas Women's Golf Pants HG1713")[1] == ["numbers changed: missing 1712",
                                                                      "codes lost: missing HG1712"]
+
+
+def test_a_shoe_titles_new_is_taken_out(tmp_path):
+    """11499300628 "풋조이 26년 NEW 퀀텀 보아 남성 골프화 스파이크리스" failed "codes lost: missing NEW" (the 100 pilot,
+    2026-11-26); 6337280783 went out as "FootJoy Women's NEW Superlites XP ...". New Balance keeps its New."""
+    import translation_dicts as D
+
+    def shoe(title_ko):
+        prepared = {"key": "fairwardgolf:naver:1:1", "source": {"category_id": "50001740"}, "notes": [],
+                    "product": {"title_ko": title_ko, "options": []},
+                    "texts": [{"id": "title:t", "kind": "title", "ko": title_ko}]}
+        dicts = D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "none"))
+        return next(i for i in T.plan(prepared, dicts, {}, TENANT)[2] if i["kind"] == "title")
+
+    item = shoe("풋조이 26년 NEW 퀀텀 보아 남성 골프화 스파이크리스")
+    assert _answer(item, "FootJoy Men's Quantum BOA Spikeless Golf Shoes") == (
+        "FootJoy Men's Quantum BOA Spikeless Golf Shoes", [])
+    assert _answer(item, "FootJoy Men's NEW Quantum BOA Spikeless Golf Shoes")[0] == (
+        "FootJoy Men's Quantum BOA Spikeless Golf Shoes")
+    assert "season word" in item["context"]
+    item = shoe("뉴발란스 NEW 574 보아 남성 골프화")
+    assert _answer(item, "New Balance Men's 574 BOA Golf Shoes") == ("New Balance Men's 574 BOA Golf Shoes", [])
+    assert "season word" not in (shoe("풋조이 퀀텀 보아 남성 골프화").get("context") or "")

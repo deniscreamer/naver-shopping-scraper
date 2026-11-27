@@ -4512,7 +4512,7 @@
    },
    {
     "code": "spiked_model",
-    "why": "2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md): a spiked model by its name (FootJoy Tour Alpha / Premier / Pro|SL, adidas Tour360 / Codechaos spiked, ECCO Biom G, ...): sellers put 스파이크리스 into spiked titles as a search keyword, so no 'unless'. 2026-11-25, the probe sheets: Nike Air Zoom Infinity Tour NEXT% (넥스트%, cleated: 11845310209, HQ2160) and adidas' old Driver BOA (F33506, Q44842).",
+    "why": "2026-11-25 (BOA spikeless golf shoes 50001740, mens-boa-spikeless-shoes and womens-boa-spikeless-shoes under shoes; the probes 50001740-default-20261125T154656Z and ...T155755Z, 441 distinct titles of 6 queries read on their sheets, every rule measured on all of them, decision.md): a spiked model by its name (FootJoy Tour Alpha / Premier / Pro|SL, adidas Tour360 / Codechaos spiked, ECCO Biom G, ...): sellers put 스파이크리스 into spiked titles as a search keyword, so no 'unless'. 2026-11-25, the probe sheets: Nike Air Zoom Infinity Tour NEXT% (넥스트%, cleated: 11845310209, HQ2160) and adidas' old Driver BOA (F33506, Q44842). 2026-11-26, the survey of the category's 399 products: the token HQ2160 itself (Nike Infinity Tour BOA 2, 13177571447: six spikes), and adidas S2G 24's spiked IF0319 / IF0320 (the seller's 8103049334 lists them under S2G spiked; 9984674071); never s2g (four live S2G SL spikeless titles).",
     "tokens": [
      {
       "text": "투어피에프",
@@ -4656,6 +4656,21 @@
      },
      {
       "text": "드라이버보아",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "hq2160",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "if0319",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "if0320",
       "notFollowedBy": [],
       "notPrecededBy": []
      }

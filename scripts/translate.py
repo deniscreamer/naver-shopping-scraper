@@ -145,6 +145,7 @@ TITLE_MODEL_YEAR = re.compile(r"(?<![A-Za-z\d])20\d{2}\s?(?:년\s?(?:형|모델|
 # "MASTER BEAR BEST Golf Pants"): left out, and its English taken out of the answer
 TITLE_PROMO = re.compile(r"(?<![A-Za-z가-힣])(?:인기|BEST|베스트)(?![A-Za-z가-힣])", re.I)
 TITLE_PROMO_EN = r"Best[- ]?Sellers?|Best|Popular"
+TITLE_NEW = re.compile(r"(?<![A-Za-z])NEW(?![A-Za-z])", re.I)      # shoes (garment_title, 2026-11-26)
 # The English words a garment title's answer loses whatever the model wrote (strip, verify): the briefs leave them
 # out and the model kept them (the golf pants pilot review, 2026-11-24). A Korean word -> its English.
 # - a word of one variant (pants, 50002801): 9부 where 롱 is sold too (6384912528: "9-Length Cropped" over 8 cuts),
@@ -465,6 +466,13 @@ def garment_title(item: dict[str, Any], category: str, product: dict[str, Any], 
         drop += promo
         strip.append(TITLE_PROMO_EN)
         _say(item, " / ".join(promo) + " is the seller's promotion: leave it out of the title")
+    # shoes: "NEW" the brief leaves out with the model year ("풋조이 26년 NEW 퀀텀 보아 ...", 11499300628, 2026-11-26:
+    # failed "codes lost: missing NEW"; 6337280783 went out as "FootJoy Women's NEW Superlites XP ..."): freed, told,
+    # and the capitals taken out of the answer (never "New" itself: New Balance, New Era)
+    if category == "50001740" and (new := TITLE_NEW.findall(source)):
+        drop += new
+        strip.append(r"(?-i:NEW)")
+        _say(item, "NEW is the seller's season word: leave it out of the title")
     if item.get("pick"):
         strip.append(r"\d{1,2}[- ]?(?:Styles?|Types?|Colou?rs?|Kinds?)")
     value_codes = codes(" ".join(v for o in options for v in o.get("values_ko") or []))

@@ -67,6 +67,50 @@ SPIKED_VALUE_RE = re.compile(r"^\s*(?:스파이크|스파이크형|스파이크�
 LACED_VALUE_RE = re.compile(r"끈\s*타입|\(끈\)|\s끈\s*$|레이스\s*업|슈\s*레이스|shoe\s*lace|lace[\s-]?up|laced", re.I)
 # a bare trailing "끈" ("05.화이트실버 끈", 13648298581, the common run's review 2026-11-26)
 
+# A spiked shoe only its description says (2026-11-26, the survey of all 399 products of 50001740), searched line by
+# line in the description text and the images' OCR rows, never in the spec rows (스파이크개수 "20개" counts the rubber
+# nubs of spikeless Hello Birdie 9081244742 and Eagle Eyed 11574034936; 스파이크 형태 "일체형" / "교체형" is said of
+# spikeless and option listings too): a count of spikes, "총여섯 개의 스파이크", "스파이크두개" (Nike Infinity Tour BOA 2,
+# 13177571447), on one line ("9893\n스파이크" is no count); 0 of the 223 live shoes say it
+_COUNT = r"(?:\d+|한|두|세|네|다섯|여섯|일곱|여덟|아홉|열)"
+SPIKE_COUNT_RE = re.compile(rf"{_COUNT}[ \t]*개[ \t]*의?[ \t]*스파이크(?![ \t]*리스)"
+                            rf"|스파이크(?![ \t]*리스)[ \t]*(?:가|를|이)?[ \t]*{_COUNT}[ \t]*개")
+# ... or a spiked model's heading at a line's end, "S2G 여성 골프화 스파이크" beside "S2G 여성 골프화 스파이크 리스"
+# (adidas 8103049334): unless the next line starts with 리스 (an OCR row split)
+SPIKED_HEADING_RE = re.compile(r"(?:골프화|골프\s*슈즈|golf\s*shoes?)\s*[-:(]?\s*(?:스파이크|spiked?|cleated)\s*"
+                               r"(?:형|화|타입|type)?\s*\)?\s*$", re.I)
+
+
+def spiked_text(text: str | None, ocr: list[list[str]]) -> str | None:
+    """The line of the description or the images' text that says the shoe is spiked, or None."""
+    lines = [ln.strip() for ln in str(text or "").splitlines()] + [r.strip() for rows in ocr for r in rows]
+    for k, ln in enumerate(lines):
+        if m := SPIKE_COUNT_RE.search(ln):
+            return f"spikes counted: {m.group(0)!r}"
+        if SPIKED_HEADING_RE.search(ln) and not (k + 1 < len(lines) and lines[k + 1].startswith("리스")):
+            return f"a spiked model's heading: {ln[:80]!r}"
+    return None
+
+
+# A listing selling values named BOA beside values that are not (2026-11-26, the survey of all 399 products: ECCO
+# 4608236603 "S-three 보아 화이트/네이비" beside "S-three 화이트/블랙", "투어 블랙", laced; adidas Retrocross 13735186974
+# "(보아 JP SIZE)" beside "(JP SIZE)"; Nike 9042548466): held, never left out, as a value without the word is often the
+# BOA model itself (MNX15 "m011" = MNX-011 BOA, adidas "ID8605" = CodeChaos 25 BOA); 0 live shoes after the laced
+# leave-out
+BOA_VALUE_RE = re.compile(r"보아|(?<![a-z])boa(?![a-z])|다이얼|(?<![a-z])dial(?![a-z])", re.I)
+
+
+def boa_mixed(options: list[dict[str, Any]]) -> str | None:
+    """"<option>: values not named BOA (may be BOA models; check each): ..." for the first option some of whose values
+    name BOA and some not, else None."""
+    for o in options:
+        values = [str(v) for v in o.get("values_ko") or []]
+        named = [v for v in values if BOA_VALUE_RE.search(v)]
+        if named and len(named) < len(values):
+            rest = [v for v in values if not BOA_VALUE_RE.search(v)]
+            return f"{o.get('name_ko')}: values not named BOA (may be BOA models; check each): {'; '.join(rest)}"
+    return None
+
 
 def mm_span(value: Any) -> tuple[int, int] | None:
     """(the smallest, the largest) mm size a value states: one size ("250", "255mm", "265(US 8.5)", "270 와이드") is

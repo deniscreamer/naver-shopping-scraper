@@ -178,3 +178,26 @@ def test_the_common_runs_review():
     assert S.SECONDS_RE.search("230 박스커팅") and S.SECONDS_RE.search("박스 커팅 상품")
     out = S.resolve([{"name_ko": "사이즈", "values_ko": ["260", "270"]}], "mens", {"260": {"mens"}, "270": {"mens"}})
     assert [v["us"] for v in out["values"]] == ["US 8 (260 mm)", "US 9 (270 mm)"]
+
+
+def test_a_spiked_shoe_said_by_its_description_only():
+    """The survey of 50001740's 399 products (2026-11-26): Nike 13177571447's OCR counts its spikes, adidas
+    8103049334's text heads a spiked model; a nub count in a spec row, a number on the line before, "스파이크리스",
+    "스파이크 없이도" and an OCR row split before 리스 are no spiked shoe."""
+    assert S.spiked_text(None, [["발앞부분에 동합 스파이크두개를더해총여섯 개의 스파이크가 적용된 신발로"]]) \
+        == "spikes counted: '스파이크두개'"
+    assert S.spiked_text("S2G 여성 골프화 스파이크\nS2G 여성 골프화 스파이크 리스", []).startswith("a spiked model's heading")
+    for text in ("스파이크개수 0개", "9893\n스파이크", "스파이크 없이도 접지력", "3개의 스파이크리스 아웃솔",
+                 "64도 앵글 스파이크 적용", "S2G 골프화 스파이크\n리스"):
+        assert S.spiked_text(text, []) is None, text
+
+
+def test_values_named_boa_beside_values_not_named_hold():
+    """ECCO 4608236603 (2026-11-26): "S-three 보아" beside laced "투어 블랙"; a listing no value of which names BOA (MNX15
+    4770108021 "m011 그레이") or every value BOA is none; "radial" is no dial."""
+    got = S.boa_mixed([{"name_ko": "색상", "values_ko": ["S-three 보아 화이트/네이비", "S-three 화이트/블랙", "투어 블랙"]}])
+    assert got == "색상: values not named BOA (may be BOA models; check each): S-three 화이트/블랙; 투어 블랙"
+    assert S.boa_mixed([{"name_ko": "색상", "values_ko": ["m011 그레이", "m011 블랙"]}]) is None
+    assert S.boa_mixed([{"name_ko": "모델", "values_ko": ["BOA화이트", "다이얼 블랙", "Dial Navy"]}]) is None
+    assert S.boa_mixed([{"name_ko": "모델", "values_ko": ["BOA 1", "Radial 2"]}]) is not None
+    assert S.boa_mixed([{"name_ko": "사이즈", "values_ko": ["250", "260"]}]) is None

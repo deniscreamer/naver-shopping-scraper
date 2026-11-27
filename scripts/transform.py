@@ -2575,6 +2575,13 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             notes.append({"code": "spiked_left_out", "detail": spiked})       # Eagle Eyed 11574034936 (2026-11-25)
         if laced := _drop_shoe_seconds(ov, shoe_sizes.LACED_VALUE_RE):
             notes.append({"code": "laced_left_out", "detail": laced})         # Prito 6510500952 (2026-11-26)
+        # spiked by its description only (Nike 13177571447, adidas 8103049334), BOA beside not-BOA values (ECCO
+        # 4608236603): held for a look (2026-11-26, the survey of 50001740's 399 products)
+        if spiked_said := shoe_sizes.spiked_text(cleaned["text"],
+                                                 image_rows(images_text if current(images_text, line) else None)):
+            held.append({"code": "spiked", "detail": spiked_said[:200]})
+        if mixed_boa := shoe_sizes.boa_mixed(ov["options"]):
+            held.append({"code": "boa_mixed_values", "detail": mixed_boa[:200]})
         if titled_pair := _title_size_shoes(ov, details["name"], (line.get("listing") or {}).get("name")):
             notes.append({"code": "size_from_title", "detail": titled_pair})
         _split_joined_shoes(ov)
