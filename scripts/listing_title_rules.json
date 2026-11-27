@@ -4887,11 +4887,17 @@
   "50002791": [
    {
     "code": "not_light_stand",
-    "why": "The owner 2026-11-26: a title must say 경량 or lightweight (초경량 too) and 스탠드 or stand. 2026-11-26 (Lightweight Stand Bags, lightweight-stand-bags under bags; the probe 50002791-default-20261127T045545Z of 4 queries, 357 distinct titles classified on their sheets, research/stand-bags/cards.json, decision.md): 148 of 357 kept, 132 of them light stand bags; 19 light stand bags named 울트라 라이트 / 라이트웨이트 left out (a widening is the owner's word).",
+    "why": "The owner 2026-11-26: a title must say 경량 or lightweight (초경량 too) and 스탠드 or stand. 2026-11-26 (Lightweight Stand Bags, lightweight-stand-bags under bags; the probe 50002791-default-20261127T045545Z of 4 queries, 357 distinct titles classified on their sheets, research/stand-bags/cards.json, decision.md): 148 of 357 kept, 132 of them light stand bags; 19 light stand bags named 울트라 라이트 / 라이트웨이트 left out (a widening is the owner's word). 2026-11-27, the owner's yes to the probe's widening: 라이트웨이트, 울트라라이트 / 울트라 라이트, ultralight / ultra light, 가벼운 (+14 light stand bags, +1 misfit on the probe).",
     "requires": [
      [
       "경량",
-      "lightweight"
+      "lightweight",
+      "라이트웨이트",
+      "울트라라이트",
+      "울트라 라이트",
+      "ultralight",
+      "ultra light",
+      "가벼운"
      ],
      [
       "스탠드",

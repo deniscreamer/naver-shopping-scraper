@@ -267,7 +267,7 @@ a `stand_bag` describe profile. The pilot of 5 (a review telling of a defect giv
 (35 drafts, a workflow review of every phase: 54 findings, 2 refuted): the box from the bag's stated body and the bag +
 1 kg of carton (PACKAGE.md `own_box`), a closing period of a notice pointer ("상세 이미지 참조.", the server and the
 transform: it was a vendor), the year, a Latin echo and two divider counts out of a title (`translate.garment_title`),
-바퀴형 out of the feature list; held: a tour bag, a catalog of 15 bags, two brands waiting for the owner's word).
+바퀴형 out of the feature list; held: a tour bag and a catalog of 15 bags; two brands set by the owner, Big Max and Inparo; reviewed=True on the owner's word 2026-11-27, 33 activated; the lightness words widened on his yes: 라이트웨이트, 울트라 라이트, ultralight, 가벼운, +14 light stand bags and no misfit on the probe's 357 titles).
 
 ### Learned on the first new category (50002787, 2026-11-11)
 

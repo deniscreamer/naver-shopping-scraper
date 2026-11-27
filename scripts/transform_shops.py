@@ -270,7 +270,8 @@ RULES = {
                 # the pilot of 5's review (2026-11-26): a half bag, a pouch, a duffel, a cart bag or a boston bag sold
                 # as a variant of a stand bag (5564175351, 5951015402) left out, the stand bags sold
                 variant_drop=("wheeled", "boston_bundle", "half_bag", "other_item", "hood_cover"),
-                reviewed=False),      # a new category: DRAFT until the pilots' review and the owner's activation
+                reviewed=True),       # the owner's word 2026-11-27, after the pilots of 5 and 30 and their review: 33
+                                      # activated, 2 held (a tour bag, a catalog of 15 bags)
         }),
 }
 
