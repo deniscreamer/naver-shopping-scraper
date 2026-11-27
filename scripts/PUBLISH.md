@@ -37,7 +37,7 @@ What a publication run prints, one line per product (`<key>: <status> ...`), the
 | Status | Means | You |
 |---|---|---|
 | `published` | sent; its row is in `publish/published.jsonl` | nothing |
-| `skipped` | its inputs (or what Shopify would get) did not change | nothing; `--force --only <key>` only on the owner's word |
+| `skipped` | its inputs (or what Shopify would get) did not change | nothing; `--force --only <key>` on a live product only on the owner's word |
 | `dry-run` | the payload is in `publish/payloads/`, nothing sent | read it |
 | `held` | no English for a text (`Untranslated`) or a payload that cannot be built (`PayloadError`: a variant with no price) | fix the cause (translation, package, price), run `--only <key>` again (a product already in the store: rule 1) |
 | `failed` | Shopify refused (userErrors, a file not ready ...) | read the reason; fix it, then `--only <key>` again (a product already in the store: rule 1) |

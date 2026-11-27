@@ -77,11 +77,11 @@ BASELINE_SIDES = ("sides_mm", "sides_with_container_mm")
 
 
 class CategoryDefaultsMissing(Exception):
-    """No operator values for this leaf category: stop the category and ask the operator."""
+    """No category defaults for this leaf category: stop the category; the agent writes the row (ONBOARDING.md E1)."""
 
     def __init__(self, category_id: str | None, category_name: str | None = None):
         super().__init__(f"no package averages for category {category_id} ({category_name or '?'}) in "
-                         f"category_measures.json: ask the operator for low / central / high of {', '.join(FIELDS)}")
+                         f"category_measures.json: write its low / central / high (ONBOARDING.md E1) of {', '.join(FIELDS)}")
         self.category_id = category_id
 
 

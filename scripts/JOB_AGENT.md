@@ -310,7 +310,9 @@ What the job prints: `draft first: ...` when it is made; `published (draft) <han
 `; N drafts await the review` on the progress line; from 20 drafts (`REVIEW_AFTER`), on the progress line, at done
 and in `status`: the block `review due: ...` with the lens commands (`status --json`: key `review`).
 
-You: run the skill `visual-review` with exactly those commands, report the findings to the owner, and wait. On the
+You: run the skill `visual-review` with exactly those commands, report the findings to the owner, and wait. A new
+category's pilots of 5 and 30 (ONBOARDING.md part E, the owner 2026-11-26): review them, fix and rebuild the drafts
+yourself first; the short report and the wait come after the 30. On the
 owner's word only: withdraw the wrong ones (`publish.py <shop> --withdraw <key> --reason ...`), then
 `job.py activate --job <id>` (`--dry-run` first lists them), then run the old copies' `--withdraw` lines it prints.
 `reviewed=True` for the category is a commit on the owner's word after the pilot (a dated comment); a running

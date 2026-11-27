@@ -41,7 +41,8 @@ Commands (repo root, offline unless noted):
 - `UPDATE_GOLDEN=1 .venv/bin/python -m pytest scripts/test_prepared_golden.py` after a deliberate change: read the diff.
 
 Rules:
-- Category defaults and baselines are the owner's values, dated; never invent one (`CategoryDefaultsMissing` stops).
+- Category defaults are the agent's (2026-11-26), measured on the probe and refined on the pilots of 5 and 30
+  (ONBOARDING.md part E), dated; baselines stay the owner's; never a number without a source (`CategoryDefaultsMissing` stops).
 - A change that alters published products: `run_transform.py <shop> --diff` (or `prepared_diff.py
   --published-only`) for which ones and how, `store_diff.py <shop> --keys-file F` for what the store would get,
   then `scripts/OWNER_RULES.md` rule 1.

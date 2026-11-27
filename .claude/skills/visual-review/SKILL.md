@@ -55,7 +55,8 @@ Rules: `scripts/OWNER_RULES.md` (sections 2 and 3). The procedure:
    - each finding with its number, key, title and reason;
    - what you could not settle;
    - the sheets' folder.
-7. **Do not touch the store before the owner's word** (`scripts/OWNER_RULES.md`). A copy of a live product the
+7. **Do not touch the store before the owner's word** (`scripts/OWNER_RULES.md`; a new category's pilot drafts are
+   yours to fix and resend first: ONBOARDING.md part E). A copy of a live product the
    rules missed: list both keys, titles and prices and ask; meanwhile hold it (rule 2). The owner's answer
    (activate, withdraw, hold, versions) is carried out with the skill `store-actions`.
 

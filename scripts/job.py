@@ -512,7 +512,7 @@ def cmd_new(args: argparse.Namespace) -> int:
     if not _leaf_ok(args):
         return 2
     if _no_measures(args.category):
-        print(f"stop: no category_measures.json row for {', '.join(_no_measures(args.category))}: ask the operator")
+        print(f"stop: no category_measures.json row for {', '.join(_no_measures(args.category))}: write it (ONBOARDING.md E1)")
         return 2
     assert store.shopify
     shops_root = os.path.abspath(args.shops_root or SHOPS_ROOT)

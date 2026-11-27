@@ -18,9 +18,11 @@ The checklist and the reasons: `scripts/ONBOARDING.md`; this skill is the proced
 | Golf or `fairwardgolf` in shared code | "C. Golf or fairwardgolf in shared code" |
 | What earlier categories did to the rest of the shop (L1-L10), when the file was written | "History", "Learned on the first new category" |
 | The first run, in order | "D. The order of a first run" |
+| The pilots of 5 and 30: review every phase, fix, rebuild, report, wait | "E. The pilot cycle: 5, then 30, then the owner" |
 | Each stage's own part | skills `transform`, `translation`, `describe`, `placement`, `price`, `publish` |
 
-Rules: `scripts/OWNER_RULES.md`; values are the owner's, dated (ONBOARDING.md "Rules for every row").
+Rules: `scripts/OWNER_RULES.md`; who gives which value, dated (ONBOARDING.md "Rules for every row"): the package
+defaults are yours (2026-11-26), the rest the owner's yes on your numbers.
 
 1. **Scope.** Say which case it is: a category in an existing shop (part A), a new shop (part B), or both. Find
    the Naver **leaf** id (`/categories/list`, or a product page's `specs.category.id`). Every file uses that one
@@ -35,9 +37,10 @@ Rules: `scripts/OWNER_RULES.md`; values are the owner's, dated (ONBOARDING.md "R
    (the queries the jobs take, the adjacent leaves: together / own section / leave, the rules: keep / widen /
    narrow). Probe again after every change of the title screen, and once more right before the pilot. Bring
    numbers to the questions.
-3. **Ask the owner, never invent.** Use one AskUserQuestion round for the owner's values, each written down with
-   its date:
-   - A1: the package averages, and baselines only for a set in a container;
+3. **The package defaults are yours; the rest: propose, then the owner's yes.** Write the A1 row yourself
+   (ONBOARDING.md E1: the probe's cards and pages, priced on a cheap and a dear product; a baseline for a set in a
+   container stays the owner's). Then one round to the owner with your proposed numbers, each written down with its
+   date:
    - A2: paid variants, paid add-ons, OCR of the images;
      `reviewed` is never asked: a new category stays False (its products go DRAFT first) until the owner's word
      after the pilot's review and activation;
@@ -55,21 +58,30 @@ Rules: `scripts/OWNER_RULES.md`; values are the owner's, dated (ONBOARDING.md "R
    - Run `.venv/bin/python -m pytest scripts -q`, and `-m pytest -q` if `server/` changed.
    - After the first checked products, add fixtures: `scripts/make_measures_fixture.py` for the package, plus the
      collected and placement fixtures.
-7. **First run, small.**
-   - `SHOP_STORE=<shop> .venv/bin/python scripts/job.py new --query "..." --category <leaf id> --count 5`.
-   - `new` only reads and screens the listing. `category_mismatch` means a wrong id.
-   - `job.py run` collects and prepares. `stop: prepare: ShopRulesMissing` means A2.
-   - Run `placement.py <shop>`; `no_profile` means A3.
-   - Check 2-3 products by hand, then run `publish.py <shop> --dry-run` (ONBOARDING.md part D).
+7. **The pilot cycle (ONBOARDING.md part E, the owner 2026-11-26), yours up to the report.** The pilot of 5,
+   every product read by hand in every phase, the fixes (rules, readers, the package row), the rebuild and the
+   resend of the pilot's own drafts; then the pilot of 30, its lens review (a workflow), the same fixes, every new
+   rule run over the whole category; then a short report in the chat with the next step to choose (the next 100,
+   or the fixes that need the owner's yes) and wait. Never leave every product on the default box: the pilot
+   either reads the real weights and sizes or improves the reader. The commands of the first job:
+   - The pilot of 5 (E2): `TRANSLATE_PROVIDERS=openai,anthropic SHOP_STORE=<shop> .venv/bin/python -u scripts/job.py
+     scroll --query "..." --category <leaf id> <paid flags> --publish --describe --count 5` (skill `run-a-job`), its
+     products DRAFT; then 30 the same way. The old mode (`job.py new ... --count 5 --publish --describe`, `run`) only
+     on the owner's word or for 2+ queries.
+   - `category_mismatch` in the screen counts means a wrong id; `stop: prepare: ShopRulesMissing` means A2;
+     `placement.py <shop>` showing `no_profile` means A3.
+   - Read every product of the pilot by hand (E3); `publish.py <shop> --dry-run` for the price breakdown.
    - The job's `--paid` / `--paid-variants` holds for its own products only (ONBOARDING.md L1).
-   - A big target later (the whole category): `job.py scroll` may fit better; see JOB_AGENT.md "Two ways to run a job".
-   - Publish for real only after the owner says yes. Shopify writes go only through `publish.py` /
+   - With the fixes: `run_transform.py`, `translate.py` (offline first), `describe.py --only` where moved,
+     `placement.py`, then `publish.py <shop> --job <id>`: the pilot's own drafts, no owner's word (E4).
+   - Before the report (E6): what the category did to the rest of the shop, step 8.
+   - Activation and `reviewed` only on the owner's word. Shopify writes go only through `publish.py` /
      `shopify_admin.py`.
 8. **Read what the new category did to the rest of the shop** (ONBOARDING.md "Learned" under "History", part D step 6):
    `.venv/bin/python scripts/store_diff.py <shop>` (read only) lists the published products a publication would
    change, field by field, and those that cannot be built now; then `translation_dicts.py status`: read every new
-   dictionary entry before the dictionaries' backup. Any such product is the owner's to decide
-   (`scripts/OWNER_RULES.md` rule 1).
+   dictionary entry before the dictionaries' backup. Run it in E6, before the report; any live product it lists is
+   the owner's to decide (`scripts/OWNER_RULES.md` rule 1).
 9. **Finish.**
    - Update the docs of every rule you changed, in the same commit (AGENTS.md rule 6). CHANGELOG.md is frozen at
      0.18.0: no entry (the owner, 2026-11-14); releases: skill `release`.

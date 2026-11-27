@@ -73,8 +73,8 @@ For the full collection (`scripts/example_99_full_details.py`) two things come f
   the products app with `write_products` and the publications scopes, and the files app (`ADMIN_API_CLIENT_ID`,
   `ADMIN_API_CLIENT_SECRET`) with `write_files`; `check_setup.py --live` mints a token for each and checks its
   scope;
-- the category's package averages in `scripts/category_measures.json` (low / central / high, who approved, when).
-  Without a row for the category the run stops and asks for it.
+- the category's package defaults in `scripts/category_measures.json` (low / central / high, who decided, when): the
+  agent writes the row from the probe and refines it on the pilots (scripts/ONBOARDING.md E1). Without a row the run stops.
 
 Before placement (`scripts/placement.py <shop>`, the last stage before Shopify), the shop's profile in
 `scripts/placement_rules.py` (Naver category id -> its sections, the attribute that splits it, what an unresolved

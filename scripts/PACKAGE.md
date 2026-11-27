@@ -1,7 +1,7 @@
 # Package weight and size
 
 The five package fields of every variant (the product's weight, the package's weight and its three sides), the
-operator's category defaults and baselines, and the optional stage that reads the description images (OCR) for
+category defaults (the agent's since 2026-11-26) and the owner's baselines, and the optional stage that reads the description images (OCR) for
 them; split from TRANSFORM.md on 2026-11-16 (history: `git log --follow scripts/TRANSFORM.md`, and
 scripts/README.md before it). Measurements and history are at the end.
 
@@ -40,15 +40,18 @@ Flags and notes that ask for a look:
 | note `description_images_failed` | the worker failed twice: an error sidecar | `description_images.py <shop> --products <id> --force` |
 | note `description_images_partial` | some images not read: `failed` (5xx / network), `gone` (4xx / not an image), `refused` (a hotlink block) | nothing; `failed` ones are read again at the next run of the stage |
 | note `measures_from_images` | fields stated in the images / typed text or composed, per variant count | nothing: information |
-| `CategoryDefaultsMissing` | the category has no row in `category_measures.json` | stop and ask the owner for low / central / high: [Category defaults](#category-defaults-category_measuresjson) |
+| `CategoryDefaultsMissing` | the category has no row in `category_measures.json` | write the row yourself (the agent's since 2026-11-26: ONBOARDING.md E1): [Category defaults](#category-defaults-category_measuresjson) |
 
 The stage's own exits (`description_images.py`): 0 done (the counts printed); 2 `stop:` the shop has no rules, or the
 shop is busy (a job or another command holds its lock: wait, `job.py status`); 3 Naver's image CDN refused (403 /
 429: the sidecars so far are kept, wait and run again); 4 another run of the stage holds the shop; 130 stopped by
 Ctrl+C (run again to go on). Commands and files: [The description images stage](#the-description-images-stage).
 
-A category default or a baseline changes only on the owner's word (dated in `category_measures.json`); a change that
-reaches published products: [OWNER_RULES.md](OWNER_RULES.md) rule 1.
+A category default is the agent's (the owner, 2026-11-26): written from the probe and the pages, then refined on the
+pilots of 5 and 30 from the real products' stated weights and sizes, or the reader improved where a page states
+them and it missed them (ONBOARDING.md part E); each change dated in `category_measures.json` with a new
+`defaults_version`. A baseline stays the owner's. A change that reaches published products:
+[OWNER_RULES.md](OWNER_RULES.md) rule 1.
 
 ## The five fields
 
@@ -102,10 +105,10 @@ code. The table's `version` is 2 since the block.
 ## Category defaults (`category_measures.json`)
 
 A missing field comes from
-`category_measures.json`, the operator's table (per leaf category: low / central / high of the five fields, who
+`category_measures.json`, the category defaults (the agent's, ONBOARDING.md E1; per leaf category: low / central / high of the five fields, who
 approved it and when, the table's version), as `source: category_default`; a seller's value is never overwritten.
-No row for the category: `CategoryDefaultsMissing`, the run stops and asks the operator (values are never made
-up). Every row carries `reliability`; today one level, `estimated_average` (the weakest: an average of estimates,
+No row for the category: `CategoryDefaultsMissing`, the run stops: the agent writes the row from the probe and the
+pages (ONBOARDING.md E1; never a number without a source) and reviews it on the pilots. Every row carries `reliability`; today one level, `estimated_average` (the weakest: an average of estimates,
 not measured); the price rule's coefficient goes by the lowest `confidence` of the box's three sides, not by this (see PRICE.md, The price).
 50002788 풀세트 is filled (owner, 2026-11-05):
 the median (central) and about the 10th / 90th percentile (low / high) of the naver-harvester's AI estimates on the

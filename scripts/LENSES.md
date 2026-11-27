@@ -48,7 +48,8 @@ What to do on each result:
 2. **The picture finds, the text proves.** Never act on a photo alone: open the number's line in `index.tsv` /
    `summary.json`, its variants and title, or `lens.py products <id> ...` for all its photos side by side.
 3. **The owner decides.** A finding goes to the owner as numbers, keys and the reason; a withdrawal, a republish or a
-   rule change waits for the owner's word ([OWNER_RULES.md](OWNER_RULES.md)).
+   rule change waits for the owner's word ([OWNER_RULES.md](OWNER_RULES.md)); a new category's pilot drafts are the
+   agent's to fix, rebuild and resend before its report (ONBOARDING.md part E).
 4. **Say what was not looked at.** A sheet shows one photo per product in a grid; a doubt the first photo cannot
    settle needs the `products` lens.
 5. **Drafts (draft first, 2026-11-16).** A product of a category not marked reviewed is published DRAFT; the ledger

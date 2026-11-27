@@ -14,19 +14,21 @@ L1-L10) are cited from code and other docs: keep them. When was what written: [H
 | A new shop (tenant) | [B](#b-a-new-shop-tenant) (B1-B10), then A for each of its categories |
 | Golf or `fairwardgolf` in shared code: decide before the first run | [C](#c-golf-or-fairwardgolf-in-shared-code-decide-before-the-first-run) (C1-C11) |
 | The first run, in order | [D](#d-the-order-of-a-first-run) |
+| The pilots of 5 and 30, their review, fixes and report | [E](#e-the-pilot-cycle-5-then-30-then-the-owner) |
 | What earlier categories did to the rest of the shop, and the fix | [Learned](#learned-on-the-first-new-category-50002787-2026-11-11) (L1-L10) |
 
-First, ask the owner for the values (A1, A2, A3, A5; for a shop B1, B2, B6), never invent them. Then the first run
-(part D) prints, and you:
+First, the agent's package defaults (A1, [E1](#e-the-pilot-cycle-5-then-30-then-the-owner)) and its proposed values
+for A2, A3, A5 with numbers, the owner's yes on those (for a shop B1, B2, B6 are the owner's). Then the first run
+(part D, the pilot cycle E) prints, and you:
 
 | Command | Result | You |
 |---|---|---|
-| `SHOP_STORE=<shop> .venv/bin/python scripts/job.py new --query "..." --category <leaf id> --count 5` | `stop: no category_measures.json row for <id>: ask the operator` (exit 2) | A1 |
+| `SHOP_STORE=<shop> .venv/bin/python scripts/job.py new --query "..." --category <leaf id> --count 5` | `stop: no category_measures.json row for <id>: write it (ONBOARDING.md E1)` (exit 2) | A1 |
 | the same | `category_mismatch` in the screen counts | a wrong id: use the leaf id (below) |
 | `job.py run` | `stop: prepare: ShopRulesMissing` | A2 (a new shop: B4) |
 | `job.py run` (a job made with `--publish`) or `publish.py <shop>` | a product `failed` at stage publish / `held` with `Untranslated: ...` (a text the product needs has no English) | the translation (skill `translation`): [TRANSLATION.md](TRANSLATION.md#how-to-use), status `untranslated`: fix the brief, rule or dictionary entry, then `translate.py <shop> --only <key>` |
 | `.venv/bin/python scripts/placement.py <shop>` | `no_profile` or `unresolved` in the counts; a new shop without a profile: `PlacementRulesMissing` | A3; B5 |
-| `.venv/bin/python scripts/publish.py <shop> --dry-run` | builds only what is ready, translated and placed; payloads in `shops/<shop>/publish/payloads/<id>.json` | read the price breakdown (D step 5); the real publish only after the owner says yes |
+| `.venv/bin/python scripts/publish.py <shop> --dry-run` | builds only what is ready, translated and placed; payloads in `shops/<shop>/publish/payloads/<id>.json` | read the price breakdown (D step 5); the pilots publish DRAFT on their own (part E); activation and any resend of a live product only on the owner's word |
 | `.venv/bin/python scripts/store_diff.py <shop>`, then `translation_dicts.py status` | the published products a publication would change, those that cannot be built now; the new dictionary entries | each product is the owner's to decide; read every new entry before the dictionaries' backup (D step 6) |
 
 After the first run of a category, also read by hand what the [Learned](#learned-on-the-first-new-category-50002787-2026-11-11)
@@ -48,8 +50,12 @@ row is screened by its own category's rules and collected as its own category, `
 them as one, `dedupe.dedupe_category`).
 A parent or a near id collects nothing: every product ends `category_mismatch`, and only the counts show it.
 
-**The operator gives the values.** Package defaults, prices, coefficients, sections and the paid-variant choice
-are the owner's decisions. They are never made up. Ask, then write each one down with its date.
+**Who gives the values.** The package defaults (A1) are the agent's (the owner, 2026-11-26): measured from the
+probe's cards and the products' pages, priced, and refined on the pilots of 5 and 30 from the real products (part E);
+never a default left as it was written. Prices, coefficients, sections and the paid-variant choice are the owner's
+decisions: the agent proposes them with numbers, the owner says yes; a baseline (a set in a container,
+PACKAGE.md) stays his. None is made up; each is written down with its
+date and who decided.
 
 ## A. A new category in an existing shop
 
@@ -57,7 +63,7 @@ are the owner's decisions. They are never made up. Ask, then write each one down
 
 | # | Where | What | Without it |
 |---|---|---|---|
-| A1 | `scripts/category_measures.json` | A row with `category_id`, `category_name`, `fields` (low / central / high of the 5 package fields), `reliability`, `approved_by`, `approved_at`, `basis`. Optional: `plausible`; `baselines` (only a set of like items in a container; all of them or none); `kinds` (a category that mixes kinds of very different size, e.g. 50002787: single clubs and sets: each kind its own defaults, chosen by title and variant words, `package_measures.default_kind`; a count kind may carry `lofts`, e.g. 50002783 two_wedges); `compose_by_count` (50002783: a set's weight from its clubs' labelled weights, PACKAGE.md). Before asking, price the central box (`shop_pricing.POLICIES[shop].quote`) on a cheap and a dear product of the listing: at level 1 (x2.50) one default box for a 25,000 KRW putter and a set came to $699. A row changed later reaches the products already collected when they are prepared again (`current_defaults`; kept runs are read-only, never edit them), then `publish.py --only` them. Append it last, after the existing rows (50002788 stays first: tests read `rows[0]`), raise `version` and give the row `defaults_version` equal to it (a row whose fields or a kind's numbers change later gets the new version there too; 2026-11-18: the other rows' restamped defaults keep theirs; 2026-11-25: a kind's words alone, no number moved, keep it, as a band does: 50002816 at table version 20), then update the pin in `test_package_measures.py::test_baselines_block_is_optional_and_the_operators`. | **stops**: `job.py new` exits 2 ("no category_measures.json row"); `CategoryDefaultsMissing` |
+| A1 | `scripts/category_measures.json` | A row with `category_id`, `category_name`, `fields` (low / central / high of the 5 package fields), `reliability`, `approved_by`, `approved_at`, `basis`. Optional: `plausible`; `baselines` (only a set of like items in a container; all of them or none); `kinds` (a category that mixes kinds of very different size, e.g. 50002787: single clubs and sets: each kind its own defaults, chosen by title and variant words, `package_measures.default_kind`; a count kind may carry `lofts`, e.g. 50002783 two_wedges); `compose_by_count` (50002783: a set's weight from its clubs' labelled weights, PACKAGE.md). Before writing it, price the central box (`shop_pricing.POLICIES[shop].quote`) on a cheap and a dear product of the listing: at level 1 (x2.50) one default box for a 25,000 KRW putter and a set came to $699. A row changed later reaches the products already collected when they are prepared again (`current_defaults`; kept runs are read-only, never edit them), then `publish.py --only` them. Append it last, after the existing rows (50002788 stays first: tests read `rows[0]`), raise `version` and give the row `defaults_version` equal to it (a row whose fields or a kind's numbers change later gets the new version there too; 2026-11-18: the other rows' restamped defaults keep theirs; 2026-11-25: a kind's words alone, no number moved, keep it, as a band does: 50002816 at table version 20), then update the pin in `test_package_measures.py::test_baselines_block_is_optional_and_the_operators`. | **stops**: `job.py new` exits 2 ("no category_measures.json row"); `CategoryDefaultsMissing` |
 | A2 | `scripts/transform_shops.py` `RULES[shop].categories` | `CategoryRules(paid_variants, paid_addons, description_images, agency_needs_brand, sets_only, wedge_sets, gift_axis_out, no_choice_out, composition, reviewed)`, with the owner's reason in a comment (`reviewed` stays False for a new category, 2026-11-16: its products are created DRAFT until the agent's lens review and the owner's activation; `reviewed=True` with a dated comment only on the owner's word after the pilot; `agency_needs_brand`: a purchase agency's import with no brand is held; off in fairwardgolf since 2026-11-15, the owner: its vendor is the shop's name; `sets_only`: a section of sets, a one-club variant left out and a listing of them held, wedges 2026-11-15; a shop taking 50002783 needs it: `translation_rules.TITLE_RULES` drops the titles' "or single", test_title_rules checks it, 2026-11-16; `wedge_sets`: a section of wedge sets, an iron set or a full set filed under the category held `not_wedge_set`, 50002783 2026-11-16; `gift_axis_out`: a free gift's option axis (사은품 / 증정) left out, one variant per remaining choice, chippers 2026-11-18; `no_choice_out`: an option value saying "no choice" (선택안함, 없음, 필요없음, 선택없음) is no version, its rows go and an axis of nothing else goes, knit cardigans 2026-11-19; `composition`: the fibre rows (spec and notice: 소재, 혼용률, 재질, 섬유의 조성) kept as `product.composition_ko` for a duty by fibre and the description, knit cardigans 2026-11-19) | **stops**: `ShopRulesMissing` in `transform.prepare`; a job stops with `stop: prepare: ShopRulesMissing` |
 | A3 | `scripts/placement_rules.py` `PROFILES[shop].categories` | `CategoryPlacement(parent, leaves, split_by, unresolved)` and its `Leaf(handle, product_type)` constants. How: [PLACEMENT.md](PLACEMENT.md) | **silent**: status `no_profile` (in `placements.jsonl` and the counts of `placement.py`), and `publish.py <shop>` skips the product without a word |
 | A4 | `scripts/attributes.py` `ATTRIBUTES` | Only when the split is by something other than `gender`: a new `Attribute` | **stops**: `KeyError` in `placement.place` |
@@ -168,7 +174,8 @@ his to replace.
 ## D. The order of a first run
 
 0. Probe the listing (B0) with the owner's query and two or three candidates; write the title screen (A14) from it.
-1. Ask the owner for the values of A1, A2, A3, A5 (and B1, B2, B6 for a shop). Write them down with the date.
+1. The package defaults (A1) yourself (E1); propose A2, A3, A5 with numbers and take the owner's yes (B1, B2, B6 for
+   a shop are his). Write each down with the date and who decided.
 2. Add the required rows (A1-A4; B1-B6). Do the quality rows the category needs (A7-A12). Decide on C.
 3. `.venv/bin/python -m pytest scripts -q`, then update the registry tests (A1 `version`, B10).
 4. A small job ([JOB_AGENT.md](JOB_AGENT.md)): `SHOP_STORE=<shop> .venv/bin/python scripts/job.py new --query "..."
@@ -180,11 +187,11 @@ his to replace.
    Cheap, popular categories carry many reviews: 50002787 scanned a median 134 reviews a product (sets: 1) and
    kept 19-20 with 20-36 photos, so collection took 47-186 s a product against 45-65 s. Since 2026-11-11 a product
    with more than 8 chosen reviews keeps the 8 best, 3 photos each, 12 in all (`review_pick`).
-5. Read 2-3 products by hand: package fields and confidence, title, description. Run `placement.py <shop>` and check
+5. Read every product of the pilot by hand (E3): package fields and confidence, title, description. Run `placement.py <shop>` and check
    that nothing is `no_profile` or `unresolved` (A3). Then run `publish.py <shop> --dry-run`: it builds only what is
    ready, translated and placed. Read the price breakdown in `shops/<shop>/publish/payloads/<id>.json`: the
-   variant's `fairwardgolf.price` and the product's `fairwardgolf.pricing`; the namespace is literal, see C1. Do the
-   real publish only after the owner says yes.
+   variant's `fairwardgolf.price` and the product's `fairwardgolf.pricing`; the namespace is literal, see C1. The
+   pilots publish DRAFT on their own (part E); activation only on the owner's word.
 6. **What the new category did to the rest of the shop.** First `sweep.py <shop>` (offline, seconds: the old
    products' answers and groups a resend would send, worse 0; [SWEEP.md](SWEEP.md)), then
    `store_diff.py <shop>` (read only): the published products
@@ -192,8 +199,48 @@ his to replace.
    paid variant, a lost placement: L1). Then `translation_dicts.py status`: read every new entry before the
    dictionaries' backup into git (L4; not the state backup, `state_backup.py`). Each product it lists is the owner's to decide; `--adopt` records `output` for the products the store
    already has, so a moved input alone sends nothing.
+   Steps 4-6 are the pilot of 5 of part E; then E goes on to the pilot of 30 and the report.
 7. Turn the checked products into fixtures (A13) and update the docs of each changed rule (no CHANGELOG entry: the
    owner, 2026-11-14; a release is the skill `release`).
+
+## E. The pilot cycle: 5, then 30, then the owner
+
+The owner, 2026-11-26: every new category, every shop. The agent runs the cycle itself, fixes and the rebuild of its
+own drafts included, up to the decision on the next 100; there it reports in short and waits. A pilot is not a
+check that the pipeline runs: it is where the data the pipeline misses is found, and the readers and rules are
+improved so that the next 100 come in whole (the golf shoes, 2026-11-25/26: every one of 399 pairs kept the default box,
+the review on the pilot the owner asked for never done).
+
+| Step | The agent | Ends with |
+|---|---|---|
+| E1 | The package defaults (A1) its own: the probe's cards and 5-10 pages (the sellers' stated weights and sizes, the maker's box, the description images), the central box priced on a cheap and a dear product (`shop_pricing.POLICIES[shop].quote`); the row's `approved_by` "agent", a `basis` with the sources and "to review on the pilots of 5 and 30"; a baseline (a set in a container) stays the owner's | the row, its prices in the report |
+| E2 | The pilot of 5, drafts: `job.py scroll --query "..." --category <id> <its paid flags> --publish --describe --count 5` (JOB_AGENT.md "Shorthand and per-category defaults"; the category not `reviewed`, so DRAFT), or the old mode `job.py new ... --count 5 --publish --describe` and `run` | 5 drafts or held products |
+| E3 | Every one of the 5 read by hand, every phase (the table below) | findings |
+| E4 | The fixes: a rule or a reader with its test and fixture where data is lost or wrong; the package row restamped when the real products say otherwise (A1: the table's `version` raised, the row's `defaults_version` equal to it, the pin in `test_package_measures.py`); then `run_transform.py <shop>`, `translate.py <shop> --offline` (the model only for the texts a fix changed: `--only <key>`), `describe.py <shop> --only <key>` where a description's input moved, `placement.py <shop>`, and the pilot's own drafts sent again (`publish.py <shop> --job <id>` or `--keys-file F`; never activated, so no owner's word: OWNER_RULES rule 1) | the drafts as today's build |
+| E5 | The pilot of 30, drafts | 30 drafts or held products |
+| E6 | The lens review of the 30 (skill `visual-review`; a workflow: find per card range, verify each finding from the data), every phase; the package summary over the 35 (per product the variants' `package.<field>.source`: `shop_view.py show <shop> --job <id> --raw prepared --path product.variants --json`, counted by source; the stated values against the default); the fixes as E4; every new rule run over all the category's products so far (0 live products hit, the holds it adds listed); `sweep.py <shop>`, `store_diff.py <shop>`, `translation_dicts.py status` | the drafts as today's build |
+| E7 | A short report in the chat: what was found and fixed (numbers), what is held and why, the package values and their effect on the price, and the next step to choose: the next 100, or the fixes that need the owner's yes (a resend of live products, a section, a query, a held group, activation) | the owner's answer: wait for it |
+
+The review of every phase (E3, E6): what a product loses when the reader does not catch it.
+
+| Phase | Read | A finding becomes |
+|---|---|---|
+| Listing screen | the kept cards the section's kind; the `not_taken` reasons with titles (a rule dropping what fits) | a word of `listing_title_rules.json` measured on the probe |
+| Collection | `specs_folded`, `collect_incomplete`, `options_unaligned`, `photos_incomplete`; a page whose options or rows the answer lacks | a collect again; a parser fix (server/: DEVELOPMENT_RULES.md) |
+| Description, OCR | `description_images_*` notes; a size chart, a weight or a size in the images not taken | the OCR run again; a reader (`description_measures.py` profile) |
+| Package | the five fields' sources per product (`source_stated`, `measures_from_images`, composed, `category_default`) against the weights and sizes the pages and images state; a pilot never ends with every product on the default | the reader fixed where a page states it (a fixture, `make_measures_fixture.py`); else the row restamped from the stated values (their median, the band from their spread; kinds when two kinds differ) and the drafts repriced |
+| Transform | the held codes and notes, variants left out, sizes, gender, seconds, bundles, copies | a rule with its test, the seller's pattern (skill `seller-pattern-rule`) |
+| Brand, title | `brand_source` none / title_word, a sound-spelled or invented brand, a title's lost codes, a model year or season left, the translation's failures | a dictionary entry, a title rule, a correction row |
+| Description | describe's conflicts; a claim the page does not make | the profile or the brief (skill `prompt-change`) |
+| Placement | the section, `unresolved`, the split | `placement_rules` |
+| Price | the cheapest and dearest; the box's share of the price; an outlier | the package row, the price rule (owner) |
+| The rest of the shop | `sweep.py`, `store_diff.py`: the published products a rule changed | the owner's word per product (OWNER_RULES rule 1) |
+
+The owner's word stays needed for: activation and `reviewed`, any resend of a live product, a new section or a
+change of his query or required words, a price coefficient or the duty, the A2 choices (paid variants, add-ons,
+OCR), a baseline, and a held copy's fate (OWNER_RULES rule 2). Everything else in E1-E6 is the agent's: the
+package row, rules and readers with tests, the rebuild and the resend of the pilot's own drafts, holds with a
+`hold:` reason.
 
 ## History
 

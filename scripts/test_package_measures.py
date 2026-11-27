@@ -45,7 +45,7 @@ def test_committed_table_is_valid():
 
 
 def test_no_row_stops_the_category():
-    with pytest.raises(CategoryDefaultsMissing, match="category 99999999 .그 외.*ask the operator"):
+    with pytest.raises(CategoryDefaultsMissing, match="category 99999999 .그 외.*ONBOARDING.md E1"):
         variant_measures({**specs(), "category": {"id": "99999999", "name": "그 외"}}, load_table())
     with pytest.raises(CategoryDefaultsMissing, match="category 50002788"):
         variant_measures(specs(), {"version": 0, "rows": []})

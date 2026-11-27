@@ -47,6 +47,6 @@ the stage, the evidence. `S=scripts/output/shops/<shop>`. Hand edits wait for th
    A lever that went through `run_transform.py` (brand_by_owner, specs_by_owner, a rule): run it with `--diff` (or
    `prepared_diff.py` on a copy, scripts/TRANSFORM.md "What a rule change changed") and read which other products
    moved; `prepared_diff.py ... --published-only --keys-out F` lists those in the store for the owner (rule 1).
-4. **Republish** only on the owner's word: `.venv/bin/python scripts/publish.py <shop> --only <key>` (several:
+4. **Republish** only on the owner's word (a new category's pilot draft: yours, ONBOARDING.md part E): `.venv/bin/python scripts/publish.py <shop> --only <key>` (several:
    `--keys-file F`); report the field before and after, the handle and admin link
    (`shopify_catalog.py <shop> show <key>` reads the store's side).

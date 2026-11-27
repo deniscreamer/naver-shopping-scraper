@@ -4,7 +4,7 @@ Everything the API knows about a product today, for the products of one
 category, one product at a time. When the API learns more, add it here.
 
   0. Before the run (the owner's rules, 2026-11-05): the shop's Shopify values and token (shop_stores,
-     .env), the category's package averages (category_measures.json: no row -> ask the operator, stop),
+     .env), the category's package averages (category_measures.json: no row -> write it, ONBOARDING.md E1, stop),
      the shop's catalog (shopify_catalog: what is already there) and its deferred journal (deferred_log).
   1. The category's products: the search listing for QUERY (your Chrome through
      the adapter), screened by listing_filter: ads, no name, rental, another category (exactly the leaf),
