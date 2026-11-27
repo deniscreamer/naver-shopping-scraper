@@ -299,6 +299,12 @@ def photo_only_text(review: str) -> str:
     return PHOTO_ONLY_TEXTS[int(hashlib.sha256(f"photo:{review}".encode()).hexdigest()[:8], 16) % len(PHOTO_ONLY_TEXTS)]
 
 
+# a review telling of a defect, whatever its score (2026-11-26, the stand bags' pilot of 5: a 4-star review of PXG
+# 10556770499, "지퍼하나가 상태가 안좋네요", put its close-up of the split zipper in the gallery): its photos show it
+DEFECT_RE = re.compile(r"불량|(?<![가-힣])하자(?!마자)|파손|찢어|찢겨|뜯어|터졌|터짐|고장|깨져|깨짐|기스|흠집|스크래치"
+                       r"|상태가?\s?(?:안\s?좋|별로|이상)|올\s?(?:이\s?)?나[가갔감]|실밥|마감이?\s?(?:별로|엉망|안\s?좋)")
+
+
 def review_rank(review: dict[str, Any]) -> float | None:
     """How well a review's photos may show the product, higher first; None: its photos are not for the gallery.
     Measured on the pilot (2026-11-09: 94 picks judged by eye, then 80 by four judging agents; 43 fit): the text
@@ -309,6 +315,8 @@ def review_rank(review: dict[str, Any]) -> float | None:
     photos, score = review.get("photos") or [], review.get("score")
     if not photos or not isinstance(score, (int, float)) or isinstance(score, bool) or score < 4:
         return None                             # a low score's photo may show a defect
+    if DEFECT_RE.search(str(review.get("text_ko") or review.get("text_original_ko") or "")):
+        return None                             # a defect told: its photo shows it (2026-11-26)
     grade = review.get("text_grade")
     purchase = bool(set(review.get("text_cut") or []) & PURCHASE_TOPICS)
     if len(photos) == 1 and (grade == "rating_only" or purchase):

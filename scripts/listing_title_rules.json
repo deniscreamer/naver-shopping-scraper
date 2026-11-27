@@ -4986,6 +4986,58 @@
     ]
    },
    {
+    "code": "half_bag",
+    "why": "2026-11-26 (Lightweight Stand Bags, the pilot of 5's review): a half bag (하프백, a 9-10 club carry bag without the full body: 5564175351's 'HB-10BK 원터치 스탠드 하프백', 1.02 kg, 80 cm) sold as a variant of a stand bag; a title saying it is another section of Bags.",
+    "tokens": [
+     {
+      "text": "하프백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "halfbag",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "other_item",
+    "why": "2026-11-26 (Lightweight Stand Bags, the pilot of 5's review): a pouch, a duffel or a tote sold as a variant of a stand bag (5951015402: a seller's catalog of 15 bags with pouches and duffels): another product.",
+    "tokens": [
+     {
+      "text": "파우치",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "더플",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "토트백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "슈즈백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "pouch",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "duffel",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
     "code": "kids",
     "why": "2026-11-26 (Lightweight Stand Bags, lightweight-stand-bags under bags; the probe 50002791-default-20261127T045545Z of 4 queries, 357 distinct titles classified on their sheets, research/stand-bags/cards.json, decision.md): children's bags (주니어, 키즈, 어린이, 아동): not this section.",
     "tokens": [

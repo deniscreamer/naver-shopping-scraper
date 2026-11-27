@@ -1156,3 +1156,13 @@ def test_channels_publishes_our_live_products_on_the_channels_they_miss(tmp_path
     assert "1 live products miss a channel (9: 1) (dry run" in capsys.readouterr().out
     assert PB.channels(shop, products=admin) == 0
     assert admin.asked == {"gid://a", "gid://b"} and admin.sent == [("gid://a", ["gid://shopify/Publication/9"])]
+
+
+def test_a_review_telling_of_a_defect_gives_no_gallery_photo():
+    """PXG 10556770499 (2026-11-26, the stand bags' pilot of 5): a 4-star review "지퍼하나가 상태가 안좋네요" put its
+    close-up of the split zipper in the gallery; a defect told keeps every photo of the review out, whatever its score."""
+    base = {"photos": [{"id": "a"}, {"id": "b"}], "score": 4, "text_grade": "full", "text_quality": 86}
+    assert sp.review_rank({**base, "text_ko": "제품 작고 가볍고 디자인 훌륭합니다 다만 지퍼하나가 상태가 안좋네요"}) is None
+    for text in ("박음질 실밥이 튀어나왔어요", "한쪽이 찢어져서 왔네요", "다리 고정부가 파손", "불량은 아니지만"):
+        assert sp.review_rank({**base, "text_ko": text}) is None, text
+    assert sp.review_rank({**base, "text_ko": "가볍고 튼튼해요 다리도 잘 서요"}) is not None
