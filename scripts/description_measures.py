@@ -320,9 +320,14 @@ _INCH_RE = re.compile(r"(?<!\d)" + _NUM + r"\s*(?:인치|인츠|인체|인처|in
                                                                             # bag takes (8958060680)
 _CM_RE = re.compile(_NUM + r"\s*\(?\s*(?:cm|센치|㎝)", re.I)                 # "총길이 130(cm)"
 _AXIS = r"(?:(?<![A-Za-z])[WDHL](?![A-Za-z])|가로|세로|높이|폭|길이|깊이)?\s*:?\s*"       # "W53 x D38 x H62.5 cm"
-_TRIPLE_RE = re.compile(_AXIS + _NUM + r"\s*(?:cm|mm)?\s*[x×X*]\s*" + _AXIS + _NUM + r"\s*(?:cm|mm)?\s*[x×X*]\s*"
-                        + _AXIS + _NUM + r"\s*(cm|mm|inch|인치)?", re.I)
-# no unit: cm; "Item Package Dimensions L x W x H | 48.2 x 12.7 x 8.5 inches" (typed, 10639350746)
+# a unit and an axis after each number (the stand-bag 100 review, 2026-11-27): "15.00인치 x 16.00인치 x 34.00인치"
+# (typed, OGIO 6316304324), '37" H x 9.5" W x 13" D' (8865393860), "24.5(가로) x 86(세로) x 19(폭) (cm)" (13770094271)
+_UNIT = r"(?:cm|mm|인치|inch|in\b|\")"
+_AFTER = r"(?:\s*[(（]\s*(?:가로|세로|높이|폭|길이|깊이|[WHDL])\s*[)）]|(?<=[a-z\"치])\s*[WHDL](?![A-Za-z]))?"
+_TRIPLE_RE = re.compile(_AXIS + _NUM + r"\s*" + _UNIT + "?" + _AFTER + r"\s*[x×X*]\s*" + _AXIS + _NUM + r"\s*" + _UNIT
+                        + "?" + _AFTER + r"\s*[x×X*]\s*" + _AXIS + _NUM + r"\s*(cm|mm|inch|인치|in\b|\")?", re.I)
+# no unit: cm; "Item Package Dimensions L x W x H | 48.2 x 12.7 x 8.5 inches" (typed, 10639350746); the last number
+# without a unit takes an inch unit of the first ones ("15인치 x 16인치 x 34"), else cm as before
 _SIDE_RE = re.compile(_NUM + r"\s*cm\s*\(?\s*(?:세로|가로|폭|높이|길이|깊이)", re.I)   # 91cm(세로)*31cm(폭)*40cm(가로)
 _LENGTH_CELL = re.compile(r"길\s*[이o치]|length|[같집]\s*[이에]\s*\(?\s*(?:i?nch|인치)", re.I)   # "립같이(inch)",
                                                                                          # "집이(nch)" (2026-11-11)   # OCR's 길이: "길o(inch)", "길치(인치)" (13462928946)
@@ -331,7 +336,8 @@ _LENGTH_CM = re.compile(_LENGTH_NUM.pattern + r"\s*\(?\s*(?:cm|센치|㎝)", re.
 _GLUED_RE = re.compile(r"(\.\d{2,3}?)(?=1?\d{2}\.\d)")   # two cells read as one: "116.84107.32" (5543663553)
 _LABEL_CELL = re.compile(r"[가-힣]{2}|[A-Za-z]{3}")        # a cell of words, not of values: "토크(°)", "라이각"
 # not "풀세트 패키지" / "세트 패키지": the set itself (2026-11-11); "Gross Weight 465g" of one club is under any band
-_PACKED_WORD = re.compile(r"박스|포장|택배\s*(?:무게|중량|사이즈|크기)|(?<!세트)(?<!세트\s)패키지|package|packing|gross", re.I)
+# "패킹사이즈 / 40cm x 29cm x 99cm": the carton, not the bag's body (the stand-bag 100 review, 2026-11-27, 9145583325)
+_PACKED_WORD = re.compile(r"박스|포장|택배\s*(?:무게|중량|사이즈|크기)|(?<!세트)(?<!세트\s)패키지|패킹|package|packing|gross", re.I)
 # and the notice's "크기,중량 1230mm/10kg" (상품정보고시: the product's; 2026-11-11)
 _SET_WORD = re.compile(r"(?:풀\s*세트|세트|본품|제품|상품)\s*(?:총\s*)?(?:무게|중량)|(?:set|product|item|net)\s*weight|"
                        r"크기\s*[,·/]\s*중량", re.I)
@@ -366,7 +372,10 @@ def _in(v: float, band: tuple[float, float]) -> bool:
 
 
 def _sides(triple: re.Match) -> list[float]:
-    scale = {"mm": 1, "inch": INCH_MM, "인치": INCH_MM}.get((triple.group(4) or "").lower(), 10)
+    unit = triple.group(4) or next(iter(re.findall(r"(?<=\d)\s*(인치|inch|in\b|\")", triple.group(0), re.I)), "")
+    if unit == '"' and '"' not in triple.string[triple.end(1):triple.start(2)]:
+        unit = ""        # a closing quotation mark, not inches: '"30 x 40 x 90"' is cm (the stand-bag 100 review, 2026-11-27)
+    scale = {"mm": 1, "inch": INCH_MM, "인치": INCH_MM, "in": INCH_MM, '"': INCH_MM}.get(unit.strip().lower(), 10)
     return sorted((_num(triple.group(k)) * scale for k in (1, 2, 3)), reverse=True)
 
 
@@ -466,9 +475,21 @@ def _kilograms(row: str, long_units: bool) -> list[float]:
 #   "크기 / 9.0인치/2.5kg/6구", "치수 / 9인치/5구 (약3.1 kg)", "H : 88cm ... /2.2kg"   one weight on a size row
 #   "너비 / 깊이 / 높이(후드포함) / 중량" over "22cm / 33cm / 128cm / 2.4kg"          one weight under a 중량 head
 # Not a bare headline ("2.3kg 초경량"): a comparison graphic sets the old model's weight beside it (4859779345).
-_OWN_LABELLED = re.compile(r"(?:무게|중량|weight)\s*(?:\(\s*k?g\s*\))?\s*[:：/|\-]?\s*(?:약\s*)?" + _NUM + r"\s*(kg|㎏|g)(?![a-z])", re.I)
+# The stand-bag 100 review (2026-11-27): the label with a particle, "무게는 2 KG 입니다." (4814816290), "무게가
+# 2kg(4.5파운드)에 불과한" (12978104960), never "무게가 1kg 가벼워진"; pounds after the label, "무게 | 6.5파운드" (OGIO
+# 6316304324, typed "무게" over "6.5파운드", joined_lines); a kg right after its pound value, "*5.5lbs,약 2.49kg"
+# (8865393860); one kg on a spec line of the bag's words, "5분할/7포켓/2.8kg" (Titleist 13393176274)
+_OWN_LABELLED = re.compile(r"(?:무게|중량|weight)\s*(?:가|는|은|이)?\s*(?:\(\s*k?g\s*\))?\s*[:：/|\-]?\s*(?:약\s*)?" + _NUM
+                           + r"\s*(kg|㎏|lbs?|pounds?|파운드|g)(?![a-z])"
+                           # not a difference: "무게가 1kg 가벼워진", "2kg 더 가벼워", "1.5kg 이상 줄였" (the review's reviewer)
+                           r"(?!\s*(?:더|이상|정도|가량|나|이나|씩)?\s*(?:경량화|가벼|감소|줄|낮))", re.I)
 _OWN_BEFORE = re.compile(_NUM + r"\s*(kg|㎏|g)\s*\(?[^)]{0,12}(?:무게|중량)\s*포함", re.I)
+_OWN_LB_KG = re.compile(_LB_RE.pattern + r"\s*[,/(（]?\s*(?:약\s*)?" + _NUM + r"\s*(?:kg|㎏)(?![a-z])", re.I)
 _OWN_SIZE_ROW = re.compile(r"크기|치수|사이즈|규격|size|\d\s*cm", re.I)
+# a spec line of the bag's words with the kg as a cell of its own: "5분할/7포켓/2.8kg"; not the headline "2.3Kg
+# 경량14구 넉넉한 수납" (4859779345) nor "#2.2kg초경량"
+_OWN_SPEC_ROW = re.compile(r"\d\s*(?:분할|구|포켓|way)(?![가-힣a-z])|인치|inch", re.I)
+_OWN_KG_CELL = re.compile(r"(?:^|[/|,·])\s*(?:약\s*)?" + _NUM + r"\s*(?:kg|㎏)\s*(?:$|[/|,·])", re.I)
 _OWN_HEAD = re.compile(r"(?:무게|중량|weight)", re.I)
 # the size of a stand bag in W / H / D cells: "H : 88cm W : 24cm D : 36cm" (13643783678)
 _AXIS_CELLS = re.compile(r"(?<![A-Za-z])[WHDL]\s*[:：]?\s*" + _NUM + r"\s*cm", re.I)
@@ -482,10 +503,14 @@ def _own_weight(row: str, above: str, band: tuple[float, float]) -> float | None
     if _OTHER_ITEM.search(row):
         return None
     def grams(m: re.Match) -> float:
-        return _num(m.group(1)) * (1 if m.group(2).lower() == "g" else 1000)
+        unit = m.group(2).lower()
+        return _num(m.group(1)) * (1 if unit == "g" else 1000 if unit in ("kg", "㎏") else LB_G)
     found = [grams(m) for m in _OWN_LABELLED.finditer(row)] + [grams(m) for m in _OWN_BEFORE.finditer(row)]
+    found += [_num(m.group(2)) * 1000 for m in _OWN_LB_KG.finditer(row)     # the kg of its pounds (within 10 %)
+              if abs(_num(m.group(2)) * 1000 - _num(m.group(1)) * LB_G) <= 0.1 * _num(m.group(2)) * 1000]
     kgs = [g for g in _kilograms(row, False) if _in(g, band)]
-    if not found and len(kgs) == 1 and (_OWN_SIZE_ROW.search(row) or _OWN_HEAD.search(above)):
+    if not found and len(kgs) == 1 and (_OWN_SIZE_ROW.search(row) or _OWN_HEAD.search(above)
+                                        or _OWN_SPEC_ROW.search(row) and _OWN_KG_CELL.search(row)):
         found = kgs
     found = [g for g in found if _in(g, band)]
     return max(found) if found else None
@@ -496,7 +521,8 @@ def _own_weight(row: str, above: str, band: tuple[float, float]) -> float | None
 # on a set's page it is often one club's weight (with C10 about 33 sets would take a club's weight). Only with
 # long_units (LONG_UNITS, 50002783): the W8 review (2026-11-17) found it moved two published 50002787 junior PGM
 # clubs (10259486834 $749 -> $219, 10259500908 $309 -> $209, "패키지 치수" / "100*12.5*12.5cm") outside the
-# decision; widening it to another category waits for the owner.
+# decision; widening it to another category waits for the owner. Also with own_g (50002791, the stand-bag 100
+# review, 2026-11-27): OGIO 6316304324 types "치수" over "15.00인치 x 16.00인치 x 34.00인치" and "무게" over "6.5파운드".
 _LABEL_LINE = re.compile(r"무게|중량|weight|mass|크기|치수|사이즈|길이|높이|가로|세로|폭(?![가-힣])|넓이|깊이|지름|직경|"
                          r"length|width|height|depth|diameter|dimensions?|size", re.I)
 _NOT_JOINED = re.compile(r"item\s*weight|품목\s*무게", re.I)
@@ -536,10 +562,10 @@ def read_rows(images: list[list[Any]], profile: Profile | None = None,
     cells are joined by " | ", an image's by " / "). Every value carries its row as the quote, and `image` (its
     number) or `from` TYPED. long_units: read kilograms and pounds too and join a typed label line to its value line
     (joined_lines) (LONG_UNITS: a banded category only). own_g: the item is its own container (a row's `own_box`
-    block, 50002791): its weight is read in more places (_own_weights) inside this band, and its size in W / H / D
-    cells (_AXIS_CELLS)."""
+    block, 50002791): its weight is read in more places (_own_weights) inside this band, in pounds too, its size in
+    W / H / D cells (_AXIS_CELLS), and a typed label line is joined to its value line (joined_lines)."""
     facts: dict[str, Any] = {k: [] for k in KEYS}
-    typed = joined_lines(typed) if typed and long_units else typed
+    typed = joined_lines(typed) if typed and (long_units or own_g) else typed   # own_g: "무게" over "6.5파운드"
     p = profile
     blocks: list[tuple[int | None, str, list[Any]]] = [(n, " / ", raw) for n, raw in enumerate(images)]
     for n, sep, raw in blocks + ([(None, " | ", typed)] if typed else []):
@@ -1006,12 +1032,18 @@ def own_box(facts: dict[str, Any], block: dict[str, Any]) -> dict[str, dict[str,
     """The box of an item that is its own container (a stand bag; a row's `own_box` block, 2026-11-27): the item's
     stated size + the operator's margins, the three sides whole or not at all. Only a size whose longest side is in
     the block's `long_mm` and whose other two are in `side_mm` (a stand bag's body, 80-100 cm: never the height with
-    the hood up, "H / 129cm", nor a Boston bag's 48 cm); two such sizes more than 30 mm apart (two models in one
-    listing) give nothing. A stated box (packed_boxes) goes before it (merge_fields)."""
+    the hood up, "H / 129cm", nor a Boston bag's 48 cm; centimetres marked mm read as cm); two such sizes more
+    than 30 mm apart (two models in one listing) give nothing. A stated box (packed_boxes) goes before it
+    (merge_fields)."""
     lo, hi = block["long_mm"]
     s_lo, s_hi = block["side_mm"]
-    sizes = [f for f in facts["product_sizes"]
-             if lo <= f["mm"][0] <= hi and all(s_lo <= side <= s_hi for side in f["mm"][1:3])]
+    def body(mm: list[float]) -> bool:
+        return lo <= mm[0] <= hi and all(s_lo <= side <= s_hi for side in mm[1:3])
+    # "사이즈 / 7.5인치 (29 x 90 x 19mm)": centimetres marked mm, a body of 9 cm (the stand-bag 100 review,
+    # 2026-11-27, 10326037559): read x10 when only that is a body
+    sizes = [f if body(f["mm"]) else {**f, "mm": [v * 10 for v in f["mm"]]} for f in facts["product_sizes"]
+             if body(f["mm"]) or re.search(r"\dmm", f.get("quote", "").replace(" ", ""), re.I)
+             and body([v * 10 for v in f["mm"]])]
     if not sizes:
         return {}
     first = sizes[0]["mm"]

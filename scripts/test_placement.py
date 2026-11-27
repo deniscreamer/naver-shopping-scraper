@@ -280,6 +280,16 @@ def test_a_gendered_title_beats_a_unisex_row():
     assert A.values_in(A.ATTRIBUTES["gender"], "(여)보아_골프화 핑크") == ["womens"]
 
 
+def test_a_unisex_title_beats_a_one_gender_row_where_the_caller_asks():
+    # the stand-bag 100 review, 2026-11-27: PGM 10714810361 "... 남성 여성", Renoma 10936503751 "... 남여공용", 성별 여성용
+    g, row = A.ATTRIBUTES["gender"], [{"label": "성별", "value": "여성용"}]
+    for title in ("PGM 14구 경량 스탠드백 골프백 캐디백 방수 남성 여성", "레노마골프 경량 자수 스탠드 골프백 남여공용 DM1821"):
+        assert A.decide(g, [("s1", ["블랙"])], row, title, title_unisex_over_row=True)["value"] == "unisex"
+        assert A.decide(g, [("s1", ["블랙"])], row, title)["value"] == "womens"          # off: the row, as before
+        assert A.extract([], row, title, title_unisex_over_row=True)["gender"]["value"] == "unisex"
+    assert A.decide(g, [], row, "경량 스탠드백 남성", title_unisex_over_row=True)["value"] == "conflict"   # one gender
+
+
 def test_junior_clubs_go_to_their_one_section_whatever_the_gender():
     """50002787 (the owner, 2026-11-11): single clubs and sets in Junior Golf Clubs & Sets, the store's collection
     fairwardgolf-junior-clubs-sets (tag rule fairwardgolf:leaf:junior-clubs-sets, read 2026-11-11)."""

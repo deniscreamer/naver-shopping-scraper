@@ -635,3 +635,27 @@ def test_how_the_goods_were_sourced_is_no_brand(origin):
     assert B.distributors(origin) == []
     assert B.distributors("중국산(사입/프로모어)") == ["프로모어"]
     assert B.clean("사입") is None and B.clean("국내제작") is None
+
+
+def test_a_season_phrase_names_no_firm():
+    """The stand-bag 100 review, 2026-11-27, 13488140075: 26년신상 ("new for 2026") in the 브랜드 and 제조사 rows went out as
+    the vendor "New for 26"; no firm there, the title's maker 테일러메이드 is the brand."""
+    for v in ("26년신상", "26년 신상", "2026년형 신상품", "신상", "신제품", "NEW", "New Arrivals", "26년신상."):
+        assert B.clean(v) is None, v
+    assert B.clean("Newton") == "Newton" and B.clean("뉴발란스") == "뉴발란스"
+    prepared = [{"product": {"brand_ko": b, "brand_source": "specs:브랜드"}} for b in ("26년신상", "테일러메이드")]
+    brands = B.shop_brands(prepared)
+    assert brands == ["테일러메이드"]
+    assert B.decide("26년신상 테일러메이드 프로 TF531 골프 스탠드백 경량 캐디백", None, brands, []) == \
+        ("테일러메이드", "title", [])
+
+
+def test_a_warranty_phrase_names_no_brand():
+    """The stand-bag 100 review, 2026-11-27, 13454840028: the shop brand 월드 read in the AS notice's "월드 워런티" (world
+    warranty) made a VESSEL Player 5.0 World Eagle; a brand followed by 워런티 still counts."""
+    rows = ["[AS 및 배송 안내]", "해외직구 상품은 국내 AS가 불가하며, 월드 워런티 적용 상품에 한해 예외 적용됩니다.",
+            "VVESSEL", "VESSEL"]
+    assert B.in_images(rows, ["월드"]) == {}
+    assert B.in_images(["World Warranty included"], ["World"]) == {}
+    assert B.decide("베젤 VESSEL 플레이어 5.0 스탠드백", None, ["월드"], rows) != ("월드", "images_text", [])
+    assert B.in_images(["월드 정품", "타이틀리스트 워런티"], ["월드", "타이틀리스트"]) == {"월드": 1, "타이틀리스트": 1}

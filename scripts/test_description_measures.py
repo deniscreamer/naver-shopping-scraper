@@ -1437,3 +1437,75 @@ def test_a_stated_bag_weight_goes_into_the_package_with_its_carton():
     out, _ = D.package_for(fields, facts, None, None, None, None, None, own=OWN)
     assert (out["product_weight_g"]["value"]["max"], out["package_weight_g"]["value"]["max"]) == (3450, 4450)
     assert out["package_length_mm"].get("source") == "category_default"
+
+
+# ---- the stand-bag 100 review (2026-11-27): stated values the own_box reader missed ---------------------------
+def test_a_packing_size_is_the_carton_not_the_body():
+    # 9145583325 (PGM): "패킹사이즈" is the carton; read as the body it gave 104 x 42 x 31 cm with the margins
+    facts = D.read_rows([["무게 / 3.12kg", "패킹사이즈 / 40cm x 29cm x 99cm"]], None, None, own_g=OWN_G)
+    assert [f["mm"] for f in facts["packed_boxes"]] == [[990, 400, 290]] and facts["product_sizes"] == []
+    assert D.own_box(facts, OWN) == {}
+    assert D.guess(facts)["package_length_mm"]["value"]["max"] == 990
+
+
+def test_inches_after_each_number_and_pounds_typed_under_their_labels():
+    # 6316304324 (OGIO), typed: "치수" over "15.00인치 x 16.00인치 x 34.00인치", "무게" over "6.5파운드"
+    typed = ["치수", "15.00인치 x 16.00인치 x 34.00인치", "무게", "6.5파운드", "재료"]
+    facts = D.read_rows([], None, typed, own_g=OWN_G)
+    assert [round(f["g"]) for f in facts["product_weights"]] == [2948]
+    assert [[round(v) for v in f["mm"]] for f in facts["product_sizes"]] == [[864, 406, 381]]
+    box = D.own_box(facts, OWN)
+    assert [box[n]["value"]["max"] for n in D.SIDES] == [914, 426, 401]
+    assert D.read_rows([], None, typed)["product_weights"] == []           # without the block: as before
+
+
+def test_an_inch_mark_and_an_axis_after_each_number():
+    facts = D.read_rows([], None, ['* 37" H x 9.5" W x 13" D'], own_g=OWN_G)     # 8865393860
+    assert [[round(v) for v in f["mm"]] for f in facts["product_sizes"]] == [[940, 330, 241]]
+    facts = D.read_rows([], None, ['사이즈 "30 x 40 x 90"'], own_g=OWN_G)        # a quotation mark, not inches
+    assert [f["mm"] for f in facts["product_sizes"]] == [[900, 400, 300]]
+
+
+def test_an_axis_in_parentheses_after_each_number_and_the_side_floor_of_18_cm():
+    # 13770094271: a 7.5 in top bag is 19 cm deep (side_mm 180, was 200)
+    facts = D.read_rows([], None, ["사이즈: F 24.5(가로) x 86(세로) x 19(폭) (cm)"], own_g=OWN_G)
+    assert [f["mm"] for f in facts["product_sizes"]] == [[860, 245, 190]]
+    box = D.own_box(facts, OWN)
+    assert [box[n]["value"]["max"] for n in D.SIDES] == [910, 265, 210]
+    assert OWN["side_mm"][0] == 180
+
+
+def test_centimetres_marked_mm_are_the_body():
+    # 10326037559: "사이즈 / 7.5인치 (29 x 90 x 19mm)", a 9 cm bag as written
+    facts = D.read_rows([["사이즈 / 7.5인치 (29 x 90 x 19mm)", "중량 / 약2kg"]], None, None, own_g=OWN_G)
+    box = D.own_box(facts, OWN)
+    assert [box[n]["value"]["max"] for n in D.SIDES] == [950, 310, 210]
+    facts = D.read_rows([["사이즈 / 2.9 x 9 x 1.9cm"]], None, None, own_g=OWN_G)   # a 9 cm size in cm: no box
+    assert D.own_box(facts, OWN) == {}
+
+
+@pytest.mark.parametrize("line, grams", [
+    ("무게는 2 KG 입니다.", 2000),                                              # 4814816290: a particle
+    ("무게가 2kg(4.5파운드)에 불과한 나이키 에어 맥스 라이트 백은", 2000),            # 12978104960
+    ("- 무게: 5.35파운드", 2427),                                              # 9046967363: pounds after the label
+    ("*5.5lbs,약 2.49kg", 2490),                                              # 8865393860: the kg of its pounds
+    ("단 3.5lbs(약 1.6kg)의 무게로 설계된 초경량 골프 스탠드백입니다.", 1600),        # 11882634830
+    ("5분할/7포켓/2.8kg", 2800),                                               # 13393176274 (Titleist): a spec line
+    ("14분할/9포켓/3.5kg", 3500),                                              # 13393280210
+])
+def test_more_forms_of_an_own_items_weight(line, grams):
+    facts = D.read_rows([], None, [line], own_g=OWN_G)
+    assert [round(f["g"]) for f in facts["product_weights"]] == [grams]
+    assert D.read_rows([], None, [line])["product_weights"] == []           # without the block: as before
+
+
+@pytest.mark.parametrize("line", [
+    "2.3Kg 경량14구 넉넉한 수납",           # 4859779345: a headline beside a comparison graphic, though it says 14구
+    "#투톤컬러 / #9인치 / #2.2kg초경량",     # 12868164785: the kg is not a cell of its own
+    "무게가 1kg 가벼워진 5분할",              # the difference, not the weight
+    "*5.5lbs,약 3.49kg",                    # a kg that is not its pounds'
+    "무게가 2kg 더 가벼워진 스탠드백",         # a difference with a word between
+    "무게는 1.5kg 이상 줄였습니다",
+])
+def test_not_more_forms_of_an_own_items_weight(line):
+    assert D.read_rows([], None, [line], own_g=OWN_G)["product_weights"] == []

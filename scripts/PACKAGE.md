@@ -175,7 +175,7 @@ and 15 the default weight though the pages state them. With the block, in this o
 |---|---|---|
 | `carton_g` | the carton and filling: the package weight is the item's weight + it (`_boxed`) | 1000 g |
 | `length_margin_mm`, `side_margin_mm` | the box over the item's stated body: length, each other side | 50, 20 mm |
-| `long_mm`, `side_mm` | which size is the body: its longest side, its other two (the height with the hood up, 123-129 cm, a bag laid flat, "87 x 15.5 x 35cm", a Boston bag's 48 cm: none of them) | 800-1000, 200-450 mm |
+| `long_mm`, `side_mm` | which size is the body: its longest side, its other two (the height with the hood up, 123-129 cm, a bag laid flat, "87 x 15.5 x 35cm", a Boston bag's 48 cm: none of them; a 7.5 in top bag is 19 cm deep) | 800-1000, 180-450 mm (the side 200 until the review of 100, 2026-11-27) |
 | `weight_g` | the band of the item's weight the reader takes in more places (`read_rows(own_g=...)`) | 800-4500 g |
 
 The reader then also takes the bag's weight written as "-무게3.7kg", "•무게:2kg", "다양한 포켓 구성 / 무게 / 1.4 kg", "중량 /
@@ -183,6 +183,17 @@ The reader then also takes the bag's weight written as "-무게3.7kg", "•무�
 a 중량 head, and the body in W / H / D cells ("H : 88cm W : 24cm D : 36cm"); never a bare headline ("2.3kg 초경량"),
 another item's row (보스턴, 파우치, 더플, 하프백 on it or 3 rows above) or two body sizes 30 mm apart (two models). The
 pilot: weights read 20 -> 31 of 35, boxes 1 -> 7; prices moved on 5 (Inparo SD-280K, 42 x 28 x 90 cm: $549 -> $729).
+
+The review of 100 (2026-11-27) added: "패킹사이즈 / 40cm x 29cm x 99cm" is the carton (a stated box, not the body:
+9145583325); a unit or an axis after each number of a size ("15.00인치 x 16.00인치 x 34.00인치", '37" H x 9.5" W x 13"
+D', "24.5(가로) x 86(세로) x 19(폭) (cm)"; a general reading of sizes, used by `own_box` only); centimetres marked mm
+("7.5인치 (29 x 90 x 19mm)") read as cm when only that is a body; with the block, a typed label line joined to its
+value line ("무게" over "6.5파운드", as with LONG_UNITS), pounds after the label ("- 무게: 5.35파운드"), a particle
+after the label ("무게는 2 KG 입니다.", "무게가 2kg(4.5파운드)", never "무게가 1kg 가벼워진"), the kg after its own
+pound value ("*5.5lbs,약 2.49kg", within 10 %) and one kg as a cell of a spec line of the bag's words
+("5분할/7포켓/2.8kg"; not the headline "2.3Kg 경량14구 넉넉한 수납"). On the 50002791 products collected so far:
+9 bags gain a weight none was read for (the others keep theirs), 6 boxes change (5 new, 9145583325 now its stated
+carton). Weights per variant are not bound (one bag's weight for the listing).
 
 ## Confidence
 

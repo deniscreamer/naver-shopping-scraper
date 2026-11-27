@@ -2,7 +2,7 @@
 sizes, the model only as the fallback). A text the rules turn into no Hangul at all is done without the model; a
 text with Hangul left goes to the model already partly converted ("9도SR 스틸R" -> "9°SR 스틸R").
 
-  10.5도 -> 10.5°        33인치 -> 33 in        83.82cm -> 83.82 cm
+  10.5도 -> 10.5°        33인치 -> 33 in        83.82cm -> 83.82 cm        7,5인치 -> 7.5 in
   22호 -> Size 22        22~25호 -> Size 22–25  3번 -> #3
   7개 -> 7 (the whole text) / 7 pcs           12종 -> 12 pcs           2026년형 -> 2026 model
   노브랜드: the whole text -> the tenant's name (a brand, a spec / fact value); inside a text -> removed
@@ -27,6 +27,10 @@ UNTOUCHED_KINDS = ("review",)                            # 기타 as a spec / fa
 _NUM = r"(\d+(?:\.\d+)?)"
 _FREE = r"(?![가-힣])"                             # not followed by another Hangul syllable
 _RULES: list[tuple[re.Pattern[str], str]] = [
+    # a decimal comma before a unit, one digit each side ("볼빅 7,5인치 ...": the stand-bag 100 review, 2026-11-27,
+    # 10326037559 went out "7,5 in"): "7.5 인치", before the unit rules; every category. Two digits a side stay as
+    # written: "30,31인치", "34,36,38cm", "41,46cm" are lists in the shop's texts as often as "45,75인치" is a decimal
+    (re.compile(r"(?<![\d,.])(\d),(\d)(?![\d,])(?=\s*(?:인치|cm|kg))", re.I), r"\1.\2"),
     (re.compile(_NUM + r"\s*도" + _FREE), r"\1°"),
     (re.compile(r"°(?=[A-Za-z])"), "° "),                    # 9.5°R -> 9.5° R, as 10.5도 R
     (re.compile(_NUM + r"\s*인치" + _FREE), r"\1 in"),

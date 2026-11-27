@@ -852,3 +852,102 @@ def test_the_long_sleeve_top_profile_is_the_knits_lists_with_its_own_brief():
         k: v for k, v in KNIT.items() if k != "categories"}
     brief = D.system_prompt("long_sleeve_top")
     assert "Never state a size" in brief and "Imported." in brief and "base layer" in brief
+
+
+# ---- the stand-bag 100 review, 2026-11-27 -------------------------------------------------------------------------
+
+@pytest.mark.parametrize("row", ["일본 외 제 3국", "미국외제3국", "일본 외 제3국", "미국산 외", "중국 외"])
+def test_a_third_country_with_its_spaces_is_a_hedge(row):
+    """10150247633 (MARK&LONA, "일본 외 제 3국") said "Made in Japan"."""
+    got, note = D.origin(row, [])
+    assert got is None and "hedged" in note
+
+
+def test_a_country_and_its_outer_shell_is_no_hedge():
+    assert D.origin("일본산", ["제조국: 일본 외피: 나일론"]) == ("Japan", None)
+
+
+def test_a_purchase_agency_row_names_no_country():
+    """9423158191 (Nike, the notice's 제조국 "미국구매대행"): bought in the USA, not made there."""
+    assert D.origin("미국구매대행", []) == (None, "origin not stated (agency row)")
+    assert D.origin("미국 구매대행", ["제조국: 베트남"]) == ("Vietnam", None)
+
+
+def test_an_agency_products_row_needs_a_made_in_line():
+    """9423158191, 13488140075, 13454840028 (purchase_agency): the row's country alone is where it was bought."""
+    assert D.origin("일본산", [], agency=True) == (None, "origin not stated (agency row)")
+    assert D.origin("일본산", ["좋은 가방입니다"], agency=True) == (None, "origin not stated (agency row)")
+    assert D.origin("일본산", ["제조국 : 일본"], agency=True) == ("Japan", None)
+    assert D.origin("일본산", ["Made in CHINA"], agency=True)[0] is None
+    assert D.origin("일본산", []) == ("Japan", None)                    # no agency: the row as before
+
+
+def test_the_agency_note_reaches_origin_in_the_stand_bag_profile_only():
+    fx = load("13627933340")
+    notes = [*(fx["prepared"].get("notes") or []), {"code": "purchase_agency"}]
+    clubs = {**fx["prepared"], "notes": notes}
+    prepared = {**clubs, "source": {**(fx["prepared"].get("source") or {}), "category_id": "50002791"}}
+    plain = D.packet(fx["prepared"], fx["translated"], fx["blocks"], None, "Fairward Golf")
+    got = D.packet(prepared, fx["translated"], fx["blocks"], None, "Fairward Golf")
+    assert plain["origin"] == "Japan" and got["origin"] == "Japan"      # its texts say "Made in JAPAN"
+    fx["prepared"]["product"]["description_ko"] = ""
+    got = D.packet(prepared, fx["translated"], [], None, "Fairward Golf")
+    assert got["origin"] is None and got["origin_note"] == "origin not stated (agency row)"
+    assert D.packet(clubs, fx["translated"], [], None, "Fairward Golf")["origin"] == "Japan"   # golf sets: as before
+
+
+@pytest.mark.parametrize("text", ["상품은 PXG 공식 수입사를 통해 입고된 정품 제품입니다.", "정식 병행수입한 정품입니다", "정식 수입 제품"])
+def test_a_domestic_row_beside_an_import_is_a_conflict(text):
+    """12134447554 (PXG, 국산 row, "공식 수입사를 통해 입고")."""
+    got, note = D.origin("국산", [text])
+    assert got is None and "sources disagree" in note
+
+
+@pytest.mark.parametrize("text", ["병행수입이 아닌 아디다스 코리아 상품입니다", "병행수입품이 / 아닙니다", "정식 수입되지 않은 제품의 경우",
+                                  "병행수입은공식 수입상을 통하지 않는"])
+def test_a_domestic_row_beside_a_denied_import_stays_korea(text):
+    """10715964203 ("병행수입이 아닌 아디다스 코리아 상품"): a denial is no import."""
+    assert D.origin("국산", [text]) == ("Korea", None)
+
+
+@pytest.mark.parametrize("text", ["수입원단 사용", "국내 생산 제품입니다", "이태리 수입 냉감소재를 사용", "수입자명:(주)형지글로벌",
+                                  "제조원(수입원) / 바른골프", "수입품의 경우 주문일로 부터 3주"])
+def test_a_domestic_row_beside_imported_fabric_stays_korea(text):
+    assert D.origin("국산", [text]) == ("Korea", None)
+
+
+def test_an_ocr_o_for_a_zero_is_a_given_number():
+    """5047779360: "1oo%" in the images' text; "100% polyester" was cut."""
+    numbers = D.allowed_numbers("겉감: 폴리에스터 1oo%\n무게 2.o5kg 1O0 %")
+    assert {"100", "2.05"} <= numbers
+    assert D.problems("Polyester 100%.", numbers, None) == []
+    assert D.allowed_numbers("10oz") == {"10"}                        # a unit after the digits is no zero
+    assert D._ocr_zeros("10oz") == "10oz"
+
+
+def _with_fact(fx, category, value):
+    p = json.loads(json.dumps(fx["prepared"]))
+    p["source"] = {**(p.get("source") or {}), "category_id": category}
+    p["product"]["facts"] = [{"label_ko": "사이즈", "value_ko": value}]
+    return D.packet(p, fx["translated"], fx["blocks"], None, "Fairward Golf")["message"]
+
+
+@pytest.mark.parametrize("value", ["F", "FREE", "프리", "프리사이즈"])
+def test_a_free_size_fact_is_noise_for_a_bag(value):
+    """13767342130 (ANEW): "Size: F." was the only highlight."""
+    fx = load("13627933340")
+    m = _with_fact(fx, "50002791", value)
+    assert "Fixed:" not in m and "One configuration, as the title says." in m
+
+
+def test_a_garment_keeps_its_free_size_and_a_bag_its_real_size():
+    fx = load("13627933340")
+    assert "Fixed:" in _with_fact(fx, "50002796", "F")                  # long-sleeve tops: apparel
+    assert "Fixed:" in _with_fact(fx, "50002791", "9형")
+
+
+def test_the_stand_bag_brief_names_the_legs_the_top_and_the_frame():
+    brief = D.system_prompt("stand_bag")
+    assert "스탠드, 다리, 레그, stand" in brief and "a ticked feature row" in brief
+    assert '"9-inch top", never "9-type"' in brief and "47인치" in brief
+    assert "steel frame, never \"iron\"" in brief

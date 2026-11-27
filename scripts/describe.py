@@ -106,7 +106,10 @@ PROFILES: dict[str, dict[str, Any]] = {
               "imported": True},
     "stand_bag": {"categories": ("50002791",),           # lightweight golf stand bags (2026-11-26): the weight, the
                   "lists": (("materials", "Materials & care", 4), ("highlights", "Highlights", 4)),   # top and the
-                  "imported": True},                                                 # dividers are its facts
+                  "imported": True,                                                  # dividers are its facts
+                  # a purchase agency's 원산지 row is where it was bought: stated only with a made-in line (the
+                  # stand-bag 100 review, 2026-11-27, 9423158191; describe.origin's `agency`)
+                  "agency_origin": True},
     "skirt": {"categories": ("50002802",),               # women's golf skirts and culottes (2026-11-22, as the tops)
               "lists": (("materials", "Materials & care", 4), ("highlights", "Highlights", 4)),
               "no_measures": True,
@@ -181,9 +184,23 @@ _COUNTRY_RE = re.compile("(?<![가-힣])(?:" + "|".join(map(re.escape, DOMESTIC)
                          + "|".join(
     sorted(map(re.escape, set(COUNTRIES) - set(DOMESTIC)), key=len, reverse=True)), re.I)
 _ORIGIN_RE = re.compile(r"제조국|원산지|원산국|생산국|made\s+in", re.I)
-_UNSURE_RE = re.compile(r"아닌|아님|아닙|변동|변경|상이|다를|기타|제3국|조립|등|외\s*\d+\s*(?:개\s*)?국")   # "not Japan",
+_FOREIGN_RE = "|".join(sorted(map(re.escape, (k for k in COUNTRIES if HANGUL_RE.search(k) and k not in DOMESTIC)),
+                              key=len, reverse=True))
+_UNSURE_RE = re.compile(r"아닌|아님|아닙|변동|변경|상이|다를|기타|제\s*3\s*국|조립|등|외\s*\d+\s*(?:개\s*)?국|외\s*제"
+                        rf"|(?:{_FOREIGN_RE})\s*(?:산\s*)?외(?![가-힣])")   # "not Japan",
 # "may change", "and others"; "미국 외 3국" (the USA and 3 other countries: several, never "Made in USA";
-# 2026-11-24, 4931116119)
+# 2026-11-24, 4931116119). "일본 외 제 3국" (Japan or a third country) with its spaces, "미국외제3국", "X 외" (X and
+# others): the stand-bag 100 review, 2026-11-27, 10150247633 (MARK&LONA "일본 외 제 3국" said "Made in Japan")
+# a purchase agency's row ("미국구매대행": bought in the USA) names where the reseller buys, not where it was made; a
+# seller's text on an import (수입사, 병행수입) contradicts a 국산 row: the stand-bag 100 review, 2026-11-27, 9423158191,
+# 12134447554 (PXG "공식 수입사를 통해 입고" under a 국산 row)
+_AGENCY_RE = re.compile(r"구매\s*대행")
+# Not a material's import ("이태리 수입 냉감소재", "수입산 원단"), a notice's template label ("수입자명:", "제조원(수입원)")
+# nor a policy line ("수입품의 경우"): 21 products of other categories had one beside a 국산 row (2026-11-27); nor
+# a denial ("병행수입이 아닌 아디다스 코리아 상품", "병행수입품이 / 아닙니다", "정식 수입되지 않은": 11 products, the review of
+# the stand-bag 100 review's rules, 2026-11-27, 10715964203)
+_IMPORT_RE = re.compile(r"(?:병행\s*수입|(?:공식|정식)\s*수입|수입\s*사(?=를|가|에서|의|로|\s))"
+                        r"(?![^\n.]{0,15}(?:아닌|아님|아닙|않))")
 _PRODUCED_RE = re.compile(r"에서\s*생산")                                   # "베트남, 타이완, 중국에서생산됩니다"
 ORIGIN_LABEL = "원산지"
 ORIGIN_WINDOW = 40
@@ -192,6 +209,11 @@ ORIGIN_WINDOW = 40
 _EXTRA_RE = re.compile(r"추가\s*구매|추가\s*주문|추가\s*선택|별도\s*구매|별도\s*선택|별도\s*판매|별매|사은품|증정|1\s*\+\s*1")
 _REVIEW_RE = re.compile(r"리뷰|후기|REVIEW", re.I)
 _MASKED_RE = re.compile(r"[A-Za-z0-9]{2,}\*{2,}")                       # a buyer's masked id in a review screenshot
+
+# a size fact of one free size (사이즈: F / FREE / 프리) says nothing of a product that is not worn: the stand-bag 100
+# review, 2026-11-27, 13767342130 (ANEW, "Size: F." its only highlight); a garment's profile keeps it
+_SIZE_LABEL_RE = re.compile(r"사이즈|size", re.I)
+_FREE_SIZE_RE = re.compile(r"^\s*(?:F|FREE|프리|프리\s*사이즈|free\s*size|one\s*size)\s*$", re.I)
 
 # a prepared note -> one line for the model (the transform already knows this about the listing)
 HINTS = {"paid_addons_left_out": "The seller's texts also offer paid extras: they are not part of this product.",
@@ -208,12 +230,18 @@ def _countries(text: str) -> set[str]:
     return {COUNTRIES[m.group(0).lower()] for m in _COUNTRY_RE.finditer(text or "")}
 
 
-def origin(row: str | None, texts: list[str]) -> tuple[str | None, str | None]:
+def origin(row: str | None, texts: list[str], agency: bool = False) -> tuple[str | None, str | None]:
     """(the country to state, why none is stated). One country named by the 원산지 row and by every "made in" /
     제조국 line of the texts: stated. Several, or a line that hedges ("may differ", "not Japan", "and others"): none,
-    with the reason for the report. No source names one: (None, None)."""
+    with the reason for the report. No source names one: (None, None). A row naming a purchase agency (구매대행)
+    names no country; a product sold through one (`agency`: the prepared note purchase_agency) has its row's country
+    stated only when a 제조국 / made-in line of the texts names it too, else "origin not stated (agency row)"; a 국산
+    row beside a seller's text on an import (수입사, 병행수입): sources disagree (the stand-bag 100 review, 2026-11-27)."""
     found: dict[str, set[str]] = {}
     unsure = False
+    agency_row = bool(row and _AGENCY_RE.search(row))                    # "미국구매대행": where it was bought
+    if agency_row:
+        row, agency = None, True
     if row:
         found["row"] = _countries(row)
         unsure = bool(_UNSURE_RE.search(row)) or not found["row"]         # a country this table does not know
@@ -228,6 +256,12 @@ def origin(row: str | None, texts: list[str]) -> tuple[str | None, str | None]:
         for line in (text or "").splitlines():                            # "... 베트남에서 생산됩니다" (11635694901)
             if _PRODUCED_RE.search(line):
                 found.setdefault("text", set()).update(_countries(line))
+    # 9423158191, 13488140075, 13454840028: the agency's row alone
+    if agency and not unsure and (found.get("row") or agency_row) and not found.get("text"):
+        return None, "origin not stated (agency row)"
+    if row and found.get("row") == {"Korea"} and any(m.group(0) in DOMESTIC for m in _COUNTRY_RE.finditer(row)) \
+            and any(_IMPORT_RE.search(t or "") for t in texts):          # 국산 and "수입사" (12134447554)
+        return None, "origin not stated (sources disagree: row: Korea; text: an import)"
     named = set().union(*found.values()) if found else set()
     if not named:
         return None, ("origin not stated (hedged)" if unsure else None)
@@ -309,11 +343,16 @@ def packet(prepared: dict[str, Any], translated: dict[str, Any], blocks: list[di
     seller = product.get("description_ko") or ""
     raw_images = "\n\n".join((b.get("text") or "") for b in blocks)
     row = next((s["value_ko"] for s in product.get("specs") or [] if s["label_ko"] == ORIGIN_LABEL), None)
-    country, origin_note = origin(row, [seller, raw_images])
+    prof = profile_of((prepared.get("source") or {}).get("category_id"))[1]
+    agency = "purchase_agency" in notes and bool(prof.get("agency_origin"))
+    country, origin_note = origin(row, [seller, raw_images], agency)
 
     sold: list[str] = []
     free: list[str] = []                                  # a gift fact or group is not what is sold (sp._single)
+    apparel = prof.get("no_measures")
     for f in product.get("facts") or []:
+        if not apparel and _SIZE_LABEL_RE.search(f.get("label_ko") or "") and _FREE_SIZE_RE.match(f["value_ko"]):
+            continue                                       # "Size: F" says nothing of a bag (13767342130)
         line = ": ".join(x for x in (en("fact_label", f.get("label_ko")), en("fact_value", f["value_ko"])) if x)
         (free if sp._GIFT_RE.search((f.get("label_ko") or "") + f["value_ko"]) else sold).append(line)
     picks = [f"{o['name']}: " + " | ".join(v["name"] for v in o["values"])
@@ -456,9 +495,20 @@ def _norm(number: str) -> str:
     return number.rstrip("0").rstrip(".") if "." in number else number.lstrip("0") or "0"
 
 
+# OCR reads a 0 as o / O inside a number: "1oo%" is 100 % (the stand-bag 100 review, 2026-11-27, 5047779360: "100%
+# polyester", the only material line, was cut as a number not in the source). An o between digits, or a run of them
+# after a digit before "%"
+_OCR_ZERO_RE = re.compile(r"(?:(?<=\d)|(?<=\d\.))[oO]+(?=\d|\s*%)")
+
+
+def _ocr_zeros(text: str) -> str:
+    return _OCR_ZERO_RE.sub(lambda m: "0" * len(m.group(0)), text)
+
+
 def allowed_numbers(message: str) -> set[str]:
     """The numbers the model was given (as written, "10.50" as "10.5"), the club numbers inside a range it was
     given, and 20yy for a "yy년" of the Korean."""
+    message = _ocr_zeros(message)
     out = {_norm(n) for n in _NUMBER_RE.findall(message)}
     for a, b in _RANGE_RE.findall(message):                    # "(7-9,P,S)", "#5~9": the clubs in between
         if int(a) < int(b) <= 13:

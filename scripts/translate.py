@@ -151,6 +151,17 @@ TITLE_PROMO_EN = r"Best[- ]?Sellers?|Best|Popular"
 TITLE_NEW = re.compile(r"(?<![A-Za-z])NEW(?![A-Za-z])", re.I)      # shoes (garment_title, 2026-11-26)
 BAG_ECHO = re.compile(r"(?<![A-Za-z])STAND\s?BAG(?![A-Za-z])")       # stand bags (garment_title, 2026-11-27)
 BAG_WAYS = re.compile(r"(\d{1,2})\s?(?:분할|구)(?![가-힣])")
+# stand bags, the stand-bag 100 review (2026-11-27; garment_title): a count of the designs or colours the listing
+# offers ("... 커플 11종", 6316304324 went out "... Stand Bag 11 pcs" over 11 colour variants; "전 3색상", Cobra
+# 11403888620, "- 3 Colors" over one), read on the sanitized source (12종 is "12 pcs" by then: BAG_KINDS on the Korean)
+BAG_COLOURS = re.compile(r"(?<![\dA-Za-z])(?:전\s?)?\d{1,2}\s?(?:색상|컬러|colou?rs?|가지\s?색상?)(?![A-Za-z가-힣])", re.I)
+BAG_KINDS = re.compile(r"(?<![\d.])(\d{1,2})\s?종(?![가-힣])")
+BAG_COUNT_EN = r"\(?(?:All\s)?\d{1,2}[- ]?(?:pcs|pieces?|Colou?rs?|Designs?|Styles?|Types?|Kinds?)\)?"
+# ... a season code with its year after it ("... 9형 47인치 5분할 FW 25JM", Odyssey 12624085525; TITLE_SEASON reads
+# the year before the season only) and a club length of 40 in or more ("47인치" beside the top's "9형": the longest club
+# the bag takes, never its top): freed, not taken out of the answer (25JM may be the maker's code)
+BAG_SEASON = re.compile(r"(?<![A-Za-z\d/])(?:FW|SS|F/W|S/S)\s?\d{2}[A-Z]{0,3}(?![A-Za-z\d가-힣])", re.I)
+BAG_CLUB_LENGTH = re.compile(r"(?<![\d.])(?:4\d|5\d)(?:\.\d)?\s?in(?![A-Za-z])")
 # The English words a garment title's answer loses whatever the model wrote (strip, verify): the briefs leave them
 # out and the model kept them (the golf pants pilot review, 2026-11-24). A Korean word -> its English.
 # - a word of one variant (pants, 50002801): 9부 where 롱 is sold too (6384912528: "9-Length Cropped" over 8 cuts),
@@ -474,7 +485,9 @@ def garment_title(item: dict[str, Any], category: str, product: dict[str, Any], 
     # shoes: "NEW" the brief leaves out with the model year ("풋조이 26년 NEW 퀀텀 보아 ...", 11499300628, 2026-11-26:
     # failed "codes lost: missing NEW"; 6337280783 went out as "FootJoy Women's NEW Superlites XP ..."): freed, told,
     # and the capitals taken out of the answer (never "New" itself: New Balance, New Era)
-    if category == "50001740" and (new := TITLE_NEW.findall(source)):
+    # ... and stand bags ("윈윈스타일 NEW 캐디백 ...", 4925277442, the stand-bag 100 review 2026-11-27: "codes lost:
+    # missing NEW"; "2019 NEW 온오프 ..." 4614103695, "(NEW) PXG ..." 4814816290 went out "PXG NEW ...")
+    if category in ("50001740", "50002791") and (new := TITLE_NEW.findall(source)):
         drop += new
         strip.append(r"(?-i:NEW)")
         _say(item, "NEW is the seller's season word: leave it out of the title")
@@ -491,6 +504,19 @@ def garment_title(item: dict[str, Any], category: str, product: dict[str, Any], 
             drop += ways
             strip.append(r"\d{1,2}-Way")
             _say(item, " / ".join(ways) + " are the dividers of different variants: name no divider count")
+        # the stand-bag 100 review, 2026-11-27, 6316304324 / 11403888620: a count of designs or colours (BAG_COLOURS)
+        counts = [m.group(0) for m in BAG_COLOURS.finditer(source)]
+        counts += [f"{n} pcs" for n in BAG_KINDS.findall(product.get("title_ko") or "") if f"{n} pcs" in source]
+        if counts:
+            drop += counts
+            strip.append(BAG_COUNT_EN)
+            _say(item, " / ".join(counts) + " counts the designs or colours on offer, no pieces: leave it out")
+        # the stand-bag 100 review, 2026-11-27, 12624085525: a season code with its year after it, a club length
+        if season := [m.group(0) for m in BAG_SEASON.finditer(source)]:
+            drop += season
+        if length := [m.group(0) for m in BAG_CLUB_LENGTH.finditer(source)]:
+            drop += length
+            _say(item, " / ".join(length) + " is the longest club the bag takes, not its top size")
     if item.get("pick"):
         strip.append(r"\d{1,2}[- ]?(?:Styles?|Types?|Colou?rs?|Kinds?)")
     value_codes = codes(" ".join(v for o in options for v in o.get("values_ko") or []))

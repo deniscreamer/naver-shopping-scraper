@@ -41,7 +41,11 @@ the answer needs the sources compared and the clubs added up ("Which model" belo
   inside another block stays with its label: the label is what tells the model to leave the item out), an image of
   buyers' reviews (masked ids), every line on the country of manufacture. A gift among the facts or the free
   choices is listed under "Gifts of the seller: never mention", not as what is sold. Notes the transform already made about the listing (other
-  configurations sold, paid extras, gifts, several products in one description) are passed as one line each.
+  configurations sold, paid extras, gifts, several products in one description) are passed as one line each. A
+  size fact of one free size (사이즈: F / FREE / 프리) is left out for a profile that is not a garment's (no
+  `no_measures`): "Size: F." was a stand bag's only highlight (13767342130, the stand-bag 100 review, 2026-11-27;
+  2 golf sets carry one too). An OCR o for a 0 inside a number of the packet ("Polyester 1oo%") counts as the 0 when
+  the answer's numbers are checked (5047779360: "100% polyester" had been cut).
 - **Origin** (the owner: keep the country): decided by the script, not the model. The 원산지 row and every
   "제조국 / made in" line of the texts name one country: `Origin: made in <country>`. They disagree or hedge
   ("may differ", "not Japan", "and others", "미국 외 3국": the USA and 3 other countries, 2026-11-24), or the row names a country the table does not know: `Origin: do not
@@ -53,7 +57,15 @@ the answer needs the sources compared and the clubs added up ("Which model" belo
   changed (46 live, 6 drafts) were described again. The garment countries (2026-11-21, the second windbreaker
   pilot: a care table's "미얀마" was no country, so the row's Japan stood alone and Callaway 11092759396 said "Made in
   Japan"): 미얀마, 방글라데시, 캄보디아, 스리랑카, 파키스탄, 필리핀, 튀르키예 and their English; never 인도 (인도어, indoor) nor
-  터키 (터키블루, turquoise).
+  터키 (터키블루, turquoise). The stand-bag 100 review, 2026-11-27: "일본 외 제 3국" / "미국외제3국" (a third
+  country, with or without spaces), "외 제", "<country> 외" (and others) hedge (10150247633 had said "Made in
+  Japan"); a row naming a purchase agency (구매대행) names no country; in a profile with `agency_origin`
+  (stand_bag) a product with the note purchase_agency states its row's country only when a 제조국 / made-in line of
+  the texts names it too, else `origin not stated (agency row)` (Nike 9423158191 "미국구매대행", 13488140075 and
+  13454840028 "일본산(수입산)": 24 of the stand bags, 16 of them China rows that may well be right; the other
+  categories keep their rows: there the note, mostly from the KC agency text, would have silenced 134 products); a
+  국산 row beside a seller's text on an import (공식 / 정식 수입, 수입사를, 병행수입; not a material's "수입 원단", a
+  template "수입자명" nor a denial "병행수입이 아닌") is sources disagree (PXG 12134447554; also 2 Honma golf sets, 1 pair of shoes).
 - **The answer**: JSON fields, not HTML: `conflicts` (points the sources disagree on: asked first, kept out of the
   text, shown in the report), `intro`, and the lists of the product's profile.
 - **After** (`settle`): each intro sentence and each list item is checked alone (a sentence does not end after

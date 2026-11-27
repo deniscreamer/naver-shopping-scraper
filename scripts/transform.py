@@ -16,7 +16,7 @@ naver-harvester published, and its 60 published products):
     discount").
   * SKU: the harvester's recipe (391 of 391): sha256 of {schemaVersion, sourceId, tenantOfferKey} as compact JSON
     with sorted keys; sourceId "observed:" + the Korean option tuple as compact JSON, or the product id.
-  * spec rows shown: all but 상품번호, 제조일자, Naver promotions (이벤트, 사은품: points, coupons; 11 of the 60 shop
+  * spec rows shown: all but 상품번호, 제조일자, 유효일자, Naver promotions (이벤트, 사은품: points, coupons; 11 of the 60 shop
     products showed them) and pointers ("상세페이지 참조": no value; 7 of 60).
   * variants: the category's choice (transform_shops paid_variants; off by default), made from the page's options.
   * attributes (attributes.py): what the seller states that a shop may split a category by (gender: the variants,
@@ -95,7 +95,8 @@ FORMAT = "prepared/5"           # 2 (2026-11-07): package fields may carry how /
                                  # before), a field may be `source: composed` with parts / baseline / refused
 MAX_AXES = 3                       # Shopify options per product
 MAX_IMAGES = 50
-HIDDEN_ROWS = {"상품번호", "제조일자", "이벤트", "사은품", "인증정보"}     # 인증정보: purchase-agency / KC legal text
+HIDDEN_ROWS = {"상품번호", "제조일자", "유효일자", "이벤트", "사은품", "인증정보"}   # 인증정보: purchase-agency / KC legal text
+# 유효일자: a template's "2999.12.31." shown as "Expiration Date" (the stand-bag 100 review, 2026-11-27, 13720072989)
 _AGENCY_RE = re.compile(r"\(?\s*(?:해외\s*)?구매\s*대행\s*\)?")             # 원산지 "일본산(구매대행)", "해외구매대행"
 _DELIVERY_NOTE_RE = re.compile(r"배송\s*메[세시]지")                         # a row asking for a delivery note
 # a seller's contact note, never a product (2026-11-15, the iron sets' review): a phone number or "(문의 ...)" in an
@@ -117,12 +118,22 @@ _REQUIRED_RE = re.compile(r"필수")
 # "선택2", "옵션선택", "옵션+아이언커버.하프백" (2026-11-06): the name says nothing, the values do
 _PLACEHOLDER_NAME_RE = re.compile(r"^(?:선택|옵션)(?:사항|선택)?\s*\d*(?:\s*[+/].*)?$")
 _BRACKETS_RE = re.compile(r"\s*[(\[][^()\[\]]*[)\]]")          # innermost: 원산지 "중국산((주)위스트OEM)"
+_HEDGE_BRACKET_RE = re.compile(r"\(([^()]*제\s*3\s*국[^()]*)\)")    # 원산지 "미국산(미국 외 제3국)": the bracket hedges
 _AGENCY_WORD_RE = re.compile(r"구매\s*대행")
 # a seller's numbering in front of a shown value / add-on: "선택1 9도SR", "선택3) ...", "1-1.남성 장갑", "6.쇼핑백"
 _NUMBERING_RE = re.compile(r"^(?:(?:선택|옵션|택)\s*\d+\s*[).:\-]?|\d+(?:-\d+)?[.)](?!\d))\s*")   # 택1 (2026-11-07)
 # a seller's tag in front of every value ("[당일출고] 스틸 샤프트 (S) SPEC", 8958060680) or of an option name
 # ("(선택)샤프트/드라이버/아이언", 13553116678): not part of what is chosen (2026-11-06)
 _LEAD_TAG_RE = re.compile(r"^\s*([\[(【][^\])】]{1,12}[\])】])\s*")
+# a seller's letter marker in front of every value ("A:그레이", "B:레드"; the stand-bag 100 review, 2026-11-27,
+# 12276073493): one Latin letter and ":" or ")", only when every value of the axis carries one
+_LETTER_MARK_RE = re.compile(r"^[A-Za-z]\s*[:)]\s*(?=\S)")
+# the seller's item number in a value ("Navy/싱글 「3295」", "Navy/싱글 (3295)") under an option name that says so
+# ("칼라/스트랩 「상품 번호」"; the stand-bag 100 review, 2026-11-27, 13454840028): the number goes from the shown value
+# and the mark from the name
+_ITEM_NO_NAME_RE = re.compile(r"상품\s*번호")
+_ITEM_NO_MARK_RE = re.compile(r"\s*[「(\[]\s*상품\s*번호\s*[」)\]]\s*")
+_ITEM_NO_VALUE_RE = re.compile(r"\s*(?:「\s*[A-Za-z0-9_\-]{1,12}\s*」|\(\s*\d{3,6}\s*\))\s*$")
 _CHOOSE_TAG_RE = re.compile(r"^\s*[\[(]\s*(?:선택|필수|옵션)\s*[\])]\s*")
 _COUNT_ROW_RE = re.compile(r"^\s*(\d{1,2})\s*개")                    # 총클럽개수 "3개"
 _POINTS_RE = re.compile(r"포인트|적립|쿠폰|할인|페이|마일리지|캐시")     # a promotion, not a thing in the box
@@ -168,6 +179,20 @@ _ADDON_CODE_RE = re.compile(r"^\s*\[[A-Za-z]{0,3}\d{2,6}\]\s*(?:\d{1,3}[_.)]\s*)
 # Amazon's own axis labels that name nothing ("Style Name" over "SILVER 50/54/58 Degree", 2026-11-17, the wedge
 # pilot): named from the values in translation, as 선택 / 옵션
 _AMAZON_AXIS_RE = re.compile(r"^(?:style|style name|pattern|pattern name)$", re.I)
+# an axis named by the product's own noun ("캐디백" over 블랙 / 화이트 / 실버 / 오렌지, Bushnell 13822857342; the stand-bag
+# 100 review, 2026-11-27: shown "Golf Bag: Black"): named from its values, as 선택 / 옵션. Per Naver category: in a full
+# set (50002788) a 캐디백 axis is the set's bag, its name says what the colour is of
+_PRODUCT_NOUN_AXES = {"50002791": re.compile(r"^\s*(?:캐디백|골프백|스탠드백|골프\s*가방)\s*$")}
+# a colour axis whose values are all bare numbers or codes ("01" ... "06", PGM 6035160323; the stand-bag 100 review,
+# 2026-11-27): held option_values_unnamed. Per Naver category (two of the shop's other categories have such an axis:
+# a knit 11439587112 "072 / 474", pants 8116691038 "JE8293": left to the owner's word)
+_UNNAMED_COLOUR_HELD = {"50002791"}
+# a title naming both genders or 공용 over a one-gender 성별 row: unisex, and the row shown 남녀공용 (attributes.decide's
+# title_unisex_over_row; the stand-bag 100 review, 2026-11-27: 10714810361, 10936503751). Per Naver category: the shop
+# has 12 more such products in categories split by gender (shoes 50001740, rainwear 50002816, tees 50002796, a full
+# set 50002788), where unisex changes the section or the sizes: the owner's word first
+_UNISEX_TITLE_OVER_ROW = {"50002791"}
+_BARE_CODE_RE = re.compile(r"^\s*[A-Za-z]{0,3}[-_ ]?\d{1,6}[A-Za-z]?\s*$")
 _COLOUR_AXIS_RE = re.compile(r"^(?:색상|컬러|칼라|color|colour)$", re.I)
 _COLOUR_WORD_RE = re.compile(r"블랙|화이트|레드|블루|그레이|네이비|실버|골드|핑크|그린|옐로|오렌지|퍼플|브라운|베이지|민트|"
                              r"아이보리|카키|와인|black|white|red|blue|gray|grey|navy|silver|gold|pink|green", re.I)
@@ -390,14 +415,29 @@ def _unnumbered(values: list[str]) -> list[str] | None:
         out = [_LEAD_TAG_RE.sub("", v, count=1).strip() for v in values]
     elif all(_NUMBERING_RE.match(v) for v in values):
         out = [_NUMBERING_RE.sub("", v).strip() for v in values]
+    elif all(_LETTER_MARK_RE.match(v) for v in values) \
+            and sorted(v.lstrip()[0].upper() for v in values) == [chr(65 + k) for k in range(len(values))]:
+        # "A:그레이", "B:레드" (12276073493, 2026-11-27): the markers run A, B, C ... (never sizes "S: 90", "M: 95")
+        out = [_LETTER_MARK_RE.sub("", v).strip() for v in values]
     else:
         return None
     return out if all(out) else None
 
 
+def _without_item_numbers(values: list[str]) -> list[str] | None:
+    """The values without the seller's item number at their end ("Navy/싱글 「3295」" -> "Navy/싱글"), when every one
+    carries it and they stay different; None else."""
+    out = [_ITEM_NO_VALUE_RE.sub("", v).strip() for v in values]
+    if out == values or not all(out) or len(set(out)) != len(out) \
+            or not all(_ITEM_NO_VALUE_RE.search(v) for v in values):
+        return None
+    return out
+
+
 def _axis_name(name: str) -> str:
-    """"(선택)샤프트/드라이버/아이언" -> "샤프트/드라이버/아이언"."""
+    """"(선택)샤프트/드라이버/아이언" -> "샤프트/드라이버/아이언"; "칼라/스트랩 「상품 번호」" -> "칼라/스트랩"."""
     name = _tidy(_PHONE_RE.sub("", _CONTACT_PAREN_RE.sub("", name or ""))) or _tidy(name)   # a phone note goes
+    name = _tidy(_ITEM_NO_MARK_RE.sub(" ", name)) or name                 # the item number's mark (2026-11-27)
     return _CHOOSE_TAG_RE.sub("", name) or name
 
 
@@ -1182,6 +1222,10 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
         if bare:
             shown[i] = {raw: dict(zip(values[i], bare))[v] for raw, v in shown[i].items()}
             values[i] = bare
+        plain = _without_item_numbers(values[i]) if _ITEM_NO_NAME_RE.search(names[i]) else None
+        if plain:                                  # "Navy/싱글 「3295」" -> "Navy/싱글" (13454840028, 2026-11-27)
+            shown[i] = {raw: dict(zip(values[i], plain))[v] for raw, v in shown[i].items()}
+            values[i] = plain
         plain = _unindexed(values[i]) if cat.wedge_sets else None     # "1 52 56 60 Degree Set" (C52)
         if plain:
             shown[i] = {raw: dict(zip(values[i], plain))[v] for raw, v in shown[i].items()}
@@ -1338,6 +1382,10 @@ def spec_rows(specs: dict[str, Any]) -> list[dict[str, str]]:
         label, value = r.get("label"), r.get("value") or ""
         if label == "원산지":                       # the reseller's purchase agency / importer is not an origin
             value = _AGENCY_RE.sub("", value)
+            # a bracket hedging the country is the origin: "미국산(미국 외 제3국)" -> "미국 외 제3국" (OGIO 6316304324
+            # was "Made in USA"), "일본산(일본 또는 제 3국)" (the stand-bag 100 review, 2026-11-27)
+            if hedge := _HEDGE_BRACKET_RE.search(value):
+                value = hedge.group(1)
             inner = value[value.find("("):] if "(" in value else ""
             if len(set(_COUNTRY_RE.findall(inner))) < 2:   # brackets naming 2+ countries are the parts' origins
                 while _BRACKETS_RE.search(value):
@@ -2333,7 +2381,8 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     # last stage before Shopify from them (placement.py, the owner 2026-11-08), never here
     stated = attributes.extract([(v["sku"], list(v.get("options_ko") or [])) for v in ov["variants"]],
                                 specs.get("specs") or [], details.get("name"),
-                                (line.get("listing") or {}).get("query"))
+                                (line.get("listing") or {}).get("query"),
+                                title_unisex_over_row=str(category.get("id")) in _UNISEX_TITLE_OVER_ROW)
     if details["pricing"].get("discounted_price") is None:
         held.append({"code": "price_unknown", "detail": "no product price"})
     facts = specs.get("facts") or {}
@@ -2408,6 +2457,10 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     # a 모델명 row that only repeats the title goes, with its specs_name_one_variant entry (C71, 2026-11-17)
     checked = hide_title_model_rows(checked, details["name"])
     shown_specs = checked["specs"]                  # rows true of part of the variants: bound (for_ko) or dropped
+    if any(e.get("text") == "the title's unisex over a one-gender row"
+           for e in (stated.get("gender") or {}).get("evidence") or []):
+        # the 성별 row the title overrules shows what the product is (10714810361, 2026-11-27): 남녀공용
+        shown_specs = [{**r, "value_ko": "남녀공용"} if r.get("label_ko") == "성별" else r for r in shown_specs]
     notes += checked["notes"]
     if ov.get("axes_repeated"):                     # Amazon's two axes saying one thing: the agreeing rows (C56)
         notes.append({"code": "axes_repeated", "detail": ov["axes_repeated"]})
@@ -2445,11 +2498,19 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             notes += _images_unread(images_text)
     else:                                           # no description images read: the server's statements alone
         _stated_weights(ov, details["name"], category.get("id"))
+    nouns = _PRODUCT_NOUN_AXES.get(str(category.get("id")))
     vague = [o["name_ko"] for o in ov["options"] if _PLACEHOLDER_NAME_RE.match(o["name_ko"])
+             or nouns and nouns.match(o["name_ko"])
              or _AMAZON_AXIS_RE.match(o["name_ko"]) or _axis_misnamed(o["name_ko"], o["values_ko"])
              or _COLOUR_AXIS_RE.match(o["name_ko"]) and not any(_COLOUR_WORD_RE.search(v) for v in o["values_ko"])]
     if vague:                                       # the translation names such an axis from its values
         notes.append({"code": "option_name_placeholder", "detail": ", ".join(vague)})
+    blind = [o for o in ov["options"] if str(category.get("id")) in _UNNAMED_COLOUR_HELD
+             and _COLOUR_AXIS_RE.match(o["name_ko"]) and all(_BARE_CODE_RE.match(v) for v in o["values_ko"])]
+    if blind:                                       # a colour axis of bare numbers or codes ("컬러: 01 ... 06", PGM
+        # 6035160323; the stand-bag 100 review, 2026-11-27): the buyer would choose blind; held
+        held.append({"code": "option_values_unnamed", "detail": "; ".join(
+            f"{o['name_ko']}: {', '.join(o['values_ko'][:6])}" for o in blind)[:200]})
     paid_addons = [s for s in (specs.get("options") or {}).get("supplements") or [] if (s.get("price") or 0) > 0]
     if paid_addons and not cat.paid_addons:
         notes.append({"code": "paid_addons_left_out", "detail": f"{len(paid_addons)} paid add-ons"})

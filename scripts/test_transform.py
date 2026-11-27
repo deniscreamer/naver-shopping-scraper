@@ -388,6 +388,11 @@ def test_reverify40_fixes():
     # 원산지 with brackets inside brackets; numbering on add-ons; jump links
     assert T.spec_rows({"specs": [{"label": "원산지", "value": "중국산((주)위스트OEM)"}]}) == [
         {"label_ko": "원산지", "value_ko": "중국산"}]
+    # a bracket hedging the country is the origin (OGIO 6316304324, the stand-bag 100 review, 2026-11-27)
+    assert T.spec_rows({"specs": [{"label": "원산지", "value": "미국산(미국 외 제3국)"}]}) == [
+        {"label_ko": "원산지", "value_ko": "미국 외 제3국"}]
+    assert T.spec_rows({"specs": [{"label": "원산지", "value": "일본산(일본 또는 제 3국)"}]}) == [
+        {"label_ko": "원산지", "value_ko": "일본 또는 제 3국"}]
     assert T._plain("1-1.남성 합피 장갑") == "남성 합피 장갑" and T._plain("6.쇼핑백") == "쇼핑백"
     assert T._plain("9.5도 드라이버") == "9.5도 드라이버"
 
@@ -1206,3 +1211,74 @@ def test_a_pointer_with_a_closing_period_states_nothing():
     # 2026-11-27: Bridgestone stand bag 11962029819, 제조자(사) "상세 이미지 참조." became the vendor
     assert transform._pointer("상세 이미지 참조.") and transform._pointer("상세페이지 참조") and transform._pointer("크기 항목 참조.")
     assert not transform._pointer("브리지스톤.") and not transform._pointer("상세정보 참조, 중국")
+
+
+# ---- the stand-bag 100 review (2026-11-27, 50002791) -------------------------------------------------------------
+
+def _stand_bag(name, values, title="경량 스탠드백 캐디백", rows=None):
+    """12945108653's line as a stand bag (50002791) with one option `name` of `values`, its 성별 / extra rows."""
+    def change(line):
+        line["specs"]["category"] = {"id": "50002791", "name": "캐디백", "path": [], "path_ids": []}
+        line["details"]["name"] = title
+        line["specs"]["specs"] = [r for r in line["specs"]["specs"] if r["label"] != "모델명"] + (rows or [])
+        line["specs"]["options"]["option_groups"] = [{"id": "1", "name": name, "type": "COMBINATION"}]
+        base = line["specs"]["options"]["variants"][0]
+        line["specs"]["options"]["variants"] = [{**base, "id": f"v{k}", "name": v, "options": [v], "extra_price": 0}
+                                                for k, v in enumerate(values)]
+        line["details"].pop("option_groups", None)
+        line["details"].pop("variants", None)
+    return prep("12945108653", change)
+
+
+def test_stand_bag_expiration_date_row_hidden():         # 13720072989: 유효일자 "2999.12.31." was "Expiration Date"
+    p = _stand_bag("색상", ["블랙", "화이트"], rows=[{"label": "유효일자", "value": "2999.12.31."}])
+    assert "유효일자" in transform.HIDDEN_ROWS
+    assert not any(r["label_ko"] in ("유효일자", "제조일자") for r in p["product"]["specs"])
+
+
+def test_stand_bag_letter_markers_stripped():             # 12276073493: "A:그레이", "B:레드"
+    p = _stand_bag("옵션", ["A:그레이", "B:레드"])
+    assert p["product"]["options"] == [{"name_ko": "옵션", "values_ko": ["그레이", "레드"]}]
+    assert transform._unnumbered(["A) 그레이", "B) 레드"]) == ["그레이", "레드"]
+    assert transform._unnumbered(["A:그레이", "레드"]) is None          # only when every value has one
+    assert transform._unnumbered(["S", "M"]) is None
+    assert transform._unnumbered(["S:90", "M:95", "L:100"]) is None     # sizes, not markers: they do not run A, B ...
+    assert transform._unnumbered(["B) 레드", "A) 그레이", "C) 블랙"]) == ["레드", "그레이", "블랙"]
+
+
+def test_stand_bag_product_noun_axis_is_a_placeholder():  # 13822857342: "캐디백" over colours, "Golf Bag: Black"
+    p = _stand_bag("캐디백", ["블랙", "화이트", "실버", "오렌지"])
+    assert {"code": "option_name_placeholder", "detail": "캐디백"} in p["notes"]
+    def full_set(line):                                   # a full set's 캐디백 axis is the set's bag: named so
+        line["specs"]["options"]["option_groups"] = [{"id": "1", "name": "캐디백", "type": "COMBINATION"}]
+        base = line["specs"]["options"]["variants"][0]
+        line["specs"]["options"]["variants"] = [{**base, "id": f"v{k}", "options": [v], "extra_price": 0}
+                                                for k, v in enumerate(["블랙", "화이트"])]
+    assert "option_name_placeholder" not in {n["code"] for n in prep("12945108653", full_set)["notes"]}
+
+
+def test_stand_bag_item_numbers_out_of_the_values():      # 13454840028: "Navy/싱글 「3295」", name 「상품 번호」
+    p = _stand_bag("칼라/스트랩 「상품 번호」", ["Navy/싱글 「3295」", "Navy/더블 「32912」", "Black/싱글 「3292」"])
+    assert p["product"]["options"] == [{"name_ko": "칼라/스트랩", "values_ko": ["Navy/싱글", "Navy/더블", "Black/싱글"]}]
+    assert p["product"]["variants"][0]["source_id"] == 'observed:["Navy/싱글 「3295」"]'     # the SKU keeps the raw
+    p = _stand_bag("색상(상품번호)", ["네이비 (3295)", "블랙 (3296)"])
+    assert p["product"]["options"][0]["values_ko"] == ["네이비", "블랙"]
+    p = _stand_bag("색상", ["네이비 (3295)", "블랙 (3296)"])            # no 상품 번호 in the name: kept
+    assert p["product"]["options"][0]["values_ko"] == ["네이비 (3295)", "블랙 (3296)"]
+
+
+def test_stand_bag_colour_codes_only_held():              # 6035160323: 컬러 01 .. 06, a blind choice
+    p = _stand_bag("컬러", ["01", "02", "03"])
+    assert p["status"] == "held" and {"code": "option_values_unnamed", "detail": "컬러: 01, 02, 03"} in p["held"]
+    assert "option_values_unnamed" not in {h["code"] for h in _stand_bag("컬러", ["블랙 01", "화이트 02"])["held"]}
+
+
+def test_stand_bag_unisex_title_over_a_one_gender_row():  # 10714810361 "남성 여성", 10936503751 "남여공용", row 여성용
+    for title in ("PGM 14구 경량 스탠드백 남성 여성", "레노마골프 경량 스탠드 골프백 남여공용"):
+        p = _stand_bag("색상", ["블랙", "네이비"], title=title, rows=[{"label": "성별", "value": "여성용"}])
+        gender = p["product"]["attributes"]["gender"]
+        assert gender["value"] == "unisex" and gender["evidence"][2]["source"] == "rule"
+        assert {"label_ko": "성별", "value_ko": "남녀공용"} in p["product"]["specs"]
+    p = _stand_bag("색상", ["블랙", "네이비"], title="경량 스탠드백 여성", rows=[{"label": "성별", "value": "여성용"}])
+    assert p["product"]["attributes"]["gender"]["value"] == "womens"
+    assert {"label_ko": "성별", "value_ko": "여성용"} in p["product"]["specs"]

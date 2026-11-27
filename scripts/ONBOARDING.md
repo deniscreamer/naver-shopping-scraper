@@ -267,7 +267,13 @@ a `stand_bag` describe profile. The pilot of 5 (a review telling of a defect giv
 (35 drafts, a workflow review of every phase: 54 findings, 2 refuted): the box from the bag's stated body and the bag +
 1 kg of carton (PACKAGE.md `own_box`), a closing period of a notice pointer ("상세 이미지 참조.", the server and the
 transform: it was a vendor), the year, a Latin echo and two divider counts out of a title (`translate.garment_title`),
-바퀴형 out of the feature list; held: a tour bag and a catalog of 15 bags; two brands set by the owner, Big Max and Inparo; reviewed=True on the owner's word 2026-11-27, 33 activated; the lightness words widened on his yes: 라이트웨이트, 울트라 라이트, ultralight, 가벼운, +14 light stand bags and no misfit on the probe's 357 titles).
+바퀴형 out of the feature list; held: a tour bag and a catalog of 15 bags; two brands set by the owner, Big Max and Inparo; reviewed=True on the owner's word 2026-11-27, 33 activated; the lightness words widened on his yes: 라이트웨이트, 울트라 라이트, ultralight, 가벼운, +14 light stand bags and no misfit on the probe's 357 titles). The run of 100 (2026-11-27, 104 drafts, 8 parked copies;
+a workflow review of every phase: 128 findings, 22 refuted): 22 drafts held (12 copies, 5 likely cart or backpack bags,
+a club carry case, a Mercedes-mark bag, a buyable other model, colours named 01-06); rules: a season phrase (26년신상) and
+a warranty scope word (월드 워런티) name no brand, NEW / design counts / FW 25 / a 47 in club length out of a title, the
+agency's 원산지 row and a hedge in its bracket state no "Made in", legs only when a source names them, N형 = N-inch
+top, the own_box reader takes 패킹사이즈, inches, pounds, axis labels and a particle, a 180 mm side floor, letter
+markers and item numbers out of option values, 캐디백 as an option name is a colour axis, `option_values_unnamed`).
 
 ### Learned on the first new category (50002787, 2026-11-11)
 

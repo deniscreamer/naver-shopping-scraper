@@ -164,7 +164,13 @@ Then a profile entry: `CategoryPlacement(parent="gps", split_by="device", leaves
 
 **The order of evidence is fixed for every attribute.** The variants' option values come first: a variant that
 names a value is that value, and a set naming several values is `mixed`. Then the attribute's 상품정보 rows, then
-the title. The listing query is only checked against the result (the flag `listing_disagrees`).
+the title. The listing query is only checked against the result (the flag `listing_disagrees`). Two gender rules
+put the title over the row (the evidence `rule`): a title naming one gender beats a 남녀공용 row (2026-11-09, every
+category); and, where the transform asks for it per Naver category (`title_unisex_over_row`,
+`transform._UNISEX_TITLE_OVER_ROW`: 50002791 stand bags, the 100 review, 2026-11-27), a title naming both genders or
+공용 ("남성 여성", "남여공용") beats a one-gender row: unisex, and the transform shows the 성별 row as 남녀공용. Not in the
+categories split by gender yet (shoes, rainwear, tees, full sets: 12 such products in fairwardgolf), where it would
+move a product's section or sizes: the owner's word first.
 
 **How the words match.**
 - Longest first: a matched span is not matched again, so 남녀공용 is not also read as 남녀.

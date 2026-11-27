@@ -1,17 +1,28 @@
 {
  "format": "dictionary/1",
  "kind": "option_name",
- "backed_up": "2026-11-27T09:04:10Z",
+ "backed_up": "2026-11-27T16:49:15Z",
  "entries": {
   "1. 모델명": "Model",
   "2. 색상": "Color",
   "▶ 옵션": "Bag Type",
   "가방": "Bag",
+  "골프백": "Golf Bag",
   "골프백 선택": "Golf Bag",
+  "모델": "Model",
   "색상": "Color",
+  "색상 분류": "Color",
   "색상선택": "Color",
+  "색상선택(무게2 kg)": "Color (2 kg)",
   "스타일": "Style",
+  "제품": "Product",
+  "제품선택": "Product",
+  "칼라": "Color",
+  "칼라/스트랩": "Color / Strap",
+  "칼라/스트랩 「상품 번호」": "Color / Strap",
+  "캐디백": "Color",
   "컬러": "Color",
-  "포켓수": "Divider Count"
+  "포켓수": "Divider Count",
+  "핑 후퍼 경량 스탠드백": "Color"
  }
 }

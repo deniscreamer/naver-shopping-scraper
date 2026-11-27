@@ -587,3 +587,73 @@ def test_a_stand_bag_titles_echo_year_and_two_divider_counts_are_taken_out(tmp_p
     assert "14-Way" in _answer(bag("PGM 골프 14구 초경량 스탠드백 캐디백"), "PGM 14-Way Ultra-Lightweight Stand Bag")[0]
     item = bag("타이틀리스트 2026 플레이어스 S4 골프 스탠드 캐디백 경량 블랙")
     assert _answer(item, "Titleist Players S4 Lightweight Stand Bag Black")[1] == []
+
+
+# ---- stand bags (50002791), the stand-bag 100 review (2026-11-27): real titles of fairwardgolf -----------------------
+
+def _bag(tmp_path, title_ko, options=()):
+    import translation_dicts as D
+    prepared = {"key": "fairwardgolf:naver:1:1", "source": {"category_id": "50002791"}, "notes": [],
+                "product": {"title_ko": title_ko, "options": [{"name_ko": n, "values_ko": list(v)} for n, v in options]},
+                "texts": [{"id": "title:t", "kind": "title", "ko": title_ko}]}
+    dicts = D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "none"))
+    return next(i for i in T.plan(prepared, dicts, {}, TENANT)[2] if i["kind"] == "title")
+
+
+def test_a_stand_bag_titles_new_is_a_season_word(tmp_path):
+    """4925277442 failed "codes lost: missing NEW"; 4614103695 "2019 NEW 온오프 ..."; 4814816290 "(NEW) PXG ..." went
+    out "PXG NEW Lightweight Carry Stand Bag"."""
+    item = _bag(tmp_path, "윈윈스타일 NEW 캐디백 여성 남성 경량 골프 스탠드백 (7컬러)")
+    assert _answer(item, "WINWIN STYLE Unisex Lightweight Stand Bag") == ("WINWIN STYLE Unisex Lightweight Stand Bag", [])
+    assert _answer(item, "WINWIN STYLE NEW Unisex Lightweight Stand Bag (7 Colors)")[0] == (
+        "WINWIN STYLE Unisex Lightweight Stand Bag")
+    assert "season word" in item["context"]
+    item = _bag(tmp_path, "2019 NEW 온오프 경량 스탠드백 (OB0317) 국내미출시")
+    assert _answer(item, "ONOFF Lightweight Stand Bag (OB0317)") == ("ONOFF Lightweight Stand Bag (OB0317)", [])
+    item = _bag(tmp_path, "(NEW) PXG Lightweight Carry Stand Bag (피엑스지)")
+    assert _answer(item, "PXG NEW Lightweight Carry Stand Bag")[0] == "PXG Lightweight Carry Stand Bag"
+
+
+def test_a_decimal_comma_before_a_unit_is_a_point():
+    """10326037559 "볼빅 7,5인치 경량 골프 스탠드백" went out "VOLVIK 7,5 in ..."; every category; lists stay."""
+    assert sanitize("title", "볼빅 7,5인치 경량 골프 스탠드백", TENANT, "50002791") == "볼빅 7.5 in 경량 골프 스탠드백"
+    assert sanitize("spec_value", "1,5kg", TENANT) == "1.5kg"
+    assert sanitize("addon_name", "7,5cm", TENANT, "50002788") == "7.5 cm"
+    assert sanitize("spec_value", "30,31인치", TENANT) == "30,31 in"           # two sizes, as a review writes them
+    assert sanitize("spec_value", "34,36,38cm", TENANT) == "34,36,38 cm"
+    assert sanitize("spec_value", "1,000원", TENANT) == "1,000원"
+    assert sanitize("review", "7,5인치", TENANT) == "7,5인치"
+
+
+def test_a_stand_bag_titles_count_of_designs_or_colours_is_no_piece_count(tmp_path):
+    """6316304324 "... ogio 경량 커플 11종" (11 colour variants) went out "... Stand Bag 11 pcs"; 11403888620 "...
+    프로 스탠드 캐디 백 전 3색상 909525" (one variant) "... 909525 - 3 Colors"."""
+    item = _bag(tmp_path, "오지오우드e 8 하이브리드 스탠드백 캐디백 골프백 ogio 경량 커플 11종", [("모델", ["블랙", "블루"])])
+    assert _answer(item, "OGIO Woode 8 Hybrid Unisex Lightweight Stand Bag") == (
+        "OGIO Woode 8 Hybrid Unisex Lightweight Stand Bag", [])
+    assert _answer(item, "OGIO Woode 8 Hybrid Unisex Lightweight Stand Bag 11 pcs")[0] == (
+        "OGIO Woode 8 Hybrid Unisex Lightweight Stand Bag")
+    item = _bag(tmp_path, "COBRA 코브라 골프 울트라 라이트 프로 스탠드 캐디 백 전 3색상 909525")
+    assert _answer(item, "Cobra Ultralight Pro Stand Bag 909525 - 3 Colors") == ("Cobra Ultralight Pro Stand Bag 909525", [])
+    assert _answer(item, "Cobra Ultralight Pro Stand Bag 909525 (All 3 Colors)")[0] == "Cobra Ultralight Pro Stand Bag 909525"
+    for ko in ("PGM 경량 스탠드백 5컬러", "PGM 경량 스탠드백 5COLORS", "PGM 경량 스탠드백 5가지 색상"):
+        assert _answer(_bag(tmp_path, ko), "PGM Lightweight Stand Bag")[1] == [], ko
+    # a divider count is no count of designs: it must survive
+    assert _answer(_bag(tmp_path, "PGM 14구 경량 스탠드백"), "PGM Lightweight Stand Bag")[1] == ["numbers changed: missing 14"]
+
+
+def test_a_stand_bag_titles_season_after_its_year_and_club_length_are_freed(tmp_path):
+    """12624085525 "오디세이 BG OD STN 스탠드 캐디백 9형 47인치 5분할 FW 25JM 경량 블랙" went out "... 9-Inch 5-Way
+    Lightweight Stand Bag 47 in FW 25JM": the season code with its year and the longest club (47 in) need not survive;
+    kept by the model, they stay (25JM may be a code)."""
+    title = "오디세이 BG OD STN 스탠드 캐디백 9형 47인치 5분할 FW 25JM 경량 블랙"
+    item = _bag(tmp_path, title)
+    assert _answer(item, "Odyssey BG OD STN 9-Inch 5-Way Lightweight Stand Bag Black") == (
+        "Odyssey BG OD STN 9-Inch 5-Way Lightweight Stand Bag Black", [])
+    assert _answer(item, "Odyssey BG OD STN 9-Inch 5-Way Lightweight Stand Bag 47 in FW 25JM")[0].endswith("47 in FW 25JM")
+    assert "longest club" in item["context"]
+    # the top and the dividers must still survive; a short length is no club length
+    assert _answer(item, "Odyssey BG OD STN Lightweight Stand Bag Black")[1] == ["numbers changed: missing 5, 9"]
+    assert _answer(_bag(tmp_path, "경량 스탠드백 8.5인치 블랙"), "Lightweight Stand Bag Black")[1] == [
+        "numbers changed: missing 8.5"]
+    assert T.BAG_SEASON.findall("FW 25JM SS24 S/S 26 SS 14분할") == ["FW 25JM", "SS24", "S/S 26"]

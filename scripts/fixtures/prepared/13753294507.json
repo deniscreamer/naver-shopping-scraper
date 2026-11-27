@@ -15916,10 +15916,6 @@
    {
     "label_ko": "품번",
     "value_ko": "46284-1638501381"
-   },
-   {
-    "label_ko": "유효일자",
-    "value_ko": "2999.12.31."
    }
   ],
   "personalization": [
@@ -16227,16 +16223,6 @@
    "id": "spec_value:7d7af22b678883c6",
    "kind": "spec_value",
    "ko": "46284-1638501381"
-  },
-  {
-   "id": "spec_label:e12ed379e8f783ec",
-   "kind": "spec_label",
-   "ko": "유효일자"
-  },
-  {
-   "id": "spec_value:e8444e97555e2f28",
-   "kind": "spec_value",
-   "ko": "2999.12.31."
   },
   {
    "id": "text_label:7c49fbb58905a5aa",

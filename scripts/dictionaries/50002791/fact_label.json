@@ -1,10 +1,17 @@
 {
  "format": "dictionary/1",
  "kind": "fact_label",
- "backed_up": "2026-11-27T09:04:10Z",
+ "backed_up": "2026-11-27T16:49:15Z",
  "entries": {
+  "1. 선택사항": "Option",
   "▶ 옵션": "Options",
+  "관부가세": "Duties and Taxes",
+  "모델명": "Model Name",
   "사이즈": "Size",
-  "색상": "Color"
+  "색상": "Color",
+  "색상/사이즈": "Color/Size",
+  "수량": "Quantity",
+  "컬러": "Color",
+  "패션의류/잡화 사이즈": "Clothing and Accessories Size"
  }
 }

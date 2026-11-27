@@ -526,6 +526,16 @@ def test_one_variant_named_by_its_remaining_choice_and_required_free_choice():
     assert out["seo"]["title"] == out["title"][:70]
 
 
+def test_one_variant_named_1_selection_takes_the_fallback_name():
+    # the stand-bag 100 review, 2026-11-27: Poinworth 12526867458's one label "1. 선택사항" showed "1. Selection"
+    en = lambda kind, ko: {"1. 선택사항": "1. Selection", "프리미엄 골프 스탠드백 14홀": "Premium Golf Stand Bag 14-Way",
+                           "2. 색상": "2. Color", "블랙": "Black"}[ko]
+    one = {"facts": [{"label_ko": "1. 선택사항", "value_ko": "프리미엄 골프 스탠드백 14홀"}]}
+    assert sp._single(one, en) == (sp.FALLBACK_OPTION[0], "Premium Golf Stand Bag 14-Way")
+    named = {"facts": [{"label_ko": "2. 색상", "value_ko": "블랙"}]}
+    assert sp._single(named, en) == ("Color", "Black")              # the numbering goes, the name stays
+
+
 # ---- the owner's answers after the 100-product pilot (2026-11-09) ----------------------------------------------
 
 def test_brand_spelled_as_the_vendor_whatever_the_case_in_the_title():

@@ -13,7 +13,8 @@ How a value is decided (gender, checked 2026-11-08 on the 143 trial sets):
   variants  the words in each sold variant's option values ("여성용 10.5도 L" -> womens): the most specific;
             a product whose variants carry both genders is `mixed`, each variant keeps its own value
   row       the 상품정보 row (성별: "남성용" / "여성용" / "남녀공용"): the seller's declared value for the product
-  title     words in the product's name ("여성", "레이디스", "LADIES")
+  title     words in the product's name ("여성", "레이디스", "LADIES"); where the caller asks (title_unisex_over_row,
+            per Naver category: the stand bags, 2026-11-27), a title naming both genders or 공용 beats a one-gender row
   listing   the search the product was listed under (a job's query): never decides, only checked against
 
 The variants decide when any of them names a value; a variant naming none takes the product's own value (row, else
@@ -99,8 +100,10 @@ def _covers(attr: Attribute, value: str | None) -> set[str]:
 
 
 def decide(attr: Attribute, variants: list[tuple[str, list[str]]], rows: list[dict[str, Any]], title: str | None,
-           listing_query: str | None = None) -> dict[str, Any]:
-    """variants: [(sku, option values)]; rows: the page's 상품정보 rows ({label, value}) -> the attribute."""
+           listing_query: str | None = None, title_unisex_over_row: bool = False) -> dict[str, Any]:
+    """variants: [(sku, option values)]; rows: the page's 상품정보 rows ({label, value}) -> the attribute.
+    title_unisex_over_row: a title naming both values or the one implying them (남녀공용, "남성 여성") beats a row
+    naming one (the caller's choice per Naver category: transform._UNISEX_TITLE_OVER_ROW)."""
     evidence: list[dict[str, str]] = []
     row = None
     for r in rows:
@@ -117,6 +120,11 @@ def decide(attr: Attribute, variants: list[tuple[str, list[str]]], rows: list[di
         # went to the men's section too): a seller fills the row from a template, the name is what they sell
         own = titled
         evidence.append({"source": "rule", "value": titled, "text": "the title's gender over a unisex row"})
+    elif title_unisex_over_row and row in attr.opposite and titled in attr.implies:
+        # a title naming both genders or 공용 beats a one-gender row (the stand-bag 100 review, 2026-11-27: PGM
+        # 10714810361 "... 남성 여성" and Renoma 10936503751 "... 남여공용", 성별 여성용): the row is the template's
+        own = titled
+        evidence.append({"source": "rule", "value": titled, "text": "the title's unisex over a one-gender row"})
     per_variant: dict[str, str] = {}
     for sku, values in variants:
         v = _one(attr, values_in(attr, " ".join(values)))
@@ -157,11 +165,11 @@ def decide(attr: Attribute, variants: list[tuple[str, list[str]]], rows: list[di
 
 
 def extract(variants: list[tuple[str, list[str]]], rows: list[dict[str, Any]], title: str | None,
-            listing_query: str | None = None) -> dict[str, dict[str, Any]]:
+            listing_query: str | None = None, title_unisex_over_row: bool = False) -> dict[str, dict[str, Any]]:
     """Every attribute the product states (an attribute nothing states is left out)."""
     out = {}
     for name, attr in ATTRIBUTES.items():
-        got = decide(attr, variants, rows, title, listing_query)
+        got = decide(attr, variants, rows, title, listing_query, title_unisex_over_row)
         if got["value"] != "unknown" or got["evidence"]:
             out[name] = got
     return out

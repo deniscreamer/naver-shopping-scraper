@@ -169,7 +169,9 @@ The owner's rules (`shopify_payload.py`):
 - **Options**: the translation's, without a leading "Select" and with " / " made "/" (Shopify refuses it in a name),
   values without a seller's numbering ("01.", "SPEC"); two values with one English get "(2)". A product with one
   variant is named by the seller's one remaining choice (a constant option axis the transform keeps as a fact:
-  "Set: 12 Pcs + Caddie Bag"), else `Option: Standard` (`FALLBACK_OPTION`); a gift line is not a choice.
+  "Set: 12 Pcs + Caddie Bag"), else `Option: Standard` (`FALLBACK_OPTION`); a gift line is not a choice. That
+  choice's name loses the seller's numbering ("2. 색상" -> "Color"), and a label that is only 선택사항 / 선택 / 옵션
+  after it names nothing: the fallback name ("1. 선택사항" was "1. Selection", 12526867458, 2026-11-27).
 - **Apparel sizes** (a category with `CategoryRules.sizes`, knit cardigans 50002797; the owner 2026-11-19): the size
   option is named `Size` and holds the US sizes only ("S (US 4-6)", "One Size"), never the Korean; the Korean value of
   each is kept for the owner's orders on Naver in the variant's `fairwardgolf.source` (`optionsKo` as always, plus

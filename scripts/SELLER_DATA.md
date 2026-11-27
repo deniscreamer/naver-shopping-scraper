@@ -190,6 +190,7 @@ Code: `server/naver_shopping/measures.py`, `scripts/package_measures.py`.
   a skirt-only option "레인슈트 미선택+비치마" (10608961987), a coat option "2.우비 레인코트" of a suit-or-coat listing
   (8785829126). -> the 50002816 suit kind's `match` and `unless` (category_measures.json, table version 20);
   PACKAGE.md "Table version 20".
+- Stand bags (50002791, the stand-bag 100 review 2026-11-27): a seller's packed carton is "패킹사이즈 40cm x 29cm x 99cm" (9145583325: a stated box, not the bag's body); the bag's size in inches after each number "15 x 16 x 34 in" and its weight in pounds "6.5 lb" (OGIO 6316304324); an axis in parentheses after each number "24.5(가로) x 86(세로) x 19(폭) (cm)"; a weight label with a particle "무게는 2.0kg"; a kg right after pounds "5.5lbs, 약 2.49kg"; a bag's weight alone on its spec line with no label (Titleist 13393176274) (`description_measures` own_box readers).
 
 ## Transform (scripts)
 
@@ -362,6 +363,9 @@ Code: `transform.options_and_variants`.
   fleece one slim 5979440160); "와이드 밴딩" a wide waistband on a straight leg (6689446962); "면" with a 소재 row of
   폴리에스테르, 나일론 (8269563762); "HG1712 HG1713 HG1715" with HG1713 / HG1715 sold (8772595840); "25 FW",
   "2026년 SS시즌", "인기 BEST", "2스타일", "3XL", "30-46size". `translate.garment_title` (strip), `TITLE_SIZE_RUN`.
+- A letter marker before every option value, "A:그레이" / "B:레드" (PGM 12276073493, 2026-11-27): stripped when every value has one and the letters run A, B, C ... (`transform._unnumbered`).
+- Stand bags: the option named with the shop keyword 캐디백 / 골프백 / 스탠드백 over colour values (Bushnell 13822857342) is a colour axis; the seller's item number in every value when the name marks 상품 번호 ("Navy / Single (3295)", 13454840028) is dropped from the shown value; a colour axis of bare numbers 01-06 (PGM 6035160323) holds the product `option_values_unnamed` (2026-11-27).
+- A single variant's fact label "1. 선택사항" (12526867458) is no option name: the numbering goes and a bare 선택사항 takes the fallback name (`shopify_payload._single`, 2026-11-27).
 
 ### Spec rows vs variants
 
@@ -401,6 +405,7 @@ Code: `attributes.py` (read by `placement.py`; 2026-11-08 on the 143 trial sets)
   / name / "MODEL NO : M2-0B053"), the option value only the code ("M2-0B053_아이보리"), 성별 남성용 (Master Bear
   5489884876, 2026-11-24): `transform.womens_model_sold` holds the product size_unmapped (its S went out as W28-29);
   [mens_bottoms](size_profiles/mens_bottoms.md).
+- Stand bags: a title naming both genders or 남여공용 beside a 성별 row 여성용 (10714810361, 10936503751) is unisex (`attributes`, 2026-11-27).
 
 ### Brand
 
@@ -474,6 +479,8 @@ Code: `transform.prepare`, `brand_fallback.py` (2026-11-08).
   "국산(인천광역시 서구)", 8212382236, 5932679597: the origin step's brand): no firm (`brand_fallback._ADDRESS_PART`,
   also a bare country "중국(홍콩)"); a slogan on the garment ("EVER YDAY" 11573884405, "WHITE TEE" 11442719270) is no
   brand when the shop's own label row was dropped (브랜드 카멜브리즈 / 제조사 "카멜브리즈 협력업체"): 노브랜드.
+- A purchase-agency seller writes a season phrase (26년신상, "new for 2026") in both the 브랜드 and 제조사 rows and the maker in the title (13488140075): no firm (brand_fallback `_NO_FIRM`), the title's maker is the brand (2026-11-27).
+- An AS notice in the description images "월드 워런티 적용 상품" (world warranty, 13454840028): the scope word 월드 is a shop brand's key (World Eagle) but no brand there (brand_fallback `_WARRANTY`, 2026-11-27).
 
 ### Origin, gifts, add-ons
 
@@ -493,6 +500,7 @@ Code: `transform.prepare`, `brand_fallback.py` (2026-11-08).
 - Miura (2026-11-17, C57; 11585678496, 11277694183, 11585620683, 6593061432, 11277707794): a group of paid shafts
   "웨지 샤프트" headed by free entries framed ▣ ("▣ KBS ▣", "▣ PROJECT X ▣") and "◈ 헤드만 구매 ◈": the headings are no
   add-ons, the price is the heads' (heads_only: held where paid add-ons are off, else a note). ★ and 【】 frame gifts.
+- An origin row "일본 외 제 3국" (with spaces, MARK&LONA 10150247633) is a hedge; a purchase-agency seller's 원산지 row (미국 구매대행, the country it buys from: Nike 9423158191) names no country of manufacture; 국산 beside the seller's own 수입 / 병행수입 is a conflict, but a denial ("병행수입이 아닌 아디다스 코리아 상품") is not (describe origin, 2026-11-27).
 
 ### Description cleanup
 

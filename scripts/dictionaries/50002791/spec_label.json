@@ -1,7 +1,7 @@
 {
  "format": "dictionary/1",
  "kind": "spec_label",
- "backed_up": "2026-11-27T09:04:10Z",
+ "backed_up": "2026-11-27T16:49:15Z",
  "entries": {
   "모델명": "Model Name",
   "부가기능": "Additional Features",
@@ -9,6 +9,7 @@
   "성별": "Gender",
   "소재": "Material",
   "원산지": "Country of Origin",
+  "유효일자": "Expiration Date",
   "입구분할": "Top Dividers",
   "제조사": "Manufacturer",
   "출시": "Release",

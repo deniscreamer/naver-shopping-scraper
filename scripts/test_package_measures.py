@@ -803,7 +803,7 @@ def test_the_stand_bags_own_box_block():
     row = next(r for r in load_table()["rows"] if r["category_id"] == "50002791")
     own = row["own_box"]
     assert (own["carton_g"], own["length_margin_mm"], own["side_margin_mm"]) == (1000, 50, 20)
-    assert (own["long_mm"], own["side_mm"], own["weight_g"]) == ([800, 1000], [200, 450], [800, 4500])
+    assert (own["long_mm"], own["side_mm"], own["weight_g"]) == ([800, 1000], [180, 450], [800, 4500])   # side 180: the stand-bag 100 review, 2026-11-27
     assert row["plausible"]["product_weight_g"] == {"min": 800, "max": 4500}
     for bad in ({k: v for k, v in own.items() if k != "carton_g"}, {**own, "extra": 1}, {**own, "long_mm": [1000, 800]},
                 {**own, "carton_g": 0}):

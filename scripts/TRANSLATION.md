@@ -153,6 +153,8 @@ English over git's.
 ## 3. The rules (`translation_rules.py`)
 
 - 10.5도 -> 10.5°, 33인치 -> 33 in, 22호 -> Size 22, 3번 -> #3, 7개 -> 7 / 7 pcs, 12종 -> 12 pcs, 2026년형 -> 2026 model;
+  a decimal comma of one digit a side before 인치 / cm / kg is a point first, 7,5인치 -> 7.5 in (every category, the
+  stand-bag 100 review 2026-11-27; "30,31인치", "34,36,38cm" are lists and stay);
 - 노브랜드 alone becomes the tenant's name (`Store.publisher`), and inside a text it is removed;
 - a brand of 기타 ("other") alone becomes the tenant's name as well (2026-11-11);
 - a category's own templates, if its specs glue together like golf's flex runs: `CATEGORY_RULES` (a glued spec run
@@ -299,7 +301,10 @@ files or the live dictionaries. The rounds run so far: History, below.
   before 2026-11-08 evening are the literal ones (in the texts store); they change only when translated again.
 - **Category scope.** 50002791 (Lightweight Stand Bags, 2026-11-26: its own brief; 2026-11-27, the pilot of 30: the model
   year freed by `TITLE_SIZES`, and `translate.garment_title` takes out of a title the Korean name again in Latin
-  ("...AGERN EDGE STANDBAG") and the divider counts of a listing of several ("7분할/14분할" -> none); the brief leaves
+  ("...AGERN EDGE STANDBAG") and the divider counts of a listing of several ("7분할/14분할" -> none); 2026-11-27, the
+  review of 100: NEW is a season word as for shoes (freed, taken out), a count of designs or colours on offer (N종,
+  N색상, 전 N색상, N컬러, NCOLORS, N가지 색상) is freed and taken out ("11 pcs", "- 3 Colors"), a season code with its
+  year after it ("FW 25JM") and a club length of 40 in or more ("47인치" beside the top's "9형") are freed only; the brief leaves
   헤드커버, one colour of several and a wrong 바퀴형 tick out), 50002788, 50002787 (junior clubs, 2026-11-11: its own brief; the sets' glued-flex rule, review
   aspects with a parent's words and glossary) and 50002670 (women's iron sets, 2026-11-14: its own brief; the sets'
   rule, aspects, product words and glossary) and 50002783 (wedge sets, 2026-11-15: its own brief, the sets' rule,

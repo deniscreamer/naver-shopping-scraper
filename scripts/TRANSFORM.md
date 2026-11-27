@@ -68,6 +68,7 @@ writes `status: held`, no codes of its own), not placed, not published. Where to
 | `gender_vs_sizes` | transform | shoes (`CategoryRules.shoe_sizes`, 2026-11-25): a pair stated men's sold only up to 245 mm, or stated women's sold only from 260 mm (`shoe_sizes.section_gender`): the title's or the row's gender is a keyword | look at the product; the owner's gender in `<shop>/variants_by_owner.json` is not read for shoes yet: ask the owner |
 | `size_unmapped` | transform | apparel (`CategoryRules.sizes`) and shoes (`CategoryRules.shoe_sizes`: a value with no size in mm, shoe_sizes.py): a size value with no US size, or two Korean sizes on one US size; no size option while the chart lists several sizes, or a colour and a size in one option (2026-11-20); the sizes chosen at the order (SIMPLE options of several values), not variants (2026-11-21) (apparel_sizes.py, [SIZES.md](SIZES.md)) | a brand row in the profile (`size_profiles/<profile>.json`), or the label read; never a guessed size; one product the owner answered: its `sizes` block in `<shop>/variants_by_owner.json` (2026-11-25, "The owner's sizes of one product") |
 | `variants_by_owner` | transform | the owner's `<shop>/variants_by_owner.json` names every variant of the product (2026-11-25): nothing left out | read the entry against the page: a value as Naver writes it, or without its numbering |
+| `option_values_unnamed` | transform | Lightweight Stand Bags (50002791, `transform._UNNAMED_COLOUR_HELD`; the stand-bag 100 review, 2026-11-27): a colour axis (색상 / 컬러 / 칼라 / color) whose every value is a bare number or code ("01" ... "06", PGM 6035160323): the buyer would choose blind; the detail names the axis and its values | look at the photos: the owner's names per value, or leave it held |
 | `axes_over_3` | transform | more than 3 option axes: Shopify has 3 options per product (`MAX_AXES`) | leave it held |
 | `no_images` | transform | no gallery photo saved | collect again; still none: leave it |
 | `images_over_50` | transform | more than 50 gallery photos (`MAX_IMAGES`) | leave it held; tell the owner |
@@ -223,12 +224,22 @@ published, SKUs and prices equal on 201 of 201 variants):
   `sizes_by_owner_unused` (a value the product does not show, a size beside a size option, a field no rule reads).
   The report adds "sizes_by_owner: N entries, N applied, N with a field unused, N keys not prepared". Golden fixtures
   get the owner's entries from `fixtures/owner/variants_by_owner.json`.
-- **Specs shown**: all 상품정보 rows but 상품번호, 제조일자, 이벤트, 사은품, 인증정보 (purchase-agency / KC legal text)
+- **Specs shown**: all 상품정보 rows but 상품번호, 제조일자, 유효일자 (a template's "2999.12.31.", 2026-11-27), 이벤트,
+  사은품, 인증정보 (purchase-agency / KC legal text)
   and pointers ("상세페이지 참조"); "(구매대행)" / "해외구매대행" and a bracketed importer ("일본(IRUGI SHOJI)") are
-  taken out of 원산지 (brackets inside brackets too: "중국산((주)위스트OEM)" -> "중국산"). Option names and values are
-  shown with single spaces, and without the seller's numbering ("선택1 9도SR" -> "9도SR") when every value of the
-  axis has it and the values stay different (else kept, note `option_values_duplicate`); add-on groups and names
-  without theirs ("1-1.남성 장갑"). The SKU keeps the raw tuple.
+  taken out of 원산지 (brackets inside brackets too: "중국산((주)위스트OEM)" -> "중국산"), except a bracket hedging the country, which is the origin
+  ("미국산(미국 외 제3국)" -> "미국 외 제3국", 2026-11-27). Option names and values are
+  shown with single spaces, and without the seller's numbering ("선택1 9도SR" -> "9도SR") or letter marker ("A:그레이"
+  -> "그레이", 12276073493, 2026-11-27; the letters run A, B, C ..., so "S: 90" sizes keep theirs) when every value of the axis has it and the values stay different (else kept,
+  note `option_values_duplicate`); add-on groups and names without theirs ("1-1.남성 장갑"). Under an option name
+  marking 상품 번호 ("칼라/스트랩 「상품 번호」", 13454840028, 2026-11-27) the seller's item number leaves every value
+  ("Navy/싱글 「3295」", "(3295)" -> "Navy/싱글") and the mark the name, when the values stay different. The SKU keeps
+  the raw tuple.
+- **Stand bags (50002791, the 100 review, 2026-11-27)**: an axis named by the product's noun (캐디백 / 골프백 /
+  스탠드백 / 골프가방: Bushnell 13822857342 "Golf Bag: Black") is a placeholder name (`transform._PRODUCT_NOUN_AXES`;
+  not in a full set, where 캐디백 is the set's bag); a colour axis of bare numbers or codes ("01" ... "06") is held
+  `option_values_unnamed`; a title naming both genders or 공용 over a one-gender 성별 row is unisex and the row is
+  shown 남녀공용 (`transform._UNISEX_TITLE_OVER_ROW`, [PLACEMENT.md](PLACEMENT.md) "The order of evidence").
 - **Rows that are not versions**: a row asking for a delivery message (배송메세지) is dropped, and so is a row or an
   add-on choice that only asks the buyer to contact the seller (문의, 연락주세요, 톡톡 with no club, shaft or count:
   2026-11-15); a phone number or a "(문의...)" note leaves an option name, and a seller's note leaves the values
@@ -501,7 +512,9 @@ link. The report says how many were dropped. The step is pure: same products in,
   2026-11-20, now their shops' labels). Before 2026-11-21 such a product was 노브랜드, the house vendor. Never for the
   clubs (no own_brand_wordmark: 재팬도코도코 and the other club resellers stay none). `clean` reads no brand in
   Naver's 자체제작 (상품) (made in-house: the vendor "In-House Product", 7309508576) and 자체브랜드, nor in how the goods
-  were sourced (사입 / 수입 / 국내제작: "중국산(사입)" was the brand 사입 of 4954391160, 2026-11-24), cuts a trailing OEM / ODM from a
+  were sourced (사입 / 수입 / 국내제작: "중국산(사입)" was the brand 사입 of 4954391160, 2026-11-24), nor in a season /
+  new-arrival phrase (26년신상, 2026년형 신상품, 신제품, a bare NEW: "New for 26" on a TaylorMade bag, 13488140075,
+  2026-11-27; the title's maker then), cuts a trailing OEM / ODM from a
   label ("필드가OEM": Fieldga) and gives none for a company's ("주식회사 더살림oem": a contract factory; its 제조사 row
   stays a fact, `contract_factory`), reads no importer in a Chinese making city of the origin's brackets ("중국(광저우)":
   Guangzhou, 2026-11-22, `_CN_PLACE`), and drops the factory in brackets after 협력업체 ("벤시아 협력업체(PG골프클럽)": 벤시아); a brand row the reseller rule below dropped
@@ -534,7 +547,9 @@ link. The report says how many were dropped. The step is pure: same products in,
   shop brand counts in the title only where a word starts, as in the images (이디스 was read in 레이디스, 2026-11-15),
   and one of one syllable also ends its word or goes on with 골프 (핑 was read in 핑크 "pink": 15 chippers and the junior
   set 13848307900 as PING, 2026-11-18; 핑골프, 핑 치퍼, 핑(골프) still match); a Latin brand read once in the images,
-  inside an all-Latin phrase of 3+ words, is a slogan ("PRECISE AIMING FEEDBACK" on a XINGGM set, 2026-11-15), and a
+  inside an all-Latin phrase of 3+ words, is a slogan ("PRECISE AIMING FEEDBACK" on a XINGGM set, 2026-11-15), the
+  scope word of an after-sales phrase in the images is no brand (월드 / world / 글로벌 / 평생 ... before 워런티 / warranty:
+  the shop brand 월드 in "월드 워런티" made a VESSEL bag World Eagle, 13454840028, 2026-11-27; "타이틀리스트 워런티" counts), and a
   page's section heading is no Latin brand phrase ("DETAILED DESIGN", 2026-11-18). A description Brand row gives the
   name as `clean` keeps it ("Money Club Chipper" is Money Club; a Korean name it would shorten at another word stays
   whole, 2026-11-18). "<shop>협력사" with a trailing "co." / ".co." is a partner phrase too, and as the brand row of

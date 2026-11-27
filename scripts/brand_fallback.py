@@ -125,7 +125,10 @@ _NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명
                       r"|자체\s*브랜드"
                       # how the goods were sourced, never a firm (2026-11-24, Golf Pants: promore's 원산지 "중국산(사입)",
                       # wholesale-bought, became the brand 사입 of 4954391160; 수입 imported, 국내제작 made in Korea)
-                      r"|사입|수입|국내\s*제작)$")
+                      r"|사입|수입|국내\s*제작"
+                      # a season / new-arrival phrase (the stand-bag 100 review, 2026-11-27, 13488140075: 26년신상, "new
+                      # for 2026", in the 브랜드 and 제조사 rows went out as the vendor "New for 26" on a TaylorMade bag)
+                      r"|(?:\d{2,4}\s*(?:년\s*)?(?:형\s*)?)?(?:신상(?:품)?|신제품|new(?:\s*arrivals?)?))$")
 # a maker's "OEM" / "ODM" (2026-11-21): glued to a label it is that label's contract making ("필드가OEM": Fieldga,
 # 10780424641); after a company's form (주식회사, (주), ㈜) it is the contract factory, no brand ("주식회사 더살림oem" became
 # the vendor "The Sallim OEM" of 수아무아's 10669638240)
@@ -367,8 +370,15 @@ def _count(text: str, spaced: str, brand: str) -> int:
     return len(pattern.findall(spaced)) if pattern else text.count(_norm(brand))
 
 
+# an after-sales phrase: its scope word is no brand (the stand-bag 100 review, 2026-11-27, 13454840028: the shop brand
+# 월드 read in "월드 워런티 적용 상품" (world warranty) of the AS notice made a VESSEL bag World Eagle); a brand followed by
+# 워런티 ("타이틀리스트 워런티") still counts
+_WARRANTY = re.compile(r"(?i)(?<![가-힣a-z])(?:월드|world|글로벌|global|인터내셔[널날]|international|국제|평생|lifetime"
+                       r"|리미티드|limited)\s*(?:워런티|워런트|warranty|warrant)")
+
+
 def _counts(rows: list[str], brands: list[str]) -> dict[str, int]:
-    spaced = _ADDRESS.sub(" ", " ".join(rows)).casefold()
+    spaced = _WARRANTY.sub(" ", _ADDRESS.sub(" ", " ".join(rows))).casefold()
     text = _norm(spaced)
     return {b: _count(text, spaced, b) for b in brands if _norm(b)}
 

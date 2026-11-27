@@ -434,6 +434,12 @@ def _value(text: str) -> str:
     return _NUMBERED_RE.sub("", text or "").strip()
 
 
+# a one-variant product's label "1. 선택사항" shown as "1. Selection" (Poinworth 12526867458; the stand-bag 100 review,
+# 2026-11-27): the seller's numbering goes from the name, and a bare 선택사항 / 선택 / 옵션 names nothing (the fallback)
+_NAME_NUMBER_RE = re.compile(r"^\s*\d{1,2}[.)](?!\d)\s*")
+_CHOICE_LABEL_RE = re.compile(r"^(?:선택|옵션)(?:사항|선택)?\s*\d*$")
+
+
 def _single(product: dict[str, Any], en: English) -> tuple[str, str]:
     """The name and value of a product's one variant: what the seller's one remaining choice says (a constant
     option axis, kept by the transform as a fact: "세트: 12P + 캐디백", when the others were sold out or cost
@@ -445,8 +451,10 @@ def _single(product: dict[str, Any], en: English) -> tuple[str, str]:
         return "Size", fact["us"]                   # beside other facts (원단, 컬러: 5365000791, 2026-11-21: "Standard")
     if len(facts) == 1:
         value = _value(en("fact_value", facts[0]["value_ko"]))
-        name = en("fact_label", facts[0]["label_ko"]).strip() if facts[0].get("label_ko") else ""
-        name = _SELECT_RE.sub("", _OPTION_NAME_RE.sub("/", name)).strip()
+        label_ko = _NAME_NUMBER_RE.sub("", facts[0].get("label_ko") or "").strip()
+        name = en("fact_label", facts[0]["label_ko"]).strip() if label_ko \
+            and not _CHOICE_LABEL_RE.match(label_ko) else ""
+        name = _SELECT_RE.sub("", _OPTION_NAME_RE.sub("/", _NAME_NUMBER_RE.sub("", name))).strip()
         if value:
             return (name or FALLBACK_OPTION[0])[:OPTION_VALUE_MAX], value[:OPTION_VALUE_MAX]
     return FALLBACK_OPTION
