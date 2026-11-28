@@ -259,7 +259,10 @@ image's, or by the value alone; the package 3 (`composed`, "product weight + car
 g, 34 x 23 x 13 cm) is kept: the pairs' median is men's 816 g, women's 653 g, and only the box moves a price (any
 package up to 2.5 kg bills at the default box's 2.5 kg step). On the shop's 399 collected shoes 81 read a pair (10608981549
 850 g, package 1350 g; 13651508341 940 g for every size; 4873054855 738 g as a pair; 2533527296 440 g); 8752851422
-and 6520680652 keep the default. Table version 23, the row's `defaults_version` 21 (no number moved).
+and 6520680652 keep the default. Table version 23, the row's `defaults_version` 21 (no number moved). The box
+2026-11-27 (the owner had none to measure: "find the usual one online"): six retail package sizes of men's BOA
+spikeless shoes, median 37 x 23 x 14 cm (was 34 x 23 x 13); its volumetric 2.38 kg bills at the same 2.5 kg step, so
+no price moves. Table version 24, `defaults_version` 24 (the row's basis lists the six).
 
 ## Confidence
 

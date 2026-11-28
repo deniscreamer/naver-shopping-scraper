@@ -1233,6 +1233,38 @@ def test_a_colour_suffix_on_a_long_code_is_a_same_item_candidate():
     assert five["codes"] == seven["codes"] == {"MP1300LK"} and D.same_item(five, seven) is None
 
 
+def test_one_store_relisting_one_code_with_the_very_same_variants_is_a_same_item_candidate():
+    """2026-11-27, the owner after the stand-bag run of 100 ("only the most obvious"): Bridgestone's importer store
+    100585071 lists CB2525 twice, 11962029819 with the code in the title, 13645328525 without it, both descriptions
+    naming CB2525, the same three colours, the same price, a photo in common. A hold candidate, never a decision."""
+    colours = [["그레이카모플라주(오늘출고)"], ["블랙(오늘출고)"], ["블랙카모플라주(오늘출고)"]]
+
+    def bag(pid, name, photos, price=232_000, values=colours, channel=100585071, text="브리지스톤 스탠드백 CB2525"):
+        r = record(channel, pid, name, price=price, photos=photos, values=values, category="50002791")
+        r["details"] = {"description": {"text": text}}
+        return D.entry(r, "published")
+    coded = bag(11962029819, "25년 브리지스톤 스탠드백 CB2525 경량 석교상사 그레이카모플라주", ("s1", "c1"))
+    plain = bag(13645328525, "[석교정품]브리지스톤 경량 스탠드백 블랙", ("s1", "p2"))
+    assert plain["codes"] == set() and plain["dcodes"] == {"CB2525"}
+    assert D.same_item(plain, coded) == D.same_item(coded, plain) == "store code CB2525"
+    d = D.Index([coded]).decide({**plain, "status": "job"})
+    assert d["decision"] is None and d["same_item"] == [coded["key"]]
+    # another colour set (a colour or size more or less), a price 10%+ apart, no photo in common, another store:
+    # each stays apart (the PGM putter 블루 7286017029 / 8012260503, the Cleveland large set 12776657884 at 2x)
+    assert D.same_item(bag(1, "브리지스톤 스탠드백 블랙", ("s1",), values=colours[:2]), coded) is None
+    assert D.same_item(bag(2, "브리지스톤 스탠드백 블랙", ("s1",), price=262_000), coded) is None
+    assert D.same_item(bag(3, "브리지스톤 스탠드백 블랙", ("x9",)), coded) is None
+    assert D.same_item(bag(4, "브리지스톤 스탠드백 블랙", ("s1",), channel=1), coded) is None
+    # one variant only says nothing; the code named in neither listing's own title, model or 품번 is no match
+    one = [["블랙"]]
+    assert D.same_item(bag(5, "스탠드백", ("s1",), values=one), bag(6, "스탠드백 CB2525", ("s1",), values=one)) is None
+    assert D.same_item(bag(7, "스탠드백 블랙", ("s1",)), plain) is None
+    # a combination set's code names one part (Callaway ELYTE / 퀀텀 + JPX925, 13562655064 / 13622450682)
+    combo = [["인기조합"], ["배송메세지기입"]]
+    assert D.same_item(bag(8, "(캘러웨이) ELYTE + JPX925 조합 클럽세트(남성)", ("s1",), values=combo, price=2_150_000),
+                       bag(9, "캘러웨이 퀀텀 + JPX925 조합 클럽세트 남성", ("s1",), values=combo, price=2_150_000)) is None
+
+
 def test_the_pumbeon_spec_row_is_a_style_code_hyphens_joined():
     """2026-11-27, the run of 100 stand bags: sellers write the maker's part number in the 품번 row only (Inparo
     12209887968 SB-28K; Adidas Retrocross Gripmore BOA 13735186974 / 13635116576, both HP3717, titles reworded)."""

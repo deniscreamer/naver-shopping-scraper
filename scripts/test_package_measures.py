@@ -212,7 +212,7 @@ def test_baselines_block_is_optional_and_the_operators():
     table = load_table()
     block = table["rows"][0]["baselines"]
     assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
-    assert table["version"] == 23 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    assert table["version"] == 24 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
     check_row(ROW)                                                    # a row without the block: no composition
     check_row({**ROW, "baselines": BASE})
 
@@ -318,12 +318,13 @@ def test_a_restamped_default_carries_its_rows_version_not_the_tables():
     narrower, the table 20; a kind's words only, no number moved, so its defaults_version stays 19 (as version 10's
     bands): no product is restamped for the version alone. 2026-11-25: the row of 50001740 (golf shoes) to 21, its own
     defaults_version 21. 2026-11-26: the row of 50002791 (lightweight stand bags) to 22. 2026-11-27: the shoes' `pair_of`
-    block (no number moved) to 23, 50001740's defaults_version stays 21."""
+    block (no number moved) to 23, 50001740's defaults_version stays 21. 2026-11-27: the shoes' box from retail package
+    sizes (37 x 23 x 14 cm) to 24, 50001740's defaults_version 24."""
     table = load_table()
-    assert table["version"] == 23 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
+    assert table["version"] == 24 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
         "50002788": 7, "50002787": 7, "50002670": 7, "50002783": 7, "50002784": 9, "50002797": 12, "50002798": 13,
         "50002799": 14, "50002796": 15, "50002802": 16, "50002801": 17, "50002816": 19,
-        "50001740": 21, "50002791": 22}
+        "50001740": 24, "50002791": 22}
     assert row_version(table, JUNIOR) == 7 and row_version({"version": 9}, {k: v for k, v in JUNIOR.items()
                                                                             if k != "defaults_version"}) == 9
     for bad in (0, "7", 7.0, True):
@@ -773,15 +774,16 @@ def test_a_rainwear_search_keyword_is_no_suit(title, variant, kind):
 
 def test_the_golf_shoes_row():
     """50001740 (2026-11-25, BOA spikeless golf shoes; the owner: yes to the agent's box, reviewed after the pilot): one
-    pair in the maker's shoe box, 34 x 23 x 13 cm, 1.3 kg with the box. Appended last (ONBOARDING A1)."""
+    pair in the maker's shoe box, 1.3 kg with the box. Appended last (ONBOARDING A1). The box 2026-11-27 from six retail
+    package sizes (the owner had none to measure): 37 x 23 x 14 cm, was 34 x 23 x 13."""
     row = load_table()["rows"][-2]
     assert row["category_id"] == "50001740"
     check_row(row)
     got = {f: (v["low"], v["central"], v["high"]) for f, v in row["fields"].items()}
     assert got == {"product_weight_g": (600, 800, 1100), "package_weight_g": (1000, 1300, 1600),
-                   "package_length_mm": (310, 340, 360), "package_width_mm": (200, 230, 250),
-                   "package_height_mm": (110, 130, 140)}
-    assert (row["approved_by"], row["approved_at"], row["defaults_version"]) == ("owner", "2026-11-25", 21)
+                   "package_length_mm": (340, 370, 390), "package_width_mm": (200, 230, 280),
+                   "package_height_mm": (120, 140, 150)}
+    assert (row["approved_by"], row["approved_at"], row["defaults_version"]) == ("owner", "2026-11-25", 24)
     assert "kinds" not in row and "baselines" not in row
 
 

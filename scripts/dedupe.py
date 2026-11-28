@@ -164,6 +164,8 @@ def entry(line: dict[str, Any], status: str = "job", catalogs: dict[str, str | N
                                                                                        else ""),
             "codes": style_codes(((specs.get("facts") or details.get("facts") or {}).get("model_name") or {})
                                  .get("value") or details.get("model_name"), name) | pumbeon_codes(specs),
+            # the style codes the description text names: a relisting in one store (same_item, 2026-11-27)
+            "dcodes": style_codes(None, ((details.get("description") or {}).get("text")) or ""),
             # the title's raw tokens: a colour suffix of a style code must be one of them (same_item, 2026-11-27)
             "twords": set(TOKEN.findall(unicodedata.normalize("NFKC", name or "").lower())),
             "ocodes": option_codes(variants, parts[0] if len(parts) > 3 else "", leaf),
@@ -319,11 +321,13 @@ def _ages(title: str) -> set[str]:
 
 
 def same_item(a: dict[str, Any], b: dict[str, Any], loose: set[str] | frozenset[str] = frozenset()) -> str | None:
-    """Why a and b look like one item ("catalog <id>", "code <code>", "option code <code>"), None when they do not:
+    """Why a and b look like one item ("catalog <id>", "code <code>", "store code <code>", "option code <code>"), None
+    when they do not:
     the same category, another store, the price guard, the same catalog (not a `loose` one) or a style code in common
     (the 품번 row counts; one code may be the other plus a colour suffix that is a word of the other's title, 2026-11-27;
-    the same brand when both name one), or an apparel article code in both products' option values (the same brand
-    when both name one; one store too), and no clash of club kind, hand, gender, length or bag between the titles."""
+    the same brand when both name one), or in one store a code both listings name with the very same variants, a
+    close price and a photo in common (_same_store_relisting, 2026-11-27), or an apparel article code in both products'
+    option values (the same brand when both name one; one store too), and no clash of club kind, hand, gender, length or bag between the titles."""
     if a.get("category") != b.get("category") or a.get("key") == b.get("key"):
         return None
     if not price_ok(a, b):
@@ -337,13 +341,15 @@ def same_item(a: dict[str, Any], b: dict[str, Any], loose: set[str] | frozenset[
             common = (a.get("codes") or set()) & (b.get("codes") or set()) or _colour_suffix(a, b)
             if common and same_brand:
                 why = f"code {sorted(common)[0]}"
+    elif _same_store_relisting(a, b) and same_brand:
+        why = f"store code {sorted(_same_store_relisting(a, b))[0]}"
     if why is None:
         common = (a.get("ocodes") or set()) & (b.get("ocodes") or set())
         if common and same_brand:
             why = f"option code {sorted(common)[0]}"
     if why is None:
         return None
-    if why.startswith("code") and (_COMBO.search(a.get("name") or "") or _COMBO.search(b.get("name") or "")):
+    if why.startswith(("code", "store code")) and (_COMBO.search(a.get("name") or "") or _COMBO.search(b.get("name") or "")):
         return None                             # "퀀텀 맥스 / 미즈노 JPX925 조합": the code is one part's model
     ta, tb = (unicodedata.normalize("NFKC", x.get("name") or "").lower() for x in (a, b))
     for d in (_DIMS[0], _DIMS[3], *_ITEM_DIMS):  # read inside words too: "남성골프채풀세트", "유틸리티"
@@ -354,6 +360,32 @@ def same_item(a: dict[str, Any], b: dict[str, Any], loose: set[str] | frozenset[
     if _clash(a.get("counts") or set(), b.get("counts") or set()):
         return None                             # "4종" / "12종", "5개" / "7개": another set of one line
     return why
+
+
+# one store listing one item twice (2026-11-27, the owner after the stand-bag run of 100: "only the most obvious"):
+# Bridgestone CB2525 13645328525 / 11962029819, both of channel 100585071, one titled without the code, both
+# descriptions naming CB2525, the same three colours sold. A store's two listings of one code with the very same
+# variants (2+), a price within 10% and a photo in common are one item; another colour or size changes the variants,
+# so it stays apart. Measured on the store's ledger the same day: 7 pairs before the price and photo guards, 3 after
+# (CB2525, PGM RIO 3 MTG040, Mizuno EFIL-8); left apart: a Cleveland junior 'large set' at twice the price, a PGM putter
+# titled 블루 and a JRTG007 junior set with no photo in common, two Callaway '+ JPX925' combinations. A hold, never a
+# decision.
+RELIST_PRICE = 1.1
+
+
+def _same_store_relisting(a: dict[str, Any], b: dict[str, Any]) -> set[str]:
+    """The codes two listings of one store share (title, model name, 품번 or description text; at least one side's
+    from its title, model name or 품번) when both sell the very same 2+ variants at prices within RELIST_PRICE and
+    share a photo; else empty."""
+    if a.get("channel") != b.get("channel") or len(a.get("sold") or ()) < 2 or a.get("sold") != b.get("sold"):
+        return set()
+    pa, pb = a.get("price") or 0, b.get("price") or 0
+    if not pa or not pb or max(pa, pb) > RELIST_PRICE * min(pa, pb) or not (a.get("shas") or set()) & (b.get("shas")
+                                                                                                    or set()):
+        return set()
+    ca, cb = a.get("codes") or set(), b.get("codes") or set()
+    da, db = ca | (a.get("dcodes") or set()), cb | (b.get("dcodes") or set())
+    return (ca & db) | (cb & da)
 
 
 def _colour_suffix(a: dict[str, Any], b: dict[str, Any]) -> set[str]:
@@ -770,7 +802,7 @@ class Index:
     def same_items(self, c: dict[str, Any]) -> dict[str, Any]:
         """{same_item: [keys], why: [reasons]} of the products that look like c's item (same_item), published ones
         first (a replaced one stands for its live end), {} when none: a hold candidate, never a decision (2026-11-20)."""
-        if not c.get("catalog") and not c.get("codes") and not c.get("ocodes"):
+        if not c.get("catalog") and not c.get("codes") and not c.get("ocodes") and not c.get("dcodes"):
             return {}
         if self.loose is None:                      # once, from the published products: a job's own holds and
             self.loose = loose_catalogs(self.by_key.values())   # takes never turn a catalog loose mid-run
@@ -783,7 +815,8 @@ class Index:
             if e["status"] == "replaced":           # the live end must pass the guards itself (as decide(), 11-16)
                 target = self.live(e["key"])[1]
                 if target is not None and (not price_ok(c, target) or target.get("channel") == c.get("channel")
-                                           and not why.startswith("option code")):
+                                           and not why.startswith("option code")) \
+                        and not (why.startswith("store code") and same_item(c, target, self.loose)):
                     target = None
             if target is not None and target["key"] != c["key"]:
                 found.setdefault(target["key"], (target, why))
