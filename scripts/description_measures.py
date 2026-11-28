@@ -95,6 +95,16 @@ the putter too (a few hundred grams under on a set of 9-12); a composition OCR s
 (13409110111); several weights in one cell ("306/310", "C1320") give the first only (no set of the 300 changed
 by it); an option's "N개" beside other options is never the set's, even where it is.
 
+Stated weights bound to the variants (2026-11-27, bind_weights; without a profile only): each variant takes the
+weight whose row segment, label rows or image heading names it, else today's heaviest. Known limits (2026-11-27):
+a comparison row naming an old model beside its weight binds that model; a colour list of another model whose
+colours overlap ours binds ours; a consonant skeleton of 4 may meet the wrong English word; a label under its
+weight (WinWin 5941086854: "무게2.9Kg" then "CB-103 ROSE") is never read, the variants keep the heaviest; with three
+models or more a weight no rule leaves to one is not filled (PXG 7223000254's Carry and Jacquard bags).
+
+A pair of shoes (2026-11-27, a row's `pair_of` block, 50001740; pair_weight): the product's weight is the pair, from
+the labelled grams of one shoe (x2) or of the pair, for the whole product; the package the pair + the block's carton.
+
 Known limits (2026-11-10, left as they are): a "1+1" listing ships two sets and is weighed as one (5684497984);
 a table is not bound to a variant: of several whole tables the lightest stands for every variant (the S set of
 11659201020 and 5543663553 gets the R row; the women's variants of 7674852369 the men's twelve clubs); on a
@@ -456,13 +466,17 @@ _LB_RE = re.compile(r"(?<!\d)(?<!\d[.,])" + _NUM + r"\s*(?:pounds?|lbs?\b|파운
 LB_G = 453.59237
 
 
+def _kg_spans(row: str, long_units: bool) -> list[tuple[int, int, float]]:
+    """(start, end, grams) of each weight of a row, from kg (and, with long_units, kilograms / pounds), in order."""
+    if not long_units:
+        return [(m.start(), m.end(), _num(m.group(1)) * 1000) for m in _KG_RE.finditer(row)]
+    return sorted([(m.start(), m.end(), _num(m.group(1)) * 1000) for m in _KG_LONG_RE.finditer(row)] +
+                  [(m.start(), m.end(), _num(m.group(1)) * LB_G) for m in _LB_RE.finditer(row)])
+
+
 def _kilograms(row: str, long_units: bool) -> list[float]:
     """The weights of a row in grams, from kg (and, with long_units, kilograms / pounds), in the row's order."""
-    if not long_units:
-        return [_num(m.group(1)) * 1000 for m in _KG_RE.finditer(row)]
-    found = [(m.start(), _num(m.group(1)) * 1000) for m in _KG_LONG_RE.finditer(row)] + \
-        [(m.start(), _num(m.group(1)) * LB_G) for m in _LB_RE.finditer(row)]
-    return [g for _, g in sorted(found)]
+    return [g for _, _, g in _kg_spans(row, long_units)]
 
 
 # 2026-11-27 (Lightweight Stand Bags, 50002791, the pilot of 30: 15 of 35 bags kept the default weight though the
@@ -498,10 +512,16 @@ _OTHER_ITEM = re.compile(r"보스턴|파우치|더플|슈즈\s*백|신발\s*가�
 
 
 def _own_weight(row: str, above: str, band: tuple[float, float]) -> float | None:
-    """The weight of an item that is its own container, in grams, by the forms above; None outside the band or when
-    the row names another item."""
+    """The weight of an item that is its own container, in grams, by the forms above (the largest the row states);
+    None outside the band or when the row names another item."""
+    found = _own_weights(row, above, band)
+    return max(found) if found else None
+
+
+def _own_weights(row: str, above: str, band: tuple[float, float]) -> list[float]:
+    """Every weight _own_weight reads in a row, inside the band."""
     if _OTHER_ITEM.search(row):
-        return None
+        return []
     def grams(m: re.Match) -> float:
         unit = m.group(2).lower()
         return _num(m.group(1)) * (1 if unit == "g" else 1000 if unit in ("kg", "㎏") else LB_G)
@@ -512,8 +532,7 @@ def _own_weight(row: str, above: str, band: tuple[float, float]) -> float | None
     if not found and len(kgs) == 1 and (_OWN_SIZE_ROW.search(row) or _OWN_HEAD.search(above)
                                         or _OWN_SPEC_ROW.search(row) and _OWN_KG_CELL.search(row)):
         found = kgs
-    found = [g for g in found if _in(g, band)]
-    return max(found) if found else None
+    return [g for g in found if _in(g, band)]
 
 
 # A typed label line with its value alone on the next line ("Item Package Dimensions L x W x H" / "38 x 4.5 x 4
@@ -551,6 +570,68 @@ def joined_lines(lines: list[str]) -> list[str]:
     return out
 
 
+# ---- the labels of a stated weight (2026-11-27, Lightweight Stand Bags: one listing, several bags) --------------
+# A page of several models states each one's weight under its own heading: Titleist 7115158598 types "플레이어스5
+# 스탠드백" ... "무게 - 1.95KG" and shows the Sport bag's "Weight (kg) / 2.6kg"; PGM 10647003177 "컬러:블랙그레이" ...
+# "중량:3.12kg" and "컬러:블랙레드" ... "중량:3.94kg"; Vessel 13454840028 one row "무게 / 약 3.8kg (DXR Black 약 3.4kg)".
+# Each stated weight keeps the words that may name its variant (bind_weights): a row of two or more weights gives
+# one fact per weight with its `segment` (the bracket right after the value when it holds no other weight, else the
+# text since the previous value; the text up to the next value when only the row's tail names words); any other its `label`, the rows above it in its block, at most LABEL_ROWS, never
+# past the block's previous weight row nor above a spec header (Kolon 6817963449: three "상세스펙 / 모델명 / VWX..."
+# blocks in one image), the weight's row last; and, when no weight row comes before it in its image, the image's
+# first rows as its `heading` (PXG 7223000254: "3.페어웨이 카모 / 캐리 스탠드백" over "-무게:4.6파운드").
+LABEL_ROWS = 8
+HEADING_ROWS = 5
+_SPEC_HEAD = re.compile(r"상세\s*스펙|상품\s*스펙|제품\s*(?:spec|스펙|정보)|product\s*info|specification|^\s*spec\s*$", re.I)
+
+
+def _weight_facts(where: dict[str, Any], row: str, values: list[float], long_units: bool,
+                  own_g: tuple[float, float] | None) -> list[dict[str, Any]]:
+    """A stated weight row's facts: one, the largest value (as guess takes it), or, when the row holds two or more
+    weights (inside own_g when given) and its largest among them, one per weight with its `segment`."""
+    spans = [(a, b, g) for a, b, g in _kg_spans(row, long_units)
+             if any(abs(g - v) < 1 for v in values) and (own_g is None or _in(g, own_g))]
+    if len(spans) < 2 or max(g for _, _, g in spans) < max(values):
+        return [{**where, "g": max(values)}]
+    before, start = [], 0
+    for a, b, g in spans:
+        after = re.match(r"\s*[(（]([^)）]*)[)）]", row[b:])
+        before.append(after.group(1) if after and not _kg_spans(after.group(1), long_units) else row[start:a])
+        start = b
+    # a label after its weight, "무게 / 2.5kg 블랙 / 2.3kg 화이트": the text up to the next value (2026-11-27, the
+    # review of the weight binding: the text before gave 블랙 the 2.3 kg). Both readings name words: no segments.
+    head, tail = _names_words(row[:spans[0][0]]), _names_words(row[spans[-1][1]:])
+    if tail and head:
+        return [{**where, "g": max(values)}]
+    segs = [row[b:nxt] for (_, b, _), nxt in zip(spans, [a for a, _, _ in spans[1:]] + [len(row)])] if tail \
+        else before
+    return [{**where, "g": g, "segment": seg} for (_, _, g), seg in zip(spans, segs)]
+
+
+_SEGMENT_FILLER = re.compile(r"총|무게|중량|weight|kgs?|약|approx", re.I)
+
+
+def _names_words(text: str) -> bool:
+    """A part of a weight row names something besides its label: two letters in a row (Hangul or Latin)."""
+    return bool(re.search(r"[가-힣A-Za-z]{2}", _SEGMENT_FILLER.sub(" ", text)))
+
+
+def _label_windows(found: list[dict[str, Any]], rows: list[str], typed: bool,
+                   own_g: tuple[float, float] | None) -> None:
+    """Each stated weight of one block (no segment) gets its `label` rows and, in an image, its `heading` (above)."""
+    weight_rows = {f["row"] for f in found if own_g is None or _in(f["g"], own_g)}
+    for f in found:
+        if "segment" in f:
+            continue
+        i = f["row"]
+        before = max((r for r in weight_rows if r < i), default=-1)
+        lo = max(before + 1, i - LABEL_ROWS)
+        lo = next((k for k in range(i - 1, lo - 1, -1) if _SPEC_HEAD.search(rows[k])), lo)
+        f["label"] = rows[lo:i + 1]
+        if not typed and lo > 0 and before < 0:
+            f["heading"] = rows[:min(HEADING_ROWS, lo)]
+
+
 def read_rows(images: list[list[Any]], profile: Profile | None = None,
               typed: list[str] | None = None, long_units: bool = False,
               own_g: tuple[float, float] | None = None) -> dict[str, Any]:
@@ -570,6 +651,7 @@ def read_rows(images: list[list[Any]], profile: Profile | None = None,
     blocks: list[tuple[int | None, str, list[Any]]] = [(n, " / ", raw) for n, raw in enumerate(images)]
     for n, sep, raw in blocks + ([(None, " | ", typed)] if typed else []):
         rows = [r if isinstance(r, str) else r[0] for r in raw]
+        stated_from = len(facts["product_weights"])        # this block's stated weights get their labels below
         confs = [1.0 if isinstance(r, str) else r[1] for r in raw]
         col: tuple[int, int, int | None, int | None] | None = None    # the last table header: its row, its number
         first: str | None = None                           # of cells, the length's cell, the item weight's cell
@@ -633,9 +715,9 @@ def read_rows(images: list[list[Any]], profile: Profile | None = None,
                                                     if _in(_num(m.group(1)) * 10, p.container_long_mm)]
                 # no `continue`: a set's composition line ("골프백:1개") sits above its item table (6630856593)
             elif not about and kgs and _WEIGHT_HEAD.search(row) and not (p and p.part_label.search(head)):
-                facts["product_weights"].append({**where, "g": max(kgs)})          # "무게 / 4.2kg", "중량: 2.3kg"
-            elif own_g and sure and (g := _own_weight(row, rows[i - 1] if i else "", own_g)):
-                facts["product_weights"].append({**where, "g": g})
+                facts["product_weights"] += _weight_facts(where, row, kgs, long_units, own_g)   # "무게 / 4.2kg"
+            elif own_g and sure and (gs := _own_weights(row, rows[i - 1] if i else "", own_g)):
+                facts["product_weights"] += _weight_facts(where, row, gs, long_units, own_g)
             if own_g and sure and not triple and (cells := _AXIS_CELLS.findall(row)) and len(cells) == 3 \
                     and not _OTHER_ITEM.search(" ".join(rows[max(0, i - 3):i + 1])):
                 facts["product_sizes"].append({**where, "mm": sorted((_num(v) * 10 for v in cells), reverse=True)})
@@ -721,6 +803,7 @@ def read_rows(images: list[list[Any]], profile: Profile | None = None,
             above = cells
         facts["item_weights"] = [f for f in facts["item_weights"]
                                  if not (f.get("image") == n and f["table"] in parts)]
+        _label_windows(facts["product_weights"][stated_from:], rows, n is None, own_g)
     return facts
 
 
@@ -844,10 +927,251 @@ def guess(facts: dict[str, Any], profile: Profile | None = None) -> dict[str, di
             out[name] = _ev(side, 5 if "from" in best else 4, "stated box size", [best])
     weights, how = (facts["set_weights"], "stated set weight") if facts["set_weights"] else \
         ([] if profile else facts["product_weights"], "stated weight")           # "무게 / 4.2kg": the core only
+    if "pair" in facts:                              # a pair of shoes (`pair_of`, 2026-11-27): its reading alone
+        weights = []
+        if pair := facts["pair"]:
+            out["product_weight_g"] = _ev(pair["g"], pair["confidence"], pair["how"], [pair])
     if weights:
         best = max(weights, key=lambda f: (f["g"], "from" in f))
-        out["product_weight_g"] = _ev(best["g"], 4, how, [best])
+        bound = facts.get("bound") if weights is facts["product_weights"] else None
+        out["product_weight_g"] = _ev(best["g"], 4, how, [best]) if not bound else {   # one variant's (bind_weights)
+            **_ev(best["g"], bound["confidence"], how + ", bound to the variant", [best]),
+            "bound": {k: bound[k] for k in ("by", "label", "weights")}}
     return out
+
+
+# ---- stated weights bound to the variants (2026-11-27, Lightweight Stand Bags; scripts/PACKAGE.md "The five fields")
+# Without a profile guess takes the heaviest stated weight for every variant: Titleist 7115158598 gave its six
+# Players 5 bags (1.95 kg) the Sport bag's 2.6 kg. bind_weights gives each variant the weight whose segment, label or
+# heading names it, by its option values (only the axes whose values differ; a value of "/"- or space-joined parts
+# gives its parts as axes too, the whole value tried first). A value names a text by
+#   code      its model code: "J135", "CB-137" (YONEX 12952984359 "무게: (J135)1.8kg, / ,(j120)1.7kg")
+#   text      the value itself (lowercase, no spaces or _-./(),:): Hangul of 2+ letters; Latin of 3+ letters on word
+#             bounds ("BL" is inside "fashionable": WinWin 5941086854)
+#   words     every word of a value of several
+#   translit  an all-Hangul value in Latin text by its consonants, 4 or more: 멀티아이콘카모 MLTKNKM in "WINWIN
+#             MULTI ICON CAMO", 고파이트네온 KPTNN in "GO FIGHT! NEON" (WinWin 10046033303)
+# A "text" match inside a longer matched value's every place is dropped (Black inside DXR_Black). The variants
+# bound are those every matched axis names, never all nor none, cut to the values of another axis that every
+# matched value occurs with (Keiro 11012444977: "네이비 / 블랙 / 그레이" is the 7분할 bag's list). A variant bound to
+# two weights more than 2 % apart (conflict) or to none (unbound) keeps the heaviest, except by elimination when
+# the weights left are one: R1 row_default, the unlabelled value of a row that labels its other (Vessel 13454840028);
+# R2 title_model, the left weight's label names two words of the title (Nike 10121431552 "나이키골프스포츠 라이트");
+# R3 two_models, an axis of two values, one bound and the other not (Titleist, Keiro).
+_BIND_CONFIDENCE = {"same_row": 4, "label_above": 4, "typed_label": 4, "row_default": 4, "title_model": 4,
+                    "image_heading": 3, "two_models": 3}
+_TITLE_GENERIC = frozenset({"골프", "골프백", "캐디백", "스탠드백", "스탠드", "경량", "초경량", "투어", "남성", "여성",
+                            "남녀공용", "골프가방", "가방", "정품", "신상"})
+_MODEL_CODE = re.compile(r"(?<![A-Za-z0-9])([A-Za-z]{1,6}-?\d{2,}[A-Za-z]?)(?![A-Za-z0-9])")
+_HANGUL = re.compile(r"[가-힣]")
+_LATIN = re.compile(r"[A-Za-z]{2,}")
+_INITIALS = "KKNTTLMPPSSxJJJKTPH"      # ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ (x: ㅇ is silent)
+_FINALS = ["", "K", "K", "K", "N", "N", "N", "T", "L", "L", "L", "L", "L", "L", "L", "L", "M", "P", "P", "T", "T", "N",
+           "T", "T", "K", "T", "P", "T"]
+_LATIN_SKELETON = {"b": "P", "p": "P", "f": "P", "v": "P", "d": "T", "t": "T", "g": "K", "k": "K", "c": "K", "q": "K",
+                   "s": "S", "z": "J", "j": "J", "m": "M", "n": "N", "l": "L", "r": "L", "h": "H"}
+SAME_WEIGHT = 0.02                      # weights within 2 % are one
+
+
+def _plain(text: str) -> str:
+    return re.sub(r"[\s_\-./·,()\[\]:!*&+|>]+", "", text).lower()
+
+
+def hskel(text: str) -> str:
+    """The consonants of Hangul, as Latin letters (initials and finals; ㅇ silent; digits kept): 멀티 아이콘 카모 MLTKNKM."""
+    out = []
+    for ch in text:
+        o = ord(ch) - 0xAC00
+        if 0 <= o < 11172:
+            initial, final = _INITIALS[o // 588], _FINALS[o % 28]
+            out.append(("" if initial == "x" else initial) + final)
+        elif ch.isdigit():
+            out.append(ch)
+    return "".join(out)
+
+
+def lskel(text: str) -> str:
+    """The consonants of English as Korean writes them: gh silent, ph f, ck k, ts / ch / sh one, x ks, an r not
+    before a vowel dropped: MULTI ICON CAMO MLTKNKM, GO FIGHT! NEON KPTNN."""
+    s = text.lower()
+    for pat, rep in ((r"gh", ""), (r"ph", "f"), (r"ck", "k"), (r"ng\b", "n"), (r"ts", "j"), (r"ch|sh", "j"),
+                     (r"x", "ks"), (r"r(?![aeiouy])", "")):
+        s = re.sub(pat, rep, s)
+    return "".join(_LATIN_SKELETON.get(ch, ch if ch.isdigit() else "") for ch in s)
+
+
+def _value_parts(value: str) -> list[str]:
+    """A value's text and its bracket: '멀티 아이콘 카모 (CB-137)' -> ['멀티 아이콘 카모', 'CB-137']."""
+    parts = [re.sub(r"\([^)]*\)", " ", value).strip()] + re.findall(r"\(([^)]*)\)", value)
+    return [p for p in parts if len(_plain(p)) >= 2]
+
+
+def names_value(value: str, text: str) -> str | None:
+    """How an option value is named in a text: "code", "text", "words", "translit" (see above), None."""
+    t = _plain(text)
+    if any(_plain(c) in t for c in _MODEL_CODE.findall(value)):
+        return "code"
+    for part in _value_parts(value):
+        n = _plain(part)
+        if not _HANGUL.search(part):
+            if len(n) >= 3 and re.search(r"(?<![A-Za-z])" + r"[\s_\-]*".join(map(re.escape, n)) + r"(?![A-Za-z])",
+                                         text, re.I):
+                return "text"
+            continue
+        if n in t:
+            return "text"
+        words = [_plain(w) for w in part.split() if len(_plain(w)) >= 2]
+        if len(words) >= 2 and all(w in t for w in words):
+            return "words"
+        if not _LATIN.search(part) and _LATIN.search(text):
+            k = hskel(part)
+            if len(k) >= 4 and k in lskel(" ".join(re.findall(r"[A-Za-z0-9]+", text))):
+                return "translit"
+    return None
+
+
+def _varying(options: list[list[str]]) -> tuple[list[list[str]], list[int]]:
+    """Each variant's values by column (a value of "/"- or space-joined parts in every variant: its parts as more
+    columns after it) and the columns whose values differ."""
+    n = max((len(o) for o in options), default=0)
+    split = [[o[j] if j < len(o) else "" for j in range(n)] for o in options]
+    cols: list[list[str]] = []
+    for j in range(n):
+        vals = [r[j] for r in split]
+        parts = [v.split("/") for v in vals]
+        if not (len({len(x) for x in parts}) == 1 and len(parts[0]) >= 2):
+            parts = [re.sub(r"\([^)]*\)", " ", v).split() for v in vals]
+        cols.append(vals)
+        if len({len(x) for x in parts}) == 1 and len(parts[0]) >= 2:
+            cols += [[x[k].strip() for x in parts] for k in range(len(parts[0]))]
+    return [[c[i] for c in cols] for i in range(len(options))], [j for j, c in enumerate(cols) if len(set(c)) > 1]
+
+
+def _same(a: float, b: float) -> bool:
+    return abs(a - b) <= SAME_WEIGHT * max(a, b)
+
+
+def _stated_pool(facts: dict[str, Any], band: tuple[float, float] | None) -> list[dict[str, Any]]:
+    """The stated product weights guess would choose from without a profile (none under a set's weight)."""
+    if facts["set_weights"]:
+        return []
+    return [f for f in facts["product_weights"] if band is None or _in(f["g"], band)]
+
+
+def distinct_weights(facts: dict[str, Any], band: tuple[float, float] | None = None) -> list[int]:
+    """The different stated product weights (within 2 % one, the heaviest of them), lightest first."""
+    groups: list[list[float]] = []
+    for g in sorted({round(f["g"]) for f in _stated_pool(facts, band)}):
+        if groups and _same(groups[-1][-1], g):
+            groups[-1].append(g)
+        else:
+            groups.append([g])
+    return [round(x[-1]) for x in groups]
+
+
+def _named(text: str, values: set[str]) -> dict[str, str]:
+    """The values a text names, a "text" match dropped where its every place lies inside a longer named value's."""
+    hit = {v: m for v in values if (m := names_value(v, text))}
+    plain = _plain(text.replace("\n", "\x00"))           # a row's end stays a bound
+
+    def spans(s: str) -> list[tuple[int, int]]:
+        return [(m.start(), m.end()) for m in re.finditer(re.escape(s), plain)] if s else []
+    cover = {u: [sp for p in _value_parts(u) for s in {_plain(p)} | {_plain(w) for w in p.split() if len(_plain(w)) >= 2}
+                 for sp in spans(s)] for u in hit}
+
+    def inside(sp: tuple[int, int], u: str) -> bool:
+        return any(a <= sp[0] and sp[1] <= b and b - a > sp[1] - sp[0] for a, b in cover[u])
+    return {v: m for v, m in hit.items()
+            if m != "text" or any(not any(inside(sp, u) for u in hit if u != v)
+                                  for sp in (sp for p in _value_parts(v) for sp in spans(_plain(p))))}
+
+
+def _touches(value: str, row: str) -> bool:
+    """The row names the value or one of its words (a value's words may lie on two rows of its label)."""
+    return bool(names_value(value, row)) or any(len(w) >= 2 and w in _plain(row)
+                                                for p in _value_parts(value) for w in map(_plain, p.split()))
+
+
+def bind_weights(facts: dict[str, Any], options: list[list[str]], title: str,
+                 band: tuple[float, float] | None = None) -> list[dict[str, Any]] | None:
+    """Each variant's stated weight (`options`: each variant's option values; `band`: the field's) -> per variant
+    {g, by, label, weights, confidence, fact} (by: same_row, label_above, typed_label, image_heading, row_default,
+    title_model, two_models) or {g: None, by: "conflict" | "unbound"}: it keeps the heaviest. None: fewer than two
+    variants or two different weights, or no variant bound (see above)."""
+    pool = _stated_pool(facts, band)
+    stated = distinct_weights(facts, band)
+    opts, axes = _varying(options)
+    if len(options) < 2 or len(stated) < 2 or not axes:
+        return None
+    every = set(range(len(options)))
+    words = [_plain(t) for t in re.split(r"[\s\[\]()/]+", title or "")
+             if len(_plain(t)) >= 2 and t not in _TITLE_GENERIC and not re.fullmatch(r"20\d\d", t)]
+    bound: list[tuple[dict[str, Any], set[int] | None, str, str, dict[int, dict[str, str]]]] = []
+    context: dict[int, str] = {}
+    for n, f in enumerate(pool):
+        texts = [f["segment"]] if "segment" in f else f.get("label") or [f["quote"]]
+        context[n] = " \n ".join(texts)
+        by = "same_row" if "segment" in f else "typed_label" if f.get("from") else "label_above"
+        per_axis = {j: h for j in axes if (h := _named(context[n], {o[j] for o in opts}))}
+        if not per_axis and f.get("heading"):
+            by, texts = "image_heading", f["heading"]
+            per_axis = {j: h for j in axes if (h := {v: m for v in {o[j] for o in opts}
+                                                       if (m := names_value(v, " \n ".join(texts)))})}
+        idx = set(every)
+        for j, hit in per_axis.items():
+            idx &= {k for k, o in enumerate(opts) if o[j] in hit}
+        if not per_axis or not idx or idx == every:
+            bound.append((f, None, by, "", per_axis))
+            continue
+        for x in axes:                 # cut to the values of another axis every named value occurs with (Keiro)
+            xs = {opts[k][x] for k in idx}
+            if x in per_axis or len(xs) < 2:
+                continue
+            ok = {xv for xv in xs if all(any(opts[k][x] == xv for k in idx if opts[k][j] == v)
+                                         for j, hit in per_axis.items() for v in hit)}
+            if ok and ok != xs:
+                idx = {k for k in idx if opts[k][x] in ok}
+        named = [v for hit in per_axis.values() for v in hit]
+        label = next((t for t in reversed(texts) if any(_touches(v, t) for v in named)), texts[-1]).strip()
+        bound.append((f, idx, by, label[:200], per_axis))
+    per: dict[int, list[tuple[dict[str, Any], str, str]]] = {}
+    for f, named_k, by, label, _ in bound:
+        for k in named_k or ():
+            per.setdefault(k, []).append((f, by, label))
+    bound_g = [f["g"] for f, idx, *_ in bound if idx]
+    loose = [(n, f) for n, (f, idx, *_) in enumerate(bound) if not idx and not any(_same(f["g"], b) for b in bound_g)]
+    unbound = [k for k in every if k not in per]
+    rest: tuple[dict[str, Any], str] | None = None
+    if loose and unbound and max(f["g"] for _, f in loose) <= (1 + SAME_WEIGHT) * min(f["g"] for _, f in loose):
+        left = max((f for _, f in loose), key=lambda f: f["g"])
+        if any("segment" in f and any("segment" in b and b["row"] == f["row"] and b.get("image") == f.get("image")
+                                      and b.get("from") == f.get("from") for b, idx, *_ in bound if idx)
+               for _, f in loose):
+            rest = (left, "row_default")
+        elif words and any(sum(w in _plain(context[n]) for w in words) >= 2 for n, _ in loose):
+            rest = (left, "title_model")
+        else:
+            for x in axes:
+                vals = {opts[k][x] for k in every}
+                if len(vals) == 2 and len({opts[k][x] for k in unbound}) == 1 \
+                        and not {opts[k][x] for k in per} & {opts[k][x] for k in unbound}:
+                    rest = (left, "two_models")
+                    break
+    out: list[dict[str, Any]] = []
+    for k in range(len(options)):
+        ws = per.get(k, [])
+        if ws and max(f["g"] for f, *_ in ws) <= (1 + SAME_WEIGHT) * min(f["g"] for f, *_ in ws):
+            f, by, label = max(ws, key=lambda w: w[0]["g"])
+            out.append({"g": f["g"], "by": by, "label": label, "weights": stated, "confidence": _BIND_CONFIDENCE[by],
+                        "fact": f})
+        elif ws:
+            out.append({"g": None, "by": "conflict"})
+        elif rest:
+            out.append({"g": rest[0]["g"], "by": rest[1], "label": None, "weights": stated,
+                        "confidence": _BIND_CONFIDENCE[rest[1]], "fact": rest[0]})
+        else:
+            out.append({"g": None, "by": "unbound"})
+    return out if any(o["by"] in ("same_row", "label_above", "typed_label", "image_heading") for o in out) else None
 
 
 def _part(name: str, value: float, source: str, fact: dict[str, Any] | None = None, **more: Any) -> dict[str, Any]:
@@ -1055,19 +1379,179 @@ def own_box(facts: dict[str, Any], block: dict[str, Any]) -> dict[str, dict[str,
             for name, side, margin in zip(SIDES, first, margins)}
 
 
+# ---- a pair of shoes (2026-11-27, golf shoes 50001740: the review of 223 live shoes; a row's `pair_of` block) -----
+# 61 of 223 shoes state a weight, none a box; 54 of the 61 state one shoe (한쪽발, 외발, 1쪽, 1pcs, or a value only
+# one shoe can be), so the core's "the heaviest stated weight" is wrong twice over: a shoe is sold as a pair, and the
+# server bound "무게 : 470g (27.5cm 외발)" (New Balance 13651508341) to its size-275 variant alone, as the pair's (7
+# products, 9 variants: Descente 12153299165 "실측(240) ... 중량292g" on its three 240 variants). With the block the
+# product's weight is the pair, read for the whole product (every variant; the reference size is a note: sizes differ
+# by about 10 %, under any price step), and the package weight the pair + the block's carton. Read (labelled grams):
+#   "무게 : 약 425g(한쪽발 25.5cm)", "-중량: 308 g (사이즈 250mm)"           the label, then grams (P1)
+#   "25.5cm 기준 중량 : 약 430g", "※ 중량은 25.0cm 한쪽 기준 약 325g"     the size before the label (P2)
+#   "무게 | WEIGHT | 260기준/396(g)", "중량 / 269~296g"                  OCR rows; a range within 15 %: its middle (P3)
+#   "무게 (1쪽 기준): 약 330g", "중량(한쪽발) / 약 420g(25.5cm)"          a word inside the label (P4)
+#   "소재 / 제품무게(260한컬레기준) / 제조사" over "... / 720 g / ..."     a header over its values (P5)
+#   "280g / 35mm / 95mm" over "한쪽당무게 / 굽높이 / 발볼넓이"             the values above their header (P6, PAYNTR)
+#   "【중량】" then "약 385g (한쪽, 25.5cm 기준)"                         the label line, the value line (P7)
+#   "치수 | 실측(240) 사이즈(cm)-굽높이3.5 중량292g", "치수 / 220~250mm/중량약220g"   a weight on a size row (P8)
+# and the server's own weight rows (the notice's "중량: 255mm / 약425g (1pcs)", 10650252456). One shoe or a pair: a
+# one-shoe word gives x2, a pair word (켤레; OCR 한컬레 / 한결레) the value, no word the value's band: one_g one shoe
+# (x2), pair_g a pair, between them (500-600 g) nothing. Never: a range wider than 15 %, an upper bound ("약 300g 이하
+# (25.0cm 단일화 기준)", 12415931375: _SKIP_ROW), an insole ("일반 깔창 약 21g", 8752851422), a shoe bag, socks or
+# another item's row, a cross-sell block or a review (_readable: a rangefinder ad's "125g", 6520680652, a tennis
+# racket's "255g", 12670513142, have no label anyway), a scale photo with no label ("775", 5114581014), a row under
+# NUMBER_CONF ("3809" for 380g, 11630957847). Confidence 5: typed with its word; 4: an image's, or by the value alone.
+PAIR_OF = ("carton_g", "one_g", "pair_g")
+_SHOE_LABEL = re.compile(r"(?<!몸)(?:무게|중량)(?!\s*(?:감|중심|배분|분산|를|을))|\bwe(?:ight|ght|iht)\b", re.I)
+# not a band or a bound: "500g대인 보통 골프화와 비교했을 때" (11886292855, prose), OCR's "/500g미|만" (5959162459)
+# grams of three digits, or a pair's four ("1020g", "1,020g": pair_g runs to 1100; the reviewer, 2026-11-27); a kg
+# weight ("0.85kg") is not read: no collected shoe states one, and the variant keeps the default
+_SHOE_NUM = r"(?:1,?\d{3}|\d{3}(?:[.,]\d{1,2})?)"
+_SHOE_G = re.compile(r"(?<![\d.,~])(" + _SHOE_NUM + r")(?:\s*[~\-]\s*(" + _SHOE_NUM + r"))?\s*"
+                     r"(?:\(\s*g\s*\)|g|그램)(?![a-z])(?!\s*(?:대|미\W{0,2}만|이상|이하|초과|보다|더|가볍|줄))", re.I)
+# a comparison, never the shoe's statement; 대비 / 기존 모델 / 타사 / 경쟁: a comparison chart's rows (the reviewer's
+# probes "기존 모델 450g" under a bare "WEIGHT", "타사 제품 대비 30% 가벼운 330g", 2026-11-27: none in the 399 shoes)
+_SHOE_PROSE = re.compile(r"비교|보다\s*(?:가볍|무겁)|가벼워|줄였|대비|기존\s*모델|타사|경쟁")
+# an approximation's words, which _SKIP_ROW skips a row for: a shoe's own weight row keeps them (9172681706, the
+# notice's "중량: 800g 내외", 2026-11-27); its bounds (이하, 미만, 초과, 이상), shipping and review words still skip
+_SHOE_APPROX = re.compile(r"내외|오차|차이가?\s*있을|다를\s*수")
+_SHOE_BARE = re.compile(r"(?<![\d.,~])(\d{3}(?:[.,]\d{1,2})?)(?![\d.,~])")    # a "무게(g)" column's bare grams
+# the review's words; 한 발 (10865850387 "■ 한 발 무게 : 약 425g") and 편족 (13690829996 "1개 편족") from the server's rows
+_ONE_SHOE = re.compile(r"한\s*쪽|1\s*쪽|외\s*발|편\s*측|편\s*족|한\s*짝|단일\s*화|1\s*pcs|한\s*발", re.I)
+_PAIR_WORD = re.compile(r"켤레|한\s*[컬결]레", re.I)
+_NOT_SHOE = re.compile(r"깔창|인솔|insole|슈즈\s*백|신발\s*가방|파우치|양말|socks?|볼\s*마커|골프공|(?<![가-힣])볼(?![가-힣])",
+                       re.I)
+RANGE_SPAN = 0.15
+
+
+def check_pair_of(block: Any) -> None:
+    """A `pair_of` block whole, approved and explained (as package_measures.check_row checks `own_box`): carton_g a
+    number > 0, one_g and pair_g [min, max] with one_g below pair_g, item, approved_by, approved_at, basis."""
+    try:
+        good = set(block) == {*PAIR_OF, "item", "approved_by", "approved_at", "basis"} and all(block.values()) \
+            and type(block["carton_g"]) in (int, float) and block["carton_g"] > 0 \
+            and all(len(block[k]) == 2 and 0 < block[k][0] < block[k][1] for k in ("one_g", "pair_g")) \
+            and block["one_g"][1] <= block["pair_g"][0]
+    except (KeyError, TypeError):
+        good = False
+    if not good:
+        raise ValueError(f"pair_of needs item, {', '.join(PAIR_OF)} (carton_g > 0; one_g and pair_g [min, max], one_g "
+                         "under pair_g), approved_by, approved_at and basis, and nothing else")
+
+
+def _shoe_grams(text: str) -> float:
+    """A shoe weight's grams: "1,020" is a thousands comma (four digits), "616,8" a decimal one."""
+    return float(text.replace(",", "")) if re.fullmatch(r"1,\d{3}", text) else _num(text)
+
+
+def _shoe_value(text: str, bare: bool = False) -> float | None:
+    """The grams of a shoe's weight cell: one value or the middle of a range within RANGE_SPAN; None: none, two, or a
+    wider range. bare: a column labelled in grams, the unit may be left out ("무게(g)" over "425")."""
+    found = list(_SHOE_G.finditer(text)) or (list(_SHOE_BARE.finditer(text)) if bare else [])
+    if len(found) != 1:
+        return None
+    lo = _shoe_grams(found[0].group(1))
+    hi = _shoe_grams(found[0].group(2)) if found[0].lastindex and found[0].lastindex >= 2 and found[0].group(2) else lo
+    if hi < lo or hi > lo * (1 + RANGE_SPAN):
+        return None
+    return (lo + hi) / 2
+
+
+def _as_pair(g: float, words: str, block: dict[str, Any]) -> tuple[float, str] | None:
+    """(the pair's grams, how) of a shoe's stated weight by its words, else by its value's band; None: not a shoe's."""
+    one, pair = block["one_g"], block["pair_g"]
+    if _ONE_SHOE.search(words):
+        return (g * 2, "one shoe x2") if _in(g, one) else None
+    if _PAIR_WORD.search(words):
+        return (g, "a pair") if _in(g, pair) else None
+    if _in(g, one):
+        return g * 2, "one shoe x2 (by its value)"
+    if _in(g, pair):
+        return g, "a pair (by its value)"
+    return None
+
+
+def _shoe_rows(rows: list[str], sep: str) -> list[tuple[int, float, str, bool]]:
+    """(row, grams, the words around it, worded in the value's own rows) of each labelled shoe weight of a block."""
+    out = []
+    readable = dict(_readable([_SHOE_APPROX.sub(" ", r) for r in rows]))
+    for i, row in readable.items():
+        if _NOT_SHOE.search(row) or _SHOE_PROSE.search(row) or not (m := _SHOE_LABEL.search(row)):
+            continue
+        g = _shoe_value(row[m.end():m.end() + 60])                    # P1-P4, P8: the grams after the label
+        if g is not None:
+            out.append((i, g, row, True))
+            continue
+        cells = [c.strip() for c in row.split(sep)]
+        at = next((j for j, c in enumerate(cells) if _SHOE_LABEL.search(c)), None)
+        if at is None or _SHOE_G.search(row):
+            continue
+        bare = bool(re.search(r"\(\s*g\s*\)", cells[at]))
+        for k in [i + 1, i + 2, i + 3, i - 1]:                        # P5 / P7 below, P6 above
+            other = readable.get(k)
+            if other is not None and _SHOE_PROSE.search(other):
+                break                                                 # a comparison chart under the label
+            if other is None or _NOT_SHOE.search(other) or (k < i and not _SHOE_G.search(other)):
+                continue
+            values = [c.strip() for c in other.split(sep)]
+            if len(cells) == 1:                                       # the label alone: the value line's one weight
+                g = _shoe_value(other)
+            elif len(values) == len(cells):
+                g = _shoe_value(values[at], bare)
+            else:
+                g = _shoe_value(other) if len(_SHOE_G.findall(other)) == 1 else None
+            if g is not None:
+                out.append((k, g, f"{row} {other}", True))
+                break
+            if _SHOE_LABEL.search(other):                            # the next label: no value of this one
+                break
+    return out
+
+
+def pair_weight(images: list[list[Any]], typed: list[str], block: dict[str, Any],
+                stated: list[str] | None = None) -> dict[str, Any] | None:
+    """The pair's weight of a pair of shoes (a row's `pair_of` block; see above) for the whole product -> a fact
+    {g, confidence, how, quote, row, image | from} (the heaviest pair read; typed first among equals), None: none
+    read. images: the OCR rows ([text, conf]); typed: the typed description's lines; stated: the server's weight rows
+    (specs.measures quotes: the notice's, the typed text's), read as typed lines."""
+    found: list[dict[str, Any]] = []
+    extra = [line for q in stated or [] for line in re.split(r"[\r\n]+", q) if line.strip()]
+    blocks: list[tuple[int | None, str, list[Any]]] = [(n, " / ", raw) for n, raw in enumerate(images)]
+    for n, sep, raw in blocks + [(None, " | ", list(typed)), (None, " | ", extra)]:   # a cross-sell cuts its own
+        rows = [r if isinstance(r, str) else r[0] for r in raw]
+        confs = [1.0 if isinstance(r, str) else r[1] for r in raw]
+        for i, g, words, _ in _shoe_rows(rows, sep):
+            if confs[i] < NUMBER_CONF:
+                continue
+            got = _as_pair(g, words, block)
+            if got is None:
+                continue
+            pair, how = got
+            worded = "value" not in how
+            where = {"from": TYPED} if n is None else {"image": n}
+            found.append({**where, "row": i, "quote": words[:200], "g": round(pair),
+                          "confidence": 5 if n is None and worded else 4, "how": f"stated weight, {how}"})
+    if not found:
+        return None
+    return max(found, key=lambda f: (f["g"], f["confidence"]))
+
+
 def package_for(fields: dict[str, Any], facts: dict[str, Any], item_count: int | None, container: bool | None,
                 plausible: dict[str, dict[str, float]] | None = None, profile: Profile | None = None,
                 baselines: dict[str, Any] | None = None, ladies: bool = False,
                 counted: dict[str, tuple[float, float]] | None = None,
-                own: dict[str, Any] | None = None) -> tuple[dict[str, Any], list[str]]:
+                own: dict[str, Any] | None = None,
+                pair: dict[str, Any] | None = None) -> tuple[dict[str, Any], list[str]]:
     """One variant's five fields with the description's statements and the composition merged in -> (fields,
     names no longer today's). plausible, baselines: the blocks of the category's row in the operator's table,
     when it has them; no composition without the block or without a profile. counted: the weights plausible for
     the variant's count of clubs (package_measures.count_band). own: the row's `own_box` block (an item that is
-    its own container): the box from its size (own_box), the package's weight its weight + the block's carton."""
+    its own container): the box from its size (own_box), the package's weight its weight + the block's carton.
+    pair: the row's `pair_of` block (a pair of shoes; facts["pair"] from pair_weight): the package's weight the
+    pair's + the block's carton."""
     made = compose(facts, item_count, container, profile, baselines, ladies) if profile and baselines else \
         own_box(facts, own) if own else {}
-    return merge_fields(fields, guess(facts, profile), plausible, profile, made, baselines or own, counted)
+    return merge_fields(fields, guess(facts, profile), plausible, profile, made, baselines or own or pair, counted)
 
 
 def bands(plausible: dict[str, dict[str, float]] | None, profile: Profile | None) -> dict[str, tuple[float, float]]:

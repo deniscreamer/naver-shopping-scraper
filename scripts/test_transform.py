@@ -17,6 +17,7 @@ import pytest
 
 import description_images
 import keep_run
+import package_measures
 import run_transform
 import spec_variants
 import transform
@@ -1282,3 +1283,187 @@ def test_stand_bag_unisex_title_over_a_one_gender_row():  # 10714810361 "남성 
     p = _stand_bag("색상", ["블랙", "네이비"], title="경량 스탠드백 여성", rows=[{"label": "성별", "value": "여성용"}])
     assert p["product"]["attributes"]["gender"]["value"] == "womens"
     assert {"label_ko": "성별", "value_ko": "여성용"} in p["product"]["specs"]
+
+
+# ---- stated weights bound to the variants (2026-11-27, description_measures.bind_weights) ------------------------
+
+def _bound_bag(groups, picks, images, typed=None, title="경량 스탠드백 캐디백"):
+    """12945108653's line as a stand bag (50002791) with option `groups` and the variants' `picks`, its description's
+    images read as `images` (a current sidecar) and its typed text `typed`, prepared with the images on."""
+    line = copy.deepcopy(lines()["12945108653"])
+    line["specs"]["category"] = {"id": "50002791", "name": "캐디백", "path": [], "path_ids": []}
+    line["details"]["name"] = title
+    line["specs"]["specs"] = [r for r in line["specs"]["specs"] if r["label"] != "모델명"]
+    line["specs"]["options"]["option_groups"] = [{"id": str(k), "name": g, "type": "COMBINATION"}
+                                                 for k, g in enumerate(groups)]
+    base = line["specs"]["options"]["variants"][0]
+    line["specs"]["options"]["variants"] = [{**base, "id": f"v{k}", "name": " / ".join(p), "options": list(p),
+                                             "extra_price": 0} for k, p in enumerate(picks)]
+    line["details"].pop("option_groups", None)
+    line["details"].pop("variants", None)
+    line["package"] = package_measures.variant_measures(      # the server path's fields: the 50002791 defaults
+        {"category": line["specs"]["category"], "measures": {}, "name": title,
+         "options": {"variants": [{"id": v["id"], "name": v["name"]} for v in line["specs"]["options"]["variants"]]}},
+        package_measures.load_table())
+    line["details"]["description"] = {**(line["details"].get("description") or {}), "text": "\n".join(typed or [])}
+    links, _ = description_images.pick_links(line["details"]["description"])
+    side = {"format": "description_images/1", "links_sha256": description_images.links_sha(links), "images": [
+        {"link": f"https://shop-phinf.pstatic.net/{n}.jpg", "status": "read",
+         "slices": [{"y0": 0, "y1": 100, "rows": [{"text": t, "conf": 0.99, "y": 0} for t in r]}]}
+        for n, r in enumerate(images)]}
+    return prepare(line, RULES_ON, "r", 1, side)
+
+
+@pytest.mark.parametrize("case, groups, picks, images, typed, want, note", [
+    ("10647003177", ["색상"], [["블랙 그레이"], ["블랙 레드"]],
+     [[">> / PGM충격 방지방수골프백(블랙그레이)", "컬러:블랙그레이", "재질:폴리에스테르PU", "중량:3.12kg"],
+      [">> / PGM충격방지방수 / 골프백(블랙레드)", "컬러:블랙레드", "재질:폴리에스테르 PU", "내부재질:PE", "중량:3.94kg"]], None,
+     [(3120, 4), (3940, 4)], "2/2 variants: 3120 x1 label_above, 3940 x1 label_above"),
+    ("13454840028", ["칼라/스트랩"], [["Navy/싱글"], ["Black/더블"], ["DXR_Black/싱글"], ["DXR_Black/더블"]],
+     [["무게 / 약 3.8kg (DXR Black 약 3.4kg)"]], None,
+     [(3800, 4), (3800, 4), (3400, 4), (3400, 4)], "4/4 variants: 3800 x2 row_default, 3400 x2 same_row"),
+    ("7115158598", ["모델", "색상"], [["플레이어스5 스탠드백", "블랙/레드"], ["플레이어스5 스탠드백", "샌드"],
+                                    ["스포츠 스탠드백", "화이트/라임"]],
+     [["Top Cuff / 5 / Pockets / 7", "Weight (kg) / 1.95kg / Strap / Premium Double"], ["Top Cuff / 5", "Weight (kg) / 2.6kg"]],
+     ["플레이어스5 스탠드백", "[색상]", "블랙/레드", "샌드", "무게 - 1.95KG"],
+     [(1950, 4), (1950, 4), (2600, 3)], "3/3 variants: 1950 x2 typed_label, 2600 x1 two_models"),
+])
+def test_image_measures_bind_weights_per_variant(case, groups, picks, images, typed, want, note):
+    """Each variant's own stated weight (description_measures.bind_weights); the package is it + the 1 kg carton, the
+    default it replaced travels as `compared`, and no product weight stands above its package."""
+    p = _bound_bag(groups, picks, images, typed)
+    got = [v["package"] for v in p["product"]["variants"]]
+    assert [(pk["product_weight_g"]["value"]["max"], pk["product_weight_g"]["confidence"]) for pk in got] == want
+    for pk in got:
+        product, package = pk["product_weight_g"], pk["package_weight_g"]
+        assert product["how"] == "stated weight, bound to the variant" and product["bound"]["weights"]
+        assert package["value"]["max"] == product["value"]["max"] + 1000 and package["source"] == "composed"
+        assert product["compared"] == {"value": 2300, "source": "category_default", "confidence": 1}
+    assert {"code": "weights_bound", "detail": note} in p["notes"]
+
+
+def test_image_measures_weights_unbound_keep_the_heaviest():
+    """Two stated weights that name no variant (WinWin 5941086854's model headings under its bags' specs): every
+    variant keeps the heaviest, as before, and the note says so."""
+    p = _bound_bag(["색상"], [["CB-103 ROSE"], ["CB-947 BL"]],
+                   [["WINWIN LUCKY BUG", "크기9인치", "무게2.4Kg"], ["for fashionable golfers.", "WINWIN FLOWER", "무게 / 2.5Kg"]])
+    assert [v["package"]["product_weight_g"]["value"]["max"] for v in p["product"]["variants"]] == [2500, 2500]
+    assert "bound" not in p["product"]["variants"][0]["package"]["product_weight_g"]
+    assert {"code": "weights_unbound", "detail": "stated 2400, 2500 g: none bound to a variant"} in p["notes"]
+
+
+def test_bound_weights_only_without_a_profile():
+    """A set's weight is composed from its parts (a profile): nothing is bound, whatever the rows say."""
+    import description_measures as D
+    facts = D.read_rows([["블랙", "무게 / 2.3kg"], ["화이트", "무게 / 2.6kg"]])
+    ov = {"variants": [{"options_ko": ["블랙"]}, {"options_ko": ["화이트"]}]}
+    row = transform._measures_row("50002791")
+    assert transform._bound_weights(ov, facts, None, row, "경량 스탠드백")[0] is not None
+    assert transform._bound_weights(ov, facts, D.GOLF_SET, row, "경량 스탠드백") == (None, [])
+    assert transform._bound_weights({"variants": ov["variants"][:1]}, facts, None, row, "경량 스탠드백") == (None, [])
+
+
+def test_bound_weights_only_with_the_categorys_own_band():
+    """A category row without a `plausible` block (apparel 50000836) binds nothing: the core band let a model's
+    "Weight : 52kg" (13756252058) open the binding (2026-11-27, the review of the binding)."""
+    import description_measures as D
+    facts = D.read_rows([["블랙", "무게 / 47kg"], ["화이트", "무게 / 52kg"]])
+    ov = {"variants": [{"options_ko": ["블랙"]}, {"options_ko": ["화이트"]}]}
+    row = transform._measures_row("50000836")
+    assert not (row.get("plausible") or {}).get("product_weight_g")
+    assert transform._bound_weights(ov, facts, None, row, "남성 티셔츠") == (None, [])
+
+
+# ---- a pair of shoes (2026-11-27, golf shoes 50001740: the row's `pair_of`) ---------------------------------------
+SHOES = {"id": "50001740", "name": "골프화"}
+
+
+def _shoe(sizes, weights, images=(), typed=(), sidecar=True):
+    """A golf shoe's variants (one per size) with the server path's fields (`weights`: specs.measures weights, as
+    variant_measures binds them), then the transform's hook over its description -> (each variant's package, notes)."""
+    variants = [{"id": f"v{k}", "name": s} for k, s in enumerate(sizes)]
+    specs = {"category": SHOES, "measures": {"weights": weights}, "name": "골프화", "options": {"variants": variants}}
+    package = {p["variant_id"]: package_measures.on_scale(p["fields"])
+               for p in package_measures.variant_measures(specs, package_measures.load_table())}
+    ov = {"facts": [], "held": [], "weight_rows": [w["quote"] for w in weights],     # as prepare sets them
+          "variants": [{"options_ko": [s], "package": package[f"v{k}"]} for k, s in enumerate(sizes)]}
+    side = {"images": [{"status": "read", "slices": [{"rows": [{"text": t, "conf": 0.99} for t in rows]}]}
+                       for rows in images]} if sidecar else None
+    notes = transform._image_measures(ov, side, "골프화", "", None, [], "50001740", "\n".join(typed), [])
+    return [v["package"] for v in ov["variants"]], notes
+
+
+def test_a_pair_of_block_is_checked_when_the_table_loads(monkeypatch):
+    """A broken `pair_of` block, or one beside `own_box` / `baselines`, is refused on load, not mid-prepare."""
+    row = next(r for r in package_measures.load_table()["rows"] if r["category_id"] == "50001740")
+    transform.check_pair_row(row)
+    for bad in ({**row, "pair_of": {**row["pair_of"], "carton_g": 0}},
+                {**row, "own_box": {"carton_g": 500}}, {**row, "baselines": {"carton_g": 500}}):
+        with pytest.raises(package_measures.CategoryDefaultsInvalid, match="pair_of"):
+            transform.check_pair_row(bad)
+    table = package_measures.load_table()
+    table["rows"] = [{**r, "pair_of": {**r["pair_of"], "pair_g": [1100, 600]}} if r["category_id"] == "50001740"
+                     else r for r in table["rows"]]
+    monkeypatch.setattr(transform, "load_table", lambda: table)
+    transform._measures_table.cache_clear()
+    try:
+        with pytest.raises(package_measures.CategoryDefaultsInvalid, match="50001740"):
+            transform._measures_table()
+    finally:
+        transform._measures_table.cache_clear()
+
+
+def _server_weight(g, quote, variant_ids, scope="variants"):
+    return {"value": {"min": g, "max": g}, "unit": "g", "kind": "unknown", "scope": "unknown", "approximate": False,
+            "flags": [], "quote": quote, "source": "description", "locator": {}, "origin": "source_stated",
+            "binding": {"scope": scope, "variant_ids": variant_ids}}
+
+
+def test_a_shoes_one_shoe_weight_is_the_pair_for_every_size():
+    """New Balance 13651508341: the server bound "● 무게 : 470g (27.5cm 외발)" (one shoe) to its 275 variant as the
+    pair's, the other sizes kept 800 g; now every size has the pair, 940 g, the package 1440 g, the server's 470 g
+    under `compared` (one_shoe_on_a_size)."""
+    quote = "● 무게 : 470g (27.5cm 외발)"
+    got, notes = _shoe(["26.5cm", "27.0cm", "27.5cm"], [_server_weight(470, quote, ["v2"])], typed=[quote])
+    assert [(p["product_weight_g"]["value"]["max"], p["product_weight_g"]["confidence"],
+             p["package_weight_g"]["value"]["max"]) for p in got] == [(940, 5, 1440)] * 3
+    assert got[2]["product_weight_g"]["compared"] == {"value": 800, "source": "category_default", "confidence": 1}
+    assert {"code": "measures_from_images", "detail": "package_weight_g 3/3, product_weight_g 3/3"} in notes
+
+
+def test_a_shoes_server_weight_on_a_size_goes_back_when_nothing_reads_a_pair():
+    """Mizuno 13765972613's "한쪽 기준 약 325g" bound to its 250 variant: with no pair read (here: the quote's value
+    out of the one-shoe band) the variant goes back to the category default, as its other sizes."""
+    quote = "※ 중량은 25.0cm 한쪽 기준 약 125g"
+    got, _ = _shoe(["245", "250"], [_server_weight(125, quote, ["v1"])])
+    assert [(p["product_weight_g"]["source"], p["product_weight_g"]["central"]) for p in got] == \
+        [("category_default", 800)] * 2
+    assert got[1]["product_weight_g"]["compared"]["rejected"] == "one_shoe_on_a_size"
+    assert all(p["package_weight_g"]["source"] == "category_default" for p in got)
+
+
+def test_a_shoes_pair_from_the_notice_and_without_the_images():
+    """adidas 10650252456's notice "중량: 255mm / 약425g (1pcs)" (the server's, bound to nothing): 850 g on every
+    variant, also with no description images read (no sidecar)."""
+    weights = [_server_weight(425, "중량: 255mm / 약425g (1pcs)", [], "context")]
+    for sidecar in (True, False):
+        got, notes = _shoe(["250", "255"], weights, sidecar=sidecar)
+        assert [(p["product_weight_g"]["value"]["max"], p["package_weight_g"]["value"]["max"]) for p in got] == \
+            [(850, 1350)] * 2
+    assert {"code": "description_images_missing", "detail": "no sidecar: run description_images.py"} in notes
+
+
+@pytest.mark.parametrize("images, typed, pair", [
+    ([["소재 / 제품무게(260기준) / 제조사 / 제조국", "폴리에스터/합성가죽 / 738 g / FOURSENSE / CHINA"]], [], 738),  # 4873054855
+    ([["치수 / 220~250mm/중량약220g"]], [], 440),                                           # FootJoy 2533527296
+    ([], ["(일반 깔창 약 21g / 라텍스 깔창 약 58g)"], None),                                     # 8752851422: insoles
+    ([["125g 초미니사이즈,포켓 속나만의캐디"]], [], None),                                       # 6520680652: a rangefinder
+])
+def test_a_shoes_pair_or_the_default(images, typed, pair):
+    got, _ = _shoe(["240", "250"], [], images, typed)
+    if pair is None:
+        assert all(p["product_weight_g"]["source"] == "category_default" and
+                   p["package_weight_g"]["central"] == 1300 for p in got)
+    else:
+        assert [(p["product_weight_g"]["value"]["max"], p["package_weight_g"]["value"]["max"]) for p in got] == \
+            [(pair, pair + 500)] * 2

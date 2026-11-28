@@ -1,0 +1,291 @@
+{
+ "product_id": "10121431552",
+ "covers": "description: stated weights bound to the variants (bind_weights): model words above the weight (label_above, words) and the title's model (title_model)",
+ "checked": ["image 5 rows 0 and 3: 품명및모델명 / 나이키골프스포츠 라이트 경량 스탠드백 CV1304, 무게 / 2.01 kg", "image 52 rows 3, 4 and 6: 모델 / 나이키에어맥스라이트GB스탠드백, 색상 / 블랙/화이트, 레드/화이트, 네이비/화이트(택7), 무게 / 2.3kg"],
+ "note": "input widened after make_measures_fixture.py (2026-11-27): every variant, and every row of the images that state a weight (the rows naming each weight's model sit above it); a web address row is \"x\". Never run make_measures_fixture.py --recut on it: the recut keeps 3 variants and the rows with a digit or a measure word, losing the label rows the binding reads (widen by hand again)",
+ "input": {
+  "title": "나이키 골프 캐디백 스포츠 라이트 투어 경량 스탠드백",
+  "category": {"id": "50002791", "name": "캐디백"},
+  "spec_rows": [
+   {"label": "상품번호", "value": "10121431552"},
+   {"label": "제조사", "value": "나이키골프"},
+   {"label": "브랜드", "value": "나이키골프"},
+   {"label": "모델명", "value": "나이키 골프 캐디백 스포츠 라이트 투어 경량 스탠드백"},
+   {"label": "이벤트", "value": "빠른배송! 할인쿠폰 즉시지급! 100% 정품 골프샵!"},
+   {"label": "원산지", "value": "상세설명에 표시"},
+   {"label": "부가기능", "value": "스탠드, 골프화수납공간, 골프공수납공간, 보호받침, 어깨패드포함, 쿠션어깨끈, 어깨끈탈착, 후드커버, 상단손잡이, 경량, 다용도수납"},
+   {"label": "소재", "value": "폴리에스테르"},
+   {"label": "출시", "value": "2026년형"},
+   {"label": "입구분할", "value": "5분할"},
+   {"label": "성별", "value": "남녀공용"}
+  ],
+  "facts": [],
+  "variants": [
+   {"id": "39955867577", "options_ko": ["블랙"]},
+   {"id": "39955867578", "options_ko": ["카키"]},
+   {"id": "54321224511", "options_ko": ["에어맥스 블랙/화이트"]},
+   {"id": "54321224512", "options_ko": ["에어맥스 레드/화이트"]},
+   {"id": "54321224513", "options_ko": ["에어맥스 네이비/화이트"]}
+  ],
+  "supplements": [],
+  "typed": [
+   "[NIKE GOLF]",
+   "나이키 골프",
+   "캐디백 스포츠 라이트 투어 경량 스탠드백",
+   "[색상]",
+   "블랙",
+   "카키",
+   "[소재]",
+   "폴리에스터",
+   "블랙",
+   "블랙",
+   "블랙",
+   "블랙",
+   "블랙",
+   "블랙",
+   "블랙",
+   "블랙",
+   "블랙",
+   "블랙",
+   "블랙",
+   "카키",
+   "에어맥스 블랙/화이트",
+   "에어맥스 블랙/화이트",
+   "에어맥스 블랙/화이트",
+   "에어맥스 블랙/화이트",
+   "에어맥스 블랙/화이트",
+   "에어맥스 레드/화이트",
+   "에어맥스 네이비/화이트"
+  ],
+  "images": [
+   [1, ["리스트컴퍼니에서 판매하는 모든 제품은 100% 정품입니다.", 0.978]],
+   [],
+   [3],
+   [4, ["골퍼가 플레이에 집중할 수 9 / 있는 / 요소들을 / 갖추었습니다.", 0.972], ["NIKE / SPORT LITE: / STAND / BAG", 0.936]],
+   [
+    1,
+    ["스포츠 라이트 스탠드백", 0.978],
+    1,
+    ["플레이어가 경기에 집중할 수 있도록 편의기능을 갖춘 골프백입니다.", 0.992],
+    ["5분할 / 와이드포켓 / 더블스트랩", 0.991],
+    2
+   ],
+   [
+    ["품명및모델명 / 나이키골프스포츠 라이트 경량 스탠드백 CV1304", 0.922],
+    ["소재 / 폴리에스터 100%", 0.951],
+    ["사이즈 / L12.6 X W10.63 X H36.22 INCHES", 0.964],
+    ["무게 / 2.01 kg", 0.967],
+    ["제조자 / 나이키골프코리아", 0.998],
+    ["제조국 / 중국", 0.994],
+    ["NOTICE / ·사이즈와 무게는 가이드수치이므로실제 상품과는약간의 오차가있을수 있습니다", 0.923],
+    ["·사이즈는 측정방법과위치에 따라1~2CM정도의오차가있을수있습니다", 0.964],
+    ["모니터의 사양 또는해상도에따라상품의색상및 무니가실제상품과다소차이가있을 수있습니다.", 0.932]
+   ],
+   [["5분할구조", 1.0], 2, ["5개의 분할 구조로 제작 되었습니다.", 0.954]],
+   [6],
+   [6],
+   [["내구성이 뛰어난", 0.979], 1, ["클럽을가득담은캐디백이", 0.99], 1, ["내구성이 우수합니다.", 0.944]],
+   [5, ["쿠션감을 높여 편하게 백을 메고", 0.928], 1],
+   [],
+   [],
+   [1],
+   [],
+   [],
+   [1],
+   [],
+   [],
+   [],
+   [],
+   [],
+   [],
+   [1, ["스포츠 브랜드 1위 나이키의 초경량 스탠드백", 0.978], ["나이키 / 스탠드백", 0.999], 1],
+   [1],
+   [
+    ["3컬러 / 택1 / 사이즈", 0.874],
+    ["블랙/화이트, / 레드/화이트 / 30×88(124) / x26cm", 0.882],
+    ["네이비/화이트 / 2.3kg", 0.993],
+    1,
+    ["'Air / Bag(에어백) / 적용 / 수납 공간", 0.997],
+    ["가능한 / 4분할 클럽", 0.938],
+    1,
+    ["전용 / 레인 / 후드 포함", 0.998],
+    1
+   ],
+   [1],
+   [
+    ["01", 0.984],
+    1,
+    ["이 골프백이 놀랍도록 가벼운 이유는 나이키의 특허", 0.962],
+    ["기술인'Air Bag(에어백)'요소를 적용했기 때문입니다.", 0.911],
+    1,
+    ["도입되어,가벼운 무게와 동시에 탁월한 착용감과", 0.975],
+    1,
+    ["어깨 스트랩에 배치되어,무게를 최소화하면서도", 0.99],
+    1
+   ],
+   [["9", 0.858]],
+   [["7", 0.769]],
+   [["02", 1.0], ["4분할 / 클럽 / 수납 / 공간", 1.0], ["클럽이 서로 부딪히지 않도록 4개의 구획으로", 0.971], 2],
+   [],
+   [["03", 0.999], ["조절형 / 듀얼 스트랩 시스템", 0.94], 1, ["제공하며,스트랩 길이를 체형에 맞게 조절해", 0.954], 2],
+   [],
+   [["04", 1.0], ["5개의 다목적 포켓", 0.993], ["총 5개의 실용적인 포켓이 구성되어 있어,", 0.958], 3],
+   [2],
+   [["05", 1.0], 1],
+   [4],
+   [4],
+   [["06", 1.0], 3],
+   [2],
+   [["07", 1.0], 1, ["튼튼하게 설계된 바닥은 골프백을", 0.995], 1, ["내구성과 안전성을 / 제공합니다.", 0.949]],
+   [["5", 0.718]],
+   [["08", 0.999], 2, ["이중 손잡이 구조로,상황에 맞게 편리하게 골프백을", 0.97], 2],
+   [2],
+   [2],
+   [1],
+   [["3", 0.81], 1],
+   [1],
+   [["0", 0.61], ["9", 0.825]],
+   [1],
+   [1],
+   [
+    ["Product Info", 0.995],
+    ["제품정보", 0.999],
+    ["상세스펙", 0.999],
+    ["모델 / 나이키에어맥스라이트GB스탠드백", 0.97],
+    ["색상 / 블랙/화이트, 레드/화이트, 네이비/화이트(택7)", 0.914],
+    ["x", 0.962],
+    ["무게 / 2.3kg", 0.999],
+    ["소재 / 폴리에스터100%", 0.989],
+    ["제조국 / 베트남", 0.997]
+   ],
+   [
+    ["골프백 후드커버", 0.946],
+    1,
+    ["대부분의 캐디백/스탠드백 후드 커버는", 0.951],
+    ["골프백 측면 또는 뒷면 긴 지퍼를 열면", 0.9],
+    1,
+    ["골프백디자인에따라 커버가", 0.966],
+    1,
+    ["골프백의 모든 지퍼를 잘 확인해 주세요", 0.91]
+   ],
+   [],
+   []
+  ],
+  "measures": {
+   "is_set": false,
+   "weights": [],
+   "dimensions": [],
+   "references": [
+    {
+     "quote": "크기: 상품상세참조",
+     "source": "notice",
+     "locator": {"block": "items", "row": 2},
+     "measure": "size",
+     "reason": "description_reference"
+    },
+    {
+     "quote": "중량: 상품상세참조",
+     "source": "notice",
+     "locator": {"block": "items", "row": 3},
+     "measure": "weight",
+     "reason": "description_reference"
+    }
+   ],
+   "review": []
+  }
+ },
+ "expected": [
+  {
+   "variants": [["블랙"], ["카키"]],
+   "fields": {
+    "product_weight_g": {"value": 2010, "source": "description_image", "confidence": 4, "how": "stated weight, bound to the variant", "quote": "무게 / 2.01 kg"},
+    "package_weight_g": {
+     "value": 3010,
+     "source": "composed",
+     "confidence": 3,
+     "how": "product weight + carton",
+     "parts": [
+      {"part": "product", "value": 2010, "from": "product_weight_g"},
+      {"part": "carton", "value": 1000, "from": "baseline"}
+     ]
+    },
+    "package_length_mm": {
+     "value": 970,
+     "source": "composed",
+     "confidence": 3,
+     "how": "item size + margin",
+     "parts": [
+      {"part": "item", "value": 920, "from": "stated", "quote": "사이즈 / L12.6 X W10.63 X H36.22 INCHES"},
+      {"part": "margin", "value": 50, "from": "baseline"}
+     ]
+    },
+    "package_width_mm": {
+     "value": 340,
+     "source": "composed",
+     "confidence": 3,
+     "how": "item size + margin",
+     "parts": [
+      {"part": "item", "value": 320, "from": "stated", "quote": "사이즈 / L12.6 X W10.63 X H36.22 INCHES"},
+      {"part": "margin", "value": 20, "from": "baseline"}
+     ]
+    },
+    "package_height_mm": {
+     "value": 290,
+     "source": "composed",
+     "confidence": 3,
+     "how": "item size + margin",
+     "parts": [
+      {"part": "item", "value": 270, "from": "stated", "quote": "사이즈 / L12.6 X W10.63 X H36.22 INCHES"},
+      {"part": "margin", "value": 20, "from": "baseline"}
+     ]
+    }
+   }
+  },
+  {
+   "variants": [["에어맥스 블랙/화이트"], ["에어맥스 레드/화이트"], ["에어맥스 네이비/화이트"]],
+   "fields": {
+    "product_weight_g": {"value": 2300, "source": "description_image", "confidence": 4, "how": "stated weight, bound to the variant", "quote": "무게 / 2.3kg"},
+    "package_weight_g": {
+     "value": 3300,
+     "source": "composed",
+     "confidence": 3,
+     "how": "product weight + carton",
+     "parts": [
+      {"part": "product", "value": 2300, "from": "product_weight_g"},
+      {"part": "carton", "value": 1000, "from": "baseline"}
+     ]
+    },
+    "package_length_mm": {
+     "value": 970,
+     "source": "composed",
+     "confidence": 3,
+     "how": "item size + margin",
+     "parts": [
+      {"part": "item", "value": 920, "from": "stated", "quote": "사이즈 / L12.6 X W10.63 X H36.22 INCHES"},
+      {"part": "margin", "value": 50, "from": "baseline"}
+     ]
+    },
+    "package_width_mm": {
+     "value": 340,
+     "source": "composed",
+     "confidence": 3,
+     "how": "item size + margin",
+     "parts": [
+      {"part": "item", "value": 320, "from": "stated", "quote": "사이즈 / L12.6 X W10.63 X H36.22 INCHES"},
+      {"part": "margin", "value": 20, "from": "baseline"}
+     ]
+    },
+    "package_height_mm": {
+     "value": 290,
+     "source": "composed",
+     "confidence": 3,
+     "how": "item size + margin",
+     "parts": [
+      {"part": "item", "value": 270, "from": "stated", "quote": "사이즈 / L12.6 X W10.63 X H36.22 INCHES"},
+      {"part": "margin", "value": 20, "from": "baseline"}
+     ]
+    }
+   }
+  }
+ ]
+}

@@ -50,7 +50,8 @@ under `scripts/output/shops/<shop>/lens/`, `make_lens_fixture.py` the fixture, `
    - A `versions` row that changed from `apart` to `JOINED` contradicts the owner's word, so the change is wrong.
      The two BG-100 and REVA rows are `JOINED` today (title words only, by design), so this check cannot catch a
      change to them: for those pairs compare `d.strong(a, b)` and `d.confirm(a, b)` before and after (both must stay
-     False; `a`, `b` are `d.entry(...)` as above).
+     unchanged: today `strong` False, `confirm` True, measured 2026-11-27; a `strong` True is a false merge; `a`, `b`
+     are `d.entry(...)` as above).
    - A group that is gone or smaller can mean lost copies. Check that it was meant.
 5. `.venv/bin/python -m pytest scripts/test_dedupe.py scripts/test_lens_fixture.py scripts/test_lens.py -q`, then
    `scripts/check.sh`. If the lens fixture must pin a new case, add a `CASES` line in `make_lens_fixture.py` that says

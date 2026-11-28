@@ -1,0 +1,240 @@
+{
+ "product_id": "7115158598",
+ "covers": "description: stated weights bound to the variants (bind_weights): a typed model heading (typed_label) and the other of two models (two_models)",
+ "checked": ["typed lines 1-9: 플레이어스5 스탠드백, [색상] and its six colours, 무게 - 1.95KG", "image 40 row 1: Weight (kg) / 2.6kg (the Sport bag)"],
+ "note": "input widened after make_measures_fixture.py (2026-11-27): every variant, and every row of the images that state a weight (the rows naming each weight's model sit above it); a web address row is \"x\". Never run make_measures_fixture.py --recut on it: the recut keeps 3 variants and the rows with a digit or a measure word, losing the label rows the binding reads (widen by hand again)",
+ "input": {
+  "title": "타이틀리스트 캐디백 플레이어스4 스탠드백 투어 경량",
+  "category": {"id": "50002791", "name": "캐디백"},
+  "spec_rows": [
+   {"label": "상품번호", "value": "7115158598"},
+   {"label": "제조사", "value": "타이틀리스트"},
+   {"label": "브랜드", "value": "타이틀리스트"},
+   {"label": "모델명", "value": "타이틀리스트 캐디백 플레이어스4 스탠드백 투어 경량"},
+   {"label": "이벤트", "value": "빠른배송! 할인쿠폰 즉시지급! 100% 정품 골프샵!"},
+   {"label": "원산지", "value": "상세설명에 표시"},
+   {"label": "부가기능", "value": "스탠드, 골프공수납공간, 골프화수납공간, 후드커버, 쿠션어깨끈, 경량"},
+   {"label": "소재", "value": "폴리에스테르"},
+   {"label": "출시", "value": "2025년형"},
+   {"label": "입구분할", "value": "4분할"},
+   {"label": "성별", "value": "남녀공용"}
+  ],
+  "facts": [],
+  "variants": [
+   {"id": "48079409243", "options_ko": ["플레이어스5 스탠드백", "블랙/레드"]},
+   {"id": "48079409245", "options_ko": ["플레이어스5 스탠드백", "블랙/블랙"]},
+   {"id": "48079409247", "options_ko": ["플레이어스5 스탠드백", "유칼립투스"]},
+   {"id": "48079409249", "options_ko": ["플레이어스5 스탠드백", "샌드"]},
+   {"id": "48079409251", "options_ko": ["플레이어스5 스탠드백", "화이트/유칼립투스"]},
+   {"id": "48079409253", "options_ko": ["플레이어스5 스탠드백", "블루버드"]},
+   {"id": "48079409255", "options_ko": ["스포츠 스탠드백", "화이트/라임"]}
+  ],
+  "supplements": [],
+  "typed": [
+   "[Titleist]",
+   "플레이어스5 스탠드백",
+   "[색상]",
+   "블랙/레드",
+   "블랙/블랙",
+   "유칼립투스",
+   "샌드",
+   "화이트/유칼립투스",
+   "블루버드",
+   "무게 - 1.95KG",
+   "플레이어스5 스탠드백 블랙/레드",
+   "플레이어스5 스탠드백 블랙/레드",
+   "플레이어스5 스탠드백 블랙/레드",
+   "플레이어스5 스탠드백 블랙/레드",
+   "플레이어스5 스탠드백 블랙/레드",
+   "플레이어스5 스탠드백 블랙/레드",
+   "플레이어스5 스탠드백 블랙/블랙",
+   "플레이어스5 스탠드백 블랙/블랙",
+   "플레이어스5 스탠드백 블랙/블랙",
+   "플레이어스5 스탠드백 블랙/블랙",
+   "플레이어스5 스탠드백 유칼립투스",
+   "플레이어스5 스탠드백 유칼립투스",
+   "플레이어스5 스탠드백 유칼립투스",
+   "플레이어스5 스탠드백 유칼립투스",
+   "플레이어스5 스탠드백 샌드",
+   "플레이어스5 스탠드백 샌드",
+   "플레이어스5 스탠드백 샌드",
+   "플레이어스5 스탠드백 샌드",
+   "플레이어스5 스탠드백 샌드",
+   "플레이어스5 스탠드백 화이트/유칼립투스",
+   "플레이어스5 스탠드백 화이트/유칼립투스",
+   "플레이어스5 스탠드백 화이트/유칼립투스",
+   "플레이어스5 스탠드백 화이트/유칼립투스",
+   "플레이어스5 스탠드백 화이트/유칼립투스",
+   "플레이어스5 스탠드백 블루버드",
+   "플레이어스5 스탠드백 블루버드",
+   "플레이어스5 스탠드백 블루버드",
+   "플레이어스5 스탠드백 블루버드",
+   "플레이어스5 스탠드백 블루버드",
+   "[Titleist]",
+   "스포츠 스탠드백",
+   "[색상]",
+   "화이트/라임",
+   "스포츠 스탠드백 화이트/라임",
+   "스포츠 스탠드백 화이트/라임",
+   "스포츠 스탠드백 화이트/라임",
+   "스포츠 스탠드백 화이트/라임"
+  ],
+  "images": [
+   [1, ["Titleist / 1", 0.992], 2, ["리스트컴퍼니에서 판매하는 모든 제품은 100% 정품입니다.", 0.972]],
+   [["2025", 1.0], 3],
+   [3],
+   [2],
+   [1],
+   [
+    ["PLAYERS 5", 0.943],
+    1,
+    ["여러분이 플레이에 집중할수있도록편리함내구성, 그리고향상된사용편의성을제공", 0.945],
+    3,
+    ["5분할설계", 0.992],
+    1,
+    ["•손쉬운수납과편의를위한커브형디자인의어패럴포켓과새들포켓", 0.953],
+    1
+   ],
+   [2, ["5분할설계 / 프리미엄 더블스트랩 / 외부 보냉물병 포켓", 0.902]],
+   [1],
+   [
+    ["Top Cuff / 5 / Pockets / 7", 0.967],
+    ["Weight (kg) / 1.95kg / Strap / Premium Double", 0.968],
+    ["Top Cuffr Width / 8.7\" / Bag Height / 36.6\"", 0.863],
+    ["Base Width / 9° / Material / 플리에스터", 0.73]
+   ],
+   [],
+   [3],
+   [1],
+   [1],
+   [],
+   [1],
+   [1],
+   [2],
+   [],
+   [1],
+   [1],
+   [1],
+   [1],
+   [2],
+   [1],
+   [1],
+   [1],
+   [1],
+   [1],
+   [1],
+   [1],
+   [1],
+   [["Tereaiat\"", 0.574]],
+   [1],
+   [],
+   [1],
+   [1],
+   [1],
+   [],
+   [
+    ["PERFORMANCE SPORTS STAND BAG", 0.954],
+    1,
+    ["안전한 클럽 수납과 보호를 모두 고려한 퍼포먼스 스포츠 스탠드백은 몰드 디테일과 실용적", 0.975],
+    2,
+    ["시장요구에따라개발된타이틀리스트만의 5분할 투입구", 0.959],
+    2,
+    ["•넉녁한 수납이 가능한2 개의 풀사이즈어패럴 포켓", 0.868],
+    ["·스탠드백 양쪽에 배치해 편의성을 더한 2 개의 귀중품 포켓", 0.881],
+    1
+   ],
+   [["약20.32cm", 0.981], ["(8.0인치)", 0.997], ["약2.6kg / ↑약41cm→", 0.894]],
+   [["Top Cuff / 5", 0.996], ["Weight (kg) / 2.6kg", 0.974]],
+   [["Pockets / 6", 0.999], 1],
+   [1],
+   [1],
+   [],
+   [1],
+   [2],
+   [1],
+   [1],
+   [6],
+   [1, ["1", 0.992]],
+   [],
+   [4]
+  ],
+  "measures": {
+   "is_set": false,
+   "weights": [
+    {
+     "value": {"min": 1950.0, "max": 1950.0},
+     "unit": "KG",
+     "matched": "1.95KG",
+     "kind": "unknown",
+     "scope": "unknown",
+     "approximate": false,
+     "count": null,
+     "flags": [],
+     "quote": "무게 - 1.95KG",
+     "source": "description",
+     "locator": {"block": "text", "row": 9},
+     "binding": {"scope": "context", "variant_ids": []},
+     "origin": "source_stated"
+    }
+   ],
+   "dimensions": [],
+   "references": [
+    {
+     "quote": "크기: 상세페이지참조",
+     "source": "notice",
+     "locator": {"block": "items", "row": 3},
+     "measure": "size",
+     "reason": "description_reference"
+    }
+   ],
+   "review": []
+  }
+ },
+ "expected": [
+  {
+   "variants": [
+    ["플레이어스5 스탠드백", "블랙/레드"],
+    ["플레이어스5 스탠드백", "블랙/블랙"],
+    ["플레이어스5 스탠드백", "유칼립투스"],
+    ["플레이어스5 스탠드백", "샌드"],
+    ["플레이어스5 스탠드백", "화이트/유칼립투스"],
+    ["플레이어스5 스탠드백", "블루버드"]
+   ],
+   "fields": {
+    "product_weight_g": {"value": 1950, "source": "description_image", "confidence": 4, "how": "stated weight, bound to the variant", "from": "description_text", "quote": "무게 - 1.95KG"},
+    "package_weight_g": {
+     "value": 2950,
+     "source": "composed",
+     "confidence": 3,
+     "how": "product weight + carton",
+     "parts": [
+      {"part": "product", "value": 1950, "from": "product_weight_g"},
+      {"part": "carton", "value": 1000, "from": "baseline"}
+     ]
+    },
+    "package_length_mm": {"value": 950, "source": "category_default", "confidence": 1},
+    "package_width_mm": {"value": 350, "source": "category_default", "confidence": 1},
+    "package_height_mm": {"value": 300, "source": "category_default", "confidence": 1}
+   }
+  },
+  {
+   "variants": [["스포츠 스탠드백", "화이트/라임"]],
+   "fields": {
+    "product_weight_g": {"value": 2600, "source": "description_image", "confidence": 3, "how": "stated weight, bound to the variant", "quote": "Weight (kg) / 2.6kg"},
+    "package_weight_g": {
+     "value": 3600,
+     "source": "composed",
+     "confidence": 3,
+     "how": "product weight + carton",
+     "parts": [
+      {"part": "product", "value": 2600, "from": "product_weight_g"},
+      {"part": "carton", "value": 1000, "from": "baseline"}
+     ]
+    },
+    "package_length_mm": {"value": 950, "source": "category_default", "confidence": 1},
+    "package_width_mm": {"value": 350, "source": "category_default", "confidence": 1},
+    "package_height_mm": {"value": 300, "source": "category_default", "confidence": 1}
+   }
+  }
+ ]
+}

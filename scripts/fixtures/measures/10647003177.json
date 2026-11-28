@@ -1,0 +1,105 @@
+{
+ "product_id": "10647003177",
+ "covers": "description: stated weights bound to the variants (bind_weights): the colour row above each weight (label_above)",
+ "checked": ["image 6 rows 1 and 3: 컬러:블랙그레이, 중량:3.12kg", "image 8 rows 1 and 4: 컬러:블랙레드, 중량:3.94kg"],
+ "note": "input widened after make_measures_fixture.py (2026-11-27): every variant, and every row of the images that state a weight (the rows naming each weight's model sit above it); a web address row is \"x\". Never run make_measures_fixture.py --recut on it: the recut keeps 3 variants and the rows with a digit or a measure word, losing the label rows the binding reads (widen by hand again)",
+ "input": {
+  "title": "PGM 남자 골프백 경량 방수 캐디백 스탠드백 14구 골프가방",
+  "category": {"id": "50002791", "name": "캐디백"},
+  "spec_rows": [
+   {"label": "상품번호", "value": "10647003177"},
+   {"label": "브랜드", "value": "PGM"},
+   {"label": "모델명", "value": "PGM 남자 골프백 경량 방수 캐디백 스탠드백 14구 골프가방"},
+   {"label": "원산지", "value": "중국산(중국, 홍콩) 등"},
+   {"label": "부가기능", "value": "스탠드, 골프공수납공간, 방수, 후드커버, 상단손잡이, 보호받침, 어깨패드포함, 어깨끈탈착, 쿠션어깨끈, 우산꽂이, 다용도수납, 후드커버수납, 경량"},
+   {"label": "소재", "value": "합성피혁, 폴리에스테르"},
+   {"label": "입구분할", "value": "14분할"},
+   {"label": "성별", "value": "남성용"},
+   {"label": "인증정보", "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."}
+  ],
+  "facts": [],
+  "variants": [{"id": "43196744698", "options_ko": ["블랙 그레이"]}, {"id": "46162399056", "options_ko": ["블랙 레드"]}],
+  "supplements": [],
+  "typed": ["PGM 남자 골프백 경량 방수 캐디백", "스탠드백 14구 골프가방", "옵션", "블랙 그레이", "블랙 레드"],
+  "images": [
+   [["STANDARD BAG", 0.961], 5],
+   [4],
+   [4],
+   [["고정 캐디백 포켓", 0.938], ["카트 스트랩은 포켓을 통과하여 캐디백을 고정할 수 있다.", 0.993], 3, ["L52", 0.623]],
+   [2, ["THERMOSTATIC BAG", 0.982], 3],
+   [
+    1,
+    ["127cm", 0.995],
+    ["97cm", 0.997],
+    ["LO2", 0.538],
+    ["34cm / 37cm", 0.995],
+    ["사이즈는 측정 방법에 따라 오차가 있을 수 있습니다.", 0.892]
+   ],
+   [[">> / PGM충격 방지방수골프백(블랙그레이)", 0.957], ["컬러:블랙그레이", 0.989], ["재질:폴리에스테르PU", 0.987], ["중량:3.12KG", 0.941]],
+   [["127cm", 0.998], ["99cm", 0.996], ["L92 / Gin", 0.608], ["40cm / 30cm", 0.993]],
+   [
+    [">> / PGM충격방지방수 / 골프백(블랙레드)", 0.973],
+    ["컬러:블랙레드", 0.999],
+    ["재질:폴리에스테르 PU", 0.986],
+    ["내부재질:PE", 0.993],
+    ["중량:3.94kg", 0.984]
+   ],
+   [3],
+   [2],
+   [2],
+   [1, ["7PGm", 0.603], ["-2G77", 0.697], 1],
+   [2, ["L92", 0.654]],
+   [3],
+   [2],
+   [1],
+   [],
+   [1],
+   [1],
+   [],
+   [],
+   [],
+   [1]
+  ],
+  "measures": {"is_set": false, "weights": [], "dimensions": [], "references": [], "review": []}
+ },
+ "expected": [
+  {
+   "variants": [["블랙 그레이"]],
+   "fields": {
+    "product_weight_g": {"value": 3120, "source": "description_image", "confidence": 4, "how": "stated weight, bound to the variant", "quote": "중량:3.12kg"},
+    "package_weight_g": {
+     "value": 4120,
+     "source": "composed",
+     "confidence": 3,
+     "how": "product weight + carton",
+     "parts": [
+      {"part": "product", "value": 3120, "from": "product_weight_g"},
+      {"part": "carton", "value": 1000, "from": "baseline"}
+     ]
+    },
+    "package_length_mm": {"value": 950, "source": "category_default", "confidence": 1},
+    "package_width_mm": {"value": 350, "source": "category_default", "confidence": 1},
+    "package_height_mm": {"value": 300, "source": "category_default", "confidence": 1}
+   }
+  },
+  {
+   "variants": [["블랙 레드"]],
+   "fields": {
+    "product_weight_g": {"value": 3940, "source": "description_image", "confidence": 4, "how": "stated weight, bound to the variant", "quote": "중량:3.94kg"},
+    "package_weight_g": {
+     "value": 4940,
+     "source": "composed",
+     "confidence": 3,
+     "how": "product weight + carton",
+     "parts": [
+      {"part": "product", "value": 3940, "from": "product_weight_g"},
+      {"part": "carton", "value": 1000, "from": "baseline"}
+     ]
+    },
+    "package_length_mm": {"value": 950, "source": "category_default", "confidence": 1},
+    "package_width_mm": {"value": 350, "source": "category_default", "confidence": 1},
+    "package_height_mm": {"value": 300, "source": "category_default", "confidence": 1}
+   }
+  }
+ ]
+}

@@ -510,6 +510,44 @@ def test_two_agency_imports_translated_apart_are_one_product():
     assert not D.alike(a, D.entry(korean))                           # a Korean seller's title: never by words
 
 
+S4_COLOURS = [["블랙/블랙/화이트"], ["블랙/레드/화이트"], ["화이트/그레이/네이비"], ["마블/차콜/차콜"], ["네이비/네이비/화이트"],
+              ["핑크/그레이/화이트"], ["사이프러스/블랙/블랙"], ["블루버드/네이비/화이트"], ["그레이/크림/마블"], ["몬터레이/플레임/마블"]]
+
+
+def _import(channel, pid, name, values, price, category="50002791"):
+    rec = record(channel, pid, name, price=price, photos=(f"p{pid}",), values=values, category=category)
+    rec["specs"] = {"specs": [{"label": "원산지", "value": "일본(구매대행)"}]}
+    return D.entry(rec, "published")
+
+
+def test_a_year_spelt_two_ways_with_the_same_variants_is_one_agency_product():
+    """2026-11-27, the run of 100 stand bags: Titleist Players S4, two Japanese agency imports with the same 10
+    colourways, titles apart by '2026년' / '2026' (and 골프백 / 골프 블랙): the copy was taken. Now a duplicate_of."""
+    kept = _import(1100056746, 13718353961, "타이틀리스트 2026 플레이어스 S4 골프 스탠드 캐디백 경량 블랙", S4_COLOURS,
+                   224_000)
+    copy = _import(102726915, 13847514326, "타이틀리스트 플레이어스 S4 스탠드 캐디백 골프백 경량 2026년", S4_COLOURS,
+                   215_000)
+    assert D.alike(copy, kept) and D.possible(copy, kept) and D.confirm(copy, kept)
+    assert D.Index([kept]).decide({**copy, "status": "job"})["decision"] == "duplicate_of"
+    # the year alone is no excuse: other variants (below VARIANTS_JACCARD) or fewer than 3 on a side stay apart
+    other = _import(102726915, 13847514326, "타이틀리스트 플레이어스 S4 스탠드 캐디백 골프백 경량 2026년",
+                    S4_COLOURS[:5] + [["다른색"], ["또다른색"]], 215_000)
+    assert not D.alike(other, kept)
+    two = [["블랙/블랙/화이트"], ["블랙/레드/화이트"]]
+    assert not D.alike(_import(1, 11, "타이틀리스트 플레이어스 S4 스탠드 캐디백 골프백 경량 2026년", two, 215_000),
+                       _import(2, 22, "타이틀리스트 2026 플레이어스 S4 골프 스탠드 캐디백 경량 블랙", two, 224_000))
+
+
+def test_bridgestone_bg100_2022_and_2022_nyeon_stay_apart():
+    """The BG-100 family the owner judged versions (2026-11-15): 13634860211 '2022' / 13799086022 '2022년', the year
+    read alike would make the titles alike, but their variants (0.0) keep the year fix shut."""
+    a = _import(101, 13634860211, "브리지스톤 2022 BG-100 남성 골프채 풀세트 11개 캐디백 포함 클럽세트",
+                [["세금미포함", "S/스틸"], ["세금미포함", "R/카본"]], 697_000, category="50002788")
+    b = _import(102, 13799086022, "브리지스톤 남성 골프채 풀세트 BG-100 11개 클럽 캐디백 포함 입문용 2022년",
+                [["관부가세 별도", "11개세트 + 캐디백", "S - 스틸(아이언)"]], 695_000, category="50002788")
+    assert not D.alike(a, b) and not D.strong(a, b) and not D.confirm(a, b)
+
+
 def test_report_marks_the_members_joined_by_title_words_only_and_a_tie_keeps_more_variants():
     """2026-11-15, the store's old groups: BG-100 Black Edition joined the white sets by title words alone (no photo,
     no variant shared); the report marks such members to be looked at on their photos. A tie of grade and reviews
@@ -1133,6 +1171,8 @@ def item(channel, pid, name, catalog=None, model=None, brand=None, price=1_890_0
     ("GWKW08445 0000", "제이린드버그 골프웨어 여성 가디건 GWKW08445 0000", {"GWKW08445"}),
     ("여성골프가디건 삼선 니트 여성골프웨어 봉선댁", "여자 가을 삼선 니트 가디건", set()),          # the title copied: no code
     (None, "PGM 골프채 풀세트 12PCS 2024 N.S.PRO 950GH", set()),                               # counts, years, shafts
+    ("AGGUUSB06", "어뉴골프 8 LIGHTWEIGHT STUD STAND BAG_MU", {"AGGUUSB06"}),     # 8+ characters, 2 digits (11-27)
+    ("26BN 스탠드백 LINKAIR STAND BAG", "부쉬넬 26BN 링크에어 스탠드백 LH01", set()),           # short 2-digit tokens
 ])
 def test_style_codes(model, title, codes):
     assert D.style_codes(model, title) == codes
@@ -1169,6 +1209,48 @@ def test_a_style_code_joins_two_catalogs_but_not_a_combo_or_another_brand():
     d = item(104, 4, "캘러웨이 퀀텀 + JPX925 조합 클럽세트 남성", brand="캘러웨이", price=2_000_000)
     e = item(105, 5, "미즈노 JPX925 포지드 스틸 남성 풀세트", brand="캘러웨이", price=2_000_000)
     assert D.same_item(d, e) is None
+
+
+def test_a_colour_suffix_on_a_long_code_is_a_same_item_candidate():
+    """2026-11-27, the run of 100 stand bags: ANEW GOLF's own store lists 13767342130 under model name AGGUUSB06 and
+    title '..._MU'; 13770094271 titles it AGGUUSB06MU (MU: multi). A hold candidate (parked), never a decision."""
+    copy = item(100363799, 13767342130, "어뉴골프 8 LIGHTWEIGHT STUD STAND BAG_MU", model="AGGUUSB06", brand="어뉴",
+                price=659_000, category="50002791")
+    kept = item(102591454, 13770094271, "어뉴 골프 캐디백 8 라이트웨이트 스터드 스탠드 백 멀티 AGGUUSB06MU", brand="어뉴",
+                price=593_100, category="50002791")
+    assert copy["codes"] == {"AGGUUSB06"} and kept["codes"] == {"AGGUUSB06MU"}
+    assert not D.signals(copy, kept)["confirmed"] and D.same_item(copy, kept) == "code AGGUUSB06MU"
+    assert D.same_item(kept, copy) == "code AGGUUSB06MU"
+    d = D.Index([kept]).decide({**copy, "status": "job"})
+    assert d["decision"] is None and d["same_item"] == [kept["key"]]
+    # BK is no word of the AGGUUSB06 title: another colour of the line, no candidate
+    black = item(102591454, 2, "어뉴 골프 캐디백 8 라이트웨이트 스터드 스탠드 백 블랙 AGGUUSB06BK", brand="어뉴",
+                 price=593_100, category="50002791")
+    assert D.same_item(copy, black) is None
+    # one code of a club line on 5 and 7 irons: the count clash still parts them (XXIO13 13740407702 / 13803178509)
+    five = item(101, 13740407702, "젝시오13 MP1300LK 여성 아이언 세트 5개", model="MP1300LK", brand="젝시오")
+    seven = item(102, 13803178509, "젝시오13 MP1300LK 여성 아이언 세트 7개", model="MP1300LK", brand="젝시오")
+    assert five["codes"] == seven["codes"] == {"MP1300LK"} and D.same_item(five, seven) is None
+
+
+def test_the_pumbeon_spec_row_is_a_style_code_hyphens_joined():
+    """2026-11-27, the run of 100 stand bags: sellers write the maker's part number in the 품번 row only (Inparo
+    12209887968 SB-28K; Adidas Retrocross Gripmore BOA 13735186974 / 13635116576, both HP3717, titles reworded)."""
+    def pb(value):
+        return {"specs": [{"label": "브랜드", "value": "인파로"}, {"label": "품번", "value": value}]}
+    assert D.pumbeon_codes(pb("SB-28K")) == {"SB28K"} and D.pumbeon_codes(pb("PGPPU8209-21")) == {"PGPPU820921"}
+    assert D.pumbeon_codes(pb("HP3717")) == {"HP3717"} and D.pumbeon_codes(pb("tb26sx4a001")) == {"TB26SX4A001"}
+    for none in ("상세페이지 참조", "상품상세참조", "", "12345", "ABCDE", "SB-2", "MODUS-105"):
+        assert D.pumbeon_codes(pb(none)) == set(), none
+    assert D.pumbeon_codes({}) == set() and D.pumbeon_codes({"specs": [{"label": "모델명", "value": "HP3717"}]}) == set()
+
+    def shoe(channel, pid, name, price):
+        r = record(channel, pid, name, price=price, photos=(f"p{pid}",), values=[[f"v{pid}"]], category="50002800")
+        r["specs"] = {"specs": [{"label": "품번", "value": "HP3717"}], "facts": {"brand": {"value": "아디다스"}}}
+        return D.entry(r, "published")
+    a = shoe(101821141, 13735186974, "아디다스 레트로크로스 그립모어 보아 스파이크리스 발편한골프화 키높이골프화", 139_000)
+    b = shoe(1100133493, 13635116576, "아디다스 레트로 크로스 골프화 보아 그립모어 스파이크리스", 149_000)
+    assert a["codes"] == b["codes"] == {"HP3717"} and D.same_item(a, b) == "code HP3717"
 
 
 def _pants(pid, name, values, model, price):

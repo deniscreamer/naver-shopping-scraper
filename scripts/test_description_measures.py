@@ -1509,3 +1509,331 @@ def test_more_forms_of_an_own_items_weight(line, grams):
 ])
 def test_not_more_forms_of_an_own_items_weight(line):
     assert D.read_rows([], None, [line], own_g=OWN_G)["product_weights"] == []
+
+
+# ---- stated weights bound to the variants (2026-11-27, Lightweight Stand Bags: bind_weights) ----------------------
+# OCR rows and typed lines of the real listings, product id beside each; a variant's options are its options_ko.
+
+BAND = (800, 4500)                                   # 50002791's product weight band (plausible)
+
+
+def bind(images, options, title="경량 스탠드백", typed=None, band=BAND, own_g=OWN_G):
+    return D.bind_weights(D.read_rows(images, None, typed, own_g=own_g), [o.split(" / ") for o in options], title,
+                          band)
+
+
+def per(binding):
+    return [(round(b["g"]) if b["g"] else None, b["by"]) for b in binding]
+
+
+def field_of(images, options, k, typed=None, title="경량 스탠드백"):
+    """Variant k's product weight as the transform's hook gives it: its bound fact, else today's facts."""
+    facts = D.read_rows(images, None, typed, own_g=OWN_G)
+    b = D.bind_weights(facts, [o.split(" / ") for o in options], title, BAND)[k]
+    if b["g"] is not None:
+        facts = {**facts, "product_weights": [{**b["fact"], "g": b["g"]}],
+                 "bound": {key: b[key] for key in ("by", "label", "weights", "confidence")}}
+    return D.guess(facts)["product_weight_g"]
+
+
+PGM = [[">> / PGM충격 방지방수골프백(블랙그레이)", "컬러:블랙그레이", "재질:폴리에스테르PU", "중량:3.12kg"],    # 10647003177
+       [">> / PGM충격방지방수 / 골프백(블랙레드)", "컬러:블랙레드", "재질:폴리에스테르 PU", "내부재질:PE", "중량:3.94kg"]]
+
+
+def test_bound_by_the_label_above():
+    assert per(bind(PGM, ["블랙 그레이", "블랙 레드"])) == [(3120, "label_above"), (3940, "label_above")]
+    f = field_of(PGM, ["블랙 그레이", "블랙 레드"], 0)
+    assert (f["value"]["max"], f["confidence"], f["how"]) == (3120, 4, "stated weight, bound to the variant")
+    assert f["bound"] == {"by": "label_above", "label": "컬러:블랙그레이", "weights": [3120, 3940]}
+    assert f["quote"] == "중량:3.12kg"
+
+
+VESSEL = ["Navy/싱글", "Navy/더블", "Black/싱글", "Black/더블", "DXR_Black/싱글", "DXR_Black/더블", "Nightfire/더블"]
+
+
+def test_bound_on_the_same_row():
+    """13454840028 "무게 / 약 3.8kg (DXR Black 약 3.4kg)": DXR_Black's 3.4 kg (Black lies inside it), the row's other
+    value every other variant's (row_default)."""
+    got = per(bind([["무게 / 약 3.8kg (DXR Black 약 3.4kg)"]], VESSEL))
+    assert got == [(3800, "row_default")] * 4 + [(3400, "same_row")] * 2 + [(3800, "row_default")]
+    assert field_of([["무게 / 약 3.8kg (DXR Black 약 3.4kg)"]], VESSEL, 4)["confidence"] == 4
+    # the name after its value, in a bracket of its own
+    assert per(bind([["무게 / 2.5kg (블랙) / 2.3kg (화이트)"]], ["블랙", "화이트"])) == [(2500, "same_row"),
+                                                                                    (2300, "same_row")]
+
+
+TITLEIST = ["플레이어스5 스탠드백 / 블랙/레드", "플레이어스5 스탠드백 / 블랙/블랙", "플레이어스5 스탠드백 / 유칼립투스",
+            "플레이어스5 스탠드백 / 샌드", "플레이어스5 스탠드백 / 화이트/유칼립투스", "플레이어스5 스탠드백 / 블루버드",
+            "스포츠 스탠드백 / 화이트/라임"]
+
+
+def test_bound_by_a_typed_heading_and_the_other_model():
+    """7115158598: the typed Players 5 block (its colour list, then "무게 - 1.95KG") binds its six; the Sport bag's
+    "Weight (kg) / 2.6kg" names nothing and is the other of two models (two_models, 3). Today all were 2600."""
+    typed = ["플레이어스5 스탠드백", "[색상]", "블랙/레드", "블랙/블랙", "유칼립투스", "샌드", "화이트/유칼립투스", "블루버드",
+             "무게 - 1.95KG"]
+    images = [["Top Cuff / 5 / Pockets / 7", "Weight (kg) / 1.95kg / Strap / Premium Double"],
+              ["Top Cuff / 5", "Weight (kg) / 2.6kg"]]
+    options = [o.split(" / ", 1) for o in TITLEIST]
+    facts = D.read_rows(images, None, typed, own_g=OWN_G)
+    got = D.bind_weights(facts, options, "타이틀리스트 캐디백 플레이어스4 스탠드백 투어 경량", BAND)
+    assert per(got) == [(1950, "typed_label")] * 6 + [(2600, "two_models")]
+    assert got[0]["fact"]["from"] == D.TYPED and got[0]["confidence"] == 4 and got[6]["confidence"] == 3
+    assert D.guess(facts)["product_weight_g"]["value"]["max"] == 2600          # unbound: today's heaviest
+
+
+NIKE = [["품명및모델명 / 나이키골프스포츠 라이트 경량 스탠드백 CV1304", "소재 / 폴리에스터 100%",       # 10121431552
+         "사이즈 / L12.6 X W10.63 X H36.22 INCHES", "무게 / 2.01 kg"],
+        ["Product Info", "제품정보", "상세스펙", "모델 / 나이키에어맥스라이트GB스탠드백",
+         "색상 / 블랙/화이트, 레드/화이트, 네이비/화이트(택7)", "사이즈 / 가로30×세로26 ×높이88cm(후드포함124cm)", "무게 / 2.3kg"]]
+
+
+def test_bound_by_model_words_and_the_title_model():
+    options = ["블랙", "카키", "에어맥스 블랙/화이트", "에어맥스 레드/화이트", "에어맥스 네이비/화이트"]
+    got = D.bind_weights(D.read_rows(NIKE, None, None, own_g=OWN_G), [[o] for o in options],
+                         "나이키 골프 캐디백 스포츠 라이트 투어 경량 스탠드백", BAND)
+    assert per(got) == [(2010, "title_model")] * 2 + [(2300, "label_above")] * 3
+    assert got[2]["label"].startswith("색상 / 블랙/화이트") and got[0]["confidence"] == 4
+    # no title words in the left weight's label: nothing fills 블랙 and 카키
+    got = D.bind_weights(D.read_rows(NIKE, None, None, own_g=OWN_G), [[o] for o in options], "경량 스탠드백", BAND)
+    assert per(got)[:2] == [(None, "unbound")] * 2
+
+
+WINWIN = [  # 10046033303: each weight 8 rows under its English heading
+    ["Arranged and finished in a bag full of happiness.", "AOL", "winwinstyle.com", "WINWIN MULTI ICON CAMO",
+     "LIGHT WEIGHT STAND BAG", "소재 / 폴리에스테르", "디자인 / 원원로고패턴&에나멜스마일빅로고", "크 / 기 / 9인치", "무 / 게 / 2.5 Kg"],
+    ["loin / Win Uin", "STA", "WINWIN", "WINWIN SMILE NEON", "LIGHT WEIGHT STAND BAG", "소재 / 폴리에스테르",
+     "디자인 / 것버디 카모 패턴&에나멜과자수", "크 / 9인치", "무 / 게 / 3Kg"],
+    ["F / FIGHT!", "GO", "4FIGHT!", "GO FIGHT! / NEON", "LIGHT WEIGHT STAND BAG", "소 / 재 / 폴리에스테르",
+     "디자인 / 것버디 카모 패턴&에나멜과 자수", "크 / 기 / 9인치", "무 / 게 / 2.9Kg"],
+    ["AOO", "GETX", "BIRDIET'", "GET BIRDIE! CAMO", "MULTI COLOR STAND BAG", "소 / 재 / 폴리에스테르",
+     "디자인 / 것버디 카모 패턴&에나멜과 자수", "크 / 기 / 9인치", "무 / 게 / 3Kg"]]
+
+
+def test_bound_by_transliteration():
+    options = ["멀티 아이콘 카모 (CB-137)", "스마일 네온 (CB-124 YW)", "스마일 네온 (CB-122 BK)", "고파이트 네온 (CB-127)",
+               "겟버디 카모 (CB-134 PK)", "겟버디 카모 (CB-135 OR)", "겟버디 카모 (CB-136 BL)"]
+    got = per(bind(WINWIN, options))
+    assert got == [(2500, "label_above"), (3000, "label_above"), (3000, "label_above"), (2900, "label_above")] + \
+        [(3000, "label_above")] * 3
+    assert D.names_value("고파이트 네온 (CB-127)", "GO FIGHT! / NEON") == "translit"
+
+
+def test_bound_by_a_model_code_in_a_rows_segments():
+    """12952984359 (YONEX junior, 50002787: no own_box): "무게: (J135)1.8kg, / ,(j120)1.7kg"."""
+    options = ["블루 J135", "블루 J120", "화이트(핑크) J135", "화이트(핑크) J120", "(좌용) 블루 J135"]
+    got = bind([["무게: (J135)1.8kg, / ,(j120)1.7kg"]], options, band=(150, 8000), own_g=None)
+    assert per(got) == [(1800, "same_row"), (1700, "same_row"), (1800, "same_row"), (1700, "same_row"),
+                        (1800, "same_row")]
+
+
+def test_a_label_after_its_weight_takes_the_text_after_the_value():
+    """2026-11-27, the review of the binding: "무게 / 2.5kg 블랙 / 2.3kg 화이트" gave 블랙 the 2.3 kg (the text before)."""
+    assert per(bind([["무게 / 2.5kg 블랙 / 2.3kg 화이트"]], ["블랙", "화이트"])) == [(2500, "same_row"), (2300, "same_row")]
+
+
+def test_a_row_naming_words_before_and_after_its_weights_gives_one_fact():
+    """Both readings name words ("블랙 2.5kg / 화이트 2.3kg 네이비"): no segments, the heaviest alone."""
+    facts = D.read_rows([["무게 / 블랙 2.5kg / 화이트 2.3kg 네이비"]], None, None, own_g=OWN_G)
+    assert [(f["g"], "segment" in f) for f in facts["product_weights"]] == [(2500, False)]
+
+
+def test_a_comparison_row_binds_the_old_model_known_limit():
+    """A known limit (the docstring's "Known limits", 2026-11-27): "(기존 블랙 모델 2.8kg)" names the old model, yet 블랙
+    takes its 2.8 kg and the rest the row's other value. A change that reads it right changes this pin."""
+    assert per(bind([["무게 / 2.3kg (기존 블랙 모델 2.8kg)"]], ["블랙", "화이트"])) == \
+        [(2800, "same_row"), (2300, "row_default")]
+
+
+def test_bound_to_the_model_its_colour_list_belongs_to():
+    """11012444977 (Keiro): "네이비 / 블랙 / 그레이" is the 7분할 bag's list (no 14분할 네이비 or 그레이): 블랙 there is
+    the 7분할's; the 14분할 bags keep image 3's 2.4 kg as the other of two models."""
+    images = [["무게:2.4kg"], ["경량 7분할 골프백", "제품정보", "—30cm— / —33cm—", "네이비 / 블랙 / 그레이",
+                              "•무게:2kg / ·소재:나일론"]]
+    options = ["14분할 블랙", "14분할 블랙화이트", "14분할 블랙레드", "7분할 블랙", "7분할 그레이", "7분할 네이비"]
+    assert per(bind(images, options)) == [(2400, "two_models")] * 3 + [(2000, "label_above")] * 3
+
+
+def test_a_spec_header_ends_a_label():
+    """6817963449 (Kolon VWX): three "상세스펙" blocks in one image; without the stop each label held the model above."""
+    rows = ["상세스펙", "모델명 / VWX토고(TOGO)스탠드백", "크기 / 9.0인/2.5kg/6구", "색상 / 크림,엘로우,민트,퍼플",
+            "재질 / POLY URETHANE", "상세스펙", "모델명 / VWX스포티(SPORTY)스텐드백", "크기 / 9.0인치 /2.5kg/6구",
+            "색상 / 화이트카모, 블랙카모, 민트&화이트, 블랙&레드", "POLY URETHANE + THERMOPLASTIC POLY URETHANE",
+            "재질 / (화이트카모,블랙카모)", "POLY URETHANE(민트&화이트, 블랙&레드)", "상세스펙", "모델명 / VWX시그니처(SIGNATURE)스탠드백",
+            "크기 / 9.0인치/2.3kg/6구"]
+    options = ["토고 퍼플", "토고 옐로우", "스포티 화이트카모", "스포티 블랙레드", "시그니처 레인보우카모"]
+    assert per(bind([rows], options)) == [(2500, "label_above")] * 4 + [(2300, "label_above")]
+    assert D.read_rows([rows], None, None, own_g=OWN_G)["product_weights"][2]["label"][0] == "상세스펙"
+
+
+PXG_FILLER = ["-맞춤형 몰드 베이스", "-패딩 처리된 등판", "-외부 펜 슬롯", "-단열 물병 주머니", "-극세사 라인 귀중품 포켓",
+              "-외부 우산 보관", "-스냅온 레인후드", "- 35\" H x 9\" W x 12\" D"]
+
+
+def test_bound_by_an_images_heading_and_the_rest_unbound():
+    """7223000254 (PXG): the Fairway Camo bag's "-무게:4.6파운드" under its image's heading "3.페어웨이 카모 / 캐리
+    스탠드백", the Hybrid's "-무게3.7kg" under "4. / PXG / 하이브리드"; the Carry and Jacquard bags (4 models: no
+    elimination) keep the heaviest."""
+    images = [["7 x 9", "3.페어웨이 카모", "캐리 스탠드백", "FAIRWAY / CAMO", "CARRY . / STAND / BAG", "x"] + PXG_FILLER
+              + ["-무게:4.6파운드(캐리 스트랩 포함)"],
+              ["PXT", "4. / PXG / 하이브리드", "스탠드백", "HYBRID / STAND / BAG", "1.블랙&화이트", "x"] + PXG_FILLER
+              + ["-무게3.7kg"]]
+    options = ["PXG 골프백 경량 캐리 스탠드백 / 블랙&화이트", "PXG 골프백 경량 캐리 스탠드백 / 블랙",
+               "자카드 우븐 페어웨이 카모 스탠드백 / 블랙", "페어웨이 카모 캐리 스탠드백 / 블랙",
+               "페어웨이 카모 캐리 스탠드백 / 그레이 카모", "하이브리드 스탠드백 / 블랙&화이트", "하이브리드 스탠드백 / 블랙"]
+    got = bind(images, options)
+    assert per(got) == [(None, "unbound")] * 3 + [(2087, "image_heading")] * 2 + [(3700, "image_heading")] * 2
+    assert got[3]["confidence"] == 3
+
+
+@pytest.mark.parametrize("images, options", [
+    ([[">> / PGM충격방지방수 / 골프백(블랙레드)", "컬러:블랙레드", "중량:3.94kg"]], ["블랙 레드", "블랙 그레이"]),   # 11308744141
+    ([["색상 / 블랙, 화이트", "무게 / 2.3kg"], ["무게 / 2.5kg"]], ["블랙", "화이트"]),     # a list naming every variant
+    ([["블랙", "무게 / 2.3kg"], ["블랙", "무게 / 2.6kg"]], ["블랙", "화이트"]),            # a conflict, nothing else
+    ([["WINWIN LUCKY BUG", "LGHTWEIGHT STAND BAG", "소 재폴리에스테르100%", "크기9인치", "무게2.4Kg"],     # 5941086854:
+      ["for fashionable golfers.", "WINWIN FLOWER", "LIGHT WEIGHT STAND BAG", "무게 / 2.5Kg"]],       # BL in fashionaBLe
+     ["CB-103 ROSE", "CB-105 NV", "CB-947 BL", "CB-962 WH"]),
+    (PGM, ["블랙 그레이"]),                                                                 # a single variant
+    ([["Model Size", "Height: / 173cm", "Weight : 52kg"], ["Model Size", "Height: 165cm", "Weight:47kg"]],
+     ["아이보리", "블랙"]),                                         # 13756252058: the model's body weight
+])
+def test_nothing_bound(images, options):
+    facts = D.read_rows(images, None, None, own_g=OWN_G)
+    assert D.bind_weights(facts, [[o] for o in options], "경량 스탠드백", None) is None
+
+
+def test_a_conflict_keeps_the_heaviest():
+    got = bind([["블랙", "무게 / 2.3kg"], ["블랙", "무게 / 2.6kg"], ["화이트", "무게 / 2.0kg"]], ["블랙", "화이트", "네이비"])
+    assert per(got) == [(None, "conflict"), (2000, "label_above"), (None, "unbound")]
+
+
+@pytest.mark.parametrize("hangul, latin", [
+    ("멀티 아이콘 카모", "MULTI ICON CAMO"), ("고파이트 네온", "GO FIGHT! NEON"), ("겟버디 카모", "GET BIRDIE! CAMO"),
+    ("스마일 네온", "SMILE NEON")])
+def test_consonant_skeletons_meet(hangul, latin):
+    assert len(D.hskel(hangul)) >= 4 and D.hskel(hangul) in D.lskel(latin)
+    assert D.names_value(hangul, latin) == "translit"
+
+
+@pytest.mark.parametrize("hangul, latin, skeletons", [
+    ("카모", "COME", ("KM", "KM")),                  # under 4 consonants: never
+    ("에어맥스", "AIR MAX", ("MKS", "MKS")),          # 3: the Nike and Titleist models bind by their Hangul text
+    ("플레이어스", "PLAYERS", ("PLLS", "PLS")),        # Korean doubles the l (플레): no meeting
+])
+def test_a_short_or_unlike_skeleton_never_matches(hangul, latin, skeletons):
+    assert (D.hskel(hangul), D.lskel(latin)) == skeletons and D.names_value(hangul, latin) is None
+
+
+def test_a_row_of_two_weights_gives_one_fact_each():
+    facts = D.read_rows([["무게 / 약 3.8kg (DXR Black 약 3.4kg)"]], None, None, own_g=OWN_G)
+    assert [(f["g"], f["segment"]) for f in facts["product_weights"]] == [(3800, "무게 / 약 "), (3400, " (DXR Black 약 ")]
+    assert D.guess(facts)["product_weight_g"]["value"]["max"] == 3800           # nothing bound: the heaviest, as before
+    facts = D.read_rows([["중량:약1.7kg / 중량:약1.8kg"]])                         # no block: the same (PING Prodi G)
+    assert [f["g"] for f in facts["product_weights"]] == [1700, 1800] and D.guess(facts)["product_weight_g"][
+        "value"]["max"] == 1800
+    facts = D.read_rows([["사이즈 / 2.3kg 대비 0.9kg 가벼운"]], None, None, own_g=OWN_G)   # the difference: no fact
+    assert [(f["g"], "segment" in f) for f in facts["product_weights"]] == [(2300, False)]
+
+
+# ---- a pair of shoes (2026-11-27, golf shoes 50001740: the review of 223 live shoes; the row's `pair_of`) ---------
+PAIR = next(r for r in load_table()["rows"] if r["category_id"] == "50001740")["pair_of"]
+
+
+def test_the_shoe_rows_pair_of_block():
+    """The 50001740 row's block: one shoe 200-500 g, a pair 600-1100 g, a 500 g carton; a block not whole is refused."""
+    D.check_pair_of(PAIR)
+    assert (PAIR["item"], PAIR["carton_g"], PAIR["one_g"], PAIR["pair_g"]) == ("shoe", 500, [200, 500], [600, 1100])
+    for bad in ({**PAIR, "carton_g": 0}, {k: v for k, v in PAIR.items() if k != "basis"}, {**PAIR, "one_g": [200, 700]},
+                {**PAIR, "box": 1}):
+        with pytest.raises(ValueError, match="pair_of"):
+            D.check_pair_of(bad)
+
+
+@pytest.mark.parametrize("images, typed, pair, confidence", [
+    ([], ["무게 : 약 425g(한쪽발 25.5cm)"], 850, 5),                          # adidas 10608981549 (P1)
+    ([], ["● 무게 : 470g (27.5cm 외발)"], 940, 5),                            # New Balance 13651508341
+    ([], ["※ 중량은 25.0cm 한쪽 기준 약 325g이며, 사이즈에 따라 차이가 발생할 수 있습니다."], 650, 5),   # 13765972613 (P2)
+    ([], ["25.5cm 기준 중량 : 약 430g"], 860, 4),                             # 13559414510: no word, by its value
+    ([[("무게 / WEIGHT / 260기준/396(g)", 0.99)]], [], 792, 4),               # 11027563718 (P3)
+    ([[("중량 / 269~296g (사이즈별차이가 있습니다.)", 0.96)]], [], 565, 4),       # 11573797493: a range's middle
+    ([[("* 무게 (1쪽 기준): 약 330g (260mm기준)", 0.912)]], [], 660, 4),        # 5114581014 (P4)
+    ([[("중량(한쪽발) / 약 420g(25.5cm)", 0.95)]], [], 840, 4),                # 13741240466
+    ([[("소재 / 제품무게(260기준) / 제조사 / 제조국", 0.95),                       # 4873054855 (P5): a pair by value
+       ("폴리에스터/합성가죽 / 738 g / FOURSENSE / CHINA", 0.935)]], [], 738, 4),
+    ([[("소재 / 제품무게 (260한결레 기준) / 제조사 / 제조국", 0.95),                  # 5048576222: OCR's 한결레
+       ("천연가죽+인조가죽 / 726 g / EVERLAST / 대한민국", 0.921)]], [], 726, 4),
+    ([[("사이즈(mm) / 발볼 / 굽높이 / 전체높이 / 전체길이 / 무게", 0.99),              # 7336604566
+       ("300mm기준 / 11.2cm / 3.2cm / 11.2cm / 33.2cm / 440g", 0.993)]], [], 880, 4),
+    ([[("280g / 35mm / 95mm", 0.913), ("한쪽당무게 / 굽높이 / 발볼넓이", 0.95)]], [], 560, 4),   # PAYNTR 10795776210 (P6)
+    ([], ["【중량】", "약 385g (한쪽, 25.5cm 기준)"], 770, 5),                    # 11677620543 (P7)
+    ([[("치수 / 실측(240) 사이즈(cm)-급높이3.5 중량292g", 0.97)]], [], 584, 4),   # Descente 12153299165 (P8)
+    ([[("치수 / 220~250mm/중량약220g", 0.95)]], [], 440, 4),                  # FootJoy 2533527296
+    ([], ["무게 : 약 616.8g"], 617, 4),                                        # 7905293156: a pair by its value
+    ([], ["중량: 800g 내외"], 800, 4),                                         # 9172681706: an approximation's word
+    ([], ["무게 : 약 425g 내외 (한쪽)"], 850, 5),
+    ([[("무게 / 약 425g(한쪽발) 오차가 있을 수 있습니다", 0.95)]], [], 850, 4),
+    ([], ["무게 : 1,020g (한켤레)"], 1020, 5),                                   # a pair's four digits
+    ([], ["중량 1020g"], 1020, 4),
+])
+def test_a_shoes_stated_weight_is_the_pairs(images, typed, pair, confidence):
+    got = D.pair_weight(images, typed, PAIR)
+    assert (got["g"], got["confidence"]) == (pair, confidence)
+
+
+def test_the_servers_weight_rows_are_read_as_typed_lines():
+    # 10650252456: the notice's "중량: 255mm / 약425g (1pcs)" is in no typed line; a server quote over lines
+    got = D.pair_weight([], [], PAIR, ["중량: 255mm / 약425g (1pcs)", "리페티터 기술\r\n\r\n무게: 329.2g\r\n\r\n상품 색상"])
+    assert (got["g"], got["how"], got["from"]) == (850, "stated weight, one shoe x2", D.TYPED)
+    got = D.pair_weight([], ["함께 구매하면 좋은 상품"], PAIR, ["중량: 860 g"])     # a typed cross-sell cuts its block only
+    assert (got["g"], got["how"]) == (860, "stated weight, a pair (by its value)")
+
+
+def test_the_heaviest_pair_of_two_reference_sizes():
+    # 10072588490: "무게 / 240기준/285(g)" and "WEIGHT / 260기준/318(g)": no scaling by size, the heavier pair
+    assert D.pair_weight([[("무게 / 240기준/285(g)", 0.95), ("WEIGHT / 260기준/318(g)", 0.95)]], [], PAIR)["g"] == 636
+
+
+@pytest.mark.parametrize("images, typed", [
+    ([], ["(일반 깔창 약 21g / 라텍스 깔창 약 58g)"]),                           # 8752851422: insoles
+    ([], ["인솔 무게 : 약 58g"]),
+    ([[("125g 초미니사이즈,포켓 속나만의캐디", 0.98)]], []),                       # 6520680652: a rangefinder ad
+    ([[("가볍고 튼튼한 태니스 타켓 255g 만족합니다", 0.97)]], []),                    # 12670513142: a review, no label
+    ([[("775", 0.99)]], []),                                                # 5114581014: a scale photo
+    ([[("3809 / 30mm / 100mm", 0.895), ("한쪽당무게 / 굽높이 / 발볼넓이", 0.95)]], []),  # 11630957847: under NUMBER_CONF
+    ([[("소재 / 제품무게 (260한컬레기준) / 제조사 / 제조국", 0.95),                     # 4978188842: the value row 0.824
+       ("Synthetic Leather / 720 g / KIMYOUNGJOO / CHINA", 0.824)]], []),
+    ([], ["제품 사양: 약 300g 이하 (25.0cm 단일화 기준)"]),                        # 12415931375: an upper bound
+    ([], ["중량 / 250~320g"]),                                                # a range wider than 15 %
+    ([], ["무게 : 약 550g"]),                                                 # between one shoe and a pair
+    ([], ["무게 : 약 650g (한쪽발)"]),                                         # one shoe out of its band
+    ([], ["무게 : 약 350g (한켤레 기준)"]),                                      # a pair out of its band
+    ([[("매우 가벼운 무게를 자랑합니다. 500g대인 보통 골프화와 비교했을 때", 0.97)]], []),   # 11886292855: prose
+    ([[("사이즈/중량 / 230,235,240,245,250,255,260,265,270,275,280 /500g미|만", 0.958)]], []),   # 5959162459
+    ([], ["슈즈백 무게 : 약 300g"]),                                            # a shoe bag's
+    ([], ["무게감 / 가벼움 / 보통 / 무거움"]),                                     # 8752851422: a feel scale
+    ([], ["다른 상품으로 교환 / 함께 구매하면 좋은 상품", "무게 : 약 425g(한쪽발 25.5cm)"]),   # a cross-sell block's
+    ([], ["WEIGHT", "기존 모델 450g", "신모델 330g"]),                          # a comparison chart under a bare label
+    ([], ["무게", "타사 제품 대비 30% 가벼운 330g"]),
+    ([], ["무게 : 약 300g 내외 이하"]),                                          # the bound still skips
+    ([], ["무게 : 0.85kg"]),                                                   # kg: not read (PACKAGE.md)
+    ([], ["무게 : 1200g"]),                                                    # four digits over pair_g
+])
+def test_not_a_shoes_weight(images, typed):
+    assert D.pair_weight(images, typed, PAIR) is None
+
+
+def test_the_pair_goes_into_the_package_with_its_carton():
+    """The pair (facts["pair"]) is the product's weight, its other stated weights not; the package the pair + 500 g."""
+    facts = {**D.read_rows([["무게 / 1.2kg"]]), "product_weights": [],
+             "pair": D.pair_weight([], ["무게 : 약 425g(한쪽발 25.5cm)"], PAIR)}
+    fields = {name: {"central": c, "source": "category_default"} for name, c in
+              zip(D.FIELDS, (800, 1300, 340, 230, 130))}
+    out, taken = D.package_for(fields, facts, None, None, None, None, None, pair=PAIR)
+    product, package = out["product_weight_g"], out["package_weight_g"]
+    assert (product["value"]["max"], product["confidence"], product["how"], product["from"]) == \
+        (850, 5, "stated weight, one shoe x2", D.TYPED)
+    assert (package["value"]["max"], package["source"], package["how"]) == (1350, D.COMPOSED, "product weight + carton")
+    assert [p["value"] for p in package["parts"]] == [850, 500] and taken == ["product_weight_g", "package_weight_g"]
+    assert out["package_length_mm"]["source"] == "category_default"
+    facts["pair"] = None                                      # none read: the defaults stay
+    assert D.package_for(fields, facts, None, None, None, None, None, pair=PAIR) == (fields, [])

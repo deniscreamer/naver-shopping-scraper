@@ -147,6 +147,15 @@ Code: `server/naver_shopping/measures.py`, `scripts/package_measures.py`.
 - Most sets give weight / size only in images: read by the OCR stage and composed from the parts (PACKAGE.md, since
   2026-11-07..10); the flat category default (confidence 1) only when nothing is read.
 - Notice 중량 may list one weight per club count ("약11.5kg / 4.7kg", 6630856593) -> bound by club count.
+- A page of several bags states each one's weight under its own name (2026-11-27, Lightweight Stand Bags): "컬러:블랙그레이"
+  ... "중량:3.12kg" (PGM 10647003177), "무게 / 약 3.8kg (DXR Black 약 3.4kg)" (Vessel 13454840028), a typed "플레이어스5
+  스탠드백" block (Titleist 7115158598), an English heading for a Korean option ("GO FIGHT! / NEON", WinWin 10046033303)
+  -> bound to the variants that name them. -> `description_measures.bind_weights`; PACKAGE.md "Stated weights bound
+  to the variants".
+- Golf shoes (50001740, the review of 223 live shoes 2026-11-27): a shoe's weight is one shoe's ("무게 : 약 425g(한쪽발
+  25.5cm)", "470g (27.5cm 외발)", "(1pcs)", or a value only one shoe can be, 220-470 g) or a pair's ("260한켤레기준", OCR
+  한컬레), at a reference size that is no variant's -> the pair for the whole product (x2 for one shoe), the package
+  the pair + 500 g (`description_measures.pair_weight`; PACKAGE.md `pair_of`).
 - Club spec tables (td-only, column headers) and "총중량" under a club heading are one club's, never the set's.
 - "7번 기준 36인치, 332g" is one reference club; "6아이언" is a set of six irons.
 - A plain 중량 row of a set is the set as sold, but with or without the box is not said: confidence 4 (2 on the

@@ -49,7 +49,8 @@ naver-harvester published, and its 60 published products):
     one product from <shop>/variants_by_owner.json, 2026-11-25),
     sizes_by_owner / sizes_by_owner_unused (prepare's owner_sizes: the same entry's "sizes" block, the owner's word on
     how one product is sized: gender, read_as, same_as, size; 2026-11-25),
-    photos_incomplete, reviews_none_chosen, reviews_cleaned (review_clean.py: kept, by grade, trimmed), measures_from_images / description_images_missing / _stale / _failed / _partial (the category's
+    photos_incomplete, reviews_none_chosen, reviews_cleaned (review_clean.py: kept, by grade, trimmed), measures_from_images / weights_bound / weights_unbound
+    (the stated weights bound per variant / variants left at the heaviest: _bound_weights) / description_images_missing / _stale / _failed / _partial (the category's
     description_images switch: the package fields the description states or its parts compose, in place of the
     category default; description_measures.py).
 
@@ -73,12 +74,13 @@ import listing_filter
 import shoe_sizes
 from description_clean import body_notes, clean, clean_images, decode_line, picked_switches
 from description_images import current, image_rows
-from description_measures import (COMPOSED, FIELDS, LONG_UNITS, NUMBER_CONF, SOURCE, bands, compose_by_count,
-                                  composition_count, container_in, container_listed, joined_lines, package_for,
+from description_measures import (COMPOSED, FIELDS, KEYS, LONG_UNITS, NUMBER_CONF, SOURCE, bands, bind_weights,
+                                  check_pair_of, compose_by_count, composition_count, container_in,
+                                  container_listed, distinct_weights, joined_lines, package_for, pair_weight,
                                   product_over_package, profile_for, read_rows)
 from naver_variants import choose_variants
-from package_measures import (count_band, count_kind, current_bands, current_defaults, default_field, load_table, lofts,
-                              off_count, on_scale, package_kind, row_version)
+from package_measures import (CategoryDefaultsInvalid, count_band, count_kind, current_bands, current_defaults,
+                              default_field, load_table, lofts, off_count, on_scale, package_kind, row_version)
 from spec_variants import (check_specs, hide_title_model_rows, title_cut, title_lofts_not_sold, title_one_variant,
                            title_variant_tail, title_word_unproven)
 from review_clean import clean_reviews
@@ -1575,7 +1577,25 @@ def _images_unread(sidecar: dict[str, Any] | None) -> list[dict[str, str]]:
 
 @functools.lru_cache(maxsize=1)
 def _measures_table() -> dict[str, Any]:
-    return load_table()
+    """The operator's table, its `pair_of` blocks checked on load (whole, never beside `baselines` or `own_box`:
+    package_for would merge the other block's carton or box in; 2026-11-27, the reviewer), not mid-prepare."""
+    table = load_table()
+    for row in table.get("rows", []):
+        check_pair_row(row)
+    return table
+
+
+def check_pair_row(row: Mapping[str, Any]) -> None:
+    """A row's `pair_of` block (a pair of shoes): whole (check_pair_of), alone of the composing blocks."""
+    if row.get("pair_of") is None:
+        return
+    where = f"category {row.get('category_id')}"
+    try:
+        check_pair_of(row["pair_of"])
+    except ValueError as e:
+        raise CategoryDefaultsInvalid(f"{where}: {e}") from None
+    if row.get("baselines") is not None or row.get("own_box") is not None:
+        raise CategoryDefaultsInvalid(f"{where}: pair_of never beside baselines or own_box")
 
 
 def _model_pieces(title: str, spec_rows_raw: list[dict[str, Any]]) -> tuple[str, re.Match | None]:
@@ -1621,12 +1641,45 @@ def _over_package(ov: dict[str, Any], row: dict[str, Any], profile: Any, title: 
             (max(limit[0], boxed[0]), min(limit[1], boxed[1])))
 
 
-def _stated_weights(ov: dict[str, Any], title: str, category_id: str | None) -> None:
+def _stated_weights(ov: dict[str, Any], title: str, category_id: str | None, typed: str | None = None,
+                    stated: list[str] | None = None) -> None:
     """The count check and the package check of the stated weights without the description's images (no sidecar,
-    a stale one, a category that reads none): the server's statements are checked all the same (2026-11-17)."""
+    a stale one, a category that reads none): the server's statements are checked all the same (2026-11-17). A
+    pair of shoes (`pair_of`) reads its pair from the typed text and the server's rows (_pair_of)."""
     row = _measures_row(category_id)
     texts = [" / ".join(v.get("options_ko") or []) for v in ov["variants"]]
+    if row.get("pair_of"):
+        typed_lines = [t.strip() for t in (typed or "").split("\n") if t.strip()]
+        facts: dict[str, Any] = {**{k: [] for k in KEYS},
+                                 "pair": _pair_of(ov, row, title, texts, [], typed_lines, stated)}
+        for v in ov["variants"]:
+            if v.get("package"):
+                v["package"], _ = package_for(v["package"], facts, None, None, row.get("plausible"),
+                                              pair=row["pair_of"])
     _over_package(ov, row, profile_for(category_id), title, texts, _off_count(ov, row, title, texts))
+
+
+def _pair_of(ov: dict[str, Any], row: dict[str, Any], title: str, texts: list[str], images: list[list[Any]],
+             typed_lines: list[str], stated: list[str] | None) -> dict[str, Any] | None:
+    """A pair of shoes (the row's `pair_of` block, 2026-11-27, golf shoes 50001740): the server's product weight of a
+    variant goes back to the category default (`compared` it, `rejected: one_shoe_on_a_size`: the server bound
+    "무게 : 470g (27.5cm 외발)", one shoe, to the 275 variant of New Balance 13651508341 as the pair's, and Descente
+    12153299165's "실측(240) ... 중량292g" to its three 240 variants; 7 products, 9 variants), and the pair's weight
+    is read for the whole product (description_measures.pair_weight; `stated`: the server's weight rows) -> that
+    fact for every variant, None: none read (every variant keeps the default)."""
+    block = row["pair_of"]
+    check_pair_of(block)
+    version = row_version(_measures_table(), row)
+    for v, t in zip(ov["variants"], texts):
+        f = (v.get("package") or {}).get(FIELDS[0]) or {}
+        if f.get("source") != "source_stated" or "value" not in f:
+            continue
+        kind = package_kind(row, v["package"], title, t, texts)
+        brief = {k: f[k] for k in ("source", "confidence", "from", "quote") if k in f}
+        v["package"] = {**v["package"], FIELDS[0]: {
+            **default_field(row, kind, version, FIELDS[0]),
+            "compared": {**brief, "value": f["value"]["max"], "rejected": "one_shoe_on_a_size"}}}
+    return pair_weight(images, typed_lines, block, stated)
 
 
 def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: str, model: str,
@@ -1643,17 +1696,25 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
     a count of pieces and gives the count nothing states (description_measures._items_total); the container, in
     the order of trust: its option values, else the title and the product's one-value facts, else the profile's
     상품정보 row (골프백포함여부), else a container sold as a paid add-on (the set has none), else the typed text's
-    sentences, else the images'."""
+    sentences, else the images'.
+    ov["weight_rows"] (prepare): the server's weight rows (specs.measures weights' quotes), read by a pair of shoes'
+    rule (_pair_of)."""
+    stated = ov.get("weight_rows")
     if sidecar is None:
-        _stated_weights(ov, title, category_id)
+        _stated_weights(ov, title, category_id, typed, stated)
         return [{"code": "description_images_missing", "detail": "no sidecar: run description_images.py"}]
     profile = profile_for(category_id)               # by the Naver leaf category id; None: the core only
     images = image_rows(sidecar, with_conf=True)
     typed_lines = [t.strip() for t in (typed or "").split("\n") if t.strip()]
     row = _measures_row(category_id)
     own_box = row.get("own_box")                     # a stand bag: its own container (2026-11-27)
-    facts = read_rows(images, profile, typed_lines, long_units=str(category_id) in LONG_UNITS,
+    facts: dict[str, Any] = read_rows(images, profile, typed_lines, long_units=str(category_id) in LONG_UNITS,
                       own_g=tuple(own_box["weight_g"]) if own_box else None)
+    pair = row.get("pair_of")                        # a pair of shoes: its pair's weight alone (2026-11-27)
+    if pair:
+        texts = [" / ".join(v.get("options_ko") or []) for v in ov["variants"]]
+        facts = {**facts, "product_weights": [],
+                 "pair": _pair_of(ov, row, title, texts, images, typed_lines, stated)}
     band = profile.count if profile else (0, 0)
     counted = [int(pieces.group(1))] if pieces else []
     if profile and profile.count_title:              # "야마하 cs HM+ 씨즈 10개 풀세트" with a 총클럽개수 row of
@@ -1697,9 +1758,14 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
     taken: dict[str, int] = {}
     texts = [" / ".join(v.get("options_ko") or []) for v in ov["variants"]]
     counts = _off_count(ov, row, title, texts)
-    for v in ov["variants"]:
+    binding, bind_notes = _bound_weights(ov, facts, profile, row, title)
+    for k, v in enumerate(ov["variants"]):
         if not v.get("package"):
             continue
+        b = binding[k] if binding else None
+        facts_v = facts if not b or b["g"] is None else \
+            {**facts, "product_weights": [{**b["fact"], "g": b["g"]}],
+             "bound": {key: b[key] for key in ("by", "label", "weights", "confidence")}}
         weight_band = count_band(row, counts.get(id(v)))
         text = " ".join(v["options_ko"])
         own = [int(m.group(1)) for m in _PIECES_RE.finditer(text) if band[0] <= int(m.group(1)) <= band[1]]
@@ -1713,10 +1779,10 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
         has = container_in(text, profile)
         # the variant's own flex: an L / A (or 여성) variant takes its row; an R one keeps the longest (12965307704)
         ladies = bool(_SOFT_FLEX_RE.search(text) or _LADIES_RE.search(text)) and not _HARD_FLEX_RE.search(text)
-        v["package"], names = package_for(v["package"], facts, 1 if single else max(own) if own else product_count,
+        v["package"], names = package_for(v["package"], facts_v, 1 if single else max(own) if own else product_count,
                                           has if has is not None else listed,
                                           row.get("plausible"), profile, row.get("baselines"), ladies, weight_band,
-                                          own_box)
+                                          own_box, pair)
         for name in names:
             taken[name] = taken.get(name, 0) + 1
     block = row.get("compose_by_count")
@@ -1738,9 +1804,41 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
     taken = {name: n for name in FIELDS if (n := sum((v.get("package") or {}).get(name, {}).get("source")
                                                      in (SOURCE, COMPOSED) for v in ov["variants"]))}
     if not taken:
-        return []
+        return bind_notes
     return [{"code": "measures_from_images", "detail": ", ".join(
-        f"{n} {c}/{len(ov['variants'])}" for n, c in sorted(taken.items()))}]
+        f"{n} {c}/{len(ov['variants'])}" for n, c in sorted(taken.items()))}] + bind_notes
+
+
+def _bound_weights(ov: dict[str, Any], facts: dict[str, Any], profile: Any, row: dict[str, Any],
+                   title: str) -> tuple[list[dict[str, Any]] | None, list[dict[str, str]]]:
+    """The stated weights bound to the variants (description_measures.bind_weights, 2026-11-27: Titleist 7115158598
+    gave its six Players 5 bags the Sport bag's 2.6 kg) -> (per variant, notes). Only without a profile (a set's
+    weight is composed), with two variants or more and two different stated weights in the field's band; a variant
+    bound to none or to two keeps the heaviest (`weights_unbound`)."""
+    # the category's own band only: the core's 10 g - 200 kg would let an apparel page's model ("Weight : 52kg",
+    # 13756252058) open it (2026-11-27, the review of the weight binding)
+    if profile is not None or len(ov["variants"]) < 2 or not (row.get("plausible") or {}).get("product_weight_g"):
+        return None, []
+    band = bands(row.get("plausible"), None)["product_weight_g"]
+    stated = distinct_weights(facts, band)
+    if len(stated) < 2:
+        return None, []
+    said = ", ".join(str(g) for g in stated)
+    binding = bind_weights(facts, [v.get("options_ko") or [] for v in ov["variants"]], title, band)
+    if binding is None:
+        return None, [{"code": "weights_unbound", "detail": f"stated {said} g: none bound to a variant"}]
+    n = len(binding)
+    got: dict[tuple[int, str], int] = {}
+    for b in binding:
+        if b["g"] is not None:
+            got[(round(b["g"]), b["by"])] = got.get((round(b["g"]), b["by"]), 0) + 1
+    notes = [{"code": "weights_bound", "detail": f"{sum(got.values())}/{n} variants: " + ", ".join(
+        f"{g} x{c} {by}" for (g, by), c in got.items())}]
+    left = [b["by"] for b in binding if b["g"] is None]
+    if left:
+        notes.append({"code": "weights_unbound", "detail": f"{len(left)}/{n} variants keep the heaviest of "
+                      f"{said} g: " + ", ".join(f"{by} x{left.count(by)}" for by in dict.fromkeys(left))})
+    return binding, notes
 
 
 def _split_joined(ov: dict[str, Any], asian: bool = False) -> None:
@@ -2486,18 +2584,20 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
         notes.append({"code": "few_pieces", "detail": "하프세트"})
     elif count and 0 < int(count.group(1)) <= 5:    # 총클럽개수 3개: driver + wood + hybrid (13302492097)
         notes.append({"code": "few_pieces", "detail": f"총클럽개수 {count.group(1)}개"})
+    ov["weight_rows"] = [c.get("quote") or "" for c in (specs.get("measures") or {}).get("weights") or []]  # _pair_of
+    weight_rows = ov["weight_rows"]
     if cat.description_images:                      # the description's statements, the set's composition
         if images_text is not None and not current(images_text, line):
             notes.append({"code": "description_images_stale", "detail": "sidecar read from other links: run "
                           "description_images.py again"})
-            _stated_weights(ov, details["name"], category.get("id"))
+            _stated_weights(ov, details["name"], category.get("id"), desc.get("text"), weight_rows)
         else:
             notes += _image_measures(ov, images_text, details["name"], model, pieces, specs.get("specs") or [],
                                      category.get("id"), desc.get("text"),
                                      (specs.get("options") or {}).get("supplements"))
             notes += _images_unread(images_text)
     else:                                           # no description images read: the server's statements alone
-        _stated_weights(ov, details["name"], category.get("id"))
+        _stated_weights(ov, details["name"], category.get("id"), desc.get("text"), weight_rows)
     nouns = _PRODUCT_NOUN_AXES.get(str(category.get("id")))
     vague = [o["name_ko"] for o in ov["options"] if _PLACEHOLDER_NAME_RE.match(o["name_ko"])
              or nouns and nouns.match(o["name_ko"])

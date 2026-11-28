@@ -113,7 +113,10 @@ the run starts:
   never a match: an agency lists each version of one listing apart under its one photo. With the same non-empty
   sets sold, the numbers those sets spell out (counts kept) are set aside before the numbers are compared (2026-11-17,
   C41: AM20XX 13016628843 / 13363498942 '50/52/54/56/58' / '.../60도'); sets sold apart keep every number (one agency
-  family's Pinkley '옵션 1' / Black).
+  family's Pinkley '옵션 1' / Black). A year written two ways ('2026년' or '2026년형' against '2026') is read as one in
+  a second look of `alike`, only when both sell 3+ variants alike >= 80% (`VARIANTS_JACCARD`; 2026-11-27, Titleist
+  Players S4 13847514326 / 13718353961, the same 10 colourways); Bridgestone BG-100 2022 / 2022년 13634860211 /
+  13799086022 (variants 0.0) stays apart.
 - **`sold_equal`** (2026-11-17, C41): in a `sets_only` category two agency imports with the same title key or
   `alike` that sell the same non-empty sets are confirmed, in the job as in `--report` (pron 13408226321 /
   13566632407: variants 0.22 over the page list, `not_confirmed` before; MAZEL 13391641875 / 13204525652, Yamato LH01).
@@ -148,7 +151,12 @@ the run starts:
   `epInfo.matchingModelId` (`/products/specs` `catalog.id`; products collected before it from `<shop>/catalog_ids.json`,
   the backfill below), a catalog holding more than `CATALOG_LOOSE` (15) published products ignored (one held 37 junior sets
   of every age; 15, not 6: flagged copies stay published, Yamaha Femina is at 6). The style code (`style_codes`): the model name's first part and the title's tokens of 6+ characters
-  with 3+ digits and a letter (521F4SD304, MR322LSJ92), the same brand when both name one, never across a combo set
+  with 3+ digits and a letter (521F4SD304, MR322LSJ92), or of 8+ characters with 2+ digits and 4+ letters (AGGUUSB06,
+  2026-11-27; 26BN, LH01 stay none), and the page's 품번 spec row (`pumbeon_codes`, 2026-11-27: its first part, 5+
+  characters with a digit and a letter, the hyphens dropped: SB-28K = SB28K, HP3717; '상세페이지 참조' gives none). Across
+  stores a code also counts as shared when it is the other's code plus a 1-3 letter suffix that is a word of the
+  other's own title (`_colour_suffix`: AGGUUSB06MU against AGGUUSB06 titled '..._MU'; AGGUUSB06BK against it is
+  another colour, no match). The same brand when both name one, never across a combo set
   (조합, +), never a shaft's model (KBS MAX105, MODUS115), a brand that is the seller's store name counting as none
   (SNGR15702 under 대량가성비추천할인몰). Both: the same category, another store, the price guard, no clash of club
   kind, bag, hand, gender or length read inside the words ("남성골프채풀세트"), of junior ages ("3세 이하" / "3-5세") or
@@ -234,3 +242,16 @@ the run starts:
   Volvik listings with colours written apart (10933958968 / 10322266021: the colour words differ, and one store's
   title or colour matches merged editions, C42): the known gap, hold and ask ([OWNER_RULES.md](OWNER_RULES.md)
   rule 2).
+- **The run of 100 stand bags** (2026-11-27, 50002791, 104 drafts): the lens review found 13 copies the rule had let
+  through. Three narrow changes, no threshold changed: the year spelt two ways in `alike` with the variants alike
+  (catches Titleist Players S4 13847514326 / 13718353961 as `duplicate_of`), the long 2-digit style code with its
+  colour suffix (ANEW GOLF 13767342130 / 13770094271, a same-item hold candidate, parked) and the 품번 row as a code
+  (catches none of the 13 alone; joins Adidas Retrocross 13735186974 / 13635116576, HP3717, as a same-item candidate).
+  Measured on the ledger's published and withdrawn products: 163 -> 164 duplicate groups (the S4 pair), same-item
+  groups 35 -> 37 (ANEW, Adidas HP3717), none larger or lost, the owner's reviewed versions unchanged, BG-100 and REVA
+  `strong` / `confirm` unchanged; `--report` of the published unchanged (the copies are withdrawn). Waiting for the
+  owner: constant option positions dropped from the variant values (BG-100L 13495824885 / 13330180976 and Inparo
+  junior joins to look at), a code within one store (Bridgestone CB2525, C42), one listing inside another of the same
+  store (KS스포츠 VWX), the package measures as a fingerprint after the OCR (Inparo SB-28K x3, PXG x2) and a core
+  title key (Bushnell Link Air); Titleist S4 13601627750 and TaylorMade TF531 13488140075 stay the known gap (hold and
+  ask, [OWNER_RULES.md](OWNER_RULES.md) rule 2). A `--dedupe log` pilot comes before `on`.

@@ -212,7 +212,7 @@ def test_baselines_block_is_optional_and_the_operators():
     table = load_table()
     block = table["rows"][0]["baselines"]
     assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
-    assert table["version"] == 22 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    assert table["version"] == 23 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
     check_row(ROW)                                                    # a row without the block: no composition
     check_row({**ROW, "baselines": BASE})
 
@@ -317,9 +317,10 @@ def test_a_restamped_default_carries_its_rows_version_not_the_tables():
     2026-11-21 the row of 50002799 (재킷, the same section) to 14. 2026-11-25 (the owner): 50002816's suit kind read
     narrower, the table 20; a kind's words only, no number moved, so its defaults_version stays 19 (as version 10's
     bands): no product is restamped for the version alone. 2026-11-25: the row of 50001740 (golf shoes) to 21, its own
-    defaults_version 21. 2026-11-26: the row of 50002791 (lightweight stand bags) to 22."""
+    defaults_version 21. 2026-11-26: the row of 50002791 (lightweight stand bags) to 22. 2026-11-27: the shoes' `pair_of`
+    block (no number moved) to 23, 50001740's defaults_version stays 21."""
     table = load_table()
-    assert table["version"] == 22 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
+    assert table["version"] == 23 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
         "50002788": 7, "50002787": 7, "50002670": 7, "50002783": 7, "50002784": 9, "50002797": 12, "50002798": 13,
         "50002799": 14, "50002796": 15, "50002802": 16, "50002801": 17, "50002816": 19,
         "50001740": 21, "50002791": 22}

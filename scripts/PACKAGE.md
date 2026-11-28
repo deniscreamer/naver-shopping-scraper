@@ -40,6 +40,7 @@ Flags and notes that ask for a look:
 | note `description_images_failed` | the worker failed twice: an error sidecar | `description_images.py <shop> --products <id> --force` |
 | note `description_images_partial` | some images not read: `failed` (5xx / network), `gone` (4xx / not an image), `refused` (a hotlink block) | nothing; `failed` ones are read again at the next run of the stage |
 | note `measures_from_images` | fields stated in the images / typed text or composed, per variant count | nothing: information |
+| note `weights_bound` / `weights_unbound` | the stated weights bound per variant (count per weight and way) / variants left at the heaviest (`conflict`, `unbound`) | nothing: information (the owner decides any republish) |
 | `CategoryDefaultsMissing` | the category has no row in `category_measures.json` | write the row yourself (the agent's since 2026-11-26: ONBOARDING.md E1): [Category defaults](#category-defaults-category_measuresjson) |
 
 The stage's own exits (`description_images.py`): 0 done (the counts printed); 2 `stop:` the shop has no rules, or the
@@ -193,7 +194,72 @@ after the label ("무게는 2 KG 입니다.", "무게가 2kg(4.5파운드)", nev
 pound value ("*5.5lbs,약 2.49kg", within 10 %) and one kg as a cell of a spec line of the bag's words
 ("5분할/7포켓/2.8kg"; not the headline "2.3Kg 경량14구 넉넉한 수납"). On the 50002791 products collected so far:
 9 bags gain a weight none was read for (the others keep theirs), 6 boxes change (5 new, 9145583325 now its stated
-carton). Weights per variant are not bound (one bag's weight for the listing).
+carton). Weights per variant: bound since 2026-11-27 (below; until then one bag's weight for the listing).
+
+**Stated weights bound to the variants** (2026-11-27, Lightweight Stand Bags; `description_measures.bind_weights`,
+called by the transform's `_bound_weights`). Without a profile `guess` took the heaviest stated weight for every
+variant: Titleist 7115158598 gave its six Players 5 bags (typed "무게 - 1.95KG") the Sport bag's 2.6 kg. Now, with no
+profile, two variants or more and two stated product weights more than 2 % apart inside the field's band, each
+variant takes the weight whose own words name it (the band is the category row's own `plausible` block: a category
+without one, apparel, binds nothing, so a model's "Weight : 52kg" opens nothing):
+
+| `bound.by` | the words | confidence | case |
+|---|---|---|---|
+| `same_row` | a row of two weights, each value's segment (the bracket after it, else the text before it; the text after it when only the row's tail names words, "무게 / 2.5kg 블랙 / 2.3kg 화이트"; both named: one fact, the heaviest) | 4 | Vessel 13454840028 "무게 / 약 3.8kg (DXR Black 약 3.4kg)"; YONEX 12952984359 "(J135)1.8kg, / ,(j120)1.7kg" |
+| `label_above` | the rows above it in its image, at most 8, never past the image's previous weight row nor above a spec header (상세스펙, 제품정보, Product Info) | 4 | PGM 10647003177 "컬러:블랙그레이" ... "중량:3.12kg"; Kolon 6817963449 |
+| `typed_label` | the same in the typed text | 4 | Titleist 7115158598 |
+| `image_heading` | the image's first 5 rows, when no weight row comes before it there | 3 | PXG 7223000254 "3.페어웨이 카모 / 캐리 스탠드백" |
+| `row_default` | the unlabelled value of a row that labels its other value | 4 | Vessel's other 14 colours 3.8 kg |
+| `title_model` | the weight left names two words of the title | 4 | Nike 10121431552 블랙 / 카키 2.01 kg ("나이키골프스포츠 라이트") |
+| `two_models` | an axis of two values, one bound, the other left | 3 | Titleist's Sport bag 2.6 kg, Keiro 11012444977's 14분할 2.4 kg |
+
+A value names the words by its model code (J135, CB-137), its text (Hangul of 2+ letters; Latin of 3+ on word bounds:
+"BL" in "fashionable" is not CB-947 BL, WinWin 5941086854), all its words, or, all-Hangul in Latin text, by its
+consonants (4 or more: 멀티 아이콘 카모 in "WINWIN MULTI ICON CAMO", 고파이트 네온 in "GO FIGHT! NEON"; 10046033303). A text
+match inside a longer named value is dropped (Black inside DXR_Black); the variants named are cut to the values of
+another axis every named value occurs with (Keiro's "네이비 / 블랙 / 그레이" is the 7분할 bag's list). Never bound: a
+weight naming every variant or none; a variant named by two weights (`conflict`) or by none keeps today's heaviest,
+and the note `weights_unbound` says how many (5941086854 and PXG Woven 13204844211: none). The field carries `bound`
+{`by`, `label`, `weights`: every stated weight}; `how` "stated weight, bound to the variant"; the note `weights_bound`
+counts the variants per weight and way. On the shop's 5029 lines 10 listings change (9 stand bags, 1 junior set);
+each change moves the package weight (+ the 1 kg carton) and so the price.
+
+**`pair_of`** (2026-11-27, golf shoes 50001740, the review of 223 live shoes; `description_measures.pair_weight`,
+checked by `check_pair_of`, called by the transform's `_pair_of`): an item sold as a pair. 61 of the 223 shoes state a
+weight, none a box, and 54 of the 61 state one shoe; the server had bound one shoe's weight to the reference size's
+variant as the pair's (New Balance 13651508341 "● 무게 : 470g (27.5cm 외발)" on its 275 variant alone, Descente
+12153299165 "실측(240) ... 중량292g" on its three 240 variants: 7 products, 9 variants). With the block:
+
+| key | what | 50001740 (the agent's) |
+|---|---|---|
+| `item` | the item a pair is of | shoe |
+| `carton_g` | the shoe box and filling: the package weight is the pair + it (`_boxed`) | 500 g (the row's 1300 g less its 800 g pair) |
+| `one_g` | a stated value with no word in this band is one item: x2 | 200-500 g |
+| `pair_g` | a stated value with no word in this band is the pair; between `one_g` and it (500-600 g) nothing is read | 600-1100 g |
+
+Read for the whole product (every variant; the reference size, "25.5cm", "260기준", is never a variant's: sizes differ
+by about 10 %, under any price step), the heaviest pair of the labelled grams of the images (at NUMBER_CONF), the
+typed text and the server's own weight rows (the notice's "중량: 255mm / 약425g (1pcs)"): the label then the grams
+("무게 : 약 425g(한쪽발 25.5cm)", "25.5cm 기준 중량 : 약 430g", "무게 | WEIGHT | 260기준/396(g)", "중량(한쪽발) / 약
+420g", "치수 / 220~250mm/중량약220g"), a header over its values ("소재 / 제품무게(260기준) / 제조사" over "... / 738 g /
+..."), the values over their header (PAYNTR "280g / 35mm / 95mm" over "한쪽당무게 / 굽높이 / 발볼넓이"), a label line
+over its value line ("【중량】" / "약 385g (한쪽, 25.5cm 기준)"). A one-shoe word (한쪽, 한쪽발, 한쪽당, 1쪽, 외발, 편측,
+편족, 한짝, 한 발, 단일화, 1pcs) gives x2 inside `one_g`, a pair word (켤레, OCR 한컬레 / 한결레) the value inside
+`pair_g`. Never: a range wider than 15 % (a narrower one: its middle), an upper bound ("약 300g 이하", 12415931375), a
+band or comparison ("500g대인 보통 골프화와 비교했을 때"), insoles ("일반 깔창 약 21g", 8752851422), a shoe bag or socks,
+a cross-sell block or a review, an unlabelled value (a rangefinder ad's "125g", 6520680652; a scale photo's "775"), a
+comparison chart (대비, 기존 모델, 타사, 경쟁: "WEIGHT" over "기존 모델 450g" / "신모델 330g" gives nothing). An
+approximation's words keep the row (9172681706, the notice's "중량: 800g 내외"; 오차, "차이가 있을", "다를 수"): the core's
+skip drops such a row, the shoe reader does not. Limits: grams only, three digits or a pair's four ("1020g", "1,020g");
+a kg weight ("0.85kg") is not read, and the variant keeps the default (no collected shoe states one). The block is
+checked when the transform loads the table (`transform.check_pair_row`: whole, never beside `baselines` or `own_box`).
+The server's product weight of a variant goes back to the default (`compared`, `rejected: one_shoe_on_a_size`)
+whether or not a pair is read; its stated box or packed weight stays. Confidence 5: typed with its word; 4: an
+image's, or by the value alone; the package 3 (`composed`, "product weight + carton"). The default row (800 / 1300
+g, 34 x 23 x 13 cm) is kept: the pairs' median is men's 816 g, women's 653 g, and only the box moves a price (any
+package up to 2.5 kg bills at the default box's 2.5 kg step). On the shop's 399 collected shoes 81 read a pair (10608981549
+850 g, package 1350 g; 13651508341 940 g for every size; 4873054855 738 g as a pair; 2533527296 440 g); 8752851422
+and 6520680652 keep the default. Table version 23, the row's `defaults_version` 21 (no number moved).
 
 ## Confidence
 
@@ -202,8 +268,8 @@ Every field carries `confidence`, **1 to 5** (the owner, 2026-11-10):
 | level | meaning |
 |---|---|
 | 5 | the seller states this field itself in typed text and says what it is: a net weight, a weight with the package, the box's sides (the server path); a typed box or packed weight in the description |
-| 4 | the seller states it, a weaker reading: read from an image, or its kind left open (a plain 중량 11.5kg: with the box or not), or bound to the variant by club count, or a per-piece weight times the count |
-| 3 | worked out wholly from the seller's own figures for this product, plus the operator's carton / margin: the clubs' exact sum with the bag absent or its weight stated (the count and the bag's state from the listing or the typed text); the length from the driver read; a package weight on such a product weight |
+| 4 | the seller states it, a weaker reading: read from an image, or its kind left open (a plain 중량 11.5kg: with the box or not), or bound to the variant by club count or by the words naming it (`bound`), or a per-piece weight times the count |
+| 3 | worked out wholly from the seller's own figures for this product, plus the operator's carton / margin: the clubs' exact sum with the bag absent or its weight stated (the count and the bag's state from the listing or the typed text); the length from the driver read; a package weight on such a product weight; a stated weight bound to the variant by its image's heading or as the other of two models (`bound.by` image_heading, two_models) |
 | 2 | composed with a baseline or a weak part: the count x the median, a baseline club / bag / longest club, the baseline box sides, the bag's state known only from an image's sentence or a closed list of clubs, the count read from the images or taken from the clubs' table alone; the bag assumed (`flags: ["container_assumed"]`: the clubs are known and nothing says whether the bag ships, so the baseline bag, the heavy side; the owner 2026-11-11) |
 | 1 | the flat category default: the composition is unknown |
 
@@ -590,7 +656,9 @@ field's since 2026-11-10: a product's size, the bag's length, mouth and sides (t
 ## Notes on the product
 
 The package notes (they never hold a product):
-`measures_from_images` (fields no longer today's: stated in the images or the typed text, or composed; per variant count), `description_images_missing` (switch on, no
+`measures_from_images` (fields no longer today's: stated in the images or the typed text, or composed; per variant count),
+`weights_bound` / `weights_unbound` (the stated weights bound per variant / variants left at the heaviest: [Stated
+weights bound to the variants](#category-defaults-category_measuresjson)), `description_images_missing` (switch on, no
 sidecar; never holds), `description_images_stale` (the sidecar was read from other links, an older collection:
 not used; run the stage again).
 

@@ -23,8 +23,9 @@ The rule:
   2b. two purchase-agency imports (구매대행, copies of one foreign listing; 2026-11-15, the wedge pilot) are also
      one product when their titles of LONG_TITLE+ words are alike word for word, or translated apart (alike(): the
      same numbers, club kinds, hand, gender and bag words, WORDS_ALIKE of the words after one spelling each; with the
-     same sets sold, the numbers those sets spell out set aside, 2026-11-17). In a sets_only category two agency
-     imports matched by title that sell the same sets are confirmed (sold_equal, 2026-11-17).
+     same sets sold, the numbers those sets spell out set aside, 2026-11-17; a year written '2026년' / '2026' read as
+     one when both sell 3+ variants alike, 2026-11-27). In a sets_only category two agency imports matched by title
+     that sell the same sets are confirmed (sold_equal, 2026-11-17).
   2c. strong by UPC (2026-11-17): two listings with no variants, every photo shared (LEAD_PHOTOS+) and one UPC.
   3. who is better (better(a, b), strict): the store's grade (GRADES), then the product's review count. Price never
      decides (only the x2 guard).
@@ -33,7 +34,9 @@ The rule:
   5. the same Naver catalog or style code, no confirmed match and no same UPC (2026-11-20): a hold candidate only
      (same_item, decide()'s `same_item` / `why`): the page answer's catalog (specs.catalog, else the shop's
      catalog_ids.json backfill; a catalog of more than CATALOG_LOOSE published products ignored) or a maker's style
-     code with the same brand (a store-name brand counts as none); no combo set, no clash of kind, bag, hand, gender,
+     code with the same brand (a store-name brand counts as none; the model name, the title and the 품번 spec row with
+     its hyphens dropped, 2026-11-27; one code the other's plus a colour suffix that is a word of the other's title,
+     AGGUUSB06 / AGGUUSB06MU, 2026-11-27); no combo set, no clash of kind, bag, hand, gender,
      length, ages or piece counts; held like 4. In apparel also an article code in both products' option values
      (option_codes, 2026-11-24: Adidas IQ2919 listed twice by one seller), one store or two.
 
@@ -160,7 +163,9 @@ def entry(line: dict[str, Any], status: str = "job", catalogs: dict[str, str | N
             "catalog": ((specs.get("catalog") or {}).get("id")) or (catalogs or {}).get(parts[3] if len(parts) > 3
                                                                                        else ""),
             "codes": style_codes(((specs.get("facts") or details.get("facts") or {}).get("model_name") or {})
-                                 .get("value") or details.get("model_name"), name),
+                                 .get("value") or details.get("model_name"), name) | pumbeon_codes(specs),
+            # the title's raw tokens: a colour suffix of a style code must be one of them (same_item, 2026-11-27)
+            "twords": set(TOKEN.findall(unicodedata.normalize("NFKC", name or "").lower())),
             "ocodes": option_codes(variants, parts[0] if len(parts) > 3 else "", leaf),
             "brand":_own_brand(((specs.get("facts") or details.get("facts") or {}).get("brand") or {}).get("value")
                                 or details.get("brand") or "", (listing.get("store") or details.get("store") or {})
@@ -222,9 +227,16 @@ def loose_catalogs(entries: Iterable[dict[str, Any]]) -> set[str]:
     return {k for k, n in counts.items() if n > CATALOG_LOOSE}
 
 
+# a long code with only 2 digits (2026-11-27, the run of 100 stand bags: ANEW GOLF's own store lists the 8 Lightweight
+# Stud bag 13767342130 under model name AGGUUSB06, 13770094271 titles it AGGUUSB06MU): 8+ characters, 2+ digits and
+# 4+ letters also count. Shorter 2-digit tokens (26BN, LH01, the Bushnell 26BN model name) stay no code.
+_LONG_CODE_MIN, _LONG_CODE_LETTERS = 8, 4
+
+
 def style_codes(model_name: Any, title: str | None) -> set[str]:
     """The maker's style codes of a listing: its model name's first part and the title's tokens, upper case, 6+
-    characters with 3+ digits and a letter, no Hangul (a model name that copies the title gives its codes only)."""
+    characters with 3+ digits and a letter, or 8+ characters with 2+ digits and 4+ letters (2026-11-27), no Hangul
+    (a model name that copies the title gives its codes only); never a shaft's model."""
     out = set()
     model = str(model_name or "")
     if model and not re.search(r"[가-힣]", model):
@@ -232,8 +244,33 @@ def style_codes(model_name: Any, title: str | None) -> set[str]:
     for text in (model, str(title or "")):
         for t in _CODE_TOKEN.findall(unicodedata.normalize("NFKC", text)):
             t = t.upper()
-            if len(t) >= 6 and len(re.findall(r"\d", t)) >= 3 and re.search(r"[A-Z]", t) and not _SHAFT_CODE.match(t):
+            digits, letters = len(re.findall(r"\d", t)), len(re.findall(r"[A-Z]", t))
+            if ((len(t) >= 6 and digits >= 3 and letters) or (len(t) >= _LONG_CODE_MIN and digits >= 2
+                                                              and letters >= _LONG_CODE_LETTERS)) \
+                    and not _SHAFT_CODE.match(t):
                 out.add(t)
+    return out
+
+
+# the 품번 spec row (2026-11-27, the run of 100 stand bags): sellers write the maker's part number there and nowhere
+# else (Adidas Retrocross Gripmore BOA 13735186974 / 13635116576, both 품번 HP3717, titles reworded; Inparo 12209887968
+# 품번 SB-28K, read SB28K: a seller writes the hyphen or not). A placeholder ('상세페이지 참조') gives none.
+_PUMBEON = re.compile(r"[A-Z0-9]+(?:-[A-Z0-9]+)*")
+
+
+def pumbeon_codes(specs: dict[str, Any]) -> set[str]:
+    """The code in the page's 품번 spec row: its first part (_CODE_CUT), A-Z / 0-9 with hyphens, 5+ characters with a
+    digit and a letter, no shaft's model; the hyphens dropped ("SB-28K" -> "SB28K"). None without the row."""
+    out = set()
+    for row in (specs or {}).get("specs") or []:
+        if row.get("label") != "품번":
+            continue
+        v = unicodedata.normalize("NFKC", str(row.get("value") or "")).upper().strip()
+        v = _CODE_CUT.split(v)[0] if v else ""
+        code = v.replace("-", "")
+        if _PUMBEON.fullmatch(v) and len(code) >= 5 and re.search(r"\d", code) and re.search(r"[A-Z]", code) \
+                and not _SHAFT_CODE.match(code):
+            out.add(code)
     return out
 
 
@@ -284,7 +321,8 @@ def _ages(title: str) -> set[str]:
 def same_item(a: dict[str, Any], b: dict[str, Any], loose: set[str] | frozenset[str] = frozenset()) -> str | None:
     """Why a and b look like one item ("catalog <id>", "code <code>", "option code <code>"), None when they do not:
     the same category, another store, the price guard, the same catalog (not a `loose` one) or a style code in common
-    (the same brand when both name one), or an apparel article code in both products' option values (the same brand
+    (the 품번 row counts; one code may be the other plus a colour suffix that is a word of the other's title, 2026-11-27;
+    the same brand when both name one), or an apparel article code in both products' option values (the same brand
     when both name one; one store too), and no clash of club kind, hand, gender, length or bag between the titles."""
     if a.get("category") != b.get("category") or a.get("key") == b.get("key"):
         return None
@@ -296,7 +334,7 @@ def same_item(a: dict[str, Any], b: dict[str, Any], loose: set[str] | frozenset[
         if a.get("catalog") and a.get("catalog") == b.get("catalog") and a["catalog"] not in loose:
             why = f"catalog {a['catalog']}"
         else:
-            common = (a.get("codes") or set()) & (b.get("codes") or set())
+            common = (a.get("codes") or set()) & (b.get("codes") or set()) or _colour_suffix(a, b)
             if common and same_brand:
                 why = f"code {sorted(common)[0]}"
     if why is None:
@@ -316,6 +354,20 @@ def same_item(a: dict[str, Any], b: dict[str, Any], loose: set[str] | frozenset[
     if _clash(a.get("counts") or set(), b.get("counts") or set()):
         return None                             # "4종" / "12종", "5개" / "7개": another set of one line
     return why
+
+
+def _colour_suffix(a: dict[str, Any], b: dict[str, Any]) -> set[str]:
+    """{X} when one product's code X is the other's code Y plus a 1-3 letter suffix that is a word of Y's own title
+    (2026-11-27, ANEW GOLF 13770094271 AGGUUSB06MU against 13767342130's model name AGGUUSB06 titled '... BAG_MU': the
+    maker's colour code); AGGUUSB06BK against a title without 'bk' is another colour, so no match. Else empty."""
+    for x, y in ((a, b), (b, a)):
+        for cx in x.get("codes") or ():
+            for cy in y.get("codes") or ():
+                suffix = cx[len(cy):].lower()
+                if cx.startswith(cy) and 1 <= len(suffix) <= 3 and suffix.isalpha() \
+                        and suffix in (y.get("twords") or ()):
+                    return {cx}
+    return set()
 
 
 # an agency import copies its Amazon spec table into the description ("UPC | 792713117044", "Global Trade
@@ -464,7 +516,8 @@ def sold_equal(a: dict[str, Any], b: dict[str, Any]) -> bool:
 def alike(a: dict[str, Any], b: dict[str, Any]) -> bool:
     """Two agency imports of one foreign listing under titles translated apart: the same category, the same numbers
     (lofts, ages, sizes, counts), the same club kinds and hand, and their words alike (WORDS_ALIKE). The numbers and
-    kinds keep the versions an agency lists apart (Olimar's putter and hybrid, sizes 3~5 and 5~8) two products."""
+    kinds keep the versions an agency lists apart (Olimar's putter and hybrid, sizes 3~5 and 5~8) two products. A year
+    written '2026년' or '2026년형' is read as '2026' when both sell 3+ variants alike (VARIANTS_JACCARD; 2026-11-27)."""
     if not (a.get("agency") and b.get("agency")) or a.get("category") != b.get("category"):
         return False
     wa, wb = a.get("words") or set(), b.get("words") or set()
@@ -478,7 +531,19 @@ def alike(a: dict[str, Any], b: dict[str, Any]) -> bool:
         na, nb = na - spelt, nb - spelt
     if min(len(wa), len(wb)) < ALIKE_MIN_WORDS or na != nb or wa & _KINDS != wb & _KINDS:
         return False
-    return len(wa & wb) / len(wa | wb) >= WORDS_ALIKE
+    if len(wa & wb) / len(wa | wb) >= WORDS_ALIKE:
+        return True
+    # the year spelt two ways (2026-11-27, the run of 100 stand bags: Titleist Players S4 13847514326 '... 2026년' /
+    # 13718353961 '2026 ...', the same 10 colourways). Only with 3+ variants on each side alike (VARIANTS_JACCARD):
+    # Bridgestone BG-100 2022 / 2022년 13634860211 / 13799086022 (variants 0.0), the owner's versions family, stays apart
+    va, vb = a.get("values") or set(), b.get("values") or set()
+    if min(len(va), len(vb)) < 3 or len(va & vb) / len(va | vb) < VARIANTS_JACCARD:
+        return False
+    ya, yb = {_YEAR.sub(r"\1", w) for w in wa}, {_YEAR.sub(r"\1", w) for w in wb}
+    return len(ya & yb) / len(ya | yb) >= WORDS_ALIKE
+
+
+_YEAR = re.compile(r"^((?:19|20)\d\d)년형?$")     # '2026년', '2026년형' read as '2026' (alike's second look)
 
 
 # copies under titles that share too few words: every photo and every variant alike (2026-11-15, the lenses: three
